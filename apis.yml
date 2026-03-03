@@ -26,6 +26,8 @@ access: 3rd-Party
 created: '2026-01-02'
 modified: '2026-01-02'
 position: Consumer
+segments:
+  - Gateways
 description: >-
   Helicone is a company that specializes in designing and manufacturing
   innovative kinetic sculptures. These mesmerizing sculptures are created using
