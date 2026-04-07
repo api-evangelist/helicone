@@ -70,9 +70,9 @@ apis:
     name: Helicone AI Gateway API
     tags:
       - AI Gateways
-      - LLM Routing
-      - Chat Completions
       - AI Models
+      - Chat Completions
+      - LLM Routing
     humanURL: https://docs.helicone.ai/gateway/overview
     baseURL: https://ai-gateway.helicone.ai
     properties:
@@ -98,9 +98,9 @@ apis:
   - aid: helicone:request-api
     name: Helicone Request API
     tags:
-      - Requests
-      - LLM Observability
       - Analytics
+      - LLM Observability
+      - Requests
     humanURL: https://docs.helicone.ai/rest/request/post-v1requestquery
     baseURL: https://api.helicone.ai
     properties:
@@ -116,8 +116,8 @@ apis:
   - aid: helicone:prompt-api
     name: Helicone Prompt API
     tags:
-      - Prompts
       - Prompt Management
+      - Prompts
       - Versioning
     humanURL: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
     baseURL: https://api.helicone.ai
@@ -136,16 +136,15 @@ apis:
   - aid: helicone:experiment-api
     name: Helicone Experiment API
     tags:
-      - Experiments
       - Datasets
       - Evaluations
+      - Experiments
     humanURL: https://docs.helicone.ai/features/experiments
     baseURL: https://api.helicone.ai
     properties:
       - url: https://docs.helicone.ai/features/experiments
         type: Documentation
-      - url: 
-          https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+      - url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
         type: APIReference
       - url: https://docs.helicone.ai/swagger.json
         type: OpenAPI
@@ -158,8 +157,8 @@ apis:
     name: Helicone Evals API
     tags:
       - Evaluations
-      - Scoring
       - LLM Quality
+      - Scoring
     humanURL: https://docs.helicone.ai/rest/evals/post-v1evals
     baseURL: https://api.helicone.ai
     properties:
@@ -177,9 +176,9 @@ apis:
   - aid: helicone:session-api
     name: Helicone Session API
     tags:
+      - Debugging
       - Sessions
       - Tracing
-      - Debugging
     humanURL: https://docs.helicone.ai/features/sessions
     baseURL: https://api.helicone.ai
     properties:
@@ -197,9 +196,9 @@ apis:
   - aid: helicone:user-api
     name: Helicone User API
     tags:
-      - Users
-      - Metrics
       - Analytics
+      - Metrics
+      - Users
     humanURL: https://docs.helicone.ai/features/advanced-usage/user-metrics
     baseURL: https://api.helicone.ai
     properties:
@@ -217,9 +216,9 @@ apis:
   - aid: helicone:webhook-api
     name: Helicone Webhook API
     tags:
-      - Webhooks
       - Events
       - Notifications
+      - Webhooks
     humanURL: https://docs.helicone.ai/features/webhooks
     baseURL: https://api.helicone.ai
     properties:
@@ -237,15 +236,13 @@ apis:
   - aid: helicone:model-registry-api
     name: Helicone Model Registry API
     tags:
-      - Models
       - AI Models
+      - Models
       - Registry
-    humanURL: 
-      https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+    humanURL: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
     baseURL: https://api.helicone.ai
     properties:
-      - url: 
-          https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+      - url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
         type: Documentation
       - url: https://docs.helicone.ai/swagger.json
         type: OpenAPI
@@ -257,9 +254,9 @@ apis:
   - aid: helicone:trace-api
     name: Helicone Trace API
     tags:
-      - Tracing
       - Logging
       - Observability
+      - Tracing
     humanURL: https://docs.helicone.ai/rest/trace/post-v1tracelog
     baseURL: https://api.helicone.ai
     properties:
@@ -275,11 +272,10 @@ apis:
   - aid: helicone:dashboard-api
     name: Helicone Dashboard API
     tags:
-      - Dashboard
       - Analytics
+      - Dashboard
       - Scoring
-    humanURL: 
-      https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+    humanURL: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
     baseURL: https://api.helicone.ai
     properties:
       - url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
@@ -294,9 +290,9 @@ apis:
   - aid: helicone:property-api
     name: Helicone Property API
     tags:
-      - Properties
       - Custom Properties
       - Metadata
+      - Properties
     humanURL: https://docs.helicone.ai/features/advanced-usage/custom-properties
     baseURL: https://api.helicone.ai
     properties:
@@ -314,10 +310,10 @@ apis:
 name: Helicone
 tags:
   - AI Gateways
-  - Gateways
-  - LLM Routing
-  - LLM Observability
   - AI Monitoring
+  - Gateways
+  - LLM Observability
+  - LLM Routing
   - Prompt Management
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
