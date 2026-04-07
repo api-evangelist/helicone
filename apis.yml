@@ -61,15 +61,11 @@ apis:
       - url: https://docs.helicone.ai/getting-started/self-host/overview
         type: SelfHosted
     description: >-
-      Helicone is an open-source LLM observability platform and AI gateway.
-      The worlds fastest-growing AI companies rely on Helicone to route, debug,
-      and analyze their applications. With one line of code, developers can
-      monitor, evaluate, and experiment across 100+ AI models from providers
-      including OpenAI, Anthropic, Google, and more. The platform provides
-      unified request logging, cost tracking, latency analysis, prompt
-      management, experiments, evaluations, sessions tracing, caching, rate
-      limiting, and webhooks. Helicone is SOC 2 and GDPR compliant with a
-      generous free tier of 10,000 requests per month.
+      Helicone is an open-source LLM observability platform and AI gateway. The worlds
+      fastest-growing AI companies rely on Helicone to route, debug, and analyze their
+      applications. With one line of code, developers can monitor, evaluate, and experiment
+      across 100+ AI models from providers including OpenAI, Anthropic, Google, and
+      more.
   - aid: helicone:ai-gateway-api
     name: Helicone AI Gateway API
     tags:
@@ -148,7 +144,8 @@ apis:
     properties:
       - url: https://docs.helicone.ai/features/experiments
         type: Documentation
-      - url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+      - url: 
+          https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
         type: APIReference
       - url: https://docs.helicone.ai/swagger.json
         type: OpenAPI
@@ -243,10 +240,12 @@ apis:
       - Models
       - AI Models
       - Registry
-    humanURL: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+    humanURL: 
+      https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
     baseURL: https://api.helicone.ai
     properties:
-      - url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+      - url: 
+          https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
         type: Documentation
       - url: https://docs.helicone.ai/swagger.json
         type: OpenAPI
@@ -279,7 +278,8 @@ apis:
       - Dashboard
       - Analytics
       - Scoring
-    humanURL: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+    humanURL: 
+      https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
     baseURL: https://api.helicone.ai
     properties:
       - url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
@@ -328,18 +328,10 @@ position: Consumer
 segments:
   - Gateways
 description: >-
-  Helicone is an open-source LLM observability platform and AI gateway that
-  helps developers monitor, evaluate, and experiment with their AI applications.
-  The worlds fastest-growing AI companies rely on Helicone to route, debug, and
-  analyze their applications. With a single line of code, Helicone provides
-  unified request logging, cost tracking, latency analysis, prompt management,
-  experiments, evaluations, session tracing, caching, rate limiting, and
-  webhooks across 100+ AI models from providers including OpenAI, Anthropic,
-  Google, Groq, and more. The platform offers an OpenAI-compatible AI Gateway
-  with automatic provider fallbacks, zero markup pricing, and built-in
-  observability. Helicone is SOC 2 and GDPR compliant, supports self-hosting
-  via Docker and Kubernetes, and offers a generous free tier of 10,000
-  requests per month.
+  Helicone is an open-source LLM observability platform and AI gateway that helps
+  developers monitor, evaluate, and experiment with their AI applications. The worlds
+  fastest-growing AI companies rely on Helicone to route, debug, and analyze their
+  applications.
 common:
   - url: https://docs.helicone.ai/
     type: Documentation
