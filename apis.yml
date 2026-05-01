@@ -108,6 +108,8 @@ apis:
         type: Documentation
       - url: https://docs.helicone.ai/swagger.json
         type: OpenAPI
+      - url: openapi/helicone-openapi.yml
+        type: OpenAPI
     description: >-
       The Helicone Request API allows developers to query, retrieve, and
       manage LLM request data. Endpoints include querying requests with
@@ -319,7 +321,7 @@ type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2026-01-02'
-modified: '2026-03-16'
+modified: '2026-04-28'
 position: Consumer
 segments:
   - Gateways

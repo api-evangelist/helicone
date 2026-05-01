@@ -16,7 +16,7 @@ Helicone is an open-source LLM observability platform and AI gateway that helps 
 ## Timestamps
 
 - **Created:** 2026-01-02 
-- **Modified:** 2026-03-16 
+- **Modified:** 2026-04-28 
 
 ## APIs
 
@@ -91,6 +91,7 @@ The Helicone Request API allows developers to query, retrieve, and manage LLM re
 
 - [Documentation](https://docs.helicone.ai/rest/request/post-v1requestquery)
 - [OpenAPI](https://docs.helicone.ai/swagger.json)
+- [OpenAPI](openapi/helicone-openapi.yml)
 
 ### Helicone Prompt API
 The Helicone Prompt API provides endpoints for creating, querying, updating, and deleting prompts and prompt versions. It supports prompt environments, tagging, versioning, and production deployment workflows for managing prompts across the development lifecycle.
