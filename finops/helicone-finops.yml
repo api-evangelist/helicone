@@ -8,10 +8,11 @@ alignedWith:
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
 provider: Helicone
 providerId: helicone
-publisherName: Helicone
-serviceCategory: API
+publisherName: Helicone, Inc.
+serviceCategory: AI Observability
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
 tags:
   - AI Gateways
   - AI Monitoring
@@ -22,20 +23,46 @@ tags:
   - FinOps
   - Cost Management
   - FOCUS
-description: FinOps framework definition for the Helicone API surface. Provides a FOCUS-aligned mapping
-  for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
+description: 'FOCUS-aligned FinOps definition for Helicone: a tiered subscription with per-tier included
+  request and storage allotments, plus usage-based overage for logged requests and storage. Enterprise tier
+  is custom-priced.'
+sources:
+  - https://helicone.ai/pricing
+  - https://docs.helicone.ai/getting-started/integration-method/gateway
+billingModel:
+  pricingCategory: Tiered Subscription + Usage-Based Overage
+  billingFrequency: Monthly
+  billingCurrency: USD
+  chargeCategories:
+    - Purchase
+    - Usage
+    - Tax
+    - Credit
+    - Adjustment
+  chargeFrequency: Recurring
+focusColumns:
+  ServiceName: Helicone
+  ServiceCategory: AI Observability
+  ProviderName: Helicone
+  PublisherName: Helicone, Inc.
+  InvoiceIssuerName: Helicone, Inc.
+  PricingCategory: Tiered Subscription + Usage-Based
+  PricingUnit: request
+  BillingCurrency: USD
+  ChargeCategory: Usage
 principles:
   - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
+    description: Use the Helicone dashboard, request and session APIs, and HQL queries (Pro and above) to
+      surface per-application LLM cost, latency, and token consumption in near real-time.
   - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
+    description: Tag each gateway call with custom properties (Helicone Property API) - e.g. team, environment,
+      feature, customer-id - so cost can be attributed via the Property and User APIs.
   - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
+    description: Helicone-specific levers include caching, prompt versioning, model routing through the AI
+      Gateway, retry/timeout tuning, and using the Evals API to compare cheaper models for the same quality.
   - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
+    description: Set per-organization budgets, configure alerts and reports (Pro and above), and use the
+      dedicated Slack channel on Team and above to escalate spend anomalies.
 domains:
   - name: Understand Usage and Cost
     capabilities:
@@ -55,7 +82,6 @@ domains:
       - Architecting for Cloud
       - Rate Optimization
       - Workload Optimization
-      - Cloud Sustainability
       - Licensing and SaaS
   - name: Manage the FinOps Practice
     capabilities:
@@ -64,53 +90,60 @@ domains:
       - Invoicing and Chargeback
       - Onboarding Workloads
       - Intersecting Disciplines
-billingModel:
-  pricingCategory: Usage-Based
-  billingFrequency: Monthly
-  billingCurrency: USD
-  chargeCategories:
-    - Usage
-    - Purchase
-    - Tax
-    - Credit
-    - Adjustment
-  chargeFrequency: Recurring
-focusColumns:
-  ServiceName: Helicone
-  ServiceCategory: Developer Tools / API
-  ProviderName: Helicone
-  PublisherName: Helicone
-  InvoiceIssuerName: Helicone
-  PricingCategory: Usage-Based
-  PricingUnit: request
-  BillingCurrency: USD
-  ChargeCategory: Usage
 meters:
-  - name: api_requests
-    description: Count of billable API requests
+  - name: subscription_fee
+    description: Flat monthly subscription fee for the active Helicone tier (Pro $79, Team $799, Enterprise
+      custom)
+    unit: month
+    aggregation: sum
+    dimensions:
+      - tier
+      - organization
+  - name: logged_requests
+    description: Count of LLM requests logged through the AI Gateway or Request API
     unit: request
     aggregation: sum
     dimensions:
-      - api
-      - endpoint
       - tier
-      - region
+      - organization
+      - model
+      - provider
       - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
+  - name: request_overage
+    description: Logged requests above the 10,000-per-month included quota, billed via the published
+      pricing calculator
+    unit: request
+    aggregation: sum
+    dimensions:
+      - tier
+      - organization
+  - name: storage_used
+    description: Stored payloads and trace data
     unit: GB
-    aggregation: sum
+    aggregation: max
     dimensions:
-      - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
-    aggregation: sum
+      - tier
+      - organization
+      - retention_window
+  - name: storage_overage
+    description: Storage above the 1 GB included allotment, billed via the pricing calculator
+    unit: GB
+    aggregation: max
     dimensions:
-      - api
-      - endpoint
+      - tier
+      - organization
+  - name: seats
+    description: Active seats per organization (Pro and above are unlimited; Hobby is 1)
+    unit: seat
+    aggregation: max
+    dimensions:
+      - tier
+      - organization
+  - name: organizations
+    description: Number of organizations under the account (Hobby/Pro 1, Team 5, Enterprise unlimited)
+    unit: organization
+    aggregation: max
+    dimensions:
       - tier
 apis:
   - name: Helicone
@@ -120,7 +153,7 @@ apis:
       - Gateways
       - LLM Routing
     serviceName: Helicone
-    serviceCategory: API
+    serviceCategory: AI Observability
   - name: Helicone AI Gateway API
     baseURL: https://ai-gateway.helicone.ai
     tags:
@@ -129,7 +162,7 @@ apis:
       - Chat Completions
       - LLM Routing
     serviceName: Helicone AI Gateway API
-    serviceCategory: API
+    serviceCategory: AI Observability
   - name: Helicone Request API
     baseURL: https://api.helicone.ai
     tags:
@@ -137,7 +170,7 @@ apis:
       - LLM Observability
       - Requests
     serviceName: Helicone Request API
-    serviceCategory: API
+    serviceCategory: AI Observability
   - name: Helicone Prompt API
     baseURL: https://api.helicone.ai
     tags:
@@ -145,7 +178,7 @@ apis:
       - Prompts
       - Versioning
     serviceName: Helicone Prompt API
-    serviceCategory: API
+    serviceCategory: AI Observability
   - name: Helicone Experiment API
     baseURL: https://api.helicone.ai
     tags:
@@ -153,7 +186,7 @@ apis:
       - Evaluations
       - Experiments
     serviceName: Helicone Experiment API
-    serviceCategory: API
+    serviceCategory: AI Observability
   - name: Helicone Evals API
     baseURL: https://api.helicone.ai
     tags:
@@ -161,7 +194,7 @@ apis:
       - LLM Quality
       - Scoring
     serviceName: Helicone Evals API
-    serviceCategory: API
+    serviceCategory: AI Observability
   - name: Helicone Session API
     baseURL: https://api.helicone.ai
     tags:
@@ -169,7 +202,7 @@ apis:
       - Sessions
       - Tracing
     serviceName: Helicone Session API
-    serviceCategory: API
+    serviceCategory: AI Observability
   - name: Helicone User API
     baseURL: https://api.helicone.ai
     tags:
@@ -177,7 +210,7 @@ apis:
       - Metrics
       - Users
     serviceName: Helicone User API
-    serviceCategory: API
+    serviceCategory: AI Observability
   - name: Helicone Webhook API
     baseURL: https://api.helicone.ai
     tags:
@@ -185,7 +218,7 @@ apis:
       - Notifications
       - Webhooks
     serviceName: Helicone Webhook API
-    serviceCategory: API
+    serviceCategory: AI Observability
   - name: Helicone Model Registry API
     baseURL: https://api.helicone.ai
     tags:
@@ -193,7 +226,7 @@ apis:
       - Models
       - Registry
     serviceName: Helicone Model Registry API
-    serviceCategory: API
+    serviceCategory: AI Observability
   - name: Helicone Trace API
     baseURL: https://api.helicone.ai
     tags:
@@ -201,7 +234,7 @@ apis:
       - Observability
       - Tracing
     serviceName: Helicone Trace API
-    serviceCategory: API
+    serviceCategory: AI Observability
   - name: Helicone Dashboard API
     baseURL: https://api.helicone.ai
     tags:
@@ -209,7 +242,7 @@ apis:
       - Dashboard
       - Scoring
     serviceName: Helicone Dashboard API
-    serviceCategory: API
+    serviceCategory: AI Observability
   - name: Helicone Property API
     baseURL: https://api.helicone.ai
     tags:
@@ -217,14 +250,17 @@ apis:
       - Metadata
       - Properties
     serviceName: Helicone Property API
-    serviceCategory: API
+    serviceCategory: AI Observability
 unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
+  - name: Cost per 1K Logged Requests
+    metric: billed_cost / (logged_requests / 1000)
     target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
+  - name: Cost per Active Organization
+    metric: billed_cost / organizations
     target: TBD
+  - name: Subscription Effective Cost per Logged Request
+    metric: subscription_fee / logged_requests
+    target: trends down as throughput increases
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

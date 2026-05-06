@@ -4,7 +4,8 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Helicone
 providerId: helicone
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
 tags:
   - AI Gateways
   - AI Monitoring
@@ -12,22 +13,26 @@ tags:
   - LLM Observability
   - LLM Routing
   - Prompt Management
-description: Machine-readable plans and pricing scaffold for this API provider. Conforms to the API Commons
-  Plans schema. Tier limits and prices are scaffold defaults; replace with provider-published values.
+description: Helicone uses tiered subscription pricing for its LLM observability and AI gateway platform. Each
+  paid tier includes 10,000 logged requests and 1 GB of storage; usage above that is billed via a usage-based
+  add-on (per the published pricing calculator). Tiers escalate seats, organizations, log-ingestion rate, API
+  call rate, retention, and compliance features. Enterprise pricing is custom.
+sources:
+  - https://helicone.ai/pricing
+  - https://docs.helicone.ai/getting-started/integration-method/gateway
 plans:
-  - id: helicone-free
-    name: Free
+  - id: helicone-hobby
+    name: Hobby
     type: freemium
-    description: Free entry tier for the Helicone API surface. Intended for evaluation, prototyping, and
-      low-volume integrations. Real limits and pricing must be reconciled with the provider's published
-      plan documentation.
+    description: Free tier intended for evaluation and personal projects. Includes 10,000 requests/month,
+      1 GB storage, 7-day retention, 1 seat, and 1 organization.
     entries:
-      - label: API Requests
-        description: Monthly API request quota across all included endpoints
+      - label: Included Requests
+        description: Monthly logged-request quota
         name: api_requests
         type: quota
         metric: requests
-        limit: 1000
+        limit: 10000
         timeFrame: month
         geo: global
         domains:
@@ -36,25 +41,51 @@ plans:
         unit: 1
         price: '0.00'
         userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the free tier
-        name: rate_limit
+      - label: Included Storage
+        description: Storage included in the Hobby tier
+        name: storage
+        type: quota
+        metric: gb
+        limit: 1
+        timeFrame: month
+        geo: global
+        domains:
+          - https://api.helicone.ai
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Log Ingestion Rate
+        description: Sustained log ingestion rate
+        name: ingestion_rate
+        type: rate
+        metric: logs_per_minute
+        limit: 10
+        timeFrame: minute
+        geo: global
+        domains:
+          - https://api.helicone.ai
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: API Call Rate
+        description: Sustained API call rate against Helicone APIs
+        name: api_call_rate
         type: rate
         metric: requests_per_minute
         limit: 10
         timeFrame: minute
         geo: global
         domains:
-          - https://ai-gateway.helicone.ai
           - https://api.helicone.ai
         unit: 1
         price: '0.00'
         userMultiplied: false
     elements:
+      - name: 7-Day Data Retention
+      - name: 1 Seat
+      - name: 1 Organization
       - name: Public Documentation
       - name: Community Support
-      - name: Sandbox Access
-      - name: Helicone
       - name: Helicone AI Gateway API
       - name: Helicone Request API
       - name: Helicone Prompt API
@@ -63,32 +94,32 @@ plans:
       - name: Helicone Session API
       - name: Helicone User API
   - id: helicone-pro
-    name: Professional
-    type: paid
-    description: Production tier for Helicone. Provides higher quotas, priority support, and access to
-      the broader API portfolio. Pricing placeholder; align with the provider's pricing page.
+    name: Pro
+    type: subscription
+    description: Production tier at $79/month. Includes 10,000 requests and 1 GB storage; overages are billed
+      usage-based via the published pricing calculator. Adds unlimited seats, alerts, reports, and HQL query
+      language.
     entries:
-      - label: API Requests
-        description: Monthly API request quota
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 100000
+      - label: Subscription Fee
+        description: Monthly subscription price for the Pro tier
+        name: subscription
+        type: subscription
+        metric: month
+        limit: 1
         timeFrame: month
         geo: global
         domains:
-          - https://ai-gateway.helicone.ai
           - https://api.helicone.ai
         unit: 1
-        price: TBD
+        price: '$79 per month'
         userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the professional tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 100
-        timeFrame: minute
+      - label: Included Requests
+        description: Monthly logged-request quota included with Pro
+        name: api_requests
+        type: quota
+        metric: requests
+        limit: 10000
+        timeFrame: month
         geo: global
         domains:
           - https://ai-gateway.helicone.ai
@@ -96,9 +127,22 @@ plans:
         unit: 1
         price: '0.00'
         userMultiplied: false
-      - label: Overage
-        description: Per-request price after monthly quota is exceeded
-        name: overage
+      - label: Included Storage
+        description: Storage included in the Pro tier
+        name: storage
+        type: quota
+        metric: gb
+        limit: 1
+        timeFrame: month
+        geo: global
+        domains:
+          - https://api.helicone.ai
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Request Overage
+        description: Per-request charge once the included 10,000 monthly requests are exhausted
+        name: request_overage
         type: metered
         metric: requests
         limit: -1
@@ -107,15 +151,170 @@ plans:
         domains:
           - https://ai-gateway.helicone.ai
           - https://api.helicone.ai
-        unit: 1000
-        price: TBD
+        unit: 1
+        price: 'see helicone.ai/pricing calculator'
+        userMultiplied: false
+      - label: Storage Overage
+        description: Storage above 1 GB billed via the pricing calculator
+        name: storage_overage
+        type: metered
+        metric: gb
+        limit: -1
+        timeFrame: month
+        geo: global
+        domains:
+          - https://api.helicone.ai
+        unit: 1
+        price: 'see helicone.ai/pricing calculator'
+        userMultiplied: false
+      - label: Log Ingestion Rate
+        description: Sustained log ingestion rate on Pro
+        name: ingestion_rate
+        type: rate
+        metric: logs_per_minute
+        limit: 1000
+        timeFrame: minute
+        geo: global
+        domains:
+          - https://api.helicone.ai
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: API Call Rate
+        description: Sustained API call rate on Pro
+        name: api_call_rate
+        type: rate
+        metric: requests_per_minute
+        limit: 60
+        timeFrame: minute
+        geo: global
+        domains:
+          - https://api.helicone.ai
+        unit: 1
+        price: '0.00'
         userMultiplied: false
     elements:
-      - name: All Production Endpoints
-      - name: Email Support
-      - name: SLA Targets
-      - name: Webhook Subscriptions
-      - name: Helicone
+      - name: 1-Month Data Retention
+      - name: Unlimited Seats
+      - name: 1 Organization
+      - name: Alerts
+      - name: Reports
+      - name: HQL Query Language
+      - name: Helicone AI Gateway API
+      - name: Helicone Request API
+      - name: Helicone Prompt API
+      - name: Helicone Experiment API
+      - name: Helicone Evals API
+      - name: Helicone Session API
+      - name: Helicone User API
+      - name: Helicone Webhook API
+  - id: helicone-team
+    name: Team
+    type: subscription
+    description: Mid-market tier at $799/month. Includes 10,000 requests and 1 GB storage; overages billed
+      via the pricing calculator. Adds 5 organizations, 3-month retention, SOC-2 and HIPAA compliance, and
+      a dedicated Slack channel.
+    entries:
+      - label: Subscription Fee
+        description: Monthly subscription price for the Team tier
+        name: subscription
+        type: subscription
+        metric: month
+        limit: 1
+        timeFrame: month
+        geo: global
+        domains:
+          - https://api.helicone.ai
+        unit: 1
+        price: '$799 per month'
+        userMultiplied: false
+      - label: Included Requests
+        description: Monthly logged-request quota included with Team
+        name: api_requests
+        type: quota
+        metric: requests
+        limit: 10000
+        timeFrame: month
+        geo: global
+        domains:
+          - https://ai-gateway.helicone.ai
+          - https://api.helicone.ai
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Included Storage
+        description: Storage included in the Team tier
+        name: storage
+        type: quota
+        metric: gb
+        limit: 1
+        timeFrame: month
+        geo: global
+        domains:
+          - https://api.helicone.ai
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Request Overage
+        description: Per-request charge once the included 10,000 monthly requests are exhausted
+        name: request_overage
+        type: metered
+        metric: requests
+        limit: -1
+        timeFrame: month
+        geo: global
+        domains:
+          - https://ai-gateway.helicone.ai
+          - https://api.helicone.ai
+        unit: 1
+        price: 'see helicone.ai/pricing calculator'
+        userMultiplied: false
+      - label: Storage Overage
+        description: Storage above 1 GB billed via the pricing calculator
+        name: storage_overage
+        type: metered
+        metric: gb
+        limit: -1
+        timeFrame: month
+        geo: global
+        domains:
+          - https://api.helicone.ai
+        unit: 1
+        price: 'see helicone.ai/pricing calculator'
+        userMultiplied: false
+      - label: Log Ingestion Rate
+        description: Sustained log ingestion rate on Team
+        name: ingestion_rate
+        type: rate
+        metric: logs_per_minute
+        limit: 15000
+        timeFrame: minute
+        geo: global
+        domains:
+          - https://api.helicone.ai
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: API Call Rate
+        description: Sustained API call rate on Team
+        name: api_call_rate
+        type: rate
+        metric: requests_per_minute
+        limit: 1000
+        timeFrame: minute
+        geo: global
+        domains:
+          - https://api.helicone.ai
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: 3-Month Data Retention
+      - name: Unlimited Seats
+      - name: 5 Organizations
+      - name: SOC-2 Compliance
+      - name: HIPAA Compliance
+      - name: Dedicated Slack Channel
       - name: Helicone AI Gateway API
       - name: Helicone Request API
       - name: Helicone Prompt API
@@ -131,45 +330,58 @@ plans:
   - id: helicone-enterprise
     name: Enterprise
     type: enterprise
-    description: Custom-negotiated tier for Helicone. Includes dedicated capacity, contractual SLAs, security
-      review, data residency options, and named technical account management.
+    description: Custom-priced tier (contact sales). Adds unlimited organizations, indefinite retention,
+      30,000 logs/min ingestion, custom MSA, SAML SSO, on-prem deployment, and bulk discounts.
     entries:
-      - label: API Requests
-        description: Negotiated request volume; -1 indicates uncapped subject to fair use
+      - label: Subscription Fee
+        description: Custom enterprise pricing
+        name: subscription
+        type: subscription
+        metric: month
+        limit: 1
+        timeFrame: month
+        geo: configurable
+        domains:
+          - https://api.helicone.ai
+        unit: 1
+        price: 'contact sales'
+        userMultiplied: false
+      - label: Included Requests
+        description: Monthly logged-request quota baseline; volume discounts available
         name: api_requests
         type: quota
         metric: requests
-        limit: -1
+        limit: 10000
         timeFrame: month
         geo: configurable
         domains:
           - https://ai-gateway.helicone.ai
           - https://api.helicone.ai
         unit: 1
-        price: custom
+        price: '0.00'
         userMultiplied: false
-      - label: Rate Limit
-        description: Negotiated burst and steady-state rate
-        name: rate_limit
+      - label: Log Ingestion Rate
+        description: Sustained log ingestion rate on Enterprise
+        name: ingestion_rate
         type: rate
-        metric: requests_per_minute
-        limit: 1000
+        metric: logs_per_minute
+        limit: 30000
         timeFrame: minute
         geo: configurable
         domains:
-          - https://ai-gateway.helicone.ai
           - https://api.helicone.ai
         unit: 1
-        price: custom
+        price: 'contact sales'
         userMultiplied: false
     elements:
-      - name: Unlimited / Negotiated Volume
-      - name: 24/7 Dedicated Support
+      - name: Indefinite Data Retention
+      - name: Unlimited Organizations
+      - name: Custom MSA
+      - name: SAML SSO
+      - name: On-Prem Deployment
+      - name: Bulk Discounts
+      - name: 24/7 Support
       - name: Contractual SLA
-      - name: Security & Compliance Review
-      - name: Dedicated Account Manager
-      - name: Custom Data Residency
-      - name: Helicone
       - name: Helicone AI Gateway API
       - name: Helicone Request API
       - name: Helicone Prompt API
@@ -182,6 +394,47 @@ plans:
       - name: Helicone Trace API
       - name: Helicone Dashboard API
       - name: Helicone Property API
+  - id: helicone-discount-startup
+    name: Startup Discount
+    type: enterprise
+    description: 50% off the first year for qualifying startups; applied as a credit against any paid
+      Helicone tier.
+    entries:
+      - label: First-Year Discount
+        description: 50% off the first year, applied to a paid tier
+        name: startup_discount
+        type: tiered
+        metric: month
+        limit: 12
+        timeFrame: year
+        geo: global
+        domains:
+          - https://api.helicone.ai
+        unit: 1
+        price: '50% off first year'
+        userMultiplied: false
+    elements:
+      - name: Startup Eligibility Required
+  - id: helicone-discount-oss
+    name: Open Source Discount
+    type: enterprise
+    description: $100 credit for the first year for qualifying open-source projects.
+    entries:
+      - label: First-Year Credit
+        description: $100 credit applied to a paid tier in year one
+        name: oss_credit
+        type: tiered
+        metric: month
+        limit: 12
+        timeFrame: year
+        geo: global
+        domains:
+          - https://api.helicone.ai
+        unit: 1
+        price: '$100 credit (first year)'
+        userMultiplied: false
+    elements:
+      - name: Open Source Project Required
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

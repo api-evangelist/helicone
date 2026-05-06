@@ -4,7 +4,8 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Helicone
 providerId: helicone
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
 tags:
   - AI Gateways
   - AI Monitoring
@@ -15,71 +16,68 @@ tags:
   - Rate Limiting
   - Quotas
   - Throttling
-description: Machine-readable rate limit definitions for the Helicone API surface. Captures per-tier quotas,
-  burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to be replaced
-  with published provider limits.
-headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
+description: Helicone publishes per-tier ingestion and API call ceilings on its pricing page rather than a
+  dedicated rate-limits doc. The AI Gateway also enforces strict caps on traffic to non-approved target
+  domains. Limits are enforced per organization / API key. Headers and response codes for throttling are not
+  publicly documented; consumers should rely on standard 429 handling and exponential backoff.
+sources:
+  - https://helicone.ai/pricing
+  - https://docs.helicone.ai/getting-started/integration-method/gateway
 responseCodes:
   throttled: 429
   quotaExceeded: 429
   serviceUnavailable: 503
 limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
+  - tier: hobby
+    name: Hobby Tier Log Ingestion
+    scope: organization
+    metric: logs_per_minute
+    limit: 10
+    timeFrame: minute
+    applies:
+      - Helicone AI Gateway API
+      - Helicone Request API
+    notes: Sustained log ingestion ceiling for the free Hobby tier.
+  - tier: hobby
+    name: Hobby Tier API Calls
+    scope: organization
     metric: requests_per_minute
     limit: 10
-    burst: 20
     timeFrame: minute
     applies:
-      - Helicone
-      - Helicone AI Gateway API
       - Helicone Request API
       - Helicone Prompt API
       - Helicone Experiment API
       - Helicone Evals API
       - Helicone Session API
       - Helicone User API
-      - Helicone Webhook API
-      - Helicone Model Registry API
-      - Helicone Trace API
-      - Helicone Dashboard API
-      - Helicone Property API
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
+    notes: API call ceiling against Helicone REST APIs on Hobby.
+  - tier: hobby
+    name: Hobby Tier Monthly Requests
+    scope: organization
     metric: requests_per_month
+    limit: 10000
+    timeFrame: month
+    applies:
+      - Helicone AI Gateway API
+      - Helicone Request API
+    notes: Logged-request quota; further requests roll into usage-based pricing on paid tiers.
+  - tier: pro
+    name: Pro Tier Log Ingestion
+    scope: organization
+    metric: logs_per_minute
     limit: 1000
-    timeFrame: month
-    applies:
-      - Helicone
-      - Helicone AI Gateway API
-      - Helicone Request API
-      - Helicone Prompt API
-      - Helicone Experiment API
-      - Helicone Evals API
-      - Helicone Session API
-      - Helicone User API
-      - Helicone Webhook API
-      - Helicone Model Registry API
-      - Helicone Trace API
-      - Helicone Dashboard API
-      - Helicone Property API
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
     timeFrame: minute
     applies:
-      - Helicone
       - Helicone AI Gateway API
+      - Helicone Request API
+  - tier: pro
+    name: Pro Tier API Calls
+    scope: organization
+    metric: requests_per_minute
+    limit: 60
+    timeFrame: minute
+    applies:
       - Helicone Request API
       - Helicone Prompt API
       - Helicone Experiment API
@@ -87,19 +85,22 @@ limits:
       - Helicone Session API
       - Helicone User API
       - Helicone Webhook API
-      - Helicone Model Registry API
-      - Helicone Trace API
-      - Helicone Dashboard API
-      - Helicone Property API
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
+  - tier: team
+    name: Team Tier Log Ingestion
+    scope: organization
+    metric: logs_per_minute
+    limit: 15000
+    timeFrame: minute
     applies:
-      - Helicone
       - Helicone AI Gateway API
+      - Helicone Request API
+  - tier: team
+    name: Team Tier API Calls
+    scope: organization
+    metric: requests_per_minute
+    limit: 1000
+    timeFrame: minute
+    applies:
       - Helicone Request API
       - Helicone Prompt API
       - Helicone Experiment API
@@ -112,39 +113,60 @@ limits:
       - Helicone Dashboard API
       - Helicone Property API
   - tier: enterprise
-    name: Enterprise Negotiated Limit
+    name: Enterprise Tier Log Ingestion
     scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
+    metric: logs_per_minute
+    limit: 30000
     timeFrame: minute
     applies:
-      - Helicone
       - Helicone AI Gateway API
       - Helicone Request API
-      - Helicone Prompt API
-      - Helicone Experiment API
-      - Helicone Evals API
-      - Helicone Session API
-      - Helicone User API
-      - Helicone Webhook API
-      - Helicone Model Registry API
-      - Helicone Trace API
-      - Helicone Dashboard API
-      - Helicone Property API
+    notes: Negotiable beyond the published 30k logs/min baseline.
+  - tier: gateway
+    name: Gateway - Unapproved Domain Daily Quota
+    scope: api-key
+    metric: requests_per_day
+    limit: 10000
+    timeFrame: day
+    applies:
+      - Helicone AI Gateway API
+    notes: When routing through Helicone-Target-Url to a non-approved domain, requests are capped at 10,000
+      per day.
+  - tier: gateway
+    name: Gateway - Unapproved Domain Rate
+    scope: api-key
+    metric: requests_per_second
+    limit: 1
+    timeFrame: second
+    applies:
+      - Helicone AI Gateway API
+    notes: When routing through Helicone-Target-Url to a non-approved domain, requests are capped at 1 per
+      second.
+  - tier: gateway
+    name: Gateway - Approved Provider Domain
+    scope: api-key
+    metric: varies
+    limit: 'inherits underlying provider limits (OpenAI, Anthropic, Google, etc.)'
+    applies:
+      - Helicone AI Gateway API
+    notes: For approved provider targets the gateway does not enforce its own limits; the upstream provider's
+      rate limits and 429 behavior apply.
 policies:
   - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
+    description: Helicone does not document per-tier headers; clients should implement exponential backoff
+      with jitter on any 429 or 503 response and honor a Retry-After header if present.
   - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
+    description: Sustained ingestion above the per-tier logs/min ceiling will be throttled. Short bursts may
+      be tolerated, but no published burst ratio is guaranteed.
   - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+    description: Monthly request quotas (10,000 base across tiers) reset on the billing-cycle boundary;
+      additional usage is metered through the pricing calculator.
+  - name: Approved Domain Policy
+    description: Traffic through the AI Gateway to approved provider hostnames inherits the upstream provider's
+      rate limits. Traffic to unapproved hostnames is capped at 10,000/day and 1/second per API key.
+  - name: Tier Upgrade
+    description: To raise ingestion or API call ceilings, upgrade tier (Hobby - Pro - Team - Enterprise) or
+      contact sales for an Enterprise contract.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
