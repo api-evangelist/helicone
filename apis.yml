@@ -371,6 +371,11 @@ common:
     type: SelfHosted
   - url: https://docs.helicone.ai/references/open-source
     type: OpenSource
+  - type: Integrations
+    url: https://docs.helicone.ai/integrations/tools/curl
+integrations:
+  - name: light
+  - name: dark
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
