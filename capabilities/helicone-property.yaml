@@ -1,0 +1,384 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: helicone-api — Property
+  description: 'helicone-api — Property. 8 operations. Lead operation: Property. Self-contained Naftiko capability covering
+    one Helicone business surface.'
+  tags:
+  - Helicone
+  - Property
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HELICONE_API_KEY: HELICONE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: helicone-property
+    baseUri: https://api.helicone.ai
+    description: helicone-api — Property business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-property-hidden-query
+      path: /v1/property/hidden/query
+      operations:
+      - name: gethiddenproperties
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-property-hide
+      path: /v1/property/hide
+      operations:
+      - name: hideproperty
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-property-properties-over-time
+      path: /v1/property/properties/over-time
+      operations:
+      - name: getpropertiesovertime
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-property-query
+      path: /v1/property/query
+      operations:
+      - name: getproperties
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-property-restore
+      path: /v1/property/restore
+      operations:
+      - name: restoreproperty
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-property-propertyKey-search
+      path: /v1/property/{propertyKey}/search
+      operations:
+      - name: searchproperties
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: propertyKey
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-property-propertyKey-top-costs-query
+      path: /v1/property/{propertyKey}/top-costs/query
+      operations:
+      - name: gettopcosts
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: propertyKey
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-property-propertyKey-top-requests-query
+      path: /v1/property/{propertyKey}/top-requests/query
+      operations:
+      - name: gettoprequests
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: propertyKey
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.HELICONE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: helicone-property-rest
+    port: 8080
+    description: REST adapter for helicone-api — Property. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/v1/property/hidden/query
+      name: v1-property-hidden-query
+      description: REST surface for v1-property-hidden-query.
+      operations:
+      - method: POST
+        name: gethiddenproperties
+        description: gethiddenproperties
+        call: helicone-property.gethiddenproperties
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/property/hide
+      name: v1-property-hide
+      description: REST surface for v1-property-hide.
+      operations:
+      - method: POST
+        name: hideproperty
+        description: hideproperty
+        call: helicone-property.hideproperty
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/property/properties/over-time
+      name: v1-property-properties-over-time
+      description: REST surface for v1-property-properties-over-time.
+      operations:
+      - method: POST
+        name: getpropertiesovertime
+        description: getpropertiesovertime
+        call: helicone-property.getpropertiesovertime
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/property/query
+      name: v1-property-query
+      description: REST surface for v1-property-query.
+      operations:
+      - method: POST
+        name: getproperties
+        description: getproperties
+        call: helicone-property.getproperties
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/property/restore
+      name: v1-property-restore
+      description: REST surface for v1-property-restore.
+      operations:
+      - method: POST
+        name: restoreproperty
+        description: restoreproperty
+        call: helicone-property.restoreproperty
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/property/{propertykey}/search
+      name: v1-property-propertykey-search
+      description: REST surface for v1-property-propertyKey-search.
+      operations:
+      - method: POST
+        name: searchproperties
+        description: searchproperties
+        call: helicone-property.searchproperties
+        with:
+          propertyKey: rest.propertyKey
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/property/{propertykey}/top-costs/query
+      name: v1-property-propertykey-top-costs-query
+      description: REST surface for v1-property-propertyKey-top-costs-query.
+      operations:
+      - method: POST
+        name: gettopcosts
+        description: gettopcosts
+        call: helicone-property.gettopcosts
+        with:
+          propertyKey: rest.propertyKey
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/property/{propertykey}/top-requests/query
+      name: v1-property-propertykey-top-requests-query
+      description: REST surface for v1-property-propertyKey-top-requests-query.
+      operations:
+      - method: POST
+        name: gettoprequests
+        description: gettoprequests
+        call: helicone-property.gettoprequests
+        with:
+          propertyKey: rest.propertyKey
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: helicone-property-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for helicone-api — Property. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: gethiddenproperties
+      description: gethiddenproperties
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-property.gethiddenproperties
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: hideproperty
+      description: hideproperty
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-property.hideproperty
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getpropertiesovertime
+      description: getpropertiesovertime
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-property.getpropertiesovertime
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getproperties
+      description: getproperties
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-property.getproperties
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: restoreproperty
+      description: restoreproperty
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-property.restoreproperty
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: searchproperties
+      description: searchproperties
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: helicone-property.searchproperties
+      with:
+        propertyKey: tools.propertyKey
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gettopcosts
+      description: gettopcosts
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-property.gettopcosts
+      with:
+        propertyKey: tools.propertyKey
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gettoprequests
+      description: gettoprequests
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-property.gettoprequests
+      with:
+        propertyKey: tools.propertyKey
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

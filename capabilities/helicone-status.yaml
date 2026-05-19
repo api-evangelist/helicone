@@ -1,0 +1,119 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: helicone-api — Status
+  description: 'helicone-api — Status. 2 operations. Lead operation: Status. Self-contained Naftiko capability covering one
+    Helicone business surface.'
+  tags:
+  - Helicone
+  - Status
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HELICONE_API_KEY: HELICONE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: helicone-status
+    baseUri: https://api.helicone.ai
+    description: helicone-api — Status business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-public-status-provider
+      path: /v1/public/status/provider
+      operations:
+      - name: getallproviderstatus
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-public-status-provider-provider
+      path: /v1/public/status/provider/{provider}
+      operations:
+      - name: getproviderstatus
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: provider
+          in: path
+          type: string
+          required: true
+        - name: timeFrame
+          in: query
+          type: string
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.HELICONE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: helicone-status-rest
+    port: 8080
+    description: REST adapter for helicone-api — Status. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/v1/public/status/provider
+      name: v1-public-status-provider
+      description: REST surface for v1-public-status-provider.
+      operations:
+      - method: GET
+        name: getallproviderstatus
+        description: getallproviderstatus
+        call: helicone-status.getallproviderstatus
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/public/status/provider/{provider}
+      name: v1-public-status-provider-provider
+      description: REST surface for v1-public-status-provider-provider.
+      operations:
+      - method: GET
+        name: getproviderstatus
+        description: getproviderstatus
+        call: helicone-status.getproviderstatus
+        with:
+          provider: rest.provider
+          timeFrame: rest.timeFrame
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: helicone-status-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for helicone-api — Status. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: getallproviderstatus
+      description: getallproviderstatus
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-status.getallproviderstatus
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getproviderstatus
+      description: getproviderstatus
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-status.getproviderstatus
+      with:
+        provider: tools.provider
+        timeFrame: tools.timeFrame
+      outputParameters:
+      - type: object
+        mapping: $.

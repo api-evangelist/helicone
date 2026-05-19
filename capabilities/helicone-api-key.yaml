@@ -1,0 +1,421 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: helicone-api — API Key
+  description: 'helicone-api — API Key. 10 operations. Lead operation: API Key. Self-contained Naftiko capability covering
+    one Helicone business surface.'
+  tags:
+  - Helicone
+  - API Key
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HELICONE_API_KEY: HELICONE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: helicone-api-key
+    baseUri: https://api.helicone.ai
+    description: helicone-api — API Key business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-api-keys
+      path: /v1/api-keys
+      operations:
+      - name: getapikeys
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createapikey
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-api-keys-provider-key
+      path: /v1/api-keys/provider-key
+      operations:
+      - name: createproviderkey
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-api-keys-provider-key-providerKeyId
+      path: /v1/api-keys/provider-key/{providerKeyId}
+      operations:
+      - name: deleteproviderkey
+        method: DELETE
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: providerKeyId
+          in: path
+          type: string
+          required: true
+      - name: getproviderkey
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: providerKeyId
+          in: path
+          type: string
+          required: true
+      - name: updateproviderkey
+        method: PATCH
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: providerKeyId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-api-keys-provider-keys
+      path: /v1/api-keys/provider-keys
+      operations:
+      - name: getproviderkeys
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-api-keys-proxy-key
+      path: /v1/api-keys/proxy-key
+      operations:
+      - name: createproxykey
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-api-keys-apiKeyId
+      path: /v1/api-keys/{apiKeyId}
+      operations:
+      - name: deleteapikey
+        method: DELETE
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: apiKeyId
+          in: path
+          type: number
+          required: true
+      - name: updateapikey
+        method: PATCH
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: apiKeyId
+          in: path
+          type: number
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.HELICONE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: helicone-api-key-rest
+    port: 8080
+    description: REST adapter for helicone-api — API Key. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/v1/api-keys
+      name: v1-api-keys
+      description: REST surface for v1-api-keys.
+      operations:
+      - method: GET
+        name: getapikeys
+        description: getapikeys
+        call: helicone-api-key.getapikeys
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createapikey
+        description: createapikey
+        call: helicone-api-key.createapikey
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/api-keys/provider-key
+      name: v1-api-keys-provider-key
+      description: REST surface for v1-api-keys-provider-key.
+      operations:
+      - method: POST
+        name: createproviderkey
+        description: createproviderkey
+        call: helicone-api-key.createproviderkey
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/api-keys/provider-key/{providerkeyid}
+      name: v1-api-keys-provider-key-providerkeyid
+      description: REST surface for v1-api-keys-provider-key-providerKeyId.
+      operations:
+      - method: DELETE
+        name: deleteproviderkey
+        description: deleteproviderkey
+        call: helicone-api-key.deleteproviderkey
+        with:
+          providerKeyId: rest.providerKeyId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: getproviderkey
+        description: getproviderkey
+        call: helicone-api-key.getproviderkey
+        with:
+          providerKeyId: rest.providerKeyId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updateproviderkey
+        description: updateproviderkey
+        call: helicone-api-key.updateproviderkey
+        with:
+          providerKeyId: rest.providerKeyId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/api-keys/provider-keys
+      name: v1-api-keys-provider-keys
+      description: REST surface for v1-api-keys-provider-keys.
+      operations:
+      - method: GET
+        name: getproviderkeys
+        description: getproviderkeys
+        call: helicone-api-key.getproviderkeys
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/api-keys/proxy-key
+      name: v1-api-keys-proxy-key
+      description: REST surface for v1-api-keys-proxy-key.
+      operations:
+      - method: POST
+        name: createproxykey
+        description: createproxykey
+        call: helicone-api-key.createproxykey
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/api-keys/{apikeyid}
+      name: v1-api-keys-apikeyid
+      description: REST surface for v1-api-keys-apiKeyId.
+      operations:
+      - method: DELETE
+        name: deleteapikey
+        description: deleteapikey
+        call: helicone-api-key.deleteapikey
+        with:
+          apiKeyId: rest.apiKeyId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updateapikey
+        description: updateapikey
+        call: helicone-api-key.updateapikey
+        with:
+          apiKeyId: rest.apiKeyId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: helicone-api-key-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for helicone-api — API Key. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: getapikeys
+      description: getapikeys
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-api-key.getapikeys
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createapikey
+      description: createapikey
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-api-key.createapikey
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createproviderkey
+      description: createproviderkey
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-api-key.createproviderkey
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteproviderkey
+      description: deleteproviderkey
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: helicone-api-key.deleteproviderkey
+      with:
+        providerKeyId: tools.providerKeyId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getproviderkey
+      description: getproviderkey
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-api-key.getproviderkey
+      with:
+        providerKeyId: tools.providerKeyId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updateproviderkey
+      description: updateproviderkey
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: helicone-api-key.updateproviderkey
+      with:
+        providerKeyId: tools.providerKeyId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getproviderkeys
+      description: getproviderkeys
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-api-key.getproviderkeys
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createproxykey
+      description: createproxykey
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-api-key.createproxykey
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteapikey
+      description: deleteapikey
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: helicone-api-key.deleteapikey
+      with:
+        apiKeyId: tools.apiKeyId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updateapikey
+      description: updateapikey
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: helicone-api-key.updateapikey
+      with:
+        apiKeyId: tools.apiKeyId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

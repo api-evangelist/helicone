@@ -1,0 +1,82 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: helicone-api — Security
+  description: 'helicone-api — Security. 1 operations. Lead operation: Security. Self-contained Naftiko capability covering
+    one Helicone business surface.'
+  tags:
+  - Helicone
+  - Security
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HELICONE_API_KEY: HELICONE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: helicone-security
+    baseUri: https://api.helicone.ai
+    description: helicone-api — Security business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-public-security
+      path: /v1/public/security
+      operations:
+      - name: getsecurity
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.HELICONE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: helicone-security-rest
+    port: 8080
+    description: REST adapter for helicone-api — Security. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/v1/public/security
+      name: v1-public-security
+      description: REST surface for v1-public-security.
+      operations:
+      - method: POST
+        name: getsecurity
+        description: getsecurity
+        call: helicone-security.getsecurity
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: helicone-security-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for helicone-api — Security. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: getsecurity
+      description: getsecurity
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-security.getsecurity
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

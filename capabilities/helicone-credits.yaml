@@ -1,0 +1,263 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: helicone-api — Credits
+  description: 'helicone-api — Credits. 6 operations. Lead operation: Credits. Self-contained Naftiko capability covering
+    one Helicone business surface.'
+  tags:
+  - Helicone
+  - Credits
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HELICONE_API_KEY: HELICONE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: helicone-credits
+    baseUri: https://api.helicone.ai
+    description: helicone-api — Credits business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-credits-balance
+      path: /v1/credits/balance
+      operations:
+      - name: getcreditsbalance
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-credits-discounts
+      path: /v1/credits/discounts
+      operations:
+      - name: getdiscounts
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-credits-invoices
+      path: /v1/credits/invoices
+      operations:
+      - name: listinvoices
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-credits-payments
+      path: /v1/credits/payments
+      operations:
+      - name: listtokenusagepayments
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: page
+          in: query
+          type: number
+        - name: pageSize
+          in: query
+          type: number
+    - name: v1-credits-spend-breakdown
+      path: /v1/credits/spend/breakdown
+      operations:
+      - name: getspendbreakdown
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: timeRange
+          in: query
+          type: string
+        - name: startDate
+          in: query
+          type: string
+        - name: endDate
+          in: query
+          type: string
+    - name: v1-credits-totalSpend
+      path: /v1/credits/totalSpend
+      operations:
+      - name: gettotalspend
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.HELICONE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: helicone-credits-rest
+    port: 8080
+    description: REST adapter for helicone-api — Credits. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/v1/credits/balance
+      name: v1-credits-balance
+      description: REST surface for v1-credits-balance.
+      operations:
+      - method: GET
+        name: getcreditsbalance
+        description: getcreditsbalance
+        call: helicone-credits.getcreditsbalance
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/credits/discounts
+      name: v1-credits-discounts
+      description: REST surface for v1-credits-discounts.
+      operations:
+      - method: GET
+        name: getdiscounts
+        description: getdiscounts
+        call: helicone-credits.getdiscounts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/credits/invoices
+      name: v1-credits-invoices
+      description: REST surface for v1-credits-invoices.
+      operations:
+      - method: GET
+        name: listinvoices
+        description: listinvoices
+        call: helicone-credits.listinvoices
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/credits/payments
+      name: v1-credits-payments
+      description: REST surface for v1-credits-payments.
+      operations:
+      - method: GET
+        name: listtokenusagepayments
+        description: listtokenusagepayments
+        call: helicone-credits.listtokenusagepayments
+        with:
+          page: rest.page
+          pageSize: rest.pageSize
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/credits/spend/breakdown
+      name: v1-credits-spend-breakdown
+      description: REST surface for v1-credits-spend-breakdown.
+      operations:
+      - method: GET
+        name: getspendbreakdown
+        description: getspendbreakdown
+        call: helicone-credits.getspendbreakdown
+        with:
+          timeRange: rest.timeRange
+          startDate: rest.startDate
+          endDate: rest.endDate
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/credits/totalspend
+      name: v1-credits-totalspend
+      description: REST surface for v1-credits-totalSpend.
+      operations:
+      - method: GET
+        name: gettotalspend
+        description: gettotalspend
+        call: helicone-credits.gettotalspend
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: helicone-credits-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for helicone-api — Credits. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: getcreditsbalance
+      description: getcreditsbalance
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-credits.getcreditsbalance
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getdiscounts
+      description: getdiscounts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-credits.getdiscounts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listinvoices
+      description: listinvoices
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-credits.listinvoices
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listtokenusagepayments
+      description: listtokenusagepayments
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-credits.listtokenusagepayments
+      with:
+        page: tools.page
+        pageSize: tools.pageSize
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getspendbreakdown
+      description: getspendbreakdown
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-credits.getspendbreakdown
+      with:
+        timeRange: tools.timeRange
+        startDate: tools.startDate
+        endDate: tools.endDate
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gettotalspend
+      description: gettotalspend
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-credits.gettotalspend
+      outputParameters:
+      - type: object
+        mapping: $.

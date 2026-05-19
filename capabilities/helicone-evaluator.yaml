@@ -1,0 +1,577 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: helicone-api — Evaluator
+  description: 'helicone-api — Evaluator. 13 operations. Lead operation: Evaluator. Self-contained Naftiko capability covering
+    one Helicone business surface.'
+  tags:
+  - Helicone
+  - Evaluator
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HELICONE_API_KEY: HELICONE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: helicone-evaluator
+    baseUri: https://api.helicone.ai
+    description: helicone-api — Evaluator business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-evaluator
+      path: /v1/evaluator
+      operations:
+      - name: createevaluator
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-evaluator-lastmile-test
+      path: /v1/evaluator/lastmile/test
+      operations:
+      - name: testlastmileevaluator
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-evaluator-llm-test
+      path: /v1/evaluator/llm/test
+      operations:
+      - name: testllmevaluator
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-evaluator-python-test
+      path: /v1/evaluator/python/test
+      operations:
+      - name: testpythonevaluator
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-evaluator-query
+      path: /v1/evaluator/query
+      operations:
+      - name: queryevaluators
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-evaluator-evaluatorId
+      path: /v1/evaluator/{evaluatorId}
+      operations:
+      - name: getevaluator
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: evaluatorId
+          in: path
+          type: string
+          required: true
+      - name: updateevaluator
+        method: PUT
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: evaluatorId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deleteevaluator
+        method: DELETE
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: evaluatorId
+          in: path
+          type: string
+          required: true
+    - name: v1-evaluator-evaluatorId-experiments
+      path: /v1/evaluator/{evaluatorId}/experiments
+      operations:
+      - name: getexperimentsforevaluator
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: evaluatorId
+          in: path
+          type: string
+          required: true
+    - name: v1-evaluator-evaluatorId-onlineEvaluators
+      path: /v1/evaluator/{evaluatorId}/onlineEvaluators
+      operations:
+      - name: getonlineevaluators
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: evaluatorId
+          in: path
+          type: string
+          required: true
+      - name: createonlineevaluator
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: evaluatorId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-evaluator-evaluatorId-onlineEvaluators-onlineEvaluatorId
+      path: /v1/evaluator/{evaluatorId}/onlineEvaluators/{onlineEvaluatorId}
+      operations:
+      - name: deleteonlineevaluator
+        method: DELETE
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: evaluatorId
+          in: path
+          type: string
+          required: true
+        - name: onlineEvaluatorId
+          in: path
+          type: string
+          required: true
+    - name: v1-evaluator-evaluatorId-stats
+      path: /v1/evaluator/{evaluatorId}/stats
+      operations:
+      - name: getevaluatorstats
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: evaluatorId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.HELICONE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: helicone-evaluator-rest
+    port: 8080
+    description: REST adapter for helicone-api — Evaluator. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/v1/evaluator
+      name: v1-evaluator
+      description: REST surface for v1-evaluator.
+      operations:
+      - method: POST
+        name: createevaluator
+        description: createevaluator
+        call: helicone-evaluator.createevaluator
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/evaluator/lastmile/test
+      name: v1-evaluator-lastmile-test
+      description: REST surface for v1-evaluator-lastmile-test.
+      operations:
+      - method: POST
+        name: testlastmileevaluator
+        description: testlastmileevaluator
+        call: helicone-evaluator.testlastmileevaluator
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/evaluator/llm/test
+      name: v1-evaluator-llm-test
+      description: REST surface for v1-evaluator-llm-test.
+      operations:
+      - method: POST
+        name: testllmevaluator
+        description: testllmevaluator
+        call: helicone-evaluator.testllmevaluator
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/evaluator/python/test
+      name: v1-evaluator-python-test
+      description: REST surface for v1-evaluator-python-test.
+      operations:
+      - method: POST
+        name: testpythonevaluator
+        description: testpythonevaluator
+        call: helicone-evaluator.testpythonevaluator
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/evaluator/query
+      name: v1-evaluator-query
+      description: REST surface for v1-evaluator-query.
+      operations:
+      - method: POST
+        name: queryevaluators
+        description: queryevaluators
+        call: helicone-evaluator.queryevaluators
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/evaluator/{evaluatorid}
+      name: v1-evaluator-evaluatorid
+      description: REST surface for v1-evaluator-evaluatorId.
+      operations:
+      - method: GET
+        name: getevaluator
+        description: getevaluator
+        call: helicone-evaluator.getevaluator
+        with:
+          evaluatorId: rest.evaluatorId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updateevaluator
+        description: updateevaluator
+        call: helicone-evaluator.updateevaluator
+        with:
+          evaluatorId: rest.evaluatorId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleteevaluator
+        description: deleteevaluator
+        call: helicone-evaluator.deleteevaluator
+        with:
+          evaluatorId: rest.evaluatorId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/evaluator/{evaluatorid}/experiments
+      name: v1-evaluator-evaluatorid-experiments
+      description: REST surface for v1-evaluator-evaluatorId-experiments.
+      operations:
+      - method: GET
+        name: getexperimentsforevaluator
+        description: getexperimentsforevaluator
+        call: helicone-evaluator.getexperimentsforevaluator
+        with:
+          evaluatorId: rest.evaluatorId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/evaluator/{evaluatorid}/onlineevaluators
+      name: v1-evaluator-evaluatorid-onlineevaluators
+      description: REST surface for v1-evaluator-evaluatorId-onlineEvaluators.
+      operations:
+      - method: GET
+        name: getonlineevaluators
+        description: getonlineevaluators
+        call: helicone-evaluator.getonlineevaluators
+        with:
+          evaluatorId: rest.evaluatorId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createonlineevaluator
+        description: createonlineevaluator
+        call: helicone-evaluator.createonlineevaluator
+        with:
+          evaluatorId: rest.evaluatorId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/evaluator/{evaluatorid}/onlineevaluators/{onlineevaluatorid}
+      name: v1-evaluator-evaluatorid-onlineevaluators-onlineevaluatorid
+      description: REST surface for v1-evaluator-evaluatorId-onlineEvaluators-onlineEvaluatorId.
+      operations:
+      - method: DELETE
+        name: deleteonlineevaluator
+        description: deleteonlineevaluator
+        call: helicone-evaluator.deleteonlineevaluator
+        with:
+          evaluatorId: rest.evaluatorId
+          onlineEvaluatorId: rest.onlineEvaluatorId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/evaluator/{evaluatorid}/stats
+      name: v1-evaluator-evaluatorid-stats
+      description: REST surface for v1-evaluator-evaluatorId-stats.
+      operations:
+      - method: GET
+        name: getevaluatorstats
+        description: getevaluatorstats
+        call: helicone-evaluator.getevaluatorstats
+        with:
+          evaluatorId: rest.evaluatorId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: helicone-evaluator-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for helicone-api — Evaluator. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: createevaluator
+      description: createevaluator
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-evaluator.createevaluator
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: testlastmileevaluator
+      description: testlastmileevaluator
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-evaluator.testlastmileevaluator
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: testllmevaluator
+      description: testllmevaluator
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-evaluator.testllmevaluator
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: testpythonevaluator
+      description: testpythonevaluator
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-evaluator.testpythonevaluator
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: queryevaluators
+      description: queryevaluators
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: helicone-evaluator.queryevaluators
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getevaluator
+      description: getevaluator
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-evaluator.getevaluator
+      with:
+        evaluatorId: tools.evaluatorId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updateevaluator
+      description: updateevaluator
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: helicone-evaluator.updateevaluator
+      with:
+        evaluatorId: tools.evaluatorId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteevaluator
+      description: deleteevaluator
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: helicone-evaluator.deleteevaluator
+      with:
+        evaluatorId: tools.evaluatorId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getexperimentsforevaluator
+      description: getexperimentsforevaluator
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-evaluator.getexperimentsforevaluator
+      with:
+        evaluatorId: tools.evaluatorId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getonlineevaluators
+      description: getonlineevaluators
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-evaluator.getonlineevaluators
+      with:
+        evaluatorId: tools.evaluatorId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createonlineevaluator
+      description: createonlineevaluator
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-evaluator.createonlineevaluator
+      with:
+        evaluatorId: tools.evaluatorId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteonlineevaluator
+      description: deleteonlineevaluator
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: helicone-evaluator.deleteonlineevaluator
+      with:
+        evaluatorId: tools.evaluatorId
+        onlineEvaluatorId: tools.onlineEvaluatorId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getevaluatorstats
+      description: getevaluatorstats
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-evaluator.getevaluatorstats
+      with:
+        evaluatorId: tools.evaluatorId
+      outputParameters:
+      - type: object
+        mapping: $.

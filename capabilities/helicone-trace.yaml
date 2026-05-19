@@ -1,0 +1,250 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: helicone-api — Trace
+  description: 'helicone-api — Trace. 5 operations. Lead operation: Trace. Self-contained Naftiko capability covering one
+    Helicone business surface.'
+  tags:
+  - Helicone
+  - Trace
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HELICONE_API_KEY: HELICONE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: helicone-trace
+    baseUri: https://api.helicone.ai
+    description: helicone-api — Trace business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-trace-custom-log
+      path: /v1/trace/custom/log
+      operations:
+      - name: logcustomtrace
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-trace-custom-log-typed
+      path: /v1/trace/custom/log/typed
+      operations:
+      - name: logcustomtracetyped
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-trace-custom-v1-log
+      path: /v1/trace/custom/v1/log
+      operations:
+      - name: logcustomtracelegacy
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-trace-log
+      path: /v1/trace/log
+      operations:
+      - name: logtrace
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-trace-log-python
+      path: /v1/trace/log-python
+      operations:
+      - name: logpythontrace
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.HELICONE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: helicone-trace-rest
+    port: 8080
+    description: REST adapter for helicone-api — Trace. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/v1/trace/custom/log
+      name: v1-trace-custom-log
+      description: REST surface for v1-trace-custom-log.
+      operations:
+      - method: POST
+        name: logcustomtrace
+        description: logcustomtrace
+        call: helicone-trace.logcustomtrace
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/trace/custom/log/typed
+      name: v1-trace-custom-log-typed
+      description: REST surface for v1-trace-custom-log-typed.
+      operations:
+      - method: POST
+        name: logcustomtracetyped
+        description: logcustomtracetyped
+        call: helicone-trace.logcustomtracetyped
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/trace/custom/v1/log
+      name: v1-trace-custom-v1-log
+      description: REST surface for v1-trace-custom-v1-log.
+      operations:
+      - method: POST
+        name: logcustomtracelegacy
+        description: logcustomtracelegacy
+        call: helicone-trace.logcustomtracelegacy
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/trace/log
+      name: v1-trace-log
+      description: REST surface for v1-trace-log.
+      operations:
+      - method: POST
+        name: logtrace
+        description: logtrace
+        call: helicone-trace.logtrace
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/trace/log-python
+      name: v1-trace-log-python
+      description: REST surface for v1-trace-log-python.
+      operations:
+      - method: POST
+        name: logpythontrace
+        description: logpythontrace
+        call: helicone-trace.logpythontrace
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: helicone-trace-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for helicone-api — Trace. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: logcustomtrace
+      description: logcustomtrace
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-trace.logcustomtrace
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: logcustomtracetyped
+      description: logcustomtracetyped
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-trace.logcustomtracetyped
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: logcustomtracelegacy
+      description: logcustomtracelegacy
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-trace.logcustomtracelegacy
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: logtrace
+      description: logtrace
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-trace.logtrace
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: logpythontrace
+      description: logpythontrace
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-trace.logpythontrace
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

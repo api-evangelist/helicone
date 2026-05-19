@@ -1,0 +1,935 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: helicone-api — Stripe
+  description: 'helicone-api — Stripe. 25 operations. Lead operation: Stripe. Self-contained Naftiko capability covering one
+    Helicone business surface.'
+  tags:
+  - Helicone
+  - Stripe
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HELICONE_API_KEY: HELICONE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: helicone-stripe
+    baseUri: https://api.helicone.ai
+    description: helicone-api — Stripe business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-stripe-auto-topoff-settings
+      path: /v1/stripe/auto-topoff/settings
+      operations:
+      - name: getautotopoffsettings
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updateautotopoffsettings
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: disableautotopoff
+        method: DELETE
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-stripe-cloud-checkout-session
+      path: /v1/stripe/cloud/checkout-session
+      operations:
+      - name: createcloudgatewaycheckoutsession
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-stripe-payment-intents-search
+      path: /v1/stripe/payment-intents/search
+      operations:
+      - name: searchpaymentintents
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: search_kind
+          in: query
+          type: string
+          required: true
+        - name: limit
+          in: query
+          type: number
+        - name: page
+          in: query
+          type: string
+    - name: v1-stripe-payment-methods
+      path: /v1/stripe/payment-methods
+      operations:
+      - name: getpaymentmethods
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-stripe-payment-methods-setup-session
+      path: /v1/stripe/payment-methods/setup-session
+      operations:
+      - name: createsetupsession
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-stripe-payment-methods-paymentMethodId
+      path: /v1/stripe/payment-methods/{paymentMethodId}
+      operations:
+      - name: removepaymentmethod
+        method: DELETE
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: paymentMethodId
+          in: path
+          type: string
+          required: true
+    - name: v1-stripe-subscription
+      path: /v1/stripe/subscription
+      operations:
+      - name: getsubscription
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-stripe-subscription-add-ons-productType
+      path: /v1/stripe/subscription/add-ons/{productType}
+      operations:
+      - name: addons
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: productType
+          in: path
+          type: string
+          required: true
+      - name: deleteaddons
+        method: DELETE
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: productType
+          in: path
+          type: string
+          required: true
+    - name: v1-stripe-subscription-cancel-subscription
+      path: /v1/stripe/subscription/cancel-subscription
+      operations:
+      - name: cancelsubscription
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-stripe-subscription-cost-for-evals
+      path: /v1/stripe/subscription/cost-for-evals
+      operations:
+      - name: getcostforevals
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-stripe-subscription-cost-for-experiments
+      path: /v1/stripe/subscription/cost-for-experiments
+      operations:
+      - name: getcostforexperiments
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-stripe-subscription-cost-for-prompts
+      path: /v1/stripe/subscription/cost-for-prompts
+      operations:
+      - name: getcostforprompts
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-stripe-subscription-existing-customer-upgrade-to-pro
+      path: /v1/stripe/subscription/existing-customer/upgrade-to-pro
+      operations:
+      - name: upgradeexistingcustomer
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-stripe-subscription-existing-customer-upgrade-to-team-bundle
+      path: /v1/stripe/subscription/existing-customer/upgrade-to-team-bundle
+      operations:
+      - name: upgradeexistingcustomertoteambundle
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: v1-stripe-subscription-free-usage
+      path: /v1/stripe/subscription/free/usage
+      operations:
+      - name: getfreeusage
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-stripe-subscription-manage-subscription
+      path: /v1/stripe/subscription/manage-subscription
+      operations:
+      - name: managesubscription
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-stripe-subscription-migrate-to-pro
+      path: /v1/stripe/subscription/migrate-to-pro
+      operations:
+      - name: migratetopro
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-stripe-subscription-new-customer-upgrade-to-pro
+      path: /v1/stripe/subscription/new-customer/upgrade-to-pro
+      operations:
+      - name: upgradetopro
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-stripe-subscription-new-customer-upgrade-to-team-bundle
+      path: /v1/stripe/subscription/new-customer/upgrade-to-team-bundle
+      operations:
+      - name: upgradetoteambundle
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: v1-stripe-subscription-preview-invoice
+      path: /v1/stripe/subscription/preview-invoice
+      operations:
+      - name: previewinvoice
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-stripe-subscription-undo-cancel-subscription
+      path: /v1/stripe/subscription/undo-cancel-subscription
+      operations:
+      - name: undocancelsubscription
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-stripe-subscription-usage-stats
+      path: /v1/stripe/subscription/usage-stats
+      operations:
+      - name: getusagestats
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.HELICONE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: helicone-stripe-rest
+    port: 8080
+    description: REST adapter for helicone-api — Stripe. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/v1/stripe/auto-topoff/settings
+      name: v1-stripe-auto-topoff-settings
+      description: REST surface for v1-stripe-auto-topoff-settings.
+      operations:
+      - method: GET
+        name: getautotopoffsettings
+        description: getautotopoffsettings
+        call: helicone-stripe.getautotopoffsettings
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: updateautotopoffsettings
+        description: updateautotopoffsettings
+        call: helicone-stripe.updateautotopoffsettings
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: disableautotopoff
+        description: disableautotopoff
+        call: helicone-stripe.disableautotopoff
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/stripe/cloud/checkout-session
+      name: v1-stripe-cloud-checkout-session
+      description: REST surface for v1-stripe-cloud-checkout-session.
+      operations:
+      - method: POST
+        name: createcloudgatewaycheckoutsession
+        description: createcloudgatewaycheckoutsession
+        call: helicone-stripe.createcloudgatewaycheckoutsession
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/stripe/payment-intents/search
+      name: v1-stripe-payment-intents-search
+      description: REST surface for v1-stripe-payment-intents-search.
+      operations:
+      - method: GET
+        name: searchpaymentintents
+        description: searchpaymentintents
+        call: helicone-stripe.searchpaymentintents
+        with:
+          search_kind: rest.search_kind
+          limit: rest.limit
+          page: rest.page
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/stripe/payment-methods
+      name: v1-stripe-payment-methods
+      description: REST surface for v1-stripe-payment-methods.
+      operations:
+      - method: GET
+        name: getpaymentmethods
+        description: getpaymentmethods
+        call: helicone-stripe.getpaymentmethods
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/stripe/payment-methods/setup-session
+      name: v1-stripe-payment-methods-setup-session
+      description: REST surface for v1-stripe-payment-methods-setup-session.
+      operations:
+      - method: POST
+        name: createsetupsession
+        description: createsetupsession
+        call: helicone-stripe.createsetupsession
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/stripe/payment-methods/{paymentmethodid}
+      name: v1-stripe-payment-methods-paymentmethodid
+      description: REST surface for v1-stripe-payment-methods-paymentMethodId.
+      operations:
+      - method: DELETE
+        name: removepaymentmethod
+        description: removepaymentmethod
+        call: helicone-stripe.removepaymentmethod
+        with:
+          paymentMethodId: rest.paymentMethodId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/stripe/subscription
+      name: v1-stripe-subscription
+      description: REST surface for v1-stripe-subscription.
+      operations:
+      - method: GET
+        name: getsubscription
+        description: getsubscription
+        call: helicone-stripe.getsubscription
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/stripe/subscription/add-ons/{producttype}
+      name: v1-stripe-subscription-add-ons-producttype
+      description: REST surface for v1-stripe-subscription-add-ons-productType.
+      operations:
+      - method: POST
+        name: addons
+        description: addons
+        call: helicone-stripe.addons
+        with:
+          productType: rest.productType
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleteaddons
+        description: deleteaddons
+        call: helicone-stripe.deleteaddons
+        with:
+          productType: rest.productType
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/stripe/subscription/cancel-subscription
+      name: v1-stripe-subscription-cancel-subscription
+      description: REST surface for v1-stripe-subscription-cancel-subscription.
+      operations:
+      - method: POST
+        name: cancelsubscription
+        description: cancelsubscription
+        call: helicone-stripe.cancelsubscription
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/stripe/subscription/cost-for-evals
+      name: v1-stripe-subscription-cost-for-evals
+      description: REST surface for v1-stripe-subscription-cost-for-evals.
+      operations:
+      - method: GET
+        name: getcostforevals
+        description: getcostforevals
+        call: helicone-stripe.getcostforevals
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/stripe/subscription/cost-for-experiments
+      name: v1-stripe-subscription-cost-for-experiments
+      description: REST surface for v1-stripe-subscription-cost-for-experiments.
+      operations:
+      - method: GET
+        name: getcostforexperiments
+        description: getcostforexperiments
+        call: helicone-stripe.getcostforexperiments
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/stripe/subscription/cost-for-prompts
+      name: v1-stripe-subscription-cost-for-prompts
+      description: REST surface for v1-stripe-subscription-cost-for-prompts.
+      operations:
+      - method: GET
+        name: getcostforprompts
+        description: getcostforprompts
+        call: helicone-stripe.getcostforprompts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/stripe/subscription/existing-customer/upgrade-to-pro
+      name: v1-stripe-subscription-existing-customer-upgrade-to-pro
+      description: REST surface for v1-stripe-subscription-existing-customer-upgrade-to-pro.
+      operations:
+      - method: POST
+        name: upgradeexistingcustomer
+        description: upgradeexistingcustomer
+        call: helicone-stripe.upgradeexistingcustomer
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/stripe/subscription/existing-customer/upgrade-to-team-bundle
+      name: v1-stripe-subscription-existing-customer-upgrade-to-team-bundle
+      description: REST surface for v1-stripe-subscription-existing-customer-upgrade-to-team-bundle.
+      operations:
+      - method: POST
+        name: upgradeexistingcustomertoteambundle
+        description: upgradeexistingcustomertoteambundle
+        call: helicone-stripe.upgradeexistingcustomertoteambundle
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/stripe/subscription/free/usage
+      name: v1-stripe-subscription-free-usage
+      description: REST surface for v1-stripe-subscription-free-usage.
+      operations:
+      - method: GET
+        name: getfreeusage
+        description: getfreeusage
+        call: helicone-stripe.getfreeusage
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/stripe/subscription/manage-subscription
+      name: v1-stripe-subscription-manage-subscription
+      description: REST surface for v1-stripe-subscription-manage-subscription.
+      operations:
+      - method: POST
+        name: managesubscription
+        description: managesubscription
+        call: helicone-stripe.managesubscription
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/stripe/subscription/migrate-to-pro
+      name: v1-stripe-subscription-migrate-to-pro
+      description: REST surface for v1-stripe-subscription-migrate-to-pro.
+      operations:
+      - method: POST
+        name: migratetopro
+        description: migratetopro
+        call: helicone-stripe.migratetopro
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/stripe/subscription/new-customer/upgrade-to-pro
+      name: v1-stripe-subscription-new-customer-upgrade-to-pro
+      description: REST surface for v1-stripe-subscription-new-customer-upgrade-to-pro.
+      operations:
+      - method: POST
+        name: upgradetopro
+        description: upgradetopro
+        call: helicone-stripe.upgradetopro
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/stripe/subscription/new-customer/upgrade-to-team-bundle
+      name: v1-stripe-subscription-new-customer-upgrade-to-team-bundle
+      description: REST surface for v1-stripe-subscription-new-customer-upgrade-to-team-bundle.
+      operations:
+      - method: POST
+        name: upgradetoteambundle
+        description: upgradetoteambundle
+        call: helicone-stripe.upgradetoteambundle
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/stripe/subscription/preview-invoice
+      name: v1-stripe-subscription-preview-invoice
+      description: REST surface for v1-stripe-subscription-preview-invoice.
+      operations:
+      - method: GET
+        name: previewinvoice
+        description: previewinvoice
+        call: helicone-stripe.previewinvoice
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/stripe/subscription/undo-cancel-subscription
+      name: v1-stripe-subscription-undo-cancel-subscription
+      description: REST surface for v1-stripe-subscription-undo-cancel-subscription.
+      operations:
+      - method: POST
+        name: undocancelsubscription
+        description: undocancelsubscription
+        call: helicone-stripe.undocancelsubscription
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/stripe/subscription/usage-stats
+      name: v1-stripe-subscription-usage-stats
+      description: REST surface for v1-stripe-subscription-usage-stats.
+      operations:
+      - method: GET
+        name: getusagestats
+        description: getusagestats
+        call: helicone-stripe.getusagestats
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: helicone-stripe-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for helicone-api — Stripe. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: getautotopoffsettings
+      description: getautotopoffsettings
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-stripe.getautotopoffsettings
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updateautotopoffsettings
+      description: updateautotopoffsettings
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-stripe.updateautotopoffsettings
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: disableautotopoff
+      description: disableautotopoff
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: helicone-stripe.disableautotopoff
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createcloudgatewaycheckoutsession
+      description: createcloudgatewaycheckoutsession
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-stripe.createcloudgatewaycheckoutsession
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: searchpaymentintents
+      description: searchpaymentintents
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-stripe.searchpaymentintents
+      with:
+        search_kind: tools.search_kind
+        limit: tools.limit
+        page: tools.page
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getpaymentmethods
+      description: getpaymentmethods
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-stripe.getpaymentmethods
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createsetupsession
+      description: createsetupsession
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-stripe.createsetupsession
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: removepaymentmethod
+      description: removepaymentmethod
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: helicone-stripe.removepaymentmethod
+      with:
+        paymentMethodId: tools.paymentMethodId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getsubscription
+      description: getsubscription
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-stripe.getsubscription
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: addons
+      description: addons
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-stripe.addons
+      with:
+        productType: tools.productType
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteaddons
+      description: deleteaddons
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: helicone-stripe.deleteaddons
+      with:
+        productType: tools.productType
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: cancelsubscription
+      description: cancelsubscription
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-stripe.cancelsubscription
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcostforevals
+      description: getcostforevals
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-stripe.getcostforevals
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcostforexperiments
+      description: getcostforexperiments
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-stripe.getcostforexperiments
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcostforprompts
+      description: getcostforprompts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-stripe.getcostforprompts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: upgradeexistingcustomer
+      description: upgradeexistingcustomer
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-stripe.upgradeexistingcustomer
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: upgradeexistingcustomertoteambundle
+      description: upgradeexistingcustomertoteambundle
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-stripe.upgradeexistingcustomertoteambundle
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getfreeusage
+      description: getfreeusage
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-stripe.getfreeusage
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: managesubscription
+      description: managesubscription
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-stripe.managesubscription
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: migratetopro
+      description: migratetopro
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-stripe.migratetopro
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: upgradetopro
+      description: upgradetopro
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-stripe.upgradetopro
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: upgradetoteambundle
+      description: upgradetoteambundle
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-stripe.upgradetoteambundle
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: previewinvoice
+      description: previewinvoice
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-stripe.previewinvoice
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: undocancelsubscription
+      description: undocancelsubscription
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-stripe.undocancelsubscription
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getusagestats
+      description: getusagestats
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-stripe.getusagestats
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,104 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: helicone-api — Wrapped
+  description: 'helicone-api — Wrapped. 2 operations. Lead operation: Wrapped. Self-contained Naftiko capability covering
+    one Helicone business surface.'
+  tags:
+  - Helicone
+  - Wrapped
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HELICONE_API_KEY: HELICONE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: helicone-wrapped
+    baseUri: https://api.helicone.ai
+    description: helicone-api — Wrapped business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-wrapped-2025
+      path: /v1/wrapped/2025
+      operations:
+      - name: getwrapped2025stats
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-wrapped-2025-check
+      path: /v1/wrapped/2025/check
+      operations:
+      - name: checkhaswrapped2025data
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.HELICONE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: helicone-wrapped-rest
+    port: 8080
+    description: REST adapter for helicone-api — Wrapped. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/v1/wrapped/2025
+      name: v1-wrapped-2025
+      description: REST surface for v1-wrapped-2025.
+      operations:
+      - method: GET
+        name: getwrapped2025stats
+        description: getwrapped2025stats
+        call: helicone-wrapped.getwrapped2025stats
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/wrapped/2025/check
+      name: v1-wrapped-2025-check
+      description: REST surface for v1-wrapped-2025-check.
+      operations:
+      - method: GET
+        name: checkhaswrapped2025data
+        description: checkhaswrapped2025data
+        call: helicone-wrapped.checkhaswrapped2025data
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: helicone-wrapped-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for helicone-api — Wrapped. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: getwrapped2025stats
+      description: getwrapped2025stats
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-wrapped.getwrapped2025stats
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: checkhaswrapped2025data
+      description: checkhaswrapped2025data
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-wrapped.checkhaswrapped2025data
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,130 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: helicone-api — Customer
+  description: 'helicone-api — Customer. 2 operations. Lead operation: Customer. Self-contained Naftiko capability covering
+    one Helicone business surface.'
+  tags:
+  - Helicone
+  - Customer
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HELICONE_API_KEY: HELICONE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: helicone-customer
+    baseUri: https://api.helicone.ai
+    description: helicone-api — Customer business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-customer-query
+      path: /v1/customer/query
+      operations:
+      - name: getcustomers
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-customer-customerId-usage-query
+      path: /v1/customer/{customerId}/usage/query
+      operations:
+      - name: getcustomerusage
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: customerId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.HELICONE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: helicone-customer-rest
+    port: 8080
+    description: REST adapter for helicone-api — Customer. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/v1/customer/query
+      name: v1-customer-query
+      description: REST surface for v1-customer-query.
+      operations:
+      - method: POST
+        name: getcustomers
+        description: getcustomers
+        call: helicone-customer.getcustomers
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/customer/{customerid}/usage/query
+      name: v1-customer-customerid-usage-query
+      description: REST surface for v1-customer-customerId-usage-query.
+      operations:
+      - method: POST
+        name: getcustomerusage
+        description: getcustomerusage
+        call: helicone-customer.getcustomerusage
+        with:
+          customerId: rest.customerId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: helicone-customer-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for helicone-api — Customer. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: getcustomers
+      description: getcustomers
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-customer.getcustomers
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcustomerusage
+      description: getcustomerusage
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-customer.getcustomerusage
+      with:
+        customerId: tools.customerId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

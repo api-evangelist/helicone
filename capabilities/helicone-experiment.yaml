@@ -1,0 +1,1942 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: helicone-api — Experiment
+  description: 'helicone-api — Experiment. 44 operations. Lead operation: Experiment. Self-contained Naftiko capability covering
+    one Helicone business surface.'
+  tags:
+  - Helicone
+  - Experiment
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HELICONE_API_KEY: HELICONE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: helicone-experiment
+    baseUri: https://api.helicone.ai
+    description: helicone-api — Experiment business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-experiment
+      path: /v1/experiment
+      operations:
+      - name: createnewexperimentold
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-experiment-hypothesis
+      path: /v1/experiment/hypothesis
+      operations:
+      - name: createnewexperimenthypothesis
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-experiment-hypothesis-hypothesisId-scores-query
+      path: /v1/experiment/hypothesis/{hypothesisId}/scores/query
+      operations:
+      - name: getexperimenthypothesisscores
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: hypothesisId
+          in: path
+          type: string
+          required: true
+    - name: v1-experiment-new-empty
+      path: /v1/experiment/new-empty
+      operations:
+      - name: createnewemptyexperiment
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-experiment-query
+      path: /v1/experiment/query
+      operations:
+      - name: getexperimentsold
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-experiment-table-new
+      path: /v1/experiment/table/new
+      operations:
+      - name: createnewexperimenttable
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-experiment-table-experimentTableId-cell
+      path: /v1/experiment/table/{experimentTableId}/cell
+      operations:
+      - name: createexperimentcell
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentTableId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: updateexperimentcell
+        method: PATCH
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentTableId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-experiment-table-experimentTableId-column
+      path: /v1/experiment/table/{experimentTableId}/column
+      operations:
+      - name: createexperimentcolumn
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentTableId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-experiment-table-experimentTableId-metadata-query
+      path: /v1/experiment/table/{experimentTableId}/metadata/query
+      operations:
+      - name: getexperimenttablemetadata
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentTableId
+          in: path
+          type: string
+          required: true
+    - name: v1-experiment-table-experimentTableId-query
+      path: /v1/experiment/table/{experimentTableId}/query
+      operations:
+      - name: getexperimenttablebyid
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentTableId
+          in: path
+          type: string
+          required: true
+    - name: v1-experiment-table-experimentTableId-row-insert-batch
+      path: /v1/experiment/table/{experimentTableId}/row/insert/batch
+      operations:
+      - name: createexperimenttablerowwithcellsbatch
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentTableId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-experiment-table-experimentTableId-row-new
+      path: /v1/experiment/table/{experimentTableId}/row/new
+      operations:
+      - name: createexperimenttablerow
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentTableId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-experiment-table-experimentTableId-row-rowIndex
+      path: /v1/experiment/table/{experimentTableId}/row/{rowIndex}
+      operations:
+      - name: deleteexperimenttablerow
+        method: DELETE
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentTableId
+          in: path
+          type: string
+          required: true
+        - name: rowIndex
+          in: path
+          type: number
+          required: true
+    - name: v1-experiment-tables-query
+      path: /v1/experiment/tables/query
+      operations:
+      - name: getexperimenttables
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-experiment-update-meta
+      path: /v1/experiment/update-meta
+      operations:
+      - name: updateexperimentmeta
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-experiment-experimentId-evaluators
+      path: /v1/experiment/{experimentId}/evaluators
+      operations:
+      - name: getexperimentevaluators
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentId
+          in: path
+          type: string
+          required: true
+      - name: createexperimentevaluatorold
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-experiment-experimentId-evaluators-run
+      path: /v1/experiment/{experimentId}/evaluators/run
+      operations:
+      - name: runexperimentevaluatorsold
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentId
+          in: path
+          type: string
+          required: true
+    - name: v1-experiment-experimentId-evaluators-evaluatorId
+      path: /v1/experiment/{experimentId}/evaluators/{evaluatorId}
+      operations:
+      - name: deleteexperimentevaluatorold
+        method: DELETE
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentId
+          in: path
+          type: string
+          required: true
+        - name: evaluatorId
+          in: path
+          type: string
+          required: true
+    - name: v2-experiment
+      path: /v2/experiment
+      operations:
+      - name: getexperiments
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v2-experiment-create-empty
+      path: /v2/experiment/create/empty
+      operations:
+      - name: createemptyexperiment
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v2-experiment-create-from-request-requestId
+      path: /v2/experiment/create/from-request/{requestId}
+      operations:
+      - name: createexperimentfromrequest
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: requestId
+          in: path
+          type: string
+          required: true
+    - name: v2-experiment-new
+      path: /v2/experiment/new
+      operations:
+      - name: createnewexperiment
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v2-experiment-experimentId
+      path: /v2/experiment/{experimentId}
+      operations:
+      - name: deleteexperiment
+        method: DELETE
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentId
+          in: path
+          type: string
+          required: true
+      - name: getexperimentbyid
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentId
+          in: path
+          type: string
+          required: true
+    - name: v2-experiment-experimentId-add-manual-row
+      path: /v2/experiment/{experimentId}/add-manual-row
+      operations:
+      - name: addmanualrowtoexperiment
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v2-experiment-experimentId-add-manual-rows-batch
+      path: /v2/experiment/{experimentId}/add-manual-rows-batch
+      operations:
+      - name: addmanualrowstoexperimentbatch
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v2-experiment-experimentId-evaluators
+      path: /v2/experiment/{experimentId}/evaluators
+      operations:
+      - name: getexperimentevaluators
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentId
+          in: path
+          type: string
+          required: true
+      - name: createexperimentevaluator
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v2-experiment-experimentId-evaluators-run
+      path: /v2/experiment/{experimentId}/evaluators/run
+      operations:
+      - name: runexperimentevaluators
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentId
+          in: path
+          type: string
+          required: true
+    - name: v2-experiment-experimentId-evaluators-evaluatorId
+      path: /v2/experiment/{experimentId}/evaluators/{evaluatorId}
+      operations:
+      - name: deleteexperimentevaluator
+        method: DELETE
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentId
+          in: path
+          type: string
+          required: true
+        - name: evaluatorId
+          in: path
+          type: string
+          required: true
+    - name: v2-experiment-experimentId-input-keys
+      path: /v2/experiment/{experimentId}/input-keys
+      operations:
+      - name: getinputkeysforexperiment
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentId
+          in: path
+          type: string
+          required: true
+    - name: v2-experiment-experimentId-prompt-version
+      path: /v2/experiment/{experimentId}/prompt-version
+      operations:
+      - name: createnewpromptversionforexperiment
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v2-experiment-experimentId-prompt-version-promptVersionId
+      path: /v2/experiment/{experimentId}/prompt-version/{promptVersionId}
+      operations:
+      - name: deletepromptversion
+        method: DELETE
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentId
+          in: path
+          type: string
+          required: true
+        - name: promptVersionId
+          in: path
+          type: string
+          required: true
+    - name: v2-experiment-experimentId-prompt-versions
+      path: /v2/experiment/{experimentId}/prompt-versions
+      operations:
+      - name: getpromptversionsforexperiment
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentId
+          in: path
+          type: string
+          required: true
+    - name: v2-experiment-experimentId-row-insert-batch
+      path: /v2/experiment/{experimentId}/row/insert/batch
+      operations:
+      - name: createexperimenttablerowbatch
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v2-experiment-experimentId-row-insert-dataset-datasetId
+      path: /v2/experiment/{experimentId}/row/insert/dataset/{datasetId}
+      operations:
+      - name: createexperimenttablerowfromdataset
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentId
+          in: path
+          type: string
+          required: true
+        - name: datasetId
+          in: path
+          type: string
+          required: true
+    - name: v2-experiment-experimentId-row-update
+      path: /v2/experiment/{experimentId}/row/update
+      operations:
+      - name: updateexperimenttablerow
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v2-experiment-experimentId-rows
+      path: /v2/experiment/{experimentId}/rows
+      operations:
+      - name: deleteexperimenttablerows
+        method: DELETE
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v2-experiment-experimentId-run-hypothesis
+      path: /v2/experiment/{experimentId}/run-hypothesis
+      operations:
+      - name: runhypothesis
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v2-experiment-experimentId-should-run-evaluators
+      path: /v2/experiment/{experimentId}/should-run-evaluators
+      operations:
+      - name: shouldrunevaluators
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentId
+          in: path
+          type: string
+          required: true
+    - name: v2-experiment-experimentId-promptVersionId-scores
+      path: /v2/experiment/{experimentId}/{promptVersionId}/scores
+      operations:
+      - name: getexperimentpromptversionscores
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentId
+          in: path
+          type: string
+          required: true
+        - name: promptVersionId
+          in: path
+          type: string
+          required: true
+    - name: v2-experiment-experimentId-requestId-scoreKey
+      path: /v2/experiment/{experimentId}/{requestId}/{scoreKey}
+      operations:
+      - name: getexperimentscore
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: experimentId
+          in: path
+          type: string
+          required: true
+        - name: requestId
+          in: path
+          type: string
+          required: true
+        - name: scoreKey
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.HELICONE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: helicone-experiment-rest
+    port: 8080
+    description: REST adapter for helicone-api — Experiment. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/v1/experiment
+      name: v1-experiment
+      description: REST surface for v1-experiment.
+      operations:
+      - method: POST
+        name: createnewexperimentold
+        description: createnewexperimentold
+        call: helicone-experiment.createnewexperimentold
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/experiment/hypothesis
+      name: v1-experiment-hypothesis
+      description: REST surface for v1-experiment-hypothesis.
+      operations:
+      - method: POST
+        name: createnewexperimenthypothesis
+        description: createnewexperimenthypothesis
+        call: helicone-experiment.createnewexperimenthypothesis
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/experiment/hypothesis/{hypothesisid}/scores/query
+      name: v1-experiment-hypothesis-hypothesisid-scores-query
+      description: REST surface for v1-experiment-hypothesis-hypothesisId-scores-query.
+      operations:
+      - method: POST
+        name: getexperimenthypothesisscores
+        description: getexperimenthypothesisscores
+        call: helicone-experiment.getexperimenthypothesisscores
+        with:
+          hypothesisId: rest.hypothesisId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/experiment/new-empty
+      name: v1-experiment-new-empty
+      description: REST surface for v1-experiment-new-empty.
+      operations:
+      - method: POST
+        name: createnewemptyexperiment
+        description: createnewemptyexperiment
+        call: helicone-experiment.createnewemptyexperiment
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/experiment/query
+      name: v1-experiment-query
+      description: REST surface for v1-experiment-query.
+      operations:
+      - method: POST
+        name: getexperimentsold
+        description: getexperimentsold
+        call: helicone-experiment.getexperimentsold
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/experiment/table/new
+      name: v1-experiment-table-new
+      description: REST surface for v1-experiment-table-new.
+      operations:
+      - method: POST
+        name: createnewexperimenttable
+        description: createnewexperimenttable
+        call: helicone-experiment.createnewexperimenttable
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/experiment/table/{experimenttableid}/cell
+      name: v1-experiment-table-experimenttableid-cell
+      description: REST surface for v1-experiment-table-experimentTableId-cell.
+      operations:
+      - method: POST
+        name: createexperimentcell
+        description: createexperimentcell
+        call: helicone-experiment.createexperimentcell
+        with:
+          experimentTableId: rest.experimentTableId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updateexperimentcell
+        description: updateexperimentcell
+        call: helicone-experiment.updateexperimentcell
+        with:
+          experimentTableId: rest.experimentTableId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/experiment/table/{experimenttableid}/column
+      name: v1-experiment-table-experimenttableid-column
+      description: REST surface for v1-experiment-table-experimentTableId-column.
+      operations:
+      - method: POST
+        name: createexperimentcolumn
+        description: createexperimentcolumn
+        call: helicone-experiment.createexperimentcolumn
+        with:
+          experimentTableId: rest.experimentTableId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/experiment/table/{experimenttableid}/metadata/query
+      name: v1-experiment-table-experimenttableid-metadata-query
+      description: REST surface for v1-experiment-table-experimentTableId-metadata-query.
+      operations:
+      - method: POST
+        name: getexperimenttablemetadata
+        description: getexperimenttablemetadata
+        call: helicone-experiment.getexperimenttablemetadata
+        with:
+          experimentTableId: rest.experimentTableId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/experiment/table/{experimenttableid}/query
+      name: v1-experiment-table-experimenttableid-query
+      description: REST surface for v1-experiment-table-experimentTableId-query.
+      operations:
+      - method: POST
+        name: getexperimenttablebyid
+        description: getexperimenttablebyid
+        call: helicone-experiment.getexperimenttablebyid
+        with:
+          experimentTableId: rest.experimentTableId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/experiment/table/{experimenttableid}/row/insert/batch
+      name: v1-experiment-table-experimenttableid-row-insert-batch
+      description: REST surface for v1-experiment-table-experimentTableId-row-insert-batch.
+      operations:
+      - method: POST
+        name: createexperimenttablerowwithcellsbatch
+        description: createexperimenttablerowwithcellsbatch
+        call: helicone-experiment.createexperimenttablerowwithcellsbatch
+        with:
+          experimentTableId: rest.experimentTableId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/experiment/table/{experimenttableid}/row/new
+      name: v1-experiment-table-experimenttableid-row-new
+      description: REST surface for v1-experiment-table-experimentTableId-row-new.
+      operations:
+      - method: POST
+        name: createexperimenttablerow
+        description: createexperimenttablerow
+        call: helicone-experiment.createexperimenttablerow
+        with:
+          experimentTableId: rest.experimentTableId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/experiment/table/{experimenttableid}/row/{rowindex}
+      name: v1-experiment-table-experimenttableid-row-rowindex
+      description: REST surface for v1-experiment-table-experimentTableId-row-rowIndex.
+      operations:
+      - method: DELETE
+        name: deleteexperimenttablerow
+        description: deleteexperimenttablerow
+        call: helicone-experiment.deleteexperimenttablerow
+        with:
+          experimentTableId: rest.experimentTableId
+          rowIndex: rest.rowIndex
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/experiment/tables/query
+      name: v1-experiment-tables-query
+      description: REST surface for v1-experiment-tables-query.
+      operations:
+      - method: POST
+        name: getexperimenttables
+        description: getexperimenttables
+        call: helicone-experiment.getexperimenttables
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/experiment/update-meta
+      name: v1-experiment-update-meta
+      description: REST surface for v1-experiment-update-meta.
+      operations:
+      - method: POST
+        name: updateexperimentmeta
+        description: updateexperimentmeta
+        call: helicone-experiment.updateexperimentmeta
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/experiment/{experimentid}/evaluators
+      name: v1-experiment-experimentid-evaluators
+      description: REST surface for v1-experiment-experimentId-evaluators.
+      operations:
+      - method: GET
+        name: getexperimentevaluators
+        description: getexperimentevaluators
+        call: helicone-experiment.getexperimentevaluators
+        with:
+          experimentId: rest.experimentId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createexperimentevaluatorold
+        description: createexperimentevaluatorold
+        call: helicone-experiment.createexperimentevaluatorold
+        with:
+          experimentId: rest.experimentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/experiment/{experimentid}/evaluators/run
+      name: v1-experiment-experimentid-evaluators-run
+      description: REST surface for v1-experiment-experimentId-evaluators-run.
+      operations:
+      - method: POST
+        name: runexperimentevaluatorsold
+        description: runexperimentevaluatorsold
+        call: helicone-experiment.runexperimentevaluatorsold
+        with:
+          experimentId: rest.experimentId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/experiment/{experimentid}/evaluators/{evaluatorid}
+      name: v1-experiment-experimentid-evaluators-evaluatorid
+      description: REST surface for v1-experiment-experimentId-evaluators-evaluatorId.
+      operations:
+      - method: DELETE
+        name: deleteexperimentevaluatorold
+        description: deleteexperimentevaluatorold
+        call: helicone-experiment.deleteexperimentevaluatorold
+        with:
+          experimentId: rest.experimentId
+          evaluatorId: rest.evaluatorId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/experiment
+      name: v2-experiment
+      description: REST surface for v2-experiment.
+      operations:
+      - method: GET
+        name: getexperiments
+        description: getexperiments
+        call: helicone-experiment.getexperiments
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/experiment/create/empty
+      name: v2-experiment-create-empty
+      description: REST surface for v2-experiment-create-empty.
+      operations:
+      - method: POST
+        name: createemptyexperiment
+        description: createemptyexperiment
+        call: helicone-experiment.createemptyexperiment
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/experiment/create/from-request/{requestid}
+      name: v2-experiment-create-from-request-requestid
+      description: REST surface for v2-experiment-create-from-request-requestId.
+      operations:
+      - method: POST
+        name: createexperimentfromrequest
+        description: createexperimentfromrequest
+        call: helicone-experiment.createexperimentfromrequest
+        with:
+          requestId: rest.requestId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/experiment/new
+      name: v2-experiment-new
+      description: REST surface for v2-experiment-new.
+      operations:
+      - method: POST
+        name: createnewexperiment
+        description: createnewexperiment
+        call: helicone-experiment.createnewexperiment
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/experiment/{experimentid}
+      name: v2-experiment-experimentid
+      description: REST surface for v2-experiment-experimentId.
+      operations:
+      - method: DELETE
+        name: deleteexperiment
+        description: deleteexperiment
+        call: helicone-experiment.deleteexperiment
+        with:
+          experimentId: rest.experimentId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: getexperimentbyid
+        description: getexperimentbyid
+        call: helicone-experiment.getexperimentbyid
+        with:
+          experimentId: rest.experimentId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/experiment/{experimentid}/add-manual-row
+      name: v2-experiment-experimentid-add-manual-row
+      description: REST surface for v2-experiment-experimentId-add-manual-row.
+      operations:
+      - method: POST
+        name: addmanualrowtoexperiment
+        description: addmanualrowtoexperiment
+        call: helicone-experiment.addmanualrowtoexperiment
+        with:
+          experimentId: rest.experimentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/experiment/{experimentid}/add-manual-rows-batch
+      name: v2-experiment-experimentid-add-manual-rows-batch
+      description: REST surface for v2-experiment-experimentId-add-manual-rows-batch.
+      operations:
+      - method: POST
+        name: addmanualrowstoexperimentbatch
+        description: addmanualrowstoexperimentbatch
+        call: helicone-experiment.addmanualrowstoexperimentbatch
+        with:
+          experimentId: rest.experimentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/experiment/{experimentid}/evaluators
+      name: v2-experiment-experimentid-evaluators
+      description: REST surface for v2-experiment-experimentId-evaluators.
+      operations:
+      - method: GET
+        name: getexperimentevaluators
+        description: getexperimentevaluators
+        call: helicone-experiment.getexperimentevaluators
+        with:
+          experimentId: rest.experimentId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createexperimentevaluator
+        description: createexperimentevaluator
+        call: helicone-experiment.createexperimentevaluator
+        with:
+          experimentId: rest.experimentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/experiment/{experimentid}/evaluators/run
+      name: v2-experiment-experimentid-evaluators-run
+      description: REST surface for v2-experiment-experimentId-evaluators-run.
+      operations:
+      - method: POST
+        name: runexperimentevaluators
+        description: runexperimentevaluators
+        call: helicone-experiment.runexperimentevaluators
+        with:
+          experimentId: rest.experimentId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/experiment/{experimentid}/evaluators/{evaluatorid}
+      name: v2-experiment-experimentid-evaluators-evaluatorid
+      description: REST surface for v2-experiment-experimentId-evaluators-evaluatorId.
+      operations:
+      - method: DELETE
+        name: deleteexperimentevaluator
+        description: deleteexperimentevaluator
+        call: helicone-experiment.deleteexperimentevaluator
+        with:
+          experimentId: rest.experimentId
+          evaluatorId: rest.evaluatorId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/experiment/{experimentid}/input-keys
+      name: v2-experiment-experimentid-input-keys
+      description: REST surface for v2-experiment-experimentId-input-keys.
+      operations:
+      - method: GET
+        name: getinputkeysforexperiment
+        description: getinputkeysforexperiment
+        call: helicone-experiment.getinputkeysforexperiment
+        with:
+          experimentId: rest.experimentId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/experiment/{experimentid}/prompt-version
+      name: v2-experiment-experimentid-prompt-version
+      description: REST surface for v2-experiment-experimentId-prompt-version.
+      operations:
+      - method: POST
+        name: createnewpromptversionforexperiment
+        description: createnewpromptversionforexperiment
+        call: helicone-experiment.createnewpromptversionforexperiment
+        with:
+          experimentId: rest.experimentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/experiment/{experimentid}/prompt-version/{promptversionid}
+      name: v2-experiment-experimentid-prompt-version-promptversionid
+      description: REST surface for v2-experiment-experimentId-prompt-version-promptVersionId.
+      operations:
+      - method: DELETE
+        name: deletepromptversion
+        description: deletepromptversion
+        call: helicone-experiment.deletepromptversion
+        with:
+          experimentId: rest.experimentId
+          promptVersionId: rest.promptVersionId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/experiment/{experimentid}/prompt-versions
+      name: v2-experiment-experimentid-prompt-versions
+      description: REST surface for v2-experiment-experimentId-prompt-versions.
+      operations:
+      - method: GET
+        name: getpromptversionsforexperiment
+        description: getpromptversionsforexperiment
+        call: helicone-experiment.getpromptversionsforexperiment
+        with:
+          experimentId: rest.experimentId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/experiment/{experimentid}/row/insert/batch
+      name: v2-experiment-experimentid-row-insert-batch
+      description: REST surface for v2-experiment-experimentId-row-insert-batch.
+      operations:
+      - method: POST
+        name: createexperimenttablerowbatch
+        description: createexperimenttablerowbatch
+        call: helicone-experiment.createexperimenttablerowbatch
+        with:
+          experimentId: rest.experimentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/experiment/{experimentid}/row/insert/dataset/{datasetid}
+      name: v2-experiment-experimentid-row-insert-dataset-datasetid
+      description: REST surface for v2-experiment-experimentId-row-insert-dataset-datasetId.
+      operations:
+      - method: POST
+        name: createexperimenttablerowfromdataset
+        description: createexperimenttablerowfromdataset
+        call: helicone-experiment.createexperimenttablerowfromdataset
+        with:
+          experimentId: rest.experimentId
+          datasetId: rest.datasetId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/experiment/{experimentid}/row/update
+      name: v2-experiment-experimentid-row-update
+      description: REST surface for v2-experiment-experimentId-row-update.
+      operations:
+      - method: POST
+        name: updateexperimenttablerow
+        description: updateexperimenttablerow
+        call: helicone-experiment.updateexperimenttablerow
+        with:
+          experimentId: rest.experimentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/experiment/{experimentid}/rows
+      name: v2-experiment-experimentid-rows
+      description: REST surface for v2-experiment-experimentId-rows.
+      operations:
+      - method: DELETE
+        name: deleteexperimenttablerows
+        description: deleteexperimenttablerows
+        call: helicone-experiment.deleteexperimenttablerows
+        with:
+          experimentId: rest.experimentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/experiment/{experimentid}/run-hypothesis
+      name: v2-experiment-experimentid-run-hypothesis
+      description: REST surface for v2-experiment-experimentId-run-hypothesis.
+      operations:
+      - method: POST
+        name: runhypothesis
+        description: runhypothesis
+        call: helicone-experiment.runhypothesis
+        with:
+          experimentId: rest.experimentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/experiment/{experimentid}/should-run-evaluators
+      name: v2-experiment-experimentid-should-run-evaluators
+      description: REST surface for v2-experiment-experimentId-should-run-evaluators.
+      operations:
+      - method: GET
+        name: shouldrunevaluators
+        description: shouldrunevaluators
+        call: helicone-experiment.shouldrunevaluators
+        with:
+          experimentId: rest.experimentId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/experiment/{experimentid}/{promptversionid}/scores
+      name: v2-experiment-experimentid-promptversionid-scores
+      description: REST surface for v2-experiment-experimentId-promptVersionId-scores.
+      operations:
+      - method: GET
+        name: getexperimentpromptversionscores
+        description: getexperimentpromptversionscores
+        call: helicone-experiment.getexperimentpromptversionscores
+        with:
+          experimentId: rest.experimentId
+          promptVersionId: rest.promptVersionId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/experiment/{experimentid}/{requestid}/{scorekey}
+      name: v2-experiment-experimentid-requestid-scorekey
+      description: REST surface for v2-experiment-experimentId-requestId-scoreKey.
+      operations:
+      - method: GET
+        name: getexperimentscore
+        description: getexperimentscore
+        call: helicone-experiment.getexperimentscore
+        with:
+          experimentId: rest.experimentId
+          requestId: rest.requestId
+          scoreKey: rest.scoreKey
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: helicone-experiment-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for helicone-api — Experiment. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: createnewexperimentold
+      description: createnewexperimentold
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.createnewexperimentold
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createnewexperimenthypothesis
+      description: createnewexperimenthypothesis
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.createnewexperimenthypothesis
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getexperimenthypothesisscores
+      description: getexperimenthypothesisscores
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.getexperimenthypothesisscores
+      with:
+        hypothesisId: tools.hypothesisId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createnewemptyexperiment
+      description: createnewemptyexperiment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.createnewemptyexperiment
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getexperimentsold
+      description: getexperimentsold
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.getexperimentsold
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createnewexperimenttable
+      description: createnewexperimenttable
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.createnewexperimenttable
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createexperimentcell
+      description: createexperimentcell
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.createexperimentcell
+      with:
+        experimentTableId: tools.experimentTableId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updateexperimentcell
+      description: updateexperimentcell
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: helicone-experiment.updateexperimentcell
+      with:
+        experimentTableId: tools.experimentTableId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createexperimentcolumn
+      description: createexperimentcolumn
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.createexperimentcolumn
+      with:
+        experimentTableId: tools.experimentTableId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getexperimenttablemetadata
+      description: getexperimenttablemetadata
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.getexperimenttablemetadata
+      with:
+        experimentTableId: tools.experimentTableId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getexperimenttablebyid
+      description: getexperimenttablebyid
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.getexperimenttablebyid
+      with:
+        experimentTableId: tools.experimentTableId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createexperimenttablerowwithcellsbatch
+      description: createexperimenttablerowwithcellsbatch
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.createexperimenttablerowwithcellsbatch
+      with:
+        experimentTableId: tools.experimentTableId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createexperimenttablerow
+      description: createexperimenttablerow
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.createexperimenttablerow
+      with:
+        experimentTableId: tools.experimentTableId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteexperimenttablerow
+      description: deleteexperimenttablerow
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: helicone-experiment.deleteexperimenttablerow
+      with:
+        experimentTableId: tools.experimentTableId
+        rowIndex: tools.rowIndex
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getexperimenttables
+      description: getexperimenttables
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.getexperimenttables
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updateexperimentmeta
+      description: updateexperimentmeta
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.updateexperimentmeta
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getexperimentevaluators
+      description: getexperimentevaluators
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-experiment.getexperimentevaluators
+      with:
+        experimentId: tools.experimentId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createexperimentevaluatorold
+      description: createexperimentevaluatorold
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.createexperimentevaluatorold
+      with:
+        experimentId: tools.experimentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: runexperimentevaluatorsold
+      description: runexperimentevaluatorsold
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.runexperimentevaluatorsold
+      with:
+        experimentId: tools.experimentId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteexperimentevaluatorold
+      description: deleteexperimentevaluatorold
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: helicone-experiment.deleteexperimentevaluatorold
+      with:
+        experimentId: tools.experimentId
+        evaluatorId: tools.evaluatorId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getexperiments
+      description: getexperiments
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-experiment.getexperiments
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createemptyexperiment
+      description: createemptyexperiment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.createemptyexperiment
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createexperimentfromrequest
+      description: createexperimentfromrequest
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.createexperimentfromrequest
+      with:
+        requestId: tools.requestId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createnewexperiment
+      description: createnewexperiment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.createnewexperiment
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteexperiment
+      description: deleteexperiment
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: helicone-experiment.deleteexperiment
+      with:
+        experimentId: tools.experimentId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getexperimentbyid
+      description: getexperimentbyid
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-experiment.getexperimentbyid
+      with:
+        experimentId: tools.experimentId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: addmanualrowtoexperiment
+      description: addmanualrowtoexperiment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.addmanualrowtoexperiment
+      with:
+        experimentId: tools.experimentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: addmanualrowstoexperimentbatch
+      description: addmanualrowstoexperimentbatch
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.addmanualrowstoexperimentbatch
+      with:
+        experimentId: tools.experimentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getexperimentevaluators-2
+      description: getexperimentevaluators
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-experiment.getexperimentevaluators
+      with:
+        experimentId: tools.experimentId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createexperimentevaluator
+      description: createexperimentevaluator
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.createexperimentevaluator
+      with:
+        experimentId: tools.experimentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: runexperimentevaluators
+      description: runexperimentevaluators
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.runexperimentevaluators
+      with:
+        experimentId: tools.experimentId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteexperimentevaluator
+      description: deleteexperimentevaluator
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: helicone-experiment.deleteexperimentevaluator
+      with:
+        experimentId: tools.experimentId
+        evaluatorId: tools.evaluatorId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getinputkeysforexperiment
+      description: getinputkeysforexperiment
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-experiment.getinputkeysforexperiment
+      with:
+        experimentId: tools.experimentId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createnewpromptversionforexperiment
+      description: createnewpromptversionforexperiment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.createnewpromptversionforexperiment
+      with:
+        experimentId: tools.experimentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletepromptversion
+      description: deletepromptversion
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: helicone-experiment.deletepromptversion
+      with:
+        experimentId: tools.experimentId
+        promptVersionId: tools.promptVersionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getpromptversionsforexperiment
+      description: getpromptversionsforexperiment
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-experiment.getpromptversionsforexperiment
+      with:
+        experimentId: tools.experimentId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createexperimenttablerowbatch
+      description: createexperimenttablerowbatch
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.createexperimenttablerowbatch
+      with:
+        experimentId: tools.experimentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createexperimenttablerowfromdataset
+      description: createexperimenttablerowfromdataset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.createexperimenttablerowfromdataset
+      with:
+        experimentId: tools.experimentId
+        datasetId: tools.datasetId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updateexperimenttablerow
+      description: updateexperimenttablerow
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.updateexperimenttablerow
+      with:
+        experimentId: tools.experimentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteexperimenttablerows
+      description: deleteexperimenttablerows
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: helicone-experiment.deleteexperimenttablerows
+      with:
+        experimentId: tools.experimentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: runhypothesis
+      description: runhypothesis
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-experiment.runhypothesis
+      with:
+        experimentId: tools.experimentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: shouldrunevaluators
+      description: shouldrunevaluators
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-experiment.shouldrunevaluators
+      with:
+        experimentId: tools.experimentId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getexperimentpromptversionscores
+      description: getexperimentpromptversionscores
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-experiment.getexperimentpromptversionscores
+      with:
+        experimentId: tools.experimentId
+        promptVersionId: tools.promptVersionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getexperimentscore
+      description: getexperimentscore
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-experiment.getexperimentscore
+      with:
+        experimentId: tools.experimentId
+        requestId: tools.requestId
+        scoreKey: tools.scoreKey
+      outputParameters:
+      - type: object
+        mapping: $.

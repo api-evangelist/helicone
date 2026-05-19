@@ -1,0 +1,82 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: helicone-api — Test
+  description: 'helicone-api — Test. 1 operations. Lead operation: Test. Self-contained Naftiko capability covering one Helicone
+    business surface.'
+  tags:
+  - Helicone
+  - Test
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HELICONE_API_KEY: HELICONE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: helicone-test
+    baseUri: https://api.helicone.ai
+    description: helicone-api — Test business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-test-gateway-request
+      path: /v1/test/gateway-request
+      operations:
+      - name: sendtestrequest
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.HELICONE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: helicone-test-rest
+    port: 8080
+    description: REST adapter for helicone-api — Test. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/v1/test/gateway-request
+      name: v1-test-gateway-request
+      description: REST surface for v1-test-gateway-request.
+      operations:
+      - method: POST
+        name: sendtestrequest
+        description: sendtestrequest
+        call: helicone-test.sendtestrequest
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: helicone-test-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for helicone-api — Test. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: sendtestrequest
+      description: sendtestrequest
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-test.sendtestrequest
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

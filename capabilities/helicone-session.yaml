@@ -1,0 +1,338 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: helicone-api — Session
+  description: 'helicone-api — Session. 7 operations. Lead operation: Session. Self-contained Naftiko capability covering
+    one Helicone business surface.'
+  tags:
+  - Helicone
+  - Session
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HELICONE_API_KEY: HELICONE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: helicone-session
+    baseUri: https://api.helicone.ai
+    description: helicone-api — Session business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-session-count
+      path: /v1/session/count
+      operations:
+      - name: getsessionscount
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-session-metrics-query
+      path: /v1/session/metrics/query
+      operations:
+      - name: getmetrics
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-session-name-query
+      path: /v1/session/name/query
+      operations:
+      - name: getnames
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-session-query
+      path: /v1/session/query
+      operations:
+      - name: getsessions
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-session-sessionId-feedback
+      path: /v1/session/{sessionId}/feedback
+      operations:
+      - name: updatesessionfeedback
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sessionId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-session-sessionId-tag
+      path: /v1/session/{sessionId}/tag
+      operations:
+      - name: getsessiontag
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sessionId
+          in: path
+          type: string
+          required: true
+      - name: updatesessiontag
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sessionId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.HELICONE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: helicone-session-rest
+    port: 8080
+    description: REST adapter for helicone-api — Session. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/v1/session/count
+      name: v1-session-count
+      description: REST surface for v1-session-count.
+      operations:
+      - method: POST
+        name: getsessionscount
+        description: getsessionscount
+        call: helicone-session.getsessionscount
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/session/metrics/query
+      name: v1-session-metrics-query
+      description: REST surface for v1-session-metrics-query.
+      operations:
+      - method: POST
+        name: getmetrics
+        description: getmetrics
+        call: helicone-session.getmetrics
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/session/name/query
+      name: v1-session-name-query
+      description: REST surface for v1-session-name-query.
+      operations:
+      - method: POST
+        name: getnames
+        description: getnames
+        call: helicone-session.getnames
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/session/query
+      name: v1-session-query
+      description: REST surface for v1-session-query.
+      operations:
+      - method: POST
+        name: getsessions
+        description: getsessions
+        call: helicone-session.getsessions
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/session/{sessionid}/feedback
+      name: v1-session-sessionid-feedback
+      description: REST surface for v1-session-sessionId-feedback.
+      operations:
+      - method: POST
+        name: updatesessionfeedback
+        description: updatesessionfeedback
+        call: helicone-session.updatesessionfeedback
+        with:
+          sessionId: rest.sessionId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/session/{sessionid}/tag
+      name: v1-session-sessionid-tag
+      description: REST surface for v1-session-sessionId-tag.
+      operations:
+      - method: GET
+        name: getsessiontag
+        description: getsessiontag
+        call: helicone-session.getsessiontag
+        with:
+          sessionId: rest.sessionId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: updatesessiontag
+        description: updatesessiontag
+        call: helicone-session.updatesessiontag
+        with:
+          sessionId: rest.sessionId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: helicone-session-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for helicone-api — Session. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: getsessionscount
+      description: getsessionscount
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-session.getsessionscount
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getmetrics
+      description: getmetrics
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-session.getmetrics
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getnames
+      description: getnames
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-session.getnames
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getsessions
+      description: getsessions
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-session.getsessions
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updatesessionfeedback
+      description: updatesessionfeedback
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-session.updatesessionfeedback
+      with:
+        sessionId: tools.sessionId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getsessiontag
+      description: getsessiontag
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-session.getsessiontag
+      with:
+        sessionId: tools.sessionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updatesessiontag
+      description: updatesessiontag
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-session.updatesessiontag
+      with:
+        sessionId: tools.sessionId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,393 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: helicone-api — Agent
+  description: 'helicone-api — Agent. 9 operations. Lead operation: Agent. Self-contained Naftiko capability covering one
+    Helicone business surface.'
+  tags:
+  - Helicone
+  - Agent
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HELICONE_API_KEY: HELICONE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: helicone-agent
+    baseUri: https://api.helicone.ai
+    description: helicone-api — Agent business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-agent-generate
+      path: /v1/agent/generate
+      operations:
+      - name: generate
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-agent-mcp-search
+      path: /v1/agent/mcp/search
+      operations:
+      - name: searchdocs
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-agent-thread-create-and-escalate
+      path: /v1/agent/thread/create-and-escalate
+      operations:
+      - name: createandescalatethread
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-agent-thread-sessionId
+      path: /v1/agent/thread/{sessionId}
+      operations:
+      - name: deletethread
+        method: DELETE
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sessionId
+          in: path
+          type: string
+          required: true
+      - name: getthread
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sessionId
+          in: path
+          type: string
+          required: true
+    - name: v1-agent-thread-sessionId-escalate
+      path: /v1/agent/thread/{sessionId}/escalate
+      operations:
+      - name: escalatethread
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sessionId
+          in: path
+          type: string
+          required: true
+    - name: v1-agent-thread-sessionId-message
+      path: /v1/agent/thread/{sessionId}/message
+      operations:
+      - name: upsertthreadmessage
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sessionId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-agent-thread-sessionId-reopen
+      path: /v1/agent/thread/{sessionId}/reopen
+      operations:
+      - name: reopenthread
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sessionId
+          in: path
+          type: string
+          required: true
+    - name: v1-agent-threads
+      path: /v1/agent/threads
+      operations:
+      - name: getallthreads
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.HELICONE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: helicone-agent-rest
+    port: 8080
+    description: REST adapter for helicone-api — Agent. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/v1/agent/generate
+      name: v1-agent-generate
+      description: REST surface for v1-agent-generate.
+      operations:
+      - method: POST
+        name: generate
+        description: generate
+        call: helicone-agent.generate
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/agent/mcp/search
+      name: v1-agent-mcp-search
+      description: REST surface for v1-agent-mcp-search.
+      operations:
+      - method: POST
+        name: searchdocs
+        description: searchdocs
+        call: helicone-agent.searchdocs
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/agent/thread/create-and-escalate
+      name: v1-agent-thread-create-and-escalate
+      description: REST surface for v1-agent-thread-create-and-escalate.
+      operations:
+      - method: POST
+        name: createandescalatethread
+        description: createandescalatethread
+        call: helicone-agent.createandescalatethread
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/agent/thread/{sessionid}
+      name: v1-agent-thread-sessionid
+      description: REST surface for v1-agent-thread-sessionId.
+      operations:
+      - method: DELETE
+        name: deletethread
+        description: deletethread
+        call: helicone-agent.deletethread
+        with:
+          sessionId: rest.sessionId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: getthread
+        description: getthread
+        call: helicone-agent.getthread
+        with:
+          sessionId: rest.sessionId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/agent/thread/{sessionid}/escalate
+      name: v1-agent-thread-sessionid-escalate
+      description: REST surface for v1-agent-thread-sessionId-escalate.
+      operations:
+      - method: POST
+        name: escalatethread
+        description: escalatethread
+        call: helicone-agent.escalatethread
+        with:
+          sessionId: rest.sessionId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/agent/thread/{sessionid}/message
+      name: v1-agent-thread-sessionid-message
+      description: REST surface for v1-agent-thread-sessionId-message.
+      operations:
+      - method: POST
+        name: upsertthreadmessage
+        description: upsertthreadmessage
+        call: helicone-agent.upsertthreadmessage
+        with:
+          sessionId: rest.sessionId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/agent/thread/{sessionid}/reopen
+      name: v1-agent-thread-sessionid-reopen
+      description: REST surface for v1-agent-thread-sessionId-reopen.
+      operations:
+      - method: POST
+        name: reopenthread
+        description: reopenthread
+        call: helicone-agent.reopenthread
+        with:
+          sessionId: rest.sessionId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/agent/threads
+      name: v1-agent-threads
+      description: REST surface for v1-agent-threads.
+      operations:
+      - method: GET
+        name: getallthreads
+        description: getallthreads
+        call: helicone-agent.getallthreads
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: helicone-agent-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for helicone-api — Agent. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: generate
+      description: generate
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-agent.generate
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: searchdocs
+      description: searchdocs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: helicone-agent.searchdocs
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createandescalatethread
+      description: createandescalatethread
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-agent.createandescalatethread
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletethread
+      description: deletethread
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: helicone-agent.deletethread
+      with:
+        sessionId: tools.sessionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getthread
+      description: getthread
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-agent.getthread
+      with:
+        sessionId: tools.sessionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: escalatethread
+      description: escalatethread
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-agent.escalatethread
+      with:
+        sessionId: tools.sessionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: upsertthreadmessage
+      description: upsertthreadmessage
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-agent.upsertthreadmessage
+      with:
+        sessionId: tools.sessionId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: reopenthread
+      description: reopenthread
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-agent.reopenthread
+      with:
+        sessionId: tools.sessionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getallthreads
+      description: getallthreads
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: helicone-agent.getallthreads
+      outputParameters:
+      - type: object
+        mapping: $.

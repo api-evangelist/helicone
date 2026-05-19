@@ -1,0 +1,82 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: helicone-api — Dashboard
+  description: 'helicone-api — Dashboard. 1 operations. Lead operation: Dashboard. Self-contained Naftiko capability covering
+    one Helicone business surface.'
+  tags:
+  - Helicone
+  - Dashboard
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HELICONE_API_KEY: HELICONE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: helicone-dashboard
+    baseUri: https://api.helicone.ai
+    description: helicone-api — Dashboard business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-dashboard-scores-query
+      path: /v1/dashboard/scores/query
+      operations:
+      - name: getscoresovertime
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.HELICONE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: helicone-dashboard-rest
+    port: 8080
+    description: REST adapter for helicone-api — Dashboard. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/v1/dashboard/scores/query
+      name: v1-dashboard-scores-query
+      description: REST surface for v1-dashboard-scores-query.
+      operations:
+      - method: POST
+        name: getscoresovertime
+        description: getscoresovertime
+        call: helicone-dashboard.getscoresovertime
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: helicone-dashboard-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for helicone-api — Dashboard. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: getscoresovertime
+      description: getscoresovertime
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-dashboard.getscoresovertime
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,667 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: helicone-api — Dataset
+  description: 'helicone-api — Dataset. 14 operations. Lead operation: Dataset. Self-contained Naftiko capability covering
+    one Helicone business surface.'
+  tags:
+  - Helicone
+  - Dataset
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HELICONE_API_KEY: HELICONE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: helicone-dataset
+    baseUri: https://api.helicone.ai
+    description: helicone-api — Dataset business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-experiment-dataset
+      path: /v1/experiment/dataset
+      operations:
+      - name: adddataset
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-experiment-dataset-query
+      path: /v1/experiment/dataset/query
+      operations:
+      - name: getdatasets
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-experiment-dataset-random
+      path: /v1/experiment/dataset/random
+      operations:
+      - name: addrandomdataset
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-experiment-dataset-datasetId-inputs-query
+      path: /v1/experiment/dataset/{datasetId}/inputs/query
+      operations:
+      - name: getdataset
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: datasetId
+          in: path
+          type: string
+          required: true
+    - name: v1-experiment-dataset-datasetId-mutate
+      path: /v1/experiment/dataset/{datasetId}/mutate
+      operations:
+      - name: mutatedataset
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-experiment-dataset-datasetId-row-insert
+      path: /v1/experiment/dataset/{datasetId}/row/insert
+      operations:
+      - name: insertdatasetrow
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: datasetId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-experiment-dataset-datasetId-version-promptVersionId-row-new
+      path: /v1/experiment/dataset/{datasetId}/version/{promptVersionId}/row/new
+      operations:
+      - name: createdatasetrow
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: datasetId
+          in: path
+          type: string
+          required: true
+        - name: promptVersionId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-helicone-dataset
+      path: /v1/helicone-dataset
+      operations:
+      - name: addheliconedataset
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-helicone-dataset-query
+      path: /v1/helicone-dataset/query
+      operations:
+      - name: queryheliconedataset
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-helicone-dataset-datasetId-count
+      path: /v1/helicone-dataset/{datasetId}/count
+      operations:
+      - name: countheliconedatasetrows
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: datasetId
+          in: path
+          type: string
+          required: true
+    - name: v1-helicone-dataset-datasetId-delete
+      path: /v1/helicone-dataset/{datasetId}/delete
+      operations:
+      - name: deleteheliconedataset
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: datasetId
+          in: path
+          type: string
+          required: true
+    - name: v1-helicone-dataset-datasetId-mutate
+      path: /v1/helicone-dataset/{datasetId}/mutate
+      operations:
+      - name: mutateheliconedataset
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: datasetId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-helicone-dataset-datasetId-query
+      path: /v1/helicone-dataset/{datasetId}/query
+      operations:
+      - name: queryheliconedatasetrows
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: datasetId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-helicone-dataset-datasetId-request-requestId
+      path: /v1/helicone-dataset/{datasetId}/request/{requestId}
+      operations:
+      - name: updateheliconedatasetrequest
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: datasetId
+          in: path
+          type: string
+          required: true
+        - name: requestId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.HELICONE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: helicone-dataset-rest
+    port: 8080
+    description: REST adapter for helicone-api — Dataset. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/v1/experiment/dataset
+      name: v1-experiment-dataset
+      description: REST surface for v1-experiment-dataset.
+      operations:
+      - method: POST
+        name: adddataset
+        description: adddataset
+        call: helicone-dataset.adddataset
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/experiment/dataset/query
+      name: v1-experiment-dataset-query
+      description: REST surface for v1-experiment-dataset-query.
+      operations:
+      - method: POST
+        name: getdatasets
+        description: getdatasets
+        call: helicone-dataset.getdatasets
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/experiment/dataset/random
+      name: v1-experiment-dataset-random
+      description: REST surface for v1-experiment-dataset-random.
+      operations:
+      - method: POST
+        name: addrandomdataset
+        description: addrandomdataset
+        call: helicone-dataset.addrandomdataset
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/experiment/dataset/{datasetid}/inputs/query
+      name: v1-experiment-dataset-datasetid-inputs-query
+      description: REST surface for v1-experiment-dataset-datasetId-inputs-query.
+      operations:
+      - method: POST
+        name: getdataset
+        description: getdataset
+        call: helicone-dataset.getdataset
+        with:
+          datasetId: rest.datasetId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/experiment/dataset/{datasetid}/mutate
+      name: v1-experiment-dataset-datasetid-mutate
+      description: REST surface for v1-experiment-dataset-datasetId-mutate.
+      operations:
+      - method: POST
+        name: mutatedataset
+        description: mutatedataset
+        call: helicone-dataset.mutatedataset
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/experiment/dataset/{datasetid}/row/insert
+      name: v1-experiment-dataset-datasetid-row-insert
+      description: REST surface for v1-experiment-dataset-datasetId-row-insert.
+      operations:
+      - method: POST
+        name: insertdatasetrow
+        description: insertdatasetrow
+        call: helicone-dataset.insertdatasetrow
+        with:
+          datasetId: rest.datasetId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/experiment/dataset/{datasetid}/version/{promptversionid}/row/new
+      name: v1-experiment-dataset-datasetid-version-promptversionid-row-new
+      description: REST surface for v1-experiment-dataset-datasetId-version-promptVersionId-row-new.
+      operations:
+      - method: POST
+        name: createdatasetrow
+        description: createdatasetrow
+        call: helicone-dataset.createdatasetrow
+        with:
+          datasetId: rest.datasetId
+          promptVersionId: rest.promptVersionId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/helicone-dataset
+      name: v1-helicone-dataset
+      description: REST surface for v1-helicone-dataset.
+      operations:
+      - method: POST
+        name: addheliconedataset
+        description: addheliconedataset
+        call: helicone-dataset.addheliconedataset
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/helicone-dataset/query
+      name: v1-helicone-dataset-query
+      description: REST surface for v1-helicone-dataset-query.
+      operations:
+      - method: POST
+        name: queryheliconedataset
+        description: queryheliconedataset
+        call: helicone-dataset.queryheliconedataset
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/helicone-dataset/{datasetid}/count
+      name: v1-helicone-dataset-datasetid-count
+      description: REST surface for v1-helicone-dataset-datasetId-count.
+      operations:
+      - method: POST
+        name: countheliconedatasetrows
+        description: countheliconedatasetrows
+        call: helicone-dataset.countheliconedatasetrows
+        with:
+          datasetId: rest.datasetId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/helicone-dataset/{datasetid}/delete
+      name: v1-helicone-dataset-datasetid-delete
+      description: REST surface for v1-helicone-dataset-datasetId-delete.
+      operations:
+      - method: POST
+        name: deleteheliconedataset
+        description: deleteheliconedataset
+        call: helicone-dataset.deleteheliconedataset
+        with:
+          datasetId: rest.datasetId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/helicone-dataset/{datasetid}/mutate
+      name: v1-helicone-dataset-datasetid-mutate
+      description: REST surface for v1-helicone-dataset-datasetId-mutate.
+      operations:
+      - method: POST
+        name: mutateheliconedataset
+        description: mutateheliconedataset
+        call: helicone-dataset.mutateheliconedataset
+        with:
+          datasetId: rest.datasetId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/helicone-dataset/{datasetid}/query
+      name: v1-helicone-dataset-datasetid-query
+      description: REST surface for v1-helicone-dataset-datasetId-query.
+      operations:
+      - method: POST
+        name: queryheliconedatasetrows
+        description: queryheliconedatasetrows
+        call: helicone-dataset.queryheliconedatasetrows
+        with:
+          datasetId: rest.datasetId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/helicone-dataset/{datasetid}/request/{requestid}
+      name: v1-helicone-dataset-datasetid-request-requestid
+      description: REST surface for v1-helicone-dataset-datasetId-request-requestId.
+      operations:
+      - method: POST
+        name: updateheliconedatasetrequest
+        description: updateheliconedatasetrequest
+        call: helicone-dataset.updateheliconedatasetrequest
+        with:
+          datasetId: rest.datasetId
+          requestId: rest.requestId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: helicone-dataset-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for helicone-api — Dataset. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: adddataset
+      description: adddataset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-dataset.adddataset
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getdatasets
+      description: getdatasets
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-dataset.getdatasets
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: addrandomdataset
+      description: addrandomdataset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-dataset.addrandomdataset
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getdataset
+      description: getdataset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-dataset.getdataset
+      with:
+        datasetId: tools.datasetId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: mutatedataset
+      description: mutatedataset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-dataset.mutatedataset
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: insertdatasetrow
+      description: insertdatasetrow
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-dataset.insertdatasetrow
+      with:
+        datasetId: tools.datasetId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createdatasetrow
+      description: createdatasetrow
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-dataset.createdatasetrow
+      with:
+        datasetId: tools.datasetId
+        promptVersionId: tools.promptVersionId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: addheliconedataset
+      description: addheliconedataset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-dataset.addheliconedataset
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: queryheliconedataset
+      description: queryheliconedataset
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: helicone-dataset.queryheliconedataset
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: countheliconedatasetrows
+      description: countheliconedatasetrows
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-dataset.countheliconedatasetrows
+      with:
+        datasetId: tools.datasetId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteheliconedataset
+      description: deleteheliconedataset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-dataset.deleteheliconedataset
+      with:
+        datasetId: tools.datasetId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: mutateheliconedataset
+      description: mutateheliconedataset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-dataset.mutateheliconedataset
+      with:
+        datasetId: tools.datasetId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: queryheliconedatasetrows
+      description: queryheliconedatasetrows
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: helicone-dataset.queryheliconedatasetrows
+      with:
+        datasetId: tools.datasetId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updateheliconedatasetrequest
+      description: updateheliconedatasetrequest
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: helicone-dataset.updateheliconedatasetrequest
+      with:
+        datasetId: tools.datasetId
+        requestId: tools.requestId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
