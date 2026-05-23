@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PromptEditSubversionLabelParams",
+  "title": "PromptEditSubversionLabelParams",
+  "properties": {
+    "label": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "label"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

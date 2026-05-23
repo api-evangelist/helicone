@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SimplifiedModalityPricing",
+  "title": "SimplifiedModalityPricing",
+  "properties": {
+    "input": {
+      "type": "number",
+      "format": "double"
+    },
+    "cachedInput": {
+      "type": "number",
+      "format": "double"
+    },
+    "output": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "type": "object",
+  "additionalProperties": false
+}

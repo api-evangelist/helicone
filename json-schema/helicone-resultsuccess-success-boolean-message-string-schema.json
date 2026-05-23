@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResultSuccess__success-boolean--message-string__",
+  "title": "ResultSuccess__success-boolean--message-string__",
+  "properties": {
+    "data": {
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "message",
+        "success"
+      ],
+      "type": "object"
+    },
+    "error": {
+      "type": "number",
+      "enum": [
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "data",
+    "error"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

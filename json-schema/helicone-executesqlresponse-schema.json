@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExecuteSqlResponse",
+  "title": "ExecuteSqlResponse",
+  "properties": {
+    "rowCount": {
+      "type": "number",
+      "format": "double"
+    },
+    "size": {
+      "type": "number",
+      "format": "double"
+    },
+    "elapsedMilliseconds": {
+      "type": "number",
+      "format": "double"
+    },
+    "rows": {
+      "items": {
+        "$ref": "#/components/schemas/Record_string.any_"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "rowCount",
+    "size",
+    "elapsedMilliseconds",
+    "rows"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PTBInvoice",
+  "title": "PTBInvoice",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "organizationId": {
+      "type": "string"
+    },
+    "stripeInvoiceId": {
+      "type": "string",
+      "nullable": true
+    },
+    "hostedInvoiceUrl": {
+      "type": "string",
+      "nullable": true
+    },
+    "startDate": {
+      "type": "string"
+    },
+    "endDate": {
+      "type": "string"
+    },
+    "amountCents": {
+      "type": "number",
+      "format": "double"
+    },
+    "subtotalCents": {
+      "type": "number",
+      "format": "double",
+      "nullable": true
+    },
+    "notes": {
+      "type": "string",
+      "nullable": true
+    },
+    "createdAt": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "organizationId",
+    "stripeInvoiceId",
+    "hostedInvoiceUrl",
+    "startDate",
+    "endDate",
+    "amountCents",
+    "subtotalCents",
+    "notes",
+    "createdAt"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

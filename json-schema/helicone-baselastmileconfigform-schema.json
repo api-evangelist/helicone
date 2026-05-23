@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BaseLastMileConfigForm",
+  "title": "BaseLastMileConfigForm",
+  "properties": {
+    "output": {
+      "$ref": "#/components/schemas/DataEntry"
+    },
+    "input": {
+      "$ref": "#/components/schemas/DataEntry"
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "output",
+    "input",
+    "name"
+  ],
+  "type": "object"
+}

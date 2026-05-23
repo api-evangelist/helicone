@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LatencyOverTime",
+  "title": "LatencyOverTime",
+  "properties": {
+    "time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "duration": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "time",
+    "duration"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

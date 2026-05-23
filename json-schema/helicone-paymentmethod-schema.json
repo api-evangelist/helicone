@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentMethod",
+  "title": "PaymentMethod",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "last4": {
+      "type": "string"
+    },
+    "exp_month": {
+      "type": "number",
+      "format": "double"
+    },
+    "exp_year": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "id",
+    "brand",
+    "last4",
+    "exp_month",
+    "exp_year"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

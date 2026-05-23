@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResultSuccess_ChatCompletion-or-_content-string--reasoning-string--calls-any__",
+  "title": "ResultSuccess_ChatCompletion-or-_content-string--reasoning-string--calls-any__",
+  "properties": {
+    "data": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/ChatCompletion"
+        },
+        {
+          "properties": {
+            "calls": {},
+            "reasoning": {
+              "type": "string"
+            },
+            "content": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "calls",
+            "reasoning",
+            "content"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "type": "number",
+      "enum": [
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "data",
+    "error"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

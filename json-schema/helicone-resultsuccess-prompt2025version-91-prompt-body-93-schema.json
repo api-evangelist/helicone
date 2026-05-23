@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResultSuccess_Prompt2025Version_91_prompt_body_93__",
+  "title": "ResultSuccess_Prompt2025Version_91_prompt_body_93__",
+  "properties": {
+    "data": {
+      "$ref": "#/components/schemas/Prompt2025VersionPromptBody"
+    },
+    "error": {
+      "type": "number",
+      "enum": [
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "data",
+    "error"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TimeSeriesDataPoint",
+  "title": "TimeSeriesDataPoint",
+  "properties": {
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "errorCount": {
+      "type": "number",
+      "format": "double"
+    },
+    "requestCount": {
+      "type": "number",
+      "format": "double"
+    },
+    "averageLatency": {
+      "type": "number",
+      "format": "double"
+    },
+    "averageLatencyPerCompletionToken": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "timestamp",
+    "errorCount",
+    "requestCount",
+    "averageLatency",
+    "averageLatencyPerCompletionToken"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

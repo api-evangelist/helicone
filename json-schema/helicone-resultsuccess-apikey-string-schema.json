@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResultSuccess__apiKey-string__",
+  "title": "ResultSuccess__apiKey-string__",
+  "properties": {
+    "data": {
+      "properties": {
+        "apiKey": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "apiKey"
+      ],
+      "type": "object"
+    },
+    "error": {
+      "type": "number",
+      "enum": [
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "data",
+    "error"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

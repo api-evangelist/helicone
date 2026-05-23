@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ScoreDistribution",
+  "title": "ScoreDistribution",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "distribution": {
+      "items": {
+        "properties": {
+          "value": {
+            "type": "number",
+            "format": "double"
+          },
+          "upper": {
+            "type": "number",
+            "format": "double"
+          },
+          "lower": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "required": [
+          "value",
+          "upper",
+          "lower"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "name",
+    "distribution"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

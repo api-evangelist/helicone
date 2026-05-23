@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Partial_ExperimentHypothesisRunToOperator_",
+  "title": "Partial_ExperimentHypothesisRunToOperator_",
+  "properties": {
+    "result_request_id": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    }
+  },
+  "type": "object",
+  "description": "Make all properties in T optional"
+}

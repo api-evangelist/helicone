@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TokenMetricStats",
+  "title": "TokenMetricStats",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/MetricStats"
+    },
+    {
+      "properties": {
+        "medianPer1000Tokens": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "medianPer1000Tokens"
+      ],
+      "type": "object"
+    }
+  ]
+}

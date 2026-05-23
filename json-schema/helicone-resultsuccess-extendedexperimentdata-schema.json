@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResultSuccess_ExtendedExperimentData_",
+  "title": "ResultSuccess_ExtendedExperimentData_",
+  "properties": {
+    "data": {
+      "$ref": "#/components/schemas/ExtendedExperimentData"
+    },
+    "error": {
+      "type": "number",
+      "enum": [
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "data",
+    "error"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ErrorOverTime",
+  "title": "ErrorOverTime",
+  "properties": {
+    "time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "count": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "time",
+    "count"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Result__hypothesisId-string_.string_",
+  "title": "Result__hypothesisId-string_.string_",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/ResultSuccess__hypothesisId-string__"
+    },
+    {
+      "$ref": "#/components/schemas/ResultError_string_"
+    }
+  ]
+}

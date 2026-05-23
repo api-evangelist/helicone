@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Partial_ExperimentToOperators_",
+  "title": "Partial_ExperimentToOperators_",
+  "properties": {
+    "id": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "prompt_v2": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    }
+  },
+  "type": "object",
+  "description": "Make all properties in T optional"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TypedProviderRequest",
+  "title": "TypedProviderRequest",
+  "properties": {
+    "url": {
+      "type": "string"
+    },
+    "json": {
+      "$ref": "#/components/schemas/Record_string.unknown_"
+    },
+    "meta": {
+      "$ref": "#/components/schemas/Record_string.string_"
+    }
+  },
+  "required": [
+    "url",
+    "json",
+    "meta"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

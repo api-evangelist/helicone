@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DatasetFilterNode",
+  "title": "DatasetFilterNode",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/FilterLeafSubset_request-or-prompts_versions_"
+    },
+    {
+      "$ref": "#/components/schemas/DatasetFilterBranch"
+    },
+    {
+      "type": "string",
+      "enum": [
+        "all"
+      ]
+    }
+  ]
+}

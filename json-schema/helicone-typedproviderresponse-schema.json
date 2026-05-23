@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TypedProviderResponse",
+  "title": "TypedProviderResponse",
+  "properties": {
+    "json": {
+      "$ref": "#/components/schemas/Record_string.unknown_"
+    },
+    "textBody": {
+      "type": "string"
+    },
+    "status": {
+      "type": "number",
+      "format": "double"
+    },
+    "headers": {
+      "$ref": "#/components/schemas/Record_string.string_"
+    }
+  },
+  "required": [
+    "status",
+    "headers"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

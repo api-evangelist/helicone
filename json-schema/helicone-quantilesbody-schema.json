@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/QuantilesBody",
+  "title": "QuantilesBody",
+  "properties": {
+    "filter": {
+      "$ref": "#/components/schemas/FilterNode"
+    },
+    "timeFilter": {
+      "properties": {
+        "end": {
+          "type": "string"
+        },
+        "start": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "end",
+        "start"
+      ],
+      "type": "object"
+    },
+    "dbIncrement": {
+      "$ref": "#/components/schemas/TimeIncrement"
+    },
+    "timeZoneDifference": {
+      "type": "number",
+      "format": "double"
+    },
+    "metric": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "filter",
+    "timeFilter",
+    "timeZoneDifference",
+    "metric"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/FilterLeafSubset_prompt_v2_",
+  "title": "FilterLeafSubset_prompt_v2_",
+  "$ref": "#/components/schemas/Pick_FilterLeaf.prompt_v2_"
+}

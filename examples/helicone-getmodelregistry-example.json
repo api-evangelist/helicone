@@ -1,0 +1,85 @@
+{
+  "operationId": "GetModelRegistry",
+  "method": "GET",
+  "path": "/v1/public/model-registry/models",
+  "summary": "Returns a comprehensive list of all AI models with their configurations, pricing, and capabilities",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "name": "Example 1",
+      "example": {
+        "models": [
+          {
+            "id": "claude-opus-4-1",
+            "name": "Anthropic: Claude Opus 4.1",
+            "author": "anthropic",
+            "contextLength": 200000,
+            "endpoints": [
+              {
+                "provider": "anthropic",
+                "providerSlug": "anthropic",
+                "supportsPtb": true,
+                "pricing": {
+                  "prompt": 15,
+                  "completion": 75,
+                  "cacheRead": 1.5,
+                  "cacheWrite": 18.75
+                }
+              }
+            ],
+            "maxOutput": 32000,
+            "trainingDate": "2025-08-05",
+            "description": "Most capable Claude model with extended context",
+            "inputModalities": [
+              null
+            ],
+            "outputModalities": [
+              null
+            ],
+            "supportedParameters": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        ],
+        "total": 150,
+        "filters": {
+          "providers": [
+            {
+              "name": "anthropic",
+              "displayName": "Anthropic"
+            },
+            {
+              "name": "openai",
+              "displayName": "OpenAI"
+            },
+            {
+              "name": "google",
+              "displayName": "Google"
+            }
+          ],
+          "authors": [
+            "anthropic",
+            "openai",
+            "google",
+            "meta"
+          ],
+          "capabilities": [
+            "audio",
+            "image",
+            "thinking",
+            "caching",
+            "reasoning"
+          ]
+        }
+      }
+    }
+  ]
+}

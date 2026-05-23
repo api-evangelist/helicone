@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/InAppThread",
+  "title": "InAppThread",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "chat": {},
+    "user_id": {
+      "type": "string"
+    },
+    "org_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "escalated": {
+      "type": "boolean"
+    },
+    "metadata": {},
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "soft_delete": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "chat",
+    "user_id",
+    "org_id",
+    "created_at",
+    "escalated",
+    "metadata",
+    "updated_at",
+    "soft_delete"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

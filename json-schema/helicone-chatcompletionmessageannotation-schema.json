@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ChatCompletionMessage.Annotation",
+  "title": "ChatCompletionMessage.Annotation",
+  "description": "A URL citation when using web search.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "url_citation"
+      ],
+      "nullable": false,
+      "description": "The type of the URL citation. Always `url_citation`."
+    },
+    "url_citation": {
+      "$ref": "#/components/schemas/ChatCompletionMessage.Annotation.URLCitation",
+      "description": "A URL citation when using web search."
+    }
+  },
+  "required": [
+    "type",
+    "url_citation"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

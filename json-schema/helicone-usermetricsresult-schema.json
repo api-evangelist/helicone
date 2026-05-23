@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/UserMetricsResult",
+  "title": "UserMetricsResult",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "active_for": {
+      "type": "number",
+      "format": "double"
+    },
+    "first_active": {
+      "type": "string"
+    },
+    "last_active": {
+      "type": "string"
+    },
+    "total_requests": {
+      "type": "number",
+      "format": "double"
+    },
+    "average_requests_per_day_active": {
+      "type": "number",
+      "format": "double"
+    },
+    "average_tokens_per_request": {
+      "type": "number",
+      "format": "double"
+    },
+    "total_completion_tokens": {
+      "type": "number",
+      "format": "double"
+    },
+    "total_prompt_tokens": {
+      "type": "number",
+      "format": "double"
+    },
+    "cost": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "id",
+    "user_id",
+    "active_for",
+    "first_active",
+    "last_active",
+    "total_requests",
+    "average_requests_per_day_active",
+    "average_tokens_per_request",
+    "total_completion_tokens",
+    "total_prompt_tokens",
+    "cost"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Provider",
+  "title": "Provider",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/ProviderName"
+    },
+    {
+      "$ref": "#/components/schemas/ModelProviderName"
+    },
+    {
+      "type": "string",
+      "enum": [
+        "CUSTOM"
+      ]
+    }
+  ]
+}

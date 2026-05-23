@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LLMResponseBody",
+  "title": "LLMResponseBody",
+  "properties": {
+    "dataDetailsResponse": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "_type": {
+          "type": "string",
+          "enum": [
+            "data"
+          ],
+          "nullable": false
+        },
+        "metadata": {
+          "properties": {
+            "timestamp": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": {},
+          "required": [
+            "timestamp"
+          ],
+          "type": "object"
+        },
+        "message": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {},
+      "required": [
+        "name",
+        "_type",
+        "metadata",
+        "message",
+        "status"
+      ],
+      "type": "object"
+    },
+    "vectorDBDetailsResponse": {
+      "properties": {
+        "_type": {
+          "type": "string",
+          "enum": [
+            "vector_db"
+          ],
+          "nullable": false
+        },
+        "metadata": {
+          "properties": {
+            "timestamp": {
+              "type": "string"
+            },
+            "destination_parsed": {
+              "type": "boolean"
+            },
+            "destination": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "timestamp"
+          ],
+          "type": "object"
+        },
+        "actualSimilarity": {
+          "type": "number",
+          "format": "double"
+        },
+        "similarityThreshold": {
+          "type": "number",
+          "format": "double"
+        },
+        "message": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "_type",
+        "metadata",
+        "message",
+        "status"
+      ],
+      "type": "object"
+    },
+    "toolDetailsResponse": {
+      "properties": {
+        "toolName": {
+          "type": "string"
+        },
+        "_type": {
+          "type": "string",
+          "enum": [
+            "tool"
+          ],
+          "nullable": false
+        },
+        "metadata": {
+          "properties": {
+            "timestamp": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "timestamp"
+          ],
+          "type": "object"
+        },
+        "tips": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "message": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "toolName",
+        "_type",
+        "metadata",
+        "tips",
+        "message",
+        "status"
+      ],
+      "type": "object"
+    },
+    "error": {
+      "properties": {
+        "heliconeMessage": {}
+      },
+      "required": [
+        "heliconeMessage"
+      ],
+      "type": "object"
+    },
+    "model": {
+      "type": "string",
+      "nullable": true
+    },
+    "instructions": {
+      "type": "string",
+      "nullable": true
+    },
+    "responses": {
+      "items": {
+        "$ref": "#/components/schemas/Response"
+      },
+      "type": "array",
+      "nullable": true
+    },
+    "messages": {
+      "items": {
+        "$ref": "#/components/schemas/Message"
+      },
+      "type": "array",
+      "nullable": true
+    }
+  },
+  "type": "object"
+}

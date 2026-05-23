@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResultSuccess__runsCount-number--scores-Record_string.Score___",
+  "title": "ResultSuccess__runsCount-number--scores-Record_string.Score___",
+  "properties": {
+    "data": {
+      "properties": {
+        "scores": {
+          "$ref": "#/components/schemas/Record_string.Score_"
+        },
+        "runsCount": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "scores",
+        "runsCount"
+      ],
+      "type": "object"
+    },
+    "error": {
+      "type": "number",
+      "enum": [
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "data",
+    "error"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

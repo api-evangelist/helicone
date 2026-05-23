@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Result_CreditBalanceResponse.string_",
+  "title": "Result_CreditBalanceResponse.string_",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/ResultSuccess_CreditBalanceResponse_"
+    },
+    {
+      "$ref": "#/components/schemas/ResultError_string_"
+    }
+  ]
+}

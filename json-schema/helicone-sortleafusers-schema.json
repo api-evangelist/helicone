@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SortLeafUsers",
+  "title": "SortLeafUsers",
+  "properties": {
+    "id": {
+      "$ref": "#/components/schemas/SortDirection"
+    },
+    "user_id": {
+      "$ref": "#/components/schemas/SortDirection"
+    },
+    "active_for": {
+      "$ref": "#/components/schemas/SortDirection"
+    },
+    "first_active": {
+      "$ref": "#/components/schemas/SortDirection"
+    },
+    "last_active": {
+      "$ref": "#/components/schemas/SortDirection"
+    },
+    "total_requests": {
+      "$ref": "#/components/schemas/SortDirection"
+    },
+    "average_requests_per_day_active": {
+      "$ref": "#/components/schemas/SortDirection"
+    },
+    "average_tokens_per_request": {
+      "$ref": "#/components/schemas/SortDirection"
+    },
+    "total_prompt_tokens": {
+      "$ref": "#/components/schemas/SortDirection"
+    },
+    "total_completion_tokens": {
+      "$ref": "#/components/schemas/SortDirection"
+    },
+    "cost": {
+      "$ref": "#/components/schemas/SortDirection"
+    },
+    "rate_limited_count": {
+      "$ref": "#/components/schemas/SortDirection"
+    }
+  },
+  "type": "object"
+}

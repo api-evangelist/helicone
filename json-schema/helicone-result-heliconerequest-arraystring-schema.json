@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Result_HeliconeRequest-Array.string_",
+  "title": "Result_HeliconeRequest-Array.string_",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/ResultSuccess_HeliconeRequest-Array_"
+    },
+    {
+      "$ref": "#/components/schemas/ResultError_string_"
+    }
+  ]
+}

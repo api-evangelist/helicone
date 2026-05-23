@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Eval",
+  "title": "Eval",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "averageScore": {
+      "type": "number",
+      "format": "double"
+    },
+    "minScore": {
+      "type": "number",
+      "format": "double"
+    },
+    "maxScore": {
+      "type": "number",
+      "format": "double"
+    },
+    "count": {
+      "type": "number",
+      "format": "double"
+    },
+    "overTime": {
+      "items": {
+        "properties": {
+          "count": {
+            "type": "number",
+            "format": "double"
+          },
+          "date": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "count",
+          "date"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "averageOverTime": {
+      "items": {
+        "properties": {
+          "value": {
+            "type": "number",
+            "format": "double"
+          },
+          "date": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "value",
+          "date"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "name",
+    "averageScore",
+    "minScore",
+    "maxScore",
+    "count",
+    "overTime",
+    "averageOverTime"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

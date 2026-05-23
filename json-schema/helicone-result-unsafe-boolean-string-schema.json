@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Result__unsafe-boolean_.string_",
+  "title": "Result__unsafe-boolean_.string_",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/ResultSuccess__unsafe-boolean__"
+    },
+    {
+      "$ref": "#/components/schemas/ResultError_string_"
+    }
+  ]
+}

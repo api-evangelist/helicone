@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TimeToFirstTokenOverTime",
+  "title": "TimeToFirstTokenOverTime",
+  "properties": {
+    "time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ttft": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "time",
+    "ttft"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

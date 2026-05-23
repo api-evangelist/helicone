@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ModelSpend",
+  "title": "ModelSpend",
+  "properties": {
+    "model": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "promptTokens": {
+      "type": "number",
+      "format": "double"
+    },
+    "completionTokens": {
+      "type": "number",
+      "format": "double"
+    },
+    "cacheReadTokens": {
+      "type": "number",
+      "format": "double"
+    },
+    "cacheWriteTokens": {
+      "type": "number",
+      "format": "double"
+    },
+    "pricing": {
+      "properties": {
+        "cacheWritePer1M": {
+          "type": "number",
+          "format": "double"
+        },
+        "cacheReadPer1M": {
+          "type": "number",
+          "format": "double"
+        },
+        "outputPer1M": {
+          "type": "number",
+          "format": "double"
+        },
+        "inputPer1M": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "outputPer1M",
+        "inputPer1M"
+      ],
+      "type": "object",
+      "nullable": true
+    },
+    "subtotal": {
+      "type": "number",
+      "format": "double"
+    },
+    "discountPercent": {
+      "type": "number",
+      "format": "double"
+    },
+    "total": {
+      "type": "number",
+      "format": "double"
+    },
+    "cacheAdjustment": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "model",
+    "provider",
+    "promptTokens",
+    "completionTokens",
+    "cacheReadTokens",
+    "cacheWriteTokens",
+    "pricing",
+    "subtotal",
+    "discountPercent",
+    "total"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

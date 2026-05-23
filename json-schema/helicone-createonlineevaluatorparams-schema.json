@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreateOnlineEvaluatorParams",
+  "title": "CreateOnlineEvaluatorParams",
+  "properties": {
+    "config": {
+      "$ref": "#/components/schemas/Record_string.any_"
+    }
+  },
+  "required": [
+    "config"
+  ],
+  "type": "object"
+}

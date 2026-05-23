@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Partial_RateLimitTableToOperators_",
+  "title": "Partial_RateLimitTableToOperators_",
+  "properties": {
+    "organization_id": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "created_at": {
+      "$ref": "#/components/schemas/Partial_TimestampOperatorsTyped_"
+    }
+  },
+  "type": "object",
+  "description": "Make all properties in T optional"
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExtendedExperimentData",
+  "title": "ExtendedExperimentData",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "original_prompt_version": {
+      "type": "string"
+    },
+    "copied_original_prompt_version": {
+      "type": "string",
+      "nullable": true
+    },
+    "input_keys": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "nullable": true
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "rows": {
+      "items": {
+        "$ref": "#/components/schemas/ExperimentV2Row"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "original_prompt_version",
+    "copied_original_prompt_version",
+    "input_keys",
+    "created_at",
+    "rows"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

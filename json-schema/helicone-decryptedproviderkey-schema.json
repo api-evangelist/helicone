@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DecryptedProviderKey",
+  "title": "DecryptedProviderKey",
+  "properties": {
+    "cuid": {
+      "type": "string",
+      "nullable": true
+    },
+    "provider_secret_key": {
+      "type": "string",
+      "nullable": true
+    },
+    "provider_key_name": {
+      "type": "string",
+      "nullable": true
+    },
+    "provider_name": {
+      "type": "string",
+      "nullable": true
+    },
+    "provider_key": {
+      "type": "string",
+      "nullable": true
+    },
+    "org_id": {
+      "type": "string",
+      "nullable": true
+    },
+    "id": {
+      "type": "string",
+      "nullable": true
+    }
+  },
+  "required": [
+    "provider_secret_key",
+    "provider_key_name",
+    "provider_name",
+    "provider_key",
+    "org_id",
+    "id"
+  ],
+  "type": "object"
+}

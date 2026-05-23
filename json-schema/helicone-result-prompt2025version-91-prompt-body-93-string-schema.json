@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Result_Prompt2025Version_91_prompt_body_93_.string_",
+  "title": "Result_Prompt2025Version_91_prompt_body_93_.string_",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/ResultSuccess_Prompt2025Version_91_prompt_body_93__"
+    },
+    {
+      "$ref": "#/components/schemas/ResultError_string_"
+    }
+  ]
+}

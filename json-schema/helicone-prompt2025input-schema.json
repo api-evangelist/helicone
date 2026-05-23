@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Prompt2025Input",
+  "title": "Prompt2025Input",
+  "properties": {
+    "request_id": {
+      "type": "string"
+    },
+    "version_id": {
+      "type": "string"
+    },
+    "inputs": {
+      "$ref": "#/components/schemas/Record_string.any_"
+    }
+  },
+  "required": [
+    "request_id",
+    "version_id",
+    "inputs"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

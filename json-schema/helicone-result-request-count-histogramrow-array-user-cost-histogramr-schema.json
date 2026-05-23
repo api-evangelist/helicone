@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Result__request_count-HistogramRow-Array--user_cost-HistogramRow-Array_.string_",
+  "title": "Result__request_count-HistogramRow-Array--user_cost-HistogramRow-Array_.string_",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/ResultSuccess__request_count-HistogramRow-Array--user_cost-HistogramRow-Array__"
+    },
+    {
+      "$ref": "#/components/schemas/ResultError_string_"
+    }
+  ]
+}

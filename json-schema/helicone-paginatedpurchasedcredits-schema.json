@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaginatedPurchasedCredits",
+  "title": "PaginatedPurchasedCredits",
+  "properties": {
+    "purchases": {
+      "items": {
+        "$ref": "#/components/schemas/PurchasedCredits"
+      },
+      "type": "array"
+    },
+    "total": {
+      "type": "number",
+      "format": "double"
+    },
+    "page": {
+      "type": "number",
+      "format": "double"
+    },
+    "pageSize": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "purchases",
+    "total",
+    "page",
+    "pageSize"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

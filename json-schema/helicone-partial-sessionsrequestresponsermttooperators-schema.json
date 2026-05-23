@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Partial_SessionsRequestResponseRMTToOperators_",
+  "title": "Partial_SessionsRequestResponseRMTToOperators_",
+  "properties": {
+    "session_session_id": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "session_session_name": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "session_total_cost": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "session_total_tokens": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "session_prompt_tokens": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "session_completion_tokens": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "session_total_requests": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "session_created_at": {
+      "$ref": "#/components/schemas/Partial_TimestampOperatorsTyped_"
+    },
+    "session_latest_request_created_at": {
+      "$ref": "#/components/schemas/Partial_TimestampOperatorsTyped_"
+    },
+    "session_tag": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    }
+  },
+  "type": "object",
+  "description": "Make all properties in T optional"
+}

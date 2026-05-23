@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Quantiles",
+  "title": "Quantiles",
+  "properties": {
+    "time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "p75": {
+      "type": "number",
+      "format": "double"
+    },
+    "p90": {
+      "type": "number",
+      "format": "double"
+    },
+    "p95": {
+      "type": "number",
+      "format": "double"
+    },
+    "p99": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "time",
+    "p75",
+    "p90",
+    "p95",
+    "p99"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

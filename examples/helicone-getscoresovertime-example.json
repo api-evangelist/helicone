@@ -1,0 +1,23 @@
+{
+  "operationId": "GetScoresOverTime",
+  "method": "POST",
+  "path": "/v1/dashboard/scores/query",
+  "summary": "",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "name": "Example 1",
+      "example": {
+        "userFilter": "all",
+        "timeFilter": {
+          "start": "2024-01-01",
+          "end": "2024-01-31"
+        },
+        "dbIncrement": "day",
+        "timeZoneDifference": 0
+      }
+    }
+  ]
+}

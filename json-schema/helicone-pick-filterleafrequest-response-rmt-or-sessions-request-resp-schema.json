@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Pick_FilterLeaf.request_response_rmt-or-sessions_request_response_rmt_",
+  "title": "Pick_FilterLeaf.request_response_rmt-or-sessions_request_response_rmt_",
+  "properties": {
+    "request_response_rmt": {
+      "$ref": "#/components/schemas/Partial_RequestResponseRMTToOperators_"
+    },
+    "sessions_request_response_rmt": {
+      "$ref": "#/components/schemas/Partial_SessionsRequestResponseRMTToOperators_"
+    }
+  },
+  "type": "object",
+  "description": "From T, pick a set of properties whose keys are in the union K"
+}

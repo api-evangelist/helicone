@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Partial_UserApiKeysTableToOperators_",
+  "title": "Partial_UserApiKeysTableToOperators_",
+  "properties": {
+    "api_key_hash": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "api_key_name": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    }
+  },
+  "type": "object",
+  "description": "Make all properties in T optional"
+}

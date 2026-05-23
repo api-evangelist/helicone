@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ModelProviderConfig",
+  "title": "ModelProviderConfig",
+  "properties": {
+    "pricing": {
+      "items": {
+        "$ref": "#/components/schemas/ModelPricing"
+      },
+      "type": "array"
+    },
+    "contextLength": {
+      "type": "number",
+      "format": "double"
+    },
+    "maxCompletionTokens": {
+      "type": "number",
+      "format": "double"
+    },
+    "ptbEnabled": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    },
+    "unsupportedParameters": {
+      "items": {
+        "$ref": "#/components/schemas/StandardParameter"
+      },
+      "type": "array"
+    },
+    "providerModelId": {
+      "type": "string"
+    },
+    "provider": {
+      "$ref": "#/components/schemas/ModelProviderName"
+    },
+    "author": {
+      "$ref": "#/components/schemas/AuthorName"
+    },
+    "supportedParameters": {
+      "items": {
+        "$ref": "#/components/schemas/StandardParameter"
+      },
+      "type": "array"
+    },
+    "supportedPlugins": {
+      "items": {
+        "$ref": "#/components/schemas/PluginId"
+      },
+      "type": "array"
+    },
+    "rateLimits": {
+      "$ref": "#/components/schemas/RateLimits"
+    },
+    "endpointConfigs": {
+      "$ref": "#/components/schemas/Record_string.EndpointConfig_"
+    },
+    "crossRegion": {
+      "type": "boolean"
+    },
+    "priority": {
+      "type": "number",
+      "format": "double"
+    },
+    "quantization": {
+      "type": "string",
+      "enum": [
+        "fp4",
+        "fp8",
+        "fp16",
+        "bf16",
+        "int4"
+      ]
+    },
+    "responseFormat": {
+      "$ref": "#/components/schemas/ResponseFormat"
+    },
+    "requireExplicitRouting": {
+      "type": "boolean"
+    },
+    "providerModelIdAliases": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "pricing",
+    "contextLength",
+    "maxCompletionTokens",
+    "ptbEnabled",
+    "providerModelId",
+    "provider",
+    "author",
+    "supportedParameters",
+    "endpointConfigs"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

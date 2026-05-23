@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResultSuccess__score_key-string--score_sum-number--created_at_trunc-string_-Array_",
+  "title": "ResultSuccess__score_key-string--score_sum-number--created_at_trunc-string_-Array_",
+  "properties": {
+    "data": {
+      "items": {
+        "properties": {
+          "created_at_trunc": {
+            "type": "string"
+          },
+          "score_sum": {
+            "type": "number",
+            "format": "double"
+          },
+          "score_key": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "created_at_trunc",
+          "score_sum",
+          "score_key"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "error": {
+      "type": "number",
+      "enum": [
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "data",
+    "error"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ProviderQueryParams",
+  "title": "ProviderQueryParams",
+  "properties": {
+    "filter": {
+      "$ref": "#/components/schemas/FilterNode"
+    },
+    "offset": {
+      "type": "number",
+      "format": "double"
+    },
+    "limit": {
+      "type": "number",
+      "format": "double"
+    },
+    "timeFilter": {
+      "properties": {
+        "end": {
+          "type": "string"
+        },
+        "start": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "end",
+        "start"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "filter",
+    "offset",
+    "limit",
+    "timeFilter"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

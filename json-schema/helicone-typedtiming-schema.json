@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TypedTiming",
+  "title": "TypedTiming",
+  "properties": {
+    "timeToFirstToken": {
+      "type": "number",
+      "format": "double"
+    },
+    "startTime": {
+      "type": "string"
+    },
+    "endTime": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "startTime",
+    "endTime"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

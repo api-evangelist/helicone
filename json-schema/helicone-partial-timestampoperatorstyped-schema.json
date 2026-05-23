@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Partial_TimestampOperatorsTyped_",
+  "title": "Partial_TimestampOperatorsTyped_",
+  "properties": {
+    "equals": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "gte": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lte": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "gt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "type": "object",
+  "description": "Make all properties in T optional"
+}

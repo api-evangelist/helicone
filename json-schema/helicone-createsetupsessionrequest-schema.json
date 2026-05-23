@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreateSetupSessionRequest",
+  "title": "CreateSetupSessionRequest",
+  "properties": {
+    "returnUrl": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "additionalProperties": false
+}

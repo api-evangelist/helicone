@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RequestFilterNode",
+  "title": "RequestFilterNode",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/FilterLeafSubset_feedback-or-request-or-response-or-properties-or-values-or-request_response_rmt-or-sessions_request_response_rmt_"
+    },
+    {
+      "$ref": "#/components/schemas/RequestFilterBranch"
+    },
+    {
+      "type": "string",
+      "enum": [
+        "all"
+      ]
+    }
+  ]
+}

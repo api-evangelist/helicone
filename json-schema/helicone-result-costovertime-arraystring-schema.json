@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Result_CostOverTime-Array.string_",
+  "title": "Result_CostOverTime-Array.string_",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/ResultSuccess_CostOverTime-Array_"
+    },
+    {
+      "$ref": "#/components/schemas/ResultError_string_"
+    }
+  ]
+}

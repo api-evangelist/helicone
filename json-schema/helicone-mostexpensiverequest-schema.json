@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/MostExpensiveRequest",
+  "title": "MostExpensiveRequest",
+  "properties": {
+    "requestId": {
+      "type": "string"
+    },
+    "cost": {
+      "type": "number",
+      "format": "double"
+    },
+    "model": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "promptTokens": {
+      "type": "number",
+      "format": "double"
+    },
+    "completionTokens": {
+      "type": "number",
+      "format": "double"
+    },
+    "conversation": {
+      "properties": {
+        "totalWords": {
+          "type": "number",
+          "format": "double"
+        },
+        "turnCount": {
+          "type": "number",
+          "format": "double"
+        },
+        "messages": {
+          "items": {
+            "$ref": "#/components/schemas/ConversationMessage"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "totalWords",
+        "turnCount",
+        "messages"
+      ],
+      "type": "object",
+      "nullable": true
+    }
+  },
+  "required": [
+    "requestId",
+    "cost",
+    "model",
+    "provider",
+    "createdAt",
+    "promptTokens",
+    "completionTokens",
+    "conversation"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

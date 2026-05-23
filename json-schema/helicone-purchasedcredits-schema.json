@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PurchasedCredits",
+  "title": "PurchasedCredits",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "number",
+      "format": "double"
+    },
+    "credits": {
+      "type": "number",
+      "format": "double"
+    },
+    "referenceId": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "createdAt",
+    "credits",
+    "referenceId"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

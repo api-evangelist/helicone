@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Result_SessionNameResult-Array.string_",
+  "title": "Result_SessionNameResult-Array.string_",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/ResultSuccess_SessionNameResult-Array_"
+    },
+    {
+      "$ref": "#/components/schemas/ResultError_string_"
+    }
+  ]
+}

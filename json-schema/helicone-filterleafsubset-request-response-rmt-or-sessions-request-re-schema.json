@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/FilterLeafSubset_request_response_rmt-or-sessions_request_response_rmt_",
+  "title": "FilterLeafSubset_request_response_rmt-or-sessions_request_response_rmt_",
+  "$ref": "#/components/schemas/Pick_FilterLeaf.request_response_rmt-or-sessions_request_response_rmt_"
+}

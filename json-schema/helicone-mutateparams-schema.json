@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/MutateParams",
+  "title": "MutateParams",
+  "properties": {
+    "addRequests": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "removeRequests": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "addRequests",
+    "removeRequests"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

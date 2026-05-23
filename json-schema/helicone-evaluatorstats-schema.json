@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/EvaluatorStats",
+  "title": "EvaluatorStats",
+  "properties": {
+    "averageScore": {
+      "type": "number",
+      "format": "double"
+    },
+    "totalUses": {
+      "type": "number",
+      "format": "double"
+    },
+    "recentTrend": {
+      "type": "string",
+      "enum": [
+        "up",
+        "down",
+        "stable"
+      ]
+    },
+    "scoreDistribution": {
+      "items": {
+        "properties": {
+          "count": {
+            "type": "number",
+            "format": "double"
+          },
+          "range": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "count",
+          "range"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "timeSeriesData": {
+      "items": {
+        "properties": {
+          "value": {
+            "type": "number",
+            "format": "double"
+          },
+          "date": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "value",
+          "date"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "averageScore",
+    "totalUses",
+    "recentTrend",
+    "scoreDistribution",
+    "timeSeriesData"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

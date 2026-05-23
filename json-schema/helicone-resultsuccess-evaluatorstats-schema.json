@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResultSuccess_EvaluatorStats_",
+  "title": "ResultSuccess_EvaluatorStats_",
+  "properties": {
+    "data": {
+      "$ref": "#/components/schemas/EvaluatorStats"
+    },
+    "error": {
+      "type": "number",
+      "enum": [
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "data",
+    "error"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

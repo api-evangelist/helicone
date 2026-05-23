@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Result_string-or-null.string_",
+  "title": "Result_string-or-null.string_",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/ResultSuccess_string-or-null_"
+    },
+    {
+      "$ref": "#/components/schemas/ResultError_string_"
+    }
+  ]
+}

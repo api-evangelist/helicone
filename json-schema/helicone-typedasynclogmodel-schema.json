@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TypedAsyncLogModel",
+  "title": "TypedAsyncLogModel",
+  "properties": {
+    "providerRequest": {
+      "$ref": "#/components/schemas/TypedProviderRequest"
+    },
+    "providerResponse": {
+      "$ref": "#/components/schemas/TypedProviderResponse"
+    },
+    "timing": {
+      "$ref": "#/components/schemas/TypedTiming"
+    },
+    "provider": {
+      "$ref": "#/components/schemas/Provider"
+    }
+  },
+  "required": [
+    "providerRequest",
+    "providerResponse"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

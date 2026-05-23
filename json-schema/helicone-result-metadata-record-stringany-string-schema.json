@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Result__metadata-Record_string.any__.string_",
+  "title": "Result__metadata-Record_string.any__.string_",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/ResultSuccess__metadata-Record_string.any___"
+    },
+    {
+      "$ref": "#/components/schemas/ResultError_string_"
+    }
+  ]
+}

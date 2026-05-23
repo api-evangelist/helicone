@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LlmSchema",
+  "title": "LlmSchema",
+  "properties": {
+    "request": {
+      "$ref": "#/components/schemas/LLMRequestBody"
+    },
+    "response": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LLMResponseBody"
+        }
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "request"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

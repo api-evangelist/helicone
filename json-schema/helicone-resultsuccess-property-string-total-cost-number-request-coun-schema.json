@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResultSuccess__property-string--total_cost-number--request_count-number--created_at_trunc-string_-Array_",
+  "title": "ResultSuccess__property-string--total_cost-number--request_count-number--created_at_trunc-string_-Array_",
+  "properties": {
+    "data": {
+      "items": {
+        "properties": {
+          "created_at_trunc": {
+            "type": "string"
+          },
+          "request_count": {
+            "type": "number",
+            "format": "double"
+          },
+          "total_cost": {
+            "type": "number",
+            "format": "double"
+          },
+          "property": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "created_at_trunc",
+          "request_count",
+          "total_cost",
+          "property"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "error": {
+      "type": "number",
+      "enum": [
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "data",
+    "error"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

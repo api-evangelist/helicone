@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentIntentRecord",
+  "title": "PaymentIntentRecord",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "number",
+      "format": "double"
+    },
+    "created": {
+      "type": "number",
+      "format": "double"
+    },
+    "status": {
+      "type": "string"
+    },
+    "isRefunded": {
+      "type": "boolean"
+    },
+    "refundedAmount": {
+      "type": "number",
+      "format": "double"
+    },
+    "refundIds": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "amount",
+    "created",
+    "status"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

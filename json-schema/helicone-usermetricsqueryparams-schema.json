@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/UserMetricsQueryParams",
+  "title": "UserMetricsQueryParams",
+  "properties": {
+    "filter": {
+      "$ref": "#/components/schemas/UserFilterNode"
+    },
+    "offset": {
+      "type": "number",
+      "format": "double"
+    },
+    "limit": {
+      "type": "number",
+      "format": "double"
+    },
+    "timeFilter": {
+      "properties": {
+        "endTimeUnixSeconds": {
+          "type": "number",
+          "format": "double"
+        },
+        "startTimeUnixSeconds": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "endTimeUnixSeconds",
+        "startTimeUnixSeconds"
+      ],
+      "type": "object"
+    },
+    "timeZoneDifferenceMinutes": {
+      "type": "number",
+      "format": "double"
+    },
+    "sort": {
+      "$ref": "#/components/schemas/SortLeafUsers"
+    }
+  },
+  "required": [
+    "filter",
+    "offset",
+    "limit"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

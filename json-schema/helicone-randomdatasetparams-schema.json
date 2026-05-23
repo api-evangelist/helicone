@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RandomDatasetParams",
+  "title": "RandomDatasetParams",
+  "properties": {
+    "datasetName": {
+      "type": "string"
+    },
+    "filter": {
+      "$ref": "#/components/schemas/DatasetFilterNode"
+    },
+    "offset": {
+      "type": "number",
+      "format": "double"
+    },
+    "limit": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "datasetName",
+    "filter"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

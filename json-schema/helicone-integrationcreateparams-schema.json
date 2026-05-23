@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/IntegrationCreateParams",
+  "title": "IntegrationCreateParams",
+  "properties": {
+    "integration_name": {
+      "type": "string"
+    },
+    "settings": {
+      "$ref": "#/components/schemas/Json"
+    },
+    "active": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "integration_name"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/HeliconeDataset",
+  "title": "HeliconeDataset",
+  "properties": {
+    "created_at": {
+      "type": "string",
+      "nullable": true
+    },
+    "dataset_type": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "meta": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Json"
+        }
+      ],
+      "nullable": true
+    },
+    "name": {
+      "type": "string",
+      "nullable": true
+    },
+    "organization": {
+      "type": "string"
+    },
+    "requests_count": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "created_at",
+    "dataset_type",
+    "id",
+    "meta",
+    "name",
+    "organization",
+    "requests_count"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

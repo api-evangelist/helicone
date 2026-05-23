@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CompletionUsage",
+  "title": "CompletionUsage",
+  "description": "Usage statistics for the completion request.",
+  "properties": {
+    "completion_tokens": {
+      "type": "number",
+      "format": "double",
+      "description": "Number of tokens in the generated completion."
+    },
+    "prompt_tokens": {
+      "type": "number",
+      "format": "double",
+      "description": "Number of tokens in the prompt."
+    },
+    "total_tokens": {
+      "type": "number",
+      "format": "double",
+      "description": "Total number of tokens used in the request (prompt + completion)."
+    },
+    "completion_tokens_details": {
+      "$ref": "#/components/schemas/CompletionUsage.CompletionTokensDetails",
+      "description": "Breakdown of tokens used in a completion."
+    },
+    "prompt_tokens_details": {
+      "$ref": "#/components/schemas/CompletionUsage.PromptTokensDetails",
+      "description": "Breakdown of tokens used in the prompt."
+    }
+  },
+  "required": [
+    "completion_tokens",
+    "prompt_tokens",
+    "total_tokens"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

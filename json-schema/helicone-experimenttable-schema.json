@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExperimentTable",
+  "title": "ExperimentTable",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "experimentId": {
+      "type": "string"
+    },
+    "columns": {
+      "items": {
+        "$ref": "#/components/schemas/ExperimentTableColumn"
+      },
+      "type": "array"
+    },
+    "metadata": {
+      "$ref": "#/components/schemas/Record_string.any_"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "experimentId",
+    "columns"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

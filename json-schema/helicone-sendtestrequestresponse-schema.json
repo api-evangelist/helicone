@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SendTestRequestResponse",
+  "title": "SendTestRequestResponse",
+  "properties": {
+    "success": {
+      "type": "boolean"
+    },
+    "response": {
+      "type": "string"
+    },
+    "requestId": {
+      "type": "string"
+    },
+    "error": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "success"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

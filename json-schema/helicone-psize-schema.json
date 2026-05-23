@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PSize",
+  "title": "PSize",
+  "type": "string",
+  "enum": [
+    "p50",
+    "p75",
+    "p95",
+    "p99",
+    "p99.9"
+  ]
+}

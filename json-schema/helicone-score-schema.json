@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Score",
+  "title": "Score",
+  "properties": {
+    "valueType": {
+      "type": "string"
+    },
+    "value": {
+      "anyOf": [
+        {
+          "type": "number",
+          "format": "double"
+        },
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    }
+  },
+  "required": [
+    "valueType",
+    "value"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

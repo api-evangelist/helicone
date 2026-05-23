@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DataEntry",
+  "title": "DataEntry",
+  "anyOf": [
+    {
+      "properties": {
+        "_type": {
+          "type": "string",
+          "enum": [
+            "system-prompt"
+          ],
+          "nullable": false
+        }
+      },
+      "required": [
+        "_type"
+      ],
+      "type": "object"
+    },
+    {
+      "properties": {
+        "inputKey": {
+          "type": "string"
+        },
+        "_type": {
+          "type": "string",
+          "enum": [
+            "prompt-input"
+          ],
+          "nullable": false
+        }
+      },
+      "required": [
+        "inputKey",
+        "_type"
+      ],
+      "type": "object"
+    },
+    {
+      "properties": {
+        "content": {
+          "type": "string",
+          "enum": [
+            "jsonify",
+            "message"
+          ]
+        },
+        "_type": {
+          "type": "string",
+          "enum": [
+            "input-body"
+          ],
+          "nullable": false
+        }
+      },
+      "required": [
+        "content",
+        "_type"
+      ],
+      "type": "object"
+    },
+    {
+      "properties": {
+        "content": {
+          "type": "string",
+          "enum": [
+            "jsonify",
+            "message"
+          ]
+        },
+        "_type": {
+          "type": "string",
+          "enum": [
+            "output-body"
+          ],
+          "nullable": false
+        }
+      },
+      "required": [
+        "content",
+        "_type"
+      ],
+      "type": "object"
+    }
+  ]
+}

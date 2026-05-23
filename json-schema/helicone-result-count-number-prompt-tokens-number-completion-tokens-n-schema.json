@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Result__count-number--prompt_tokens-number--completion_tokens-number--user_id-string--cost-number_-Array.string_",
+  "title": "Result__count-number--prompt_tokens-number--completion_tokens-number--user_id-string--cost-number_-Array.string_",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/ResultSuccess__count-number--prompt_tokens-number--completion_tokens-number--user_id-string--cost-number_-Array_"
+    },
+    {
+      "$ref": "#/components/schemas/ResultError_string_"
+    }
+  ]
+}

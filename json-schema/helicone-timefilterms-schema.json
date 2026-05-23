@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TimeFilterMs",
+  "title": "TimeFilterMs",
+  "properties": {
+    "startTimeUnixMs": {
+      "type": "number",
+      "format": "double"
+    },
+    "endTimeUnixMs": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "startTimeUnixMs",
+    "endTimeUnixMs"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

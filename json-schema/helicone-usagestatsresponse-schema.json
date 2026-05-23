@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/UsageStatsResponse",
+  "title": "UsageStatsResponse",
+  "properties": {
+    "billingPeriod": {
+      "properties": {
+        "daysTotal": {
+          "type": "number",
+          "format": "double"
+        },
+        "daysElapsed": {
+          "type": "number",
+          "format": "double"
+        },
+        "end": {
+          "type": "string"
+        },
+        "start": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "daysTotal",
+        "daysElapsed",
+        "end",
+        "start"
+      ],
+      "type": "object"
+    },
+    "usage": {
+      "properties": {
+        "totalGB": {
+          "type": "number",
+          "format": "double"
+        },
+        "totalBytes": {
+          "type": "number",
+          "format": "double"
+        },
+        "totalRequests": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "totalGB",
+        "totalBytes",
+        "totalRequests"
+      ],
+      "type": "object"
+    },
+    "dailyData": {
+      "items": {
+        "$ref": "#/components/schemas/DailyUsageDataPoint"
+      },
+      "type": "array"
+    },
+    "estimatedCost": {
+      "properties": {
+        "projectedMonthlyTotalCost": {
+          "type": "number",
+          "format": "double"
+        },
+        "projectedMonthlyGBCost": {
+          "type": "number",
+          "format": "double"
+        },
+        "projectedMonthlyRequestsCost": {
+          "type": "number",
+          "format": "double"
+        },
+        "totalCost": {
+          "type": "number",
+          "format": "double"
+        },
+        "gbCost": {
+          "type": "number",
+          "format": "double"
+        },
+        "requestsCost": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "projectedMonthlyTotalCost",
+        "projectedMonthlyGBCost",
+        "projectedMonthlyRequestsCost",
+        "totalCost",
+        "gbCost",
+        "requestsCost"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "billingPeriod",
+    "usage",
+    "dailyData",
+    "estimatedCost"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

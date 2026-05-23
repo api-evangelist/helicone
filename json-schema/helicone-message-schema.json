@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Message",
+  "title": "Message",
+  "properties": {
+    "ending_event_id": {
+      "type": "string"
+    },
+    "trigger_event_id": {
+      "type": "string"
+    },
+    "start_timestamp": {
+      "type": "string"
+    },
+    "annotations": {
+      "items": {
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "url_citation"
+            ],
+            "nullable": false
+          }
+        },
+        "required": [
+          "title",
+          "url",
+          "type"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "reasoning": {
+      "type": "string"
+    },
+    "deleted": {
+      "type": "boolean"
+    },
+    "contentArray": {
+      "items": {
+        "$ref": "#/components/schemas/Message"
+      },
+      "type": "array"
+    },
+    "idx": {
+      "type": "number",
+      "format": "double"
+    },
+    "detail": {
+      "type": "string"
+    },
+    "filename": {
+      "type": "string"
+    },
+    "file_id": {
+      "type": "string"
+    },
+    "file_data": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "input_image",
+        "input_text",
+        "input_file"
+      ]
+    },
+    "audio_data": {
+      "type": "string"
+    },
+    "image_url": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "tool_call_id": {
+      "type": "string"
+    },
+    "tool_calls": {
+      "items": {
+        "$ref": "#/components/schemas/FunctionCall"
+      },
+      "type": "array"
+    },
+    "mime_type": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "instruction": {
+      "type": "string"
+    },
+    "role": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string",
+          "enum": [
+            "user",
+            "assistant",
+            "system",
+            "developer"
+          ]
+        }
+      ]
+    },
+    "id": {
+      "type": "string"
+    },
+    "_type": {
+      "type": "string",
+      "enum": [
+        "functionCall",
+        "function",
+        "image",
+        "file",
+        "message",
+        "autoInput",
+        "contentArray",
+        "audio"
+      ]
+    }
+  },
+  "required": [
+    "_type"
+  ],
+  "type": "object"
+}

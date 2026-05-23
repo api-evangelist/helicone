@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/HeliconeEventVectorDB",
+  "title": "HeliconeEventVectorDB",
+  "properties": {
+    "_type": {
+      "type": "string",
+      "enum": [
+        "vector_db"
+      ],
+      "nullable": false
+    },
+    "operation": {
+      "type": "string",
+      "enum": [
+        "search",
+        "insert",
+        "delete",
+        "update"
+      ]
+    },
+    "text": {
+      "type": "string"
+    },
+    "vector": {
+      "items": {
+        "type": "number",
+        "format": "double"
+      },
+      "type": "array"
+    },
+    "topK": {
+      "type": "number",
+      "format": "double"
+    },
+    "filter": {
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "databaseName": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "_type",
+    "operation"
+  ],
+  "type": "object",
+  "additionalProperties": {}
+}

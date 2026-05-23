@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreateNewPromptVersionForExperimentParams",
+  "title": "CreateNewPromptVersionForExperimentParams",
+  "properties": {
+    "newHeliconeTemplate": {},
+    "isMajorVersion": {
+      "type": "boolean"
+    },
+    "metadata": {
+      "$ref": "#/components/schemas/Record_string.any_"
+    },
+    "experimentId": {
+      "type": "string"
+    },
+    "bumpForMajorPromptVersionId": {
+      "type": "string"
+    },
+    "parentPromptVersionId": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "newHeliconeTemplate",
+    "parentPromptVersionId"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

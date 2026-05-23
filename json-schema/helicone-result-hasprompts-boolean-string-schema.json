@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Result__hasPrompts-boolean_.string_",
+  "title": "Result__hasPrompts-boolean_.string_",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/ResultSuccess__hasPrompts-boolean__"
+    },
+    {
+      "$ref": "#/components/schemas/ResultError_string_"
+    }
+  ]
+}

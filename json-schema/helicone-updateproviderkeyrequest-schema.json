@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/UpdateProviderKeyRequest",
+  "title": "UpdateProviderKeyRequest",
+  "properties": {
+    "byokEnabled": {
+      "type": "boolean"
+    },
+    "config": {
+      "$ref": "#/components/schemas/Record_string.string_"
+    },
+    "providerSecretKey": {
+      "type": "string"
+    },
+    "providerKey": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

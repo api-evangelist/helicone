@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Result_InAppThread.string_",
+  "title": "Result_InAppThread.string_",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/ResultSuccess_InAppThread_"
+    },
+    {
+      "$ref": "#/components/schemas/ResultError_string_"
+    }
+  ]
+}

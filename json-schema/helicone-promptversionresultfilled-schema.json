@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PromptVersionResultFilled",
+  "title": "PromptVersionResultFilled",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "minor_version": {
+      "type": "number",
+      "format": "double"
+    },
+    "major_version": {
+      "type": "number",
+      "format": "double"
+    },
+    "prompt_v2": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "filled_helicone_template": {}
+  },
+  "required": [
+    "id",
+    "minor_version",
+    "major_version",
+    "prompt_v2",
+    "model",
+    "filled_helicone_template"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResultSuccess_PromptCreateResponse_",
+  "title": "ResultSuccess_PromptCreateResponse_",
+  "properties": {
+    "data": {
+      "$ref": "#/components/schemas/PromptCreateResponse"
+    },
+    "error": {
+      "type": "number",
+      "enum": [
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "data",
+    "error"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

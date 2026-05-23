@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CountryData",
+  "title": "CountryData",
+  "properties": {
+    "country": {
+      "type": "string"
+    },
+    "total_requests": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "country",
+    "total_requests"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

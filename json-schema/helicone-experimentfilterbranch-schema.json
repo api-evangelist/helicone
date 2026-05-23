@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExperimentFilterBranch",
+  "title": "ExperimentFilterBranch",
+  "properties": {
+    "right": {
+      "$ref": "#/components/schemas/ExperimentFilterNode"
+    },
+    "operator": {
+      "type": "string",
+      "enum": [
+        "or",
+        "and"
+      ]
+    },
+    "left": {
+      "$ref": "#/components/schemas/ExperimentFilterNode"
+    }
+  },
+  "required": [
+    "right",
+    "operator",
+    "left"
+  ],
+  "type": "object"
+}

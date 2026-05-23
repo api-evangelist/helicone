@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Model",
+  "title": "Model",
+  "properties": {
+    "timeSeriesData": {
+      "properties": {
+        "errorRate": {
+          "items": {
+            "$ref": "#/components/schemas/TimeSeriesMetric"
+          },
+          "type": "array"
+        },
+        "successRate": {
+          "items": {
+            "$ref": "#/components/schemas/TimeSeriesMetric"
+          },
+          "type": "array"
+        },
+        "ttft": {
+          "items": {
+            "$ref": "#/components/schemas/TimeSeriesMetric"
+          },
+          "type": "array"
+        },
+        "latency": {
+          "items": {
+            "$ref": "#/components/schemas/TimeSeriesMetric"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "errorRate",
+        "successRate",
+        "ttft",
+        "latency"
+      ],
+      "type": "object"
+    },
+    "requestStatus": {
+      "properties": {
+        "errorRate": {
+          "type": "number",
+          "format": "double"
+        },
+        "successRate": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "errorRate",
+        "successRate"
+      ],
+      "type": "object"
+    },
+    "geographicTtft": {
+      "items": {
+        "properties": {
+          "median": {
+            "type": "number",
+            "format": "double"
+          },
+          "countryCode": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "median",
+          "countryCode"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "geographicLatency": {
+      "items": {
+        "properties": {
+          "median": {
+            "type": "number",
+            "format": "double"
+          },
+          "countryCode": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "median",
+          "countryCode"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "feedback": {
+      "properties": {
+        "negativePercentage": {
+          "type": "number",
+          "format": "double"
+        },
+        "positivePercentage": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "negativePercentage",
+        "positivePercentage"
+      ],
+      "type": "object"
+    },
+    "costs": {
+      "properties": {
+        "completion_token": {
+          "type": "number",
+          "format": "double"
+        },
+        "prompt_token": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "completion_token",
+        "prompt_token"
+      ],
+      "type": "object"
+    },
+    "ttft": {
+      "$ref": "#/components/schemas/MetricStats"
+    },
+    "latency": {
+      "$ref": "#/components/schemas/TokenMetricStats"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "timeSeriesData",
+    "requestStatus",
+    "geographicTtft",
+    "geographicLatency",
+    "feedback",
+    "costs",
+    "ttft",
+    "latency",
+    "provider",
+    "model"
+  ],
+  "type": "object"
+}

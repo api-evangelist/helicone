@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Result_ExperimentTableSimplified.string_",
+  "title": "Result_ExperimentTableSimplified.string_",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/ResultSuccess_ExperimentTableSimplified_"
+    },
+    {
+      "$ref": "#/components/schemas/ResultError_string_"
+    }
+  ]
+}

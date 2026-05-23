@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CustomerUsage",
+  "title": "CustomerUsage",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "cost": {
+      "type": "number",
+      "format": "double"
+    },
+    "count": {
+      "type": "number",
+      "format": "double"
+    },
+    "prompt_tokens": {
+      "type": "number",
+      "format": "double"
+    },
+    "completion_tokens": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "cost",
+    "count",
+    "prompt_tokens",
+    "completion_tokens"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

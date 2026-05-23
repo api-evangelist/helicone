@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/FilterNode",
+  "title": "FilterNode",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/FilterLeaf"
+    },
+    {
+      "$ref": "#/components/schemas/FilterBranch"
+    },
+    {
+      "properties": {},
+      "type": "object"
+    },
+    {
+      "type": "string",
+      "enum": [
+        "all"
+      ]
+    }
+  ]
+}

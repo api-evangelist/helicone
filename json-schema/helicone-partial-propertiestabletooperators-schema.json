@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Partial_PropertiesTableToOperators_",
+  "title": "Partial_PropertiesTableToOperators_",
+  "properties": {
+    "auth_hash": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "key": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "value": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    }
+  },
+  "type": "object",
+  "description": "Make all properties in T optional"
+}

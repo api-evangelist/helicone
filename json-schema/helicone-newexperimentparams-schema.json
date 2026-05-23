@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/NewExperimentParams",
+  "title": "NewExperimentParams",
+  "properties": {
+    "datasetId": {
+      "type": "string"
+    },
+    "promptVersion": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "providerKeyId": {
+      "type": "string"
+    },
+    "meta": {}
+  },
+  "required": [
+    "datasetId",
+    "promptVersion",
+    "model",
+    "providerKeyId"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

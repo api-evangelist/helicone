@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PromptInputRecord",
+  "title": "PromptInputRecord",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "inputs": {
+      "$ref": "#/components/schemas/Record_string.string_"
+    },
+    "dataset_row_id": {
+      "type": "string"
+    },
+    "source_request": {
+      "type": "string"
+    },
+    "prompt_version": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "response_body": {
+      "type": "string"
+    },
+    "request_body": {
+      "type": "string"
+    },
+    "auto_prompt_inputs": {
+      "items": {},
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "inputs",
+    "source_request",
+    "prompt_version",
+    "created_at",
+    "auto_prompt_inputs"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

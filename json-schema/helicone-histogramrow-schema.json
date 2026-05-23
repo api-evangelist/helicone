@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/HistogramRow",
+  "title": "HistogramRow",
+  "properties": {
+    "range_start": {
+      "type": "string"
+    },
+    "range_end": {
+      "type": "string"
+    },
+    "value": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "range_start",
+    "range_end",
+    "value"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/HeliconeDatasetRow",
+  "title": "HeliconeDatasetRow",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "origin_request_id": {
+      "type": "string"
+    },
+    "dataset_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "signed_url": {
+      "$ref": "#/components/schemas/Result_string.string_"
+    }
+  },
+  "required": [
+    "id",
+    "origin_request_id",
+    "dataset_id",
+    "created_at",
+    "signed_url"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

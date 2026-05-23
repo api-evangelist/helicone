@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AddVaultKeyParams",
+  "title": "AddVaultKeyParams",
+  "properties": {
+    "key": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "key",
+    "provider"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

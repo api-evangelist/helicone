@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/EvaluatorConfig",
+  "title": "EvaluatorConfig",
+  "properties": {
+    "evaluator_code_template": {
+      "type": "string"
+    },
+    "evaluator_llm_template": {
+      "type": "string"
+    },
+    "evaluator_scoring_type": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "evaluator_scoring_type"
+  ],
+  "type": "object"
+}

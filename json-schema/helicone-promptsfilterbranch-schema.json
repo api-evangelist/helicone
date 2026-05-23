@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PromptsFilterBranch",
+  "title": "PromptsFilterBranch",
+  "properties": {
+    "right": {
+      "$ref": "#/components/schemas/PromptsFilterNode"
+    },
+    "operator": {
+      "type": "string",
+      "enum": [
+        "or",
+        "and"
+      ]
+    },
+    "left": {
+      "$ref": "#/components/schemas/PromptsFilterNode"
+    }
+  },
+  "required": [
+    "right",
+    "operator",
+    "left"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DatasetFilterBranch",
+  "title": "DatasetFilterBranch",
+  "properties": {
+    "right": {
+      "$ref": "#/components/schemas/DatasetFilterNode"
+    },
+    "operator": {
+      "type": "string",
+      "enum": [
+        "or",
+        "and"
+      ]
+    },
+    "left": {
+      "$ref": "#/components/schemas/DatasetFilterNode"
+    }
+  },
+  "required": [
+    "right",
+    "operator",
+    "left"
+  ],
+  "type": "object"
+}

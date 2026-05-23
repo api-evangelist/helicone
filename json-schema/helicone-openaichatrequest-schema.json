@@ -1,0 +1,322 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OpenAIChatRequest",
+  "title": "OpenAIChatRequest",
+  "description": "Simplified interface for the OpenAI Chat request format",
+  "properties": {
+    "model": {
+      "type": "string"
+    },
+    "messages": {
+      "items": {
+        "properties": {
+          "tool_calls": {
+            "items": {
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "function"
+                  ],
+                  "nullable": false
+                },
+                "function": {
+                  "properties": {
+                    "arguments": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "arguments",
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type",
+                "function",
+                "id"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "tool_call_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "content": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "items": {
+                  "properties": {
+                    "image_url": {
+                      "properties": {
+                        "url": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "url"
+                      ],
+                      "type": "object"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "type": "array"
+              }
+            ],
+            "nullable": true
+          },
+          "role": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content",
+          "role"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "temperature": {
+      "type": "number",
+      "format": "double"
+    },
+    "top_p": {
+      "type": "number",
+      "format": "double"
+    },
+    "max_tokens": {
+      "type": "number",
+      "format": "double"
+    },
+    "max_completion_tokens": {
+      "type": "number",
+      "format": "double"
+    },
+    "stream": {
+      "type": "boolean"
+    },
+    "stop": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "tools": {
+      "items": {
+        "properties": {
+          "function": {
+            "properties": {
+              "strict": {
+                "type": "boolean"
+              },
+              "parameters": {
+                "$ref": "#/components/schemas/Record_string.any_"
+              },
+              "description": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "type": "object"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "function"
+            ],
+            "nullable": false
+          }
+        },
+        "required": [
+          "function",
+          "type"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "tool_choice": {
+      "anyOf": [
+        {
+          "properties": {
+            "function": {
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "function"
+                  ],
+                  "nullable": false
+                }
+              },
+              "required": [
+                "name",
+                "type"
+              ],
+              "type": "object"
+            },
+            "type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "type": "string",
+          "enum": [
+            "none",
+            "auto",
+            "required"
+          ]
+        }
+      ]
+    },
+    "parallel_tool_calls": {
+      "type": "boolean"
+    },
+    "reasoning_effort": {
+      "type": "string",
+      "enum": [
+        "minimal",
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "verbosity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "frequency_penalty": {
+      "type": "number",
+      "format": "double"
+    },
+    "presence_penalty": {
+      "type": "number",
+      "format": "double"
+    },
+    "logit_bias": {
+      "$ref": "#/components/schemas/Record_string.number_"
+    },
+    "logprobs": {
+      "type": "boolean"
+    },
+    "top_logprobs": {
+      "type": "number",
+      "format": "double"
+    },
+    "n": {
+      "type": "number",
+      "format": "double"
+    },
+    "modalities": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "prediction": {},
+    "audio": {},
+    "response_format": {
+      "properties": {
+        "json_schema": {},
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "seed": {
+      "type": "number",
+      "format": "double"
+    },
+    "service_tier": {
+      "type": "string"
+    },
+    "store": {
+      "type": "boolean"
+    },
+    "stream_options": {},
+    "metadata": {
+      "$ref": "#/components/schemas/Record_string.string_"
+    },
+    "user": {
+      "type": "string"
+    },
+    "function_call": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "functions": {
+      "items": {},
+      "type": "array"
+    }
+  },
+  "type": "object",
+  "additionalProperties": false
+}

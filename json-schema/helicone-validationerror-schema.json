@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ValidationError",
+  "title": "ValidationError",
+  "properties": {
+    "field": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "field",
+    "message"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

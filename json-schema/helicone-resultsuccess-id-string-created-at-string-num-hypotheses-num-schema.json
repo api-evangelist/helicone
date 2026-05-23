@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResultSuccess__id-string--created_at-string--num_hypotheses-number--dataset-string--meta-Record_string.any__-Array_",
+  "title": "ResultSuccess__id-string--created_at-string--num_hypotheses-number--dataset-string--meta-Record_string.any__-Array_",
+  "properties": {
+    "data": {
+      "items": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Record_string.any_"
+          },
+          "dataset": {
+            "type": "string"
+          },
+          "num_hypotheses": {
+            "type": "number",
+            "format": "double"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "meta",
+          "dataset",
+          "num_hypotheses",
+          "created_at",
+          "id"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "error": {
+      "type": "number",
+      "enum": [
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "data",
+    "error"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

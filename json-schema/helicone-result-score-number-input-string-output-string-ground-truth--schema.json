@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Result__score-number--input-string--output-string--ground_truth_63_-string_.string_",
+  "title": "Result__score-number--input-string--output-string--ground_truth_63_-string_.string_",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/ResultSuccess__score-number--input-string--output-string--ground_truth_63_-string__"
+    },
+    {
+      "$ref": "#/components/schemas/ResultError_string_"
+    }
+  ]
+}

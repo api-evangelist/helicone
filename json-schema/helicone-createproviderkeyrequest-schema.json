@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreateProviderKeyRequest",
+  "title": "CreateProviderKeyRequest",
+  "properties": {
+    "config": {
+      "$ref": "#/components/schemas/Record_string.string_"
+    },
+    "byokEnabled": {
+      "type": "boolean"
+    },
+    "providerKeyName": {
+      "type": "string"
+    },
+    "providerSecretKey": {
+      "type": "string"
+    },
+    "providerKey": {
+      "type": "string"
+    },
+    "providerName": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "config",
+    "byokEnabled",
+    "providerKeyName",
+    "providerKey",
+    "providerName"
+  ],
+  "type": "object"
+}

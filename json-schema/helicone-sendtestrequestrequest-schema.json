@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SendTestRequestRequest",
+  "title": "SendTestRequestRequest",
+  "properties": {
+    "apiKey": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "apiKey"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

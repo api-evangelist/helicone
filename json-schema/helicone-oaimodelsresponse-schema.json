@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OAIModelsResponse",
+  "title": "OAIModelsResponse",
+  "properties": {
+    "object": {
+      "type": "string",
+      "enum": [
+        "list"
+      ],
+      "nullable": false
+    },
+    "data": {
+      "items": {
+        "$ref": "#/components/schemas/OAIModel"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "object",
+    "data"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

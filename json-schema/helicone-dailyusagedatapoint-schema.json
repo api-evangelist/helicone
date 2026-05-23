@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DailyUsageDataPoint",
+  "title": "DailyUsageDataPoint",
+  "properties": {
+    "date": {
+      "type": "string"
+    },
+    "requests": {
+      "type": "number",
+      "format": "double"
+    },
+    "bytes": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "date",
+    "requests",
+    "bytes"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

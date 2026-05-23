@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Endpoint",
+  "title": "Endpoint",
+  "properties": {
+    "pricing": {
+      "items": {
+        "$ref": "#/components/schemas/ModelPricing"
+      },
+      "type": "array"
+    },
+    "contextLength": {
+      "type": "number",
+      "format": "double"
+    },
+    "maxCompletionTokens": {
+      "type": "number",
+      "format": "double"
+    },
+    "ptbEnabled": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    },
+    "unsupportedParameters": {
+      "items": {
+        "$ref": "#/components/schemas/StandardParameter"
+      },
+      "type": "array"
+    },
+    "modelConfig": {
+      "$ref": "#/components/schemas/ModelProviderConfig"
+    },
+    "userConfig": {
+      "$ref": "#/components/schemas/UserEndpointConfig"
+    },
+    "provider": {
+      "$ref": "#/components/schemas/ModelProviderName"
+    },
+    "author": {
+      "$ref": "#/components/schemas/AuthorName"
+    },
+    "providerModelId": {
+      "type": "string"
+    },
+    "supportedParameters": {
+      "items": {
+        "$ref": "#/components/schemas/StandardParameter"
+      },
+      "type": "array"
+    },
+    "priority": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "pricing",
+    "contextLength",
+    "maxCompletionTokens",
+    "ptbEnabled",
+    "modelConfig",
+    "userConfig",
+    "provider",
+    "author",
+    "providerModelId",
+    "supportedParameters"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

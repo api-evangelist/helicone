@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TestInput",
+  "title": "TestInput",
+  "properties": {
+    "promptTemplate": {
+      "type": "string"
+    },
+    "inputs": {
+      "properties": {
+        "autoInputs": {
+          "$ref": "#/components/schemas/Record_string.string_"
+        },
+        "inputs": {
+          "$ref": "#/components/schemas/Record_string.string_"
+        }
+      },
+      "required": [
+        "inputs"
+      ],
+      "type": "object"
+    },
+    "outputBody": {
+      "type": "string"
+    },
+    "inputBody": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "inputs",
+    "outputBody",
+    "inputBody"
+  ],
+  "type": "object"
+}

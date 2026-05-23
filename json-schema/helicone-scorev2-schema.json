@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ScoreV2",
+  "title": "ScoreV2",
+  "properties": {
+    "valueType": {
+      "type": "string"
+    },
+    "value": {
+      "anyOf": [
+        {
+          "type": "number",
+          "format": "double"
+        },
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "max": {
+      "type": "number",
+      "format": "double"
+    },
+    "min": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "valueType",
+    "value",
+    "max",
+    "min"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExperimentFilterNode",
+  "title": "ExperimentFilterNode",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/FilterLeafSubset_experiment_"
+    },
+    {
+      "$ref": "#/components/schemas/ExperimentFilterBranch"
+    },
+    {
+      "type": "string",
+      "enum": [
+        "all"
+      ]
+    }
+  ]
+}

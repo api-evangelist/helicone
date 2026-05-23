@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResultSuccess__request_count-HistogramRow-Array--user_cost-HistogramRow-Array__",
+  "title": "ResultSuccess__request_count-HistogramRow-Array--user_cost-HistogramRow-Array__",
+  "properties": {
+    "data": {
+      "properties": {
+        "user_cost": {
+          "items": {
+            "$ref": "#/components/schemas/HistogramRow"
+          },
+          "type": "array"
+        },
+        "request_count": {
+          "items": {
+            "$ref": "#/components/schemas/HistogramRow"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "user_cost",
+        "request_count"
+      ],
+      "type": "object"
+    },
+    "error": {
+      "type": "number",
+      "enum": [
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "data",
+    "error"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

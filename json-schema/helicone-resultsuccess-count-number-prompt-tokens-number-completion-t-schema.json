@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResultSuccess__count-number--prompt_tokens-number--completion_tokens-number--user_id-string--cost-number_-Array_",
+  "title": "ResultSuccess__count-number--prompt_tokens-number--completion_tokens-number--user_id-string--cost-number_-Array_",
+  "properties": {
+    "data": {
+      "items": {
+        "properties": {
+          "cost": {
+            "type": "number",
+            "format": "double"
+          },
+          "user_id": {
+            "type": "string"
+          },
+          "completion_tokens": {
+            "type": "number",
+            "format": "double"
+          },
+          "prompt_tokens": {
+            "type": "number",
+            "format": "double"
+          },
+          "count": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "required": [
+          "cost",
+          "user_id",
+          "completion_tokens",
+          "prompt_tokens",
+          "count"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "error": {
+      "type": "number",
+      "enum": [
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "data",
+    "error"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

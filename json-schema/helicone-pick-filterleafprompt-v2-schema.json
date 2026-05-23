@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Pick_FilterLeaf.prompt_v2_",
+  "title": "Pick_FilterLeaf.prompt_v2_",
+  "properties": {
+    "prompt_v2": {
+      "$ref": "#/components/schemas/Partial_PromptToOperators_"
+    }
+  },
+  "type": "object",
+  "description": "From T, pick a set of properties whose keys are in the union K"
+}

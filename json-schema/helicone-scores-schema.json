@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Scores",
+  "title": "Scores",
+  "$ref": "#/components/schemas/Record_string.number-or-boolean-or-undefined_"
+}

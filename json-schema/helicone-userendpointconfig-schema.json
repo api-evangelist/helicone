@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/UserEndpointConfig",
+  "title": "UserEndpointConfig",
+  "properties": {
+    "region": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "projectId": {
+      "type": "string"
+    },
+    "baseUri": {
+      "type": "string"
+    },
+    "deploymentName": {
+      "type": "string"
+    },
+    "resourceName": {
+      "type": "string"
+    },
+    "apiVersion": {
+      "type": "string"
+    },
+    "crossRegion": {
+      "type": "boolean"
+    },
+    "gatewayMapping": {
+      "$ref": "#/components/schemas/BodyMappingType"
+    },
+    "modelName": {
+      "type": "string"
+    },
+    "heliconeModelId": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "additionalProperties": false
+}

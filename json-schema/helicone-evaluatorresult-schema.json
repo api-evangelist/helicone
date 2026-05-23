@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/EvaluatorResult",
+  "title": "EvaluatorResult",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "scoring_type": {
+      "type": "string"
+    },
+    "llm_template": {},
+    "organization_id": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "code_template": {},
+    "last_mile_config": {}
+  },
+  "required": [
+    "id",
+    "created_at",
+    "scoring_type",
+    "llm_template",
+    "organization_id",
+    "updated_at",
+    "name",
+    "code_template",
+    "last_mile_config"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

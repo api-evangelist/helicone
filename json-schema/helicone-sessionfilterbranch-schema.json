@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SessionFilterBranch",
+  "title": "SessionFilterBranch",
+  "properties": {
+    "right": {
+      "$ref": "#/components/schemas/SessionFilterNode"
+    },
+    "operator": {
+      "type": "string",
+      "enum": [
+        "or",
+        "and"
+      ]
+    },
+    "left": {
+      "$ref": "#/components/schemas/SessionFilterNode"
+    }
+  },
+  "required": [
+    "right",
+    "operator",
+    "left"
+  ],
+  "type": "object"
+}

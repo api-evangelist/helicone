@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Partial_FeedbackTableToOperators_",
+  "title": "Partial_FeedbackTableToOperators_",
+  "properties": {
+    "id": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "created_at": {
+      "$ref": "#/components/schemas/Partial_TimestampOperators_"
+    },
+    "rating": {
+      "$ref": "#/components/schemas/Partial_BooleanOperators_"
+    },
+    "response_id": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    }
+  },
+  "type": "object",
+  "description": "Make all properties in T optional"
+}

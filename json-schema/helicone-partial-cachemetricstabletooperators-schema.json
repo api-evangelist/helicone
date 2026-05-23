@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Partial_CacheMetricsTableToOperators_",
+  "title": "Partial_CacheMetricsTableToOperators_",
+  "properties": {
+    "organization_id": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "request_id": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "date": {
+      "$ref": "#/components/schemas/Partial_TimestampOperatorsTyped_"
+    },
+    "hour": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "model": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "cache_hit_count": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "saved_latency_ms": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "saved_completion_tokens": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "saved_prompt_tokens": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "saved_completion_audio_tokens": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "saved_prompt_audio_tokens": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "saved_prompt_cache_write_tokens": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "saved_prompt_cache_read_tokens": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "first_hit": {
+      "$ref": "#/components/schemas/Partial_TimestampOperatorsTyped_"
+    },
+    "last_hit": {
+      "$ref": "#/components/schemas/Partial_TimestampOperatorsTyped_"
+    },
+    "request_body": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "response_body": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    }
+  },
+  "type": "object",
+  "description": "Make all properties in T optional"
+}

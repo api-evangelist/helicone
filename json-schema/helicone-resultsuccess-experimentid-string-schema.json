@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResultSuccess__experimentId-string__",
+  "title": "ResultSuccess__experimentId-string__",
+  "properties": {
+    "data": {
+      "properties": {
+        "experimentId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "experimentId"
+      ],
+      "type": "object"
+    },
+    "error": {
+      "type": "number",
+      "enum": [
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "data",
+    "error"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

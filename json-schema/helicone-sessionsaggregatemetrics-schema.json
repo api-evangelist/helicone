@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SessionsAggregateMetrics",
+  "title": "SessionsAggregateMetrics",
+  "properties": {
+    "count": {
+      "type": "number",
+      "format": "double"
+    },
+    "total_cost": {
+      "type": "number",
+      "format": "double"
+    },
+    "avg_cost": {
+      "type": "number",
+      "format": "double"
+    },
+    "avg_latency": {
+      "type": "number",
+      "format": "double"
+    },
+    "avg_requests": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "count",
+    "total_cost",
+    "avg_cost",
+    "avg_latency",
+    "avg_requests"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

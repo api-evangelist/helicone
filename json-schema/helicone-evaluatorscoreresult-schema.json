@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/EvaluatorScoreResult",
+  "title": "EvaluatorScoreResult",
+  "$ref": "#/components/schemas/Result_EvaluatorScore.string_"
+}

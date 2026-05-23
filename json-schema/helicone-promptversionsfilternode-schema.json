@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PromptVersionsFilterNode",
+  "title": "PromptVersionsFilterNode",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/FilterLeafSubset_prompts_versions_"
+    },
+    {
+      "$ref": "#/components/schemas/PromptVersionsFilterBranch"
+    },
+    {
+      "type": "string",
+      "enum": [
+        "all"
+      ]
+    }
+  ]
+}

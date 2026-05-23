@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PromptsResult",
+  "title": "PromptsResult",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "user_defined_id": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "pretty_name": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "major_version": {
+      "type": "number",
+      "format": "double"
+    },
+    "metadata": {
+      "$ref": "#/components/schemas/Record_string.any_"
+    }
+  },
+  "required": [
+    "id",
+    "user_defined_id",
+    "description",
+    "pretty_name",
+    "created_at",
+    "major_version"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

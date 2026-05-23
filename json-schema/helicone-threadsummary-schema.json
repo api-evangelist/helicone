@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ThreadSummary",
+  "title": "ThreadSummary",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "escalated": {
+      "type": "boolean"
+    },
+    "message_count": {
+      "type": "number",
+      "format": "double"
+    },
+    "first_message": {
+      "type": "string"
+    },
+    "last_message": {
+      "type": "string"
+    },
+    "soft_delete": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "created_at",
+    "updated_at",
+    "escalated",
+    "message_count"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

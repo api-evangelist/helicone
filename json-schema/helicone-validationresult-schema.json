@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ValidationResult",
+  "title": "ValidationResult",
+  "properties": {
+    "isValid": {
+      "type": "boolean"
+    },
+    "errors": {
+      "items": {
+        "$ref": "#/components/schemas/ValidationError"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "isValid",
+    "errors"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ModelCapability",
+  "title": "ModelCapability",
+  "type": "string",
+  "enum": [
+    "audio",
+    "video",
+    "image",
+    "thinking",
+    "web_search",
+    "caching",
+    "reasoning"
+  ]
+}

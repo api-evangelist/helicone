@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Pick_FilterLeaf.users_view-or-request_response_rmt_",
+  "title": "Pick_FilterLeaf.users_view-or-request_response_rmt_",
+  "properties": {
+    "request_response_rmt": {
+      "$ref": "#/components/schemas/Partial_RequestResponseRMTToOperators_"
+    },
+    "users_view": {
+      "$ref": "#/components/schemas/Partial_UserViewToOperators_"
+    }
+  },
+  "type": "object",
+  "description": "From T, pick a set of properties whose keys are in the union K"
+}

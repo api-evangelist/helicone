@@ -1,0 +1,259 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/HeliconeRequest",
+  "title": "HeliconeRequest",
+  "properties": {
+    "response_id": {
+      "type": "string",
+      "nullable": true
+    },
+    "response_created_at": {
+      "type": "string",
+      "nullable": true
+    },
+    "response_body": {},
+    "response_status": {
+      "type": "number",
+      "format": "double"
+    },
+    "response_model": {
+      "type": "string",
+      "nullable": true
+    },
+    "request_id": {
+      "type": "string"
+    },
+    "request_created_at": {
+      "type": "string"
+    },
+    "request_body": {},
+    "request_path": {
+      "type": "string"
+    },
+    "request_user_id": {
+      "type": "string",
+      "nullable": true
+    },
+    "request_properties": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Record_string.string_"
+        }
+      ],
+      "nullable": true
+    },
+    "request_model": {
+      "type": "string",
+      "nullable": true
+    },
+    "model_override": {
+      "type": "string",
+      "nullable": true
+    },
+    "helicone_user": {
+      "type": "string",
+      "nullable": true
+    },
+    "provider": {
+      "$ref": "#/components/schemas/Provider"
+    },
+    "delay_ms": {
+      "type": "number",
+      "format": "double",
+      "nullable": true
+    },
+    "time_to_first_token": {
+      "type": "number",
+      "format": "double",
+      "nullable": true
+    },
+    "total_tokens": {
+      "type": "number",
+      "format": "double",
+      "nullable": true
+    },
+    "prompt_tokens": {
+      "type": "number",
+      "format": "double",
+      "nullable": true
+    },
+    "prompt_cache_write_tokens": {
+      "type": "number",
+      "format": "double",
+      "nullable": true
+    },
+    "prompt_cache_read_tokens": {
+      "type": "number",
+      "format": "double",
+      "nullable": true
+    },
+    "completion_tokens": {
+      "type": "number",
+      "format": "double",
+      "nullable": true
+    },
+    "reasoning_tokens": {
+      "type": "number",
+      "format": "double",
+      "nullable": true
+    },
+    "prompt_audio_tokens": {
+      "type": "number",
+      "format": "double",
+      "nullable": true
+    },
+    "completion_audio_tokens": {
+      "type": "number",
+      "format": "double",
+      "nullable": true
+    },
+    "cost": {
+      "type": "number",
+      "format": "double",
+      "nullable": true
+    },
+    "prompt_id": {
+      "type": "string",
+      "nullable": true
+    },
+    "prompt_version": {
+      "type": "string",
+      "nullable": true
+    },
+    "feedback_created_at": {
+      "type": "string",
+      "nullable": true
+    },
+    "feedback_id": {
+      "type": "string",
+      "nullable": true
+    },
+    "feedback_rating": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "signed_body_url": {
+      "type": "string",
+      "nullable": true
+    },
+    "llmSchema": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LlmSchema"
+        }
+      ],
+      "nullable": true
+    },
+    "country_code": {
+      "type": "string",
+      "nullable": true
+    },
+    "asset_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "nullable": true
+    },
+    "asset_urls": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Record_string.string_"
+        }
+      ],
+      "nullable": true
+    },
+    "scores": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Record_string.number_"
+        }
+      ],
+      "nullable": true
+    },
+    "costUSD": {
+      "type": "number",
+      "format": "double",
+      "nullable": true
+    },
+    "properties": {
+      "$ref": "#/components/schemas/Record_string.string_"
+    },
+    "assets": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "target_url": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "cache_reference_id": {
+      "type": "string",
+      "nullable": true
+    },
+    "cache_enabled": {
+      "type": "boolean"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "request_referrer": {
+      "type": "string",
+      "nullable": true
+    },
+    "ai_gateway_body_mapping": {
+      "type": "string",
+      "nullable": true
+    },
+    "storage_location": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "response_id",
+    "response_created_at",
+    "response_status",
+    "response_model",
+    "request_id",
+    "request_created_at",
+    "request_body",
+    "request_path",
+    "request_user_id",
+    "request_properties",
+    "request_model",
+    "model_override",
+    "helicone_user",
+    "provider",
+    "delay_ms",
+    "time_to_first_token",
+    "total_tokens",
+    "prompt_tokens",
+    "prompt_cache_write_tokens",
+    "prompt_cache_read_tokens",
+    "completion_tokens",
+    "reasoning_tokens",
+    "prompt_audio_tokens",
+    "completion_audio_tokens",
+    "cost",
+    "prompt_id",
+    "prompt_version",
+    "llmSchema",
+    "country_code",
+    "asset_ids",
+    "asset_urls",
+    "scores",
+    "properties",
+    "assets",
+    "target_url",
+    "model",
+    "cache_reference_id",
+    "cache_enabled",
+    "ai_gateway_body_mapping"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResultSuccess__api_key_hash-string--api_key_name-string--created_at-string--governance-boolean--id-number--key_permissions-string--organization_id-string--soft_delete-boolean--temp_key-boolean--updated_at-string--user_id-string_-Array_",
+  "title": "ResultSuccess__api_key_hash-string--api_key_name-string--created_at-string--governance-boolean--id-number--key_permissions-string--organization_id-string--soft_delete-boolean--temp_key-boolean--updated_at-string--user_id-string_-Array_",
+  "properties": {
+    "data": {
+      "items": {
+        "properties": {
+          "user_id": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "temp_key": {
+            "type": "boolean"
+          },
+          "soft_delete": {
+            "type": "boolean"
+          },
+          "organization_id": {
+            "type": "string"
+          },
+          "key_permissions": {
+            "type": "string"
+          },
+          "id": {
+            "type": "number",
+            "format": "double"
+          },
+          "governance": {
+            "type": "boolean"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "api_key_name": {
+            "type": "string"
+          },
+          "api_key_hash": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "user_id",
+          "updated_at",
+          "temp_key",
+          "soft_delete",
+          "organization_id",
+          "key_permissions",
+          "id",
+          "governance",
+          "created_at",
+          "api_key_name",
+          "api_key_hash"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "error": {
+      "type": "number",
+      "enum": [
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "data",
+    "error"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

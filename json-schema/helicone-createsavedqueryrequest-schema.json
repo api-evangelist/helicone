@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreateSavedQueryRequest",
+  "title": "CreateSavedQueryRequest",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "sql": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "sql"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

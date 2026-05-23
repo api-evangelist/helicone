@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Partial_UserViewToOperators_",
+  "title": "Partial_UserViewToOperators_",
+  "properties": {
+    "user_user_id": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "user_active_for": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "user_first_active": {
+      "$ref": "#/components/schemas/Partial_TimestampOperatorsTyped_"
+    },
+    "user_last_active": {
+      "$ref": "#/components/schemas/Partial_TimestampOperatorsTyped_"
+    },
+    "user_total_requests": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "user_average_requests_per_day_active": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "user_average_tokens_per_request": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "user_total_completion_tokens": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "user_total_prompt_tokens": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "user_cost": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    }
+  },
+  "type": "object",
+  "description": "Make all properties in T optional"
+}

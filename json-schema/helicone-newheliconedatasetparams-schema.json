@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/NewHeliconeDatasetParams",
+  "title": "NewHeliconeDatasetParams",
+  "properties": {
+    "datasetName": {
+      "type": "string"
+    },
+    "requestIds": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "meta": {
+      "$ref": "#/components/schemas/HeliconeDatasetMetadata"
+    }
+  },
+  "required": [
+    "datasetName",
+    "requestIds"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

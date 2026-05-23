@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Record_string.Score_",
+  "title": "Record_string.Score_",
+  "properties": {},
+  "additionalProperties": {
+    "$ref": "#/components/schemas/Score"
+  },
+  "type": "object",
+  "description": "Construct a type with a set of properties K of type T"
+}

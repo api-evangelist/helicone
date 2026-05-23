@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExperimentScores",
+  "title": "ExperimentScores",
+  "properties": {
+    "dataset": {
+      "properties": {
+        "scores": {
+          "$ref": "#/components/schemas/Record_string.Score_"
+        }
+      },
+      "required": [
+        "scores"
+      ],
+      "type": "object"
+    },
+    "hypothesis": {
+      "properties": {
+        "scores": {
+          "$ref": "#/components/schemas/Record_string.Score_"
+        },
+        "runsCount": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "scores",
+        "runsCount"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "dataset",
+    "hypothesis"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

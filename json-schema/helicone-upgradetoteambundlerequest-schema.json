@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/UpgradeToTeamBundleRequest",
+  "title": "UpgradeToTeamBundleRequest",
+  "properties": {
+    "ui_mode": {
+      "type": "string",
+      "enum": [
+        "embedded",
+        "hosted"
+      ]
+    }
+  },
+  "type": "object",
+  "additionalProperties": false
+}

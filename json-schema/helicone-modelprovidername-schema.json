@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ModelProviderName",
+  "title": "ModelProviderName",
+  "type": "string",
+  "enum": [
+    "baseten",
+    "anthropic",
+    "azure",
+    "bedrock",
+    "canopywave",
+    "cerebras",
+    "chutes",
+    "deepinfra",
+    "deepseek",
+    "fireworks",
+    "google-ai-studio",
+    "groq",
+    "helicone",
+    "mistral",
+    "nebius",
+    "novita",
+    "openai",
+    "openrouter",
+    "perplexity",
+    "vertex",
+    "xai"
+  ],
+  "nullable": false
+}

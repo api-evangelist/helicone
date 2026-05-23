@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Result__output-string--traces-string-Array--statusCode_63_-number_.string_",
+  "title": "Result__output-string--traces-string-Array--statusCode_63_-number_.string_",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/ResultSuccess__output-string--traces-string-Array--statusCode_63_-number__"
+    },
+    {
+      "$ref": "#/components/schemas/ResultError_string_"
+    }
+  ]
+}

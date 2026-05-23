@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TimeFrame",
+  "title": "TimeFrame",
+  "type": "string",
+  "enum": [
+    "24h",
+    "7d",
+    "30d"
+  ]
+}

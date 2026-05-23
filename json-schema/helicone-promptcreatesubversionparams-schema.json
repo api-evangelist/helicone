@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PromptCreateSubversionParams",
+  "title": "PromptCreateSubversionParams",
+  "properties": {
+    "newHeliconeTemplate": {},
+    "isMajorVersion": {
+      "type": "boolean"
+    },
+    "metadata": {
+      "$ref": "#/components/schemas/Record_string.any_"
+    },
+    "experimentId": {
+      "type": "string"
+    },
+    "bumpForMajorPromptVersionId": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "newHeliconeTemplate"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

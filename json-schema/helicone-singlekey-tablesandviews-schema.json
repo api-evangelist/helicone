@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SingleKey_TablesAndViews_",
+  "title": "SingleKey_TablesAndViews_",
+  "$ref": "#/components/schemas/Partial_TablesAndViews_"
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Result_ChatCompletion-or-_content-string--reasoning-string--calls-any_.string_",
+  "title": "Result_ChatCompletion-or-_content-string--reasoning-string--calls-any_.string_",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/ResultSuccess_ChatCompletion-or-_content-string--reasoning-string--calls-any__"
+    },
+    {
+      "$ref": "#/components/schemas/ResultError_string_"
+    }
+  ]
+}

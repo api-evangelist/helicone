@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Partial_NumberOperators_",
+  "title": "Partial_NumberOperators_",
+  "properties": {
+    "not-equals": {
+      "type": "number",
+      "format": "double"
+    },
+    "equals": {
+      "type": "number",
+      "format": "double"
+    },
+    "gte": {
+      "type": "number",
+      "format": "double"
+    },
+    "lte": {
+      "type": "number",
+      "format": "double"
+    },
+    "lt": {
+      "type": "number",
+      "format": "double"
+    },
+    "gt": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "type": "object",
+  "description": "Make all properties in T optional"
+}

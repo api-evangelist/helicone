@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Partial_PromptVersionsToOperators_",
+  "title": "Partial_PromptVersionsToOperators_",
+  "properties": {
+    "minor_version": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "major_version": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "id": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "prompt_v2": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    }
+  },
+  "type": "object",
+  "description": "Make all properties in T optional"
+}

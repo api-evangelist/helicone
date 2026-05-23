@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Record_string.unknown_",
+  "title": "Record_string.unknown_",
+  "properties": {},
+  "additionalProperties": {},
+  "type": "object",
+  "description": "Construct a type with a set of properties K of type T"
+}

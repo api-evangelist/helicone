@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RequestQueryParams",
+  "title": "RequestQueryParams",
+  "properties": {
+    "filter": {
+      "$ref": "#/components/schemas/RequestFilterNode"
+    },
+    "offset": {
+      "type": "number",
+      "format": "double"
+    },
+    "limit": {
+      "type": "number",
+      "format": "double"
+    },
+    "sort": {
+      "$ref": "#/components/schemas/SortLeafRequest"
+    },
+    "isCached": {
+      "type": "boolean"
+    },
+    "includeInputs": {
+      "type": "boolean"
+    },
+    "isPartOfExperiment": {
+      "type": "boolean"
+    },
+    "isScored": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "filter"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

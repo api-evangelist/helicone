@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PromptsQueryParams",
+  "title": "PromptsQueryParams",
+  "properties": {
+    "filter": {
+      "$ref": "#/components/schemas/PromptsFilterNode"
+    }
+  },
+  "required": [
+    "filter"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

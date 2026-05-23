@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Partial_OrganizationPropertiesToOperators_",
+  "title": "Partial_OrganizationPropertiesToOperators_",
+  "properties": {
+    "organization_id": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "property_key": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    }
+  },
+  "type": "object",
+  "description": "Make all properties in T optional"
+}

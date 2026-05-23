@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PromptResult",
+  "title": "PromptResult",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "user_defined_id": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "pretty_name": {
+      "type": "string"
+    },
+    "major_version": {
+      "type": "number",
+      "format": "double"
+    },
+    "latest_version_id": {
+      "type": "string"
+    },
+    "latest_model_used": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "last_used": {
+      "type": "string"
+    },
+    "versions": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "metadata": {
+      "$ref": "#/components/schemas/Record_string.any_"
+    }
+  },
+  "required": [
+    "id",
+    "user_defined_id",
+    "description",
+    "pretty_name",
+    "major_version",
+    "latest_version_id",
+    "latest_model_used",
+    "created_at",
+    "last_used",
+    "versions"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

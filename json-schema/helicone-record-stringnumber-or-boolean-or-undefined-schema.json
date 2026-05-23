@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Record_string.number-or-boolean-or-undefined_",
+  "title": "Record_string.number-or-boolean-or-undefined_",
+  "properties": {},
+  "additionalProperties": {
+    "anyOf": [
+      {
+        "type": "number",
+        "format": "double"
+      },
+      {
+        "type": "boolean"
+      }
+    ]
+  },
+  "type": "object",
+  "description": "Construct a type with a set of properties K of type T"
+}

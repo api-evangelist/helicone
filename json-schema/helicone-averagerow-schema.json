@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AverageRow",
+  "title": "AverageRow",
+  "properties": {
+    "average": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "average"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

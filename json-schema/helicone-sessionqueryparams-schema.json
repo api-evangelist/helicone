@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SessionQueryParams",
+  "title": "SessionQueryParams",
+  "properties": {
+    "search": {
+      "type": "string"
+    },
+    "timeFilter": {
+      "properties": {
+        "endTimeUnixMs": {
+          "type": "number",
+          "format": "double"
+        },
+        "startTimeUnixMs": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "endTimeUnixMs",
+        "startTimeUnixMs"
+      ],
+      "type": "object"
+    },
+    "nameEquals": {
+      "type": "string"
+    },
+    "timezoneDifference": {
+      "type": "number",
+      "format": "double"
+    },
+    "filter": {
+      "$ref": "#/components/schemas/SessionFilterNode"
+    },
+    "offset": {
+      "type": "number",
+      "format": "double"
+    },
+    "limit": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "search",
+    "timeFilter",
+    "timezoneDifference",
+    "filter"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

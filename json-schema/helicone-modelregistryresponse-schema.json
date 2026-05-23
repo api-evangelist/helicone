@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ModelRegistryResponse",
+  "title": "ModelRegistryResponse",
+  "properties": {
+    "models": {
+      "items": {
+        "$ref": "#/components/schemas/ModelRegistryItem"
+      },
+      "type": "array"
+    },
+    "total": {
+      "type": "number",
+      "format": "double"
+    },
+    "filters": {
+      "properties": {
+        "capabilities": {
+          "items": {
+            "$ref": "#/components/schemas/ModelCapability"
+          },
+          "type": "array"
+        },
+        "authors": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "providers": {
+          "items": {
+            "properties": {
+              "displayName": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "displayName",
+              "name"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "capabilities",
+        "authors",
+        "providers"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "models",
+    "total",
+    "filters"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

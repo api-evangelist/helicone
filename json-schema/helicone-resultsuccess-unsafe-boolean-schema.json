@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResultSuccess__unsafe-boolean__",
+  "title": "ResultSuccess__unsafe-boolean__",
+  "properties": {
+    "data": {
+      "properties": {
+        "unsafe": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "unsafe"
+      ],
+      "type": "object"
+    },
+    "error": {
+      "type": "number",
+      "enum": [
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "data",
+    "error"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

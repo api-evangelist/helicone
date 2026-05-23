@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExperimentV2Row",
+  "title": "ExperimentV2Row",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "inputs": {
+      "$ref": "#/components/schemas/Record_string.string_"
+    },
+    "prompt_version": {
+      "type": "string"
+    },
+    "requests": {
+      "items": {
+        "$ref": "#/components/schemas/ExperimentV2Output"
+      },
+      "type": "array"
+    },
+    "auto_prompt_inputs": {
+      "items": {},
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "inputs",
+    "prompt_version",
+    "requests",
+    "auto_prompt_inputs"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

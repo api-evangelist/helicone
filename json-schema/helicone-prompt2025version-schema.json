@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Prompt2025Version",
+  "title": "Prompt2025Version",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "prompt_id": {
+      "type": "string"
+    },
+    "major_version": {
+      "type": "number",
+      "format": "double"
+    },
+    "minor_version": {
+      "type": "number",
+      "format": "double"
+    },
+    "commit_message": {
+      "type": "string"
+    },
+    "environments": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "s3_url": {
+      "type": "string"
+    },
+    "prompt_body": {
+      "$ref": "#/components/schemas/Prompt2025VersionPromptBody",
+      "description": "The full prompt body including messages. Only included when explicitly requested\nvia the `includePromptBody` parameter to avoid unnecessary data transfer."
+    }
+  },
+  "required": [
+    "id",
+    "model",
+    "prompt_id",
+    "major_version",
+    "minor_version",
+    "commit_message",
+    "created_at"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

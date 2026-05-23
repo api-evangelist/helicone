@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Partial_UserMetricsToOperators_",
+  "title": "Partial_UserMetricsToOperators_",
+  "properties": {
+    "user_id": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "last_active": {
+      "$ref": "#/components/schemas/Partial_TimestampOperators_"
+    },
+    "total_requests": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "active_for": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "average_requests_per_day_active": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "average_tokens_per_request": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "total_completion_tokens": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "total_prompt_tokens": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "cost": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    }
+  },
+  "type": "object",
+  "description": "Make all properties in T optional"
+}

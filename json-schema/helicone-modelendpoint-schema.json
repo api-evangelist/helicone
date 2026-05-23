@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ModelEndpoint",
+  "title": "ModelEndpoint",
+  "properties": {
+    "provider": {
+      "type": "string"
+    },
+    "providerSlug": {
+      "type": "string"
+    },
+    "endpoint": {
+      "$ref": "#/components/schemas/Endpoint"
+    },
+    "supportsPtb": {
+      "type": "boolean"
+    },
+    "pricing": {
+      "$ref": "#/components/schemas/SimplifiedPricing"
+    },
+    "pricingTiers": {
+      "items": {
+        "$ref": "#/components/schemas/SimplifiedPricing"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "provider",
+    "providerSlug",
+    "pricing"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

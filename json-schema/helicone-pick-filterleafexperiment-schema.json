@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Pick_FilterLeaf.experiment_",
+  "title": "Pick_FilterLeaf.experiment_",
+  "properties": {
+    "experiment": {
+      "$ref": "#/components/schemas/Partial_ExperimentToOperators_"
+    }
+  },
+  "type": "object",
+  "description": "From T, pick a set of properties whose keys are in the union K"
+}

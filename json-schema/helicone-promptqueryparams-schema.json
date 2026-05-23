@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PromptQueryParams",
+  "title": "PromptQueryParams",
+  "properties": {
+    "timeFilter": {
+      "properties": {
+        "end": {
+          "type": "string"
+        },
+        "start": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "end",
+        "start"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "timeFilter"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

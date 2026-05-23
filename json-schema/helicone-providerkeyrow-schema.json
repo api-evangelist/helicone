@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ProviderKeyRow",
+  "title": "ProviderKeyRow",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "provider_name": {
+      "type": "string"
+    },
+    "provider_key_name": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "soft_delete": {
+      "type": "boolean"
+    },
+    "config": {
+      "$ref": "#/components/schemas/Record_string.any_"
+    },
+    "byok_enabled": {
+      "type": "boolean"
+    },
+    "cuid": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "provider_name",
+    "provider_key_name",
+    "soft_delete"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SessionMetrics",
+  "title": "SessionMetrics",
+  "properties": {
+    "session_count": {
+      "items": {
+        "$ref": "#/components/schemas/HistogramRow"
+      },
+      "type": "array"
+    },
+    "session_duration": {
+      "items": {
+        "$ref": "#/components/schemas/HistogramRow"
+      },
+      "type": "array"
+    },
+    "session_cost": {
+      "items": {
+        "$ref": "#/components/schemas/HistogramRow"
+      },
+      "type": "array"
+    },
+    "average": {
+      "properties": {
+        "session_cost": {
+          "items": {
+            "$ref": "#/components/schemas/AverageRow"
+          },
+          "type": "array"
+        },
+        "session_duration": {
+          "items": {
+            "$ref": "#/components/schemas/AverageRow"
+          },
+          "type": "array"
+        },
+        "session_count": {
+          "items": {
+            "$ref": "#/components/schemas/AverageRow"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "session_cost",
+        "session_duration",
+        "session_count"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "session_count",
+    "session_duration",
+    "session_cost",
+    "average"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

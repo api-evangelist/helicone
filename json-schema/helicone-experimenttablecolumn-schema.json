@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExperimentTableColumn",
+  "title": "ExperimentTableColumn",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "columnName": {
+      "type": "string"
+    },
+    "columnType": {
+      "type": "string"
+    },
+    "hypothesisId": {
+      "type": "string"
+    },
+    "cells": {
+      "items": {
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Record_string.any_"
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "requestId": {
+            "type": "string"
+          },
+          "rowIndex": {
+            "type": "number",
+            "format": "double"
+          },
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "value",
+          "rowIndex",
+          "id"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "metadata": {
+      "$ref": "#/components/schemas/Record_string.any_"
+    }
+  },
+  "required": [
+    "id",
+    "columnName",
+    "columnType",
+    "cells"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

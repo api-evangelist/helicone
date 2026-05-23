@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PromptVersiosQueryParamsCompiled",
+  "title": "PromptVersiosQueryParamsCompiled",
+  "properties": {
+    "filter": {
+      "$ref": "#/components/schemas/PromptVersionsFilterNode"
+    },
+    "includeExperimentVersions": {
+      "type": "boolean"
+    },
+    "inputs": {
+      "$ref": "#/components/schemas/Record_string.string_"
+    }
+  },
+  "required": [
+    "inputs"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

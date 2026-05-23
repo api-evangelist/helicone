@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ChatCompletion.Choice.Logprobs",
+  "title": "ChatCompletion.Choice.Logprobs",
+  "description": "Log probability information for the choice.",
+  "properties": {
+    "content": {
+      "items": {
+        "$ref": "#/components/schemas/ChatCompletionTokenLogprob"
+      },
+      "type": "array",
+      "nullable": true,
+      "description": "A list of message content tokens with log probability information."
+    },
+    "refusal": {
+      "items": {
+        "$ref": "#/components/schemas/ChatCompletionTokenLogprob"
+      },
+      "type": "array",
+      "nullable": true,
+      "description": "A list of message refusal tokens with log probability information."
+    }
+  },
+  "required": [
+    "content",
+    "refusal"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

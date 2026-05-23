@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AutoTopoffSettings",
+  "title": "AutoTopoffSettings",
+  "properties": {
+    "enabled": {
+      "type": "boolean"
+    },
+    "thresholdCents": {
+      "type": "number",
+      "format": "double"
+    },
+    "topoffAmountCents": {
+      "type": "number",
+      "format": "double"
+    },
+    "stripePaymentMethodId": {
+      "type": "string",
+      "nullable": true
+    },
+    "lastTopoffAt": {
+      "type": "string",
+      "nullable": true
+    },
+    "consecutiveFailures": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "enabled",
+    "thresholdCents",
+    "topoffAmountCents",
+    "stripePaymentMethodId",
+    "lastTopoffAt",
+    "consecutiveFailures"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

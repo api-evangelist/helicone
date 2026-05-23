@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Partial_PropertyWithResponseV1ToOperators_",
+  "title": "Partial_PropertyWithResponseV1ToOperators_",
+  "properties": {
+    "property_key": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "property_value": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "request_created_at": {
+      "$ref": "#/components/schemas/Partial_TimestampOperatorsTyped_"
+    },
+    "organization_id": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "threat": {
+      "$ref": "#/components/schemas/Partial_BooleanOperators_"
+    }
+  },
+  "type": "object",
+  "description": "Make all properties in T optional"
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AuthorName",
+  "title": "AuthorName",
+  "type": "string",
+  "enum": [
+    "anthropic",
+    "deepseek",
+    "mistral",
+    "openai",
+    "perplexity",
+    "xai",
+    "google",
+    "meta-llama",
+    "amazon",
+    "microsoft",
+    "nvidia",
+    "qwen",
+    "moonshotai",
+    "alibaba",
+    "zai",
+    "baidu",
+    "passthrough"
+  ]
+}

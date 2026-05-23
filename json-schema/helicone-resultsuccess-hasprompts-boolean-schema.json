@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResultSuccess__hasPrompts-boolean__",
+  "title": "ResultSuccess__hasPrompts-boolean__",
+  "properties": {
+    "data": {
+      "properties": {
+        "hasPrompts": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "hasPrompts"
+      ],
+      "type": "object"
+    },
+    "error": {
+      "type": "number",
+      "enum": [
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "data",
+    "error"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

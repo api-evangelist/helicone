@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Partial_RequestTableToOperators_",
+  "title": "Partial_RequestTableToOperators_",
+  "properties": {
+    "prompt": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "created_at": {
+      "$ref": "#/components/schemas/Partial_TimestampOperators_"
+    },
+    "user_id": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "auth_hash": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "org_id": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "id": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "node_id": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "model": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "modelOverride": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "path": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "country_code": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "prompt_id": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    }
+  },
+  "type": "object",
+  "description": "Make all properties in T optional"
+}

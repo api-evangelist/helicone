@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RequestClickhouseFilterBranch",
+  "title": "RequestClickhouseFilterBranch",
+  "properties": {
+    "right": {
+      "$ref": "#/components/schemas/RequestClickhouseFilterNode"
+    },
+    "operator": {
+      "type": "string",
+      "enum": [
+        "or",
+        "and"
+      ]
+    },
+    "left": {
+      "$ref": "#/components/schemas/RequestClickhouseFilterNode"
+    }
+  },
+  "required": [
+    "right",
+    "operator",
+    "left"
+  ],
+  "type": "object"
+}

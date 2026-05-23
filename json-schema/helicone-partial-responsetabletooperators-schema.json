@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Partial_ResponseTableToOperators_",
+  "title": "Partial_ResponseTableToOperators_",
+  "properties": {
+    "body_tokens": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "body_model": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "body_completion": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "status": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "model": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    }
+  },
+  "type": "object",
+  "description": "Make all properties in T optional"
+}

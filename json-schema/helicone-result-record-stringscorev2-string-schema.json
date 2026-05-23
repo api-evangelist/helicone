@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Result_Record_string.ScoreV2_.string_",
+  "title": "Result_Record_string.ScoreV2_.string_",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/ResultSuccess_Record_string.ScoreV2__"
+    },
+    {
+      "$ref": "#/components/schemas/ResultError_string_"
+    }
+  ]
+}

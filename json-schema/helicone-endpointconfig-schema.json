@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/EndpointConfig",
+  "title": "EndpointConfig",
+  "properties": {
+    "region": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "projectId": {
+      "type": "string"
+    },
+    "baseUri": {
+      "type": "string"
+    },
+    "deploymentName": {
+      "type": "string"
+    },
+    "resourceName": {
+      "type": "string"
+    },
+    "apiVersion": {
+      "type": "string"
+    },
+    "crossRegion": {
+      "type": "boolean"
+    },
+    "gatewayMapping": {
+      "$ref": "#/components/schemas/BodyMappingType"
+    },
+    "modelName": {
+      "type": "string"
+    },
+    "heliconeModelId": {
+      "type": "string"
+    },
+    "providerModelId": {
+      "type": "string"
+    },
+    "pricing": {
+      "items": {
+        "$ref": "#/components/schemas/ModelPricing"
+      },
+      "type": "array"
+    },
+    "contextLength": {
+      "type": "number",
+      "format": "double"
+    },
+    "maxCompletionTokens": {
+      "type": "number",
+      "format": "double"
+    },
+    "ptbEnabled": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    },
+    "rateLimits": {
+      "$ref": "#/components/schemas/RateLimits"
+    },
+    "priority": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "type": "object",
+  "additionalProperties": false
+}

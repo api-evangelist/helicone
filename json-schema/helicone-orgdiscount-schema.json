@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OrgDiscount",
+  "title": "OrgDiscount",
+  "properties": {
+    "provider": {
+      "type": "string",
+      "nullable": true
+    },
+    "model": {
+      "type": "string",
+      "nullable": true
+    },
+    "percent": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "provider",
+    "model",
+    "percent"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TokensOverTime",
+  "title": "TokensOverTime",
+  "properties": {
+    "time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "prompt_tokens": {
+      "type": "number",
+      "format": "double"
+    },
+    "completion_tokens": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "time",
+    "prompt_tokens",
+    "completion_tokens"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

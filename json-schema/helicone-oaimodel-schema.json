@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OAIModel",
+  "title": "OAIModel",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "object": {
+      "type": "string",
+      "enum": [
+        "model"
+      ],
+      "nullable": false
+    },
+    "created": {
+      "type": "number",
+      "format": "double"
+    },
+    "owned_by": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "object",
+    "created",
+    "owned_by"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

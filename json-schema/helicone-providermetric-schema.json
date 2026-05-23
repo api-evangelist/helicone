@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ProviderMetric",
+  "title": "ProviderMetric",
+  "properties": {
+    "provider": {
+      "type": "string"
+    },
+    "total_requests": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "provider",
+    "total_requests"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

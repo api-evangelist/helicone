@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreateEvaluatorParams",
+  "title": "CreateEvaluatorParams",
+  "properties": {
+    "scoring_type": {
+      "type": "string"
+    },
+    "llm_template": {},
+    "name": {
+      "type": "string"
+    },
+    "code_template": {},
+    "last_mile_config": {}
+  },
+  "required": [
+    "scoring_type",
+    "name"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

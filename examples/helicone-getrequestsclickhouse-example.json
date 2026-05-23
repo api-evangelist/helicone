@@ -1,0 +1,25 @@
+{
+  "operationId": "GetRequestsClickhouse",
+  "method": "POST",
+  "path": "/v1/request/query-clickhouse",
+  "summary": "",
+  "requestExamples": [],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "name": "Example 1",
+      "example": {
+        "filter": {},
+        "isCached": false,
+        "limit": 10,
+        "offset": 0,
+        "sort": {
+          "created_at": "desc"
+        },
+        "isScored": false,
+        "isPartOfExperiment": false
+      }
+    }
+  ]
+}

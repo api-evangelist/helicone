@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SessionResult",
+  "title": "SessionResult",
+  "properties": {
+    "created_at": {
+      "type": "string"
+    },
+    "latest_request_created_at": {
+      "type": "string"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "session_name": {
+      "type": "string"
+    },
+    "total_cost": {
+      "type": "number",
+      "format": "double"
+    },
+    "total_requests": {
+      "type": "number",
+      "format": "double"
+    },
+    "prompt_tokens": {
+      "type": "number",
+      "format": "double"
+    },
+    "completion_tokens": {
+      "type": "number",
+      "format": "double"
+    },
+    "total_tokens": {
+      "type": "number",
+      "format": "double"
+    },
+    "avg_latency": {
+      "type": "number",
+      "format": "double"
+    },
+    "user_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "created_at",
+    "latest_request_created_at",
+    "session_id",
+    "session_name",
+    "total_cost",
+    "total_requests",
+    "prompt_tokens",
+    "completion_tokens",
+    "total_tokens",
+    "avg_latency",
+    "user_ids"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

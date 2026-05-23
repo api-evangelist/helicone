@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/WrappedStats",
+  "title": "WrappedStats",
+  "properties": {
+    "totalRequests": {
+      "type": "number",
+      "format": "double"
+    },
+    "topProviders": {
+      "items": {
+        "properties": {
+          "count": {
+            "type": "number",
+            "format": "double"
+          },
+          "provider": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "count",
+          "provider"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "topModels": {
+      "items": {
+        "properties": {
+          "count": {
+            "type": "number",
+            "format": "double"
+          },
+          "model": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "count",
+          "model"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "totalTokens": {
+      "properties": {
+        "total": {
+          "type": "number",
+          "format": "double"
+        },
+        "cacheRead": {
+          "type": "number",
+          "format": "double"
+        },
+        "cacheWrite": {
+          "type": "number",
+          "format": "double"
+        },
+        "completion": {
+          "type": "number",
+          "format": "double"
+        },
+        "prompt": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "total",
+        "cacheRead",
+        "cacheWrite",
+        "completion",
+        "prompt"
+      ],
+      "type": "object"
+    },
+    "mostExpensiveRequest": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MostExpensiveRequest"
+        }
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "totalRequests",
+    "topProviders",
+    "topModels",
+    "totalTokens",
+    "mostExpensiveRequest"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

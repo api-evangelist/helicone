@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RateLimits",
+  "title": "RateLimits",
+  "properties": {
+    "rpm": {
+      "type": "number",
+      "format": "double"
+    },
+    "tpm": {
+      "type": "number",
+      "format": "double"
+    },
+    "tpd": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "type": "object",
+  "additionalProperties": false
+}

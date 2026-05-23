@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/MetricsData",
+  "title": "MetricsData",
+  "properties": {
+    "totalRequests": {
+      "type": "number",
+      "format": "double"
+    },
+    "requestCountPrevious24h": {
+      "type": "number",
+      "format": "double"
+    },
+    "requestVolumeChange": {
+      "type": "number",
+      "format": "double"
+    },
+    "errorRate24h": {
+      "type": "number",
+      "format": "double"
+    },
+    "errorRatePrevious24h": {
+      "type": "number",
+      "format": "double"
+    },
+    "errorRateChange": {
+      "type": "number",
+      "format": "double"
+    },
+    "averageLatency": {
+      "type": "number",
+      "format": "double"
+    },
+    "averageLatencyPerToken": {
+      "type": "number",
+      "format": "double"
+    },
+    "latencyChange": {
+      "type": "number",
+      "format": "double"
+    },
+    "latencyPerTokenChange": {
+      "type": "number",
+      "format": "double"
+    },
+    "recentRequestCount": {
+      "type": "number",
+      "format": "double"
+    },
+    "recentErrorCount": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "totalRequests",
+    "requestCountPrevious24h",
+    "requestVolumeChange",
+    "errorRate24h",
+    "errorRatePrevious24h",
+    "errorRateChange",
+    "averageLatency",
+    "averageLatencyPerToken",
+    "latencyChange",
+    "latencyPerTokenChange",
+    "recentRequestCount",
+    "recentErrorCount"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

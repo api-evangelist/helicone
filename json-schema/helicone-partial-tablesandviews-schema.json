@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Partial_TablesAndViews_",
+  "title": "Partial_TablesAndViews_",
+  "properties": {
+    "user_metrics": {
+      "$ref": "#/components/schemas/Partial_UserMetricsToOperators_"
+    },
+    "user_api_keys": {
+      "$ref": "#/components/schemas/Partial_UserApiKeysTableToOperators_"
+    },
+    "response": {
+      "$ref": "#/components/schemas/Partial_ResponseTableToOperators_"
+    },
+    "request": {
+      "$ref": "#/components/schemas/Partial_RequestTableToOperators_"
+    },
+    "feedback": {
+      "$ref": "#/components/schemas/Partial_FeedbackTableToOperators_"
+    },
+    "properties_table": {
+      "$ref": "#/components/schemas/Partial_PropertiesTableToOperators_"
+    },
+    "prompt_v2": {
+      "$ref": "#/components/schemas/Partial_PromptToOperators_"
+    },
+    "prompts_versions": {
+      "$ref": "#/components/schemas/Partial_PromptVersionsToOperators_"
+    },
+    "experiment": {
+      "$ref": "#/components/schemas/Partial_ExperimentToOperators_"
+    },
+    "experiment_hypothesis_run": {
+      "$ref": "#/components/schemas/Partial_ExperimentHypothesisRunToOperator_"
+    },
+    "score_value": {
+      "$ref": "#/components/schemas/Partial_ScoreValueToOperator_"
+    },
+    "request_response_log": {
+      "$ref": "#/components/schemas/Partial_RequestResponseLogToOperators_"
+    },
+    "request_response_rmt": {
+      "$ref": "#/components/schemas/Partial_RequestResponseRMTToOperators_"
+    },
+    "sessions_request_response_rmt": {
+      "$ref": "#/components/schemas/Partial_SessionsRequestResponseRMTToOperators_"
+    },
+    "users_view": {
+      "$ref": "#/components/schemas/Partial_UserViewToOperators_"
+    },
+    "properties_v3": {
+      "$ref": "#/components/schemas/Partial_PropertiesV3ToOperators_"
+    },
+    "property_with_response_v1": {
+      "$ref": "#/components/schemas/Partial_PropertyWithResponseV1ToOperators_"
+    },
+    "job": {
+      "$ref": "#/components/schemas/Partial_JobToOperators_"
+    },
+    "job_node": {
+      "$ref": "#/components/schemas/Partial_NodesToOperators_"
+    },
+    "cache_metrics": {
+      "$ref": "#/components/schemas/Partial_CacheMetricsTableToOperators_"
+    },
+    "rate_limit_log": {
+      "$ref": "#/components/schemas/Partial_RateLimitTableToOperators_"
+    },
+    "organization_properties": {
+      "$ref": "#/components/schemas/Partial_OrganizationPropertiesToOperators_"
+    },
+    "properties": {
+      "properties": {},
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Partial_TextOperators_"
+      },
+      "type": "object"
+    },
+    "values": {
+      "properties": {},
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Partial_TextOperators_"
+      },
+      "type": "object"
+    }
+  },
+  "type": "object",
+  "description": "Make all properties in T optional"
+}

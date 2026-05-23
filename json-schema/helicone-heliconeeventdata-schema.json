@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/HeliconeEventData",
+  "title": "HeliconeEventData",
+  "properties": {
+    "_type": {
+      "type": "string",
+      "enum": [
+        "data"
+      ],
+      "nullable": false
+    },
+    "name": {
+      "type": "string"
+    },
+    "meta": {
+      "$ref": "#/components/schemas/Record_string.any_"
+    }
+  },
+  "required": [
+    "_type",
+    "name"
+  ],
+  "type": "object",
+  "additionalProperties": {}
+}

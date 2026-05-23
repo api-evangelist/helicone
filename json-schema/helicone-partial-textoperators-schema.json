@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Partial_TextOperators_",
+  "title": "Partial_TextOperators_",
+  "properties": {
+    "not-equals": {
+      "type": "string"
+    },
+    "equals": {
+      "type": "string"
+    },
+    "like": {
+      "type": "string"
+    },
+    "ilike": {
+      "type": "string"
+    },
+    "contains": {
+      "type": "string"
+    },
+    "not-contains": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "description": "Make all properties in T optional"
+}

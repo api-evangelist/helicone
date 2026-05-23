@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Result__apiKey-string_.string_",
+  "title": "Result__apiKey-string_.string_",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/ResultSuccess__apiKey-string__"
+    },
+    {
+      "$ref": "#/components/schemas/ResultError_string_"
+    }
+  ]
+}

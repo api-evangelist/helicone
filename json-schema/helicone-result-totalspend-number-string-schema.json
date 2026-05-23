@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Result__totalSpend-number_.string_",
+  "title": "Result__totalSpend-number_.string_",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/ResultSuccess__totalSpend-number__"
+    },
+    {
+      "$ref": "#/components/schemas/ResultError_string_"
+    }
+  ]
+}

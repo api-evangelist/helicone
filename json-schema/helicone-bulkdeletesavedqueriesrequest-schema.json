@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BulkDeleteSavedQueriesRequest",
+  "title": "BulkDeleteSavedQueriesRequest",
+  "properties": {
+    "ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "ids"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

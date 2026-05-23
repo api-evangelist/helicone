@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ChatCompletionMessageFunctionToolCall",
+  "title": "ChatCompletionMessageFunctionToolCall",
+  "description": "A call to a function tool created by the model.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The ID of the tool call."
+    },
+    "function": {
+      "$ref": "#/components/schemas/ChatCompletionMessageFunctionToolCall.Function",
+      "description": "The function that the model called."
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "function"
+      ],
+      "nullable": false,
+      "description": "The type of the tool. Currently, only `function` is supported."
+    }
+  },
+  "required": [
+    "id",
+    "function",
+    "type"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

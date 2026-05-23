@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SimplifiedPricing",
+  "title": "SimplifiedPricing",
+  "properties": {
+    "prompt": {
+      "type": "number",
+      "format": "double"
+    },
+    "completion": {
+      "type": "number",
+      "format": "double"
+    },
+    "audio": {
+      "$ref": "#/components/schemas/SimplifiedModalityPricing"
+    },
+    "thinking": {
+      "type": "number",
+      "format": "double"
+    },
+    "web_search": {
+      "type": "number",
+      "format": "double"
+    },
+    "image": {
+      "$ref": "#/components/schemas/SimplifiedModalityPricing"
+    },
+    "video": {
+      "$ref": "#/components/schemas/SimplifiedModalityPricing"
+    },
+    "file": {
+      "$ref": "#/components/schemas/SimplifiedModalityPricing"
+    },
+    "cacheRead": {
+      "type": "number",
+      "format": "double"
+    },
+    "cacheWrite": {
+      "type": "number",
+      "format": "double"
+    },
+    "threshold": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "prompt",
+    "completion"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

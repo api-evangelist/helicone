@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PromptVersionCounts",
+  "title": "PromptVersionCounts",
+  "properties": {
+    "totalVersions": {
+      "type": "number",
+      "format": "double"
+    },
+    "majorVersions": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "totalVersions",
+    "majorVersions"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

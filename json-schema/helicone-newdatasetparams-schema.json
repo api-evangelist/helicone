@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/NewDatasetParams",
+  "title": "NewDatasetParams",
+  "properties": {
+    "datasetName": {
+      "type": "string"
+    },
+    "requestIds": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "datasetType": {
+      "type": "string",
+      "enum": [
+        "experiment",
+        "helicone"
+      ]
+    },
+    "meta": {
+      "$ref": "#/components/schemas/DatasetMetadata"
+    }
+  },
+  "required": [
+    "datasetName",
+    "requestIds",
+    "datasetType"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

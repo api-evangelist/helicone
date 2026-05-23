@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PromptVersionResult",
+  "title": "PromptVersionResult",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "minor_version": {
+      "type": "number",
+      "format": "double"
+    },
+    "major_version": {
+      "type": "number",
+      "format": "double"
+    },
+    "prompt_v2": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "helicone_template": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "metadata": {
+      "$ref": "#/components/schemas/Record_string.any_"
+    },
+    "parent_prompt_version": {
+      "type": "string",
+      "nullable": true
+    },
+    "experiment_id": {
+      "type": "string",
+      "nullable": true
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "minor_version",
+    "major_version",
+    "prompt_v2",
+    "model",
+    "helicone_template",
+    "created_at",
+    "metadata"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

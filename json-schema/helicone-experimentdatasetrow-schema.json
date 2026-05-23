@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExperimentDatasetRow",
+  "title": "ExperimentDatasetRow",
+  "properties": {
+    "rowId": {
+      "type": "string"
+    },
+    "inputRecord": {
+      "properties": {
+        "request": {
+          "$ref": "#/components/schemas/RequestObj"
+        },
+        "response": {
+          "$ref": "#/components/schemas/ResponseObj"
+        },
+        "autoInputs": {
+          "items": {
+            "$ref": "#/components/schemas/Record_string.string_"
+          },
+          "type": "array"
+        },
+        "inputs": {
+          "$ref": "#/components/schemas/Record_string.string_"
+        },
+        "requestPath": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "request",
+        "response",
+        "autoInputs",
+        "inputs",
+        "requestPath",
+        "requestId",
+        "id"
+      ],
+      "type": "object"
+    },
+    "rowIndex": {
+      "type": "number",
+      "format": "double"
+    },
+    "columnId": {
+      "type": "string"
+    },
+    "scores": {
+      "$ref": "#/components/schemas/Record_string.Score_"
+    }
+  },
+  "required": [
+    "rowId",
+    "inputRecord",
+    "rowIndex",
+    "columnId",
+    "scores"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

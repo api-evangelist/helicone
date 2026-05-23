@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ModelMetric",
+  "title": "ModelMetric",
+  "properties": {
+    "model": {
+      "type": "string"
+    },
+    "total_requests": {
+      "type": "number",
+      "format": "double"
+    },
+    "total_completion_tokens": {
+      "type": "number",
+      "format": "double"
+    },
+    "total_prompt_token": {
+      "type": "number",
+      "format": "double"
+    },
+    "total_tokens": {
+      "type": "number",
+      "format": "double"
+    },
+    "cost": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "model",
+    "total_requests",
+    "total_completion_tokens",
+    "total_prompt_token",
+    "total_tokens",
+    "cost"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

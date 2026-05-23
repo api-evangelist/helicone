@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Experiment",
+  "title": "Experiment",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "organization": {
+      "type": "string"
+    },
+    "dataset": {
+      "properties": {
+        "rows": {
+          "items": {
+            "$ref": "#/components/schemas/ExperimentDatasetRow"
+          },
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "rows",
+        "name",
+        "id"
+      ],
+      "type": "object"
+    },
+    "meta": {},
+    "createdAt": {
+      "type": "string"
+    },
+    "hypotheses": {
+      "items": {
+        "properties": {
+          "runs": {
+            "items": {
+              "properties": {
+                "request": {
+                  "$ref": "#/components/schemas/RequestObj"
+                },
+                "scores": {
+                  "$ref": "#/components/schemas/Record_string.Score_"
+                },
+                "response": {
+                  "$ref": "#/components/schemas/ResponseObj"
+                },
+                "resultRequestId": {
+                  "type": "string"
+                },
+                "datasetRowId": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "scores",
+                "resultRequestId",
+                "datasetRowId"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "providerKey": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string"
+          },
+          "parentPromptVersion": {
+            "properties": {
+              "template": {}
+            },
+            "required": [
+              "template"
+            ],
+            "type": "object"
+          },
+          "promptVersion": {
+            "properties": {
+              "template": {}
+            },
+            "required": [
+              "template"
+            ],
+            "type": "object"
+          },
+          "promptVersionId": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "runs",
+          "providerKey",
+          "createdAt",
+          "status",
+          "model",
+          "promptVersionId",
+          "id"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "scores": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExperimentScores"
+        }
+      ],
+      "nullable": true
+    },
+    "tableId": {
+      "type": "string",
+      "nullable": true
+    }
+  },
+  "required": [
+    "id",
+    "organization",
+    "dataset",
+    "meta",
+    "createdAt",
+    "hypotheses",
+    "scores",
+    "tableId"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

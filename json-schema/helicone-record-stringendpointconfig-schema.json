@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Record_string.EndpointConfig_",
+  "title": "Record_string.EndpointConfig_",
+  "properties": {},
+  "additionalProperties": {
+    "$ref": "#/components/schemas/EndpointConfig"
+  },
+  "type": "object",
+  "description": "Construct a type with a set of properties K of type T"
+}

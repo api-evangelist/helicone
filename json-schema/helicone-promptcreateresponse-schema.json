@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PromptCreateResponse",
+  "title": "PromptCreateResponse",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "versionId": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "versionId"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

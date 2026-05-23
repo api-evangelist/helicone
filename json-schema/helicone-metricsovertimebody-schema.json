@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/MetricsOverTimeBody",
+  "title": "MetricsOverTimeBody",
+  "properties": {
+    "timeFilter": {
+      "properties": {
+        "end": {
+          "type": "string"
+        },
+        "start": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "end",
+        "start"
+      ],
+      "type": "object"
+    },
+    "filter": {
+      "$ref": "#/components/schemas/FilterNode"
+    },
+    "dbIncrement": {
+      "$ref": "#/components/schemas/TimeIncrement"
+    },
+    "timeZoneDifference": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "timeFilter",
+    "filter",
+    "timeZoneDifference"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

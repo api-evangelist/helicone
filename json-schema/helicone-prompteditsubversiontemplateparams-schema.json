@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PromptEditSubversionTemplateParams",
+  "title": "PromptEditSubversionTemplateParams",
+  "properties": {
+    "heliconeTemplate": {},
+    "experimentId": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "heliconeTemplate"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/UpdateAutoTopoffSettingsRequest",
+  "title": "UpdateAutoTopoffSettingsRequest",
+  "properties": {
+    "enabled": {
+      "type": "boolean"
+    },
+    "thresholdCents": {
+      "type": "number",
+      "format": "double"
+    },
+    "topoffAmountCents": {
+      "type": "number",
+      "format": "double"
+    },
+    "stripePaymentMethodId": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "enabled",
+    "thresholdCents",
+    "topoffAmountCents",
+    "stripePaymentMethodId"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

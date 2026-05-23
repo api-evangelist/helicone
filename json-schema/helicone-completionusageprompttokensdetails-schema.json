@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CompletionUsage.PromptTokensDetails",
+  "title": "CompletionUsage.PromptTokensDetails",
+  "description": "Breakdown of tokens used in the prompt.",
+  "properties": {
+    "audio_tokens": {
+      "type": "number",
+      "format": "double",
+      "description": "Audio input tokens present in the prompt."
+    },
+    "cached_tokens": {
+      "type": "number",
+      "format": "double",
+      "description": "Cached tokens present in the prompt."
+    }
+  },
+  "type": "object",
+  "additionalProperties": false
+}

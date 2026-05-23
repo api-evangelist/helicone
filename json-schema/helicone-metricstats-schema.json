@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/MetricStats",
+  "title": "MetricStats",
+  "properties": {
+    "p99": {
+      "type": "number",
+      "format": "double"
+    },
+    "p95": {
+      "type": "number",
+      "format": "double"
+    },
+    "p90": {
+      "type": "number",
+      "format": "double"
+    },
+    "max": {
+      "type": "number",
+      "format": "double"
+    },
+    "min": {
+      "type": "number",
+      "format": "double"
+    },
+    "median": {
+      "type": "number",
+      "format": "double"
+    },
+    "average": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "p99",
+    "p95",
+    "p90",
+    "max",
+    "min",
+    "median",
+    "average"
+  ],
+  "type": "object"
+}

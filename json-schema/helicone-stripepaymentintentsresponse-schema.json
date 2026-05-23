@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/StripePaymentIntentsResponse",
+  "title": "StripePaymentIntentsResponse",
+  "properties": {
+    "data": {
+      "items": {
+        "$ref": "#/components/schemas/PaymentIntentRecord"
+      },
+      "type": "array"
+    },
+    "has_more": {
+      "type": "boolean"
+    },
+    "next_page": {
+      "type": "string",
+      "nullable": true
+    },
+    "count": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "data",
+    "has_more",
+    "next_page",
+    "count"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

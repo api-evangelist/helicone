@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ClickHouseTableSchema",
+  "title": "ClickHouseTableSchema",
+  "properties": {
+    "table_name": {
+      "type": "string"
+    },
+    "columns": {
+      "items": {
+        "$ref": "#/components/schemas/ClickHouseTableColumn"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "table_name",
+    "columns"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

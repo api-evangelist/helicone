@@ -1,0 +1,6961 @@
+{
+  "provider": "Helicone",
+  "providerId": "helicone",
+  "kind": "json-structure",
+  "description": "Structural overview of the Helicone API surface; extracted from openapi/.",
+  "schemaCount": 543,
+  "operationCount": 267,
+  "schemas": [
+    {
+      "name": "Record_string.string_",
+      "type": "object",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "CreateProviderKeyRequest",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "config",
+        "byokEnabled",
+        "providerKeyName",
+        "providerKey",
+        "providerName"
+      ]
+    },
+    {
+      "name": "DecryptedProviderKey",
+      "type": "object",
+      "propertyCount": 7,
+      "required": [
+        "provider_secret_key",
+        "provider_key_name",
+        "provider_name",
+        "provider_key",
+        "org_id",
+        "id"
+      ]
+    },
+    {
+      "name": "Record_string.any_",
+      "type": "object",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ProviderKeyRow",
+      "type": "object",
+      "propertyCount": 8,
+      "required": [
+        "id",
+        "provider_name",
+        "provider_key_name",
+        "soft_delete"
+      ]
+    },
+    {
+      "name": "ResultSuccess__id-string--providerName-string__",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "ResultError_string_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__id-string--providerName-string_.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "UpdateProviderKeyRequest",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess__api_key_hash-string--api_key_name-string--created_at-string--governance-boolean--id-number--key_permissions-string--organization_id-string--soft_delete-boolean--temp_key-boolean--updated_at-string--user_id-string_-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__api_key_hash-string--api_key_name-string--created_at-string--governance-boolean--id-number--key_permissions-string--organization_id-string--soft_delete-boolean--temp_key-boolean--updated_at-string--user_id-string_-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "EvaluatorResult",
+      "type": "object",
+      "propertyCount": 9,
+      "required": [
+        "id",
+        "created_at",
+        "scoring_type",
+        "llm_template",
+        "organization_id",
+        "updated_at",
+        "name",
+        "code_template",
+        "last_mile_config"
+      ]
+    },
+    {
+      "name": "ResultSuccess_EvaluatorResult_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_EvaluatorResult.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "CreateEvaluatorParams",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "scoring_type",
+        "name"
+      ]
+    },
+    {
+      "name": "ResultSuccess_EvaluatorResult-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_EvaluatorResult-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "UpdateEvaluatorParams",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess_null_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_null.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "EvaluatorExperiment",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "experiment_name",
+        "experiment_created_at",
+        "experiment_id"
+      ]
+    },
+    {
+      "name": "ResultSuccess_EvaluatorExperiment-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_EvaluatorExperiment-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "OnlineEvaluatorByEvaluatorId",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "config",
+        "id"
+      ]
+    },
+    {
+      "name": "ResultSuccess_OnlineEvaluatorByEvaluatorId-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_OnlineEvaluatorByEvaluatorId-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "CreateOnlineEvaluatorParams",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "config"
+      ]
+    },
+    {
+      "name": "ResultSuccess__output-string--traces-string-Array--statusCode_63_-number__",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__output-string--traces-string-Array--statusCode_63_-number_.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "TestInput",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "inputs",
+        "outputBody",
+        "inputBody"
+      ]
+    },
+    {
+      "name": "EvaluatorScore",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "score"
+      ]
+    },
+    {
+      "name": "ResultSuccess_EvaluatorScore_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_EvaluatorScore.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "EvaluatorScoreResult",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "EvaluatorConfig",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "evaluator_scoring_type"
+      ]
+    },
+    {
+      "name": "ResultSuccess__score-number--input-string--output-string--ground_truth_63_-string__",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__score-number--input-string--output-string--ground_truth_63_-string_.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "DataEntry",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "BaseLastMileConfigForm",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "output",
+        "input",
+        "name"
+      ]
+    },
+    {
+      "name": "LastMileConfigForm",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "EvaluatorStats",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "averageScore",
+        "totalUses",
+        "recentTrend",
+        "scoreDistribution",
+        "timeSeriesData"
+      ]
+    },
+    {
+      "name": "ResultSuccess_EvaluatorStats_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_EvaluatorStats.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "Prompt2025",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "id",
+        "name",
+        "tags",
+        "created_at"
+      ]
+    },
+    {
+      "name": "ResultSuccess_Prompt2025_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_Prompt2025.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess_string-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_string-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "Prompt2025Input",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "request_id",
+        "version_id",
+        "inputs"
+      ]
+    },
+    {
+      "name": "ResultSuccess_Prompt2025Input_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_Prompt2025Input.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "PromptCreateResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "id",
+        "versionId"
+      ]
+    },
+    {
+      "name": "ResultSuccess_PromptCreateResponse_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_PromptCreateResponse.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "Record_string.number_",
+      "type": "object",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "OpenAIChatRequest",
+      "type": "object",
+      "propertyCount": 31,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess__id-string__",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__id-string_.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess_number_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_number.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess_Prompt2025-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_Prompt2025-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "Record_string.unknown_",
+      "type": "object",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "Prompt2025VersionPromptBody",
+      "type": "object",
+      "propertyCount": 7,
+      "required": []
+    },
+    {
+      "name": "Prompt2025Version",
+      "type": "object",
+      "propertyCount": 10,
+      "required": [
+        "id",
+        "model",
+        "prompt_id",
+        "major_version",
+        "minor_version",
+        "commit_message",
+        "created_at"
+      ]
+    },
+    {
+      "name": "ResultSuccess_Prompt2025Version_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_Prompt2025Version.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess_Prompt2025Version-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_Prompt2025Version-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "PromptVersionCounts",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "totalVersions",
+        "majorVersions"
+      ]
+    },
+    {
+      "name": "ResultSuccess_PromptVersionCounts_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_PromptVersionCounts.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess_Prompt2025Version_91_prompt_body_93__",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_Prompt2025Version_91_prompt_body_93_.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess__hasPrompts-boolean__",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__hasPrompts-boolean_.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "PromptsResult",
+      "type": "object",
+      "propertyCount": 7,
+      "required": [
+        "id",
+        "user_defined_id",
+        "description",
+        "pretty_name",
+        "created_at",
+        "major_version"
+      ]
+    },
+    {
+      "name": "ResultSuccess_PromptsResult-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_PromptsResult-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "Partial_TextOperators_",
+      "type": "object",
+      "propertyCount": 6,
+      "required": []
+    },
+    {
+      "name": "Partial_PromptToOperators_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "Pick_FilterLeaf.prompt_v2_",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "FilterLeafSubset_prompt_v2_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "PromptsFilterNode",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "PromptsFilterBranch",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "right",
+        "operator",
+        "left"
+      ]
+    },
+    {
+      "name": "PromptsQueryParams",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "filter"
+      ]
+    },
+    {
+      "name": "PromptResult",
+      "type": "object",
+      "propertyCount": 11,
+      "required": [
+        "id",
+        "user_defined_id",
+        "description",
+        "pretty_name",
+        "major_version",
+        "latest_version_id",
+        "latest_model_used",
+        "created_at",
+        "last_used",
+        "versions"
+      ]
+    },
+    {
+      "name": "ResultSuccess_PromptResult_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_PromptResult.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "PromptQueryParams",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "timeFilter"
+      ]
+    },
+    {
+      "name": "CreatePromptResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "id",
+        "prompt_version_id"
+      ]
+    },
+    {
+      "name": "ResultSuccess_CreatePromptResponse_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_CreatePromptResponse.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess__metadata-Record_string.any___",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__metadata-Record_string.any__.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "PromptEditSubversionLabelParams",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "label"
+      ]
+    },
+    {
+      "name": "PromptEditSubversionTemplateParams",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "heliconeTemplate"
+      ]
+    },
+    {
+      "name": "PromptVersionResult",
+      "type": "object",
+      "propertyCount": 11,
+      "required": [
+        "id",
+        "minor_version",
+        "major_version",
+        "prompt_v2",
+        "model",
+        "helicone_template",
+        "created_at",
+        "metadata"
+      ]
+    },
+    {
+      "name": "ResultSuccess_PromptVersionResult_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_PromptVersionResult.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "PromptCreateSubversionParams",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "newHeliconeTemplate"
+      ]
+    },
+    {
+      "name": "PromptInputRecord",
+      "type": "object",
+      "propertyCount": 9,
+      "required": [
+        "id",
+        "inputs",
+        "source_request",
+        "prompt_version",
+        "created_at",
+        "auto_prompt_inputs"
+      ]
+    },
+    {
+      "name": "ResultSuccess_PromptInputRecord-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_PromptInputRecord-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess__id-string--created_at-string--num_hypotheses-number--dataset-string--meta-Record_string.any__-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__id-string--created_at-string--num_hypotheses-number--dataset-string--meta-Record_string.any__-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess_PromptVersionResult-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_PromptVersionResult-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "Partial_NumberOperators_",
+      "type": "object",
+      "propertyCount": 6,
+      "required": []
+    },
+    {
+      "name": "Partial_PromptVersionsToOperators_",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "Pick_FilterLeaf.prompts_versions_",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "FilterLeafSubset_prompts_versions_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "PromptVersionsFilterNode",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "PromptVersionsFilterBranch",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "right",
+        "operator",
+        "left"
+      ]
+    },
+    {
+      "name": "PromptVersionsQueryParams",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "PromptVersionResultCompiled",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "id",
+        "minor_version",
+        "major_version",
+        "prompt_v2",
+        "model",
+        "prompt_compiled"
+      ]
+    },
+    {
+      "name": "ResultSuccess_PromptVersionResultCompiled_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_PromptVersionResultCompiled.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "PromptVersiosQueryParamsCompiled",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "inputs"
+      ]
+    },
+    {
+      "name": "PromptVersionResultFilled",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "id",
+        "minor_version",
+        "major_version",
+        "prompt_v2",
+        "model",
+        "filled_helicone_template"
+      ]
+    },
+    {
+      "name": "ResultSuccess_PromptVersionResultFilled_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_PromptVersionResultFilled.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess__experimentId-string__",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__experimentId-string_.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ExperimentV2",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "id",
+        "name",
+        "original_prompt_version",
+        "copied_original_prompt_version",
+        "input_keys",
+        "created_at"
+      ]
+    },
+    {
+      "name": "ResultSuccess_ExperimentV2-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_ExperimentV2-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ExperimentV2Output",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "id",
+        "request_id",
+        "is_original",
+        "prompt_version_id",
+        "created_at",
+        "input_record_id"
+      ]
+    },
+    {
+      "name": "ExperimentV2Row",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "id",
+        "inputs",
+        "prompt_version",
+        "requests",
+        "auto_prompt_inputs"
+      ]
+    },
+    {
+      "name": "ExtendedExperimentData",
+      "type": "object",
+      "propertyCount": 7,
+      "required": [
+        "id",
+        "name",
+        "original_prompt_version",
+        "copied_original_prompt_version",
+        "input_keys",
+        "created_at",
+        "rows"
+      ]
+    },
+    {
+      "name": "ResultSuccess_ExtendedExperimentData_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_ExtendedExperimentData.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "CreateNewPromptVersionForExperimentParams",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "newHeliconeTemplate",
+        "parentPromptVersionId"
+      ]
+    },
+    {
+      "name": "Json",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ExperimentV2PromptVersion",
+      "type": "object",
+      "propertyCount": 11,
+      "required": [
+        "created_at",
+        "experiment_id",
+        "helicone_template",
+        "id",
+        "major_version",
+        "metadata",
+        "minor_version",
+        "model",
+        "organization",
+        "prompt_v2",
+        "soft_delete"
+      ]
+    },
+    {
+      "name": "ResultSuccess_ExperimentV2PromptVersion-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_ExperimentV2PromptVersion-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess_string_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_string.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess_boolean_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_boolean.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ScoreV2",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "valueType",
+        "value",
+        "max",
+        "min"
+      ]
+    },
+    {
+      "name": "Record_string.ScoreV2_",
+      "type": "object",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess_Record_string.ScoreV2__",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_Record_string.ScoreV2_.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess_ScoreV2-or-null_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_ScoreV2-or-null.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "CreateCloudGatewayCheckoutSessionRequest",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "amount"
+      ]
+    },
+    {
+      "name": "UpgradeToProRequest",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "UpgradeToTeamBundleRequest",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "LLMUsage",
+      "type": "object",
+      "propertyCount": 8,
+      "required": [
+        "model",
+        "provider",
+        "prompt_tokens",
+        "completion_tokens",
+        "total_count",
+        "amount",
+        "description",
+        "totalCost"
+      ]
+    },
+    {
+      "name": "PaymentIntentRecord",
+      "type": "object",
+      "propertyCount": 7,
+      "required": [
+        "id",
+        "amount",
+        "created",
+        "status"
+      ]
+    },
+    {
+      "name": "StripePaymentIntentsResponse",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "data",
+        "has_more",
+        "next_page",
+        "count"
+      ]
+    },
+    {
+      "name": "AutoTopoffSettings",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "enabled",
+        "thresholdCents",
+        "topoffAmountCents",
+        "stripePaymentMethodId",
+        "lastTopoffAt",
+        "consecutiveFailures"
+      ]
+    },
+    {
+      "name": "UpdateAutoTopoffSettingsRequest",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "enabled",
+        "thresholdCents",
+        "topoffAmountCents",
+        "stripePaymentMethodId"
+      ]
+    },
+    {
+      "name": "PaymentMethod",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "id",
+        "brand",
+        "last4",
+        "exp_month",
+        "exp_year"
+      ]
+    },
+    {
+      "name": "CreateSetupSessionRequest",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "DailyUsageDataPoint",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "date",
+        "requests",
+        "bytes"
+      ]
+    },
+    {
+      "name": "UsageStatsResponse",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "billingPeriod",
+        "usage",
+        "dailyData",
+        "estimatedCost"
+      ]
+    },
+    {
+      "name": "IntegrationCreateParams",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "integration_name"
+      ]
+    },
+    {
+      "name": "Integration",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "id"
+      ]
+    },
+    {
+      "name": "ResultSuccess_Array_Integration__",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_Array_Integration_.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "IntegrationUpdateParams",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess_Integration_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_Integration.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess_Array__id-string--name-string___",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_Array__id-string--name-string__.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "TestStripeMeterEventRequest",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "event_name",
+        "customer_id"
+      ]
+    },
+    {
+      "name": "Partial_ResponseTableToOperators_",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "Partial_TimestampOperators_",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "Partial_RequestTableToOperators_",
+      "type": "object",
+      "propertyCount": 12,
+      "required": []
+    },
+    {
+      "name": "Partial_BooleanOperators_",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "Partial_FeedbackTableToOperators_",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "Partial_TimestampOperatorsTyped_",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "Partial_RequestResponseRMTToOperators_",
+      "type": "object",
+      "propertyCount": 37,
+      "required": []
+    },
+    {
+      "name": "Partial_SessionsRequestResponseRMTToOperators_",
+      "type": "object",
+      "propertyCount": 10,
+      "required": []
+    },
+    {
+      "name": "Pick_FilterLeaf.feedback-or-request-or-response-or-properties-or-values-or-request_response_rmt-or-sessions_request_response_rmt_",
+      "type": "object",
+      "propertyCount": 7,
+      "required": []
+    },
+    {
+      "name": "FilterLeafSubset_feedback-or-request-or-response-or-properties-or-values-or-request_response_rmt-or-sessions_request_response_rmt_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "RequestFilterNode",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "RequestFilterBranch",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "right",
+        "operator",
+        "left"
+      ]
+    },
+    {
+      "name": "SortDirection",
+      "type": "string",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SortLeafRequest",
+      "type": "object",
+      "propertyCount": 17,
+      "required": []
+    },
+    {
+      "name": "RequestQueryParams",
+      "type": "object",
+      "propertyCount": 8,
+      "required": [
+        "filter"
+      ]
+    },
+    {
+      "name": "ProviderName",
+      "type": "string",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ModelProviderName",
+      "type": "string",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "Provider",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "LlmType",
+      "type": "string",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "FunctionCall",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "name",
+        "arguments"
+      ]
+    },
+    {
+      "name": "Message",
+      "type": "object",
+      "propertyCount": 25,
+      "required": [
+        "_type"
+      ]
+    },
+    {
+      "name": "Tool",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "name"
+      ]
+    },
+    {
+      "name": "HeliconeEventTool",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "_type",
+        "toolName",
+        "input"
+      ]
+    },
+    {
+      "name": "HeliconeEventVectorDB",
+      "type": "object",
+      "propertyCount": 7,
+      "required": [
+        "_type",
+        "operation"
+      ]
+    },
+    {
+      "name": "HeliconeEventData",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "_type",
+        "name"
+      ]
+    },
+    {
+      "name": "LLMRequestBody",
+      "type": "object",
+      "propertyCount": 27,
+      "required": []
+    },
+    {
+      "name": "Response",
+      "type": "object",
+      "propertyCount": 17,
+      "required": [
+        "type",
+        "role",
+        "_type"
+      ]
+    },
+    {
+      "name": "LLMResponseBody",
+      "type": "object",
+      "propertyCount": 8,
+      "required": []
+    },
+    {
+      "name": "LlmSchema",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "request"
+      ]
+    },
+    {
+      "name": "HeliconeRequest",
+      "type": "object",
+      "propertyCount": 48,
+      "required": [
+        "response_id",
+        "response_created_at",
+        "response_status",
+        "response_model",
+        "request_id",
+        "request_created_at",
+        "request_body",
+        "request_path",
+        "request_user_id",
+        "request_properties",
+        "request_model",
+        "model_override",
+        "helicone_user",
+        "provider",
+        "delay_ms",
+        "time_to_first_token",
+        "total_tokens",
+        "prompt_tokens",
+        "prompt_cache_write_tokens",
+        "prompt_cache_read_tokens",
+        "completion_tokens",
+        "reasoning_tokens",
+        "prompt_audio_tokens",
+        "completion_audio_tokens",
+        "cost",
+        "prompt_id",
+        "prompt_version",
+        "llmSchema",
+        "country_code",
+        "asset_ids",
+        "asset_urls",
+        "scores",
+        "properties",
+        "assets",
+        "target_url",
+        "model",
+        "cache_reference_id",
+        "cache_enabled",
+        "ai_gateway_body_mapping"
+      ]
+    },
+    {
+      "name": "ResultSuccess_HeliconeRequest-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_HeliconeRequest-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess_HeliconeRequest_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_HeliconeRequest.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess__inputs-Record_string.any_--prompt_id-string--version_id-string--environment-string-or-null_-or-null_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__inputs-Record_string.any_--prompt_id-string--version_id-string--environment-string-or-null_-or-null.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "HeliconeRequestAsset",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "assetUrl"
+      ]
+    },
+    {
+      "name": "ResultSuccess_HeliconeRequestAsset_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_HeliconeRequestAsset.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "Record_string.number-or-boolean-or-undefined_",
+      "type": "object",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "Scores",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ScoreRequest",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "scores"
+      ]
+    },
+    {
+      "name": "ConversationMessage",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "role",
+        "content"
+      ]
+    },
+    {
+      "name": "MostExpensiveRequest",
+      "type": "object",
+      "propertyCount": 8,
+      "required": [
+        "requestId",
+        "cost",
+        "model",
+        "provider",
+        "createdAt",
+        "promptTokens",
+        "completionTokens",
+        "conversation"
+      ]
+    },
+    {
+      "name": "WrappedStats",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "totalRequests",
+        "topProviders",
+        "topModels",
+        "totalTokens",
+        "mostExpensiveRequest"
+      ]
+    },
+    {
+      "name": "ResultSuccess_WrappedStats_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_WrappedStats.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess__hasData-boolean__",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__hasData-boolean_.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess_unknown_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "ResultError_unknown_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "WebhookData",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "destination",
+        "config"
+      ]
+    },
+    {
+      "name": "ResultSuccess__id-string--created_at-string--destination-string--version-string--config-string--hmac_key-string_-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__id-string--created_at-string--destination-string--version-string--config-string--hmac_key-string_-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess__success-boolean--message-string__",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__success-boolean--message-string_.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "AddVaultKeyParams",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "key",
+        "provider"
+      ]
+    },
+    {
+      "name": "ResultSuccess_DecryptedProviderKey-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_DecryptedProviderKey-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess_DecryptedProviderKey_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_DecryptedProviderKey.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "HistogramRow",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "range_start",
+        "range_end",
+        "value"
+      ]
+    },
+    {
+      "name": "ResultSuccess__request_count-HistogramRow-Array--user_cost-HistogramRow-Array__",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__request_count-HistogramRow-Array--user_cost-HistogramRow-Array_.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "Partial_UserViewToOperators_",
+      "type": "object",
+      "propertyCount": 10,
+      "required": []
+    },
+    {
+      "name": "Pick_FilterLeaf.users_view-or-request_response_rmt_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "FilterLeafSubset_users_view-or-request_response_rmt_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "UserFilterNode",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "UserFilterBranch",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "right",
+        "operator",
+        "left"
+      ]
+    },
+    {
+      "name": "PSize",
+      "type": "string",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "UserMetricsResult",
+      "type": "object",
+      "propertyCount": 11,
+      "required": [
+        "id",
+        "user_id",
+        "active_for",
+        "first_active",
+        "last_active",
+        "total_requests",
+        "average_requests_per_day_active",
+        "average_tokens_per_request",
+        "total_completion_tokens",
+        "total_prompt_tokens",
+        "cost"
+      ]
+    },
+    {
+      "name": "ResultSuccess__users-UserMetricsResult-Array--count-number--hasUsers-boolean__",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__users-UserMetricsResult-Array--count-number--hasUsers-boolean_.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SortLeafUsers",
+      "type": "object",
+      "propertyCount": 12,
+      "required": []
+    },
+    {
+      "name": "UserMetricsQueryParams",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "filter",
+        "offset",
+        "limit"
+      ]
+    },
+    {
+      "name": "ResultSuccess__count-number--prompt_tokens-number--completion_tokens-number--user_id-string--cost-number_-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__count-number--prompt_tokens-number--completion_tokens-number--user_id-string--cost-number_-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "UserQueryParams",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "ValidationError",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "field",
+        "message"
+      ]
+    },
+    {
+      "name": "ValidationResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "isValid",
+        "errors"
+      ]
+    },
+    {
+      "name": "TypedProviderRequest",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "url",
+        "json",
+        "meta"
+      ]
+    },
+    {
+      "name": "TypedProviderResponse",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "status",
+        "headers"
+      ]
+    },
+    {
+      "name": "TypedTiming",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "startTime",
+        "endTime"
+      ]
+    },
+    {
+      "name": "TypedAsyncLogModel",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "providerRequest",
+        "providerResponse"
+      ]
+    },
+    {
+      "name": "OTELTrace",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "resourceSpans"
+      ]
+    },
+    {
+      "name": "SendTestRequestResponse",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "success"
+      ]
+    },
+    {
+      "name": "SendTestRequestRequest",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "apiKey"
+      ]
+    },
+    {
+      "name": "SessionResult",
+      "type": "object",
+      "propertyCount": 11,
+      "required": [
+        "created_at",
+        "latest_request_created_at",
+        "session_id",
+        "session_name",
+        "total_cost",
+        "total_requests",
+        "prompt_tokens",
+        "completion_tokens",
+        "total_tokens",
+        "avg_latency",
+        "user_ids"
+      ]
+    },
+    {
+      "name": "ResultSuccess_SessionResult-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_SessionResult-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "Pick_FilterLeaf.request_response_rmt-or-sessions_request_response_rmt_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "FilterLeafSubset_request_response_rmt-or-sessions_request_response_rmt_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SessionFilterNode",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SessionFilterBranch",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "right",
+        "operator",
+        "left"
+      ]
+    },
+    {
+      "name": "SessionQueryParams",
+      "type": "object",
+      "propertyCount": 7,
+      "required": [
+        "search",
+        "timeFilter",
+        "timezoneDifference",
+        "filter"
+      ]
+    },
+    {
+      "name": "SessionsAggregateMetrics",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "count",
+        "total_cost",
+        "avg_cost",
+        "avg_latency",
+        "avg_requests"
+      ]
+    },
+    {
+      "name": "ResultSuccess_SessionsAggregateMetrics_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_SessionsAggregateMetrics.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SessionNameResult",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "name",
+        "created_at",
+        "last_used",
+        "first_used",
+        "session_count",
+        "avg_latency"
+      ]
+    },
+    {
+      "name": "ResultSuccess_SessionNameResult-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_SessionNameResult-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "TimeFilterMs",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "startTimeUnixMs",
+        "endTimeUnixMs"
+      ]
+    },
+    {
+      "name": "SessionNameQueryParams",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "nameContains",
+        "timezoneDifference"
+      ]
+    },
+    {
+      "name": "AverageRow",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "average"
+      ]
+    },
+    {
+      "name": "SessionMetrics",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "session_count",
+        "session_duration",
+        "session_cost",
+        "average"
+      ]
+    },
+    {
+      "name": "ResultSuccess_SessionMetrics_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_SessionMetrics.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "SessionMetricsQueryParams",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "nameContains",
+        "timezoneDifference"
+      ]
+    },
+    {
+      "name": "ResultSuccess_string-or-null_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_string-or-null.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "MetricsData",
+      "type": "object",
+      "propertyCount": 12,
+      "required": [
+        "totalRequests",
+        "requestCountPrevious24h",
+        "requestVolumeChange",
+        "errorRate24h",
+        "errorRatePrevious24h",
+        "errorRateChange",
+        "averageLatency",
+        "averageLatencyPerToken",
+        "latencyChange",
+        "latencyPerTokenChange",
+        "recentRequestCount",
+        "recentErrorCount"
+      ]
+    },
+    {
+      "name": "TimeSeriesDataPoint",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "timestamp",
+        "errorCount",
+        "requestCount",
+        "averageLatency",
+        "averageLatencyPerCompletionToken"
+      ]
+    },
+    {
+      "name": "ProviderMetrics",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "providerName",
+        "metrics"
+      ]
+    },
+    {
+      "name": "ResultSuccess_ProviderMetrics-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_ProviderMetrics-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess_ProviderMetrics_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_ProviderMetrics.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "TimeFrame",
+      "type": "string",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ProviderMetric",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "provider",
+        "total_requests"
+      ]
+    },
+    {
+      "name": "ResultSuccess_ProviderMetric-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_ProviderMetric-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "Partial_UserMetricsToOperators_",
+      "type": "object",
+      "propertyCount": 9,
+      "required": []
+    },
+    {
+      "name": "Partial_UserApiKeysTableToOperators_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "Partial_PropertiesTableToOperators_",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "Partial_ExperimentToOperators_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "Partial_ExperimentHypothesisRunToOperator_",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "Partial_ScoreValueToOperator_",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "Partial_RequestResponseLogToOperators_",
+      "type": "object",
+      "propertyCount": 11,
+      "required": []
+    },
+    {
+      "name": "Partial_PropertiesV3ToOperators_",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "Partial_PropertyWithResponseV1ToOperators_",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "Partial_JobToOperators_",
+      "type": "object",
+      "propertyCount": 9,
+      "required": []
+    },
+    {
+      "name": "Partial_NodesToOperators_",
+      "type": "object",
+      "propertyCount": 10,
+      "required": []
+    },
+    {
+      "name": "Partial_CacheMetricsTableToOperators_",
+      "type": "object",
+      "propertyCount": 17,
+      "required": []
+    },
+    {
+      "name": "Partial_RateLimitTableToOperators_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "Partial_OrganizationPropertiesToOperators_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "Partial_TablesAndViews_",
+      "type": "object",
+      "propertyCount": 24,
+      "required": []
+    },
+    {
+      "name": "SingleKey_TablesAndViews_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "FilterLeaf",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "FilterNode",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "FilterBranch",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "left",
+        "operator",
+        "right"
+      ]
+    },
+    {
+      "name": "ProviderQueryParams",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "filter",
+        "offset",
+        "limit",
+        "timeFilter"
+      ]
+    },
+    {
+      "name": "ResultSuccess__property-string--total_cost-number--request_count-number--created_at_trunc-string_-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__property-string--total_cost-number--request_count-number--created_at_trunc-string_-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "Pick_FilterLeaf.request_response_rmt_",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "FilterLeafSubset_request_response_rmt_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "RequestClickhouseFilterNode",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "RequestClickhouseFilterBranch",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "right",
+        "operator",
+        "left"
+      ]
+    },
+    {
+      "name": "TimeIncrement",
+      "type": "string",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "DataOverTimeRequest",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "timeFilter",
+        "userFilter",
+        "dbIncrement",
+        "timeZoneDifference"
+      ]
+    },
+    {
+      "name": "Property",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "property"
+      ]
+    },
+    {
+      "name": "ResultSuccess_Property-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_Property-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess_unknown-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "ResultSuccess__value-string--cost-number_-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__value-string--cost-number_-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "TimeFilterRequest",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "timeFilter"
+      ]
+    },
+    {
+      "name": "ResultSuccess__value-string--count-number_-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__value-string--count-number_-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ChatCompletionTokenLogprob.TopLogprob",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "token",
+        "bytes",
+        "logprob"
+      ]
+    },
+    {
+      "name": "ChatCompletionTokenLogprob",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "token",
+        "bytes",
+        "logprob",
+        "top_logprobs"
+      ]
+    },
+    {
+      "name": "ChatCompletion.Choice.Logprobs",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "content",
+        "refusal"
+      ]
+    },
+    {
+      "name": "ChatCompletionMessage.Annotation.URLCitation",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "end_index",
+        "start_index",
+        "title",
+        "url"
+      ]
+    },
+    {
+      "name": "ChatCompletionMessage.Annotation",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "type",
+        "url_citation"
+      ]
+    },
+    {
+      "name": "ChatCompletionAudio",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "id",
+        "data",
+        "expires_at",
+        "transcript"
+      ]
+    },
+    {
+      "name": "ChatCompletionMessage.FunctionCall",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "arguments",
+        "name"
+      ]
+    },
+    {
+      "name": "ChatCompletionMessageFunctionToolCall.Function",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "arguments",
+        "name"
+      ]
+    },
+    {
+      "name": "ChatCompletionMessageFunctionToolCall",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "id",
+        "function",
+        "type"
+      ]
+    },
+    {
+      "name": "ChatCompletionMessageCustomToolCall.Custom",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "input",
+        "name"
+      ]
+    },
+    {
+      "name": "ChatCompletionMessageCustomToolCall",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "id",
+        "custom",
+        "type"
+      ]
+    },
+    {
+      "name": "ChatCompletionMessageToolCall",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ChatCompletionMessage",
+      "type": "object",
+      "propertyCount": 7,
+      "required": [
+        "content",
+        "refusal",
+        "role"
+      ]
+    },
+    {
+      "name": "ChatCompletion.Choice",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "finish_reason",
+        "index",
+        "logprobs",
+        "message"
+      ]
+    },
+    {
+      "name": "CompletionUsage.CompletionTokensDetails",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "CompletionUsage.PromptTokensDetails",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "CompletionUsage",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "completion_tokens",
+        "prompt_tokens",
+        "total_tokens"
+      ]
+    },
+    {
+      "name": "ChatCompletion",
+      "type": "object",
+      "propertyCount": 8,
+      "required": [
+        "id",
+        "choices",
+        "created",
+        "model",
+        "object"
+      ]
+    },
+    {
+      "name": "ResultSuccess_ChatCompletion-or-_content-string--reasoning-string--calls-any__",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_ChatCompletion-or-_content-string--reasoning-string--calls-any_.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess__apiKey-string__",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__apiKey-string_.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess__cost-number--created_at_trunc-string_-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__cost-number--created_at_trunc-string_-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "AuthorName",
+      "type": "string",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "StandardParameter",
+      "type": "string",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "PluginId",
+      "type": "string",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "RateLimits",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "ModalityPricing",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "ModelPricing",
+      "type": "object",
+      "propertyCount": 12,
+      "required": [
+        "threshold",
+        "input",
+        "output"
+      ]
+    },
+    {
+      "name": "BodyMappingType",
+      "type": "string",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "EndpointConfig",
+      "type": "object",
+      "propertyCount": 19,
+      "required": []
+    },
+    {
+      "name": "Record_string.EndpointConfig_",
+      "type": "object",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResponseFormat",
+      "type": "string",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ModelProviderConfig",
+      "type": "object",
+      "propertyCount": 19,
+      "required": [
+        "pricing",
+        "contextLength",
+        "maxCompletionTokens",
+        "ptbEnabled",
+        "providerModelId",
+        "provider",
+        "author",
+        "supportedParameters",
+        "endpointConfigs"
+      ]
+    },
+    {
+      "name": "UserEndpointConfig",
+      "type": "object",
+      "propertyCount": 11,
+      "required": []
+    },
+    {
+      "name": "Endpoint",
+      "type": "object",
+      "propertyCount": 13,
+      "required": [
+        "pricing",
+        "contextLength",
+        "maxCompletionTokens",
+        "ptbEnabled",
+        "modelConfig",
+        "userConfig",
+        "provider",
+        "author",
+        "providerModelId",
+        "supportedParameters"
+      ]
+    },
+    {
+      "name": "SimplifiedModalityPricing",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "SimplifiedPricing",
+      "type": "object",
+      "propertyCount": 11,
+      "required": [
+        "prompt",
+        "completion"
+      ]
+    },
+    {
+      "name": "ModelEndpoint",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "provider",
+        "providerSlug",
+        "pricing"
+      ]
+    },
+    {
+      "name": "InputModality",
+      "type": "string",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "OutputModality",
+      "type": "string",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ModelRegistryItem",
+      "type": "object",
+      "propertyCount": 12,
+      "required": [
+        "id",
+        "name",
+        "author",
+        "contextLength",
+        "endpoints",
+        "inputModalities",
+        "outputModalities",
+        "supportedParameters"
+      ]
+    },
+    {
+      "name": "ModelCapability",
+      "type": "string",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ModelRegistryResponse",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "models",
+        "total",
+        "filters"
+      ]
+    },
+    {
+      "name": "ResultSuccess_ModelRegistryResponse_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_ModelRegistryResponse.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "OAIModel",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "id",
+        "object",
+        "created",
+        "owned_by"
+      ]
+    },
+    {
+      "name": "OAIModelsResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "object",
+        "data"
+      ]
+    },
+    {
+      "name": "MetricStats",
+      "type": "object",
+      "propertyCount": 7,
+      "required": [
+        "p99",
+        "p95",
+        "p90",
+        "max",
+        "min",
+        "median",
+        "average"
+      ]
+    },
+    {
+      "name": "TokenMetricStats",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "TimeSeriesMetric",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "value",
+        "timestamp"
+      ]
+    },
+    {
+      "name": "Model",
+      "type": "object",
+      "propertyCount": 10,
+      "required": [
+        "timeSeriesData",
+        "requestStatus",
+        "geographicTtft",
+        "geographicLatency",
+        "feedback",
+        "costs",
+        "ttft",
+        "latency",
+        "provider",
+        "model"
+      ]
+    },
+    {
+      "name": "ResultSuccess_Model-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_Model-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ModelsToCompare",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "provider",
+        "names",
+        "parent"
+      ]
+    },
+    {
+      "name": "MetricsFilterBody",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "filter",
+        "timeFilter"
+      ]
+    },
+    {
+      "name": "TokensPerRequest",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "average_prompt_tokens_per_response",
+        "average_completion_tokens_per_response",
+        "average_total_tokens_per_response"
+      ]
+    },
+    {
+      "name": "ResultSuccess_TokensPerRequest_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_TokensPerRequest.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "RequestsOverTime",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "time",
+        "count"
+      ]
+    },
+    {
+      "name": "ResultSuccess_RequestsOverTime-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_RequestsOverTime-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "MetricsOverTimeBody",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "timeFilter",
+        "filter",
+        "timeZoneDifference"
+      ]
+    },
+    {
+      "name": "CostOverTime",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "time",
+        "cost"
+      ]
+    },
+    {
+      "name": "ResultSuccess_CostOverTime-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_CostOverTime-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "TokensOverTime",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "time",
+        "prompt_tokens",
+        "completion_tokens"
+      ]
+    },
+    {
+      "name": "ResultSuccess_TokensOverTime-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_TokensOverTime-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "LatencyOverTime",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "time",
+        "duration"
+      ]
+    },
+    {
+      "name": "ResultSuccess_LatencyOverTime-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_LatencyOverTime-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "TimeToFirstTokenOverTime",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "time",
+        "ttft"
+      ]
+    },
+    {
+      "name": "ResultSuccess_TimeToFirstTokenOverTime-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_TimeToFirstTokenOverTime-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "UsersOverTime",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "time",
+        "count"
+      ]
+    },
+    {
+      "name": "ResultSuccess_UsersOverTime-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_UsersOverTime-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ThreatsOverTime",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "time",
+        "count"
+      ]
+    },
+    {
+      "name": "ResultSuccess_ThreatsOverTime-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_ThreatsOverTime-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ErrorOverTime",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "time",
+        "count"
+      ]
+    },
+    {
+      "name": "ResultSuccess_ErrorOverTime-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_ErrorOverTime-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "RequestCountBody",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "filter"
+      ]
+    },
+    {
+      "name": "ModelMetric",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "model",
+        "total_requests",
+        "total_completion_tokens",
+        "total_prompt_token",
+        "total_tokens",
+        "cost"
+      ]
+    },
+    {
+      "name": "ResultSuccess_ModelMetric-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_ModelMetric-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ModelMetricsBody",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "filter",
+        "offset",
+        "limit",
+        "timeFilter"
+      ]
+    },
+    {
+      "name": "CountryData",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "country",
+        "total_requests"
+      ]
+    },
+    {
+      "name": "ResultSuccess_CountryData-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_CountryData-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "CountryMetricsBody",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "filter",
+        "offset",
+        "limit",
+        "timeFilter"
+      ]
+    },
+    {
+      "name": "Quantiles",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "time",
+        "p75",
+        "p90",
+        "p95",
+        "p99"
+      ]
+    },
+    {
+      "name": "ResultSuccess_Quantiles-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_Quantiles-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "QuantilesBody",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "filter",
+        "timeFilter",
+        "timeZoneDifference",
+        "metric"
+      ]
+    },
+    {
+      "name": "ResultSuccess__unsafe-boolean__",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__unsafe-boolean_.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ClickHouseTableColumn",
+      "type": "object",
+      "propertyCount": 7,
+      "required": [
+        "name",
+        "type"
+      ]
+    },
+    {
+      "name": "ClickHouseTableSchema",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "table_name",
+        "columns"
+      ]
+    },
+    {
+      "name": "ResultSuccess_ClickHouseTableSchema-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_ClickHouseTableSchema-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ExecuteSqlResponse",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "rowCount",
+        "size",
+        "elapsedMilliseconds",
+        "rows"
+      ]
+    },
+    {
+      "name": "ResultSuccess_ExecuteSqlResponse_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_ExecuteSqlResponse.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ExecuteSqlRequest",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "sql"
+      ]
+    },
+    {
+      "name": "HqlSavedQuery",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "id",
+        "organization_id",
+        "name",
+        "sql",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "name": "ResultSuccess_Array_HqlSavedQuery__",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_Array_HqlSavedQuery_.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess_HqlSavedQuery-or-null_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_HqlSavedQuery-or-null.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess_void_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_void.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "BulkDeleteSavedQueriesRequest",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "ids"
+      ]
+    },
+    {
+      "name": "ResultSuccess_HqlSavedQuery-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_HqlSavedQuery-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "CreateSavedQueryRequest",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "name",
+        "sql"
+      ]
+    },
+    {
+      "name": "ResultSuccess_HqlSavedQuery_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_HqlSavedQuery.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess__tableId-string--experimentId-string__",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__tableId-string--experimentId-string_.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "CreateExperimentTableParams",
+      "type": "object",
+      "propertyCount": 7,
+      "required": [
+        "datasetId",
+        "experimentMetadata",
+        "promptVersionId",
+        "newHeliconeTemplate",
+        "isMajorVersion",
+        "promptSubversionMetadata"
+      ]
+    },
+    {
+      "name": "ExperimentTableColumn",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "id",
+        "columnName",
+        "columnType",
+        "cells"
+      ]
+    },
+    {
+      "name": "ExperimentTable",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "id",
+        "name",
+        "experimentId",
+        "columns"
+      ]
+    },
+    {
+      "name": "ResultSuccess_ExperimentTable_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_ExperimentTable.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ExperimentTableSimplified",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "id",
+        "name",
+        "experimentId",
+        "createdAt",
+        "columns"
+      ]
+    },
+    {
+      "name": "ResultSuccess_ExperimentTableSimplified_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_ExperimentTableSimplified.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess_ExperimentTableSimplified-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_ExperimentTableSimplified-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "NewExperimentParams",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "datasetId",
+        "promptVersion",
+        "model",
+        "providerKeyId"
+      ]
+    },
+    {
+      "name": "ResultSuccess__hypothesisId-string__",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__hypothesisId-string_.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "Score",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "valueType",
+        "value"
+      ]
+    },
+    {
+      "name": "Record_string.Score_",
+      "type": "object",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess__runsCount-number--scores-Record_string.Score___",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__runsCount-number--scores-Record_string.Score__.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResponseObj",
+      "type": "object",
+      "propertyCount": 8,
+      "required": [
+        "body",
+        "createdAt",
+        "completionTokens",
+        "promptTokens",
+        "promptCacheWriteTokens",
+        "promptCacheReadTokens",
+        "delayMs",
+        "model"
+      ]
+    },
+    {
+      "name": "RequestObj",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "id",
+        "provider"
+      ]
+    },
+    {
+      "name": "ExperimentDatasetRow",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "rowId",
+        "inputRecord",
+        "rowIndex",
+        "columnId",
+        "scores"
+      ]
+    },
+    {
+      "name": "ExperimentScores",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "dataset",
+        "hypothesis"
+      ]
+    },
+    {
+      "name": "Experiment",
+      "type": "object",
+      "propertyCount": 8,
+      "required": [
+        "id",
+        "organization",
+        "dataset",
+        "meta",
+        "createdAt",
+        "hypotheses",
+        "scores",
+        "tableId"
+      ]
+    },
+    {
+      "name": "ResultSuccess_Experiment-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_Experiment-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "Pick_FilterLeaf.experiment_",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "FilterLeafSubset_experiment_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ExperimentFilterNode",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ExperimentFilterBranch",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "right",
+        "operator",
+        "left"
+      ]
+    },
+    {
+      "name": "IncludeExperimentKeys",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess__datasetId-string__",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__datasetId-string_.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "DatasetMetadata",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "NewDatasetParams",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "datasetName",
+        "requestIds",
+        "datasetType"
+      ]
+    },
+    {
+      "name": "Pick_FilterLeaf.request-or-prompts_versions_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "FilterLeafSubset_request-or-prompts_versions_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "DatasetFilterNode",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "DatasetFilterBranch",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "right",
+        "operator",
+        "left"
+      ]
+    },
+    {
+      "name": "RandomDatasetParams",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "datasetName",
+        "filter"
+      ]
+    },
+    {
+      "name": "DatasetResult",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "id",
+        "name",
+        "created_at"
+      ]
+    },
+    {
+      "name": "ResultSuccess_DatasetResult-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_DatasetResult-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess___-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result___-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "HeliconeDatasetMetadata",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "NewHeliconeDatasetParams",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "datasetName",
+        "requestIds"
+      ]
+    },
+    {
+      "name": "MutateParams",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "addRequests",
+        "removeRequests"
+      ]
+    },
+    {
+      "name": "HeliconeDatasetRow",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "id",
+        "origin_request_id",
+        "dataset_id",
+        "created_at",
+        "signed_url"
+      ]
+    },
+    {
+      "name": "ResultSuccess_HeliconeDatasetRow-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_HeliconeDatasetRow-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "HeliconeDataset",
+      "type": "object",
+      "propertyCount": 7,
+      "required": [
+        "created_at",
+        "dataset_type",
+        "id",
+        "meta",
+        "name",
+        "organization",
+        "requests_count"
+      ]
+    },
+    {
+      "name": "ResultSuccess_HeliconeDataset-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_HeliconeDataset-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess_any_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Eval",
+      "type": "object",
+      "propertyCount": 7,
+      "required": [
+        "name",
+        "averageScore",
+        "minScore",
+        "maxScore",
+        "count",
+        "overTime",
+        "averageOverTime"
+      ]
+    },
+    {
+      "name": "ResultSuccess_Eval-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_Eval-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "EvalFilterNode",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "EvalFilterBranch",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "right",
+        "operator",
+        "left"
+      ]
+    },
+    {
+      "name": "EvalQueryParams",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "filter",
+        "timeFilter"
+      ]
+    },
+    {
+      "name": "ScoreDistribution",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "name",
+        "distribution"
+      ]
+    },
+    {
+      "name": "ResultSuccess_ScoreDistribution-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_ScoreDistribution-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess__score_key-string--score_sum-number--created_at_trunc-string_-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__score_key-string--score_sum-number--created_at_trunc-string_-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "CustomerUsage",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "id",
+        "name",
+        "cost",
+        "count",
+        "prompt_tokens",
+        "completion_tokens"
+      ]
+    },
+    {
+      "name": "Customer",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "id",
+        "name"
+      ]
+    },
+    {
+      "name": "CreditBalanceResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "totalCreditsPurchased",
+        "balance"
+      ]
+    },
+    {
+      "name": "ResultSuccess_CreditBalanceResponse_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_CreditBalanceResponse.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "PurchasedCredits",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "id",
+        "createdAt",
+        "credits",
+        "referenceId"
+      ]
+    },
+    {
+      "name": "PaginatedPurchasedCredits",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "purchases",
+        "total",
+        "page",
+        "pageSize"
+      ]
+    },
+    {
+      "name": "ResultSuccess_PaginatedPurchasedCredits_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_PaginatedPurchasedCredits.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess__totalSpend-number__",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__totalSpend-number_.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ModelSpend",
+      "type": "object",
+      "propertyCount": 11,
+      "required": [
+        "model",
+        "provider",
+        "promptTokens",
+        "completionTokens",
+        "cacheReadTokens",
+        "cacheWriteTokens",
+        "pricing",
+        "subtotal",
+        "discountPercent",
+        "total"
+      ]
+    },
+    {
+      "name": "SpendBreakdownResponse",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "models",
+        "totalCost",
+        "timeRange"
+      ]
+    },
+    {
+      "name": "ResultSuccess_SpendBreakdownResponse_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_SpendBreakdownResponse.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "PTBInvoice",
+      "type": "object",
+      "propertyCount": 10,
+      "required": [
+        "id",
+        "organizationId",
+        "stripeInvoiceId",
+        "hostedInvoiceUrl",
+        "startDate",
+        "endDate",
+        "amountCents",
+        "subtotalCents",
+        "notes",
+        "createdAt"
+      ]
+    },
+    {
+      "name": "ResultSuccess_PTBInvoice-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_PTBInvoice-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "OrgDiscount",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "provider",
+        "model",
+        "percent"
+      ]
+    },
+    {
+      "name": "ResultSuccess_OrgDiscount-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_OrgDiscount-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "InAppThread",
+      "type": "object",
+      "propertyCount": 9,
+      "required": [
+        "id",
+        "chat",
+        "user_id",
+        "org_id",
+        "created_at",
+        "escalated",
+        "metadata",
+        "updated_at",
+        "soft_delete"
+      ]
+    },
+    {
+      "name": "ResultSuccess_InAppThread_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_InAppThread.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ResultSuccess__success-boolean__",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result__success-boolean_.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "ThreadSummary",
+      "type": "object",
+      "propertyCount": 8,
+      "required": [
+        "id",
+        "created_at",
+        "updated_at",
+        "escalated",
+        "message_count"
+      ]
+    },
+    {
+      "name": "ResultSuccess_ThreadSummary-Array_",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "error"
+      ]
+    },
+    {
+      "name": "Result_ThreadSummary-Array.string_",
+      "type": null,
+      "propertyCount": 0,
+      "required": []
+    }
+  ],
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/v1/api-keys/provider-key/{providerKeyId}",
+      "operationId": "GetProviderKey",
+      "summary": null,
+      "tags": [
+        "API Key"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/api-keys/provider-key/{providerKeyId}",
+      "operationId": "DeleteProviderKey",
+      "summary": null,
+      "tags": [
+        "API Key"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/v1/api-keys/provider-key/{providerKeyId}",
+      "operationId": "UpdateProviderKey",
+      "summary": null,
+      "tags": [
+        "API Key"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/api-keys/provider-key",
+      "operationId": "CreateProviderKey",
+      "summary": null,
+      "tags": [
+        "API Key"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/api-keys/provider-keys",
+      "operationId": "GetProviderKeys",
+      "summary": null,
+      "tags": [
+        "API Key"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/api-keys",
+      "operationId": "GetAPIKeys",
+      "summary": null,
+      "tags": [
+        "API Key"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/api-keys",
+      "operationId": "CreateAPIKey",
+      "summary": null,
+      "tags": [
+        "API Key"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/api-keys/proxy-key",
+      "operationId": "CreateProxyKey",
+      "summary": null,
+      "tags": [
+        "API Key"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/api-keys/{apiKeyId}",
+      "operationId": "DeleteAPIKey",
+      "summary": null,
+      "tags": [
+        "API Key"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/v1/api-keys/{apiKeyId}",
+      "operationId": "UpdateAPIKey",
+      "summary": null,
+      "tags": [
+        "API Key"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/evaluator",
+      "operationId": "CreateEvaluator",
+      "summary": null,
+      "tags": [
+        "Evaluator"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/evaluator/{evaluatorId}",
+      "operationId": "GetEvaluator",
+      "summary": null,
+      "tags": [
+        "Evaluator"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/v1/evaluator/{evaluatorId}",
+      "operationId": "UpdateEvaluator",
+      "summary": null,
+      "tags": [
+        "Evaluator"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/evaluator/{evaluatorId}",
+      "operationId": "DeleteEvaluator",
+      "summary": null,
+      "tags": [
+        "Evaluator"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/evaluator/query",
+      "operationId": "QueryEvaluators",
+      "summary": null,
+      "tags": [
+        "Evaluator"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/evaluator/{evaluatorId}/experiments",
+      "operationId": "GetExperimentsForEvaluator",
+      "summary": null,
+      "tags": [
+        "Evaluator"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/evaluator/{evaluatorId}/onlineEvaluators",
+      "operationId": "GetOnlineEvaluators",
+      "summary": null,
+      "tags": [
+        "Evaluator"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/evaluator/{evaluatorId}/onlineEvaluators",
+      "operationId": "CreateOnlineEvaluator",
+      "summary": null,
+      "tags": [
+        "Evaluator"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/evaluator/{evaluatorId}/onlineEvaluators/{onlineEvaluatorId}",
+      "operationId": "DeleteOnlineEvaluator",
+      "summary": null,
+      "tags": [
+        "Evaluator"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/evaluator/python/test",
+      "operationId": "TestPythonEvaluator",
+      "summary": null,
+      "tags": [
+        "Evaluator"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/evaluator/llm/test",
+      "operationId": "TestLLMEvaluator",
+      "summary": null,
+      "tags": [
+        "Evaluator"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/evaluator/lastmile/test",
+      "operationId": "TestLastMileEvaluator",
+      "summary": null,
+      "tags": [
+        "Evaluator"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/evaluator/{evaluatorId}/stats",
+      "operationId": "GetEvaluatorStats",
+      "summary": null,
+      "tags": [
+        "Evaluator"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/prompt-2025/id/{promptId}",
+      "operationId": "GetPrompt2025",
+      "summary": null,
+      "tags": [
+        "Prompt2025"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/prompt-2025/id/{promptId}/rename",
+      "operationId": "RenamePrompt2025",
+      "summary": null,
+      "tags": [
+        "Prompt2025"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/v1/prompt-2025/id/{promptId}/tags",
+      "operationId": "UpdatePrompt2025Tags",
+      "summary": null,
+      "tags": [
+        "Prompt2025"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/prompt-2025/{promptId}",
+      "operationId": "DeletePrompt2025",
+      "summary": null,
+      "tags": [
+        "Prompt2025"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/prompt-2025/{promptId}/{versionId}",
+      "operationId": "DeletePrompt2025Version",
+      "summary": null,
+      "tags": [
+        "Prompt2025"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/prompt-2025/id/{promptId}/{versionId}/inputs",
+      "operationId": "GetPrompt2025Inputs",
+      "summary": null,
+      "tags": [
+        "Prompt2025"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/prompt-2025/tags",
+      "operationId": "GetPrompt2025Tags",
+      "summary": null,
+      "tags": [
+        "Prompt2025"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/prompt-2025/environments",
+      "operationId": "GetPrompt2025Environments",
+      "summary": null,
+      "tags": [
+        "Prompt2025"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/prompt-2025",
+      "operationId": "CreatePrompt2025",
+      "summary": null,
+      "tags": [
+        "Prompt2025"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/prompt-2025/update",
+      "operationId": "UpdatePrompt2025",
+      "summary": null,
+      "tags": [
+        "Prompt2025"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/prompt-2025/update/environment",
+      "operationId": "SetPromptVersionEnvironment",
+      "summary": null,
+      "tags": [
+        "Prompt2025"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/prompt-2025/remove/environment",
+      "operationId": "RemoveEnvironmentFromVersion",
+      "summary": null,
+      "tags": [
+        "Prompt2025"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/prompt-2025/count",
+      "operationId": "GetPrompt2025Count",
+      "summary": null,
+      "tags": [
+        "Prompt2025"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/prompt-2025/query",
+      "operationId": "GetPrompts2025",
+      "summary": null,
+      "tags": [
+        "Prompt2025"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/prompt-2025/query/version",
+      "operationId": "GetPrompt2025Version",
+      "summary": null,
+      "tags": [
+        "Prompt2025"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/prompt-2025/query/environment-version",
+      "operationId": "GetPrompt2025EnvironmentVersion",
+      "summary": null,
+      "tags": [
+        "Prompt2025"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/prompt-2025/query/versions",
+      "operationId": "GetPrompt2025Versions",
+      "summary": null,
+      "tags": [
+        "Prompt2025"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/prompt-2025/query/production-version",
+      "operationId": "GetPrompt2025ProductionVersion",
+      "summary": null,
+      "tags": [
+        "Prompt2025"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/prompt-2025/query/total-versions",
+      "operationId": "GetPrompt2025TotalVersions",
+      "summary": null,
+      "tags": [
+        "Prompt2025"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/prompt-2025/{promptVersionId}/prompt-body",
+      "operationId": "GetPrompt2025VersionBody",
+      "summary": null,
+      "tags": [
+        "Prompt2025"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v2/prompt-2025/query/version",
+      "operationId": "GetPrompt2025Version",
+      "summary": null,
+      "tags": [
+        "Prompt2025V2"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v2/prompt-2025/query/environment-version",
+      "operationId": "GetPrompt2025EnvironmentVersion",
+      "summary": null,
+      "tags": [
+        "Prompt2025V2"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v2/prompt-2025/query/production-version",
+      "operationId": "GetPrompt2025ProductionVersion",
+      "summary": null,
+      "tags": [
+        "Prompt2025V2"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/prompt/has-prompts",
+      "operationId": "HasPrompts",
+      "summary": null,
+      "tags": [
+        "Prompt"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/prompt/query",
+      "operationId": "GetPrompts",
+      "summary": null,
+      "tags": [
+        "Prompt"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/prompt/{promptId}/query",
+      "operationId": "GetPrompt",
+      "summary": null,
+      "tags": [
+        "Prompt"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/prompt/{promptId}",
+      "operationId": "DeletePrompt",
+      "summary": null,
+      "tags": [
+        "Prompt"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/prompt/create",
+      "operationId": "CreatePrompt",
+      "summary": null,
+      "tags": [
+        "Prompt"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/v1/prompt/{promptId}/user-defined-id",
+      "operationId": "UpdatePromptUserDefinedId",
+      "summary": null,
+      "tags": [
+        "Prompt"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/prompt/version/{promptVersionId}/edit-label",
+      "operationId": "EditPromptVersionLabel",
+      "summary": null,
+      "tags": [
+        "Prompt"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/prompt/version/{promptVersionId}/edit-template",
+      "operationId": "EditPromptVersionTemplate",
+      "summary": null,
+      "tags": [
+        "Prompt"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/prompt/version/{promptVersionId}/subversion-from-ui",
+      "operationId": "CreateSubversionFromUi",
+      "summary": null,
+      "tags": [
+        "Prompt"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/prompt/version/{promptVersionId}/subversion",
+      "operationId": "CreateSubversion",
+      "summary": null,
+      "tags": [
+        "Prompt"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/prompt/version/{promptVersionId}/promote",
+      "operationId": "PromotePromptVersionToProduction",
+      "summary": null,
+      "tags": [
+        "Prompt"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/prompt/version/{promptVersionId}/inputs/query",
+      "operationId": "GetInputs",
+      "summary": null,
+      "tags": [
+        "Prompt"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/prompt/{promptId}/experiments",
+      "operationId": "GetPromptExperiments",
+      "summary": null,
+      "tags": [
+        "Prompt"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/prompt/{promptId}/versions/query",
+      "operationId": "GetPromptVersions",
+      "summary": null,
+      "tags": [
+        "Prompt"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/prompt/version/{promptVersionId}",
+      "operationId": "GetPromptVersion",
+      "summary": null,
+      "tags": [
+        "Prompt"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/prompt/version/{promptVersionId}",
+      "operationId": "DeletePromptVersion",
+      "summary": null,
+      "tags": [
+        "Prompt"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/prompt/{user_defined_id}/compile",
+      "operationId": "GetPromptVersionsCompiled",
+      "summary": null,
+      "tags": [
+        "Prompt"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/prompt/{user_defined_id}/template",
+      "operationId": "GetPromptVersionTemplates",
+      "summary": null,
+      "tags": [
+        "Prompt"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v2/experiment/create/empty",
+      "operationId": "CreateEmptyExperiment",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v2/experiment/create/from-request/{requestId}",
+      "operationId": "CreateExperimentFromRequest",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v2/experiment/new",
+      "operationId": "CreateNewExperiment",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v2/experiment",
+      "operationId": "GetExperiments",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v2/experiment/{experimentId}",
+      "operationId": "GetExperimentById",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/v2/experiment/{experimentId}",
+      "operationId": "DeleteExperiment",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v2/experiment/{experimentId}/prompt-version",
+      "operationId": "CreateNewPromptVersionForExperiment",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/v2/experiment/{experimentId}/prompt-version/{promptVersionId}",
+      "operationId": "DeletePromptVersion",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v2/experiment/{experimentId}/prompt-versions",
+      "operationId": "GetPromptVersionsForExperiment",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v2/experiment/{experimentId}/input-keys",
+      "operationId": "GetInputKeysForExperiment",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v2/experiment/{experimentId}/add-manual-row",
+      "operationId": "AddManualRowToExperiment",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v2/experiment/{experimentId}/add-manual-rows-batch",
+      "operationId": "AddManualRowsToExperimentBatch",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/v2/experiment/{experimentId}/rows",
+      "operationId": "DeleteExperimentTableRows",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v2/experiment/{experimentId}/row/insert/batch",
+      "operationId": "CreateExperimentTableRowBatch",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v2/experiment/{experimentId}/row/insert/dataset/{datasetId}",
+      "operationId": "CreateExperimentTableRowFromDataset",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v2/experiment/{experimentId}/row/update",
+      "operationId": "UpdateExperimentTableRow",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v2/experiment/{experimentId}/run-hypothesis",
+      "operationId": "RunHypothesis",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v2/experiment/{experimentId}/evaluators",
+      "operationId": "GetExperimentEvaluators",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v2/experiment/{experimentId}/evaluators",
+      "operationId": "CreateExperimentEvaluator",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/v2/experiment/{experimentId}/evaluators/{evaluatorId}",
+      "operationId": "DeleteExperimentEvaluator",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v2/experiment/{experimentId}/evaluators/run",
+      "operationId": "RunExperimentEvaluators",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v2/experiment/{experimentId}/should-run-evaluators",
+      "operationId": "ShouldRunEvaluators",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v2/experiment/{experimentId}/{promptVersionId}/scores",
+      "operationId": "GetExperimentPromptVersionScores",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v2/experiment/{experimentId}/{requestId}/{scoreKey}",
+      "operationId": "GetExperimentScore",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/stripe/subscription/cost-for-prompts",
+      "operationId": "GetCostForPrompts",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/stripe/subscription/cost-for-evals",
+      "operationId": "GetCostForEvals",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/stripe/subscription/cost-for-experiments",
+      "operationId": "GetCostForExperiments",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/stripe/subscription/free/usage",
+      "operationId": "GetFreeUsage",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/stripe/cloud/checkout-session",
+      "operationId": "CreateCloudGatewayCheckoutSession",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/stripe/subscription/new-customer/upgrade-to-pro",
+      "operationId": "UpgradeToPro",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/stripe/subscription/existing-customer/upgrade-to-pro",
+      "operationId": "UpgradeExistingCustomer",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/stripe/subscription/new-customer/upgrade-to-team-bundle",
+      "operationId": "UpgradeToTeamBundle",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/stripe/subscription/existing-customer/upgrade-to-team-bundle",
+      "operationId": "UpgradeExistingCustomerToTeamBundle",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/stripe/subscription/manage-subscription",
+      "operationId": "ManageSubscription",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/stripe/subscription/undo-cancel-subscription",
+      "operationId": "UndoCancelSubscription",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/stripe/subscription/add-ons/{productType}",
+      "operationId": "AddOns",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/stripe/subscription/add-ons/{productType}",
+      "operationId": "DeleteAddOns",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/stripe/subscription/preview-invoice",
+      "operationId": "PreviewInvoice",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/stripe/subscription/cancel-subscription",
+      "operationId": "CancelSubscription",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/stripe/subscription/migrate-to-pro",
+      "operationId": "MigrateToPro",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/stripe/payment-intents/search",
+      "operationId": "SearchPaymentIntents",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/stripe/subscription",
+      "operationId": "GetSubscription",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/stripe/auto-topoff/settings",
+      "operationId": "GetAutoTopoffSettings",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/stripe/auto-topoff/settings",
+      "operationId": "UpdateAutoTopoffSettings",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/stripe/auto-topoff/settings",
+      "operationId": "DisableAutoTopoff",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/stripe/payment-methods",
+      "operationId": "GetPaymentMethods",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/stripe/payment-methods/setup-session",
+      "operationId": "CreateSetupSession",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/stripe/payment-methods/{paymentMethodId}",
+      "operationId": "RemovePaymentMethod",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/stripe/subscription/usage-stats",
+      "operationId": "GetUsageStats",
+      "summary": null,
+      "tags": [
+        "Stripe"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/integration",
+      "operationId": "GetIntegrations",
+      "summary": null,
+      "tags": [
+        "Integration"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/integration",
+      "operationId": "CreateIntegration",
+      "summary": null,
+      "tags": [
+        "Integration"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/integration/{integrationId}",
+      "operationId": "GetIntegration",
+      "summary": null,
+      "tags": [
+        "Integration"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/integration/{integrationId}",
+      "operationId": "UpdateIntegration",
+      "summary": null,
+      "tags": [
+        "Integration"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/integration/type/{type}",
+      "operationId": "GetIntegrationByType",
+      "summary": null,
+      "tags": [
+        "Integration"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/integration/slack/settings",
+      "operationId": "GetSlackSettings",
+      "summary": null,
+      "tags": [
+        "Integration"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/integration/slack/channels",
+      "operationId": "GetSlackChannels",
+      "summary": null,
+      "tags": [
+        "Integration"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/integration/{integrationId}/stripe/test-meter-event",
+      "operationId": "TestStripeMeterEvent",
+      "summary": null,
+      "tags": [
+        "Integration"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/request/count/query",
+      "operationId": "GetRequestCount",
+      "summary": null,
+      "tags": [
+        "Request"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/request/query",
+      "operationId": "GetRequests",
+      "summary": null,
+      "tags": [
+        "Request"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/request/query-clickhouse",
+      "operationId": "GetRequestsClickhouse",
+      "summary": null,
+      "tags": [
+        "Request"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/request/{requestId}",
+      "operationId": "GetRequestById",
+      "summary": null,
+      "tags": [
+        "Request"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/request/{requestId}/inputs",
+      "operationId": "GetRequestInputs",
+      "summary": null,
+      "tags": [
+        "Request"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/request/query-ids",
+      "operationId": "GetRequestsByIds",
+      "summary": null,
+      "tags": [
+        "Request"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/request/{requestId}/feedback",
+      "operationId": "FeedbackRequest",
+      "summary": null,
+      "tags": [
+        "Request"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/v1/request/{requestId}/property",
+      "operationId": "PutProperty",
+      "summary": null,
+      "tags": [
+        "Request"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/request/{requestId}/assets/{assetId}",
+      "operationId": "GetRequestAssetById",
+      "summary": null,
+      "tags": [
+        "Request"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/request/{requestId}/score",
+      "operationId": "AddScores",
+      "summary": null,
+      "tags": [
+        "Request"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/wrapped/2025",
+      "operationId": "GetWrapped2025Stats",
+      "summary": null,
+      "tags": [
+        "Wrapped"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/wrapped/2025/check",
+      "operationId": "CheckHasWrapped2025Data",
+      "summary": null,
+      "tags": [
+        "Wrapped"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/webhooks",
+      "operationId": "GetWebhooks",
+      "summary": null,
+      "tags": [
+        "Webhooks"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/webhooks",
+      "operationId": "NewWebhook",
+      "summary": null,
+      "tags": [
+        "Webhooks"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/webhooks/{webhookId}",
+      "operationId": "DeleteWebhook",
+      "summary": null,
+      "tags": [
+        "Webhooks"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/webhooks/{webhookId}/test",
+      "operationId": "TestWebhook",
+      "summary": null,
+      "tags": [
+        "Webhooks"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/vault/add",
+      "operationId": "AddKey",
+      "summary": null,
+      "tags": [
+        "Vault"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/vault/keys",
+      "operationId": "GetKeys",
+      "summary": null,
+      "tags": [
+        "Vault"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/vault/key/{providerKeyId}",
+      "operationId": "GetKeyById",
+      "summary": null,
+      "tags": [
+        "Vault"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/v1/vault/update/{id}",
+      "operationId": "UpdateKey",
+      "summary": null,
+      "tags": [
+        "Vault"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/user/metrics-overview/query",
+      "operationId": "GetUserMetricsOverview",
+      "summary": null,
+      "tags": [
+        "User"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/user/metrics/query",
+      "operationId": "GetUserMetrics",
+      "summary": null,
+      "tags": [
+        "User"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/user/query",
+      "operationId": "GetUsers",
+      "summary": null,
+      "tags": [
+        "User"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/trace/custom/v1/log",
+      "operationId": "LogCustomTraceLegacy",
+      "summary": null,
+      "tags": [
+        "Trace"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/trace/custom/log",
+      "operationId": "LogCustomTrace",
+      "summary": null,
+      "tags": [
+        "Trace"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/trace/custom/log/typed",
+      "operationId": "LogCustomTraceTyped",
+      "summary": null,
+      "tags": [
+        "Trace"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/trace/log",
+      "operationId": "LogTrace",
+      "summary": null,
+      "tags": [
+        "Trace"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/trace/log-python",
+      "operationId": "LogPythonTrace",
+      "summary": null,
+      "tags": [
+        "Trace"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/test/gateway-request",
+      "operationId": "SendTestRequest",
+      "summary": null,
+      "tags": [
+        "Test"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/session/query",
+      "operationId": "GetSessions",
+      "summary": null,
+      "tags": [
+        "Session"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/session/count",
+      "operationId": "GetSessionsCount",
+      "summary": null,
+      "tags": [
+        "Session"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/session/name/query",
+      "operationId": "GetNames",
+      "summary": null,
+      "tags": [
+        "Session"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/session/metrics/query",
+      "operationId": "GetMetrics",
+      "summary": null,
+      "tags": [
+        "Session"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/session/{sessionId}/feedback",
+      "operationId": "UpdateSessionFeedback",
+      "summary": null,
+      "tags": [
+        "Session"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/session/{sessionId}/tag",
+      "operationId": "GetSessionTag",
+      "summary": null,
+      "tags": [
+        "Session"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/session/{sessionId}/tag",
+      "operationId": "UpdateSessionTag",
+      "summary": null,
+      "tags": [
+        "Session"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/public/status/provider",
+      "operationId": "GetAllProviderStatus",
+      "summary": null,
+      "tags": [
+        "Status"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/public/status/provider/{provider}",
+      "operationId": "GetProviderStatus",
+      "summary": null,
+      "tags": [
+        "Status"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/providers",
+      "operationId": "GetProviders",
+      "summary": null,
+      "tags": [
+        "Providers"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/property/properties/over-time",
+      "operationId": "GetPropertiesOverTime",
+      "summary": null,
+      "tags": [
+        "Property"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/property/query",
+      "operationId": "GetProperties",
+      "summary": null,
+      "tags": [
+        "Property"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/property/hide",
+      "operationId": "HideProperty",
+      "summary": null,
+      "tags": [
+        "Property"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/property/hidden/query",
+      "operationId": "GetHiddenProperties",
+      "summary": null,
+      "tags": [
+        "Property"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/property/restore",
+      "operationId": "RestoreProperty",
+      "summary": null,
+      "tags": [
+        "Property"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/property/{propertyKey}/search",
+      "operationId": "SearchProperties",
+      "summary": null,
+      "tags": [
+        "Property"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/property/{propertyKey}/top-costs/query",
+      "operationId": "GetTopCosts",
+      "summary": null,
+      "tags": [
+        "Property"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/property/{propertyKey}/top-requests/query",
+      "operationId": "GetTopRequests",
+      "summary": null,
+      "tags": [
+        "Property"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/playground/generate",
+      "operationId": "Generate",
+      "summary": null,
+      "tags": [
+        "Playground"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/playground/requests-through-helicone",
+      "operationId": "GetRequestsThroughHelicone",
+      "summary": null,
+      "tags": [
+        "Playground"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/playground/requests-through-helicone",
+      "operationId": "RequestsThroughHelicone",
+      "summary": null,
+      "tags": [
+        "Playground"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/public/pi/get-api-key",
+      "operationId": "GetApiKey",
+      "summary": null,
+      "tags": [
+        "PI"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/pi/session",
+      "operationId": "AddSession",
+      "summary": null,
+      "tags": [
+        "PI"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/pi/org-name/query",
+      "operationId": "GetOrgName",
+      "summary": null,
+      "tags": [
+        "PI"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/pi/total-costs",
+      "operationId": "GetTotalCosts",
+      "summary": null,
+      "tags": [
+        "PI"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/pi/total_requests",
+      "operationId": "PiGetTotalRequests",
+      "summary": null,
+      "tags": [
+        "PI"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/pi/costs-over-time/query",
+      "operationId": "GetCostsOverTime",
+      "summary": null,
+      "tags": [
+        "PI"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/public/model-registry/models",
+      "operationId": "GetModelRegistry",
+      "summary": "Returns a comprehensive list of all AI models with their configurations, pricing, and capabilities",
+      "tags": [
+        "Model Registry"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/models",
+      "operationId": "GetModels",
+      "summary": null,
+      "tags": [
+        "Models"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/models/multimodal",
+      "operationId": "GetMultimodalModels",
+      "summary": null,
+      "tags": [
+        "Models"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/public/compare/models",
+      "operationId": "GetModelComparison",
+      "summary": null,
+      "tags": [
+        "Comparison"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/metrics/totalRequests",
+      "operationId": "GetTotalRequests",
+      "summary": null,
+      "tags": [
+        "Metrics"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/metrics/totalCost",
+      "operationId": "GetTotalCost",
+      "summary": null,
+      "tags": [
+        "Metrics"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/metrics/averageLatency",
+      "operationId": "GetAverageLatency",
+      "summary": null,
+      "tags": [
+        "Metrics"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/metrics/averageTimeToFirstToken",
+      "operationId": "GetAverageTimeToFirstToken",
+      "summary": null,
+      "tags": [
+        "Metrics"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/metrics/averageTokensPerRequest",
+      "operationId": "GetAverageTokensPerRequest",
+      "summary": null,
+      "tags": [
+        "Metrics"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/metrics/totalThreats",
+      "operationId": "GetTotalThreats",
+      "summary": null,
+      "tags": [
+        "Metrics"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/metrics/activeUsers",
+      "operationId": "GetActiveUsers",
+      "summary": null,
+      "tags": [
+        "Metrics"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/metrics/requestOverTime",
+      "operationId": "GetRequestsOverTime",
+      "summary": null,
+      "tags": [
+        "Metrics"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/metrics/costOverTime",
+      "operationId": "GetCostOverTime",
+      "summary": null,
+      "tags": [
+        "Metrics"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/metrics/tokensOverTime",
+      "operationId": "GetTokensOverTime",
+      "summary": null,
+      "tags": [
+        "Metrics"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/metrics/latencyOverTime",
+      "operationId": "GetLatencyOverTime",
+      "summary": null,
+      "tags": [
+        "Metrics"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/metrics/timeToFirstToken",
+      "operationId": "GetTimeToFirstTokenOverTime",
+      "summary": null,
+      "tags": [
+        "Metrics"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/metrics/usersOverTime",
+      "operationId": "GetUsersOverTime",
+      "summary": null,
+      "tags": [
+        "Metrics"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/metrics/threatsOverTime",
+      "operationId": "GetThreatsOverTime",
+      "summary": null,
+      "tags": [
+        "Metrics"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/metrics/errorOverTime",
+      "operationId": "GetErrorsOverTime",
+      "summary": null,
+      "tags": [
+        "Metrics"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/metrics/requestStatusOverTime",
+      "operationId": "GetRequestStatusOverTime",
+      "summary": null,
+      "tags": [
+        "Metrics"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/metrics/requestCount",
+      "operationId": "GetRequestCount",
+      "summary": null,
+      "tags": [
+        "Metrics"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/metrics/models",
+      "operationId": "GetModelMetrics",
+      "summary": null,
+      "tags": [
+        "Metrics"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/metrics/country",
+      "operationId": "GetCountryMetrics",
+      "summary": null,
+      "tags": [
+        "Metrics"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/metrics/quantiles",
+      "operationId": "GetQuantiles",
+      "summary": null,
+      "tags": [
+        "Metrics"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/public/security",
+      "operationId": "GetSecurity",
+      "summary": null,
+      "tags": [
+        "Security"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/helicone-sql/schema",
+      "operationId": "GetClickHouseSchema",
+      "summary": "Get database schema",
+      "tags": [
+        "HeliconeSql"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/helicone-sql/execute",
+      "operationId": "ExecuteSql",
+      "summary": "Execute SQL query",
+      "tags": [
+        "HeliconeSql"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/helicone-sql/download",
+      "operationId": "DownloadCsv",
+      "summary": "Download query results as CSV",
+      "tags": [
+        "HeliconeSql"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/helicone-sql/saved-queries",
+      "operationId": "GetSavedQueries",
+      "summary": "List saved queries",
+      "tags": [
+        "HeliconeSql"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/helicone-sql/saved-query/{queryId}",
+      "operationId": "GetSavedQuery",
+      "summary": "Get saved query",
+      "tags": [
+        "HeliconeSql"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/v1/helicone-sql/saved-query/{queryId}",
+      "operationId": "UpdateSavedQuery",
+      "summary": "Update saved query",
+      "tags": [
+        "HeliconeSql"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/helicone-sql/saved-query/{queryId}",
+      "operationId": "DeleteSavedQuery",
+      "summary": "Delete saved query",
+      "tags": [
+        "HeliconeSql"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/helicone-sql/saved-queries/bulk-delete",
+      "operationId": "BulkDeleteSavedQueries",
+      "summary": "Bulk delete saved queries",
+      "tags": [
+        "HeliconeSql"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/helicone-sql/saved-query",
+      "operationId": "CreateSavedQuery",
+      "summary": "Create saved query",
+      "tags": [
+        "HeliconeSql"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/experiment/new-empty",
+      "operationId": "CreateNewEmptyExperiment",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/experiment/table/new",
+      "operationId": "CreateNewExperimentTable",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/experiment/table/{experimentTableId}/query",
+      "operationId": "GetExperimentTableById",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/experiment/table/{experimentTableId}/metadata/query",
+      "operationId": "GetExperimentTableMetadata",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/experiment/tables/query",
+      "operationId": "GetExperimentTables",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/experiment/table/{experimentTableId}/cell",
+      "operationId": "CreateExperimentCell",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/v1/experiment/table/{experimentTableId}/cell",
+      "operationId": "UpdateExperimentCell",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/experiment/table/{experimentTableId}/column",
+      "operationId": "CreateExperimentColumn",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/experiment/table/{experimentTableId}/row/new",
+      "operationId": "CreateExperimentTableRow",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/experiment/table/{experimentTableId}/row/{rowIndex}",
+      "operationId": "DeleteExperimentTableRow",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/experiment/table/{experimentTableId}/row/insert/batch",
+      "operationId": "CreateExperimentTableRowWithCellsBatch",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/experiment/update-meta",
+      "operationId": "UpdateExperimentMeta",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/experiment",
+      "operationId": "CreateNewExperimentOld",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/experiment/hypothesis",
+      "operationId": "CreateNewExperimentHypothesis",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/experiment/hypothesis/{hypothesisId}/scores/query",
+      "operationId": "GetExperimentHypothesisScores",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/experiment/{experimentId}/evaluators",
+      "operationId": "GetExperimentEvaluators",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/experiment/{experimentId}/evaluators",
+      "operationId": "CreateExperimentEvaluatorOld",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/experiment/{experimentId}/evaluators/run",
+      "operationId": "RunExperimentEvaluatorsOld",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/experiment/{experimentId}/evaluators/{evaluatorId}",
+      "operationId": "DeleteExperimentEvaluatorOld",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/experiment/query",
+      "operationId": "GetExperimentsOld",
+      "summary": null,
+      "tags": [
+        "Experiment"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/experiment/dataset",
+      "operationId": "AddDataset",
+      "summary": null,
+      "tags": [
+        "Dataset"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/experiment/dataset/random",
+      "operationId": "AddRandomDataset",
+      "summary": null,
+      "tags": [
+        "Dataset"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/experiment/dataset/query",
+      "operationId": "GetDatasets",
+      "summary": null,
+      "tags": [
+        "Dataset"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/experiment/dataset/{datasetId}/row/insert",
+      "operationId": "InsertDatasetRow",
+      "summary": null,
+      "tags": [
+        "Dataset"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/experiment/dataset/{datasetId}/version/{promptVersionId}/row/new",
+      "operationId": "CreateDatasetRow",
+      "summary": null,
+      "tags": [
+        "Dataset"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/experiment/dataset/{datasetId}/inputs/query",
+      "operationId": "GetDataset",
+      "summary": null,
+      "tags": [
+        "Dataset"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/experiment/dataset/{datasetId}/mutate",
+      "operationId": "MutateDataset",
+      "summary": null,
+      "tags": [
+        "Dataset"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/helicone-dataset",
+      "operationId": "AddHeliconeDataset",
+      "summary": null,
+      "tags": [
+        "Dataset"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/helicone-dataset/{datasetId}/mutate",
+      "operationId": "MutateHeliconeDataset",
+      "summary": null,
+      "tags": [
+        "Dataset"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/helicone-dataset/{datasetId}/query",
+      "operationId": "QueryHeliconeDatasetRows",
+      "summary": null,
+      "tags": [
+        "Dataset"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/helicone-dataset/{datasetId}/count",
+      "operationId": "CountHeliconeDatasetRows",
+      "summary": null,
+      "tags": [
+        "Dataset"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/helicone-dataset/query",
+      "operationId": "QueryHeliconeDataset",
+      "summary": null,
+      "tags": [
+        "Dataset"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/helicone-dataset/{datasetId}/request/{requestId}",
+      "operationId": "UpdateHeliconeDatasetRequest",
+      "summary": null,
+      "tags": [
+        "Dataset"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/helicone-dataset/{datasetId}/delete",
+      "operationId": "DeleteHeliconeDataset",
+      "summary": null,
+      "tags": [
+        "Dataset"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/evals/query",
+      "operationId": "QueryEvals",
+      "summary": null,
+      "tags": [
+        "Evals"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/evals/scores",
+      "operationId": "GetEvalScores",
+      "summary": null,
+      "tags": [
+        "Evals"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/evals/{requestId}",
+      "operationId": "AddEval",
+      "summary": null,
+      "tags": [
+        "Evals"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/evals/score-distributions/query",
+      "operationId": "QueryScoreDistributions",
+      "summary": null,
+      "tags": [
+        "Evals"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/dashboard/scores/query",
+      "operationId": "GetScoresOverTime",
+      "summary": null,
+      "tags": [
+        "Dashboard"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/customer/{customerId}/usage/query",
+      "operationId": "GetCustomerUsage",
+      "summary": null,
+      "tags": [
+        "Customer"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/customer/query",
+      "operationId": "GetCustomers",
+      "summary": null,
+      "tags": [
+        "Customer"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/credits/balance",
+      "operationId": "GetCreditsBalance",
+      "summary": null,
+      "tags": [
+        "Credits"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/credits/payments",
+      "operationId": "ListTokenUsagePayments",
+      "summary": null,
+      "tags": [
+        "Credits"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/credits/totalSpend",
+      "operationId": "GetTotalSpend",
+      "summary": null,
+      "tags": [
+        "Credits"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/credits/spend/breakdown",
+      "operationId": "GetSpendBreakdown",
+      "summary": null,
+      "tags": [
+        "Credits"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/credits/invoices",
+      "operationId": "ListInvoices",
+      "summary": null,
+      "tags": [
+        "Credits"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/credits/discounts",
+      "operationId": "GetDiscounts",
+      "summary": null,
+      "tags": [
+        "Credits"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/agent/generate",
+      "operationId": "Generate",
+      "summary": null,
+      "tags": [
+        "Agent"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/agent/thread/{sessionId}/message",
+      "operationId": "UpsertThreadMessage",
+      "summary": null,
+      "tags": [
+        "Agent"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/agent/thread/{sessionId}",
+      "operationId": "GetThread",
+      "summary": null,
+      "tags": [
+        "Agent"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/agent/thread/{sessionId}",
+      "operationId": "DeleteThread",
+      "summary": null,
+      "tags": [
+        "Agent"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/agent/thread/{sessionId}/escalate",
+      "operationId": "EscalateThread",
+      "summary": null,
+      "tags": [
+        "Agent"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/agent/thread/create-and-escalate",
+      "operationId": "CreateAndEscalateThread",
+      "summary": null,
+      "tags": [
+        "Agent"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/agent/thread/{sessionId}/reopen",
+      "operationId": "ReopenThread",
+      "summary": null,
+      "tags": [
+        "Agent"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/agent/threads",
+      "operationId": "GetAllThreads",
+      "summary": null,
+      "tags": [
+        "Agent"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/agent/mcp/search",
+      "operationId": "SearchDocs",
+      "summary": null,
+      "tags": [
+        "Agent"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LastMileConfigForm",
+  "title": "LastMileConfigForm",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/BaseLastMileConfigForm"
+    },
+    {
+      "anyOf": [
+        {
+          "properties": {
+            "_type": {
+              "type": "string",
+              "enum": [
+                "relevance",
+                "context_relevance"
+              ]
+            }
+          },
+          "required": [
+            "_type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "groundTruth": {
+              "$ref": "#/components/schemas/DataEntry"
+            },
+            "_type": {
+              "type": "string",
+              "enum": [
+                "faithfulness"
+              ],
+              "nullable": false
+            }
+          },
+          "required": [
+            "groundTruth",
+            "_type"
+          ],
+          "type": "object"
+        }
+      ]
+    }
+  ]
+}

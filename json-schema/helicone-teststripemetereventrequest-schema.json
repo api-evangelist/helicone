@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TestStripeMeterEventRequest",
+  "title": "TestStripeMeterEventRequest",
+  "properties": {
+    "event_name": {
+      "type": "string"
+    },
+    "customer_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "event_name",
+    "customer_id"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DataOverTimeRequest",
+  "title": "DataOverTimeRequest",
+  "properties": {
+    "timeFilter": {
+      "properties": {
+        "end": {
+          "type": "string"
+        },
+        "start": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "end",
+        "start"
+      ],
+      "type": "object"
+    },
+    "userFilter": {
+      "$ref": "#/components/schemas/RequestClickhouseFilterNode"
+    },
+    "dbIncrement": {
+      "$ref": "#/components/schemas/TimeIncrement"
+    },
+    "timeZoneDifference": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "required": [
+    "timeFilter",
+    "userFilter",
+    "dbIncrement",
+    "timeZoneDifference"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

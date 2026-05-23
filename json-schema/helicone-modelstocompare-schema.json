@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ModelsToCompare",
+  "title": "ModelsToCompare",
+  "properties": {
+    "provider": {
+      "type": "string"
+    },
+    "names": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "parent": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "provider",
+    "names",
+    "parent"
+  ],
+  "type": "object"
+}

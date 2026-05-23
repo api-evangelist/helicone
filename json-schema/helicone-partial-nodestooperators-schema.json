@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Partial_NodesToOperators_",
+  "title": "Partial_NodesToOperators_",
+  "properties": {
+    "id": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "name": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "description": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "job_id": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "status": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "created_at": {
+      "$ref": "#/components/schemas/Partial_TimestampOperators_"
+    },
+    "updated_at": {
+      "$ref": "#/components/schemas/Partial_TimestampOperators_"
+    },
+    "timeout_seconds": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "custom_properties": {
+      "properties": {},
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Partial_TextOperators_"
+      },
+      "type": "object"
+    },
+    "org_id": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    }
+  },
+  "type": "object",
+  "description": "Make all properties in T optional"
+}

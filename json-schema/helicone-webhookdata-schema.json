@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/WebhookData",
+  "title": "WebhookData",
+  "properties": {
+    "destination": {
+      "type": "string"
+    },
+    "config": {
+      "$ref": "#/components/schemas/Record_string.any_"
+    },
+    "includeData": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "destination",
+    "config"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

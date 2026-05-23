@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ChatCompletionMessageToolCall",
+  "title": "ChatCompletionMessageToolCall",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/ChatCompletionMessageFunctionToolCall"
+    },
+    {
+      "$ref": "#/components/schemas/ChatCompletionMessageCustomToolCall"
+    }
+  ],
+  "description": "A call to a function tool created by the model."
+}

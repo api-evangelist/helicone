@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExperimentV2PromptVersion",
+  "title": "ExperimentV2PromptVersion",
+  "properties": {
+    "created_at": {
+      "type": "string",
+      "nullable": true
+    },
+    "experiment_id": {
+      "type": "string",
+      "nullable": true
+    },
+    "helicone_template": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Json"
+        }
+      ],
+      "nullable": true
+    },
+    "id": {
+      "type": "string"
+    },
+    "major_version": {
+      "type": "number",
+      "format": "double"
+    },
+    "metadata": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Json"
+        }
+      ],
+      "nullable": true
+    },
+    "minor_version": {
+      "type": "number",
+      "format": "double"
+    },
+    "model": {
+      "type": "string",
+      "nullable": true
+    },
+    "organization": {
+      "type": "string"
+    },
+    "prompt_v2": {
+      "type": "string"
+    },
+    "soft_delete": {
+      "type": "boolean",
+      "nullable": true
+    }
+  },
+  "required": [
+    "created_at",
+    "experiment_id",
+    "helicone_template",
+    "id",
+    "major_version",
+    "metadata",
+    "minor_version",
+    "model",
+    "organization",
+    "prompt_v2",
+    "soft_delete"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExperimentV2",
+  "title": "ExperimentV2",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "original_prompt_version": {
+      "type": "string"
+    },
+    "copied_original_prompt_version": {
+      "type": "string",
+      "nullable": true
+    },
+    "input_keys": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "nullable": true
+    },
+    "created_at": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "original_prompt_version",
+    "copied_original_prompt_version",
+    "input_keys",
+    "created_at"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

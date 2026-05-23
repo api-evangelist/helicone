@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/HeliconeEventTool",
+  "title": "HeliconeEventTool",
+  "properties": {
+    "_type": {
+      "type": "string",
+      "enum": [
+        "tool"
+      ],
+      "nullable": false
+    },
+    "toolName": {
+      "type": "string"
+    },
+    "input": {}
+  },
+  "required": [
+    "_type",
+    "toolName",
+    "input"
+  ],
+  "type": "object",
+  "additionalProperties": {}
+}

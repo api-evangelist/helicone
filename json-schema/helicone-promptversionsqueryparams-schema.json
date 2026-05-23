@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PromptVersionsQueryParams",
+  "title": "PromptVersionsQueryParams",
+  "properties": {
+    "filter": {
+      "$ref": "#/components/schemas/PromptVersionsFilterNode"
+    },
+    "includeExperimentVersions": {
+      "type": "boolean"
+    }
+  },
+  "type": "object",
+  "additionalProperties": false
+}

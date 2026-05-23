@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResultSuccess__output-string--traces-string-Array--statusCode_63_-number__",
+  "title": "ResultSuccess__output-string--traces-string-Array--statusCode_63_-number__",
+  "properties": {
+    "data": {
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "format": "double"
+        },
+        "traces": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "output": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "traces",
+        "output"
+      ],
+      "type": "object"
+    },
+    "error": {
+      "type": "number",
+      "enum": [
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "data",
+    "error"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

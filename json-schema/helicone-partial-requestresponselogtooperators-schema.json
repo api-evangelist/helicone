@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Partial_RequestResponseLogToOperators_",
+  "title": "Partial_RequestResponseLogToOperators_",
+  "properties": {
+    "latency": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "status": {
+      "$ref": "#/components/schemas/Partial_NumberOperators_"
+    },
+    "request_created_at": {
+      "$ref": "#/components/schemas/Partial_TimestampOperatorsTyped_"
+    },
+    "response_created_at": {
+      "$ref": "#/components/schemas/Partial_TimestampOperatorsTyped_"
+    },
+    "auth_hash": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "model": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "user_id": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "organization_id": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "node_id": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "job_id": {
+      "$ref": "#/components/schemas/Partial_TextOperators_"
+    },
+    "threat": {
+      "$ref": "#/components/schemas/Partial_BooleanOperators_"
+    }
+  },
+  "type": "object",
+  "description": "Make all properties in T optional"
+}

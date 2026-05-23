@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Result__runsCount-number--scores-Record_string.Score__.string_",
+  "title": "Result__runsCount-number--scores-Record_string.Score__.string_",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/ResultSuccess__runsCount-number--scores-Record_string.Score___"
+    },
+    {
+      "$ref": "#/components/schemas/ResultError_string_"
+    }
+  ]
+}

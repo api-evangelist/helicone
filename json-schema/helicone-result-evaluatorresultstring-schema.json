@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Result_EvaluatorResult.string_",
+  "title": "Result_EvaluatorResult.string_",
+  "anyOf": [
+    {
+      "$ref": "#/components/schemas/ResultSuccess_EvaluatorResult_"
+    },
+    {
+      "$ref": "#/components/schemas/ResultError_string_"
+    }
+  ]
+}

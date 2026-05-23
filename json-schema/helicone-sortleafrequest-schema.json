@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SortLeafRequest",
+  "title": "SortLeafRequest",
+  "properties": {
+    "random": {
+      "type": "boolean",
+      "enum": [
+        true
+      ],
+      "nullable": false
+    },
+    "created_at": {
+      "$ref": "#/components/schemas/SortDirection"
+    },
+    "cache_created_at": {
+      "$ref": "#/components/schemas/SortDirection"
+    },
+    "latency": {
+      "$ref": "#/components/schemas/SortDirection"
+    },
+    "last_active": {
+      "$ref": "#/components/schemas/SortDirection"
+    },
+    "total_tokens": {
+      "$ref": "#/components/schemas/SortDirection"
+    },
+    "completion_tokens": {
+      "$ref": "#/components/schemas/SortDirection"
+    },
+    "prompt_tokens": {
+      "$ref": "#/components/schemas/SortDirection"
+    },
+    "user_id": {
+      "$ref": "#/components/schemas/SortDirection"
+    },
+    "body_model": {
+      "$ref": "#/components/schemas/SortDirection"
+    },
+    "is_cached": {
+      "$ref": "#/components/schemas/SortDirection"
+    },
+    "request_prompt": {
+      "$ref": "#/components/schemas/SortDirection"
+    },
+    "response_text": {
+      "$ref": "#/components/schemas/SortDirection"
+    },
+    "properties": {
+      "properties": {},
+      "additionalProperties": {
+        "$ref": "#/components/schemas/SortDirection"
+      },
+      "type": "object"
+    },
+    "values": {
+      "properties": {},
+      "additionalProperties": {
+        "$ref": "#/components/schemas/SortDirection"
+      },
+      "type": "object"
+    },
+    "cost": {
+      "$ref": "#/components/schemas/SortDirection"
+    },
+    "time_to_first_token": {
+      "$ref": "#/components/schemas/SortDirection"
+    }
+  },
+  "type": "object",
+  "additionalProperties": false
+}

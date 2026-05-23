@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreateExperimentTableParams",
+  "title": "CreateExperimentTableParams",
+  "properties": {
+    "datasetId": {
+      "type": "string"
+    },
+    "experimentMetadata": {
+      "$ref": "#/components/schemas/Record_string.any_"
+    },
+    "promptVersionId": {
+      "type": "string"
+    },
+    "newHeliconeTemplate": {
+      "type": "string"
+    },
+    "isMajorVersion": {
+      "type": "boolean"
+    },
+    "promptSubversionMetadata": {
+      "$ref": "#/components/schemas/Record_string.any_"
+    },
+    "experimentTableMetadata": {
+      "$ref": "#/components/schemas/Record_string.any_"
+    }
+  },
+  "required": [
+    "datasetId",
+    "experimentMetadata",
+    "promptVersionId",
+    "newHeliconeTemplate",
+    "isMajorVersion",
+    "promptSubversionMetadata"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

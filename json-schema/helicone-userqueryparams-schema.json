@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/UserQueryParams",
+  "title": "UserQueryParams",
+  "properties": {
+    "userIds": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "timeFilter": {
+      "properties": {
+        "endTimeUnixSeconds": {
+          "type": "number",
+          "format": "double"
+        },
+        "startTimeUnixSeconds": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "endTimeUnixSeconds",
+        "startTimeUnixSeconds"
+      ],
+      "type": "object"
+    }
+  },
+  "type": "object",
+  "additionalProperties": false
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SessionNameQueryParams",
+  "title": "SessionNameQueryParams",
+  "properties": {
+    "nameContains": {
+      "type": "string"
+    },
+    "timezoneDifference": {
+      "type": "number",
+      "format": "double"
+    },
+    "pSize": {
+      "type": "string",
+      "enum": [
+        "p50",
+        "p75",
+        "p95",
+        "p99",
+        "p99.9"
+      ]
+    },
+    "useInterquartile": {
+      "type": "boolean"
+    },
+    "timeFilter": {
+      "$ref": "#/components/schemas/TimeFilterMs"
+    },
+    "filter": {
+      "$ref": "#/components/schemas/SessionFilterNode"
+    }
+  },
+  "required": [
+    "nameContains",
+    "timezoneDifference"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}
