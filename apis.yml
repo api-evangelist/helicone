@@ -404,6 +404,8 @@ common:
   type: OpenSource
 - type: Integrations
   url: https://docs.helicone.ai/integrations/tools/curl
+- type: LLMsTxt
+  url: https://docs.helicone.ai/llms.txt
 integrations:
 - name: light
 - name: dark
