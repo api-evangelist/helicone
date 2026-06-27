@@ -18,7 +18,7 @@ apis:
       - url: https://docs.helicone.ai/getting-started/platform-overview
         type: PlatformOverview
       - url: https://us.helicone.ai/signup
-        type: SignUp
+        type: Signup
       - url: https://us.helicone.ai/signin
         type: Login
       - url: https://us.helicone.ai/dashboard
@@ -316,7 +316,7 @@ common:
   - url: https://docs.helicone.ai/getting-started/quick-start
     type: GettingStarted
   - url: https://us.helicone.ai/signup
-    type: SignUp
+    type: Signup
   - url: https://us.helicone.ai/signin
     type: Login
   - url: https://us.helicone.ai/dashboard
@@ -353,7 +353,7 @@ common:
     type: OpenSource
   - type: Integrations
     url: https://docs.helicone.ai/integrations/tools/curl
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://docs.helicone.ai/llms.txt
 integrations:
   - name: light
