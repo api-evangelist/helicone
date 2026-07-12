@@ -311,6 +311,10 @@ description: >-
   experiment with their AI applications. The worlds fastest-growing AI companies rely on Helicone to route, debug, and
   analyze their applications.
 common:
+  - type: DomainSecurity
+    url: security/helicone-domain-security.yml
+  - type: Authentication
+    url: authentication/helicone-authentication.yml
   - url: https://docs.helicone.ai/
     type: Documentation
   - url: https://docs.helicone.ai/getting-started/quick-start

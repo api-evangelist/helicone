@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/helicone-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: api_key
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: 'Bearer token authentication. Format: ''Bearer YOUR_API_KEY'''
+  sources:
+  - openapi/helicone-openapi.yml
