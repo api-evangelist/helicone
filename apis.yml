@@ -311,6 +311,8 @@ description: >-
   experiment with their AI applications. The worlds fastest-growing AI companies rely on Helicone to route, debug, and
   analyze their applications.
 common:
+  - type: AgenticAccess
+    url: agentic-access/helicone-agentic-access.yml
   - type: DomainSecurity
     url: security/helicone-domain-security.yml
   - type: Authentication
