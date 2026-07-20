@@ -11,6 +11,6 @@ schemes:
   type: apiKey
   in: header
   parameter: Authorization
-  description: 'Bearer token authentication. Format: ''Bearer YOUR_API_KEY'''
+  description: 'Bearer token authentication. Format: ''Bearer [example key]'''
   sources:
   - openapi/helicone-openapi.yml
