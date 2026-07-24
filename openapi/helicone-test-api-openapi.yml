@@ -1,0 +1,64 @@
+openapi: 3.0.0
+info:
+  title: helicone-api Agent Test API
+  version: 1.0.0
+  license:
+    name: MIT
+  contact: {}
+servers:
+- url: https://api.helicone.ai/
+- url: http://localhost:8585/
+tags:
+- name: Test
+paths:
+  /v1/test/gateway-request:
+    post:
+      operationId: SendTestRequest
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SendTestRequestResponse'
+      tags:
+      - Test
+      security:
+      - api_key: []
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SendTestRequestRequest'
+components:
+  schemas:
+    SendTestRequestRequest:
+      properties:
+        apiKey:
+          type: string
+      required:
+      - apiKey
+      type: object
+      additionalProperties: false
+    SendTestRequestResponse:
+      properties:
+        success:
+          type: boolean
+        response:
+          type: string
+        requestId:
+          type: string
+        error:
+          type: string
+      required:
+      - success
+      type: object
+      additionalProperties: false
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: 'Bearer token authentication. Format: ''Bearer YOUR_API_KEY'''

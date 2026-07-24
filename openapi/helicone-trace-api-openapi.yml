@@ -1,0 +1,420 @@
+openapi: 3.0.0
+info:
+  title: helicone-api Agent Trace API
+  version: 1.0.0
+  license:
+    name: MIT
+  contact: {}
+servers:
+- url: https://api.helicone.ai/
+- url: http://localhost:8585/
+tags:
+- name: Trace
+paths:
+  /v1/trace/custom/v1/log:
+    post:
+      operationId: LogCustomTraceLegacy
+      responses:
+        '204':
+          description: No content
+      tags:
+      - Trace
+      security:
+      - api_key: []
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {}
+  /v1/trace/custom/log:
+    post:
+      operationId: LogCustomTrace
+      responses:
+        '204':
+          description: No content
+      tags:
+      - Trace
+      security:
+      - api_key: []
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {}
+  /v1/trace/custom/log/typed:
+    post:
+      operationId: LogCustomTraceTyped
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                anyOf:
+                - $ref: '#/components/schemas/ValidationResult'
+                - {}
+      tags:
+      - Trace
+      security:
+      - api_key: []
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TypedAsyncLogModel'
+  /v1/trace/log:
+    post:
+      operationId: LogTrace
+      responses:
+        '204':
+          description: No content
+      tags:
+      - Trace
+      security:
+      - api_key: []
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OTELTrace'
+  /v1/trace/log-python:
+    post:
+      operationId: LogPythonTrace
+      responses:
+        '204':
+          description: No content
+      tags:
+      - Trace
+      security:
+      - api_key: []
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {}
+components:
+  schemas:
+    TypedAsyncLogModel:
+      properties:
+        providerRequest:
+          $ref: '#/components/schemas/TypedProviderRequest'
+        providerResponse:
+          $ref: '#/components/schemas/TypedProviderResponse'
+        timing:
+          $ref: '#/components/schemas/TypedTiming'
+        provider:
+          $ref: '#/components/schemas/Provider'
+      required:
+      - providerRequest
+      - providerResponse
+      type: object
+      additionalProperties: false
+    ProviderName:
+      type: string
+      enum:
+      - OPENAI
+      - ANTHROPIC
+      - AZURE
+      - LOCAL
+      - HELICONE
+      - AMDBARTEK
+      - ANYSCALE
+      - CLOUDFLARE
+      - 2YFV
+      - TOGETHER
+      - LEMONFOX
+      - FIREWORKS
+      - PERPLEXITY
+      - GOOGLE
+      - OPENROUTER
+      - WISDOMINANUTSHELL
+      - GROQ
+      - COHERE
+      - MISTRAL
+      - DEEPINFRA
+      - QSTASH
+      - FIRECRAWL
+      - AWS
+      - BEDROCK
+      - DEEPSEEK
+      - X
+      - AVIAN
+      - NEBIUS
+      - NOVITA
+      - OPENPIPE
+      - CHUTES
+      - LLAMA
+      - NVIDIA
+      - VERCEL
+      - CEREBRAS
+      - BASETEN
+      - CANOPYWAVE
+    ValidationError:
+      properties:
+        field:
+          type: string
+        message:
+          type: string
+      required:
+      - field
+      - message
+      type: object
+      additionalProperties: false
+    OTELTrace:
+      properties:
+        resourceSpans:
+          items:
+            properties:
+              scopeSpans:
+                items:
+                  properties:
+                    spans:
+                      items:
+                        properties:
+                          droppedLinksCount:
+                            type: number
+                            format: double
+                          links:
+                            items: {}
+                            type: array
+                          status:
+                            properties:
+                              code:
+                                type: number
+                                format: double
+                            required:
+                            - code
+                            type: object
+                          droppedEventsCount:
+                            type: number
+                            format: double
+                          events:
+                            items: {}
+                            type: array
+                          droppedAttributesCount:
+                            type: number
+                            format: double
+                          attributes:
+                            items:
+                              properties:
+                                value:
+                                  properties:
+                                    intValue:
+                                      type: number
+                                      format: double
+                                    stringValue:
+                                      type: string
+                                  type: object
+                                key:
+                                  type: string
+                              required:
+                              - value
+                              - key
+                              type: object
+                            type: array
+                          endTimeUnixNano:
+                            type: string
+                          startTimeUnixNano:
+                            type: string
+                          kind:
+                            type: number
+                            format: double
+                          name:
+                            type: string
+                          spanId:
+                            type: string
+                          traceId:
+                            type: string
+                        required:
+                        - droppedLinksCount
+                        - links
+                        - status
+                        - droppedEventsCount
+                        - events
+                        - droppedAttributesCount
+                        - attributes
+                        - endTimeUnixNano
+                        - startTimeUnixNano
+                        - kind
+                        - name
+                        - spanId
+                        - traceId
+                        type: object
+                      type: array
+                    scope:
+                      properties:
+                        version:
+                          type: string
+                        name:
+                          type: string
+                      required:
+                      - version
+                      - name
+                      type: object
+                  required:
+                  - spans
+                  - scope
+                  type: object
+                type: array
+              resource:
+                properties:
+                  droppedAttributesCount:
+                    type: number
+                    format: double
+                  attributes:
+                    items:
+                      properties:
+                        value:
+                          properties:
+                            arrayValue:
+                              properties:
+                                values:
+                                  items:
+                                    properties:
+                                      stringValue:
+                                        type: string
+                                    required:
+                                    - stringValue
+                                    type: object
+                                  type: array
+                              required:
+                              - values
+                              type: object
+                            intValue:
+                              type: number
+                              format: double
+                            stringValue:
+                              type: string
+                          type: object
+                        key:
+                          type: string
+                      required:
+                      - value
+                      - key
+                      type: object
+                    type: array
+                required:
+                - droppedAttributesCount
+                - attributes
+                type: object
+            required:
+            - scopeSpans
+            - resource
+            type: object
+          type: array
+      required:
+      - resourceSpans
+      type: object
+    Provider:
+      anyOf:
+      - $ref: '#/components/schemas/ProviderName'
+      - $ref: '#/components/schemas/ModelProviderName'
+      - type: string
+        enum:
+        - CUSTOM
+    TypedTiming:
+      properties:
+        timeToFirstToken:
+          type: number
+          format: double
+        startTime:
+          type: string
+        endTime:
+          type: string
+      required:
+      - startTime
+      - endTime
+      type: object
+      additionalProperties: false
+    TypedProviderRequest:
+      properties:
+        url:
+          type: string
+        json:
+          $ref: '#/components/schemas/Record_string.unknown_'
+        meta:
+          $ref: '#/components/schemas/Record_string.string_'
+      required:
+      - url
+      - json
+      - meta
+      type: object
+      additionalProperties: false
+    ValidationResult:
+      properties:
+        isValid:
+          type: boolean
+        errors:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+      required:
+      - isValid
+      - errors
+      type: object
+      additionalProperties: false
+    Record_string.unknown_:
+      properties: {}
+      additionalProperties: {}
+      type: object
+      description: Construct a type with a set of properties K of type T
+    TypedProviderResponse:
+      properties:
+        json:
+          $ref: '#/components/schemas/Record_string.unknown_'
+        textBody:
+          type: string
+        status:
+          type: number
+          format: double
+        headers:
+          $ref: '#/components/schemas/Record_string.string_'
+      required:
+      - status
+      - headers
+      type: object
+      additionalProperties: false
+    ModelProviderName:
+      type: string
+      enum:
+      - baseten
+      - anthropic
+      - azure
+      - bedrock
+      - canopywave
+      - cerebras
+      - chutes
+      - deepinfra
+      - deepseek
+      - fireworks
+      - google-ai-studio
+      - groq
+      - helicone
+      - mistral
+      - nebius
+      - novita
+      - openai
+      - openrouter
+      - perplexity
+      - vertex
+      - xai
+      nullable: false
+    Record_string.string_:
+      properties: {}
+      additionalProperties:
+        type: string
+      type: object
+      description: Construct a type with a set of properties K of type T
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: 'Bearer token authentication. Format: ''Bearer YOUR_API_KEY'''

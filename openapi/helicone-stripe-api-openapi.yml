@@ -1,0 +1,954 @@
+openapi: 3.0.0
+info:
+  title: helicone-api Agent Stripe API
+  version: 1.0.0
+  license:
+    name: MIT
+  contact: {}
+servers:
+- url: https://api.helicone.ai/
+- url: http://localhost:8585/
+tags:
+- name: Stripe
+paths:
+  /v1/stripe/subscription/cost-for-prompts:
+    get:
+      operationId: GetCostForPrompts
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: number
+                format: double
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters: []
+  /v1/stripe/subscription/cost-for-evals:
+    get:
+      operationId: GetCostForEvals
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: number
+                format: double
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters: []
+  /v1/stripe/subscription/cost-for-experiments:
+    get:
+      operationId: GetCostForExperiments
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: number
+                format: double
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters: []
+  /v1/stripe/subscription/free/usage:
+    get:
+      operationId: GetFreeUsage
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: number
+                format: double
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters: []
+  /v1/stripe/cloud/checkout-session:
+    post:
+      operationId: CreateCloudGatewayCheckoutSession
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                properties:
+                  checkoutUrl:
+                    type: string
+                required:
+                - checkoutUrl
+                type: object
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCloudGatewayCheckoutSessionRequest'
+  /v1/stripe/subscription/new-customer/upgrade-to-pro:
+    post:
+      operationId: UpgradeToPro
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: string
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpgradeToProRequest'
+  /v1/stripe/subscription/existing-customer/upgrade-to-pro:
+    post:
+      operationId: UpgradeExistingCustomer
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: string
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpgradeToProRequest'
+  /v1/stripe/subscription/new-customer/upgrade-to-team-bundle:
+    post:
+      operationId: UpgradeToTeamBundle
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: string
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpgradeToTeamBundleRequest'
+  /v1/stripe/subscription/existing-customer/upgrade-to-team-bundle:
+    post:
+      operationId: UpgradeExistingCustomerToTeamBundle
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: string
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpgradeToTeamBundleRequest'
+  /v1/stripe/subscription/manage-subscription:
+    post:
+      operationId: ManageSubscription
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: string
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters: []
+  /v1/stripe/subscription/undo-cancel-subscription:
+    post:
+      operationId: UndoCancelSubscription
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: number
+                enum:
+                - null
+                nullable: true
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters: []
+  /v1/stripe/subscription/add-ons/{productType}:
+    post:
+      operationId: AddOns
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: number
+                enum:
+                - null
+                nullable: true
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters:
+      - in: path
+        name: productType
+        required: true
+        schema:
+          type: string
+          enum:
+          - alerts
+          - prompts
+          - experiments
+          - evals
+    delete:
+      operationId: DeleteAddOns
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: number
+                enum:
+                - null
+                nullable: true
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters:
+      - in: path
+        name: productType
+        required: true
+        schema:
+          type: string
+          enum:
+          - alerts
+          - prompts
+          - experiments
+          - evals
+  /v1/stripe/subscription/preview-invoice:
+    get:
+      operationId: PreviewInvoice
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                properties:
+                  evaluators_usage:
+                    items:
+                      $ref: '#/components/schemas/LLMUsage'
+                    type: array
+                  experiments_usage:
+                    items:
+                      $ref: '#/components/schemas/LLMUsage'
+                    type: array
+                  total:
+                    type: number
+                    format: double
+                  tax:
+                    type: number
+                    format: double
+                    nullable: true
+                  subtotal:
+                    type: number
+                    format: double
+                  discount:
+                    properties:
+                      coupon:
+                        properties:
+                          amount_off:
+                            type: number
+                            format: double
+                            nullable: true
+                          percent_off:
+                            type: number
+                            format: double
+                            nullable: true
+                          name:
+                            type: string
+                            nullable: true
+                        required:
+                        - amount_off
+                        - percent_off
+                        - name
+                        type: object
+                    required:
+                    - coupon
+                    type: object
+                    nullable: true
+                  lines:
+                    properties:
+                      data:
+                        items:
+                          properties:
+                            description:
+                              type: string
+                              nullable: true
+                            amount:
+                              type: number
+                              format: double
+                              nullable: true
+                            id:
+                              type: string
+                              nullable: true
+                          required:
+                          - description
+                          - amount
+                          - id
+                          type: object
+                        type: array
+                    required:
+                    - data
+                    type: object
+                    nullable: true
+                  next_payment_attempt:
+                    type: number
+                    format: double
+                    nullable: true
+                  currency:
+                    type: string
+                    nullable: true
+                required:
+                - evaluators_usage
+                - experiments_usage
+                - total
+                - tax
+                - subtotal
+                - discount
+                - lines
+                - next_payment_attempt
+                - currency
+                type: object
+                nullable: true
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters: []
+  /v1/stripe/subscription/cancel-subscription:
+    post:
+      operationId: CancelSubscription
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: number
+                enum:
+                - null
+                nullable: true
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters: []
+  /v1/stripe/subscription/migrate-to-pro:
+    post:
+      operationId: MigrateToPro
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema: {}
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters: []
+  /v1/stripe/payment-intents/search:
+    get:
+      operationId: SearchPaymentIntents
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StripePaymentIntentsResponse'
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters:
+      - in: query
+        name: search_kind
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: limit
+        required: false
+        schema:
+          format: double
+          type: number
+      - in: query
+        name: page
+        required: false
+        schema:
+          type: string
+  /v1/stripe/subscription:
+    get:
+      operationId: GetSubscription
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                properties:
+                  items:
+                    items:
+                      properties:
+                        price:
+                          properties:
+                            product:
+                              properties:
+                                name:
+                                  type: string
+                                  nullable: true
+                              required:
+                              - name
+                              type: object
+                              nullable: true
+                          required:
+                          - product
+                          type: object
+                        quantity:
+                          type: number
+                          format: double
+                      required:
+                      - price
+                      type: object
+                    type: array
+                  trial_end:
+                    type: number
+                    format: double
+                    nullable: true
+                  id:
+                    type: string
+                  current_period_start:
+                    type: number
+                    format: double
+                  current_period_end:
+                    type: number
+                    format: double
+                  cancel_at_period_end:
+                    type: boolean
+                  status:
+                    type: string
+                required:
+                - items
+                - trial_end
+                - id
+                - current_period_start
+                - current_period_end
+                - cancel_at_period_end
+                - status
+                type: object
+                nullable: true
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters: []
+  /v1/stripe/auto-topoff/settings:
+    get:
+      operationId: GetAutoTopoffSettings
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/AutoTopoffSettings'
+                nullable: true
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters: []
+    post:
+      operationId: UpdateAutoTopoffSettings
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AutoTopoffSettings'
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateAutoTopoffSettingsRequest'
+    delete:
+      operationId: DisableAutoTopoff
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                properties:
+                  success:
+                    type: boolean
+                required:
+                - success
+                type: object
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters: []
+  /v1/stripe/payment-methods:
+    get:
+      operationId: GetPaymentMethods
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/PaymentMethod'
+                type: array
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters: []
+  /v1/stripe/payment-methods/setup-session:
+    post:
+      operationId: CreateSetupSession
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                properties:
+                  setupUrl:
+                    type: string
+                required:
+                - setupUrl
+                type: object
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSetupSessionRequest'
+  /v1/stripe/payment-methods/{paymentMethodId}:
+    delete:
+      operationId: RemovePaymentMethod
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                properties:
+                  success:
+                    type: boolean
+                required:
+                - success
+                type: object
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters:
+      - in: path
+        name: paymentMethodId
+        required: true
+        schema:
+          type: string
+  /v1/stripe/subscription/usage-stats:
+    get:
+      operationId: GetUsageStats
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/UsageStatsResponse'
+                nullable: true
+      tags:
+      - Stripe
+      security:
+      - api_key: []
+      parameters: []
+components:
+  schemas:
+    CreateSetupSessionRequest:
+      properties:
+        returnUrl:
+          type: string
+      type: object
+      additionalProperties: false
+    UpdateAutoTopoffSettingsRequest:
+      properties:
+        enabled:
+          type: boolean
+        thresholdCents:
+          type: number
+          format: double
+        topoffAmountCents:
+          type: number
+          format: double
+        stripePaymentMethodId:
+          type: string
+      required:
+      - enabled
+      - thresholdCents
+      - topoffAmountCents
+      - stripePaymentMethodId
+      type: object
+      additionalProperties: false
+    AutoTopoffSettings:
+      properties:
+        enabled:
+          type: boolean
+        thresholdCents:
+          type: number
+          format: double
+        topoffAmountCents:
+          type: number
+          format: double
+        stripePaymentMethodId:
+          type: string
+          nullable: true
+        lastTopoffAt:
+          type: string
+          nullable: true
+        consecutiveFailures:
+          type: number
+          format: double
+      required:
+      - enabled
+      - thresholdCents
+      - topoffAmountCents
+      - stripePaymentMethodId
+      - lastTopoffAt
+      - consecutiveFailures
+      type: object
+      additionalProperties: false
+    UpgradeToTeamBundleRequest:
+      properties:
+        ui_mode:
+          type: string
+          enum:
+          - embedded
+          - hosted
+      type: object
+      additionalProperties: false
+    PaymentIntentRecord:
+      properties:
+        id:
+          type: string
+        amount:
+          type: number
+          format: double
+        created:
+          type: number
+          format: double
+        status:
+          type: string
+        isRefunded:
+          type: boolean
+        refundedAmount:
+          type: number
+          format: double
+        refundIds:
+          items:
+            type: string
+          type: array
+      required:
+      - id
+      - amount
+      - created
+      - status
+      type: object
+      additionalProperties: false
+    UsageStatsResponse:
+      properties:
+        billingPeriod:
+          properties:
+            daysTotal:
+              type: number
+              format: double
+            daysElapsed:
+              type: number
+              format: double
+            end:
+              type: string
+            start:
+              type: string
+          required:
+          - daysTotal
+          - daysElapsed
+          - end
+          - start
+          type: object
+        usage:
+          properties:
+            totalGB:
+              type: number
+              format: double
+            totalBytes:
+              type: number
+              format: double
+            totalRequests:
+              type: number
+              format: double
+          required:
+          - totalGB
+          - totalBytes
+          - totalRequests
+          type: object
+        dailyData:
+          items:
+            $ref: '#/components/schemas/DailyUsageDataPoint'
+          type: array
+        estimatedCost:
+          properties:
+            projectedMonthlyTotalCost:
+              type: number
+              format: double
+            projectedMonthlyGBCost:
+              type: number
+              format: double
+            projectedMonthlyRequestsCost:
+              type: number
+              format: double
+            totalCost:
+              type: number
+              format: double
+            gbCost:
+              type: number
+              format: double
+            requestsCost:
+              type: number
+              format: double
+          required:
+          - projectedMonthlyTotalCost
+          - projectedMonthlyGBCost
+          - projectedMonthlyRequestsCost
+          - totalCost
+          - gbCost
+          - requestsCost
+          type: object
+      required:
+      - billingPeriod
+      - usage
+      - dailyData
+      - estimatedCost
+      type: object
+      additionalProperties: false
+    LLMUsage:
+      properties:
+        model:
+          type: string
+        provider:
+          type: string
+        prompt_tokens:
+          type: number
+          format: double
+        completion_tokens:
+          type: number
+          format: double
+        total_count:
+          type: number
+          format: double
+        amount:
+          type: number
+          format: double
+        description:
+          type: string
+        totalCost:
+          properties:
+            prompt_token:
+              type: number
+              format: double
+            completion_token:
+              type: number
+              format: double
+          required:
+          - prompt_token
+          - completion_token
+          type: object
+      required:
+      - model
+      - provider
+      - prompt_tokens
+      - completion_tokens
+      - total_count
+      - amount
+      - description
+      - totalCost
+      type: object
+      additionalProperties: false
+    PaymentMethod:
+      properties:
+        id:
+          type: string
+        brand:
+          type: string
+        last4:
+          type: string
+        exp_month:
+          type: number
+          format: double
+        exp_year:
+          type: number
+          format: double
+      required:
+      - id
+      - brand
+      - last4
+      - exp_month
+      - exp_year
+      type: object
+      additionalProperties: false
+    CreateCloudGatewayCheckoutSessionRequest:
+      properties:
+        amount:
+          type: number
+          format: double
+        returnUrl:
+          type: string
+      required:
+      - amount
+      type: object
+      additionalProperties: false
+    UpgradeToProRequest:
+      properties:
+        addons:
+          properties:
+            evals:
+              type: boolean
+            experiments:
+              type: boolean
+            prompts:
+              type: boolean
+            alerts:
+              type: boolean
+          type: object
+        seats:
+          type: number
+          format: double
+        ui_mode:
+          type: string
+          enum:
+          - embedded
+          - hosted
+      type: object
+      additionalProperties: false
+    DailyUsageDataPoint:
+      properties:
+        date:
+          type: string
+        requests:
+          type: number
+          format: double
+        bytes:
+          type: number
+          format: double
+      required:
+      - date
+      - requests
+      - bytes
+      type: object
+      additionalProperties: false
+    StripePaymentIntentsResponse:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/PaymentIntentRecord'
+          type: array
+        has_more:
+          type: boolean
+        next_page:
+          type: string
+          nullable: true
+        count:
+          type: number
+          format: double
+      required:
+      - data
+      - has_more
+      - next_page
+      - count
+      type: object
+      additionalProperties: false
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: 'Bearer token authentication. Format: ''Bearer YOUR_API_KEY'''
