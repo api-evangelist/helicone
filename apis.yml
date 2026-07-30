@@ -1,295 +1,3372 @@
 aid: helicone
 url: https://raw.githubusercontent.com/api-evangelist/helicone/refs/heads/main/apis.yml
 apis:
-  - aid: helicone:helicone
-    name: Helicone
-    tags:
-      - AI Gateways
-      - Gateways
-      - LLM Routing
-    humanURL: ' https://www.helicone.ai/'
-    properties:
-      - url: ' https://www.helicone.ai/'
-        type: Documentation
-      - url: https://docs.helicone.ai/
-        type: Documentation
-      - url: https://docs.helicone.ai/getting-started/quick-start
-        type: GettingStarted
-      - url: https://docs.helicone.ai/getting-started/platform-overview
-        type: PlatformOverview
-      - url: https://us.helicone.ai/signup
-        type: Signup
-      - url: https://us.helicone.ai/signin
-        type: Login
-      - url: https://us.helicone.ai/dashboard
-        type: Portal
-      - url: https://us.helicone.ai/developer
-        type: DeveloperPortal
-      - url: https://www.helicone.ai/pricing
-        type: Pricing
-      - url: https://docs.helicone.ai/swagger.json
-        type: OpenAPI
-      - url: https://docs.helicone.ai/rest/request/post-v1requestquery
-        type: APIReference
-      - url: https://docs.helicone.ai/helicone-headers/header-directory
-        type: Headers
-      - url: https://github.com/Helicone/helicone
-        type: GitHubOrg
-      - url: https://www.helicone.ai/blog
-        type: Blog
-      - url: https://www.helicone.ai/changelog
-        type: ChangeLog
-      - url: https://status.helicone.ai/
-        type: StatusPage
-      - url: https://www.helicone.ai/contact
-        type: Contact
-      - url: https://community.helicone.ai/
-        type: Community
-      - url: https://discord.gg/2TkeWdXNPQ
-        type: Discord
-      - url: https://twitter.com/helicone_ai
-        type: Twitter
-      - url: https://www.linkedin.com/company/helicone/
-        type: LinkedIn
-      - url: https://www.helicone.ai/privacy
-        type: PrivacyPolicy
-      - url: https://www.helicone.ai/terms
-        type: TermsOfService
-      - url: https://docs.helicone.ai/references/data-autonomy
-        type: Security
-      - url: https://docs.helicone.ai/getting-started/self-host/overview
-        type: SelfHosted
-    description: >-
-      Helicone is an open-source LLM observability platform and AI gateway. The worlds fastest-growing AI companies rely
-      on Helicone to route, debug, and analyze their applications. With one line of code, developers can monitor,
-      evaluate, and experiment across 100+ AI models from providers including OpenAI, Anthropic, Google, and more.
-  - aid: helicone:ai-gateway-api
-    name: Helicone AI Gateway API
-    tags:
-      - AI Gateways
-      - AI Models
-      - Chat Completions
-      - LLM Routing
-    humanURL: https://docs.helicone.ai/gateway/overview
-    baseURL: https://ai-gateway.helicone.ai
-    properties:
-      - url: https://docs.helicone.ai/gateway/overview
-        type: Documentation
-      - url: https://docs.helicone.ai/ai-gateway.openapi.json
-        type: OpenAPI
-      - url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
-        type: APIReference
-      - url: https://docs.helicone.ai/getting-started/quick-start
-        type: GettingStarted
-      - url: https://docs.helicone.ai/gateway/provider-routing
-        type: ProviderRouting
-      - url: https://www.helicone.ai/models
-        type: Models
-    description: >-
-      The Helicone AI Gateway API provides OpenAI-compatible endpoints for routing requests to 100+ AI models across
-      providers including OpenAI, Anthropic, Google, Groq, and more. It offers a unified API with automatic provider
-      fallbacks, zero markup pricing, built-in observability, intelligent routing, prompt caching, error handling, and
-      image generation support.
-  - aid: helicone:request-api
-    name: Helicone Request API
-    tags:
-      - Analytics
-      - LLM Observability
-      - Requests
-    humanURL: https://docs.helicone.ai/rest/request/post-v1requestquery
-    baseURL: https://api.helicone.ai
-    properties:
-      - url: https://docs.helicone.ai/rest/request/post-v1requestquery
-        type: Documentation
-      - url: https://docs.helicone.ai/swagger.json
-        type: OpenAPI
-      - url: openapi/helicone-openapi.yml
-        type: OpenAPI
-    description: >-
-      The Helicone Request API allows developers to query, retrieve, and manage LLM request data. Endpoints include
-      querying requests with filters, retrieving requests by IDs, submitting feedback and scores, uploading request
-      assets, and updating request properties.
-  - aid: helicone:prompt-api
-    name: Helicone Prompt API
-    tags:
-      - Prompt Management
-      - Prompts
-      - Versioning
-    humanURL: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
-    baseURL: https://api.helicone.ai
-    properties:
-      - url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
-        type: Documentation
-      - url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
-        type: Overview
-      - url: https://docs.helicone.ai/swagger.json
-        type: OpenAPI
-    description: >-
-      The Helicone Prompt API provides endpoints for creating, querying, updating, and deleting prompts and prompt
-      versions. It supports prompt environments, tagging, versioning, and production deployment workflows for managing
-      prompts across the development lifecycle.
-  - aid: helicone:experiment-api
-    name: Helicone Experiment API
-    tags:
-      - Datasets
-      - Evaluations
-      - Experiments
-    humanURL: https://docs.helicone.ai/features/experiments
-    baseURL: https://api.helicone.ai
-    properties:
-      - url: https://docs.helicone.ai/features/experiments
-        type: Documentation
-      - url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
-        type: APIReference
-      - url: https://docs.helicone.ai/swagger.json
-        type: OpenAPI
-    description: >-
-      The Helicone Experiment API enables developers to create experiment datasets, run evaluators, update experiment
-      metadata, and manage experiment workflows. It supports systematic prompt experimentation and evaluation to
-      optimize AI application performance.
-  - aid: helicone:evals-api
-    name: Helicone Evals API
-    tags:
-      - Evaluations
-      - LLM Quality
-      - Scoring
-    humanURL: https://docs.helicone.ai/rest/evals/post-v1evals
-    baseURL: https://api.helicone.ai
-    properties:
-      - url: https://docs.helicone.ai/rest/evals/post-v1evals
-        type: Documentation
-      - url: https://docs.helicone.ai/features/advanced-usage/scores
-        type: Overview
-      - url: https://docs.helicone.ai/swagger.json
-        type: OpenAPI
-    description: >-
-      The Helicone Evals API provides endpoints for creating evaluations, querying evaluation results, retrieving
-      scores, and analyzing score distributions. It enables developers to systematically assess and monitor the quality
-      of their AI model outputs.
-  - aid: helicone:session-api
-    name: Helicone Session API
-    tags:
-      - Debugging
-      - Sessions
-      - Tracing
-    humanURL: https://docs.helicone.ai/features/sessions
-    baseURL: https://api.helicone.ai
-    properties:
-      - url: https://docs.helicone.ai/features/sessions
-        type: Documentation
-      - url: https://docs.helicone.ai/rest/session/post-v1sessionquery
-        type: APIReference
-      - url: https://docs.helicone.ai/swagger.json
-        type: OpenAPI
-    description: >-
-      The Helicone Session API allows developers to query sessions, retrieve session metrics, and submit session
-      feedback. Sessions enable tracing and debugging of multi-step LLM interactions and agent workflows in real time.
-  - aid: helicone:user-api
-    name: Helicone User API
-    tags:
-      - Analytics
-      - Metrics
-      - Users
-    humanURL: https://docs.helicone.ai/features/advanced-usage/user-metrics
-    baseURL: https://api.helicone.ai
-    properties:
-      - url: https://docs.helicone.ai/features/advanced-usage/user-metrics
-        type: Documentation
-      - url: https://docs.helicone.ai/rest/user/post-v1userquery
-        type: APIReference
-      - url: https://docs.helicone.ai/swagger.json
-        type: OpenAPI
-    description: >-
-      The Helicone User API provides endpoints for querying user data, retrieving user metrics, and getting user metrics
-      overviews. It enables developers to track per-user usage, costs, and performance analytics across their AI
-      applications.
-  - aid: helicone:webhook-api
-    name: Helicone Webhook API
-    tags:
-      - Events
-      - Notifications
-      - Webhooks
-    humanURL: https://docs.helicone.ai/features/webhooks
-    baseURL: https://api.helicone.ai
-    properties:
-      - url: https://docs.helicone.ai/features/webhooks
-        type: Documentation
-      - url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
-        type: APIReference
-      - url: https://docs.helicone.ai/swagger.json
-        type: OpenAPI
-    description: >-
-      The Helicone Webhook API provides endpoints for creating, listing, and deleting webhooks. Webhooks enable
-      developers to receive real-time notifications about events in their Helicone workspace, supporting integration
-      with external systems and automated workflows.
-  - aid: helicone:model-registry-api
-    name: Helicone Model Registry API
-    tags:
-      - AI Models
-      - Models
-      - Registry
-    humanURL: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
-    baseURL: https://api.helicone.ai
-    properties:
-      - url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
-        type: Documentation
-      - url: https://docs.helicone.ai/swagger.json
-        type: OpenAPI
-    description: >-
-      The Helicone Model Registry API provides a public endpoint for retrieving the complete catalog of AI models and
-      provider endpoints that the Helicone AI Gateway can route to. This allows developers to discover available models
-      and their capabilities.
-  - aid: helicone:trace-api
-    name: Helicone Trace API
-    tags:
-      - Logging
-      - Observability
-      - Tracing
-    humanURL: https://docs.helicone.ai/rest/trace/post-v1tracelog
-    baseURL: https://api.helicone.ai
-    properties:
-      - url: https://docs.helicone.ai/rest/trace/post-v1tracelog
-        type: Documentation
-      - url: https://docs.helicone.ai/swagger.json
-        type: OpenAPI
-    description: >-
-      The Helicone Trace API provides endpoints for logging traces from AI applications. It enables developers to
-      capture and log multi-step interactions, tool calls, and agent workflows for observability and debugging purposes.
-  - aid: helicone:dashboard-api
-    name: Helicone Dashboard API
-    tags:
-      - Analytics
-      - Dashboard
-      - Scoring
-    humanURL: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
-    baseURL: https://api.helicone.ai
-    properties:
-      - url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
-        type: Documentation
-      - url: https://docs.helicone.ai/swagger.json
-        type: OpenAPI
-    description: >-
-      The Helicone Dashboard API provides endpoints for querying dashboard scores and analytics data. It supports
-      programmatic access to the aggregated metrics and scoring data available in the Helicone dashboard interface.
-  - aid: helicone:property-api
-    name: Helicone Property API
-    tags:
-      - Custom Properties
-      - Metadata
-      - Properties
-    humanURL: https://docs.helicone.ai/features/advanced-usage/custom-properties
-    baseURL: https://api.helicone.ai
-    properties:
-      - url: https://docs.helicone.ai/features/advanced-usage/custom-properties
-        type: Documentation
-      - url: https://docs.helicone.ai/rest/property/post-v1propertyquery
-        type: APIReference
-      - url: https://docs.helicone.ai/swagger.json
-        type: OpenAPI
-    description: >-
-      The Helicone Property API provides endpoints for querying custom properties attached to requests. Custom
-      properties allow developers to segment and filter their LLM request data by arbitrary metadata such as
-      environment, feature, user cohort, or any other dimension.
+- aid: helicone:helicone-agent-api
+  name: Helicone Agent API
+  description: The Agent API from Helicone — 8 operation(s) for agent.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Agent
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-agent-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-api-key-api
+  name: Helicone API Key API
+  description: The API Key API from Helicone — 6 operation(s) for api key.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - API Key
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-api-key-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-comparison-api
+  name: Helicone Comparison API
+  description: The Comparison API from Helicone — 1 operation(s) for comparison.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Comparison
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-comparison-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-credits-api
+  name: Helicone Credits API
+  description: The Credits API from Helicone — 6 operation(s) for credits.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Credits
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-credits-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-customer-api
+  name: Helicone Customer API
+  description: The Customer API from Helicone — 2 operation(s) for customer.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Customer
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-customer-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-dashboard-api
+  name: Helicone Dashboard API
+  description: The Dashboard API from Helicone — 1 operation(s) for dashboard.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Dashboard
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-dashboard-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-dataset-api
+  name: Helicone Dataset API
+  description: The Dataset API from Helicone — 14 operation(s) for dataset.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Dataset
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-dataset-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-evals-api
+  name: Helicone Evals API
+  description: The Evals API from Helicone — 4 operation(s) for evals.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Evals
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-evals-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-evaluator-api
+  name: Helicone Evaluator API
+  description: The Evaluator API from Helicone — 10 operation(s) for evaluator.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Evaluator
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-evaluator-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-experiment-api
+  name: Helicone Experiment API
+  description: The Experiment API from Helicone — 40 operation(s) for experiment.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Experiment
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-experiment-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-heliconesql-api
+  name: Helicone HeliconeSql API
+  description: The HeliconeSql API from Helicone — 7 operation(s) for heliconesql.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - HeliconeSql
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-heliconesql-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-integration-api
+  name: Helicone Integration API
+  description: The Integration API from Helicone — 6 operation(s) for integration.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Integration
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-integration-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-metrics-api
+  name: Helicone Metrics API
+  description: The Metrics API from Helicone — 20 operation(s) for metrics.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Metrics
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-metrics-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-model-registry-api
+  name: Helicone Model Registry API
+  description: The Model Registry API from Helicone — 1 operation(s) for model registry.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Model Registry
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-model-registry-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-models-api
+  name: Helicone Models API
+  description: The Models API from Helicone — 2 operation(s) for models.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Models
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-models-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-pi-api
+  name: Helicone PI API
+  description: The PI API from Helicone — 6 operation(s) for pi.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - PI
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-pi-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-playground-api
+  name: Helicone Playground API
+  description: The Playground API from Helicone — 2 operation(s) for playground.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Playground
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-playground-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-prompt-api
+  name: Helicone Prompt API
+  description: The Prompt API from Helicone — 17 operation(s) for prompt.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Prompt
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-prompt-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-prompt2025-api
+  name: Helicone Prompt2025 API
+  description: The Prompt2025 API from Helicone — 20 operation(s) for prompt2025.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Prompt2025
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-prompt2025-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-prompt2025v2-api
+  name: Helicone Prompt2025V2 API
+  description: The Prompt2025V2 API from Helicone — 3 operation(s) for prompt2025v2.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Prompt2025V2
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-prompt2025v2-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-property-api
+  name: Helicone Property API
+  description: The Property API from Helicone — 8 operation(s) for property.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Property
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-property-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-providers-api
+  name: Helicone Providers API
+  description: The Providers API from Helicone — 1 operation(s) for providers.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Providers
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-providers-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-request-api
+  name: Helicone Request API
+  description: The Request API from Helicone — 10 operation(s) for request.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Request
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-request-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-security-api
+  name: Helicone Security API
+  description: The Security API from Helicone — 1 operation(s) for security.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Security
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-security-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-session-api
+  name: Helicone Session API
+  description: The Session API from Helicone — 6 operation(s) for session.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Session
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-session-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-status-api
+  name: Helicone Status API
+  description: The Status API from Helicone — 2 operation(s) for status.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Status
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-status-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-stripe-api
+  name: Helicone Stripe API
+  description: The Stripe API from Helicone — 22 operation(s) for stripe.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Stripe
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-stripe-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-test-api
+  name: Helicone Test API
+  description: The Test API from Helicone — 1 operation(s) for test.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Test
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-test-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-trace-api
+  name: Helicone Trace API
+  description: The Trace API from Helicone — 5 operation(s) for trace.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Trace
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-trace-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-user-api
+  name: Helicone User API
+  description: The User API from Helicone — 3 operation(s) for user.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - User
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-user-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-vault-api
+  name: Helicone Vault API
+  description: The Vault API from Helicone — 4 operation(s) for vault.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Vault
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-vault-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-webhooks-api
+  name: Helicone Webhooks API
+  description: The Webhooks API from Helicone — 3 operation(s) for webhooks.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Webhooks
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-webhooks-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
+- aid: helicone:helicone-wrapped-api
+  name: Helicone Wrapped API
+  description: The Wrapped API from Helicone — 2 operation(s) for wrapped.
+  humanURL: ' https://www.helicone.ai/'
+  baseURL: https://ai-gateway.helicone.ai
+  tags:
+  - Wrapped
+  properties:
+  - type: OpenAPI
+    url: openapi/helicone-wrapped-api-openapi.yml
+  - type: Documentation
+    url: ' https://www.helicone.ai/'
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GettingStarted
+    url: https://docs.helicone.ai/getting-started/quick-start
+  - type: PlatformOverview
+    url: https://docs.helicone.ai/getting-started/platform-overview
+  - type: Signup
+    url: https://us.helicone.ai/signup
+  - type: Login
+    url: https://us.helicone.ai/signin
+  - type: Portal
+    url: https://us.helicone.ai/dashboard
+  - type: DeveloperPortal
+    url: https://us.helicone.ai/developer
+  - type: Pricing
+    url: https://www.helicone.ai/pricing
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Headers
+    url: https://docs.helicone.ai/helicone-headers/header-directory
+  - type: GitHubOrg
+    url: https://github.com/Helicone/helicone
+  - type: Blog
+    url: https://www.helicone.ai/blog
+  - type: ChangeLog
+    url: https://www.helicone.ai/changelog
+  - type: StatusPage
+    url: https://status.helicone.ai/
+  - type: Contact
+    url: https://www.helicone.ai/contact
+  - type: Community
+    url: https://community.helicone.ai/
+  - type: Discord
+    url: https://discord.gg/2TkeWdXNPQ
+  - type: Twitter
+    url: https://twitter.com/helicone_ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/helicone/
+  - type: PrivacyPolicy
+    url: https://www.helicone.ai/privacy
+  - type: TermsOfService
+    url: https://www.helicone.ai/terms
+  - type: Security
+    url: https://docs.helicone.ai/references/data-autonomy
+  - type: SelfHosted
+    url: https://docs.helicone.ai/getting-started/self-host/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/gateway/overview
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/ai-gateway/post-v1-chat-completions
+  - type: ProviderRouting
+    url: https://docs.helicone.ai/gateway/provider-routing
+  - type: Models
+    url: https://www.helicone.ai/models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/request/post-v1requestquery
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/prompts/post-v1prompt-2025
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/prompts/overview
+  - type: Documentation
+    url: https://docs.helicone.ai/features/experiments
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/experiment/post-v1experiment-evaluatorsrun
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/evals/post-v1evals
+  - type: Overview
+    url: https://docs.helicone.ai/features/advanced-usage/scores
+  - type: Documentation
+    url: https://docs.helicone.ai/features/sessions
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/session/post-v1sessionquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/user-metrics
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/user/post-v1userquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/webhooks
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/webhooks/get-v1webhooks
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/models/get-v1public-model-registry-models
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/trace/post-v1tracelog
+  - type: Documentation
+    url: https://docs.helicone.ai/rest/dashboard/post-v1dashboardscoresquery
+  - type: Documentation
+    url: https://docs.helicone.ai/features/advanced-usage/custom-properties
+  - type: APIReference
+    url: https://docs.helicone.ai/rest/property/post-v1propertyquery
 name: Helicone
 tags:
   - AI Gateways
@@ -299,7 +3376,20 @@ tags:
   - LLM Routing
   - Prompt Management
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/helicone.png
 access: 3rd-Party
 created: '2026-01-02'
 modified: '2026-05-19'
@@ -311,6 +3401,8 @@ description: >-
   experiment with their AI applications. The worlds fastest-growing AI companies rely on Helicone to route, debug, and
   analyze their applications.
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/helicone/overview
   - type: AgenticAccess
     url: agentic-access/helicone-agentic-access.yml
   - type: DomainSecurity
