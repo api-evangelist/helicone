@@ -1,0 +1,1249 @@
+{
+  "info": {
+    "_postman_id": "419bead4-f687-4fe8-8da3-2aa1b8d5773a",
+    "name": "helicone-api Agent API Key API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:54:35.000Z",
+    "updatedAt": "2026-07-28T01:54:35.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-419bead4-f687-4fe8-8da3-2aa1b8d5773a"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "api-keys",
+          "item": [
+            {
+              "name": "provider-key",
+              "item": [
+                {
+                  "name": "{providerKeyId}",
+                  "item": [
+                    {
+                      "name": "Delete Provider Key",
+                      "id": "7586b766-e9a9-4a07-bd3f-5bf7bf99f434",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/api-keys/provider-key/:providerKeyId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "api-keys",
+                            "provider-key",
+                            ":providerKeyId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "cc7d34cc-0670-473a-8c04-ee0256411113",
+                              "key": "providerKeyId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "cf68160e-925d-4c2b-aa03-493c69c23181",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/api-keys/provider-key/:providerKeyId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "api-keys",
+                                "provider-key",
+                                ":providerKeyId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "providerKeyId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"providerName\": \"perplexity\"\n}",
+                          "createdAt": "2026-07-28T01:54:35.000Z",
+                          "updatedAt": "2026-07-28T01:54:35.000Z",
+                          "uid": "35240-cf68160e-925d-4c2b-aa03-493c69c23181"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:54:35.000Z",
+                      "updatedAt": "2026-07-28T01:54:35.000Z",
+                      "uid": "35240-7586b766-e9a9-4a07-bd3f-5bf7bf99f434"
+                    },
+                    {
+                      "name": "Get Provider Key",
+                      "id": "9cd606b2-a41c-4819-83b7-37006914732c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/api-keys/provider-key/:providerKeyId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "api-keys",
+                            "provider-key",
+                            ":providerKeyId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "7f7f29d6-45a7-4043-a09b-ed1ad4c7fa85",
+                              "key": "providerKeyId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "760e0662-50aa-4013-b86c-80124743c6b8",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/api-keys/provider-key/:providerKeyId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "api-keys",
+                                "provider-key",
+                                ":providerKeyId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "providerKeyId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"provider_secret_key\": \"<string>\",\n  \"provider_key_name\": \"<string>\",\n  \"provider_name\": \"<string>\",\n  \"provider_key\": \"<string>\",\n  \"org_id\": \"<string>\",\n  \"id\": \"<string>\",\n  \"cuid\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T01:54:35.000Z",
+                          "updatedAt": "2026-07-28T01:54:35.000Z",
+                          "uid": "35240-760e0662-50aa-4013-b86c-80124743c6b8"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:54:35.000Z",
+                      "updatedAt": "2026-07-28T01:54:35.000Z",
+                      "uid": "35240-9cd606b2-a41c-4819-83b7-37006914732c"
+                    },
+                    {
+                      "name": "Update Provider Key",
+                      "id": "f88b2e06-90ac-4151-ba0d-d4c8aca7eb0f",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"byokEnabled\": \"<boolean>\",\n  \"config\": {\n    \"pariatur9\": \"<string>\"\n  },\n  \"providerSecretKey\": \"<string>\",\n  \"providerKey\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/api-keys/provider-key/:providerKeyId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "api-keys",
+                            "provider-key",
+                            ":providerKeyId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "9c1bf87d-33e5-4d11-ad30-ad1b39b4aebd",
+                              "key": "providerKeyId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "f495211a-97b3-4a26-9247-888a2492a29b",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"byokEnabled\": \"<boolean>\",\n  \"config\": {\n    \"pariatur9\": \"<string>\"\n  },\n  \"providerSecretKey\": \"<string>\",\n  \"providerKey\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/api-keys/provider-key/:providerKeyId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "api-keys",
+                                "provider-key",
+                                ":providerKeyId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "providerKeyId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": {\n    \"providerName\": \"<string>\",\n    \"id\": \"<string>\"\n  },\n  \"error\": null\n}",
+                          "createdAt": "2026-07-28T01:54:35.000Z",
+                          "updatedAt": "2026-07-28T01:54:35.000Z",
+                          "uid": "35240-f495211a-97b3-4a26-9247-888a2492a29b"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:54:35.000Z",
+                      "updatedAt": "2026-07-28T01:54:35.000Z",
+                      "uid": "35240-f88b2e06-90ac-4151-ba0d-d4c8aca7eb0f"
+                    }
+                  ],
+                  "id": "f67cc143-aa66-4693-9265-6f4e1794443f",
+                  "createdAt": "2026-07-28T01:54:35.000Z",
+                  "updatedAt": "2026-07-28T01:54:35.000Z",
+                  "uid": "35240-f67cc143-aa66-4693-9265-6f4e1794443f"
+                },
+                {
+                  "name": "Create Provider Key",
+                  "id": "3dc625b3-2991-4ceb-83ea-046b05be7435",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "apikey",
+                      "apikey": [
+                        {
+                          "key": "key",
+                          "value": "Authorization",
+                          "type": "string"
+                        },
+                        {
+                          "key": "value",
+                          "value": "{{apiKey}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "in",
+                          "value": "header",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"config\": {\n    \"occaecatc\": \"<string>\"\n  },\n  \"byokEnabled\": \"<boolean>\",\n  \"providerKeyName\": \"<string>\",\n  \"providerKey\": \"<string>\",\n  \"providerName\": \"<string>\",\n  \"providerSecretKey\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/api-keys/provider-key",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "api-keys",
+                        "provider-key"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "acffb090-0c16-4286-ad5e-22c4c31a1b59",
+                      "name": "Ok",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"config\": {\n    \"occaecatc\": \"<string>\"\n  },\n  \"byokEnabled\": \"<boolean>\",\n  \"providerKeyName\": \"<string>\",\n  \"providerKey\": \"<string>\",\n  \"providerName\": \"<string>\",\n  \"providerSecretKey\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/api-keys/provider-key",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "api-keys",
+                            "provider-key"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T01:54:35.000Z",
+                      "updatedAt": "2026-07-28T01:54:35.000Z",
+                      "uid": "35240-acffb090-0c16-4286-ad5e-22c4c31a1b59"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:54:35.000Z",
+                  "updatedAt": "2026-07-28T01:54:35.000Z",
+                  "uid": "35240-3dc625b3-2991-4ceb-83ea-046b05be7435"
+                }
+              ],
+              "id": "8011f036-6797-4e74-87fa-defa12b0a1cb",
+              "createdAt": "2026-07-28T01:54:35.000Z",
+              "updatedAt": "2026-07-28T01:54:35.000Z",
+              "uid": "35240-8011f036-6797-4e74-87fa-defa12b0a1cb"
+            },
+            {
+              "name": "provider-keys",
+              "item": [
+                {
+                  "name": "Get Provider Keys",
+                  "id": "449d48b4-f202-4128-a777-6d01e8f38da9",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "apikey",
+                      "apikey": [
+                        {
+                          "key": "key",
+                          "value": "Authorization",
+                          "type": "string"
+                        },
+                        {
+                          "key": "value",
+                          "value": "{{apiKey}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "in",
+                          "value": "header",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/api-keys/provider-keys",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "api-keys",
+                        "provider-keys"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "445ed9b5-5892-48cd-bad6-ade3240abcae",
+                      "name": "Ok",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/api-keys/provider-keys",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "api-keys",
+                            "provider-keys"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "[\n  {\n    \"id\": \"<string>\",\n    \"provider_name\": \"<string>\",\n    \"provider_key_name\": \"<string>\",\n    \"soft_delete\": \"<boolean>\",\n    \"created_at\": \"<string>\",\n    \"config\": {\n      \"ea_5\": {},\n      \"magna_b\": {}\n    },\n    \"byok_enabled\": \"<boolean>\",\n    \"cuid\": \"<string>\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"provider_name\": \"<string>\",\n    \"provider_key_name\": \"<string>\",\n    \"soft_delete\": \"<boolean>\",\n    \"created_at\": \"<string>\",\n    \"config\": {\n      \"Ut__ca\": {}\n    },\n    \"byok_enabled\": \"<boolean>\",\n    \"cuid\": \"<string>\"\n  }\n]",
+                      "createdAt": "2026-07-28T01:54:35.000Z",
+                      "updatedAt": "2026-07-28T01:54:35.000Z",
+                      "uid": "35240-445ed9b5-5892-48cd-bad6-ade3240abcae"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:54:35.000Z",
+                  "updatedAt": "2026-07-28T01:54:35.000Z",
+                  "uid": "35240-449d48b4-f202-4128-a777-6d01e8f38da9"
+                }
+              ],
+              "id": "7c06629f-457b-40f6-af46-27b8ba9d4ace",
+              "createdAt": "2026-07-28T01:54:35.000Z",
+              "updatedAt": "2026-07-28T01:54:35.000Z",
+              "uid": "35240-7c06629f-457b-40f6-af46-27b8ba9d4ace"
+            },
+            {
+              "name": "proxy-key",
+              "item": [
+                {
+                  "name": "Create Proxy Key",
+                  "id": "f50556ea-e267-4197-ab7f-6b822fe2f3ea",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "apikey",
+                      "apikey": [
+                        {
+                          "key": "key",
+                          "value": "Authorization",
+                          "type": "string"
+                        },
+                        {
+                          "key": "value",
+                          "value": "{{apiKey}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "in",
+                          "value": "header",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"proxyKeyName\": \"<string>\",\n  \"providerKeyId\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/api-keys/proxy-key",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "api-keys",
+                        "proxy-key"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "0be64dbf-310f-488a-aff0-b593d3026465",
+                      "name": "Ok",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"proxyKeyName\": \"<string>\",\n  \"providerKeyId\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/api-keys/proxy-key",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "api-keys",
+                            "proxy-key"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"proxyKeyId\": \"<string>\",\n  \"proxyKey\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T01:54:35.000Z",
+                      "updatedAt": "2026-07-28T01:54:35.000Z",
+                      "uid": "35240-0be64dbf-310f-488a-aff0-b593d3026465"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:54:35.000Z",
+                  "updatedAt": "2026-07-28T01:54:35.000Z",
+                  "uid": "35240-f50556ea-e267-4197-ab7f-6b822fe2f3ea"
+                }
+              ],
+              "id": "2eb8c211-3122-46bb-a598-5debe4d869a2",
+              "createdAt": "2026-07-28T01:54:35.000Z",
+              "updatedAt": "2026-07-28T01:54:35.000Z",
+              "uid": "35240-2eb8c211-3122-46bb-a598-5debe4d869a2"
+            },
+            {
+              "name": "{apiKeyId}",
+              "item": [
+                {
+                  "name": "Delete API Key",
+                  "id": "6464aeaa-a136-4b31-8ff0-126fe6850e81",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "apikey",
+                      "apikey": [
+                        {
+                          "key": "key",
+                          "value": "Authorization",
+                          "type": "string"
+                        },
+                        {
+                          "key": "value",
+                          "value": "{{apiKey}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "in",
+                          "value": "header",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/api-keys/:apiKeyId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "api-keys",
+                        ":apiKeyId"
+                      ],
+                      "variable": [
+                        {
+                          "id": "43986960-65e7-4fba-b0a1-8908da357376",
+                          "key": "apiKeyId",
+                          "value": "<double>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "a22d5da2-9abf-4c4b-91e9-1844e29581af",
+                      "name": "Ok",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/api-keys/:apiKeyId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "api-keys",
+                            ":apiKeyId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "apiKeyId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"hashedKey\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T01:54:35.000Z",
+                      "updatedAt": "2026-07-28T01:54:35.000Z",
+                      "uid": "35240-a22d5da2-9abf-4c4b-91e9-1844e29581af"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:54:35.000Z",
+                  "updatedAt": "2026-07-28T01:54:35.000Z",
+                  "uid": "35240-6464aeaa-a136-4b31-8ff0-126fe6850e81"
+                },
+                {
+                  "name": "Update API Key",
+                  "id": "9b520c46-01f1-4b1e-acc5-e356952659a1",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "apikey",
+                      "apikey": [
+                        {
+                          "key": "key",
+                          "value": "Authorization",
+                          "type": "string"
+                        },
+                        {
+                          "key": "value",
+                          "value": "{{apiKey}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "in",
+                          "value": "header",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"api_key_name\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/api-keys/:apiKeyId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "api-keys",
+                        ":apiKeyId"
+                      ],
+                      "variable": [
+                        {
+                          "id": "2cf77534-3084-4bf8-9abc-4e2c6b4194fa",
+                          "key": "apiKeyId",
+                          "value": "<double>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "fd47bfdc-95db-4241-a806-4ea88d68ae16",
+                      "name": "Ok",
+                      "originalRequest": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"api_key_name\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/api-keys/:apiKeyId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "api-keys",
+                            ":apiKeyId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "apiKeyId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"hashedKey\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T01:54:35.000Z",
+                      "updatedAt": "2026-07-28T01:54:35.000Z",
+                      "uid": "35240-fd47bfdc-95db-4241-a806-4ea88d68ae16"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:54:35.000Z",
+                  "updatedAt": "2026-07-28T01:54:35.000Z",
+                  "uid": "35240-9b520c46-01f1-4b1e-acc5-e356952659a1"
+                }
+              ],
+              "id": "c38ef5a8-9f5d-4abf-98e4-a02853db252d",
+              "createdAt": "2026-07-28T01:54:35.000Z",
+              "updatedAt": "2026-07-28T01:54:35.000Z",
+              "uid": "35240-c38ef5a8-9f5d-4abf-98e4-a02853db252d"
+            },
+            {
+              "name": "Get API Keys",
+              "id": "6d55a790-6620-427a-9849-a9a1b1adaec0",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "apikey",
+                  "apikey": [
+                    {
+                      "key": "key",
+                      "value": "Authorization",
+                      "type": "string"
+                    },
+                    {
+                      "key": "value",
+                      "value": "{{apiKey}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "in",
+                      "value": "header",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v1/api-keys",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "api-keys"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "1ff9f946-653c-49e8-bc5d-0f2d325de2e4",
+                  "name": "Ok",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/api-keys",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "api-keys"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"data\": [\n    {\n      \"user_id\": \"<string>\",\n      \"updated_at\": \"<string>\",\n      \"temp_key\": \"<boolean>\",\n      \"soft_delete\": \"<boolean>\",\n      \"organization_id\": \"<string>\",\n      \"key_permissions\": \"<string>\",\n      \"id\": \"<double>\",\n      \"governance\": \"<boolean>\",\n      \"created_at\": \"<string>\",\n      \"api_key_name\": \"<string>\",\n      \"api_key_hash\": \"<string>\"\n    },\n    {\n      \"user_id\": \"<string>\",\n      \"updated_at\": \"<string>\",\n      \"temp_key\": \"<boolean>\",\n      \"soft_delete\": \"<boolean>\",\n      \"organization_id\": \"<string>\",\n      \"key_permissions\": \"<string>\",\n      \"id\": \"<double>\",\n      \"governance\": \"<boolean>\",\n      \"created_at\": \"<string>\",\n      \"api_key_name\": \"<string>\",\n      \"api_key_hash\": \"<string>\"\n    }\n  ],\n  \"error\": null\n}",
+                  "createdAt": "2026-07-28T01:54:35.000Z",
+                  "updatedAt": "2026-07-28T01:54:35.000Z",
+                  "uid": "35240-1ff9f946-653c-49e8-bc5d-0f2d325de2e4"
+                }
+              ],
+              "createdAt": "2026-07-28T01:54:35.000Z",
+              "updatedAt": "2026-07-28T01:54:35.000Z",
+              "uid": "35240-6d55a790-6620-427a-9849-a9a1b1adaec0"
+            },
+            {
+              "name": "Create API Key",
+              "id": "355f8e14-208c-428e-bea6-26b91d0a7d76",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "apikey",
+                  "apikey": [
+                    {
+                      "key": "key",
+                      "value": "Authorization",
+                      "type": "string"
+                    },
+                    {
+                      "key": "value",
+                      "value": "{{apiKey}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "in",
+                      "value": "header",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"api_key_name\": \"<string>\",\n  \"key_permissions\": \"r\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/v1/api-keys",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "api-keys"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "65808426-d0fe-4565-b05a-af057b8f973b",
+                  "name": "Ok",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"api_key_name\": \"<string>\",\n  \"key_permissions\": \"r\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/api-keys",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "api-keys"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"hashedKey\": \"<string>\",\n  \"apiKey\": \"<string>\",\n  \"id\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:54:35.000Z",
+                  "updatedAt": "2026-07-28T01:54:35.000Z",
+                  "uid": "35240-65808426-d0fe-4565-b05a-af057b8f973b"
+                }
+              ],
+              "createdAt": "2026-07-28T01:54:35.000Z",
+              "updatedAt": "2026-07-28T01:54:35.000Z",
+              "uid": "35240-355f8e14-208c-428e-bea6-26b91d0a7d76"
+            }
+          ],
+          "id": "ec23d54d-6fa0-48c7-9328-10f157974484",
+          "createdAt": "2026-07-28T01:54:35.000Z",
+          "updatedAt": "2026-07-28T01:54:35.000Z",
+          "uid": "35240-ec23d54d-6fa0-48c7-9328-10f157974484"
+        }
+      ],
+      "id": "c6655d44-d097-4aea-b736-e002b2883272",
+      "createdAt": "2026-07-28T01:54:35.000Z",
+      "updatedAt": "2026-07-28T01:54:35.000Z",
+      "uid": "35240-c6655d44-d097-4aea-b736-e002b2883272"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.helicone.ai/"
+    }
+  ]
+}

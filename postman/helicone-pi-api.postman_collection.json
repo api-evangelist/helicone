@@ -1,0 +1,793 @@
+{
+  "info": {
+    "_postman_id": "b8383426-63ec-4b25-9f45-cdfef611251d",
+    "name": "helicone-api Agent PI API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:55:26.000Z",
+    "updatedAt": "2026-07-28T01:55:26.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b8383426-63ec-4b25-9f45-cdfef611251d"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "public",
+          "item": [
+            {
+              "name": "pi",
+              "item": [
+                {
+                  "name": "get-api-key",
+                  "item": [
+                    {
+                      "name": "Get Api Key",
+                      "id": "9a963bdd-bbea-4c19-a885-18fc2d631a7d",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"sessionUUID\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/public/pi/get-api-key",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "public",
+                            "pi",
+                            "get-api-key"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "b02bc68f-26e8-4f97-9aca-8bdec0d98a36",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"sessionUUID\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/public/pi/get-api-key",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "public",
+                                "pi",
+                                "get-api-key"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": {\n    \"apiKey\": \"<string>\"\n  },\n  \"error\": null\n}",
+                          "createdAt": "2026-07-28T01:55:26.000Z",
+                          "updatedAt": "2026-07-28T01:55:26.000Z",
+                          "uid": "35240-b02bc68f-26e8-4f97-9aca-8bdec0d98a36"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:26.000Z",
+                      "updatedAt": "2026-07-28T01:55:26.000Z",
+                      "uid": "35240-9a963bdd-bbea-4c19-a885-18fc2d631a7d"
+                    }
+                  ],
+                  "id": "bf9d90d0-765d-4b0f-b194-f41438c93cc1",
+                  "createdAt": "2026-07-28T01:55:26.000Z",
+                  "updatedAt": "2026-07-28T01:55:26.000Z",
+                  "uid": "35240-bf9d90d0-765d-4b0f-b194-f41438c93cc1"
+                }
+              ],
+              "id": "d7a380e5-2fa0-4039-8311-f1d968b32500",
+              "createdAt": "2026-07-28T01:55:26.000Z",
+              "updatedAt": "2026-07-28T01:55:26.000Z",
+              "uid": "35240-d7a380e5-2fa0-4039-8311-f1d968b32500"
+            }
+          ],
+          "id": "fa6f2b35-bc1f-4525-b37b-6bc32e2493e1",
+          "createdAt": "2026-07-28T01:55:26.000Z",
+          "updatedAt": "2026-07-28T01:55:26.000Z",
+          "uid": "35240-fa6f2b35-bc1f-4525-b37b-6bc32e2493e1"
+        },
+        {
+          "name": "pi",
+          "item": [
+            {
+              "name": "session",
+              "item": [
+                {
+                  "name": "Add Session",
+                  "id": "78c660e2-54b7-4558-82eb-dbaf0e3f33ac",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "apikey",
+                      "apikey": [
+                        {
+                          "key": "key",
+                          "value": "Authorization",
+                          "type": "string"
+                        },
+                        {
+                          "key": "value",
+                          "value": "{{apiKey}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "in",
+                          "value": "header",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"sessionUUID\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/pi/session",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "pi",
+                        "session"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "73138107-b129-4b53-b183-3fe2af022d78",
+                      "name": "Ok",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"sessionUUID\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/pi/session",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "pi",
+                            "session"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"data\": \"<string>\",\n  \"error\": null\n}",
+                      "createdAt": "2026-07-28T01:55:26.000Z",
+                      "updatedAt": "2026-07-28T01:55:26.000Z",
+                      "uid": "35240-73138107-b129-4b53-b183-3fe2af022d78"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:55:26.000Z",
+                  "updatedAt": "2026-07-28T01:55:26.000Z",
+                  "uid": "35240-78c660e2-54b7-4558-82eb-dbaf0e3f33ac"
+                }
+              ],
+              "id": "04d9f4b6-618f-4ae6-8760-a831436b2795",
+              "createdAt": "2026-07-28T01:55:26.000Z",
+              "updatedAt": "2026-07-28T01:55:26.000Z",
+              "uid": "35240-04d9f4b6-618f-4ae6-8760-a831436b2795"
+            },
+            {
+              "name": "org-name",
+              "item": [
+                {
+                  "name": "query",
+                  "item": [
+                    {
+                      "name": "Get Org Name",
+                      "id": "561f4817-95c9-4520-93b7-10e1261cce57",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/pi/org-name/query",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "pi",
+                            "org-name",
+                            "query"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "52e1f9f0-96f1-4728-b4c0-954f0eee3bf0",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/pi/org-name/query",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "pi",
+                                "org-name",
+                                "query"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": \"<string>\",\n  \"error\": null\n}",
+                          "createdAt": "2026-07-28T01:55:26.000Z",
+                          "updatedAt": "2026-07-28T01:55:26.000Z",
+                          "uid": "35240-52e1f9f0-96f1-4728-b4c0-954f0eee3bf0"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:26.000Z",
+                      "updatedAt": "2026-07-28T01:55:26.000Z",
+                      "uid": "35240-561f4817-95c9-4520-93b7-10e1261cce57"
+                    }
+                  ],
+                  "id": "971862fe-5a36-47d8-8afb-8d753f2eaf55",
+                  "createdAt": "2026-07-28T01:55:26.000Z",
+                  "updatedAt": "2026-07-28T01:55:26.000Z",
+                  "uid": "35240-971862fe-5a36-47d8-8afb-8d753f2eaf55"
+                }
+              ],
+              "id": "fc6f7b67-4beb-4162-a654-ede68f0df505",
+              "createdAt": "2026-07-28T01:55:26.000Z",
+              "updatedAt": "2026-07-28T01:55:26.000Z",
+              "uid": "35240-fc6f7b67-4beb-4162-a654-ede68f0df505"
+            },
+            {
+              "name": "total-costs",
+              "item": [
+                {
+                  "name": "Get Total Costs",
+                  "id": "ba70e27f-5bd7-4895-bad3-fbbe62a419af",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "apikey",
+                      "apikey": [
+                        {
+                          "key": "key",
+                          "value": "Authorization",
+                          "type": "string"
+                        },
+                        {
+                          "key": "value",
+                          "value": "{{apiKey}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "in",
+                          "value": "header",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/pi/total-costs",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "pi",
+                        "total-costs"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "ad191988-d16e-4c9b-8292-be15365a0837",
+                      "name": "Ok",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/pi/total-costs",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "pi",
+                            "total-costs"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"data\": \"<double>\",\n  \"error\": null\n}",
+                      "createdAt": "2026-07-28T01:55:26.000Z",
+                      "updatedAt": "2026-07-28T01:55:26.000Z",
+                      "uid": "35240-ad191988-d16e-4c9b-8292-be15365a0837"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:55:26.000Z",
+                  "updatedAt": "2026-07-28T01:55:26.000Z",
+                  "uid": "35240-ba70e27f-5bd7-4895-bad3-fbbe62a419af"
+                }
+              ],
+              "id": "a73a645c-cb01-4022-b1dd-1b5c82dc3b0a",
+              "createdAt": "2026-07-28T01:55:26.000Z",
+              "updatedAt": "2026-07-28T01:55:26.000Z",
+              "uid": "35240-a73a645c-cb01-4022-b1dd-1b5c82dc3b0a"
+            },
+            {
+              "name": "total_requests",
+              "item": [
+                {
+                  "name": "Pi Get Total Requests",
+                  "id": "831eeb74-3fad-4893-b4b3-03123ddbea4b",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "apikey",
+                      "apikey": [
+                        {
+                          "key": "key",
+                          "value": "Authorization",
+                          "type": "string"
+                        },
+                        {
+                          "key": "value",
+                          "value": "{{apiKey}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "in",
+                          "value": "header",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/pi/total_requests",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "pi",
+                        "total_requests"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "21d65082-524e-4db9-aa2a-16c437c20ed6",
+                      "name": "Ok",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/pi/total_requests",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "pi",
+                            "total_requests"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"data\": \"<double>\",\n  \"error\": null\n}",
+                      "createdAt": "2026-07-28T01:55:26.000Z",
+                      "updatedAt": "2026-07-28T01:55:26.000Z",
+                      "uid": "35240-21d65082-524e-4db9-aa2a-16c437c20ed6"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:55:26.000Z",
+                  "updatedAt": "2026-07-28T01:55:26.000Z",
+                  "uid": "35240-831eeb74-3fad-4893-b4b3-03123ddbea4b"
+                }
+              ],
+              "id": "c167f013-0248-4d7a-a037-cd9f04dee26f",
+              "createdAt": "2026-07-28T01:55:26.000Z",
+              "updatedAt": "2026-07-28T01:55:26.000Z",
+              "uid": "35240-c167f013-0248-4d7a-a037-cd9f04dee26f"
+            },
+            {
+              "name": "costs-over-time",
+              "item": [
+                {
+                  "name": "query",
+                  "item": [
+                    {
+                      "name": "Get Costs Over Time",
+                      "id": "0d9c7bbf-75a0-47d3-93bc-55bc61224af9",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"timeFilter\": {\n    \"end\": \"<string>\",\n    \"start\": \"<string>\"\n  },\n  \"userFilter\": {\n    \"request_response_rmt\": {\n      \"country_code\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"latency\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"cost\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"provider\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"time_to_first_token\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"status\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"request_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"response_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"model\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"user_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"organization_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"node_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"job_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"threat\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"request_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"prompt_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"completion_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"prompt_cache_read_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"prompt_cache_write_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"total_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"target_url\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"property_key\": {\n        \"equals\": \"<string>\"\n      },\n      \"properties\": {\n        \"anim60\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"Ut52\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"search_properties\": {\n        \"esse9\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"scores\": {\n        \"dolore_bc2\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"labore4d\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"Excepteurd\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"scores_column\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"request_body\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"response_body\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"cache_enabled\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"cache_reference_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"cached\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"assets\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"helicone-score-feedback\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"prompt_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"prompt_version\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"request_referrer\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"is_passthrough_billing\": {\n        \"equals\": \"<boolean>\"\n      }\n    }\n  },\n  \"dbIncrement\": \"hour\",\n  \"timeZoneDifference\": \"<double>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/pi/costs-over-time/query",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "pi",
+                            "costs-over-time",
+                            "query"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "96565aac-1cfd-42d6-bbd8-ecf9f4917da8",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"timeFilter\": {\n    \"end\": \"<string>\",\n    \"start\": \"<string>\"\n  },\n  \"userFilter\": {\n    \"request_response_rmt\": {\n      \"country_code\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"latency\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"cost\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"provider\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"time_to_first_token\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"status\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"request_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"response_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"model\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"user_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"organization_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"node_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"job_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"threat\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"request_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"prompt_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"completion_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"prompt_cache_read_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"prompt_cache_write_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"total_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"target_url\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"property_key\": {\n        \"equals\": \"<string>\"\n      },\n      \"properties\": {\n        \"anim60\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"Ut52\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"search_properties\": {\n        \"esse9\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"scores\": {\n        \"dolore_bc2\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"labore4d\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"Excepteurd\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"scores_column\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"request_body\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"response_body\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"cache_enabled\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"cache_reference_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"cached\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"assets\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"helicone-score-feedback\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"prompt_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"prompt_version\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"request_referrer\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"is_passthrough_billing\": {\n        \"equals\": \"<boolean>\"\n      }\n    }\n  },\n  \"dbIncrement\": \"hour\",\n  \"timeZoneDifference\": \"<double>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/pi/costs-over-time/query",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "pi",
+                                "costs-over-time",
+                                "query"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": [\n    {\n      \"created_at_trunc\": \"<string>\",\n      \"cost\": \"<double>\"\n    },\n    {\n      \"created_at_trunc\": \"<string>\",\n      \"cost\": \"<double>\"\n    }\n  ],\n  \"error\": null\n}",
+                          "createdAt": "2026-07-28T01:55:26.000Z",
+                          "updatedAt": "2026-07-28T01:55:26.000Z",
+                          "uid": "35240-96565aac-1cfd-42d6-bbd8-ecf9f4917da8"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:26.000Z",
+                      "updatedAt": "2026-07-28T01:55:26.000Z",
+                      "uid": "35240-0d9c7bbf-75a0-47d3-93bc-55bc61224af9"
+                    }
+                  ],
+                  "id": "eb77547d-3f08-4e90-8c67-d74a8bc64010",
+                  "createdAt": "2026-07-28T01:55:26.000Z",
+                  "updatedAt": "2026-07-28T01:55:26.000Z",
+                  "uid": "35240-eb77547d-3f08-4e90-8c67-d74a8bc64010"
+                }
+              ],
+              "id": "166dd9b6-856b-4283-95fe-bbd4e29c17aa",
+              "createdAt": "2026-07-28T01:55:26.000Z",
+              "updatedAt": "2026-07-28T01:55:26.000Z",
+              "uid": "35240-166dd9b6-856b-4283-95fe-bbd4e29c17aa"
+            }
+          ],
+          "id": "6b4131f6-acb7-4cb8-aa6b-fc80c5ae006f",
+          "createdAt": "2026-07-28T01:55:26.000Z",
+          "updatedAt": "2026-07-28T01:55:26.000Z",
+          "uid": "35240-6b4131f6-acb7-4cb8-aa6b-fc80c5ae006f"
+        }
+      ],
+      "id": "c2c2246a-b140-4671-9e71-2aae82de707f",
+      "createdAt": "2026-07-28T01:55:26.000Z",
+      "updatedAt": "2026-07-28T01:55:26.000Z",
+      "uid": "35240-c2c2246a-b140-4671-9e71-2aae82de707f"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.helicone.ai/"
+    }
+  ]
+}

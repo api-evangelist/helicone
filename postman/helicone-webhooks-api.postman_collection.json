@@ -1,0 +1,491 @@
+{
+  "info": {
+    "_postman_id": "93d1cb98-51a6-45c3-95e3-5a990d537c14",
+    "name": "helicone-api Agent Webhooks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:55:47.000Z",
+    "updatedAt": "2026-07-28T01:55:47.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-93d1cb98-51a6-45c3-95e3-5a990d537c14"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "webhooks",
+          "item": [
+            {
+              "name": "{webhookId}",
+              "item": [
+                {
+                  "name": "test",
+                  "item": [
+                    {
+                      "name": "Test Webhook",
+                      "id": "a43a8b67-d759-49ee-9ba1-692ded89f9e7",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/webhooks/:webhookId/test",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "webhooks",
+                            ":webhookId",
+                            "test"
+                          ],
+                          "variable": [
+                            {
+                              "id": "eed6d4e6-31f3-4723-b646-1a507edf6e9a",
+                              "key": "webhookId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "59308af1-d22b-49ce-97a9-5a90be2fc068",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/webhooks/:webhookId/test",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "webhooks",
+                                ":webhookId",
+                                "test"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "webhookId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": {\n    \"message\": \"<string>\",\n    \"success\": \"<boolean>\"\n  },\n  \"error\": null\n}",
+                          "createdAt": "2026-07-28T01:55:48.000Z",
+                          "updatedAt": "2026-07-28T01:55:48.000Z",
+                          "uid": "35240-59308af1-d22b-49ce-97a9-5a90be2fc068"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:47.000Z",
+                      "updatedAt": "2026-07-28T01:55:47.000Z",
+                      "uid": "35240-a43a8b67-d759-49ee-9ba1-692ded89f9e7"
+                    }
+                  ],
+                  "id": "cebda694-621d-4b83-b964-f0ccb78cbea1",
+                  "createdAt": "2026-07-28T01:55:47.000Z",
+                  "updatedAt": "2026-07-28T01:55:47.000Z",
+                  "uid": "35240-cebda694-621d-4b83-b964-f0ccb78cbea1"
+                },
+                {
+                  "name": "Delete Webhook",
+                  "id": "cbba88f6-ced8-4e6c-80a2-b73da0c1fd25",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "apikey",
+                      "apikey": [
+                        {
+                          "key": "key",
+                          "value": "Authorization",
+                          "type": "string"
+                        },
+                        {
+                          "key": "value",
+                          "value": "{{apiKey}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "in",
+                          "value": "header",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/webhooks/:webhookId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "webhooks",
+                        ":webhookId"
+                      ],
+                      "variable": [
+                        {
+                          "id": "e5d06ebe-e257-42c6-bb73-5491cfdd39c9",
+                          "key": "webhookId",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "555b5ed1-7503-432d-b638-a57484a968f3",
+                      "name": "Ok",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/webhooks/:webhookId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "webhooks",
+                            ":webhookId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "webhookId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"data\": null,\n  \"error\": null\n}",
+                      "createdAt": "2026-07-28T01:55:48.000Z",
+                      "updatedAt": "2026-07-28T01:55:48.000Z",
+                      "uid": "35240-555b5ed1-7503-432d-b638-a57484a968f3"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:55:47.000Z",
+                  "updatedAt": "2026-07-28T01:55:47.000Z",
+                  "uid": "35240-cbba88f6-ced8-4e6c-80a2-b73da0c1fd25"
+                }
+              ],
+              "id": "7fd95438-71c7-4abb-a23f-a84523b483bc",
+              "createdAt": "2026-07-28T01:55:47.000Z",
+              "updatedAt": "2026-07-28T01:55:47.000Z",
+              "uid": "35240-7fd95438-71c7-4abb-a23f-a84523b483bc"
+            },
+            {
+              "name": "New Webhook",
+              "id": "9afaf4ed-52e6-4c07-a1fe-e72659964b2b",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "apikey",
+                  "apikey": [
+                    {
+                      "key": "key",
+                      "value": "Authorization",
+                      "type": "string"
+                    },
+                    {
+                      "key": "value",
+                      "value": "{{apiKey}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "in",
+                      "value": "header",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"destination\": \"<string>\",\n  \"config\": {\n    \"non3f1\": {},\n    \"Duis_a\": {}\n  },\n  \"includeData\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/v1/webhooks",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "webhooks"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "f113c38b-1c3d-4511-a066-9654e8423e2a",
+                  "name": "Ok",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"destination\": \"<string>\",\n  \"config\": {\n    \"non3f1\": {},\n    \"Duis_a\": {}\n  },\n  \"includeData\": \"<boolean>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/webhooks",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "webhooks"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"data\": {},\n  \"error\": null\n}",
+                  "createdAt": "2026-07-28T01:55:48.000Z",
+                  "updatedAt": "2026-07-28T01:55:48.000Z",
+                  "uid": "35240-f113c38b-1c3d-4511-a066-9654e8423e2a"
+                }
+              ],
+              "createdAt": "2026-07-28T01:55:47.000Z",
+              "updatedAt": "2026-07-28T01:55:47.000Z",
+              "uid": "35240-9afaf4ed-52e6-4c07-a1fe-e72659964b2b"
+            },
+            {
+              "name": "Get Webhooks",
+              "id": "a6e8a1ec-f3d1-4f41-8a2a-b11058c7215f",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "apikey",
+                  "apikey": [
+                    {
+                      "key": "key",
+                      "value": "Authorization",
+                      "type": "string"
+                    },
+                    {
+                      "key": "value",
+                      "value": "{{apiKey}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "in",
+                      "value": "header",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v1/webhooks",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "webhooks"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "399f3647-5002-4282-a033-f4d136d18a49",
+                  "name": "Ok",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/webhooks",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "webhooks"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"data\": [\n    {\n      \"hmac_key\": \"<string>\",\n      \"config\": \"<string>\",\n      \"version\": \"<string>\",\n      \"destination\": \"<string>\",\n      \"created_at\": \"<string>\",\n      \"id\": \"<string>\"\n    },\n    {\n      \"hmac_key\": \"<string>\",\n      \"config\": \"<string>\",\n      \"version\": \"<string>\",\n      \"destination\": \"<string>\",\n      \"created_at\": \"<string>\",\n      \"id\": \"<string>\"\n    }\n  ],\n  \"error\": null\n}",
+                  "createdAt": "2026-07-28T01:55:48.000Z",
+                  "updatedAt": "2026-07-28T01:55:48.000Z",
+                  "uid": "35240-399f3647-5002-4282-a033-f4d136d18a49"
+                }
+              ],
+              "createdAt": "2026-07-28T01:55:47.000Z",
+              "updatedAt": "2026-07-28T01:55:47.000Z",
+              "uid": "35240-a6e8a1ec-f3d1-4f41-8a2a-b11058c7215f"
+            }
+          ],
+          "id": "0c117b6e-edfb-40e8-9af1-9e20749b7d6b",
+          "createdAt": "2026-07-28T01:55:47.000Z",
+          "updatedAt": "2026-07-28T01:55:47.000Z",
+          "uid": "35240-0c117b6e-edfb-40e8-9af1-9e20749b7d6b"
+        }
+      ],
+      "id": "d2bce6a7-3551-4b09-a92f-7ed366043917",
+      "createdAt": "2026-07-28T01:55:47.000Z",
+      "updatedAt": "2026-07-28T01:55:47.000Z",
+      "uid": "35240-d2bce6a7-3551-4b09-a92f-7ed366043917"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.helicone.ai/"
+    }
+  ]
+}

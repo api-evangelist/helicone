@@ -1,0 +1,186 @@
+{
+  "info": {
+    "_postman_id": "a30dc510-a99f-4bea-98da-c6da29d962d1",
+    "name": "helicone-api Agent Models API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:55:25.000Z",
+    "updatedAt": "2026-07-28T01:55:25.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-a30dc510-a99f-4bea-98da-c6da29d962d1"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "models",
+          "item": [
+            {
+              "name": "multimodal",
+              "item": [
+                {
+                  "name": "Get Multimodal Models",
+                  "id": "4f76a825-79f2-4698-8919-2601011b1399",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/models/multimodal",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "models",
+                        "multimodal"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "d9ea53a9-b720-4fed-a58f-968394d3107c",
+                      "name": "Ok",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/models/multimodal",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "models",
+                            "multimodal"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"object\": \"list\",\n  \"data\": [\n    {\n      \"id\": \"<string>\",\n      \"object\": \"model\",\n      \"created\": \"<double>\",\n      \"owned_by\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"object\": \"model\",\n      \"created\": \"<double>\",\n      \"owned_by\": \"<string>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T01:55:26.000Z",
+                      "updatedAt": "2026-07-28T01:55:26.000Z",
+                      "uid": "35240-d9ea53a9-b720-4fed-a58f-968394d3107c"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:55:26.000Z",
+                  "updatedAt": "2026-07-28T01:55:26.000Z",
+                  "uid": "35240-4f76a825-79f2-4698-8919-2601011b1399"
+                }
+              ],
+              "id": "53043cec-d527-46f9-accb-b1bdc629c8f0",
+              "createdAt": "2026-07-28T01:55:26.000Z",
+              "updatedAt": "2026-07-28T01:55:26.000Z",
+              "uid": "35240-53043cec-d527-46f9-accb-b1bdc629c8f0"
+            },
+            {
+              "name": "Get Models",
+              "id": "b45393d9-95a9-425b-a0c4-59b9f4269f9e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v1/models",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "models"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "ec70c8e6-79cf-4209-b213-ea9e5e346548",
+                  "name": "Ok",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/models",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "models"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"object\": \"list\",\n  \"data\": [\n    {\n      \"id\": \"<string>\",\n      \"object\": \"model\",\n      \"created\": \"<double>\",\n      \"owned_by\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"object\": \"model\",\n      \"created\": \"<double>\",\n      \"owned_by\": \"<string>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:55:26.000Z",
+                  "updatedAt": "2026-07-28T01:55:26.000Z",
+                  "uid": "35240-ec70c8e6-79cf-4209-b213-ea9e5e346548"
+                }
+              ],
+              "createdAt": "2026-07-28T01:55:26.000Z",
+              "updatedAt": "2026-07-28T01:55:26.000Z",
+              "uid": "35240-b45393d9-95a9-425b-a0c4-59b9f4269f9e"
+            }
+          ],
+          "id": "90c59e35-a186-4cfd-86ac-f57712406582",
+          "createdAt": "2026-07-28T01:55:26.000Z",
+          "updatedAt": "2026-07-28T01:55:26.000Z",
+          "uid": "35240-90c59e35-a186-4cfd-86ac-f57712406582"
+        }
+      ],
+      "id": "47c0d1c8-e9c3-4b6a-943e-4f7b031916f1",
+      "createdAt": "2026-07-28T01:55:26.000Z",
+      "updatedAt": "2026-07-28T01:55:26.000Z",
+      "uid": "35240-47c0d1c8-e9c3-4b6a-943e-4f7b031916f1"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.helicone.ai/"
+    }
+  ]
+}

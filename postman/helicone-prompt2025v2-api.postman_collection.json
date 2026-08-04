@@ -1,0 +1,451 @@
+{
+  "info": {
+    "_postman_id": "458c9f33-e842-4810-8a9e-a306e28915d9",
+    "name": "helicone-api Agent Prompt2025V2 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:55:34.000Z",
+    "updatedAt": "2026-07-28T01:55:34.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-458c9f33-e842-4810-8a9e-a306e28915d9"
+  },
+  "item": [
+    {
+      "name": "v2",
+      "item": [
+        {
+          "name": "prompt-2025",
+          "item": [
+            {
+              "name": "query",
+              "item": [
+                {
+                  "name": "version",
+                  "item": [
+                    {
+                      "name": "Get Prompt2025Version",
+                      "id": "1df95d9c-ee85-4e82-9763-60614c2446a4",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"promptVersionId\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v2/prompt-2025/query/version",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v2",
+                            "prompt-2025",
+                            "query",
+                            "version"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "0af0896e-458f-4209-b645-4835016758a5",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"promptVersionId\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v2/prompt-2025/query/version",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v2",
+                                "prompt-2025",
+                                "query",
+                                "version"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": {\n    \"id\": \"<string>\",\n    \"model\": \"<string>\",\n    \"prompt_id\": \"<string>\",\n    \"major_version\": \"<double>\",\n    \"minor_version\": \"<double>\",\n    \"commit_message\": \"<string>\",\n    \"created_at\": \"<string>\",\n    \"environments\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"s3_url\": \"<string>\",\n    \"prompt_body\": {\n      \"model\": \"<string>\",\n      \"messages\": [\n        {\n          \"content\": \"<string>\",\n          \"role\": \"<string>\",\n          \"tool_calls\": [\n            {\n              \"type\": \"function\",\n              \"function\": {\n                \"arguments\": \"<string>\",\n                \"name\": \"<string>\"\n              },\n              \"id\": \"<string>\"\n            },\n            {\n              \"type\": \"function\",\n              \"function\": {\n                \"arguments\": \"<string>\",\n                \"name\": \"<string>\"\n              },\n              \"id\": \"<string>\"\n            }\n          ],\n          \"tool_call_id\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"content\": \"<string>\",\n          \"role\": \"<string>\",\n          \"tool_calls\": [\n            {\n              \"type\": \"function\",\n              \"function\": {\n                \"arguments\": \"<string>\",\n                \"name\": \"<string>\"\n              },\n              \"id\": \"<string>\"\n            },\n            {\n              \"type\": \"function\",\n              \"function\": {\n                \"arguments\": \"<string>\",\n                \"name\": \"<string>\"\n              },\n              \"id\": \"<string>\"\n            }\n          ],\n          \"tool_call_id\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"temperature\": \"<double>\",\n      \"top_p\": \"<double>\",\n      \"max_tokens\": \"<double>\",\n      \"tools\": [\n        {\n          \"function\": {\n            \"parameters\": {\n              \"veniamc_\": {},\n              \"velit_2e\": {},\n              \"fugiatbe_\": {}\n            },\n            \"description\": \"<string>\",\n            \"name\": \"<string>\"\n          },\n          \"type\": \"function\"\n        },\n        {\n          \"function\": {\n            \"parameters\": {\n              \"esse_fa7\": {}\n            },\n            \"description\": \"<string>\",\n            \"name\": \"<string>\"\n          },\n          \"type\": \"function\"\n        }\n      ],\n      \"tool_choice\": \"<string>\"\n    }\n  },\n  \"error\": null\n}",
+                          "createdAt": "2026-07-28T01:55:34.000Z",
+                          "updatedAt": "2026-07-28T01:55:34.000Z",
+                          "uid": "35240-0af0896e-458f-4209-b645-4835016758a5"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:34.000Z",
+                      "updatedAt": "2026-07-28T01:55:34.000Z",
+                      "uid": "35240-1df95d9c-ee85-4e82-9763-60614c2446a4"
+                    }
+                  ],
+                  "id": "b3a2bcd4-744f-41a4-b9cb-b1d81c1dea81",
+                  "createdAt": "2026-07-28T01:55:34.000Z",
+                  "updatedAt": "2026-07-28T01:55:34.000Z",
+                  "uid": "35240-b3a2bcd4-744f-41a4-b9cb-b1d81c1dea81"
+                },
+                {
+                  "name": "environment-version",
+                  "item": [
+                    {
+                      "name": "Get Prompt2025Environment Version",
+                      "id": "8551ab31-c23e-4463-b999-98c961877648",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"environment\": \"<string>\",\n  \"promptId\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v2/prompt-2025/query/environment-version",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v2",
+                            "prompt-2025",
+                            "query",
+                            "environment-version"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "330afc20-86e6-438c-b0ec-bcd6f0aad7f1",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"environment\": \"<string>\",\n  \"promptId\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v2/prompt-2025/query/environment-version",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v2",
+                                "prompt-2025",
+                                "query",
+                                "environment-version"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": {\n    \"id\": \"<string>\",\n    \"model\": \"<string>\",\n    \"prompt_id\": \"<string>\",\n    \"major_version\": \"<double>\",\n    \"minor_version\": \"<double>\",\n    \"commit_message\": \"<string>\",\n    \"created_at\": \"<string>\",\n    \"environments\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"s3_url\": \"<string>\",\n    \"prompt_body\": {\n      \"model\": \"<string>\",\n      \"messages\": [\n        {\n          \"content\": \"<string>\",\n          \"role\": \"<string>\",\n          \"tool_calls\": [\n            {\n              \"type\": \"function\",\n              \"function\": {\n                \"arguments\": \"<string>\",\n                \"name\": \"<string>\"\n              },\n              \"id\": \"<string>\"\n            },\n            {\n              \"type\": \"function\",\n              \"function\": {\n                \"arguments\": \"<string>\",\n                \"name\": \"<string>\"\n              },\n              \"id\": \"<string>\"\n            }\n          ],\n          \"tool_call_id\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"content\": \"<string>\",\n          \"role\": \"<string>\",\n          \"tool_calls\": [\n            {\n              \"type\": \"function\",\n              \"function\": {\n                \"arguments\": \"<string>\",\n                \"name\": \"<string>\"\n              },\n              \"id\": \"<string>\"\n            },\n            {\n              \"type\": \"function\",\n              \"function\": {\n                \"arguments\": \"<string>\",\n                \"name\": \"<string>\"\n              },\n              \"id\": \"<string>\"\n            }\n          ],\n          \"tool_call_id\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"temperature\": \"<double>\",\n      \"top_p\": \"<double>\",\n      \"max_tokens\": \"<double>\",\n      \"tools\": [\n        {\n          \"function\": {\n            \"parameters\": {\n              \"veniamc_\": {},\n              \"velit_2e\": {},\n              \"fugiatbe_\": {}\n            },\n            \"description\": \"<string>\",\n            \"name\": \"<string>\"\n          },\n          \"type\": \"function\"\n        },\n        {\n          \"function\": {\n            \"parameters\": {\n              \"esse_fa7\": {}\n            },\n            \"description\": \"<string>\",\n            \"name\": \"<string>\"\n          },\n          \"type\": \"function\"\n        }\n      ],\n      \"tool_choice\": \"<string>\"\n    }\n  },\n  \"error\": null\n}",
+                          "createdAt": "2026-07-28T01:55:34.000Z",
+                          "updatedAt": "2026-07-28T01:55:34.000Z",
+                          "uid": "35240-330afc20-86e6-438c-b0ec-bcd6f0aad7f1"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:34.000Z",
+                      "updatedAt": "2026-07-28T01:55:34.000Z",
+                      "uid": "35240-8551ab31-c23e-4463-b999-98c961877648"
+                    }
+                  ],
+                  "id": "954a4a45-8c4c-437a-9aac-8f8a975d0582",
+                  "createdAt": "2026-07-28T01:55:34.000Z",
+                  "updatedAt": "2026-07-28T01:55:34.000Z",
+                  "uid": "35240-954a4a45-8c4c-437a-9aac-8f8a975d0582"
+                },
+                {
+                  "name": "production-version",
+                  "item": [
+                    {
+                      "name": "Get Prompt2025Production Version",
+                      "id": "c920002f-9f0f-47d5-846a-de741c6b5986",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"promptId\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v2/prompt-2025/query/production-version",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v2",
+                            "prompt-2025",
+                            "query",
+                            "production-version"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "71cb9f8a-35e1-4b65-bfa7-b374953192ee",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"promptId\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v2/prompt-2025/query/production-version",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v2",
+                                "prompt-2025",
+                                "query",
+                                "production-version"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": {\n    \"id\": \"<string>\",\n    \"model\": \"<string>\",\n    \"prompt_id\": \"<string>\",\n    \"major_version\": \"<double>\",\n    \"minor_version\": \"<double>\",\n    \"commit_message\": \"<string>\",\n    \"created_at\": \"<string>\",\n    \"environments\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"s3_url\": \"<string>\",\n    \"prompt_body\": {\n      \"model\": \"<string>\",\n      \"messages\": [\n        {\n          \"content\": \"<string>\",\n          \"role\": \"<string>\",\n          \"tool_calls\": [\n            {\n              \"type\": \"function\",\n              \"function\": {\n                \"arguments\": \"<string>\",\n                \"name\": \"<string>\"\n              },\n              \"id\": \"<string>\"\n            },\n            {\n              \"type\": \"function\",\n              \"function\": {\n                \"arguments\": \"<string>\",\n                \"name\": \"<string>\"\n              },\n              \"id\": \"<string>\"\n            }\n          ],\n          \"tool_call_id\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"content\": \"<string>\",\n          \"role\": \"<string>\",\n          \"tool_calls\": [\n            {\n              \"type\": \"function\",\n              \"function\": {\n                \"arguments\": \"<string>\",\n                \"name\": \"<string>\"\n              },\n              \"id\": \"<string>\"\n            },\n            {\n              \"type\": \"function\",\n              \"function\": {\n                \"arguments\": \"<string>\",\n                \"name\": \"<string>\"\n              },\n              \"id\": \"<string>\"\n            }\n          ],\n          \"tool_call_id\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"temperature\": \"<double>\",\n      \"top_p\": \"<double>\",\n      \"max_tokens\": \"<double>\",\n      \"tools\": [\n        {\n          \"function\": {\n            \"parameters\": {\n              \"veniamc_\": {},\n              \"velit_2e\": {},\n              \"fugiatbe_\": {}\n            },\n            \"description\": \"<string>\",\n            \"name\": \"<string>\"\n          },\n          \"type\": \"function\"\n        },\n        {\n          \"function\": {\n            \"parameters\": {\n              \"esse_fa7\": {}\n            },\n            \"description\": \"<string>\",\n            \"name\": \"<string>\"\n          },\n          \"type\": \"function\"\n        }\n      ],\n      \"tool_choice\": \"<string>\"\n    }\n  },\n  \"error\": null\n}",
+                          "createdAt": "2026-07-28T01:55:34.000Z",
+                          "updatedAt": "2026-07-28T01:55:34.000Z",
+                          "uid": "35240-71cb9f8a-35e1-4b65-bfa7-b374953192ee"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:34.000Z",
+                      "updatedAt": "2026-07-28T01:55:34.000Z",
+                      "uid": "35240-c920002f-9f0f-47d5-846a-de741c6b5986"
+                    }
+                  ],
+                  "id": "642cd0bc-e713-4282-97b3-f5c6c5fb0e70",
+                  "createdAt": "2026-07-28T01:55:34.000Z",
+                  "updatedAt": "2026-07-28T01:55:34.000Z",
+                  "uid": "35240-642cd0bc-e713-4282-97b3-f5c6c5fb0e70"
+                }
+              ],
+              "id": "fbabdf38-f17f-479c-a22b-ccefad256a8d",
+              "createdAt": "2026-07-28T01:55:34.000Z",
+              "updatedAt": "2026-07-28T01:55:34.000Z",
+              "uid": "35240-fbabdf38-f17f-479c-a22b-ccefad256a8d"
+            }
+          ],
+          "id": "08db832a-4221-4e1e-a6f1-ced526b811da",
+          "createdAt": "2026-07-28T01:55:34.000Z",
+          "updatedAt": "2026-07-28T01:55:34.000Z",
+          "uid": "35240-08db832a-4221-4e1e-a6f1-ced526b811da"
+        }
+      ],
+      "id": "b83eecc1-4629-48b3-870e-0708a26de496",
+      "createdAt": "2026-07-28T01:55:34.000Z",
+      "updatedAt": "2026-07-28T01:55:34.000Z",
+      "uid": "35240-b83eecc1-4629-48b3-870e-0708a26de496"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.helicone.ai/"
+    }
+  ]
+}

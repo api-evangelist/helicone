@@ -1,0 +1,3023 @@
+{
+  "info": {
+    "_postman_id": "35dc3c93-a0b9-43c5-a69a-d6f961cb3809",
+    "name": "helicone-api Agent Stripe API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:55:42.000Z",
+    "updatedAt": "2026-07-28T01:55:42.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-35dc3c93-a0b9-43c5-a69a-d6f961cb3809"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "stripe",
+          "item": [
+            {
+              "name": "subscription",
+              "item": [
+                {
+                  "name": "cost-for-prompts",
+                  "item": [
+                    {
+                      "name": "Get Cost For Prompts",
+                      "id": "5728c15e-0c03-42fd-9521-fab98a2a39c6",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/stripe/subscription/cost-for-prompts",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "stripe",
+                            "subscription",
+                            "cost-for-prompts"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "2b08f581-77cf-4002-885a-423a503d11b2",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/stripe/subscription/cost-for-prompts",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "stripe",
+                                "subscription",
+                                "cost-for-prompts"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "<double>",
+                          "createdAt": "2026-07-28T01:55:43.000Z",
+                          "updatedAt": "2026-07-28T01:55:43.000Z",
+                          "uid": "35240-2b08f581-77cf-4002-885a-423a503d11b2"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:43.000Z",
+                      "updatedAt": "2026-07-28T01:55:43.000Z",
+                      "uid": "35240-5728c15e-0c03-42fd-9521-fab98a2a39c6"
+                    }
+                  ],
+                  "id": "c9ecdd64-779e-4009-9454-4a1725d25e55",
+                  "createdAt": "2026-07-28T01:55:43.000Z",
+                  "updatedAt": "2026-07-28T01:55:43.000Z",
+                  "uid": "35240-c9ecdd64-779e-4009-9454-4a1725d25e55"
+                },
+                {
+                  "name": "cost-for-evals",
+                  "item": [
+                    {
+                      "name": "Get Cost For Evals",
+                      "id": "6f124dd8-a3f2-4fb9-9b46-498f205b715a",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/stripe/subscription/cost-for-evals",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "stripe",
+                            "subscription",
+                            "cost-for-evals"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "06fd135f-1a8a-4d99-9768-08c42cc2f131",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/stripe/subscription/cost-for-evals",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "stripe",
+                                "subscription",
+                                "cost-for-evals"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "<double>",
+                          "createdAt": "2026-07-28T01:55:43.000Z",
+                          "updatedAt": "2026-07-28T01:55:43.000Z",
+                          "uid": "35240-06fd135f-1a8a-4d99-9768-08c42cc2f131"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:43.000Z",
+                      "updatedAt": "2026-07-28T01:55:43.000Z",
+                      "uid": "35240-6f124dd8-a3f2-4fb9-9b46-498f205b715a"
+                    }
+                  ],
+                  "id": "e70e8833-e346-4279-a8f8-7c48eb2e2097",
+                  "createdAt": "2026-07-28T01:55:43.000Z",
+                  "updatedAt": "2026-07-28T01:55:43.000Z",
+                  "uid": "35240-e70e8833-e346-4279-a8f8-7c48eb2e2097"
+                },
+                {
+                  "name": "cost-for-experiments",
+                  "item": [
+                    {
+                      "name": "Get Cost For Experiments",
+                      "id": "423dba13-0b7c-42f6-8d34-3f891404d0c4",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/stripe/subscription/cost-for-experiments",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "stripe",
+                            "subscription",
+                            "cost-for-experiments"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "af5c83fc-b6dd-4361-9f68-b239dd64658d",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/stripe/subscription/cost-for-experiments",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "stripe",
+                                "subscription",
+                                "cost-for-experiments"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "<double>",
+                          "createdAt": "2026-07-28T01:55:43.000Z",
+                          "updatedAt": "2026-07-28T01:55:43.000Z",
+                          "uid": "35240-af5c83fc-b6dd-4361-9f68-b239dd64658d"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:43.000Z",
+                      "updatedAt": "2026-07-28T01:55:43.000Z",
+                      "uid": "35240-423dba13-0b7c-42f6-8d34-3f891404d0c4"
+                    }
+                  ],
+                  "id": "a18100e8-e923-4010-8aef-fa22727b2443",
+                  "createdAt": "2026-07-28T01:55:43.000Z",
+                  "updatedAt": "2026-07-28T01:55:43.000Z",
+                  "uid": "35240-a18100e8-e923-4010-8aef-fa22727b2443"
+                },
+                {
+                  "name": "free",
+                  "item": [
+                    {
+                      "name": "usage",
+                      "item": [
+                        {
+                          "name": "Get Free Usage",
+                          "id": "c6b317b0-cd12-45ce-8519-4da7dcfc990e",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "apikey",
+                              "apikey": [
+                                {
+                                  "key": "key",
+                                  "value": "Authorization",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "value",
+                                  "value": "{{apiKey}}",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "in",
+                                  "value": "header",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/stripe/subscription/free/usage",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "stripe",
+                                "subscription",
+                                "free",
+                                "usage"
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "5e147981-d522-4f2c-bc3e-294378cc72a8",
+                              "name": "Ok",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Authorization",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/v1/stripe/subscription/free/usage",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "v1",
+                                    "stripe",
+                                    "subscription",
+                                    "free",
+                                    "usage"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "<double>",
+                              "createdAt": "2026-07-28T01:55:43.000Z",
+                              "updatedAt": "2026-07-28T01:55:43.000Z",
+                              "uid": "35240-5e147981-d522-4f2c-bc3e-294378cc72a8"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:55:43.000Z",
+                          "updatedAt": "2026-07-28T01:55:43.000Z",
+                          "uid": "35240-c6b317b0-cd12-45ce-8519-4da7dcfc990e"
+                        }
+                      ],
+                      "id": "ddc3d755-2be2-4d42-888b-1d8583719a7e",
+                      "createdAt": "2026-07-28T01:55:43.000Z",
+                      "updatedAt": "2026-07-28T01:55:43.000Z",
+                      "uid": "35240-ddc3d755-2be2-4d42-888b-1d8583719a7e"
+                    }
+                  ],
+                  "id": "48f66c2f-8fe3-44bd-86f9-20849bafcddb",
+                  "createdAt": "2026-07-28T01:55:43.000Z",
+                  "updatedAt": "2026-07-28T01:55:43.000Z",
+                  "uid": "35240-48f66c2f-8fe3-44bd-86f9-20849bafcddb"
+                },
+                {
+                  "name": "new-customer",
+                  "item": [
+                    {
+                      "name": "upgrade-to-pro",
+                      "item": [
+                        {
+                          "name": "Upgrade To Pro",
+                          "id": "4b6c2d36-8f0e-4e45-9969-46ebd0d35d7d",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "apikey",
+                              "apikey": [
+                                {
+                                  "key": "key",
+                                  "value": "Authorization",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "value",
+                                  "value": "{{apiKey}}",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "in",
+                                  "value": "header",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"addons\": {\n    \"evals\": \"<boolean>\",\n    \"experiments\": \"<boolean>\",\n    \"prompts\": \"<boolean>\",\n    \"alerts\": \"<boolean>\"\n  },\n  \"seats\": \"<double>\",\n  \"ui_mode\": \"hosted\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/stripe/subscription/new-customer/upgrade-to-pro",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "stripe",
+                                "subscription",
+                                "new-customer",
+                                "upgrade-to-pro"
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "a1e18e09-1925-4666-908a-dbbe0a625f74",
+                              "name": "Ok",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Authorization",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"addons\": {\n    \"evals\": \"<boolean>\",\n    \"experiments\": \"<boolean>\",\n    \"prompts\": \"<boolean>\",\n    \"alerts\": \"<boolean>\"\n  },\n  \"seats\": \"<double>\",\n  \"ui_mode\": \"hosted\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/v1/stripe/subscription/new-customer/upgrade-to-pro",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "v1",
+                                    "stripe",
+                                    "subscription",
+                                    "new-customer",
+                                    "upgrade-to-pro"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "<string>",
+                              "createdAt": "2026-07-28T01:55:43.000Z",
+                              "updatedAt": "2026-07-28T01:55:43.000Z",
+                              "uid": "35240-a1e18e09-1925-4666-908a-dbbe0a625f74"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:55:43.000Z",
+                          "updatedAt": "2026-07-28T01:55:43.000Z",
+                          "uid": "35240-4b6c2d36-8f0e-4e45-9969-46ebd0d35d7d"
+                        }
+                      ],
+                      "id": "0aef3d4a-e2c5-4dd6-92ce-53b25d3a396c",
+                      "createdAt": "2026-07-28T01:55:43.000Z",
+                      "updatedAt": "2026-07-28T01:55:43.000Z",
+                      "uid": "35240-0aef3d4a-e2c5-4dd6-92ce-53b25d3a396c"
+                    },
+                    {
+                      "name": "upgrade-to-team-bundle",
+                      "item": [
+                        {
+                          "name": "Upgrade To Team Bundle",
+                          "id": "af6d3e3d-2ca5-4cf9-9bcf-75dc258f7022",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "apikey",
+                              "apikey": [
+                                {
+                                  "key": "key",
+                                  "value": "Authorization",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "value",
+                                  "value": "{{apiKey}}",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "in",
+                                  "value": "header",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"ui_mode\": \"embedded\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/stripe/subscription/new-customer/upgrade-to-team-bundle",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "stripe",
+                                "subscription",
+                                "new-customer",
+                                "upgrade-to-team-bundle"
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "f193d06e-7828-4158-b5c1-5b901abc11ba",
+                              "name": "Ok",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Authorization",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"ui_mode\": \"embedded\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/v1/stripe/subscription/new-customer/upgrade-to-team-bundle",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "v1",
+                                    "stripe",
+                                    "subscription",
+                                    "new-customer",
+                                    "upgrade-to-team-bundle"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "<string>",
+                              "createdAt": "2026-07-28T01:55:43.000Z",
+                              "updatedAt": "2026-07-28T01:55:43.000Z",
+                              "uid": "35240-f193d06e-7828-4158-b5c1-5b901abc11ba"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:55:43.000Z",
+                          "updatedAt": "2026-07-28T01:55:43.000Z",
+                          "uid": "35240-af6d3e3d-2ca5-4cf9-9bcf-75dc258f7022"
+                        }
+                      ],
+                      "id": "b863c29d-b45f-4b11-a332-29edfff098d5",
+                      "createdAt": "2026-07-28T01:55:43.000Z",
+                      "updatedAt": "2026-07-28T01:55:43.000Z",
+                      "uid": "35240-b863c29d-b45f-4b11-a332-29edfff098d5"
+                    }
+                  ],
+                  "id": "d8d56dd8-aae6-42b1-b94a-9f5d7ac062fc",
+                  "createdAt": "2026-07-28T01:55:43.000Z",
+                  "updatedAt": "2026-07-28T01:55:43.000Z",
+                  "uid": "35240-d8d56dd8-aae6-42b1-b94a-9f5d7ac062fc"
+                },
+                {
+                  "name": "existing-customer",
+                  "item": [
+                    {
+                      "name": "upgrade-to-pro",
+                      "item": [
+                        {
+                          "name": "Upgrade Existing Customer",
+                          "id": "757f00aa-92f5-46ab-b588-edea72af166b",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "apikey",
+                              "apikey": [
+                                {
+                                  "key": "key",
+                                  "value": "Authorization",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "value",
+                                  "value": "{{apiKey}}",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "in",
+                                  "value": "header",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"addons\": {\n    \"evals\": \"<boolean>\",\n    \"experiments\": \"<boolean>\",\n    \"prompts\": \"<boolean>\",\n    \"alerts\": \"<boolean>\"\n  },\n  \"seats\": \"<double>\",\n  \"ui_mode\": \"hosted\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/stripe/subscription/existing-customer/upgrade-to-pro",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "stripe",
+                                "subscription",
+                                "existing-customer",
+                                "upgrade-to-pro"
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "70088726-05b6-4d16-b946-e7a02d184869",
+                              "name": "Ok",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Authorization",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"addons\": {\n    \"evals\": \"<boolean>\",\n    \"experiments\": \"<boolean>\",\n    \"prompts\": \"<boolean>\",\n    \"alerts\": \"<boolean>\"\n  },\n  \"seats\": \"<double>\",\n  \"ui_mode\": \"hosted\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/v1/stripe/subscription/existing-customer/upgrade-to-pro",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "v1",
+                                    "stripe",
+                                    "subscription",
+                                    "existing-customer",
+                                    "upgrade-to-pro"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "<string>",
+                              "createdAt": "2026-07-28T01:55:43.000Z",
+                              "updatedAt": "2026-07-28T01:55:43.000Z",
+                              "uid": "35240-70088726-05b6-4d16-b946-e7a02d184869"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:55:43.000Z",
+                          "updatedAt": "2026-07-28T01:55:43.000Z",
+                          "uid": "35240-757f00aa-92f5-46ab-b588-edea72af166b"
+                        }
+                      ],
+                      "id": "f03ea51b-4010-4c0b-80e4-a33e75c45164",
+                      "createdAt": "2026-07-28T01:55:43.000Z",
+                      "updatedAt": "2026-07-28T01:55:43.000Z",
+                      "uid": "35240-f03ea51b-4010-4c0b-80e4-a33e75c45164"
+                    },
+                    {
+                      "name": "upgrade-to-team-bundle",
+                      "item": [
+                        {
+                          "name": "Upgrade Existing Customer To Team Bundle",
+                          "id": "29022a08-9931-4e8c-8fe4-7e87bee3c7a2",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "apikey",
+                              "apikey": [
+                                {
+                                  "key": "key",
+                                  "value": "Authorization",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "value",
+                                  "value": "{{apiKey}}",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "in",
+                                  "value": "header",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"ui_mode\": \"embedded\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/stripe/subscription/existing-customer/upgrade-to-team-bundle",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "stripe",
+                                "subscription",
+                                "existing-customer",
+                                "upgrade-to-team-bundle"
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "1496d2bc-4822-43c7-bddd-6f2f23af4116",
+                              "name": "Ok",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Authorization",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"ui_mode\": \"embedded\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/v1/stripe/subscription/existing-customer/upgrade-to-team-bundle",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "v1",
+                                    "stripe",
+                                    "subscription",
+                                    "existing-customer",
+                                    "upgrade-to-team-bundle"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "<string>",
+                              "createdAt": "2026-07-28T01:55:43.000Z",
+                              "updatedAt": "2026-07-28T01:55:43.000Z",
+                              "uid": "35240-1496d2bc-4822-43c7-bddd-6f2f23af4116"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:55:43.000Z",
+                          "updatedAt": "2026-07-28T01:55:43.000Z",
+                          "uid": "35240-29022a08-9931-4e8c-8fe4-7e87bee3c7a2"
+                        }
+                      ],
+                      "id": "b65ed52d-560a-401a-846d-5cd481d5c4e9",
+                      "createdAt": "2026-07-28T01:55:43.000Z",
+                      "updatedAt": "2026-07-28T01:55:43.000Z",
+                      "uid": "35240-b65ed52d-560a-401a-846d-5cd481d5c4e9"
+                    }
+                  ],
+                  "id": "e318011d-efa0-40a5-9185-53a60afbaa49",
+                  "createdAt": "2026-07-28T01:55:43.000Z",
+                  "updatedAt": "2026-07-28T01:55:43.000Z",
+                  "uid": "35240-e318011d-efa0-40a5-9185-53a60afbaa49"
+                },
+                {
+                  "name": "manage-subscription",
+                  "item": [
+                    {
+                      "name": "Manage Subscription",
+                      "id": "84bce4c0-a994-4401-bedb-ed2a2f66fdb7",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/stripe/subscription/manage-subscription",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "stripe",
+                            "subscription",
+                            "manage-subscription"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "0fe1dddb-7870-44b2-90f7-932cd232a5be",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/stripe/subscription/manage-subscription",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "stripe",
+                                "subscription",
+                                "manage-subscription"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "<string>",
+                          "createdAt": "2026-07-28T01:55:43.000Z",
+                          "updatedAt": "2026-07-28T01:55:43.000Z",
+                          "uid": "35240-0fe1dddb-7870-44b2-90f7-932cd232a5be"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:43.000Z",
+                      "updatedAt": "2026-07-28T01:55:43.000Z",
+                      "uid": "35240-84bce4c0-a994-4401-bedb-ed2a2f66fdb7"
+                    }
+                  ],
+                  "id": "9089a248-f10a-4cb2-8bd1-a93fcd05779b",
+                  "createdAt": "2026-07-28T01:55:43.000Z",
+                  "updatedAt": "2026-07-28T01:55:43.000Z",
+                  "uid": "35240-9089a248-f10a-4cb2-8bd1-a93fcd05779b"
+                },
+                {
+                  "name": "undo-cancel-subscription",
+                  "item": [
+                    {
+                      "name": "Undo Cancel Subscription",
+                      "id": "8da00089-300e-454d-ab9c-a255f1f8a4ef",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/stripe/subscription/undo-cancel-subscription",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "stripe",
+                            "subscription",
+                            "undo-cancel-subscription"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "b3fd4341-acc3-4c7b-8faf-7f4b033bc1b0",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/stripe/subscription/undo-cancel-subscription",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "stripe",
+                                "subscription",
+                                "undo-cancel-subscription"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "null",
+                          "createdAt": "2026-07-28T01:55:43.000Z",
+                          "updatedAt": "2026-07-28T01:55:43.000Z",
+                          "uid": "35240-b3fd4341-acc3-4c7b-8faf-7f4b033bc1b0"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:43.000Z",
+                      "updatedAt": "2026-07-28T01:55:43.000Z",
+                      "uid": "35240-8da00089-300e-454d-ab9c-a255f1f8a4ef"
+                    }
+                  ],
+                  "id": "b9fdc76e-9cba-4e84-af56-a1a2fe677a18",
+                  "createdAt": "2026-07-28T01:55:43.000Z",
+                  "updatedAt": "2026-07-28T01:55:43.000Z",
+                  "uid": "35240-b9fdc76e-9cba-4e84-af56-a1a2fe677a18"
+                },
+                {
+                  "name": "add-ons",
+                  "item": [
+                    {
+                      "name": "{productType}",
+                      "item": [
+                        {
+                          "name": "Add Ons",
+                          "id": "ff326272-8e7f-4ba4-94da-4de0e5ea313f",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "apikey",
+                              "apikey": [
+                                {
+                                  "key": "key",
+                                  "value": "Authorization",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "value",
+                                  "value": "{{apiKey}}",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "in",
+                                  "value": "header",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/stripe/subscription/add-ons/:productType",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "stripe",
+                                "subscription",
+                                "add-ons",
+                                ":productType"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "2a7653ba-6107-4627-b47d-c3e2e8ebf4f2",
+                                  "key": "productType",
+                                  "value": "evals",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "5764f38f-8cc3-44c2-bc21-9be8aca599cf",
+                              "name": "Ok",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Authorization",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/v1/stripe/subscription/add-ons/:productType",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "v1",
+                                    "stripe",
+                                    "subscription",
+                                    "add-ons",
+                                    ":productType"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "productType"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "null",
+                              "createdAt": "2026-07-28T01:55:43.000Z",
+                              "updatedAt": "2026-07-28T01:55:43.000Z",
+                              "uid": "35240-5764f38f-8cc3-44c2-bc21-9be8aca599cf"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:55:43.000Z",
+                          "updatedAt": "2026-07-28T01:55:43.000Z",
+                          "uid": "35240-ff326272-8e7f-4ba4-94da-4de0e5ea313f"
+                        },
+                        {
+                          "name": "Delete Add Ons",
+                          "id": "7d21cd03-6b8f-44b3-bccd-1994271779a8",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "apikey",
+                              "apikey": [
+                                {
+                                  "key": "key",
+                                  "value": "Authorization",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "value",
+                                  "value": "{{apiKey}}",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "in",
+                                  "value": "header",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/stripe/subscription/add-ons/:productType",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "stripe",
+                                "subscription",
+                                "add-ons",
+                                ":productType"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "8578b0ed-1408-457e-a278-a45605df650a",
+                                  "key": "productType",
+                                  "value": "evals",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "903b07f9-c8ea-413c-aa80-c4a765bb79f0",
+                              "name": "Ok",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Authorization",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/v1/stripe/subscription/add-ons/:productType",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "v1",
+                                    "stripe",
+                                    "subscription",
+                                    "add-ons",
+                                    ":productType"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "productType"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "null",
+                              "createdAt": "2026-07-28T01:55:43.000Z",
+                              "updatedAt": "2026-07-28T01:55:43.000Z",
+                              "uid": "35240-903b07f9-c8ea-413c-aa80-c4a765bb79f0"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:55:43.000Z",
+                          "updatedAt": "2026-07-28T01:55:43.000Z",
+                          "uid": "35240-7d21cd03-6b8f-44b3-bccd-1994271779a8"
+                        }
+                      ],
+                      "id": "9ed4cc60-8cca-4105-9352-a8a7e4083574",
+                      "createdAt": "2026-07-28T01:55:43.000Z",
+                      "updatedAt": "2026-07-28T01:55:43.000Z",
+                      "uid": "35240-9ed4cc60-8cca-4105-9352-a8a7e4083574"
+                    }
+                  ],
+                  "id": "822c1d8b-6c7e-4da2-b84b-8c38127df04d",
+                  "createdAt": "2026-07-28T01:55:43.000Z",
+                  "updatedAt": "2026-07-28T01:55:43.000Z",
+                  "uid": "35240-822c1d8b-6c7e-4da2-b84b-8c38127df04d"
+                },
+                {
+                  "name": "preview-invoice",
+                  "item": [
+                    {
+                      "name": "Preview Invoice",
+                      "id": "bc39128e-415b-4504-b7ca-6cbb6c7975db",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/stripe/subscription/preview-invoice",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "stripe",
+                            "subscription",
+                            "preview-invoice"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "c99762b0-c74a-4ece-ad9a-ef697a80fd69",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/stripe/subscription/preview-invoice",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "stripe",
+                                "subscription",
+                                "preview-invoice"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"evaluators_usage\": [\n    {\n      \"model\": \"<string>\",\n      \"provider\": \"<string>\",\n      \"prompt_tokens\": \"<double>\",\n      \"completion_tokens\": \"<double>\",\n      \"total_count\": \"<double>\",\n      \"amount\": \"<double>\",\n      \"description\": \"<string>\",\n      \"totalCost\": {\n        \"prompt_token\": \"<double>\",\n        \"completion_token\": \"<double>\"\n      }\n    },\n    {\n      \"model\": \"<string>\",\n      \"provider\": \"<string>\",\n      \"prompt_tokens\": \"<double>\",\n      \"completion_tokens\": \"<double>\",\n      \"total_count\": \"<double>\",\n      \"amount\": \"<double>\",\n      \"description\": \"<string>\",\n      \"totalCost\": {\n        \"prompt_token\": \"<double>\",\n        \"completion_token\": \"<double>\"\n      }\n    }\n  ],\n  \"experiments_usage\": [\n    {\n      \"model\": \"<string>\",\n      \"provider\": \"<string>\",\n      \"prompt_tokens\": \"<double>\",\n      \"completion_tokens\": \"<double>\",\n      \"total_count\": \"<double>\",\n      \"amount\": \"<double>\",\n      \"description\": \"<string>\",\n      \"totalCost\": {\n        \"prompt_token\": \"<double>\",\n        \"completion_token\": \"<double>\"\n      }\n    },\n    {\n      \"model\": \"<string>\",\n      \"provider\": \"<string>\",\n      \"prompt_tokens\": \"<double>\",\n      \"completion_tokens\": \"<double>\",\n      \"total_count\": \"<double>\",\n      \"amount\": \"<double>\",\n      \"description\": \"<string>\",\n      \"totalCost\": {\n        \"prompt_token\": \"<double>\",\n        \"completion_token\": \"<double>\"\n      }\n    }\n  ],\n  \"total\": \"<double>\",\n  \"tax\": \"<double>\",\n  \"subtotal\": \"<double>\",\n  \"discount\": {\n    \"coupon\": {\n      \"amount_off\": \"<double>\",\n      \"percent_off\": \"<double>\",\n      \"name\": \"<string>\"\n    }\n  },\n  \"lines\": {\n    \"data\": [\n      {\n        \"description\": \"<string>\",\n        \"amount\": \"<double>\",\n        \"id\": \"<string>\"\n      },\n      {\n        \"description\": \"<string>\",\n        \"amount\": \"<double>\",\n        \"id\": \"<string>\"\n      }\n    ]\n  },\n  \"next_payment_attempt\": \"<double>\",\n  \"currency\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T01:55:43.000Z",
+                          "updatedAt": "2026-07-28T01:55:43.000Z",
+                          "uid": "35240-c99762b0-c74a-4ece-ad9a-ef697a80fd69"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:43.000Z",
+                      "updatedAt": "2026-07-28T01:55:43.000Z",
+                      "uid": "35240-bc39128e-415b-4504-b7ca-6cbb6c7975db"
+                    }
+                  ],
+                  "id": "64b01b90-7f38-4952-8b82-39f318d0d84d",
+                  "createdAt": "2026-07-28T01:55:43.000Z",
+                  "updatedAt": "2026-07-28T01:55:43.000Z",
+                  "uid": "35240-64b01b90-7f38-4952-8b82-39f318d0d84d"
+                },
+                {
+                  "name": "cancel-subscription",
+                  "item": [
+                    {
+                      "name": "Cancel Subscription",
+                      "id": "e6085758-01bf-4caf-8dcc-a47cc64bd29e",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/stripe/subscription/cancel-subscription",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "stripe",
+                            "subscription",
+                            "cancel-subscription"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "6de76510-347a-47cc-992d-035aa1135fb1",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/stripe/subscription/cancel-subscription",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "stripe",
+                                "subscription",
+                                "cancel-subscription"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "null",
+                          "createdAt": "2026-07-28T01:55:43.000Z",
+                          "updatedAt": "2026-07-28T01:55:43.000Z",
+                          "uid": "35240-6de76510-347a-47cc-992d-035aa1135fb1"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:43.000Z",
+                      "updatedAt": "2026-07-28T01:55:43.000Z",
+                      "uid": "35240-e6085758-01bf-4caf-8dcc-a47cc64bd29e"
+                    }
+                  ],
+                  "id": "3762a17e-dc55-4732-9bd9-bb81477f76f2",
+                  "createdAt": "2026-07-28T01:55:43.000Z",
+                  "updatedAt": "2026-07-28T01:55:43.000Z",
+                  "uid": "35240-3762a17e-dc55-4732-9bd9-bb81477f76f2"
+                },
+                {
+                  "name": "migrate-to-pro",
+                  "item": [
+                    {
+                      "name": "Migrate To Pro",
+                      "id": "1bdd53b1-388b-4102-9f67-9392037e6580",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/stripe/subscription/migrate-to-pro",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "stripe",
+                            "subscription",
+                            "migrate-to-pro"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "dfd9f802-b8e0-401d-95a5-1187770342c5",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/stripe/subscription/migrate-to-pro",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "stripe",
+                                "subscription",
+                                "migrate-to-pro"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T01:55:43.000Z",
+                          "updatedAt": "2026-07-28T01:55:43.000Z",
+                          "uid": "35240-dfd9f802-b8e0-401d-95a5-1187770342c5"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:43.000Z",
+                      "updatedAt": "2026-07-28T01:55:43.000Z",
+                      "uid": "35240-1bdd53b1-388b-4102-9f67-9392037e6580"
+                    }
+                  ],
+                  "id": "b9d661d4-e65e-481a-a00a-f92aef18114a",
+                  "createdAt": "2026-07-28T01:55:43.000Z",
+                  "updatedAt": "2026-07-28T01:55:43.000Z",
+                  "uid": "35240-b9d661d4-e65e-481a-a00a-f92aef18114a"
+                },
+                {
+                  "name": "usage-stats",
+                  "item": [
+                    {
+                      "name": "Get Usage Stats",
+                      "id": "14b46e8f-4661-4e8f-85a0-f0aa9edc586e",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/stripe/subscription/usage-stats",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "stripe",
+                            "subscription",
+                            "usage-stats"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "1b3a35fc-61b2-418f-9bc8-2519390e49cd",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/stripe/subscription/usage-stats",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "stripe",
+                                "subscription",
+                                "usage-stats"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"billingPeriod\": {\n    \"daysTotal\": \"<double>\",\n    \"daysElapsed\": \"<double>\",\n    \"end\": \"<string>\",\n    \"start\": \"<string>\"\n  },\n  \"usage\": {\n    \"totalGB\": \"<double>\",\n    \"totalBytes\": \"<double>\",\n    \"totalRequests\": \"<double>\"\n  },\n  \"dailyData\": [\n    {\n      \"date\": \"<string>\",\n      \"requests\": \"<double>\",\n      \"bytes\": \"<double>\"\n    },\n    {\n      \"date\": \"<string>\",\n      \"requests\": \"<double>\",\n      \"bytes\": \"<double>\"\n    }\n  ],\n  \"estimatedCost\": {\n    \"projectedMonthlyTotalCost\": \"<double>\",\n    \"projectedMonthlyGBCost\": \"<double>\",\n    \"projectedMonthlyRequestsCost\": \"<double>\",\n    \"totalCost\": \"<double>\",\n    \"gbCost\": \"<double>\",\n    \"requestsCost\": \"<double>\"\n  }\n}",
+                          "createdAt": "2026-07-28T01:55:43.000Z",
+                          "updatedAt": "2026-07-28T01:55:43.000Z",
+                          "uid": "35240-1b3a35fc-61b2-418f-9bc8-2519390e49cd"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:43.000Z",
+                      "updatedAt": "2026-07-28T01:55:43.000Z",
+                      "uid": "35240-14b46e8f-4661-4e8f-85a0-f0aa9edc586e"
+                    }
+                  ],
+                  "id": "c98ac34e-e758-4c06-8268-d81314e08ac5",
+                  "createdAt": "2026-07-28T01:55:43.000Z",
+                  "updatedAt": "2026-07-28T01:55:43.000Z",
+                  "uid": "35240-c98ac34e-e758-4c06-8268-d81314e08ac5"
+                },
+                {
+                  "name": "Get Subscription",
+                  "id": "707c08e4-58e5-4f48-9d22-1e41fb88b109",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "apikey",
+                      "apikey": [
+                        {
+                          "key": "key",
+                          "value": "Authorization",
+                          "type": "string"
+                        },
+                        {
+                          "key": "value",
+                          "value": "{{apiKey}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "in",
+                          "value": "header",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/stripe/subscription",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "stripe",
+                        "subscription"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "dcfbf716-c1c8-46d0-8934-460608011f32",
+                      "name": "Ok",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/stripe/subscription",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "stripe",
+                            "subscription"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"items\": [\n    {\n      \"price\": {\n        \"product\": {\n          \"name\": \"<string>\"\n        }\n      },\n      \"quantity\": \"<double>\"\n    },\n    {\n      \"price\": {\n        \"product\": {\n          \"name\": \"<string>\"\n        }\n      },\n      \"quantity\": \"<double>\"\n    }\n  ],\n  \"trial_end\": \"<double>\",\n  \"id\": \"<string>\",\n  \"current_period_start\": \"<double>\",\n  \"current_period_end\": \"<double>\",\n  \"cancel_at_period_end\": \"<boolean>\",\n  \"status\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T01:55:43.000Z",
+                      "updatedAt": "2026-07-28T01:55:43.000Z",
+                      "uid": "35240-dcfbf716-c1c8-46d0-8934-460608011f32"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:55:43.000Z",
+                  "updatedAt": "2026-07-28T01:55:43.000Z",
+                  "uid": "35240-707c08e4-58e5-4f48-9d22-1e41fb88b109"
+                }
+              ],
+              "id": "5ae754ae-39b7-4e16-93b3-d64687274574",
+              "createdAt": "2026-07-28T01:55:43.000Z",
+              "updatedAt": "2026-07-28T01:55:43.000Z",
+              "uid": "35240-5ae754ae-39b7-4e16-93b3-d64687274574"
+            },
+            {
+              "name": "cloud",
+              "item": [
+                {
+                  "name": "checkout-session",
+                  "item": [
+                    {
+                      "name": "Create Cloud Gateway Checkout Session",
+                      "id": "c302bad6-b63d-48dd-b8f0-f80eb302d60f",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"amount\": \"<double>\",\n  \"returnUrl\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/stripe/cloud/checkout-session",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "stripe",
+                            "cloud",
+                            "checkout-session"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "55edac0a-d837-4603-8e7d-6f8be179832f",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"amount\": \"<double>\",\n  \"returnUrl\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/stripe/cloud/checkout-session",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "stripe",
+                                "cloud",
+                                "checkout-session"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"checkoutUrl\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T01:55:43.000Z",
+                          "updatedAt": "2026-07-28T01:55:43.000Z",
+                          "uid": "35240-55edac0a-d837-4603-8e7d-6f8be179832f"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:43.000Z",
+                      "updatedAt": "2026-07-28T01:55:43.000Z",
+                      "uid": "35240-c302bad6-b63d-48dd-b8f0-f80eb302d60f"
+                    }
+                  ],
+                  "id": "58d5f1c4-c7f9-4250-9ba6-fc6feaa3322d",
+                  "createdAt": "2026-07-28T01:55:43.000Z",
+                  "updatedAt": "2026-07-28T01:55:43.000Z",
+                  "uid": "35240-58d5f1c4-c7f9-4250-9ba6-fc6feaa3322d"
+                }
+              ],
+              "id": "a16e544a-150b-4561-9301-c5c21623de49",
+              "createdAt": "2026-07-28T01:55:43.000Z",
+              "updatedAt": "2026-07-28T01:55:43.000Z",
+              "uid": "35240-a16e544a-150b-4561-9301-c5c21623de49"
+            },
+            {
+              "name": "payment-intents",
+              "item": [
+                {
+                  "name": "search",
+                  "item": [
+                    {
+                      "name": "Search Payment Intents",
+                      "id": "bf76ba44-c37e-42fe-83d1-982c79ce63f9",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/stripe/payment-intents/search?search_kind=<string>&limit=<double>&page=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "stripe",
+                            "payment-intents",
+                            "search"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "search_kind",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "limit",
+                              "value": "<double>"
+                            },
+                            {
+                              "key": "page",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "ddbbb838-1b2b-4e03-b7ba-f9b12081ca5e",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/stripe/payment-intents/search?search_kind=<string>&limit=<double>&page=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "stripe",
+                                "payment-intents",
+                                "search"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) ",
+                                  "key": "search_kind",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "limit",
+                                  "value": "<double>"
+                                },
+                                {
+                                  "key": "page",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": [\n    {\n      \"id\": \"<string>\",\n      \"amount\": \"<double>\",\n      \"created\": \"<double>\",\n      \"status\": \"<string>\",\n      \"isRefunded\": \"<boolean>\",\n      \"refundedAmount\": \"<double>\",\n      \"refundIds\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"amount\": \"<double>\",\n      \"created\": \"<double>\",\n      \"status\": \"<string>\",\n      \"isRefunded\": \"<boolean>\",\n      \"refundedAmount\": \"<double>\",\n      \"refundIds\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"has_more\": \"<boolean>\",\n  \"next_page\": \"<string>\",\n  \"count\": \"<double>\"\n}",
+                          "createdAt": "2026-07-28T01:55:43.000Z",
+                          "updatedAt": "2026-07-28T01:55:43.000Z",
+                          "uid": "35240-ddbbb838-1b2b-4e03-b7ba-f9b12081ca5e"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:43.000Z",
+                      "updatedAt": "2026-07-28T01:55:43.000Z",
+                      "uid": "35240-bf76ba44-c37e-42fe-83d1-982c79ce63f9"
+                    }
+                  ],
+                  "id": "c0d03017-8aa6-4dd5-8858-4ec66f7d7d77",
+                  "createdAt": "2026-07-28T01:55:43.000Z",
+                  "updatedAt": "2026-07-28T01:55:43.000Z",
+                  "uid": "35240-c0d03017-8aa6-4dd5-8858-4ec66f7d7d77"
+                }
+              ],
+              "id": "8d894420-7206-4b73-9d6f-559e977e6fd3",
+              "createdAt": "2026-07-28T01:55:43.000Z",
+              "updatedAt": "2026-07-28T01:55:43.000Z",
+              "uid": "35240-8d894420-7206-4b73-9d6f-559e977e6fd3"
+            },
+            {
+              "name": "auto-topoff",
+              "item": [
+                {
+                  "name": "settings",
+                  "item": [
+                    {
+                      "name": "Get Auto Topoff Settings",
+                      "id": "0cef1aa5-01ae-4c35-9881-57bb979f2d77",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/stripe/auto-topoff/settings",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "stripe",
+                            "auto-topoff",
+                            "settings"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "cdd2f182-15cc-4ba5-ade7-97768534d618",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/stripe/auto-topoff/settings",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "stripe",
+                                "auto-topoff",
+                                "settings"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"enabled\": \"<boolean>\",\n  \"thresholdCents\": \"<double>\",\n  \"topoffAmountCents\": \"<double>\",\n  \"stripePaymentMethodId\": \"<string>\",\n  \"lastTopoffAt\": \"<string>\",\n  \"consecutiveFailures\": \"<double>\"\n}",
+                          "createdAt": "2026-07-28T01:55:43.000Z",
+                          "updatedAt": "2026-07-28T01:55:43.000Z",
+                          "uid": "35240-cdd2f182-15cc-4ba5-ade7-97768534d618"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:43.000Z",
+                      "updatedAt": "2026-07-28T01:55:43.000Z",
+                      "uid": "35240-0cef1aa5-01ae-4c35-9881-57bb979f2d77"
+                    },
+                    {
+                      "name": "Update Auto Topoff Settings",
+                      "id": "d8a52bb6-432d-4444-b060-0df5c17da1ac",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"thresholdCents\": \"<double>\",\n  \"topoffAmountCents\": \"<double>\",\n  \"stripePaymentMethodId\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/stripe/auto-topoff/settings",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "stripe",
+                            "auto-topoff",
+                            "settings"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "5a26393e-c716-4faa-a995-4e85a59d14dc",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"thresholdCents\": \"<double>\",\n  \"topoffAmountCents\": \"<double>\",\n  \"stripePaymentMethodId\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/stripe/auto-topoff/settings",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "stripe",
+                                "auto-topoff",
+                                "settings"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"enabled\": \"<boolean>\",\n  \"thresholdCents\": \"<double>\",\n  \"topoffAmountCents\": \"<double>\",\n  \"stripePaymentMethodId\": \"<string>\",\n  \"lastTopoffAt\": \"<string>\",\n  \"consecutiveFailures\": \"<double>\"\n}",
+                          "createdAt": "2026-07-28T01:55:43.000Z",
+                          "updatedAt": "2026-07-28T01:55:43.000Z",
+                          "uid": "35240-5a26393e-c716-4faa-a995-4e85a59d14dc"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:43.000Z",
+                      "updatedAt": "2026-07-28T01:55:43.000Z",
+                      "uid": "35240-d8a52bb6-432d-4444-b060-0df5c17da1ac"
+                    },
+                    {
+                      "name": "Disable Auto Topoff",
+                      "id": "72ea8f7b-1f9f-47c8-8315-581a9bb31a71",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/stripe/auto-topoff/settings",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "stripe",
+                            "auto-topoff",
+                            "settings"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "0dae59e1-4094-4c91-af61-0235e8208fc5",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/stripe/auto-topoff/settings",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "stripe",
+                                "auto-topoff",
+                                "settings"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"success\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T01:55:43.000Z",
+                          "updatedAt": "2026-07-28T01:55:43.000Z",
+                          "uid": "35240-0dae59e1-4094-4c91-af61-0235e8208fc5"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:43.000Z",
+                      "updatedAt": "2026-07-28T01:55:43.000Z",
+                      "uid": "35240-72ea8f7b-1f9f-47c8-8315-581a9bb31a71"
+                    }
+                  ],
+                  "id": "98027226-0a26-4b4f-b02f-36a22e2d3073",
+                  "createdAt": "2026-07-28T01:55:43.000Z",
+                  "updatedAt": "2026-07-28T01:55:43.000Z",
+                  "uid": "35240-98027226-0a26-4b4f-b02f-36a22e2d3073"
+                }
+              ],
+              "id": "0714e0af-9360-4191-a377-42237550f015",
+              "createdAt": "2026-07-28T01:55:43.000Z",
+              "updatedAt": "2026-07-28T01:55:43.000Z",
+              "uid": "35240-0714e0af-9360-4191-a377-42237550f015"
+            },
+            {
+              "name": "payment-methods",
+              "item": [
+                {
+                  "name": "setup-session",
+                  "item": [
+                    {
+                      "name": "Create Setup Session",
+                      "id": "9a914902-aaa3-40b3-bdec-8eaa760a934b",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"returnUrl\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/stripe/payment-methods/setup-session",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "stripe",
+                            "payment-methods",
+                            "setup-session"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "b49f980e-fce7-4391-a99c-0c1d266e619a",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"returnUrl\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/stripe/payment-methods/setup-session",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "stripe",
+                                "payment-methods",
+                                "setup-session"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"setupUrl\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T01:55:43.000Z",
+                          "updatedAt": "2026-07-28T01:55:43.000Z",
+                          "uid": "35240-b49f980e-fce7-4391-a99c-0c1d266e619a"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:43.000Z",
+                      "updatedAt": "2026-07-28T01:55:43.000Z",
+                      "uid": "35240-9a914902-aaa3-40b3-bdec-8eaa760a934b"
+                    }
+                  ],
+                  "id": "98303e7c-0d5f-415a-bf16-67c930a2db2b",
+                  "createdAt": "2026-07-28T01:55:43.000Z",
+                  "updatedAt": "2026-07-28T01:55:43.000Z",
+                  "uid": "35240-98303e7c-0d5f-415a-bf16-67c930a2db2b"
+                },
+                {
+                  "name": "{paymentMethodId}",
+                  "item": [
+                    {
+                      "name": "Remove Payment Method",
+                      "id": "dad8eefa-17a9-4dd6-b8ff-41cfe20ff91c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/stripe/payment-methods/:paymentMethodId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "stripe",
+                            "payment-methods",
+                            ":paymentMethodId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "fe272a82-7269-43b1-aea6-00fe04250266",
+                              "key": "paymentMethodId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "db7f06ef-2641-4e8f-b184-71df76f59fb3",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/stripe/payment-methods/:paymentMethodId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "stripe",
+                                "payment-methods",
+                                ":paymentMethodId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "paymentMethodId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"success\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T01:55:43.000Z",
+                          "updatedAt": "2026-07-28T01:55:43.000Z",
+                          "uid": "35240-db7f06ef-2641-4e8f-b184-71df76f59fb3"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:43.000Z",
+                      "updatedAt": "2026-07-28T01:55:43.000Z",
+                      "uid": "35240-dad8eefa-17a9-4dd6-b8ff-41cfe20ff91c"
+                    }
+                  ],
+                  "id": "e8171384-08a1-4794-888d-e77280b3e2a3",
+                  "createdAt": "2026-07-28T01:55:43.000Z",
+                  "updatedAt": "2026-07-28T01:55:43.000Z",
+                  "uid": "35240-e8171384-08a1-4794-888d-e77280b3e2a3"
+                },
+                {
+                  "name": "Get Payment Methods",
+                  "id": "0f259908-df93-440e-a0e9-a50e5b8e9031",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "apikey",
+                      "apikey": [
+                        {
+                          "key": "key",
+                          "value": "Authorization",
+                          "type": "string"
+                        },
+                        {
+                          "key": "value",
+                          "value": "{{apiKey}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "in",
+                          "value": "header",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/stripe/payment-methods",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "stripe",
+                        "payment-methods"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "7762bd63-b996-4a11-8e3b-8bf6408902a7",
+                      "name": "Ok",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/stripe/payment-methods",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "stripe",
+                            "payment-methods"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "[\n  {\n    \"id\": \"<string>\",\n    \"brand\": \"<string>\",\n    \"last4\": \"<string>\",\n    \"exp_month\": \"<double>\",\n    \"exp_year\": \"<double>\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"brand\": \"<string>\",\n    \"last4\": \"<string>\",\n    \"exp_month\": \"<double>\",\n    \"exp_year\": \"<double>\"\n  }\n]",
+                      "createdAt": "2026-07-28T01:55:43.000Z",
+                      "updatedAt": "2026-07-28T01:55:43.000Z",
+                      "uid": "35240-7762bd63-b996-4a11-8e3b-8bf6408902a7"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:55:43.000Z",
+                  "updatedAt": "2026-07-28T01:55:43.000Z",
+                  "uid": "35240-0f259908-df93-440e-a0e9-a50e5b8e9031"
+                }
+              ],
+              "id": "cc48a9dd-bb7b-4e82-8740-f29bbe5b3d3d",
+              "createdAt": "2026-07-28T01:55:43.000Z",
+              "updatedAt": "2026-07-28T01:55:43.000Z",
+              "uid": "35240-cc48a9dd-bb7b-4e82-8740-f29bbe5b3d3d"
+            }
+          ],
+          "id": "1fdd36b0-3169-4859-a26b-ba57799038bf",
+          "createdAt": "2026-07-28T01:55:43.000Z",
+          "updatedAt": "2026-07-28T01:55:43.000Z",
+          "uid": "35240-1fdd36b0-3169-4859-a26b-ba57799038bf"
+        }
+      ],
+      "id": "2eebbf30-10ae-43d4-aa79-2522e505ecdd",
+      "createdAt": "2026-07-28T01:55:43.000Z",
+      "updatedAt": "2026-07-28T01:55:43.000Z",
+      "uid": "35240-2eebbf30-10ae-43d4-aa79-2522e505ecdd"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.helicone.ai/"
+    }
+  ]
+}

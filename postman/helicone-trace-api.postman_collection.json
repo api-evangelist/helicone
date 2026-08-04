@@ -1,0 +1,678 @@
+{
+  "info": {
+    "_postman_id": "b0ccbd67-82df-4137-a793-462e0692f656",
+    "name": "helicone-api Agent Trace API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:55:44.000Z",
+    "updatedAt": "2026-07-28T01:55:44.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b0ccbd67-82df-4137-a793-462e0692f656"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "trace",
+          "item": [
+            {
+              "name": "custom",
+              "item": [
+                {
+                  "name": "v1",
+                  "item": [
+                    {
+                      "name": "log",
+                      "item": [
+                        {
+                          "name": "Log Custom Trace Legacy",
+                          "id": "4ad8aa8d-ec13-499a-a135-1cc0dd8e4ee0",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "apikey",
+                              "apikey": [
+                                {
+                                  "key": "key",
+                                  "value": "Authorization",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "value",
+                                  "value": "{{apiKey}}",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "in",
+                                  "value": "header",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/trace/custom/v1/log",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "trace",
+                                "custom",
+                                "v1",
+                                "log"
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "3ceb7308-f30b-4e60-a127-90b51cb1d0c0",
+                              "name": "No content",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Authorization",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/v1/trace/custom/v1/log",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "v1",
+                                    "trace",
+                                    "custom",
+                                    "v1",
+                                    "log"
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T01:55:45.000Z",
+                              "updatedAt": "2026-07-28T01:55:45.000Z",
+                              "uid": "35240-3ceb7308-f30b-4e60-a127-90b51cb1d0c0"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:55:45.000Z",
+                          "updatedAt": "2026-07-28T01:55:45.000Z",
+                          "uid": "35240-4ad8aa8d-ec13-499a-a135-1cc0dd8e4ee0"
+                        }
+                      ],
+                      "id": "29f8a208-48be-4a66-bfba-c6e1e47a68bd",
+                      "createdAt": "2026-07-28T01:55:45.000Z",
+                      "updatedAt": "2026-07-28T01:55:45.000Z",
+                      "uid": "35240-29f8a208-48be-4a66-bfba-c6e1e47a68bd"
+                    }
+                  ],
+                  "id": "2d999475-fbca-436b-bb61-40ef507ca566",
+                  "createdAt": "2026-07-28T01:55:45.000Z",
+                  "updatedAt": "2026-07-28T01:55:45.000Z",
+                  "uid": "35240-2d999475-fbca-436b-bb61-40ef507ca566"
+                },
+                {
+                  "name": "log",
+                  "item": [
+                    {
+                      "name": "typed",
+                      "item": [
+                        {
+                          "name": "Log Custom Trace Typed",
+                          "id": "30bd85c7-ae71-410d-bc89-3ae9486d71f4",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "apikey",
+                              "apikey": [
+                                {
+                                  "key": "key",
+                                  "value": "Authorization",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "value",
+                                  "value": "{{apiKey}}",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "in",
+                                  "value": "header",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"providerRequest\": {\n    \"url\": \"<string>\",\n    \"json\": {\n      \"est1\": {}\n    },\n    \"meta\": {\n      \"voluptate_c\": \"<string>\",\n      \"mollit5\": \"<string>\"\n    }\n  },\n  \"providerResponse\": {\n    \"status\": \"<double>\",\n    \"headers\": {\n      \"sint5\": \"<string>\",\n      \"reprehenderitc64\": \"<string>\",\n      \"eu_01\": \"<string>\",\n      \"aute1\": \"<string>\"\n    },\n    \"json\": {\n      \"laborum_4\": {},\n      \"aliqua8\": {}\n    },\n    \"textBody\": \"<string>\"\n  },\n  \"timing\": {\n    \"startTime\": \"<string>\",\n    \"endTime\": \"<string>\",\n    \"timeToFirstToken\": \"<double>\"\n  },\n  \"provider\": \"GOOGLE\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/trace/custom/log/typed",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "trace",
+                                "custom",
+                                "log",
+                                "typed"
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "85aa746d-ef84-45e3-9ab5-824c246f7dbe",
+                              "name": "Ok",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Authorization",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"providerRequest\": {\n    \"url\": \"<string>\",\n    \"json\": {\n      \"est1\": {}\n    },\n    \"meta\": {\n      \"voluptate_c\": \"<string>\",\n      \"mollit5\": \"<string>\"\n    }\n  },\n  \"providerResponse\": {\n    \"status\": \"<double>\",\n    \"headers\": {\n      \"sint5\": \"<string>\",\n      \"reprehenderitc64\": \"<string>\",\n      \"eu_01\": \"<string>\",\n      \"aute1\": \"<string>\"\n    },\n    \"json\": {\n      \"laborum_4\": {},\n      \"aliqua8\": {}\n    },\n    \"textBody\": \"<string>\"\n  },\n  \"timing\": {\n    \"startTime\": \"<string>\",\n    \"endTime\": \"<string>\",\n    \"timeToFirstToken\": \"<double>\"\n  },\n  \"provider\": \"GOOGLE\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/v1/trace/custom/log/typed",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "v1",
+                                    "trace",
+                                    "custom",
+                                    "log",
+                                    "typed"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"isValid\": \"<boolean>\",\n  \"errors\": [\n    {\n      \"field\": \"<string>\",\n      \"message\": \"<string>\"\n    },\n    {\n      \"field\": \"<string>\",\n      \"message\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:55:45.000Z",
+                              "updatedAt": "2026-07-28T01:55:45.000Z",
+                              "uid": "35240-85aa746d-ef84-45e3-9ab5-824c246f7dbe"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:55:45.000Z",
+                          "updatedAt": "2026-07-28T01:55:45.000Z",
+                          "uid": "35240-30bd85c7-ae71-410d-bc89-3ae9486d71f4"
+                        }
+                      ],
+                      "id": "ab0a5d63-66f4-4dbe-8c7d-1ab7f9ed3f74",
+                      "createdAt": "2026-07-28T01:55:45.000Z",
+                      "updatedAt": "2026-07-28T01:55:45.000Z",
+                      "uid": "35240-ab0a5d63-66f4-4dbe-8c7d-1ab7f9ed3f74"
+                    },
+                    {
+                      "name": "Log Custom Trace",
+                      "id": "19df794a-3be9-4078-b3ce-bfbe60b8441f",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/trace/custom/log",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "trace",
+                            "custom",
+                            "log"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "b364f8f1-4147-4162-a961-7e61ccffb8d5",
+                          "name": "No content",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/trace/custom/log",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "trace",
+                                "custom",
+                                "log"
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T01:55:45.000Z",
+                          "updatedAt": "2026-07-28T01:55:45.000Z",
+                          "uid": "35240-b364f8f1-4147-4162-a961-7e61ccffb8d5"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:45.000Z",
+                      "updatedAt": "2026-07-28T01:55:45.000Z",
+                      "uid": "35240-19df794a-3be9-4078-b3ce-bfbe60b8441f"
+                    }
+                  ],
+                  "id": "246b7c5d-de9c-4773-aab2-9a8dc1d2f415",
+                  "createdAt": "2026-07-28T01:55:45.000Z",
+                  "updatedAt": "2026-07-28T01:55:45.000Z",
+                  "uid": "35240-246b7c5d-de9c-4773-aab2-9a8dc1d2f415"
+                }
+              ],
+              "id": "3d443cb3-062a-4503-b9a2-4b77bbea3238",
+              "createdAt": "2026-07-28T01:55:45.000Z",
+              "updatedAt": "2026-07-28T01:55:45.000Z",
+              "uid": "35240-3d443cb3-062a-4503-b9a2-4b77bbea3238"
+            },
+            {
+              "name": "log",
+              "item": [
+                {
+                  "name": "Log Trace",
+                  "id": "00201d83-42e3-4f90-8d2a-ec48e5e562c4",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "apikey",
+                      "apikey": [
+                        {
+                          "key": "key",
+                          "value": "Authorization",
+                          "type": "string"
+                        },
+                        {
+                          "key": "value",
+                          "value": "{{apiKey}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "in",
+                          "value": "header",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"resourceSpans\": [\n    {\n      \"scopeSpans\": [\n        {\n          \"spans\": [\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            },\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            }\n          ],\n          \"scope\": {\n            \"version\": \"<string>\",\n            \"name\": \"<string>\"\n          }\n        },\n        {\n          \"spans\": [\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            },\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            }\n          ],\n          \"scope\": {\n            \"version\": \"<string>\",\n            \"name\": \"<string>\"\n          }\n        }\n      ],\n      \"resource\": {\n        \"droppedAttributesCount\": \"<double>\",\n        \"attributes\": [\n          {\n            \"value\": {\n              \"arrayValue\": {\n                \"values\": [\n                  {\n                    \"stringValue\": \"<string>\"\n                  },\n                  {\n                    \"stringValue\": \"<string>\"\n                  }\n                ]\n              },\n              \"intValue\": \"<double>\",\n              \"stringValue\": \"<string>\"\n            },\n            \"key\": \"<string>\"\n          },\n          {\n            \"value\": {\n              \"arrayValue\": {\n                \"values\": [\n                  {\n                    \"stringValue\": \"<string>\"\n                  },\n                  {\n                    \"stringValue\": \"<string>\"\n                  }\n                ]\n              },\n              \"intValue\": \"<double>\",\n              \"stringValue\": \"<string>\"\n            },\n            \"key\": \"<string>\"\n          }\n        ]\n      }\n    },\n    {\n      \"scopeSpans\": [\n        {\n          \"spans\": [\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            },\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            }\n          ],\n          \"scope\": {\n            \"version\": \"<string>\",\n            \"name\": \"<string>\"\n          }\n        },\n        {\n          \"spans\": [\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            },\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            }\n          ],\n          \"scope\": {\n            \"version\": \"<string>\",\n            \"name\": \"<string>\"\n          }\n        }\n      ],\n      \"resource\": {\n        \"droppedAttributesCount\": \"<double>\",\n        \"attributes\": [\n          {\n            \"value\": {\n              \"arrayValue\": {\n                \"values\": [\n                  {\n                    \"stringValue\": \"<string>\"\n                  },\n                  {\n                    \"stringValue\": \"<string>\"\n                  }\n                ]\n              },\n              \"intValue\": \"<double>\",\n              \"stringValue\": \"<string>\"\n            },\n            \"key\": \"<string>\"\n          },\n          {\n            \"value\": {\n              \"arrayValue\": {\n                \"values\": [\n                  {\n                    \"stringValue\": \"<string>\"\n                  },\n                  {\n                    \"stringValue\": \"<string>\"\n                  }\n                ]\n              },\n              \"intValue\": \"<double>\",\n              \"stringValue\": \"<string>\"\n            },\n            \"key\": \"<string>\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/trace/log",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "trace",
+                        "log"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "486e9479-fc6c-487f-9729-643c5a3d99f8",
+                      "name": "No content",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"resourceSpans\": [\n    {\n      \"scopeSpans\": [\n        {\n          \"spans\": [\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            },\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            }\n          ],\n          \"scope\": {\n            \"version\": \"<string>\",\n            \"name\": \"<string>\"\n          }\n        },\n        {\n          \"spans\": [\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            },\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            }\n          ],\n          \"scope\": {\n            \"version\": \"<string>\",\n            \"name\": \"<string>\"\n          }\n        }\n      ],\n      \"resource\": {\n        \"droppedAttributesCount\": \"<double>\",\n        \"attributes\": [\n          {\n            \"value\": {\n              \"arrayValue\": {\n                \"values\": [\n                  {\n                    \"stringValue\": \"<string>\"\n                  },\n                  {\n                    \"stringValue\": \"<string>\"\n                  }\n                ]\n              },\n              \"intValue\": \"<double>\",\n              \"stringValue\": \"<string>\"\n            },\n            \"key\": \"<string>\"\n          },\n          {\n            \"value\": {\n              \"arrayValue\": {\n                \"values\": [\n                  {\n                    \"stringValue\": \"<string>\"\n                  },\n                  {\n                    \"stringValue\": \"<string>\"\n                  }\n                ]\n              },\n              \"intValue\": \"<double>\",\n              \"stringValue\": \"<string>\"\n            },\n            \"key\": \"<string>\"\n          }\n        ]\n      }\n    },\n    {\n      \"scopeSpans\": [\n        {\n          \"spans\": [\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            },\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            }\n          ],\n          \"scope\": {\n            \"version\": \"<string>\",\n            \"name\": \"<string>\"\n          }\n        },\n        {\n          \"spans\": [\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            },\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": \"<double>\",\n                    \"stringValue\": \"<string>\"\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            }\n          ],\n          \"scope\": {\n            \"version\": \"<string>\",\n            \"name\": \"<string>\"\n          }\n        }\n      ],\n      \"resource\": {\n        \"droppedAttributesCount\": \"<double>\",\n        \"attributes\": [\n          {\n            \"value\": {\n              \"arrayValue\": {\n                \"values\": [\n                  {\n                    \"stringValue\": \"<string>\"\n                  },\n                  {\n                    \"stringValue\": \"<string>\"\n                  }\n                ]\n              },\n              \"intValue\": \"<double>\",\n              \"stringValue\": \"<string>\"\n            },\n            \"key\": \"<string>\"\n          },\n          {\n            \"value\": {\n              \"arrayValue\": {\n                \"values\": [\n                  {\n                    \"stringValue\": \"<string>\"\n                  },\n                  {\n                    \"stringValue\": \"<string>\"\n                  }\n                ]\n              },\n              \"intValue\": \"<double>\",\n              \"stringValue\": \"<string>\"\n            },\n            \"key\": \"<string>\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/trace/log",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "trace",
+                            "log"
+                          ]
+                        }
+                      },
+                      "status": "No Content",
+                      "code": 204,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:55:45.000Z",
+                      "updatedAt": "2026-07-28T01:55:45.000Z",
+                      "uid": "35240-486e9479-fc6c-487f-9729-643c5a3d99f8"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:55:45.000Z",
+                  "updatedAt": "2026-07-28T01:55:45.000Z",
+                  "uid": "35240-00201d83-42e3-4f90-8d2a-ec48e5e562c4"
+                }
+              ],
+              "id": "32b63b92-ea43-4db6-bb1b-d79a70b1b256",
+              "createdAt": "2026-07-28T01:55:45.000Z",
+              "updatedAt": "2026-07-28T01:55:45.000Z",
+              "uid": "35240-32b63b92-ea43-4db6-bb1b-d79a70b1b256"
+            },
+            {
+              "name": "log-python",
+              "item": [
+                {
+                  "name": "Log Python Trace",
+                  "id": "e4d0c2f6-01db-4751-9705-476992ad6c41",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "apikey",
+                      "apikey": [
+                        {
+                          "key": "key",
+                          "value": "Authorization",
+                          "type": "string"
+                        },
+                        {
+                          "key": "value",
+                          "value": "{{apiKey}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "in",
+                          "value": "header",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/trace/log-python",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "trace",
+                        "log-python"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "6e886ccc-71be-4844-8720-ac7dd3fc3a0e",
+                      "name": "No content",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/trace/log-python",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "trace",
+                            "log-python"
+                          ]
+                        }
+                      },
+                      "status": "No Content",
+                      "code": 204,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:55:45.000Z",
+                      "updatedAt": "2026-07-28T01:55:45.000Z",
+                      "uid": "35240-6e886ccc-71be-4844-8720-ac7dd3fc3a0e"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:55:45.000Z",
+                  "updatedAt": "2026-07-28T01:55:45.000Z",
+                  "uid": "35240-e4d0c2f6-01db-4751-9705-476992ad6c41"
+                }
+              ],
+              "id": "543cf791-446a-48d1-a0e5-18ee664a7929",
+              "createdAt": "2026-07-28T01:55:45.000Z",
+              "updatedAt": "2026-07-28T01:55:45.000Z",
+              "uid": "35240-543cf791-446a-48d1-a0e5-18ee664a7929"
+            }
+          ],
+          "id": "b6db3d0a-9084-45f4-8cba-b4e909338922",
+          "createdAt": "2026-07-28T01:55:45.000Z",
+          "updatedAt": "2026-07-28T01:55:45.000Z",
+          "uid": "35240-b6db3d0a-9084-45f4-8cba-b4e909338922"
+        }
+      ],
+      "id": "cbaa051a-fafc-411b-899d-a854c3f89867",
+      "createdAt": "2026-07-28T01:55:45.000Z",
+      "updatedAt": "2026-07-28T01:55:45.000Z",
+      "uid": "35240-cbaa051a-fafc-411b-899d-a854c3f89867"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.helicone.ai/"
+    }
+  ]
+}

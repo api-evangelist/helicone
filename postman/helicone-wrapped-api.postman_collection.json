@@ -1,0 +1,249 @@
+{
+  "info": {
+    "_postman_id": "127ad2c2-0100-411b-a9c1-ec6f28e38646",
+    "name": "helicone-api Agent Wrapped API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:56:04.000Z",
+    "updatedAt": "2026-07-28T01:56:05.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-127ad2c2-0100-411b-a9c1-ec6f28e38646"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "wrapped",
+          "item": [
+            {
+              "name": "2025",
+              "item": [
+                {
+                  "name": "check",
+                  "item": [
+                    {
+                      "name": "Check Has Wrapped2025Data",
+                      "id": "e595fd72-05ff-44a6-a765-ee35cb7013ed",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/wrapped/2025/check",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "wrapped",
+                            "2025",
+                            "check"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "7d38d6bb-d4f5-4c8f-8b5b-d90663f8755b",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/wrapped/2025/check",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "wrapped",
+                                "2025",
+                                "check"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": {\n    \"hasData\": \"<boolean>\"\n  },\n  \"error\": null\n}",
+                          "createdAt": "2026-07-28T01:56:05.000Z",
+                          "updatedAt": "2026-07-28T01:56:05.000Z",
+                          "uid": "35240-7d38d6bb-d4f5-4c8f-8b5b-d90663f8755b"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:56:05.000Z",
+                      "updatedAt": "2026-07-28T01:56:05.000Z",
+                      "uid": "35240-e595fd72-05ff-44a6-a765-ee35cb7013ed"
+                    }
+                  ],
+                  "id": "eca500d6-5caf-4057-ab5c-86fd7d6248ae",
+                  "createdAt": "2026-07-28T01:56:05.000Z",
+                  "updatedAt": "2026-07-28T01:56:05.000Z",
+                  "uid": "35240-eca500d6-5caf-4057-ab5c-86fd7d6248ae"
+                },
+                {
+                  "name": "Get Wrapped2025Stats",
+                  "id": "df2f3bf0-ebb6-4554-bfb4-cb7cf69b9e30",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "apikey",
+                      "apikey": [
+                        {
+                          "key": "key",
+                          "value": "Authorization",
+                          "type": "string"
+                        },
+                        {
+                          "key": "value",
+                          "value": "{{apiKey}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "in",
+                          "value": "header",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/wrapped/2025",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "wrapped",
+                        "2025"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "18e2dc1c-33b0-4448-abed-491518d241bf",
+                      "name": "Ok",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/wrapped/2025",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "wrapped",
+                            "2025"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"data\": {\n    \"totalRequests\": \"<double>\",\n    \"topProviders\": [\n      {\n        \"count\": \"<double>\",\n        \"provider\": \"<string>\"\n      },\n      {\n        \"count\": \"<double>\",\n        \"provider\": \"<string>\"\n      }\n    ],\n    \"topModels\": [\n      {\n        \"count\": \"<double>\",\n        \"model\": \"<string>\"\n      },\n      {\n        \"count\": \"<double>\",\n        \"model\": \"<string>\"\n      }\n    ],\n    \"totalTokens\": {\n      \"total\": \"<double>\",\n      \"cacheRead\": \"<double>\",\n      \"cacheWrite\": \"<double>\",\n      \"completion\": \"<double>\",\n      \"prompt\": \"<double>\"\n    },\n    \"mostExpensiveRequest\": {\n      \"requestId\": \"<string>\",\n      \"cost\": \"<double>\",\n      \"model\": \"<string>\",\n      \"provider\": \"<string>\",\n      \"createdAt\": \"<string>\",\n      \"promptTokens\": \"<double>\",\n      \"completionTokens\": \"<double>\",\n      \"conversation\": {\n        \"totalWords\": \"<double>\",\n        \"turnCount\": \"<double>\",\n        \"messages\": [\n          {\n            \"role\": \"<string>\",\n            \"content\": \"<string>\"\n          },\n          {\n            \"role\": \"<string>\",\n            \"content\": \"<string>\"\n          }\n        ]\n      }\n    }\n  },\n  \"error\": null\n}",
+                      "createdAt": "2026-07-28T01:56:05.000Z",
+                      "updatedAt": "2026-07-28T01:56:05.000Z",
+                      "uid": "35240-18e2dc1c-33b0-4448-abed-491518d241bf"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:56:05.000Z",
+                  "updatedAt": "2026-07-28T01:56:05.000Z",
+                  "uid": "35240-df2f3bf0-ebb6-4554-bfb4-cb7cf69b9e30"
+                }
+              ],
+              "id": "301721f2-ff1a-412c-baea-dded56a4c06e",
+              "createdAt": "2026-07-28T01:56:05.000Z",
+              "updatedAt": "2026-07-28T01:56:05.000Z",
+              "uid": "35240-301721f2-ff1a-412c-baea-dded56a4c06e"
+            }
+          ],
+          "id": "464b0f31-b088-4dfe-a584-51e3e26b3adc",
+          "createdAt": "2026-07-28T01:56:05.000Z",
+          "updatedAt": "2026-07-28T01:56:05.000Z",
+          "uid": "35240-464b0f31-b088-4dfe-a584-51e3e26b3adc"
+        }
+      ],
+      "id": "fe143f30-72f7-4403-92cf-d9a1cec7db1f",
+      "createdAt": "2026-07-28T01:56:05.000Z",
+      "updatedAt": "2026-07-28T01:56:05.000Z",
+      "uid": "35240-fe143f30-72f7-4403-92cf-d9a1cec7db1f"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.helicone.ai/"
+    }
+  ]
+}

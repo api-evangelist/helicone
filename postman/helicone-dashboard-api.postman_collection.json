@@ -1,0 +1,181 @@
+{
+  "info": {
+    "_postman_id": "feb869c5-3480-410f-86ff-3c1d5a6146a9",
+    "name": "helicone-api Agent Dashboard API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:54:38.000Z",
+    "updatedAt": "2026-07-28T01:54:39.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-feb869c5-3480-410f-86ff-3c1d5a6146a9"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "dashboard",
+          "item": [
+            {
+              "name": "scores",
+              "item": [
+                {
+                  "name": "query",
+                  "item": [
+                    {
+                      "name": "Get Scores Over Time",
+                      "id": "a21a5a5c-df60-4555-837e-f28b9aca57a5",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"timeFilter\": {\n    \"end\": \"<string>\",\n    \"start\": \"<string>\"\n  },\n  \"userFilter\": {\n    \"request_response_rmt\": {\n      \"country_code\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"latency\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"cost\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"provider\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"time_to_first_token\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"status\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"request_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"response_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"model\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"user_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"organization_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"node_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"job_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"threat\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"request_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"prompt_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"completion_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"prompt_cache_read_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"prompt_cache_write_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"total_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"target_url\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"property_key\": {\n        \"equals\": \"<string>\"\n      },\n      \"properties\": {\n        \"irureb\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"est_c3\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"velit_a\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"adipisicing_fc\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"search_properties\": {\n        \"labore_edb\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"nulla_ee8\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"laboris_eb4\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"scores\": {\n        \"consequat_e\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"aute_e\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"tempor_0d\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"scores_column\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"request_body\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"response_body\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"cache_enabled\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"cache_reference_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"cached\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"assets\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"helicone-score-feedback\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"prompt_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"prompt_version\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"request_referrer\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"is_passthrough_billing\": {\n        \"equals\": \"<boolean>\"\n      }\n    }\n  },\n  \"dbIncrement\": \"month\",\n  \"timeZoneDifference\": \"<double>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/dashboard/scores/query",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "dashboard",
+                            "scores",
+                            "query"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "88e49c01-5fbd-4309-badb-599c6646e01f",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"timeFilter\": {\n    \"end\": \"<string>\",\n    \"start\": \"<string>\"\n  },\n  \"userFilter\": {\n    \"request_response_rmt\": {\n      \"country_code\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"latency\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"cost\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"provider\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"time_to_first_token\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"status\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"request_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"response_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"model\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"user_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"organization_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"node_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"job_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"threat\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"request_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"prompt_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"completion_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"prompt_cache_read_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"prompt_cache_write_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"total_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"target_url\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"property_key\": {\n        \"equals\": \"<string>\"\n      },\n      \"properties\": {\n        \"irureb\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"est_c3\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"velit_a\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"adipisicing_fc\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"search_properties\": {\n        \"labore_edb\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"nulla_ee8\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"laboris_eb4\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"scores\": {\n        \"consequat_e\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"aute_e\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"tempor_0d\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"scores_column\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"request_body\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"response_body\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"cache_enabled\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"cache_reference_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"cached\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"assets\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"helicone-score-feedback\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"prompt_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"prompt_version\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"request_referrer\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"is_passthrough_billing\": {\n        \"equals\": \"<boolean>\"\n      }\n    }\n  },\n  \"dbIncrement\": \"month\",\n  \"timeZoneDifference\": \"<double>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/dashboard/scores/query",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "dashboard",
+                                "scores",
+                                "query"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": [\n    {\n      \"created_at_trunc\": \"<string>\",\n      \"score_sum\": \"<double>\",\n      \"score_key\": \"<string>\"\n    },\n    {\n      \"created_at_trunc\": \"<string>\",\n      \"score_sum\": \"<double>\",\n      \"score_key\": \"<string>\"\n    }\n  ],\n  \"error\": null\n}",
+                          "createdAt": "2026-07-28T01:54:39.000Z",
+                          "updatedAt": "2026-07-28T01:54:39.000Z",
+                          "uid": "35240-88e49c01-5fbd-4309-badb-599c6646e01f"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:54:39.000Z",
+                      "updatedAt": "2026-07-28T01:54:39.000Z",
+                      "uid": "35240-a21a5a5c-df60-4555-837e-f28b9aca57a5"
+                    }
+                  ],
+                  "id": "d4a80752-9b82-4307-9af7-c182a9c337e6",
+                  "createdAt": "2026-07-28T01:54:39.000Z",
+                  "updatedAt": "2026-07-28T01:54:39.000Z",
+                  "uid": "35240-d4a80752-9b82-4307-9af7-c182a9c337e6"
+                }
+              ],
+              "id": "9457f1fc-1ad0-4527-8a1d-f04160bc1803",
+              "createdAt": "2026-07-28T01:54:39.000Z",
+              "updatedAt": "2026-07-28T01:54:39.000Z",
+              "uid": "35240-9457f1fc-1ad0-4527-8a1d-f04160bc1803"
+            }
+          ],
+          "id": "c084456e-b310-46e4-a1d9-1ce8639e22ca",
+          "createdAt": "2026-07-28T01:54:39.000Z",
+          "updatedAt": "2026-07-28T01:54:39.000Z",
+          "uid": "35240-c084456e-b310-46e4-a1d9-1ce8639e22ca"
+        }
+      ],
+      "id": "1a71b3cc-93e3-4c55-9769-e26efb3bb177",
+      "createdAt": "2026-07-28T01:54:39.000Z",
+      "updatedAt": "2026-07-28T01:54:39.000Z",
+      "uid": "35240-1a71b3cc-93e3-4c55-9769-e26efb3bb177"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.helicone.ai/"
+    }
+  ]
+}

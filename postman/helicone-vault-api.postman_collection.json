@@ -1,0 +1,561 @@
+{
+  "info": {
+    "_postman_id": "88e741c6-995c-46cc-83bc-0aad0b7d83fd",
+    "name": "helicone-api Agent Vault API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:55:46.000Z",
+    "updatedAt": "2026-07-28T01:55:46.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-88e741c6-995c-46cc-83bc-0aad0b7d83fd"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "vault",
+          "item": [
+            {
+              "name": "add",
+              "item": [
+                {
+                  "name": "Add Key",
+                  "id": "34e48bfc-8cab-473d-9c3c-a339292defdd",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "apikey",
+                      "apikey": [
+                        {
+                          "key": "key",
+                          "value": "Authorization",
+                          "type": "string"
+                        },
+                        {
+                          "key": "value",
+                          "value": "{{apiKey}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "in",
+                          "value": "header",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"key\": \"<string>\",\n  \"provider\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/vault/add",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "vault",
+                        "add"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "a5499e22-f500-4d1e-aca5-3a8490b7b784",
+                      "name": "Ok",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"key\": \"<string>\",\n  \"provider\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/vault/add",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "vault",
+                            "add"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"data\": {\n    \"id\": \"<string>\"\n  },\n  \"error\": null\n}",
+                      "createdAt": "2026-07-28T01:55:47.000Z",
+                      "updatedAt": "2026-07-28T01:55:47.000Z",
+                      "uid": "35240-a5499e22-f500-4d1e-aca5-3a8490b7b784"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:55:47.000Z",
+                  "updatedAt": "2026-07-28T01:55:47.000Z",
+                  "uid": "35240-34e48bfc-8cab-473d-9c3c-a339292defdd"
+                }
+              ],
+              "id": "5a02352d-9d2a-43c8-b056-20aec27a12d5",
+              "createdAt": "2026-07-28T01:55:47.000Z",
+              "updatedAt": "2026-07-28T01:55:47.000Z",
+              "uid": "35240-5a02352d-9d2a-43c8-b056-20aec27a12d5"
+            },
+            {
+              "name": "keys",
+              "item": [
+                {
+                  "name": "Get Keys",
+                  "id": "22880e7c-6bd1-4ffb-8048-dd94887a3658",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "apikey",
+                      "apikey": [
+                        {
+                          "key": "key",
+                          "value": "Authorization",
+                          "type": "string"
+                        },
+                        {
+                          "key": "value",
+                          "value": "{{apiKey}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "in",
+                          "value": "header",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/vault/keys",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "vault",
+                        "keys"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "a0a7a47f-ed5d-44d5-a987-740f404d2c9d",
+                      "name": "Ok",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/vault/keys",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "vault",
+                            "keys"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"data\": [\n    {\n      \"provider_secret_key\": \"<string>\",\n      \"provider_key_name\": \"<string>\",\n      \"provider_name\": \"<string>\",\n      \"provider_key\": \"<string>\",\n      \"org_id\": \"<string>\",\n      \"id\": \"<string>\",\n      \"cuid\": \"<string>\"\n    },\n    {\n      \"provider_secret_key\": \"<string>\",\n      \"provider_key_name\": \"<string>\",\n      \"provider_name\": \"<string>\",\n      \"provider_key\": \"<string>\",\n      \"org_id\": \"<string>\",\n      \"id\": \"<string>\",\n      \"cuid\": \"<string>\"\n    }\n  ],\n  \"error\": null\n}",
+                      "createdAt": "2026-07-28T01:55:47.000Z",
+                      "updatedAt": "2026-07-28T01:55:47.000Z",
+                      "uid": "35240-a0a7a47f-ed5d-44d5-a987-740f404d2c9d"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:55:47.000Z",
+                  "updatedAt": "2026-07-28T01:55:47.000Z",
+                  "uid": "35240-22880e7c-6bd1-4ffb-8048-dd94887a3658"
+                }
+              ],
+              "id": "32cf8ef9-5d1d-4b86-bcc9-da5b3d5ca2bf",
+              "createdAt": "2026-07-28T01:55:47.000Z",
+              "updatedAt": "2026-07-28T01:55:47.000Z",
+              "uid": "35240-32cf8ef9-5d1d-4b86-bcc9-da5b3d5ca2bf"
+            },
+            {
+              "name": "key",
+              "item": [
+                {
+                  "name": "{providerKeyId}",
+                  "item": [
+                    {
+                      "name": "Get Key By Id",
+                      "id": "f11e1736-cd3f-47e1-8e97-e65ac45befc7",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/vault/key/:providerKeyId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "vault",
+                            "key",
+                            ":providerKeyId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "63c9f294-b087-4b13-afff-57d3532408e7",
+                              "key": "providerKeyId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "c28abb5f-3775-46b2-a211-f1d4a793ccfb",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/vault/key/:providerKeyId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "vault",
+                                "key",
+                                ":providerKeyId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "providerKeyId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": {\n    \"provider_secret_key\": \"<string>\",\n    \"provider_key_name\": \"<string>\",\n    \"provider_name\": \"<string>\",\n    \"provider_key\": \"<string>\",\n    \"org_id\": \"<string>\",\n    \"id\": \"<string>\",\n    \"cuid\": \"<string>\"\n  },\n  \"error\": null\n}",
+                          "createdAt": "2026-07-28T01:55:47.000Z",
+                          "updatedAt": "2026-07-28T01:55:47.000Z",
+                          "uid": "35240-c28abb5f-3775-46b2-a211-f1d4a793ccfb"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:47.000Z",
+                      "updatedAt": "2026-07-28T01:55:47.000Z",
+                      "uid": "35240-f11e1736-cd3f-47e1-8e97-e65ac45befc7"
+                    }
+                  ],
+                  "id": "ece75177-83a4-40c9-aba1-6169595e8d42",
+                  "createdAt": "2026-07-28T01:55:47.000Z",
+                  "updatedAt": "2026-07-28T01:55:47.000Z",
+                  "uid": "35240-ece75177-83a4-40c9-aba1-6169595e8d42"
+                }
+              ],
+              "id": "bf5f5d19-e143-48b4-b198-d201433e8e5a",
+              "createdAt": "2026-07-28T01:55:47.000Z",
+              "updatedAt": "2026-07-28T01:55:47.000Z",
+              "uid": "35240-bf5f5d19-e143-48b4-b198-d201433e8e5a"
+            },
+            {
+              "name": "update",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "Update Key",
+                      "id": "54d8dde3-a311-48f8-be06-12279da98061",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"active\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"key\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/vault/update/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "vault",
+                            "update",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "35b5d04e-31b3-4762-9231-578b25bb72b3",
+                              "key": "id",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "690c58dc-fc55-4764-9b10-06e9fa9b9746",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"active\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"key\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/vault/update/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "vault",
+                                "update",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": null,\n  \"error\": null\n}",
+                          "createdAt": "2026-07-28T01:55:47.000Z",
+                          "updatedAt": "2026-07-28T01:55:47.000Z",
+                          "uid": "35240-690c58dc-fc55-4764-9b10-06e9fa9b9746"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:47.000Z",
+                      "updatedAt": "2026-07-28T01:55:47.000Z",
+                      "uid": "35240-54d8dde3-a311-48f8-be06-12279da98061"
+                    }
+                  ],
+                  "id": "5ebc518c-96d2-4e06-a4cc-e7a9bb2d1b1a",
+                  "createdAt": "2026-07-28T01:55:47.000Z",
+                  "updatedAt": "2026-07-28T01:55:47.000Z",
+                  "uid": "35240-5ebc518c-96d2-4e06-a4cc-e7a9bb2d1b1a"
+                }
+              ],
+              "id": "c8c49bad-67e4-48eb-b586-3ee1a1f97a5e",
+              "createdAt": "2026-07-28T01:55:47.000Z",
+              "updatedAt": "2026-07-28T01:55:47.000Z",
+              "uid": "35240-c8c49bad-67e4-48eb-b586-3ee1a1f97a5e"
+            }
+          ],
+          "id": "f63b7353-0499-48a0-be16-a0c15de749f1",
+          "createdAt": "2026-07-28T01:55:47.000Z",
+          "updatedAt": "2026-07-28T01:55:47.000Z",
+          "uid": "35240-f63b7353-0499-48a0-be16-a0c15de749f1"
+        }
+      ],
+      "id": "25b27e4e-f86a-4c6c-8f58-4726862d421b",
+      "createdAt": "2026-07-28T01:55:47.000Z",
+      "updatedAt": "2026-07-28T01:55:47.000Z",
+      "uid": "35240-25b27e4e-f86a-4c6c-8f58-4726862d421b"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.helicone.ai/"
+    }
+  ]
+}

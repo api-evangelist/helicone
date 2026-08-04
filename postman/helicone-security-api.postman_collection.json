@@ -1,0 +1,145 @@
+{
+  "info": {
+    "_postman_id": "845cda23-fc3b-48c8-8582-584e71a39481",
+    "name": "helicone-api Agent Security API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:55:39.000Z",
+    "updatedAt": "2026-07-28T01:55:39.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-845cda23-fc3b-48c8-8582-584e71a39481"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "public",
+          "item": [
+            {
+              "name": "security",
+              "item": [
+                {
+                  "name": "Get Security",
+                  "id": "50fda5d4-52a4-464f-a936-728db45274a5",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"text\": \"<string>\",\n  \"advanced\": \"<boolean>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/public/security",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "public",
+                        "security"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "d44698ac-f9b1-4db5-815c-0d326cafc960",
+                      "name": "Ok",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"text\": \"<string>\",\n  \"advanced\": \"<boolean>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/public/security",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "public",
+                            "security"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"data\": {\n    \"unsafe\": \"<boolean>\"\n  },\n  \"error\": null\n}",
+                      "createdAt": "2026-07-28T01:55:40.000Z",
+                      "updatedAt": "2026-07-28T01:55:40.000Z",
+                      "uid": "35240-d44698ac-f9b1-4db5-815c-0d326cafc960"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:55:39.000Z",
+                  "updatedAt": "2026-07-28T01:55:39.000Z",
+                  "uid": "35240-50fda5d4-52a4-464f-a936-728db45274a5"
+                }
+              ],
+              "id": "e05c50b7-09ff-4d8e-96a7-3f149092d6eb",
+              "createdAt": "2026-07-28T01:55:39.000Z",
+              "updatedAt": "2026-07-28T01:55:39.000Z",
+              "uid": "35240-e05c50b7-09ff-4d8e-96a7-3f149092d6eb"
+            }
+          ],
+          "id": "7eb9fd16-5bc0-4450-9682-21f14653f2fa",
+          "createdAt": "2026-07-28T01:55:39.000Z",
+          "updatedAt": "2026-07-28T01:55:39.000Z",
+          "uid": "35240-7eb9fd16-5bc0-4450-9682-21f14653f2fa"
+        }
+      ],
+      "id": "75882c87-19d0-4734-b03f-9aba82cb3fb6",
+      "createdAt": "2026-07-28T01:55:39.000Z",
+      "updatedAt": "2026-07-28T01:55:39.000Z",
+      "uid": "35240-75882c87-19d0-4734-b03f-9aba82cb3fb6"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.helicone.ai/"
+    }
+  ]
+}

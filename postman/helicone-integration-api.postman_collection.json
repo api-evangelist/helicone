@@ -1,0 +1,1019 @@
+{
+  "info": {
+    "_postman_id": "9e48a243-7fc1-452e-9781-8984226d94f6",
+    "name": "helicone-api Agent Integration API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:55:02.000Z",
+    "updatedAt": "2026-07-28T01:55:03.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9e48a243-7fc1-452e-9781-8984226d94f6"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "integration",
+          "item": [
+            {
+              "name": "{integrationId}",
+              "item": [
+                {
+                  "name": "stripe",
+                  "item": [
+                    {
+                      "name": "test-meter-event",
+                      "item": [
+                        {
+                          "name": "Test Stripe Meter Event",
+                          "id": "5099df18-4dbb-4140-aaf2-bd49d0dbdc0b",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "apikey",
+                              "apikey": [
+                                {
+                                  "key": "key",
+                                  "value": "Authorization",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "value",
+                                  "value": "{{apiKey}}",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "in",
+                                  "value": "header",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"event_name\": \"<string>\",\n  \"customer_id\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/integration/:integrationId/stripe/test-meter-event",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "integration",
+                                ":integrationId",
+                                "stripe",
+                                "test-meter-event"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "cd57c1ec-7d04-4288-aa54-80a043984910",
+                                  "key": "integrationId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "3bab3d77-11d6-4760-aae1-ee7a0aec55a0",
+                              "name": "Ok",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Authorization",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"event_name\": \"<string>\",\n  \"customer_id\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/v1/integration/:integrationId/stripe/test-meter-event",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "v1",
+                                    "integration",
+                                    ":integrationId",
+                                    "stripe",
+                                    "test-meter-event"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "integrationId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"data\": \"<string>\",\n  \"error\": null\n}",
+                              "createdAt": "2026-07-28T01:55:03.000Z",
+                              "updatedAt": "2026-07-28T01:55:03.000Z",
+                              "uid": "35240-3bab3d77-11d6-4760-aae1-ee7a0aec55a0"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:55:03.000Z",
+                          "updatedAt": "2026-07-28T01:55:03.000Z",
+                          "uid": "35240-5099df18-4dbb-4140-aaf2-bd49d0dbdc0b"
+                        }
+                      ],
+                      "id": "62c87ed5-f082-4272-a750-a088d4c0e191",
+                      "createdAt": "2026-07-28T01:55:03.000Z",
+                      "updatedAt": "2026-07-28T01:55:03.000Z",
+                      "uid": "35240-62c87ed5-f082-4272-a750-a088d4c0e191"
+                    }
+                  ],
+                  "id": "1a1660f4-e51e-4d5b-9e77-eaac7f75e0bc",
+                  "createdAt": "2026-07-28T01:55:03.000Z",
+                  "updatedAt": "2026-07-28T01:55:03.000Z",
+                  "uid": "35240-1a1660f4-e51e-4d5b-9e77-eaac7f75e0bc"
+                },
+                {
+                  "name": "Update Integration",
+                  "id": "1fbf81d0-dc5b-4a2c-896c-b5fd272a2ddc",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "apikey",
+                      "apikey": [
+                        {
+                          "key": "key",
+                          "value": "Authorization",
+                          "type": "string"
+                        },
+                        {
+                          "key": "value",
+                          "value": "{{apiKey}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "in",
+                          "value": "header",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"integration_name\": \"<string>\",\n  \"settings\": \"<string>\",\n  \"active\": \"<boolean>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/integration/:integrationId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "integration",
+                        ":integrationId"
+                      ],
+                      "variable": [
+                        {
+                          "id": "5b60509e-c5f7-4625-9d7e-af0bb4cc3833",
+                          "key": "integrationId",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "cda4f99a-2e22-4288-9654-e8e51fe28900",
+                      "name": "Ok",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"integration_name\": \"<string>\",\n  \"settings\": \"<string>\",\n  \"active\": \"<boolean>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/integration/:integrationId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "integration",
+                            ":integrationId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "integrationId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"data\": null,\n  \"error\": null\n}",
+                      "createdAt": "2026-07-28T01:55:03.000Z",
+                      "updatedAt": "2026-07-28T01:55:03.000Z",
+                      "uid": "35240-cda4f99a-2e22-4288-9654-e8e51fe28900"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:55:03.000Z",
+                  "updatedAt": "2026-07-28T01:55:03.000Z",
+                  "uid": "35240-1fbf81d0-dc5b-4a2c-896c-b5fd272a2ddc"
+                },
+                {
+                  "name": "Get Integration",
+                  "id": "b4a8a29e-9fde-4e15-9653-541a2209c557",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "apikey",
+                      "apikey": [
+                        {
+                          "key": "key",
+                          "value": "Authorization",
+                          "type": "string"
+                        },
+                        {
+                          "key": "value",
+                          "value": "{{apiKey}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "in",
+                          "value": "header",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/integration/:integrationId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "integration",
+                        ":integrationId"
+                      ],
+                      "variable": [
+                        {
+                          "id": "1975fadd-6e95-44a5-8254-4b2761250e67",
+                          "key": "integrationId",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "c654bb04-4334-42ee-abe1-b8ac01c4f9c0",
+                      "name": "Ok",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/integration/:integrationId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "integration",
+                            ":integrationId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "integrationId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"data\": {\n    \"id\": \"<string>\",\n    \"integration_name\": \"<string>\",\n    \"settings\": \"<string>\",\n    \"active\": \"<boolean>\"\n  },\n  \"error\": null\n}",
+                      "createdAt": "2026-07-28T01:55:03.000Z",
+                      "updatedAt": "2026-07-28T01:55:03.000Z",
+                      "uid": "35240-c654bb04-4334-42ee-abe1-b8ac01c4f9c0"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:55:03.000Z",
+                  "updatedAt": "2026-07-28T01:55:03.000Z",
+                  "uid": "35240-b4a8a29e-9fde-4e15-9653-541a2209c557"
+                }
+              ],
+              "id": "8cd71499-1828-4011-aef3-086b57656e3e",
+              "createdAt": "2026-07-28T01:55:03.000Z",
+              "updatedAt": "2026-07-28T01:55:03.000Z",
+              "uid": "35240-8cd71499-1828-4011-aef3-086b57656e3e"
+            },
+            {
+              "name": "type",
+              "item": [
+                {
+                  "name": "{type}",
+                  "item": [
+                    {
+                      "name": "Get Integration By Type",
+                      "id": "220f639a-998c-47be-9910-405599736dfe",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/integration/type/:type",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "integration",
+                            "type",
+                            ":type"
+                          ],
+                          "variable": [
+                            {
+                              "id": "eb4d6801-c31a-446b-9272-58fb62d5d69c",
+                              "key": "type",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "2ed685f9-c4c8-4552-bb86-6eac0776e38e",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/integration/type/:type",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "integration",
+                                "type",
+                                ":type"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "type"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": {\n    \"id\": \"<string>\",\n    \"integration_name\": \"<string>\",\n    \"settings\": \"<string>\",\n    \"active\": \"<boolean>\"\n  },\n  \"error\": null\n}",
+                          "createdAt": "2026-07-28T01:55:03.000Z",
+                          "updatedAt": "2026-07-28T01:55:03.000Z",
+                          "uid": "35240-2ed685f9-c4c8-4552-bb86-6eac0776e38e"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:03.000Z",
+                      "updatedAt": "2026-07-28T01:55:03.000Z",
+                      "uid": "35240-220f639a-998c-47be-9910-405599736dfe"
+                    }
+                  ],
+                  "id": "b4720737-6ac6-4461-90b2-ba684c2a65fd",
+                  "createdAt": "2026-07-28T01:55:03.000Z",
+                  "updatedAt": "2026-07-28T01:55:03.000Z",
+                  "uid": "35240-b4720737-6ac6-4461-90b2-ba684c2a65fd"
+                }
+              ],
+              "id": "0d4ebbe4-d9c6-4704-8772-4164b66f8162",
+              "createdAt": "2026-07-28T01:55:03.000Z",
+              "updatedAt": "2026-07-28T01:55:03.000Z",
+              "uid": "35240-0d4ebbe4-d9c6-4704-8772-4164b66f8162"
+            },
+            {
+              "name": "slack",
+              "item": [
+                {
+                  "name": "settings",
+                  "item": [
+                    {
+                      "name": "Get Slack Settings",
+                      "id": "ad57162d-38f9-471a-a9db-ffee460cf68a",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/integration/slack/settings",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "integration",
+                            "slack",
+                            "settings"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "f53f0344-6657-47a4-90ad-7c4035929500",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/integration/slack/settings",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "integration",
+                                "slack",
+                                "settings"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": {\n    \"id\": \"<string>\",\n    \"integration_name\": \"<string>\",\n    \"settings\": \"<string>\",\n    \"active\": \"<boolean>\"\n  },\n  \"error\": null\n}",
+                          "createdAt": "2026-07-28T01:55:03.000Z",
+                          "updatedAt": "2026-07-28T01:55:03.000Z",
+                          "uid": "35240-f53f0344-6657-47a4-90ad-7c4035929500"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:03.000Z",
+                      "updatedAt": "2026-07-28T01:55:03.000Z",
+                      "uid": "35240-ad57162d-38f9-471a-a9db-ffee460cf68a"
+                    }
+                  ],
+                  "id": "0796d822-609b-414a-9c6c-2bc3c833b794",
+                  "createdAt": "2026-07-28T01:55:03.000Z",
+                  "updatedAt": "2026-07-28T01:55:03.000Z",
+                  "uid": "35240-0796d822-609b-414a-9c6c-2bc3c833b794"
+                },
+                {
+                  "name": "channels",
+                  "item": [
+                    {
+                      "name": "Get Slack Channels",
+                      "id": "b385d718-3d12-4003-a99a-f867a0417aa1",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/integration/slack/channels",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "integration",
+                            "slack",
+                            "channels"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "7ff65766-de5b-4aa0-8370-022ed52374ef",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/integration/slack/channels",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "integration",
+                                "slack",
+                                "channels"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": [\n    {\n      \"name\": \"<string>\",\n      \"id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"id\": \"<string>\"\n    }\n  ],\n  \"error\": null\n}",
+                          "createdAt": "2026-07-28T01:55:03.000Z",
+                          "updatedAt": "2026-07-28T01:55:03.000Z",
+                          "uid": "35240-7ff65766-de5b-4aa0-8370-022ed52374ef"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:03.000Z",
+                      "updatedAt": "2026-07-28T01:55:03.000Z",
+                      "uid": "35240-b385d718-3d12-4003-a99a-f867a0417aa1"
+                    }
+                  ],
+                  "id": "01303778-387d-4b55-9608-42322c08b420",
+                  "createdAt": "2026-07-28T01:55:03.000Z",
+                  "updatedAt": "2026-07-28T01:55:03.000Z",
+                  "uid": "35240-01303778-387d-4b55-9608-42322c08b420"
+                }
+              ],
+              "id": "aa5e5e84-28fb-44aa-abc0-2530ecbab657",
+              "createdAt": "2026-07-28T01:55:03.000Z",
+              "updatedAt": "2026-07-28T01:55:03.000Z",
+              "uid": "35240-aa5e5e84-28fb-44aa-abc0-2530ecbab657"
+            },
+            {
+              "name": "Create Integration",
+              "id": "a20bb098-6c5f-4133-a926-8653d25e8798",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "apikey",
+                  "apikey": [
+                    {
+                      "key": "key",
+                      "value": "Authorization",
+                      "type": "string"
+                    },
+                    {
+                      "key": "value",
+                      "value": "{{apiKey}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "in",
+                      "value": "header",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"integration_name\": \"<string>\",\n  \"settings\": \"<string>\",\n  \"active\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/v1/integration",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "integration"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "ccff3a03-eb7f-489e-ad46-e6ce24ea2c0a",
+                  "name": "Ok",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"integration_name\": \"<string>\",\n  \"settings\": \"<string>\",\n  \"active\": \"<boolean>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/integration",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "integration"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"data\": {\n    \"id\": \"<string>\"\n  },\n  \"error\": null\n}",
+                  "createdAt": "2026-07-28T01:55:03.000Z",
+                  "updatedAt": "2026-07-28T01:55:03.000Z",
+                  "uid": "35240-ccff3a03-eb7f-489e-ad46-e6ce24ea2c0a"
+                }
+              ],
+              "createdAt": "2026-07-28T01:55:03.000Z",
+              "updatedAt": "2026-07-28T01:55:03.000Z",
+              "uid": "35240-a20bb098-6c5f-4133-a926-8653d25e8798"
+            },
+            {
+              "name": "Get Integrations",
+              "id": "4039a632-3d79-4b38-8946-b57d4b06b678",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "apikey",
+                  "apikey": [
+                    {
+                      "key": "key",
+                      "value": "Authorization",
+                      "type": "string"
+                    },
+                    {
+                      "key": "value",
+                      "value": "{{apiKey}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "in",
+                      "value": "header",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v1/integration",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "integration"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "5488daf6-d18e-4f6a-9449-deefa9443542",
+                  "name": "Ok",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/integration",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "integration"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"data\": [\n    {\n      \"id\": \"<string>\",\n      \"integration_name\": \"<string>\",\n      \"settings\": \"<string>\",\n      \"active\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"integration_name\": \"<string>\",\n      \"settings\": \"<string>\",\n      \"active\": \"<boolean>\"\n    }\n  ],\n  \"error\": null\n}",
+                  "createdAt": "2026-07-28T01:55:03.000Z",
+                  "updatedAt": "2026-07-28T01:55:03.000Z",
+                  "uid": "35240-5488daf6-d18e-4f6a-9449-deefa9443542"
+                }
+              ],
+              "createdAt": "2026-07-28T01:55:03.000Z",
+              "updatedAt": "2026-07-28T01:55:03.000Z",
+              "uid": "35240-4039a632-3d79-4b38-8946-b57d4b06b678"
+            }
+          ],
+          "id": "286c2724-ca56-4311-9dc6-2e3fba7bfcfd",
+          "createdAt": "2026-07-28T01:55:03.000Z",
+          "updatedAt": "2026-07-28T01:55:03.000Z",
+          "uid": "35240-286c2724-ca56-4311-9dc6-2e3fba7bfcfd"
+        }
+      ],
+      "id": "3f947e6d-2701-4570-bafe-45e4b6fcdd46",
+      "createdAt": "2026-07-28T01:55:03.000Z",
+      "updatedAt": "2026-07-28T01:55:03.000Z",
+      "uid": "35240-3f947e6d-2701-4570-bafe-45e4b6fcdd46"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.helicone.ai/"
+    }
+  ]
+}

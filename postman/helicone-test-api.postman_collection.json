@@ -1,0 +1,170 @@
+{
+  "info": {
+    "_postman_id": "231629b7-70df-41b7-be15-9a60a5b5ff2a",
+    "name": "helicone-api Agent Test API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:55:43.000Z",
+    "updatedAt": "2026-07-28T01:55:43.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-231629b7-70df-41b7-be15-9a60a5b5ff2a"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "test",
+          "item": [
+            {
+              "name": "gateway-request",
+              "item": [
+                {
+                  "name": "Send Test Request",
+                  "id": "9aefb994-a480-4108-ad59-d5c6d512f697",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "apikey",
+                      "apikey": [
+                        {
+                          "key": "key",
+                          "value": "Authorization",
+                          "type": "string"
+                        },
+                        {
+                          "key": "value",
+                          "value": "{{apiKey}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "in",
+                          "value": "header",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"apiKey\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/test/gateway-request",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "test",
+                        "gateway-request"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "907e1023-fe50-4b9f-80ea-5e9e14ccc8ef",
+                      "name": "Ok",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"apiKey\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/test/gateway-request",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "test",
+                            "gateway-request"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"success\": \"<boolean>\",\n  \"response\": \"<string>\",\n  \"requestId\": \"<string>\",\n  \"error\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T01:55:44.000Z",
+                      "updatedAt": "2026-07-28T01:55:44.000Z",
+                      "uid": "35240-907e1023-fe50-4b9f-80ea-5e9e14ccc8ef"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:55:44.000Z",
+                  "updatedAt": "2026-07-28T01:55:44.000Z",
+                  "uid": "35240-9aefb994-a480-4108-ad59-d5c6d512f697"
+                }
+              ],
+              "id": "e166c01b-405c-4df0-80ba-4ecfad30a54f",
+              "createdAt": "2026-07-28T01:55:44.000Z",
+              "updatedAt": "2026-07-28T01:55:44.000Z",
+              "uid": "35240-e166c01b-405c-4df0-80ba-4ecfad30a54f"
+            }
+          ],
+          "id": "60b4ce8e-3fb6-4e65-85df-f40305c5594e",
+          "createdAt": "2026-07-28T01:55:44.000Z",
+          "updatedAt": "2026-07-28T01:55:44.000Z",
+          "uid": "35240-60b4ce8e-3fb6-4e65-85df-f40305c5594e"
+        }
+      ],
+      "id": "248d209c-ad19-4981-90bf-25127328b270",
+      "createdAt": "2026-07-28T01:55:44.000Z",
+      "updatedAt": "2026-07-28T01:55:44.000Z",
+      "uid": "35240-248d209c-ad19-4981-90bf-25127328b270"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.helicone.ai/"
+    }
+  ]
+}

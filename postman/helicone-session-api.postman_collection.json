@@ -1,0 +1,1007 @@
+{
+  "info": {
+    "_postman_id": "31c40664-dd39-4910-af7d-1728ad1e3ff0",
+    "name": "helicone-api Agent Session API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:55:40.000Z",
+    "updatedAt": "2026-07-28T01:55:40.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-31c40664-dd39-4910-af7d-1728ad1e3ff0"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "session",
+          "item": [
+            {
+              "name": "query",
+              "item": [
+                {
+                  "name": "Get Sessions",
+                  "id": "00986665-54fd-49fd-b00f-defa132446fd",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "apikey",
+                      "apikey": [
+                        {
+                          "key": "key",
+                          "value": "Authorization",
+                          "type": "string"
+                        },
+                        {
+                          "key": "value",
+                          "value": "{{apiKey}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "in",
+                          "value": "header",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"search\": \"<string>\",\n  \"timeFilter\": {\n    \"endTimeUnixMs\": \"<double>\",\n    \"startTimeUnixMs\": \"<double>\"\n  },\n  \"timezoneDifference\": \"<double>\",\n  \"filter\": {\n    \"request_response_rmt\": {\n      \"country_code\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"latency\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"cost\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"provider\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"time_to_first_token\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"status\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"request_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"response_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"model\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"user_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"organization_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"node_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"job_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"threat\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"request_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"prompt_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"completion_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"prompt_cache_read_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"prompt_cache_write_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"total_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"target_url\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"property_key\": {\n        \"equals\": \"<string>\"\n      },\n      \"properties\": {\n        \"mollit9\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"search_properties\": {\n        \"nisi_75\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"et_503\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"scores\": {\n        \"magna_d0\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"irure_f9\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"scores_column\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"request_body\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"response_body\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"cache_enabled\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"cache_reference_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"cached\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"assets\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"helicone-score-feedback\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"prompt_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"prompt_version\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"request_referrer\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"is_passthrough_billing\": {\n        \"equals\": \"<boolean>\"\n      }\n    },\n    \"sessions_request_response_rmt\": {\n      \"session_session_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"session_session_name\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"session_total_cost\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_total_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_prompt_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_completion_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_total_requests\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"session_latest_request_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"session_tag\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      }\n    }\n  },\n  \"nameEquals\": \"<string>\",\n  \"offset\": \"<double>\",\n  \"limit\": \"<double>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/session/query",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "session",
+                        "query"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "f1eda06b-f77c-4f35-9e77-d14dd4b637d3",
+                      "name": "Ok",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"search\": \"<string>\",\n  \"timeFilter\": {\n    \"endTimeUnixMs\": \"<double>\",\n    \"startTimeUnixMs\": \"<double>\"\n  },\n  \"timezoneDifference\": \"<double>\",\n  \"filter\": {\n    \"request_response_rmt\": {\n      \"country_code\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"latency\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"cost\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"provider\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"time_to_first_token\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"status\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"request_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"response_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"model\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"user_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"organization_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"node_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"job_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"threat\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"request_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"prompt_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"completion_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"prompt_cache_read_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"prompt_cache_write_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"total_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"target_url\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"property_key\": {\n        \"equals\": \"<string>\"\n      },\n      \"properties\": {\n        \"mollit9\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"search_properties\": {\n        \"nisi_75\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"et_503\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"scores\": {\n        \"magna_d0\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"irure_f9\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"scores_column\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"request_body\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"response_body\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"cache_enabled\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"cache_reference_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"cached\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"assets\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"helicone-score-feedback\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"prompt_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"prompt_version\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"request_referrer\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"is_passthrough_billing\": {\n        \"equals\": \"<boolean>\"\n      }\n    },\n    \"sessions_request_response_rmt\": {\n      \"session_session_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"session_session_name\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"session_total_cost\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_total_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_prompt_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_completion_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_total_requests\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"session_latest_request_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"session_tag\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      }\n    }\n  },\n  \"nameEquals\": \"<string>\",\n  \"offset\": \"<double>\",\n  \"limit\": \"<double>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/session/query",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "session",
+                            "query"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"data\": [\n    {\n      \"created_at\": \"<string>\",\n      \"latest_request_created_at\": \"<string>\",\n      \"session_id\": \"<string>\",\n      \"session_name\": \"<string>\",\n      \"total_cost\": \"<double>\",\n      \"total_requests\": \"<double>\",\n      \"prompt_tokens\": \"<double>\",\n      \"completion_tokens\": \"<double>\",\n      \"total_tokens\": \"<double>\",\n      \"avg_latency\": \"<double>\",\n      \"user_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"created_at\": \"<string>\",\n      \"latest_request_created_at\": \"<string>\",\n      \"session_id\": \"<string>\",\n      \"session_name\": \"<string>\",\n      \"total_cost\": \"<double>\",\n      \"total_requests\": \"<double>\",\n      \"prompt_tokens\": \"<double>\",\n      \"completion_tokens\": \"<double>\",\n      \"total_tokens\": \"<double>\",\n      \"avg_latency\": \"<double>\",\n      \"user_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"error\": null\n}",
+                      "createdAt": "2026-07-28T01:55:41.000Z",
+                      "updatedAt": "2026-07-28T01:55:41.000Z",
+                      "uid": "35240-f1eda06b-f77c-4f35-9e77-d14dd4b637d3"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:55:41.000Z",
+                  "updatedAt": "2026-07-28T01:55:41.000Z",
+                  "uid": "35240-00986665-54fd-49fd-b00f-defa132446fd"
+                }
+              ],
+              "id": "d4af47c7-5569-44ea-b8c7-3e269727209d",
+              "createdAt": "2026-07-28T01:55:41.000Z",
+              "updatedAt": "2026-07-28T01:55:41.000Z",
+              "uid": "35240-d4af47c7-5569-44ea-b8c7-3e269727209d"
+            },
+            {
+              "name": "count",
+              "item": [
+                {
+                  "name": "Get Sessions Count",
+                  "id": "42f193ac-a6b2-4b8f-b85f-324ba98d0655",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "apikey",
+                      "apikey": [
+                        {
+                          "key": "key",
+                          "value": "Authorization",
+                          "type": "string"
+                        },
+                        {
+                          "key": "value",
+                          "value": "{{apiKey}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "in",
+                          "value": "header",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"search\": \"<string>\",\n  \"timeFilter\": {\n    \"endTimeUnixMs\": \"<double>\",\n    \"startTimeUnixMs\": \"<double>\"\n  },\n  \"timezoneDifference\": \"<double>\",\n  \"filter\": {\n    \"request_response_rmt\": {\n      \"country_code\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"latency\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"cost\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"provider\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"time_to_first_token\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"status\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"request_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"response_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"model\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"user_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"organization_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"node_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"job_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"threat\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"request_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"prompt_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"completion_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"prompt_cache_read_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"prompt_cache_write_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"total_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"target_url\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"property_key\": {\n        \"equals\": \"<string>\"\n      },\n      \"properties\": {\n        \"mollit9\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"search_properties\": {\n        \"nisi_75\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"et_503\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"scores\": {\n        \"magna_d0\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"irure_f9\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"scores_column\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"request_body\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"response_body\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"cache_enabled\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"cache_reference_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"cached\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"assets\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"helicone-score-feedback\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"prompt_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"prompt_version\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"request_referrer\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"is_passthrough_billing\": {\n        \"equals\": \"<boolean>\"\n      }\n    },\n    \"sessions_request_response_rmt\": {\n      \"session_session_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"session_session_name\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"session_total_cost\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_total_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_prompt_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_completion_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_total_requests\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"session_latest_request_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"session_tag\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      }\n    }\n  },\n  \"nameEquals\": \"<string>\",\n  \"offset\": \"<double>\",\n  \"limit\": \"<double>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/session/count",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "session",
+                        "count"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "b1cb242b-615f-4b6a-bb2c-8b100999b39d",
+                      "name": "Ok",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"search\": \"<string>\",\n  \"timeFilter\": {\n    \"endTimeUnixMs\": \"<double>\",\n    \"startTimeUnixMs\": \"<double>\"\n  },\n  \"timezoneDifference\": \"<double>\",\n  \"filter\": {\n    \"request_response_rmt\": {\n      \"country_code\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"latency\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"cost\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"provider\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"time_to_first_token\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"status\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"request_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"response_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"model\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"user_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"organization_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"node_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"job_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"threat\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"request_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"prompt_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"completion_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"prompt_cache_read_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"prompt_cache_write_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"total_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"target_url\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"property_key\": {\n        \"equals\": \"<string>\"\n      },\n      \"properties\": {\n        \"mollit9\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"search_properties\": {\n        \"nisi_75\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"et_503\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"scores\": {\n        \"magna_d0\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"irure_f9\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"scores_column\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"request_body\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"response_body\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"cache_enabled\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"cache_reference_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"cached\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"assets\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"helicone-score-feedback\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"prompt_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"prompt_version\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"request_referrer\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"is_passthrough_billing\": {\n        \"equals\": \"<boolean>\"\n      }\n    },\n    \"sessions_request_response_rmt\": {\n      \"session_session_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"session_session_name\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"session_total_cost\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_total_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_prompt_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_completion_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_total_requests\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"session_latest_request_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"session_tag\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      }\n    }\n  },\n  \"nameEquals\": \"<string>\",\n  \"offset\": \"<double>\",\n  \"limit\": \"<double>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/session/count",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "session",
+                            "count"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"data\": {\n    \"count\": \"<double>\",\n    \"total_cost\": \"<double>\",\n    \"avg_cost\": \"<double>\",\n    \"avg_latency\": \"<double>\",\n    \"avg_requests\": \"<double>\"\n  },\n  \"error\": null\n}",
+                      "createdAt": "2026-07-28T01:55:41.000Z",
+                      "updatedAt": "2026-07-28T01:55:41.000Z",
+                      "uid": "35240-b1cb242b-615f-4b6a-bb2c-8b100999b39d"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:55:41.000Z",
+                  "updatedAt": "2026-07-28T01:55:41.000Z",
+                  "uid": "35240-42f193ac-a6b2-4b8f-b85f-324ba98d0655"
+                }
+              ],
+              "id": "df6a2d73-35c6-4cc2-97b8-e6e7d85bb22a",
+              "createdAt": "2026-07-28T01:55:41.000Z",
+              "updatedAt": "2026-07-28T01:55:41.000Z",
+              "uid": "35240-df6a2d73-35c6-4cc2-97b8-e6e7d85bb22a"
+            },
+            {
+              "name": "name",
+              "item": [
+                {
+                  "name": "query",
+                  "item": [
+                    {
+                      "name": "Get Names",
+                      "id": "602d4f80-3e68-4441-83a1-162f78b8e31c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"nameContains\": \"<string>\",\n  \"timezoneDifference\": \"<double>\",\n  \"pSize\": \"p50\",\n  \"useInterquartile\": \"<boolean>\",\n  \"timeFilter\": {\n    \"startTimeUnixMs\": \"<double>\",\n    \"endTimeUnixMs\": \"<double>\"\n  },\n  \"filter\": {\n    \"request_response_rmt\": {\n      \"country_code\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"latency\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"cost\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"provider\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"time_to_first_token\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"status\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"request_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"response_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"model\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"user_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"organization_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"node_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"job_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"threat\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"request_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"prompt_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"completion_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"prompt_cache_read_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"prompt_cache_write_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"total_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"target_url\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"property_key\": {\n        \"equals\": \"<string>\"\n      },\n      \"properties\": {\n        \"reprehenderit_a2\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"search_properties\": {\n        \"tempor9c3\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"elit_5\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"fugiat2_\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"scores\": {\n        \"minim_8_1\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"ad_48\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"amet705\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"scores_column\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"request_body\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"response_body\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"cache_enabled\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"cache_reference_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"cached\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"assets\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"helicone-score-feedback\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"prompt_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"prompt_version\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"request_referrer\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"is_passthrough_billing\": {\n        \"equals\": \"<boolean>\"\n      }\n    },\n    \"sessions_request_response_rmt\": {\n      \"session_session_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"session_session_name\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"session_total_cost\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_total_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_prompt_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_completion_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_total_requests\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"session_latest_request_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"session_tag\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      }\n    }\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/session/name/query",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "session",
+                            "name",
+                            "query"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "19b51a17-2d09-491a-8684-26f66cae7285",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"nameContains\": \"<string>\",\n  \"timezoneDifference\": \"<double>\",\n  \"pSize\": \"p50\",\n  \"useInterquartile\": \"<boolean>\",\n  \"timeFilter\": {\n    \"startTimeUnixMs\": \"<double>\",\n    \"endTimeUnixMs\": \"<double>\"\n  },\n  \"filter\": {\n    \"request_response_rmt\": {\n      \"country_code\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"latency\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"cost\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"provider\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"time_to_first_token\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"status\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"request_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"response_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"model\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"user_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"organization_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"node_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"job_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"threat\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"request_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"prompt_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"completion_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"prompt_cache_read_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"prompt_cache_write_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"total_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"target_url\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"property_key\": {\n        \"equals\": \"<string>\"\n      },\n      \"properties\": {\n        \"reprehenderit_a2\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"search_properties\": {\n        \"tempor9c3\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"elit_5\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"fugiat2_\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"scores\": {\n        \"minim_8_1\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"ad_48\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"amet705\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"scores_column\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"request_body\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"response_body\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"cache_enabled\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"cache_reference_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"cached\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"assets\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"helicone-score-feedback\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"prompt_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"prompt_version\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"request_referrer\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"is_passthrough_billing\": {\n        \"equals\": \"<boolean>\"\n      }\n    },\n    \"sessions_request_response_rmt\": {\n      \"session_session_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"session_session_name\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"session_total_cost\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_total_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_prompt_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_completion_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_total_requests\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"session_latest_request_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"session_tag\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      }\n    }\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/session/name/query",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "session",
+                                "name",
+                                "query"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": [\n    {\n      \"name\": \"<string>\",\n      \"created_at\": \"<string>\",\n      \"last_used\": \"<string>\",\n      \"first_used\": \"<string>\",\n      \"session_count\": \"<double>\",\n      \"avg_latency\": \"<double>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"created_at\": \"<string>\",\n      \"last_used\": \"<string>\",\n      \"first_used\": \"<string>\",\n      \"session_count\": \"<double>\",\n      \"avg_latency\": \"<double>\"\n    }\n  ],\n  \"error\": null\n}",
+                          "createdAt": "2026-07-28T01:55:41.000Z",
+                          "updatedAt": "2026-07-28T01:55:41.000Z",
+                          "uid": "35240-19b51a17-2d09-491a-8684-26f66cae7285"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:41.000Z",
+                      "updatedAt": "2026-07-28T01:55:41.000Z",
+                      "uid": "35240-602d4f80-3e68-4441-83a1-162f78b8e31c"
+                    }
+                  ],
+                  "id": "c7061a87-5256-4021-a74d-8dee04ec0224",
+                  "createdAt": "2026-07-28T01:55:41.000Z",
+                  "updatedAt": "2026-07-28T01:55:41.000Z",
+                  "uid": "35240-c7061a87-5256-4021-a74d-8dee04ec0224"
+                }
+              ],
+              "id": "be2e0e85-9317-432a-841b-d77a31068cd4",
+              "createdAt": "2026-07-28T01:55:41.000Z",
+              "updatedAt": "2026-07-28T01:55:41.000Z",
+              "uid": "35240-be2e0e85-9317-432a-841b-d77a31068cd4"
+            },
+            {
+              "name": "metrics",
+              "item": [
+                {
+                  "name": "query",
+                  "item": [
+                    {
+                      "name": "Get Metrics",
+                      "id": "9a417585-988b-4412-a7bc-303fce66557b",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"nameContains\": \"<string>\",\n  \"timezoneDifference\": \"<double>\",\n  \"pSize\": \"p50\",\n  \"useInterquartile\": \"<boolean>\",\n  \"timeFilter\": {\n    \"startTimeUnixMs\": \"<double>\",\n    \"endTimeUnixMs\": \"<double>\"\n  },\n  \"filter\": {\n    \"request_response_rmt\": {\n      \"country_code\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"latency\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"cost\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"provider\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"time_to_first_token\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"status\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"request_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"response_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"model\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"user_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"organization_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"node_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"job_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"threat\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"request_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"prompt_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"completion_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"prompt_cache_read_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"prompt_cache_write_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"total_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"target_url\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"property_key\": {\n        \"equals\": \"<string>\"\n      },\n      \"properties\": {\n        \"reprehenderit_a2\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"search_properties\": {\n        \"tempor9c3\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"elit_5\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"fugiat2_\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"scores\": {\n        \"minim_8_1\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"ad_48\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"amet705\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"scores_column\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"request_body\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"response_body\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"cache_enabled\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"cache_reference_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"cached\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"assets\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"helicone-score-feedback\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"prompt_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"prompt_version\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"request_referrer\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"is_passthrough_billing\": {\n        \"equals\": \"<boolean>\"\n      }\n    },\n    \"sessions_request_response_rmt\": {\n      \"session_session_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"session_session_name\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"session_total_cost\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_total_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_prompt_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_completion_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_total_requests\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"session_latest_request_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"session_tag\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      }\n    }\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/session/metrics/query",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "session",
+                            "metrics",
+                            "query"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "46aff7f0-ea95-424d-a0ba-7446a4b8e4ad",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"nameContains\": \"<string>\",\n  \"timezoneDifference\": \"<double>\",\n  \"pSize\": \"p50\",\n  \"useInterquartile\": \"<boolean>\",\n  \"timeFilter\": {\n    \"startTimeUnixMs\": \"<double>\",\n    \"endTimeUnixMs\": \"<double>\"\n  },\n  \"filter\": {\n    \"request_response_rmt\": {\n      \"country_code\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"latency\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"cost\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"provider\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"time_to_first_token\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"status\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"request_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"response_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"model\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"user_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"organization_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"node_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"job_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"threat\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"request_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"prompt_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"completion_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"prompt_cache_read_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"prompt_cache_write_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"total_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"target_url\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"property_key\": {\n        \"equals\": \"<string>\"\n      },\n      \"properties\": {\n        \"reprehenderit_a2\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"search_properties\": {\n        \"tempor9c3\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"elit_5\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"fugiat2_\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"scores\": {\n        \"minim_8_1\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"ad_48\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        },\n        \"amet705\": {\n          \"not-equals\": \"<string>\",\n          \"equals\": \"<string>\",\n          \"like\": \"<string>\",\n          \"ilike\": \"<string>\",\n          \"contains\": \"<string>\",\n          \"not-contains\": \"<string>\"\n        }\n      },\n      \"scores_column\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"request_body\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"response_body\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"cache_enabled\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"cache_reference_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"cached\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"assets\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"helicone-score-feedback\": {\n        \"equals\": \"<boolean>\"\n      },\n      \"prompt_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"prompt_version\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"request_referrer\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"is_passthrough_billing\": {\n        \"equals\": \"<boolean>\"\n      }\n    },\n    \"sessions_request_response_rmt\": {\n      \"session_session_id\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"session_session_name\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      },\n      \"session_total_cost\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_total_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_prompt_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_completion_tokens\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_total_requests\": {\n        \"not-equals\": \"<double>\",\n        \"equals\": \"<double>\",\n        \"gte\": \"<double>\",\n        \"lte\": \"<double>\",\n        \"lt\": \"<double>\",\n        \"gt\": \"<double>\"\n      },\n      \"session_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"session_latest_request_created_at\": {\n        \"equals\": \"<dateTime>\",\n        \"gte\": \"<dateTime>\",\n        \"lte\": \"<dateTime>\",\n        \"lt\": \"<dateTime>\",\n        \"gt\": \"<dateTime>\"\n      },\n      \"session_tag\": {\n        \"not-equals\": \"<string>\",\n        \"equals\": \"<string>\",\n        \"like\": \"<string>\",\n        \"ilike\": \"<string>\",\n        \"contains\": \"<string>\",\n        \"not-contains\": \"<string>\"\n      }\n    }\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/session/metrics/query",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "session",
+                                "metrics",
+                                "query"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": {\n    \"session_count\": [\n      {\n        \"range_start\": \"<string>\",\n        \"range_end\": \"<string>\",\n        \"value\": \"<double>\"\n      },\n      {\n        \"range_start\": \"<string>\",\n        \"range_end\": \"<string>\",\n        \"value\": \"<double>\"\n      }\n    ],\n    \"session_duration\": [\n      {\n        \"range_start\": \"<string>\",\n        \"range_end\": \"<string>\",\n        \"value\": \"<double>\"\n      },\n      {\n        \"range_start\": \"<string>\",\n        \"range_end\": \"<string>\",\n        \"value\": \"<double>\"\n      }\n    ],\n    \"session_cost\": [\n      {\n        \"range_start\": \"<string>\",\n        \"range_end\": \"<string>\",\n        \"value\": \"<double>\"\n      },\n      {\n        \"range_start\": \"<string>\",\n        \"range_end\": \"<string>\",\n        \"value\": \"<double>\"\n      }\n    ],\n    \"average\": {\n      \"session_cost\": [\n        {\n          \"average\": \"<double>\"\n        },\n        {\n          \"average\": \"<double>\"\n        }\n      ],\n      \"session_duration\": [\n        {\n          \"average\": \"<double>\"\n        },\n        {\n          \"average\": \"<double>\"\n        }\n      ],\n      \"session_count\": [\n        {\n          \"average\": \"<double>\"\n        },\n        {\n          \"average\": \"<double>\"\n        }\n      ]\n    }\n  },\n  \"error\": null\n}",
+                          "createdAt": "2026-07-28T01:55:41.000Z",
+                          "updatedAt": "2026-07-28T01:55:41.000Z",
+                          "uid": "35240-46aff7f0-ea95-424d-a0ba-7446a4b8e4ad"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:41.000Z",
+                      "updatedAt": "2026-07-28T01:55:41.000Z",
+                      "uid": "35240-9a417585-988b-4412-a7bc-303fce66557b"
+                    }
+                  ],
+                  "id": "a205d424-1dc0-42c6-885e-483c25f29ad4",
+                  "createdAt": "2026-07-28T01:55:41.000Z",
+                  "updatedAt": "2026-07-28T01:55:41.000Z",
+                  "uid": "35240-a205d424-1dc0-42c6-885e-483c25f29ad4"
+                }
+              ],
+              "id": "e98e4f66-85c0-4ad8-aa57-87f08e468e5d",
+              "createdAt": "2026-07-28T01:55:41.000Z",
+              "updatedAt": "2026-07-28T01:55:41.000Z",
+              "uid": "35240-e98e4f66-85c0-4ad8-aa57-87f08e468e5d"
+            },
+            {
+              "name": "{sessionId}",
+              "item": [
+                {
+                  "name": "feedback",
+                  "item": [
+                    {
+                      "name": "Update Session Feedback",
+                      "id": "4e46560a-187d-4097-a96c-f24943ede168",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"rating\": \"<boolean>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/session/:sessionId/feedback",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "session",
+                            ":sessionId",
+                            "feedback"
+                          ],
+                          "variable": [
+                            {
+                              "id": "845ad823-5aff-4604-ac96-5225eb2338b4",
+                              "key": "sessionId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "dbc2c06d-5b5d-48e6-a2b5-b7e22b2276b2",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"rating\": \"<boolean>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/session/:sessionId/feedback",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "session",
+                                ":sessionId",
+                                "feedback"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "sessionId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": null,\n  \"error\": null\n}",
+                          "createdAt": "2026-07-28T01:55:41.000Z",
+                          "updatedAt": "2026-07-28T01:55:41.000Z",
+                          "uid": "35240-dbc2c06d-5b5d-48e6-a2b5-b7e22b2276b2"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:41.000Z",
+                      "updatedAt": "2026-07-28T01:55:41.000Z",
+                      "uid": "35240-4e46560a-187d-4097-a96c-f24943ede168"
+                    }
+                  ],
+                  "id": "9be958bf-89f5-4901-b5d6-87bca90ce03f",
+                  "createdAt": "2026-07-28T01:55:41.000Z",
+                  "updatedAt": "2026-07-28T01:55:41.000Z",
+                  "uid": "35240-9be958bf-89f5-4901-b5d6-87bca90ce03f"
+                },
+                {
+                  "name": "tag",
+                  "item": [
+                    {
+                      "name": "Get Session Tag",
+                      "id": "5ef0c91a-96fe-438e-b3ee-079e1b348db2",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/session/:sessionId/tag",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "session",
+                            ":sessionId",
+                            "tag"
+                          ],
+                          "variable": [
+                            {
+                              "id": "4528ffe5-780c-49f1-a829-33f24dadd3f4",
+                              "key": "sessionId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "0d031f5e-6406-48ab-9cc4-32cb7c52d557",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/session/:sessionId/tag",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "session",
+                                ":sessionId",
+                                "tag"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "sessionId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": \"<string>\",\n  \"error\": null\n}",
+                          "createdAt": "2026-07-28T01:55:41.000Z",
+                          "updatedAt": "2026-07-28T01:55:41.000Z",
+                          "uid": "35240-0d031f5e-6406-48ab-9cc4-32cb7c52d557"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:41.000Z",
+                      "updatedAt": "2026-07-28T01:55:41.000Z",
+                      "uid": "35240-5ef0c91a-96fe-438e-b3ee-079e1b348db2"
+                    },
+                    {
+                      "name": "Update Session Tag",
+                      "id": "a8cc9bbf-b3d0-48ea-aeb3-a6ce2732cc6c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "apikey",
+                          "apikey": [
+                            {
+                              "key": "key",
+                              "value": "Authorization",
+                              "type": "string"
+                            },
+                            {
+                              "key": "value",
+                              "value": "{{apiKey}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "in",
+                              "value": "header",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"tag\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/session/:sessionId/tag",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "session",
+                            ":sessionId",
+                            "tag"
+                          ],
+                          "variable": [
+                            {
+                              "id": "b1cf719b-a209-4570-b504-70b15ce3b956",
+                              "key": "sessionId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "10ae6ee4-9fd2-4808-a467-02d2c4e0ef0a",
+                          "name": "Ok",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"tag\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/session/:sessionId/tag",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "session",
+                                ":sessionId",
+                                "tag"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "sessionId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": null,\n  \"error\": null\n}",
+                          "createdAt": "2026-07-28T01:55:41.000Z",
+                          "updatedAt": "2026-07-28T01:55:41.000Z",
+                          "uid": "35240-10ae6ee4-9fd2-4808-a467-02d2c4e0ef0a"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:55:41.000Z",
+                      "updatedAt": "2026-07-28T01:55:41.000Z",
+                      "uid": "35240-a8cc9bbf-b3d0-48ea-aeb3-a6ce2732cc6c"
+                    }
+                  ],
+                  "id": "7314b2a3-01a8-4fa7-8264-1e2fa1f9604e",
+                  "createdAt": "2026-07-28T01:55:41.000Z",
+                  "updatedAt": "2026-07-28T01:55:41.000Z",
+                  "uid": "35240-7314b2a3-01a8-4fa7-8264-1e2fa1f9604e"
+                }
+              ],
+              "id": "32f31fae-40ee-4d38-9cbc-a90bc9eb177d",
+              "createdAt": "2026-07-28T01:55:41.000Z",
+              "updatedAt": "2026-07-28T01:55:41.000Z",
+              "uid": "35240-32f31fae-40ee-4d38-9cbc-a90bc9eb177d"
+            }
+          ],
+          "id": "2ac274a8-19f6-4b25-b9ee-9d239c415574",
+          "createdAt": "2026-07-28T01:55:41.000Z",
+          "updatedAt": "2026-07-28T01:55:41.000Z",
+          "uid": "35240-2ac274a8-19f6-4b25-b9ee-9d239c415574"
+        }
+      ],
+      "id": "d4ccfcda-569f-4beb-af9c-85f272d1bf74",
+      "createdAt": "2026-07-28T01:55:41.000Z",
+      "updatedAt": "2026-07-28T01:55:41.000Z",
+      "uid": "35240-d4ccfcda-569f-4beb-af9c-85f272d1bf74"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.helicone.ai/"
+    }
+  ]
+}
