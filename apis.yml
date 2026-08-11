@@ -12,8 +12,6 @@ apis:
   - type: OpenAPI
     url: openapi/helicone-agent-api-openapi.yml
   - type: Documentation
-    url: ' https://www.helicone.ai/'
-  - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
     url: https://docs.helicone.ai/getting-started/quick-start
@@ -113,8 +111,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/helicone-api-key-api-openapi.yml
-  - type: Documentation
-    url: ' https://www.helicone.ai/'
   - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
@@ -216,8 +212,6 @@ apis:
   - type: OpenAPI
     url: openapi/helicone-comparison-api-openapi.yml
   - type: Documentation
-    url: ' https://www.helicone.ai/'
-  - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
     url: https://docs.helicone.ai/getting-started/quick-start
@@ -317,8 +311,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/helicone-credits-api-openapi.yml
-  - type: Documentation
-    url: ' https://www.helicone.ai/'
   - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
@@ -420,8 +412,6 @@ apis:
   - type: OpenAPI
     url: openapi/helicone-customer-api-openapi.yml
   - type: Documentation
-    url: ' https://www.helicone.ai/'
-  - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
     url: https://docs.helicone.ai/getting-started/quick-start
@@ -521,8 +511,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/helicone-dashboard-api-openapi.yml
-  - type: Documentation
-    url: ' https://www.helicone.ai/'
   - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
@@ -624,8 +612,6 @@ apis:
   - type: OpenAPI
     url: openapi/helicone-dataset-api-openapi.yml
   - type: Documentation
-    url: ' https://www.helicone.ai/'
-  - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
     url: https://docs.helicone.ai/getting-started/quick-start
@@ -725,8 +711,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/helicone-evals-api-openapi.yml
-  - type: Documentation
-    url: ' https://www.helicone.ai/'
   - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
@@ -828,8 +812,6 @@ apis:
   - type: OpenAPI
     url: openapi/helicone-evaluator-api-openapi.yml
   - type: Documentation
-    url: ' https://www.helicone.ai/'
-  - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
     url: https://docs.helicone.ai/getting-started/quick-start
@@ -929,8 +911,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/helicone-experiment-api-openapi.yml
-  - type: Documentation
-    url: ' https://www.helicone.ai/'
   - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
@@ -1032,8 +1012,6 @@ apis:
   - type: OpenAPI
     url: openapi/helicone-heliconesql-api-openapi.yml
   - type: Documentation
-    url: ' https://www.helicone.ai/'
-  - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
     url: https://docs.helicone.ai/getting-started/quick-start
@@ -1133,8 +1111,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/helicone-integration-api-openapi.yml
-  - type: Documentation
-    url: ' https://www.helicone.ai/'
   - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
@@ -1236,8 +1212,6 @@ apis:
   - type: OpenAPI
     url: openapi/helicone-metrics-api-openapi.yml
   - type: Documentation
-    url: ' https://www.helicone.ai/'
-  - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
     url: https://docs.helicone.ai/getting-started/quick-start
@@ -1337,8 +1311,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/helicone-model-registry-api-openapi.yml
-  - type: Documentation
-    url: ' https://www.helicone.ai/'
   - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
@@ -1440,8 +1412,6 @@ apis:
   - type: OpenAPI
     url: openapi/helicone-models-api-openapi.yml
   - type: Documentation
-    url: ' https://www.helicone.ai/'
-  - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
     url: https://docs.helicone.ai/getting-started/quick-start
@@ -1541,8 +1511,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/helicone-pi-api-openapi.yml
-  - type: Documentation
-    url: ' https://www.helicone.ai/'
   - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
@@ -1644,8 +1612,6 @@ apis:
   - type: OpenAPI
     url: openapi/helicone-playground-api-openapi.yml
   - type: Documentation
-    url: ' https://www.helicone.ai/'
-  - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
     url: https://docs.helicone.ai/getting-started/quick-start
@@ -1745,8 +1711,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/helicone-prompt-api-openapi.yml
-  - type: Documentation
-    url: ' https://www.helicone.ai/'
   - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
@@ -1848,8 +1812,6 @@ apis:
   - type: OpenAPI
     url: openapi/helicone-prompt2025-api-openapi.yml
   - type: Documentation
-    url: ' https://www.helicone.ai/'
-  - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
     url: https://docs.helicone.ai/getting-started/quick-start
@@ -1949,8 +1911,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/helicone-prompt2025v2-api-openapi.yml
-  - type: Documentation
-    url: ' https://www.helicone.ai/'
   - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
@@ -2052,8 +2012,6 @@ apis:
   - type: OpenAPI
     url: openapi/helicone-property-api-openapi.yml
   - type: Documentation
-    url: ' https://www.helicone.ai/'
-  - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
     url: https://docs.helicone.ai/getting-started/quick-start
@@ -2153,8 +2111,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/helicone-providers-api-openapi.yml
-  - type: Documentation
-    url: ' https://www.helicone.ai/'
   - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
@@ -2256,8 +2212,6 @@ apis:
   - type: OpenAPI
     url: openapi/helicone-request-api-openapi.yml
   - type: Documentation
-    url: ' https://www.helicone.ai/'
-  - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
     url: https://docs.helicone.ai/getting-started/quick-start
@@ -2357,8 +2311,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/helicone-security-api-openapi.yml
-  - type: Documentation
-    url: ' https://www.helicone.ai/'
   - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
@@ -2460,8 +2412,6 @@ apis:
   - type: OpenAPI
     url: openapi/helicone-session-api-openapi.yml
   - type: Documentation
-    url: ' https://www.helicone.ai/'
-  - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
     url: https://docs.helicone.ai/getting-started/quick-start
@@ -2561,8 +2511,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/helicone-status-api-openapi.yml
-  - type: Documentation
-    url: ' https://www.helicone.ai/'
   - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
@@ -2664,8 +2612,6 @@ apis:
   - type: OpenAPI
     url: openapi/helicone-stripe-api-openapi.yml
   - type: Documentation
-    url: ' https://www.helicone.ai/'
-  - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
     url: https://docs.helicone.ai/getting-started/quick-start
@@ -2765,8 +2711,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/helicone-test-api-openapi.yml
-  - type: Documentation
-    url: ' https://www.helicone.ai/'
   - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
@@ -2868,8 +2812,6 @@ apis:
   - type: OpenAPI
     url: openapi/helicone-trace-api-openapi.yml
   - type: Documentation
-    url: ' https://www.helicone.ai/'
-  - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
     url: https://docs.helicone.ai/getting-started/quick-start
@@ -2969,8 +2911,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/helicone-user-api-openapi.yml
-  - type: Documentation
-    url: ' https://www.helicone.ai/'
   - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
@@ -3072,8 +3012,6 @@ apis:
   - type: OpenAPI
     url: openapi/helicone-vault-api-openapi.yml
   - type: Documentation
-    url: ' https://www.helicone.ai/'
-  - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
     url: https://docs.helicone.ai/getting-started/quick-start
@@ -3174,8 +3112,6 @@ apis:
   - type: OpenAPI
     url: openapi/helicone-webhooks-api-openapi.yml
   - type: Documentation
-    url: ' https://www.helicone.ai/'
-  - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
     url: https://docs.helicone.ai/getting-started/quick-start
@@ -3275,8 +3211,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/helicone-wrapped-api-openapi.yml
-  - type: Documentation
-    url: ' https://www.helicone.ai/'
   - type: Documentation
     url: https://docs.helicone.ai/
   - type: GettingStarted
