@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "helicone-api Agent Model Registry API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Model Registry",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns a comprehensive list of all AI models with their configurations, pricing, and capabilities",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.helicone.ai/v1/public/model-registry/models"
+          },
+          "docs": "Get all available models from the registry"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,1084 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "helicone-api Agent Experiment API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Experiment",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "CreateEmptyExperiment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v2/experiment/create/empty",
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "CreateExperimentFromRequest",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v2/experiment/create/from-request/:requestId",
+            "params": [
+              {
+                "name": "requestId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "CreateNewExperiment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v2/experiment/new",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetExperiments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.helicone.ai/v2/experiment",
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetExperimentById",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.helicone.ai/v2/experiment/:experimentId",
+            "params": [
+              {
+                "name": "experimentId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "DeleteExperiment",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.helicone.ai/v2/experiment/:experimentId",
+            "params": [
+              {
+                "name": "experimentId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "CreateNewPromptVersionForExperiment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v2/experiment/:experimentId/prompt-version",
+            "params": [
+              {
+                "name": "experimentId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "DeletePromptVersion",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.helicone.ai/v2/experiment/:experimentId/prompt-version/:promptVersionId",
+            "params": [
+              {
+                "name": "experimentId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "promptVersionId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetPromptVersionsForExperiment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.helicone.ai/v2/experiment/:experimentId/prompt-versions",
+            "params": [
+              {
+                "name": "experimentId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetInputKeysForExperiment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.helicone.ai/v2/experiment/:experimentId/input-keys",
+            "params": [
+              {
+                "name": "experimentId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "AddManualRowToExperiment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v2/experiment/:experimentId/add-manual-row",
+            "params": [
+              {
+                "name": "experimentId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "AddManualRowsToExperimentBatch",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v2/experiment/:experimentId/add-manual-rows-batch",
+            "params": [
+              {
+                "name": "experimentId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "DeleteExperimentTableRows",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.helicone.ai/v2/experiment/:experimentId/rows",
+            "params": [
+              {
+                "name": "experimentId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "CreateExperimentTableRowBatch",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v2/experiment/:experimentId/row/insert/batch",
+            "params": [
+              {
+                "name": "experimentId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "CreateExperimentTableRowFromDataset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v2/experiment/:experimentId/row/insert/dataset/:datasetId",
+            "params": [
+              {
+                "name": "experimentId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "datasetId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "UpdateExperimentTableRow",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v2/experiment/:experimentId/row/update",
+            "params": [
+              {
+                "name": "experimentId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "RunHypothesis",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v2/experiment/:experimentId/run-hypothesis",
+            "params": [
+              {
+                "name": "experimentId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetExperimentEvaluators",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.helicone.ai/v2/experiment/:experimentId/evaluators",
+            "params": [
+              {
+                "name": "experimentId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "CreateExperimentEvaluator",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v2/experiment/:experimentId/evaluators",
+            "params": [
+              {
+                "name": "experimentId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "DeleteExperimentEvaluator",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.helicone.ai/v2/experiment/:experimentId/evaluators/:evaluatorId",
+            "params": [
+              {
+                "name": "experimentId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "evaluatorId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "RunExperimentEvaluators",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v2/experiment/:experimentId/evaluators/run",
+            "params": [
+              {
+                "name": "experimentId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "ShouldRunEvaluators",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.helicone.ai/v2/experiment/:experimentId/should-run-evaluators",
+            "params": [
+              {
+                "name": "experimentId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetExperimentPromptVersionScores",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.helicone.ai/v2/experiment/:experimentId/:promptVersionId/scores",
+            "params": [
+              {
+                "name": "experimentId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "promptVersionId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetExperimentScore",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.helicone.ai/v2/experiment/:experimentId/:requestId/:scoreKey",
+            "params": [
+              {
+                "name": "experimentId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "requestId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "scoreKey",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "CreateNewEmptyExperiment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/experiment/new-empty",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "CreateNewExperimentTable",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/experiment/table/new",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetExperimentTableById",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/experiment/table/:experimentTableId/query",
+            "params": [
+              {
+                "name": "experimentTableId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetExperimentTableMetadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/experiment/table/:experimentTableId/metadata/query",
+            "params": [
+              {
+                "name": "experimentTableId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetExperimentTables",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/experiment/tables/query",
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "CreateExperimentCell",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/experiment/table/:experimentTableId/cell",
+            "params": [
+              {
+                "name": "experimentTableId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "UpdateExperimentCell",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.helicone.ai/v1/experiment/table/:experimentTableId/cell",
+            "params": [
+              {
+                "name": "experimentTableId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "CreateExperimentColumn",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/experiment/table/:experimentTableId/column",
+            "params": [
+              {
+                "name": "experimentTableId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "CreateExperimentTableRow",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/experiment/table/:experimentTableId/row/new",
+            "params": [
+              {
+                "name": "experimentTableId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "DeleteExperimentTableRow",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.helicone.ai/v1/experiment/table/:experimentTableId/row/:rowIndex",
+            "params": [
+              {
+                "name": "experimentTableId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "rowIndex",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "CreateExperimentTableRowWithCellsBatch",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/experiment/table/:experimentTableId/row/insert/batch",
+            "params": [
+              {
+                "name": "experimentTableId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "UpdateExperimentMeta",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/experiment/update-meta",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "CreateNewExperimentOld",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/experiment",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "CreateNewExperimentHypothesis",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/experiment/hypothesis",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetExperimentHypothesisScores",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/experiment/hypothesis/:hypothesisId/scores/query",
+            "params": [
+              {
+                "name": "hypothesisId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetExperimentEvaluators",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.helicone.ai/v1/experiment/:experimentId/evaluators",
+            "params": [
+              {
+                "name": "experimentId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "CreateExperimentEvaluatorOld",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/experiment/:experimentId/evaluators",
+            "params": [
+              {
+                "name": "experimentId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "RunExperimentEvaluatorsOld",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/experiment/:experimentId/evaluators/run",
+            "params": [
+              {
+                "name": "experimentId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "DeleteExperimentEvaluatorOld",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.helicone.ai/v1/experiment/:experimentId/evaluators/:evaluatorId",
+            "params": [
+              {
+                "name": "experimentId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "evaluatorId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetExperimentsOld",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/experiment/query",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

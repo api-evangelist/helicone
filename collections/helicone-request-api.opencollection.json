@@ -1,0 +1,258 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "helicone-api Agent Request API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Request",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GetRequestCount",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/request/count/query",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetRequests",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/request/query",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetRequestsClickhouse",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/request/query-clickhouse",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetRequestById",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.helicone.ai/v1/request/:requestId",
+            "params": [
+              {
+                "name": "requestId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeBody",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetRequestInputs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.helicone.ai/v1/request/:requestId/inputs",
+            "params": [
+              {
+                "name": "requestId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetRequestsByIds",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/request/query-ids",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "FeedbackRequest",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/request/:requestId/feedback",
+            "params": [
+              {
+                "name": "requestId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "PutProperty",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.helicone.ai/v1/request/:requestId/property",
+            "params": [
+              {
+                "name": "requestId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetRequestAssetById",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/request/:requestId/assets/:assetId",
+            "params": [
+              {
+                "name": "requestId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "assetId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "AddScores",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/request/:requestId/score",
+            "params": [
+              {
+                "name": "requestId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,215 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "helicone-api Agent HeliconeSql API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "HeliconeSql",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get database schema",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.helicone.ai/v1/helicone-sql/schema",
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get ClickHouse schema (tables and columns)"
+        },
+        {
+          "info": {
+            "name": "Execute SQL query",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/helicone-sql/execute",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Execute a SQL query against ClickHouse"
+        },
+        {
+          "info": {
+            "name": "Download query results as CSV",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/helicone-sql/download",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Execute a SQL query and download results as CSV"
+        },
+        {
+          "info": {
+            "name": "List saved queries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.helicone.ai/v1/helicone-sql/saved-queries",
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get all saved queries for the organization"
+        },
+        {
+          "info": {
+            "name": "Get saved query",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.helicone.ai/v1/helicone-sql/saved-query/:queryId",
+            "params": [
+              {
+                "name": "queryId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the saved query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get a specific saved query by ID"
+        },
+        {
+          "info": {
+            "name": "Update saved query",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.helicone.ai/v1/helicone-sql/saved-query/:queryId",
+            "params": [
+              {
+                "name": "queryId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the saved query to update"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update an existing saved query"
+        },
+        {
+          "info": {
+            "name": "Delete saved query",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.helicone.ai/v1/helicone-sql/saved-query/:queryId",
+            "params": [
+              {
+                "name": "queryId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the saved query to delete"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete a saved query by ID"
+        },
+        {
+          "info": {
+            "name": "Bulk delete saved queries",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/helicone-sql/saved-queries/bulk-delete",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete multiple saved queries at once"
+        },
+        {
+          "info": {
+            "name": "Create saved query",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/helicone-sql/saved-query",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create a new saved query"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

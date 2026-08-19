@@ -1,0 +1,418 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "helicone-api Agent Metrics API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Metrics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GetTotalRequests",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/metrics/totalRequests",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetTotalCost",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/metrics/totalCost",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetAverageLatency",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/metrics/averageLatency",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetAverageTimeToFirstToken",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/metrics/averageTimeToFirstToken",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetAverageTokensPerRequest",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/metrics/averageTokensPerRequest",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetTotalThreats",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/metrics/totalThreats",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetActiveUsers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/metrics/activeUsers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetRequestsOverTime",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/metrics/requestOverTime",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetCostOverTime",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/metrics/costOverTime",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetTokensOverTime",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/metrics/tokensOverTime",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetLatencyOverTime",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/metrics/latencyOverTime",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetTimeToFirstTokenOverTime",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/metrics/timeToFirstToken",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetUsersOverTime",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/metrics/usersOverTime",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetThreatsOverTime",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/metrics/threatsOverTime",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetErrorsOverTime",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/metrics/errorOverTime",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetRequestStatusOverTime",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/metrics/requestStatusOverTime",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetRequestCount",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/metrics/requestCount",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetModelMetrics",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/metrics/models",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetCountryMetrics",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/metrics/country",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GetQuantiles",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.helicone.ai/v1/metrics/quantiles",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

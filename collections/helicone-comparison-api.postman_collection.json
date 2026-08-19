@@ -1,0 +1,150 @@
+{
+  "item": [
+    {
+      "id": "a78d4f28-d454-4263-a452-b9c17a27640a",
+      "name": "Comparison",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3d64db9c-d2ef-4ee9-a4be-a0bdcb0c364c",
+          "name": "Get Model Comparison",
+          "request": {
+            "name": "Get Model Comparison",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "public",
+                "compare",
+                "models"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"provider\": \"<string>\",\n    \"names\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"parent\": \"<string>\"\n  },\n  {\n    \"provider\": \"<string>\",\n    \"names\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"parent\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8e9f6763-3d17-41ca-a5af-d095f11101ae",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "public",
+                    "compare",
+                    "models"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"provider\": \"<string>\",\n    \"names\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"parent\": \"<string>\"\n  },\n  {\n    \"provider\": \"<string>\",\n    \"names\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"parent\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"timeSeriesData\": {\n        \"errorRate\": [\n          {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timestamp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timestamp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"successRate\": [\n          {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timestamp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timestamp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"ttft\": [\n          {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timestamp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timestamp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"latency\": [\n          {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timestamp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timestamp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      },\n      \"requestStatus\": {\n        \"errorRate\": 9083.529265135216,\n        \"successRate\": 5808.55859665056\n      },\n      \"geographicTtft\": [\n        {\n          \"median\": 600.0765199481117,\n          \"countryCode\": \"string\"\n        },\n        {\n          \"median\": 757.3249989808961,\n          \"countryCode\": \"string\"\n        }\n      ],\n      \"geographicLatency\": [\n        {\n          \"median\": 1225.3396952731543,\n          \"countryCode\": \"string\"\n        },\n        {\n          \"median\": 104.90039959648034,\n          \"countryCode\": \"string\"\n        }\n      ],\n      \"feedback\": {\n        \"negativePercentage\": 6886.125640105092,\n        \"positivePercentage\": 1482.5154211726865\n      },\n      \"costs\": {\n        \"completion_token\": 9401.470411222088,\n        \"prompt_token\": 7334.255238979546\n      },\n      \"ttft\": {\n        \"p99\": 4273.45553307428,\n        \"p95\": 483.4746900646647,\n        \"p90\": 9818.798889256637,\n        \"max\": 2880.1800186406813,\n        \"min\": 752.8345999140585,\n        \"median\": 3977.4711611863236,\n        \"average\": 3948.9133258391853\n      },\n      \"latency\": {\n        \"average\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"max\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"median\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"medianPer1000Tokens\": 8121.8287693633065,\n        \"min\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p90\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p95\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p99\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"provider\": \"string\",\n      \"model\": \"string\"\n    },\n    {\n      \"timeSeriesData\": {\n        \"errorRate\": [\n          {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timestamp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timestamp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"successRate\": [\n          {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timestamp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timestamp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"ttft\": [\n          {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timestamp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timestamp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"latency\": [\n          {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timestamp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timestamp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      },\n      \"requestStatus\": {\n        \"errorRate\": 1894.6566659802654,\n        \"successRate\": 5724.513007364922\n      },\n      \"geographicTtft\": [\n        {\n          \"median\": 2759.399906595703,\n          \"countryCode\": \"string\"\n        },\n        {\n          \"median\": 9969.815798210337,\n          \"countryCode\": \"string\"\n        }\n      ],\n      \"geographicLatency\": [\n        {\n          \"median\": 6469.877219679285,\n          \"countryCode\": \"string\"\n        },\n        {\n          \"median\": 6653.529793427031,\n          \"countryCode\": \"string\"\n        }\n      ],\n      \"feedback\": {\n        \"negativePercentage\": 4505.638674431475,\n        \"positivePercentage\": 1514.9735678978293\n      },\n      \"costs\": {\n        \"completion_token\": 5041.790364307498,\n        \"prompt_token\": 4020.118341652813\n      },\n      \"ttft\": {\n        \"p99\": 1841.9676301583377,\n        \"p95\": 3004.2122152139373,\n        \"p90\": 3100.8005675426143,\n        \"max\": 7604.59734223778,\n        \"min\": 2201.734859557055,\n        \"median\": 8258.770586050776,\n        \"average\": 9255.149674924553\n      },\n      \"latency\": {\n        \"average\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"max\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"median\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"medianPer1000Tokens\": 3317.359254534864,\n        \"min\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p90\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p95\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p99\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"provider\": \"string\",\n      \"model\": \"string\"\n    }\n  ],\n  \"error\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.helicone.ai/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f3f6ca4e-bdd0-4047-a082-a75448643233",
+    "name": "helicone-api Agent Comparison API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

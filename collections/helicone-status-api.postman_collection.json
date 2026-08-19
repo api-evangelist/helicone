@@ -1,0 +1,256 @@
+{
+  "item": [
+    {
+      "id": "b1c25c25-4999-4e29-809f-f585f66892c3",
+      "name": "Status",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d20d2571-8034-4246-928b-b2a3e5d69731",
+          "name": "Get All Provider Status",
+          "request": {
+            "name": "Get All Provider Status",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "public",
+                "status",
+                "provider"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d53b319f-fef4-45e3-9b75-8a1cc55d692e",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "public",
+                    "status",
+                    "provider"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"providerName\": \"string\",\n      \"metrics\": {\n        \"averageLatency\": 762.3510180448001,\n        \"averageLatencyPerToken\": 1728.4529362476608,\n        \"errorRate24h\": 8717.965202209522,\n        \"errorRateChange\": 2526.227467447467,\n        \"errorRatePrevious24h\": 244.07575863030993,\n        \"latencyChange\": 8687.54448998734,\n        \"latencyPerTokenChange\": 5173.731753025118,\n        \"recentErrorCount\": 7249.709363195133,\n        \"recentRequestCount\": 9268.318832548193,\n        \"requestCountPrevious24h\": 4531.23647696602,\n        \"requestVolumeChange\": 5825.343580189519,\n        \"timeSeriesData\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"totalRequests\": 9996.843796682359\n      }\n    },\n    {\n      \"providerName\": \"string\",\n      \"metrics\": {\n        \"averageLatency\": 1788.8425349121517,\n        \"averageLatencyPerToken\": 5208.826031899236,\n        \"errorRate24h\": 467.863760374172,\n        \"errorRateChange\": 6770.496868048032,\n        \"errorRatePrevious24h\": 4323.533489866043,\n        \"latencyChange\": 1760.9037475848322,\n        \"latencyPerTokenChange\": 3432.3396311140395,\n        \"recentErrorCount\": 2515.2440332909955,\n        \"recentRequestCount\": 9330.82934791463,\n        \"requestCountPrevious24h\": 7812.457796438922,\n        \"requestVolumeChange\": 4876.6251239634985,\n        \"timeSeriesData\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"totalRequests\": 5430.405245712214\n      }\n    }\n  ],\n  \"error\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c6dfbd69-9568-484b-b0b7-c73d4c4b12b8",
+          "name": "Get Provider Status",
+          "request": {
+            "name": "Get Provider Status",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "public",
+                "status",
+                "provider",
+                ":provider"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "timeFrame",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "provider",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "67b6d85d-2d69-490e-8b9e-bc74196433cd",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "public",
+                    "status",
+                    "provider",
+                    ":provider"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "timeFrame",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provider",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"providerName\": \"string\",\n    \"metrics\": {\n      \"averageLatency\": 6971.203517690621,\n      \"averageLatencyPerToken\": 1920.5898116061715,\n      \"errorRate24h\": 2274.801568512772,\n      \"errorRateChange\": 7066.394103304137,\n      \"errorRatePrevious24h\": 4793.129314185455,\n      \"latencyChange\": 4085.4948298012105,\n      \"latencyPerTokenChange\": 6885.525316284349,\n      \"recentErrorCount\": 1706.0286688146155,\n      \"recentRequestCount\": 4332.424572840724,\n      \"requestCountPrevious24h\": 2874.0291439376097,\n      \"requestVolumeChange\": 3754.890568892888,\n      \"timeSeriesData\": [\n        {\n          \"timestamp\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"errorCount\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"requestCount\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"averageLatency\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"averageLatencyPerCompletionToken\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"timestamp\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"errorCount\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"requestCount\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"averageLatency\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"averageLatencyPerCompletionToken\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"totalRequests\": 9212.929519107844\n    }\n  },\n  \"error\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.helicone.ai/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b5beeca6-aec7-4e6c-bf02-211def3aa14d",
+    "name": "helicone-api Agent Status API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "item": [
+    {
+      "id": "7ea1f6b6-7a48-4c92-8d0b-ba9ab3ae2305",
+      "name": "Model Registry",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "86ab0ec9-21fd-4ff1-b7ed-f86a704b897c",
+          "name": "Returns a comprehensive list of all AI models with their configurations, pricing, and capabilities",
+          "request": {
+            "name": "Returns a comprehensive list of all AI models with their configurations, pricing, and capabilities",
+            "description": {
+              "content": "Get all available models from the registry",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "public",
+                "model-registry",
+                "models"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "68a11d36-d2ed-4f4d-bd3b-70ddeb937752",
+              "name": "Complete model registry with models and filter options",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "public",
+                    "model-registry",
+                    "models"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"models\": [\n    {\n      \"id\": \"claude-opus-4-1\",\n      \"name\": \"Anthropic: Claude Opus 4.1\",\n      \"author\": \"anthropic\",\n      \"contextLength\": 200000,\n      \"endpoints\": [\n        {\n          \"provider\": \"anthropic\",\n          \"providerSlug\": \"anthropic\",\n          \"supportsPtb\": true,\n          \"pricing\": {\n            \"prompt\": 15,\n            \"completion\": 75,\n            \"cacheRead\": 1.5,\n            \"cacheWrite\": 18.75\n          }\n        }\n      ],\n      \"maxOutput\": 32000,\n      \"trainingDate\": \"2025-08-05\",\n      \"description\": \"Most capable Claude model with extended context\",\n      \"inputModalities\": [\n        null\n      ],\n      \"outputModalities\": [\n        null\n      ],\n      \"supportedParameters\": [\n        null,\n        null,\n        null,\n        null,\n        null,\n        null,\n        null\n      ]\n    }\n  ],\n  \"total\": 150,\n  \"filters\": {\n    \"providers\": [\n      {\n        \"name\": \"anthropic\",\n        \"displayName\": \"Anthropic\"\n      },\n      {\n        \"name\": \"openai\",\n        \"displayName\": \"OpenAI\"\n      },\n      {\n        \"name\": \"google\",\n        \"displayName\": \"Google\"\n      }\n    ],\n    \"authors\": [\n      \"anthropic\",\n      \"openai\",\n      \"google\",\n      \"meta\"\n    ],\n    \"capabilities\": [\n      \"audio\",\n      \"image\",\n      \"thinking\",\n      \"caching\",\n      \"reasoning\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.helicone.ai/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "794a3b67-45ca-40d6-b6c6-2e762d49a1fa",
+    "name": "helicone-api Agent Model Registry API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

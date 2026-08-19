@@ -1,0 +1,224 @@
+{
+  "item": [
+    {
+      "id": "7c3747c4-951f-4fa1-992b-9404cf49180a",
+      "name": "Wrapped",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "996524ff-d09d-412e-91c0-308c407db980",
+          "name": "Get Wrapped2025Stats",
+          "request": {
+            "name": "Get Wrapped2025Stats",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "wrapped",
+                "2025"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1e6d7d8a-9c23-4aa7-ab62-e37de509e4b0",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "wrapped",
+                    "2025"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"totalRequests\": 5134.959526619265,\n    \"topProviders\": [\n      {\n        \"count\": 6176.317228880468,\n        \"provider\": \"string\"\n      },\n      {\n        \"count\": 7953.750834215077,\n        \"provider\": \"string\"\n      }\n    ],\n    \"topModels\": [\n      {\n        \"count\": 9084.928426468538,\n        \"model\": \"string\"\n      },\n      {\n        \"count\": 1961.9482243354114,\n        \"model\": \"string\"\n      }\n    ],\n    \"totalTokens\": {\n      \"total\": 2891.3293124464044,\n      \"cacheRead\": 1158.1876155684768,\n      \"cacheWrite\": 9586.403175262098,\n      \"completion\": 2338.057239230278,\n      \"prompt\": 5863.543422031606\n    },\n    \"mostExpensiveRequest\": {\n      \"requestId\": \"string\",\n      \"cost\": 6761.681524528351,\n      \"model\": \"string\",\n      \"provider\": \"string\",\n      \"createdAt\": \"string\",\n      \"promptTokens\": 4974.57647610816,\n      \"completionTokens\": 2308.928138311029,\n      \"conversation\": {\n        \"totalWords\": 228.1339588592546,\n        \"turnCount\": 8693.571248761322,\n        \"messages\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      }\n    }\n  },\n  \"error\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9dfba42a-c056-4e07-9520-7ff3cb303171",
+          "name": "Check Has Wrapped2025Data",
+          "request": {
+            "name": "Check Has Wrapped2025Data",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "wrapped",
+                "2025",
+                "check"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e3d5abb8-e45f-4ac9-b585-fd7225e7dde6",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "wrapped",
+                    "2025",
+                    "check"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"hasData\": false\n  },\n  \"error\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.helicone.ai/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8fc8038d-9ce5-4285-9a0e-0e8f2fef7b38",
+    "name": "helicone-api Agent Wrapped API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

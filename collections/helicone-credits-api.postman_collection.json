@@ -1,0 +1,653 @@
+{
+  "item": [
+    {
+      "id": "e7429303-e746-4d1c-af5f-ca0f8b00040d",
+      "name": "Credits",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2503e8da-6342-43cf-90c9-69c18d2a5cab",
+          "name": "Get Credits Balance",
+          "request": {
+            "name": "Get Credits Balance",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "credits",
+                "balance"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "113086e8-e192-418b-82ff-4cd801e7232d",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "credits",
+                    "balance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"totalCreditsPurchased\": 6683.252517175073,\n    \"balance\": 7344.882826766463\n  },\n  \"error\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "22cc06a3-03fe-498b-b17e-b6aaf88e3b17",
+          "name": "List Token Usage Payments",
+          "request": {
+            "name": "List Token Usage Payments",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "credits",
+                "payments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<double>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<double>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "dad0ae87-11c5-445d-94d6-a0c1ced5ae18",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "credits",
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<double>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"purchases\": [\n      {\n        \"id\": \"string\",\n        \"createdAt\": 213.40226390282658,\n        \"credits\": 8361.44016719666,\n        \"referenceId\": \"string\"\n      },\n      {\n        \"id\": \"string\",\n        \"createdAt\": 21.445535536395166,\n        \"credits\": 2645.681967403959,\n        \"referenceId\": \"string\"\n      }\n    ],\n    \"total\": 9671.62348243607,\n    \"page\": 8375.135248026332,\n    \"pageSize\": 5162.347439794595\n  },\n  \"error\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8ee701ba-a4c0-4bf1-82fe-5d41294ed356",
+          "name": "Get Total Spend",
+          "request": {
+            "name": "Get Total Spend",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "credits",
+                "totalSpend"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "be616432-7c29-4068-9d9d-19ace48dd4a6",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "credits",
+                    "totalSpend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"totalSpend\": 7542.062289960192\n  },\n  \"error\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "31f76aec-92f8-4bff-a7a5-9389c09e6806",
+          "name": "Get Spend Breakdown",
+          "request": {
+            "name": "Get Spend Breakdown",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "credits",
+                "spend",
+                "breakdown"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "timeRange",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "startDate",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "endDate",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b8a7a12d-c8e5-4266-aeb4-4f08505c1261",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "credits",
+                    "spend",
+                    "breakdown"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "timeRange",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"models\": [\n      {\n        \"model\": \"string\",\n        \"provider\": \"string\",\n        \"promptTokens\": 5174.862838188855,\n        \"completionTokens\": 2458.9969548506306,\n        \"cacheReadTokens\": 5909.147188554149,\n        \"cacheWriteTokens\": 8404.685910226892,\n        \"pricing\": {\n          \"outputPer1M\": 9851.030696878637,\n          \"inputPer1M\": 4532.144436656057,\n          \"cacheWritePer1M\": 943.0451364915937,\n          \"cacheReadPer1M\": 1256.7666838185476\n        },\n        \"subtotal\": 9301.58979716054,\n        \"discountPercent\": 7250.62261448508,\n        \"total\": 581.7158108495136,\n        \"cacheAdjustment\": 2564.6802350526586\n      },\n      {\n        \"model\": \"string\",\n        \"provider\": \"string\",\n        \"promptTokens\": 3106.1696631735604,\n        \"completionTokens\": 957.0678021478485,\n        \"cacheReadTokens\": 446.70646669249913,\n        \"cacheWriteTokens\": 2475.802105377849,\n        \"pricing\": {\n          \"outputPer1M\": 8998.701383783931,\n          \"inputPer1M\": 7513.943756617896,\n          \"cacheWritePer1M\": 20.293861771973898,\n          \"cacheReadPer1M\": 6424.013949478768\n        },\n        \"subtotal\": 4344.328343093051,\n        \"discountPercent\": 4541.138441128969,\n        \"total\": 4739.20733430381,\n        \"cacheAdjustment\": 3495.562999334767\n      }\n    ],\n    \"totalCost\": 7813.256859580298,\n    \"timeRange\": {\n      \"end\": \"string\",\n      \"start\": \"string\"\n    }\n  },\n  \"error\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bd1eafb6-fcf9-4995-ac50-75e3840a06d1",
+          "name": "List Invoices",
+          "request": {
+            "name": "List Invoices",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "credits",
+                "invoices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "174f942b-360a-4951-aa26-27317f2a238c",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "credits",
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"organizationId\": \"string\",\n      \"stripeInvoiceId\": \"string\",\n      \"hostedInvoiceUrl\": \"string\",\n      \"startDate\": \"string\",\n      \"endDate\": \"string\",\n      \"amountCents\": 1873.336907735288,\n      \"subtotalCents\": 8686.68314193376,\n      \"notes\": \"string\",\n      \"createdAt\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"organizationId\": \"string\",\n      \"stripeInvoiceId\": \"string\",\n      \"hostedInvoiceUrl\": \"string\",\n      \"startDate\": \"string\",\n      \"endDate\": \"string\",\n      \"amountCents\": 2986.646922735474,\n      \"subtotalCents\": 4320.700972515591,\n      \"notes\": \"string\",\n      \"createdAt\": \"string\"\n    }\n  ],\n  \"error\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7f10fef4-350d-4c5c-921b-9e59a563c80e",
+          "name": "Get Discounts",
+          "request": {
+            "name": "Get Discounts",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "credits",
+                "discounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f0e8a42b-e11b-44ad-9532-f88a35535de8",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "credits",
+                    "discounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"provider\": \"string\",\n      \"model\": \"string\",\n      \"percent\": 6116.596947610133\n    },\n    {\n      \"provider\": \"string\",\n      \"model\": \"string\",\n      \"percent\": 9283.844421919424\n    }\n  ],\n  \"error\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.helicone.ai/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2411c3a8-a967-447b-a963-7aa7d8428f6d",
+    "name": "helicone-api Agent Credits API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

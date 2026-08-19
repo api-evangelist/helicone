@@ -1,0 +1,590 @@
+{
+  "item": [
+    {
+      "id": "9952c0d6-9048-4a59-bde9-57da85c4d9df",
+      "name": "Trace",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "367e2bef-4703-49b7-804e-f392943ea81e",
+          "name": "Log Custom Trace Legacy",
+          "request": {
+            "name": "Log Custom Trace Legacy",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "trace",
+                "custom",
+                "v1",
+                "log"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4034b835-5c49-4529-9bac-c2175938d3ff",
+              "name": "No content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "trace",
+                    "custom",
+                    "v1",
+                    "log"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2c0524ae-917d-4401-9527-2358f0ea3a35",
+          "name": "Log Custom Trace",
+          "request": {
+            "name": "Log Custom Trace",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "trace",
+                "custom",
+                "log"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f3aa923a-b3d4-493c-b275-298a5442ecca",
+              "name": "No content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "trace",
+                    "custom",
+                    "log"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f46bd4ab-96b7-44ff-9c38-74d635127154",
+          "name": "Log Custom Trace Typed",
+          "request": {
+            "name": "Log Custom Trace Typed",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "trace",
+                "custom",
+                "log",
+                "typed"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"providerRequest\": {\n    \"url\": \"<string>\",\n    \"json\": {\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {},\n      \"key_3\": {}\n    },\n    \"meta\": {\n      \"key_0\": \"<string>\"\n    }\n  },\n  \"providerResponse\": {\n    \"status\": \"<double>\",\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\",\n      \"key_2\": \"<string>\"\n    },\n    \"json\": {\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    },\n    \"textBody\": \"<string>\"\n  },\n  \"timing\": {\n    \"startTime\": \"<string>\",\n    \"endTime\": \"<string>\",\n    \"timeToFirstToken\": \"<double>\"\n  },\n  \"provider\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "576715c8-ebb2-4039-8c4e-4f84d0816a87",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "trace",
+                    "custom",
+                    "log",
+                    "typed"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"providerRequest\": {\n    \"url\": \"<string>\",\n    \"json\": {\n      \"key_0\": {}\n    },\n    \"meta\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\",\n      \"key_2\": \"<string>\"\n    }\n  },\n  \"providerResponse\": {\n    \"status\": \"<double>\",\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\",\n      \"key_2\": \"<string>\"\n    },\n    \"json\": {\n      \"key_0\": {}\n    },\n    \"textBody\": \"<string>\"\n  },\n  \"timing\": {\n    \"startTime\": \"<string>\",\n    \"endTime\": \"<string>\",\n    \"timeToFirstToken\": \"<double>\"\n  },\n  \"provider\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"isValid\": false,\n  \"errors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6e2ca265-afb3-4624-b3d0-436c8c63d6fb",
+          "name": "Log Trace",
+          "request": {
+            "name": "Log Trace",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "trace",
+                "log"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"resourceSpans\": [\n    {\n      \"scopeSpans\": [\n        {\n          \"spans\": [\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            },\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            }\n          ],\n          \"scope\": {\n            \"version\": \"<string>\",\n            \"name\": \"<string>\"\n          }\n        },\n        {\n          \"spans\": [\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            },\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            }\n          ],\n          \"scope\": {\n            \"version\": \"<string>\",\n            \"name\": \"<string>\"\n          }\n        }\n      ],\n      \"resource\": {\n        \"droppedAttributesCount\": \"<double>\",\n        \"attributes\": [\n          {\n            \"value\": {\n              \"arrayValue\": {\n                \"values\": [\n                  {\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              \"intValue\": \"<double>\",\n              \"stringValue\": \"<string>\"\n            },\n            \"key\": \"<string>\"\n          },\n          {\n            \"value\": {\n              \"arrayValue\": {\n                \"values\": [\n                  {\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              \"intValue\": \"<double>\",\n              \"stringValue\": \"<string>\"\n            },\n            \"key\": \"<string>\"\n          }\n        ]\n      }\n    },\n    {\n      \"scopeSpans\": [\n        {\n          \"spans\": [\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            },\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            }\n          ],\n          \"scope\": {\n            \"version\": \"<string>\",\n            \"name\": \"<string>\"\n          }\n        },\n        {\n          \"spans\": [\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            },\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            }\n          ],\n          \"scope\": {\n            \"version\": \"<string>\",\n            \"name\": \"<string>\"\n          }\n        }\n      ],\n      \"resource\": {\n        \"droppedAttributesCount\": \"<double>\",\n        \"attributes\": [\n          {\n            \"value\": {\n              \"arrayValue\": {\n                \"values\": [\n                  {\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              \"intValue\": \"<double>\",\n              \"stringValue\": \"<string>\"\n            },\n            \"key\": \"<string>\"\n          },\n          {\n            \"value\": {\n              \"arrayValue\": {\n                \"values\": [\n                  {\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              \"intValue\": \"<double>\",\n              \"stringValue\": \"<string>\"\n            },\n            \"key\": \"<string>\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b4420d68-cb16-4f1c-ab93-9a3812894938",
+              "name": "No content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "trace",
+                    "log"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceSpans\": [\n    {\n      \"scopeSpans\": [\n        {\n          \"spans\": [\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            },\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            }\n          ],\n          \"scope\": {\n            \"version\": \"<string>\",\n            \"name\": \"<string>\"\n          }\n        },\n        {\n          \"spans\": [\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            },\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            }\n          ],\n          \"scope\": {\n            \"version\": \"<string>\",\n            \"name\": \"<string>\"\n          }\n        }\n      ],\n      \"resource\": {\n        \"droppedAttributesCount\": \"<double>\",\n        \"attributes\": [\n          {\n            \"value\": {\n              \"arrayValue\": {\n                \"values\": [\n                  {\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              \"intValue\": \"<double>\",\n              \"stringValue\": \"<string>\"\n            },\n            \"key\": \"<string>\"\n          },\n          {\n            \"value\": {\n              \"arrayValue\": {\n                \"values\": [\n                  {\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              \"intValue\": \"<double>\",\n              \"stringValue\": \"<string>\"\n            },\n            \"key\": \"<string>\"\n          }\n        ]\n      }\n    },\n    {\n      \"scopeSpans\": [\n        {\n          \"spans\": [\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            },\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            }\n          ],\n          \"scope\": {\n            \"version\": \"<string>\",\n            \"name\": \"<string>\"\n          }\n        },\n        {\n          \"spans\": [\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            },\n            {\n              \"droppedLinksCount\": \"<double>\",\n              \"status\": {\n                \"code\": \"<double>\"\n              },\n              \"droppedEventsCount\": \"<double>\",\n              \"droppedAttributesCount\": \"<double>\",\n              \"attributes\": [\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                },\n                {\n                  \"value\": {\n                    \"intValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"key\": \"<string>\"\n                }\n              ],\n              \"endTimeUnixNano\": \"<string>\",\n              \"startTimeUnixNano\": \"<string>\",\n              \"kind\": \"<double>\",\n              \"name\": \"<string>\",\n              \"spanId\": \"<string>\",\n              \"traceId\": \"<string>\"\n            }\n          ],\n          \"scope\": {\n            \"version\": \"<string>\",\n            \"name\": \"<string>\"\n          }\n        }\n      ],\n      \"resource\": {\n        \"droppedAttributesCount\": \"<double>\",\n        \"attributes\": [\n          {\n            \"value\": {\n              \"arrayValue\": {\n                \"values\": [\n                  {\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              \"intValue\": \"<double>\",\n              \"stringValue\": \"<string>\"\n            },\n            \"key\": \"<string>\"\n          },\n          {\n            \"value\": {\n              \"arrayValue\": {\n                \"values\": [\n                  {\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"stringValue\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              \"intValue\": \"<double>\",\n              \"stringValue\": \"<string>\"\n            },\n            \"key\": \"<string>\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e049b5b3-42a8-4ea1-825a-833aed758625",
+          "name": "Log Python Trace",
+          "request": {
+            "name": "Log Python Trace",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "trace",
+                "log-python"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "aff76836-90de-4f9d-8f31-ba327d908c1d",
+              "name": "No content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "trace",
+                    "log-python"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.helicone.ai/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c3c2f611-385c-46cd-a0a8-429787dbeccd",
+    "name": "helicone-api Agent Trace API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}
