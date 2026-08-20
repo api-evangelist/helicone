@@ -7,6 +7,8 @@ apis:
   humanURL: ' https://www.helicone.ai/'
   baseURL: https://ai-gateway.helicone.ai
   tags:
+  - Agents
+  tags_raw:
   - Agent
   properties:
   - type: OpenAPI
@@ -107,6 +109,8 @@ apis:
   humanURL: ' https://www.helicone.ai/'
   baseURL: https://ai-gateway.helicone.ai
   tags:
+  - APIKeys
+  tags_raw:
   - API Key
   properties:
   - type: OpenAPI
@@ -407,6 +411,8 @@ apis:
   humanURL: ' https://www.helicone.ai/'
   baseURL: https://ai-gateway.helicone.ai
   tags:
+  - Customers
+  tags_raw:
   - Customer
   properties:
   - type: OpenAPI
@@ -2706,7 +2712,8 @@ apis:
   description: The Test API from Helicone — 1 operation(s) for test.
   humanURL: ' https://www.helicone.ai/'
   baseURL: https://ai-gateway.helicone.ai
-  tags:
+  tags: []
+  tags_raw:
   - Test
   properties:
   - type: OpenAPI
@@ -3107,6 +3114,8 @@ apis:
   humanURL: ' https://www.helicone.ai/'
   baseURL: https://ai-gateway.helicone.ai
   tags:
+  - Webhook
+  tags_raw:
   - Webhooks
   properties:
   - type: OpenAPI
