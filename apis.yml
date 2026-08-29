@@ -3356,6 +3356,9 @@ description: >-
   experiment with their AI applications. The worlds fastest-growing AI companies rely on Helicone to route, debug, and
   analyze their applications.
 common:
+  - type: CapabilityMap
+    url: capabilities/helicone-capability-edges.yml
+    name: Helicone Business Capability Map
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/helicone/overview
   - type: AgenticAccess
