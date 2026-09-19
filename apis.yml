@@ -311,6 +311,8 @@ apis:
   humanURL: ' https://www.helicone.ai/'
   baseURL: https://ai-gateway.helicone.ai
   tags:
+  - Credit
+  tags_raw:
   - Credits
   properties:
   - type: OpenAPI
@@ -513,6 +515,8 @@ apis:
   humanURL: ' https://www.helicone.ai/'
   baseURL: https://ai-gateway.helicone.ai
   tags:
+  - Dashboards
+  tags_raw:
   - Dashboard
   properties:
   - type: OpenAPI
@@ -613,6 +617,8 @@ apis:
   humanURL: ' https://www.helicone.ai/'
   baseURL: https://ai-gateway.helicone.ai
   tags:
+  - Datasets
+  tags_raw:
   - Dataset
   properties:
   - type: OpenAPI
@@ -2413,6 +2419,8 @@ apis:
   humanURL: ' https://www.helicone.ai/'
   baseURL: https://ai-gateway.helicone.ai
   tags:
+  - Sessions
+  tags_raw:
   - Session
   properties:
   - type: OpenAPI
@@ -3312,6 +3320,13 @@ apis:
     url: https://docs.helicone.ai/rest/property/post-v1propertyquery
 name: Helicone
 tags:
+  - AI Gateway
+  - AI Monitoring
+  - Gateways
+  - LLM Observability
+  - LLM Routing
+  - Prompt Management
+tags_raw:
   - AI Gateways
   - AI Monitoring
   - Gateways
