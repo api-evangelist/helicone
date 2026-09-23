@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: helicone-api Agent Comparison API
+  title: helicone-api Comparison API
   version: 1.0.0
   license:
     name: MIT
@@ -34,27 +34,46 @@ paths:
               items:
                 $ref: '#/components/schemas/ModelsToCompare'
               type: array
+      summary: Get model comparison
+      x-summary-source: derived
 components:
   schemas:
-    ModelsToCompare:
+    ResultError_string_:
       properties:
-        provider:
-          type: string
-        names:
-          items:
-            type: string
-          type: array
-        parent:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
           type: string
       required:
-      - provider
-      - names
-      - parent
+      - data
+      - error
       type: object
+      additionalProperties: false
     Result_Model-Array.string_:
       anyOf:
       - $ref: '#/components/schemas/ResultSuccess_Model-Array_'
       - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_Model-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/Model'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
     TokenMetricStats:
       allOf:
       - $ref: '#/components/schemas/MetricStats'
@@ -205,22 +224,6 @@ components:
       - provider
       - model
       type: object
-    ResultSuccess_Model-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/Model'
-          type: array
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
     TimeSeriesMetric:
       properties:
         value:
@@ -232,20 +235,21 @@ components:
       - value
       - timestamp
       type: object
-    ResultError_string_:
+    ModelsToCompare:
       properties:
-        data:
-          type: number
-          enum:
-          - null
-          nullable: true
-        error:
+        provider:
+          type: string
+        names:
+          items:
+            type: string
+          type: array
+        parent:
           type: string
       required:
-      - data
-      - error
+      - provider
+      - names
+      - parent
       type: object
-      additionalProperties: false
   securitySchemes:
     api_key:
       type: apiKey

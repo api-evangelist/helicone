@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: helicone-api Agent Security API
+  title: helicone-api Security API
   version: 1.0.0
   license:
     name: MIT
@@ -39,6 +39,8 @@ paths:
               - text
               - advanced
               type: object
+      summary: Get security
+      x-summary-source: derived
 components:
   schemas:
     ResultSuccess__unsafe-boolean__:
@@ -51,10 +53,11 @@ components:
           - unsafe
           type: object
         error:
-          type: number
+          type:
+          - number
+          - 'null'
           enum:
           - null
-          nullable: true
       required:
       - data
       - error
@@ -67,10 +70,11 @@ components:
     ResultError_string_:
       properties:
         data:
-          type: number
+          type:
+          - number
+          - 'null'
           enum:
           - null
-          nullable: true
         error:
           type: string
       required:

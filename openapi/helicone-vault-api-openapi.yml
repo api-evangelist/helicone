@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: helicone-api Agent Vault API
+  title: helicone-api Vault API
   version: 1.0.0
   license:
     name: MIT
@@ -32,6 +32,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/AddVaultKeyParams'
+      summary: Add key
+      x-summary-source: derived
   /v1/vault/keys:
     get:
       operationId: GetKeys
@@ -47,6 +49,8 @@ paths:
       security:
       - api_key: []
       parameters: []
+      summary: Get keys
+      x-summary-source: derived
   /v1/vault/key/{providerKeyId}:
     get:
       operationId: GetKeyById
@@ -67,6 +71,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Get key by id
+      x-summary-source: derived
   /v1/vault/update/{id}:
     patch:
       operationId: UpdateKey
@@ -100,28 +106,99 @@ paths:
                 key:
                   type: string
               type: object
+      summary: Update key
+      x-summary-source: derived
 components:
   schemas:
-    Result__id-string_.string_:
+    DecryptedProviderKey:
+      properties:
+        cuid:
+          type:
+          - string
+          - 'null'
+        provider_secret_key:
+          type:
+          - string
+          - 'null'
+        provider_key_name:
+          type:
+          - string
+          - 'null'
+        provider_name:
+          type:
+          - string
+          - 'null'
+        provider_key:
+          type:
+          - string
+          - 'null'
+        org_id:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+      required:
+      - provider_secret_key
+      - provider_key_name
+      - provider_name
+      - provider_key
+      - org_id
+      - id
+      type: object
+    Result_DecryptedProviderKey-Array.string_:
       anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__id-string__'
+      - $ref: '#/components/schemas/ResultSuccess_DecryptedProviderKey-Array_'
       - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_DecryptedProviderKey-Array_:
+    ResultSuccess__id-string__:
       properties:
         data:
-          items:
-            $ref: '#/components/schemas/DecryptedProviderKey'
-          type: array
+          properties:
+            id:
+              type: string
+          required:
+          - id
+          type: object
         error:
-          type: number
+          type:
+          - number
+          - 'null'
           enum:
           - null
-          nullable: true
       required:
       - data
       - error
       type: object
       additionalProperties: false
+    ResultSuccess_null_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result_null.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_null_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Result__id-string_.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__id-string__'
+      - $ref: '#/components/schemas/ResultError_string_'
     AddVaultKeyParams:
       properties:
         key:
@@ -135,104 +212,16 @@ components:
       - provider
       type: object
       additionalProperties: false
-    ResultSuccess__id-string__:
-      properties:
-        data:
-          properties:
-            id:
-              type: string
-          required:
-          - id
-          type: object
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
     ResultSuccess_DecryptedProviderKey_:
       properties:
         data:
           $ref: '#/components/schemas/DecryptedProviderKey'
         error:
-          type: number
+          type:
+          - number
+          - 'null'
           enum:
           - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_null_:
-      properties:
-        data:
-          type: number
-          enum:
-          - null
-          nullable: true
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    DecryptedProviderKey:
-      properties:
-        cuid:
-          type: string
-          nullable: true
-        provider_secret_key:
-          type: string
-          nullable: true
-        provider_key_name:
-          type: string
-          nullable: true
-        provider_name:
-          type: string
-          nullable: true
-        provider_key:
-          type: string
-          nullable: true
-        org_id:
-          type: string
-          nullable: true
-        id:
-          type: string
-          nullable: true
-      required:
-      - provider_secret_key
-      - provider_key_name
-      - provider_name
-      - provider_key
-      - org_id
-      - id
-      type: object
-    Result_null.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_null_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result_DecryptedProviderKey-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_DecryptedProviderKey-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultError_string_:
-      properties:
-        data:
-          type: number
-          enum:
-          - null
-          nullable: true
-        error:
-          type: string
       required:
       - data
       - error
@@ -242,6 +231,38 @@ components:
       anyOf:
       - $ref: '#/components/schemas/ResultSuccess_DecryptedProviderKey_'
       - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_DecryptedProviderKey-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/DecryptedProviderKey'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultError_string_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type: string
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
   securitySchemes:
     api_key:
       type: apiKey

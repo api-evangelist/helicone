@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: helicone-api Agent Evaluator API
+  title: helicone-api Evaluator API
   version: 1.0.0
   license:
     name: MIT
@@ -32,6 +32,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/CreateEvaluatorParams'
+      summary: Create evaluator
+      x-summary-source: derived
   /v1/evaluator/{evaluatorId}:
     get:
       operationId: GetEvaluator
@@ -52,6 +54,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Get evaluator
+      x-summary-source: derived
     put:
       operationId: UpdateEvaluator
       responses:
@@ -77,6 +81,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/UpdateEvaluatorParams'
+      summary: Update evaluator
+      x-summary-source: derived
     delete:
       operationId: DeleteEvaluator
       responses:
@@ -96,6 +102,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Delete evaluator
+      x-summary-source: derived
   /v1/evaluator/query:
     post:
       operationId: QueryEvaluators
@@ -118,6 +126,8 @@ paths:
             schema:
               properties: {}
               type: object
+      summary: Query evaluators
+      x-summary-source: derived
   /v1/evaluator/{evaluatorId}/experiments:
     get:
       operationId: GetExperimentsForEvaluator
@@ -138,6 +148,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Get experiments for evaluator
+      x-summary-source: derived
   /v1/evaluator/{evaluatorId}/onlineEvaluators:
     get:
       operationId: GetOnlineEvaluators
@@ -158,6 +170,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Get online evaluators
+      x-summary-source: derived
     post:
       operationId: CreateOnlineEvaluator
       responses:
@@ -183,6 +197,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/CreateOnlineEvaluatorParams'
+      summary: Create online evaluator
+      x-summary-source: derived
   /v1/evaluator/{evaluatorId}/onlineEvaluators/{onlineEvaluatorId}:
     delete:
       operationId: DeleteOnlineEvaluator
@@ -208,6 +224,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Delete online evaluator
+      x-summary-source: derived
   /v1/evaluator/python/test:
     post:
       operationId: TestPythonEvaluator
@@ -237,6 +255,8 @@ paths:
               - testInput
               - code
               type: object
+      summary: Test python evaluator
+      x-summary-source: derived
   /v1/evaluator/llm/test:
     post:
       operationId: TestLLMEvaluator
@@ -269,6 +289,8 @@ paths:
               - testInput
               - evaluatorConfig
               type: object
+      summary: Test LLM evaluator
+      x-summary-source: derived
   /v1/evaluator/lastmile/test:
     post:
       operationId: TestLastMileEvaluator
@@ -298,6 +320,8 @@ paths:
               - testInput
               - config
               type: object
+      summary: Test last mile evaluator
+      x-summary-source: derived
   /v1/evaluator/{evaluatorId}/stats:
     get:
       operationId: GetEvaluatorStats
@@ -318,320 +342,12 @@ paths:
         required: true
         schema:
           type: string
+      summary: Get evaluator stats
+      x-summary-source: derived
 components:
   schemas:
-    ResultSuccess__output-string--traces-string-Array--statusCode_63_-number__:
-      properties:
-        data:
-          properties:
-            statusCode:
-              type: number
-              format: double
-            traces:
-              items:
-                type: string
-              type: array
-            output:
-              type: string
-          required:
-          - traces
-          - output
-          type: object
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result_EvaluatorResult.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_EvaluatorResult_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_EvaluatorResult_:
-      properties:
-        data:
-          $ref: '#/components/schemas/EvaluatorResult'
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    UpdateEvaluatorParams:
-      properties:
-        scoring_type:
-          type: string
-        llm_template: {}
-        code_template: {}
-        name:
-          type: string
-        last_mile_config: {}
-      type: object
-      additionalProperties: false
-    LastMileConfigForm:
-      allOf:
-      - $ref: '#/components/schemas/BaseLastMileConfigForm'
-      - anyOf:
-        - properties:
-            _type:
-              type: string
-              enum:
-              - relevance
-              - context_relevance
-          required:
-          - _type
-          type: object
-        - properties:
-            groundTruth:
-              $ref: '#/components/schemas/DataEntry'
-            _type:
-              type: string
-              enum:
-              - faithfulness
-              nullable: false
-          required:
-          - groundTruth
-          - _type
-          type: object
-    ResultSuccess__score-number--input-string--output-string--ground_truth_63_-string__:
-      properties:
-        data:
-          properties:
-            ground_truth:
-              type: string
-            output:
-              type: string
-            input:
-              type: string
-            score:
-              type: number
-              format: double
-          required:
-          - output
-          - input
-          - score
-          type: object
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Record_string.any_:
-      properties: {}
-      additionalProperties: {}
-      type: object
-      description: Construct a type with a set of properties K of type T
-    ResultSuccess_EvaluatorExperiment-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/EvaluatorExperiment'
-          type: array
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_OnlineEvaluatorByEvaluatorId-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/OnlineEvaluatorByEvaluatorId'
-          type: array
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    EvaluatorScore:
-      properties:
-        score:
-          anyOf:
-          - type: number
-            format: double
-          - type: boolean
-      required:
-      - score
-      type: object
-    Result_null.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_null_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    OnlineEvaluatorByEvaluatorId:
-      properties:
-        config: {}
-        id:
-          type: string
-      required:
-      - config
-      - id
-      type: object
-    ResultSuccess_EvaluatorScore_:
-      properties:
-        data:
-          $ref: '#/components/schemas/EvaluatorScore'
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    CreateOnlineEvaluatorParams:
-      properties:
-        config:
-          $ref: '#/components/schemas/Record_string.any_'
-      required:
-      - config
-      type: object
-    ResultSuccess_EvaluatorStats_:
-      properties:
-        data:
-          $ref: '#/components/schemas/EvaluatorStats'
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_null_:
-      properties:
-        data:
-          type: number
-          enum:
-          - null
-          nullable: true
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    EvaluatorExperiment:
-      properties:
-        experiment_name:
-          type: string
-        experiment_created_at:
-          type: string
-        experiment_id:
-          type: string
-      required:
-      - experiment_name
-      - experiment_created_at
-      - experiment_id
-      type: object
     EvaluatorScoreResult:
       $ref: '#/components/schemas/Result_EvaluatorScore.string_'
-    TestInput:
-      properties:
-        promptTemplate:
-          type: string
-        inputs:
-          properties:
-            autoInputs:
-              $ref: '#/components/schemas/Record_string.string_'
-            inputs:
-              $ref: '#/components/schemas/Record_string.string_'
-          required:
-          - inputs
-          type: object
-        outputBody:
-          type: string
-        inputBody:
-          type: string
-      required:
-      - inputs
-      - outputBody
-      - inputBody
-      type: object
-    EvaluatorConfig:
-      properties:
-        evaluator_code_template:
-          type: string
-        evaluator_llm_template:
-          type: string
-        evaluator_scoring_type:
-          type: string
-      required:
-      - evaluator_scoring_type
-      type: object
-    Result_EvaluatorExperiment-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_EvaluatorExperiment-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Record_string.string_:
-      properties: {}
-      additionalProperties:
-        type: string
-      type: object
-      description: Construct a type with a set of properties K of type T
-    Result_EvaluatorScore.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_EvaluatorScore_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    BaseLastMileConfigForm:
-      properties:
-        output:
-          $ref: '#/components/schemas/DataEntry'
-        input:
-          $ref: '#/components/schemas/DataEntry'
-        name:
-          type: string
-      required:
-      - output
-      - input
-      - name
-      type: object
-    Result__score-number--input-string--output-string--ground_truth_63_-string_.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__score-number--input-string--output-string--ground_truth_63_-string__'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result_OnlineEvaluatorByEvaluatorId-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_OnlineEvaluatorByEvaluatorId-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result__output-string--traces-string-Array--statusCode_63_-number_.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__output-string--traces-string-Array--statusCode_63_-number__'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result_EvaluatorResult-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_EvaluatorResult-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
     EvaluatorResult:
       properties:
         id:
@@ -661,24 +377,42 @@ components:
       - last_mile_config
       type: object
       additionalProperties: false
+    EvaluatorExperiment:
+      properties:
+        experiment_name:
+          type: string
+        experiment_created_at:
+          type: string
+        experiment_id:
+          type: string
+      required:
+      - experiment_name
+      - experiment_created_at
+      - experiment_id
+      type: object
     Result_EvaluatorStats.string_:
       anyOf:
       - $ref: '#/components/schemas/ResultSuccess_EvaluatorStats_'
       - $ref: '#/components/schemas/ResultError_string_'
-    CreateEvaluatorParams:
-      properties:
-        scoring_type:
-          type: string
-        llm_template: {}
-        name:
-          type: string
-        code_template: {}
-        last_mile_config: {}
-      required:
-      - scoring_type
-      - name
+    Result_EvaluatorResult.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_EvaluatorResult_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Record_string.any_:
+      properties: {}
+      additionalProperties: {}
       type: object
-      additionalProperties: false
+      description: Construct a type with a set of properties K of type T
+    EvaluatorScore:
+      properties:
+        score:
+          anyOf:
+          - type: number
+            format: double
+          - type: boolean
+      required:
+      - score
+      type: object
     DataEntry:
       anyOf:
       - properties:
@@ -686,7 +420,6 @@ components:
             type: string
             enum:
             - system-prompt
-            nullable: false
         required:
         - _type
         type: object
@@ -697,7 +430,6 @@ components:
             type: string
             enum:
             - prompt-input
-            nullable: false
         required:
         - inputKey
         - _type
@@ -712,7 +444,6 @@ components:
             type: string
             enum:
             - input-body
-            nullable: false
         required:
         - content
         - _type
@@ -727,11 +458,129 @@ components:
             type: string
             enum:
             - output-body
-            nullable: false
         required:
         - content
         - _type
         type: object
+    ResultError_string_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type: string
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_EvaluatorExperiment-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/EvaluatorExperiment'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result_EvaluatorScore.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_EvaluatorScore_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_OnlineEvaluatorByEvaluatorId-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/OnlineEvaluatorByEvaluatorId'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result_null.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_null_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Result_EvaluatorExperiment-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_EvaluatorExperiment-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_EvaluatorResult-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/EvaluatorResult'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_EvaluatorScore_:
+      properties:
+        data:
+          $ref: '#/components/schemas/EvaluatorScore'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    BaseLastMileConfigForm:
+      properties:
+        output:
+          $ref: '#/components/schemas/DataEntry'
+        input:
+          $ref: '#/components/schemas/DataEntry'
+        name:
+          type: string
+      required:
+      - output
+      - input
+      - name
+      type: object
+    Record_string.string_:
+      properties: {}
+      additionalProperties:
+        type: string
+      type: object
+      description: Construct a type with a set of properties K of type T
+    CreateOnlineEvaluatorParams:
+      properties:
+        config:
+          $ref: '#/components/schemas/Record_string.any_'
+      required:
+      - config
+      type: object
     EvaluatorStats:
       properties:
         averageScore:
@@ -780,31 +629,214 @@ components:
       - timeSeriesData
       type: object
       additionalProperties: false
-    ResultError_string_:
+    EvaluatorConfig:
+      properties:
+        evaluator_code_template:
+          type: string
+        evaluator_llm_template:
+          type: string
+        evaluator_scoring_type:
+          type: string
+      required:
+      - evaluator_scoring_type
+      type: object
+    OnlineEvaluatorByEvaluatorId:
+      properties:
+        config: {}
+        id:
+          type: string
+      required:
+      - config
+      - id
+      type: object
+    TestInput:
+      properties:
+        promptTemplate:
+          type: string
+        inputs:
+          properties:
+            autoInputs:
+              $ref: '#/components/schemas/Record_string.string_'
+            inputs:
+              $ref: '#/components/schemas/Record_string.string_'
+          required:
+          - inputs
+          type: object
+        outputBody:
+          type: string
+        inputBody:
+          type: string
+      required:
+      - inputs
+      - outputBody
+      - inputBody
+      type: object
+    Result_EvaluatorResult-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_EvaluatorResult-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_null_:
       properties:
         data:
-          type: number
+          type:
+          - number
+          - 'null'
           enum:
           - null
-          nullable: true
         error:
-          type: string
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
       required:
       - data
       - error
       type: object
       additionalProperties: false
-    ResultSuccess_EvaluatorResult-Array_:
+    UpdateEvaluatorParams:
+      properties:
+        scoring_type:
+          type: string
+        llm_template: {}
+        code_template: {}
+        name:
+          type: string
+        last_mile_config: {}
+      type: object
+      additionalProperties: false
+    Result_OnlineEvaluatorByEvaluatorId-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_OnlineEvaluatorByEvaluatorId-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Result__score-number--input-string--output-string--ground_truth_63_-string_.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__score-number--input-string--output-string--ground_truth_63_-string__'
+      - $ref: '#/components/schemas/ResultError_string_'
+    LastMileConfigForm:
+      allOf:
+      - $ref: '#/components/schemas/BaseLastMileConfigForm'
+      - anyOf:
+        - properties:
+            _type:
+              type: string
+              enum:
+              - relevance
+              - context_relevance
+          required:
+          - _type
+          type: object
+        - properties:
+            groundTruth:
+              $ref: '#/components/schemas/DataEntry'
+            _type:
+              type: string
+              enum:
+              - faithfulness
+          required:
+          - groundTruth
+          - _type
+          type: object
+    Result__output-string--traces-string-Array--statusCode_63_-number_.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__output-string--traces-string-Array--statusCode_63_-number__'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess__output-string--traces-string-Array--statusCode_63_-number__:
       properties:
         data:
-          items:
-            $ref: '#/components/schemas/EvaluatorResult'
-          type: array
+          properties:
+            statusCode:
+              type: number
+              format: double
+            traces:
+              items:
+                type: string
+              type: array
+            output:
+              type: string
+          required:
+          - traces
+          - output
+          type: object
         error:
-          type: number
+          type:
+          - number
+          - 'null'
           enum:
           - null
-          nullable: true
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    CreateEvaluatorParams:
+      properties:
+        scoring_type:
+          type: string
+        llm_template: {}
+        name:
+          type: string
+        code_template: {}
+        last_mile_config: {}
+      required:
+      - scoring_type
+      - name
+      type: object
+      additionalProperties: false
+    ResultSuccess__score-number--input-string--output-string--ground_truth_63_-string__:
+      properties:
+        data:
+          properties:
+            ground_truth:
+              type: string
+            output:
+              type: string
+            input:
+              type: string
+            score:
+              type: number
+              format: double
+          required:
+          - output
+          - input
+          - score
+          type: object
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_EvaluatorResult_:
+      properties:
+        data:
+          $ref: '#/components/schemas/EvaluatorResult'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_EvaluatorStats_:
+      properties:
+        data:
+          $ref: '#/components/schemas/EvaluatorStats'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
       required:
       - data
       - error

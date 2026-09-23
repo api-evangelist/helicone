@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: helicone-api Agent Property API
+  title: helicone-api Property API
   version: 1.0.0
   license:
     name: MIT
@@ -39,6 +39,8 @@ paths:
                 required:
                 - propertyKey
                 type: object
+      summary: Get properties over time
+      x-summary-source: derived
   /v1/property/query:
     post:
       operationId: GetProperties
@@ -61,6 +63,8 @@ paths:
             schema:
               properties: {}
               type: object
+      summary: Get properties
+      x-summary-source: derived
   /v1/property/hide:
     post:
       operationId: HideProperty
@@ -103,6 +107,8 @@ paths:
               required:
               - key
               type: object
+      summary: Hide property
+      x-summary-source: derived
   /v1/property/hidden/query:
     post:
       operationId: GetHiddenProperties
@@ -118,6 +124,8 @@ paths:
       security:
       - api_key: []
       parameters: []
+      summary: Get hidden properties
+      x-summary-source: derived
   /v1/property/restore:
     post:
       operationId: RestoreProperty
@@ -160,6 +168,8 @@ paths:
               required:
               - key
               type: object
+      summary: Restore property
+      x-summary-source: derived
   /v1/property/{propertyKey}/search:
     post:
       operationId: SearchProperties
@@ -191,6 +201,8 @@ paths:
               required:
               - searchTerm
               type: object
+      summary: Search properties
+      x-summary-source: derived
   /v1/property/{propertyKey}/top-costs/query:
     post:
       operationId: GetTopCosts
@@ -217,6 +229,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/TimeFilterRequest'
+      summary: Get top costs
+      x-summary-source: derived
   /v1/property/{propertyKey}/top-requests/query:
     post:
       operationId: GetTopRequests
@@ -243,8 +257,322 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/TimeFilterRequest'
+      summary: Get top requests
+      x-summary-source: derived
 components:
   schemas:
+    Result_Property-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_Property-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    DataOverTimeRequest:
+      properties:
+        timeFilter:
+          properties:
+            end:
+              type: string
+            start:
+              type: string
+          required:
+          - end
+          - start
+          type: object
+        userFilter:
+          $ref: '#/components/schemas/RequestClickhouseFilterNode'
+        dbIncrement:
+          $ref: '#/components/schemas/TimeIncrement'
+        timeZoneDifference:
+          type: number
+          format: double
+      required:
+      - timeFilter
+      - userFilter
+      - dbIncrement
+      - timeZoneDifference
+      type: object
+      additionalProperties: false
+    ResultSuccess_Property-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/Property'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess__value-string--count-number_-Array_:
+      properties:
+        data:
+          items:
+            properties:
+              count:
+                type: number
+                format: double
+              value:
+                type: string
+            required:
+            - count
+            - value
+            type: object
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result__property-string--total_cost-number--request_count-number--created_at_trunc-string_-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__property-string--total_cost-number--request_count-number--created_at_trunc-string_-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    RequestClickhouseFilterNode:
+      anyOf:
+      - $ref: '#/components/schemas/FilterLeafSubset_request_response_rmt_'
+      - $ref: '#/components/schemas/RequestClickhouseFilterBranch'
+      - type: string
+        enum:
+        - all
+    RequestClickhouseFilterBranch:
+      properties:
+        right:
+          $ref: '#/components/schemas/RequestClickhouseFilterNode'
+        operator:
+          type: string
+          enum:
+          - or
+          - and
+        left:
+          $ref: '#/components/schemas/RequestClickhouseFilterNode'
+      required:
+      - right
+      - operator
+      - left
+      type: object
+    Result__value-string--cost-number_-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__value-string--cost-number_-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Result__value-string--count-number_-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__value-string--count-number_-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultError_string_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type: string
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_string-Array_:
+      properties:
+        data:
+          items:
+            type: string
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Partial_TimestampOperatorsTyped_:
+      properties:
+        equals:
+          type: string
+          format: date-time
+        gte:
+          type: string
+          format: date-time
+        lte:
+          type: string
+          format: date-time
+        lt:
+          type: string
+          format: date-time
+        gt:
+          type: string
+          format: date-time
+      type: object
+      description: Make all properties in T optional
+    ResultSuccess_string_:
+      properties:
+        data:
+          type: string
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    FilterLeafSubset_request_response_rmt_:
+      $ref: '#/components/schemas/Pick_FilterLeaf.request_response_rmt_'
+    Partial_BooleanOperators_:
+      properties:
+        equals:
+          type: boolean
+      type: object
+      description: Make all properties in T optional
+    Partial_NumberOperators_:
+      properties:
+        not-equals:
+          type: number
+          format: double
+        equals:
+          type: number
+          format: double
+        gte:
+          type: number
+          format: double
+        lte:
+          type: number
+          format: double
+        lt:
+          type: number
+          format: double
+        gt:
+          type: number
+          format: double
+      type: object
+      description: Make all properties in T optional
+    Partial_TextOperators_:
+      properties:
+        not-equals:
+          type: string
+        equals:
+          type: string
+        like:
+          type: string
+        ilike:
+          type: string
+        contains:
+          type: string
+        not-contains:
+          type: string
+      type: object
+      description: Make all properties in T optional
+    ResultSuccess__property-string--total_cost-number--request_count-number--created_at_trunc-string_-Array_:
+      properties:
+        data:
+          items:
+            properties:
+              created_at_trunc:
+                type: string
+              request_count:
+                type: number
+                format: double
+              total_cost:
+                type: number
+                format: double
+              property:
+                type: string
+            required:
+            - created_at_trunc
+            - request_count
+            - total_cost
+            - property
+            type: object
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_unknown-Array_:
+      properties:
+        data:
+          items: {}
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    TimeFilterRequest:
+      properties:
+        timeFilter:
+          properties:
+            end:
+              type: string
+            start:
+              type: string
+          required:
+          - end
+          - start
+          type: object
+      required:
+      - timeFilter
+      type: object
+      additionalProperties: false
+    Result_string-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_string-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Property:
+      properties:
+        property:
+          type: string
+      required:
+      - property
+      type: object
+      additionalProperties: false
+    Pick_FilterLeaf.request_response_rmt_:
+      properties:
+        request_response_rmt:
+          $ref: '#/components/schemas/Partial_RequestResponseRMTToOperators_'
+      type: object
+      description: From T, pick a set of properties whose keys are in the union K
+    TimeIncrement:
+      type: string
+      enum:
+      - min
+      - hour
+      - day
+      - week
+      - month
+      - year
     Partial_RequestResponseRMTToOperators_:
       properties:
         country_code:
@@ -337,84 +665,6 @@ components:
           $ref: '#/components/schemas/Partial_BooleanOperators_'
       type: object
       description: Make all properties in T optional
-    Property:
-      properties:
-        property:
-          type: string
-      required:
-      - property
-      type: object
-      additionalProperties: false
-    Result_string-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_string-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result__property-string--total_cost-number--request_count-number--created_at_trunc-string_-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__property-string--total_cost-number--request_count-number--created_at_trunc-string_-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    DataOverTimeRequest:
-      properties:
-        timeFilter:
-          properties:
-            end:
-              type: string
-            start:
-              type: string
-          required:
-          - end
-          - start
-          type: object
-        userFilter:
-          $ref: '#/components/schemas/RequestClickhouseFilterNode'
-        dbIncrement:
-          $ref: '#/components/schemas/TimeIncrement'
-        timeZoneDifference:
-          type: number
-          format: double
-      required:
-      - timeFilter
-      - userFilter
-      - dbIncrement
-      - timeZoneDifference
-      type: object
-      additionalProperties: false
-    Partial_TextOperators_:
-      properties:
-        not-equals:
-          type: string
-        equals:
-          type: string
-        like:
-          type: string
-        ilike:
-          type: string
-        contains:
-          type: string
-        not-contains:
-          type: string
-      type: object
-      description: Make all properties in T optional
-    Result__value-string--cost-number_-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__value-string--cost-number_-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    TimeFilterRequest:
-      properties:
-        timeFilter:
-          properties:
-            end:
-              type: string
-            start:
-              type: string
-          required:
-          - end
-          - start
-          type: object
-      required:
-      - timeFilter
-      type: object
-      additionalProperties: false
     ResultSuccess__value-string--cost-number_-Array_:
       properties:
         data:
@@ -431,237 +681,11 @@ components:
             type: object
           type: array
         error:
-          type: number
+          type:
+          - number
+          - 'null'
           enum:
           - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result_Property-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_Property-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    RequestClickhouseFilterBranch:
-      properties:
-        right:
-          $ref: '#/components/schemas/RequestClickhouseFilterNode'
-        operator:
-          type: string
-          enum:
-          - or
-          - and
-        left:
-          $ref: '#/components/schemas/RequestClickhouseFilterNode'
-      required:
-      - right
-      - operator
-      - left
-      type: object
-    Partial_BooleanOperators_:
-      properties:
-        equals:
-          type: boolean
-      type: object
-      description: Make all properties in T optional
-    Partial_NumberOperators_:
-      properties:
-        not-equals:
-          type: number
-          format: double
-        equals:
-          type: number
-          format: double
-        gte:
-          type: number
-          format: double
-        lte:
-          type: number
-          format: double
-        lt:
-          type: number
-          format: double
-        gt:
-          type: number
-          format: double
-      type: object
-      description: Make all properties in T optional
-    ResultSuccess__value-string--count-number_-Array_:
-      properties:
-        data:
-          items:
-            properties:
-              count:
-                type: number
-                format: double
-              value:
-                type: string
-            required:
-            - count
-            - value
-            type: object
-          type: array
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    TimeIncrement:
-      type: string
-      enum:
-      - min
-      - hour
-      - day
-      - week
-      - month
-      - year
-    Result__value-string--count-number_-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__value-string--count-number_-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_unknown-Array_:
-      properties:
-        data:
-          items: {}
-          type: array
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    RequestClickhouseFilterNode:
-      anyOf:
-      - $ref: '#/components/schemas/FilterLeafSubset_request_response_rmt_'
-      - $ref: '#/components/schemas/RequestClickhouseFilterBranch'
-      - type: string
-        enum:
-        - all
-    ResultSuccess_Property-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/Property'
-          type: array
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_string-Array_:
-      properties:
-        data:
-          items:
-            type: string
-          type: array
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_string_:
-      properties:
-        data:
-          type: string
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Partial_TimestampOperatorsTyped_:
-      properties:
-        equals:
-          type: string
-          format: date-time
-        gte:
-          type: string
-          format: date-time
-        lte:
-          type: string
-          format: date-time
-        lt:
-          type: string
-          format: date-time
-        gt:
-          type: string
-          format: date-time
-      type: object
-      description: Make all properties in T optional
-    FilterLeafSubset_request_response_rmt_:
-      $ref: '#/components/schemas/Pick_FilterLeaf.request_response_rmt_'
-    ResultSuccess__property-string--total_cost-number--request_count-number--created_at_trunc-string_-Array_:
-      properties:
-        data:
-          items:
-            properties:
-              created_at_trunc:
-                type: string
-              request_count:
-                type: number
-                format: double
-              total_cost:
-                type: number
-                format: double
-              property:
-                type: string
-            required:
-            - created_at_trunc
-            - request_count
-            - total_cost
-            - property
-            type: object
-          type: array
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Pick_FilterLeaf.request_response_rmt_:
-      properties:
-        request_response_rmt:
-          $ref: '#/components/schemas/Partial_RequestResponseRMTToOperators_'
-      type: object
-      description: From T, pick a set of properties whose keys are in the union K
-    ResultError_string_:
-      properties:
-        data:
-          type: number
-          enum:
-          - null
-          nullable: true
-        error:
-          type: string
       required:
       - data
       - error

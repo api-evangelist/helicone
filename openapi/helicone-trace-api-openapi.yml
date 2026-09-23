@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: helicone-api Agent Trace API
+  title: helicone-api Trace API
   version: 1.0.0
   license:
     name: MIT
@@ -27,6 +27,8 @@ paths:
         content:
           application/json:
             schema: {}
+      summary: Log custom trace legacy
+      x-summary-source: derived
   /v1/trace/custom/log:
     post:
       operationId: LogCustomTrace
@@ -43,6 +45,8 @@ paths:
         content:
           application/json:
             schema: {}
+      summary: Log custom trace
+      x-summary-source: derived
   /v1/trace/custom/log/typed:
     post:
       operationId: LogCustomTraceTyped
@@ -66,6 +70,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/TypedAsyncLogModel'
+      summary: Log custom trace typed
+      x-summary-source: derived
   /v1/trace/log:
     post:
       operationId: LogTrace
@@ -83,6 +89,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/OTELTrace'
+      summary: Log trace
+      x-summary-source: derived
   /v1/trace/log-python:
     post:
       operationId: LogPythonTrace
@@ -99,8 +107,32 @@ paths:
         content:
           application/json:
             schema: {}
+      summary: Log python trace
+      x-summary-source: derived
 components:
   schemas:
+    Record_string.string_:
+      properties: {}
+      additionalProperties:
+        type: string
+      type: object
+      description: Construct a type with a set of properties K of type T
+    TypedProviderResponse:
+      properties:
+        json:
+          $ref: '#/components/schemas/Record_string.unknown_'
+        textBody:
+          type: string
+        status:
+          type: number
+          format: double
+        headers:
+          $ref: '#/components/schemas/Record_string.string_'
+      required:
+      - status
+      - headers
+      type: object
+      additionalProperties: false
     TypedAsyncLogModel:
       properties:
         providerRequest:
@@ -114,6 +146,59 @@ components:
       required:
       - providerRequest
       - providerResponse
+      type: object
+      additionalProperties: false
+    Record_string.unknown_:
+      properties: {}
+      additionalProperties: {}
+      type: object
+      description: Construct a type with a set of properties K of type T
+    ValidationResult:
+      properties:
+        isValid:
+          type: boolean
+        errors:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+      required:
+      - isValid
+      - errors
+      type: object
+      additionalProperties: false
+    ModelProviderName:
+      type: string
+      enum:
+      - baseten
+      - anthropic
+      - azure
+      - bedrock
+      - canopywave
+      - cerebras
+      - chutes
+      - deepinfra
+      - deepseek
+      - fireworks
+      - google-ai-studio
+      - groq
+      - helicone
+      - mistral
+      - nebius
+      - novita
+      - openai
+      - openrouter
+      - perplexity
+      - vertex
+      - xai
+    ValidationError:
+      properties:
+        field:
+          type: string
+        message:
+          type: string
+      required:
+      - field
+      - message
       type: object
       additionalProperties: false
     ProviderName:
@@ -156,15 +241,39 @@ components:
       - CEREBRAS
       - BASETEN
       - CANOPYWAVE
-    ValidationError:
+    TypedProviderRequest:
       properties:
-        field:
+        url:
           type: string
-        message:
+        json:
+          $ref: '#/components/schemas/Record_string.unknown_'
+        meta:
+          $ref: '#/components/schemas/Record_string.string_'
+      required:
+      - url
+      - json
+      - meta
+      type: object
+      additionalProperties: false
+    Provider:
+      anyOf:
+      - $ref: '#/components/schemas/ProviderName'
+      - $ref: '#/components/schemas/ModelProviderName'
+      - type: string
+        enum:
+        - CUSTOM
+    TypedTiming:
+      properties:
+        timeToFirstToken:
+          type: number
+          format: double
+        startTime:
+          type: string
+        endTime:
           type: string
       required:
-      - field
-      - message
+      - startTime
+      - endTime
       type: object
       additionalProperties: false
     OTELTrace:
@@ -312,106 +421,6 @@ components:
       required:
       - resourceSpans
       type: object
-    Provider:
-      anyOf:
-      - $ref: '#/components/schemas/ProviderName'
-      - $ref: '#/components/schemas/ModelProviderName'
-      - type: string
-        enum:
-        - CUSTOM
-    TypedTiming:
-      properties:
-        timeToFirstToken:
-          type: number
-          format: double
-        startTime:
-          type: string
-        endTime:
-          type: string
-      required:
-      - startTime
-      - endTime
-      type: object
-      additionalProperties: false
-    TypedProviderRequest:
-      properties:
-        url:
-          type: string
-        json:
-          $ref: '#/components/schemas/Record_string.unknown_'
-        meta:
-          $ref: '#/components/schemas/Record_string.string_'
-      required:
-      - url
-      - json
-      - meta
-      type: object
-      additionalProperties: false
-    ValidationResult:
-      properties:
-        isValid:
-          type: boolean
-        errors:
-          items:
-            $ref: '#/components/schemas/ValidationError'
-          type: array
-      required:
-      - isValid
-      - errors
-      type: object
-      additionalProperties: false
-    Record_string.unknown_:
-      properties: {}
-      additionalProperties: {}
-      type: object
-      description: Construct a type with a set of properties K of type T
-    TypedProviderResponse:
-      properties:
-        json:
-          $ref: '#/components/schemas/Record_string.unknown_'
-        textBody:
-          type: string
-        status:
-          type: number
-          format: double
-        headers:
-          $ref: '#/components/schemas/Record_string.string_'
-      required:
-      - status
-      - headers
-      type: object
-      additionalProperties: false
-    ModelProviderName:
-      type: string
-      enum:
-      - baseten
-      - anthropic
-      - azure
-      - bedrock
-      - canopywave
-      - cerebras
-      - chutes
-      - deepinfra
-      - deepseek
-      - fireworks
-      - google-ai-studio
-      - groq
-      - helicone
-      - mistral
-      - nebius
-      - novita
-      - openai
-      - openrouter
-      - perplexity
-      - vertex
-      - xai
-      nullable: false
-    Record_string.string_:
-      properties: {}
-      additionalProperties:
-        type: string
-      type: object
-      description: Construct a type with a set of properties K of type T
   securitySchemes:
     api_key:
       type: apiKey

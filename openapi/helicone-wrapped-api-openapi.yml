@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: helicone-api Agent Wrapped API
+  title: helicone-api Wrapped API
   version: 1.0.0
   license:
     name: MIT
@@ -26,6 +26,8 @@ paths:
       security:
       - api_key: []
       parameters: []
+      summary: Get wrapped2025 stats
+      x-summary-source: derived
   /v1/wrapped/2025/check:
     get:
       operationId: CheckHasWrapped2025Data
@@ -41,35 +43,65 @@ paths:
       security:
       - api_key: []
       parameters: []
+      summary: Check has wrapped2025 data
+      x-summary-source: derived
 components:
   schemas:
     Result__hasData-boolean_.string_:
       anyOf:
       - $ref: '#/components/schemas/ResultSuccess__hasData-boolean__'
       - $ref: '#/components/schemas/ResultError_string_'
-    ConversationMessage:
+    Result_WrappedStats.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_WrappedStats_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    MostExpensiveRequest:
       properties:
-        role:
+        requestId:
           type: string
-        content:
-          type: string
-      required:
-      - role
-      - content
-      type: object
-      additionalProperties: false
-    ResultSuccess_WrappedStats_:
-      properties:
-        data:
-          $ref: '#/components/schemas/WrappedStats'
-        error:
+        cost:
           type: number
-          enum:
-          - null
-          nullable: true
+          format: double
+        model:
+          type: string
+        provider:
+          type: string
+        createdAt:
+          type: string
+        promptTokens:
+          type: number
+          format: double
+        completionTokens:
+          type: number
+          format: double
+        conversation:
+          properties:
+            totalWords:
+              type: number
+              format: double
+            turnCount:
+              type: number
+              format: double
+            messages:
+              items:
+                $ref: '#/components/schemas/ConversationMessage'
+              type: array
+          required:
+          - totalWords
+          - turnCount
+          - messages
+          type:
+          - object
+          - 'null'
       required:
-      - data
-      - error
+      - requestId
+      - cost
+      - model
+      - provider
+      - createdAt
+      - promptTokens
+      - completionTokens
+      - conversation
       type: object
       additionalProperties: false
     WrappedStats:
@@ -130,13 +162,38 @@ components:
         mostExpensiveRequest:
           allOf:
           - $ref: '#/components/schemas/MostExpensiveRequest'
-          nullable: true
       required:
       - totalRequests
       - topProviders
       - topModels
       - totalTokens
       - mostExpensiveRequest
+      type: object
+      additionalProperties: false
+    ConversationMessage:
+      properties:
+        role:
+          type: string
+        content:
+          type: string
+      required:
+      - role
+      - content
+      type: object
+      additionalProperties: false
+    ResultSuccess_WrappedStats_:
+      properties:
+        data:
+          $ref: '#/components/schemas/WrappedStats'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
       type: object
       additionalProperties: false
     ResultSuccess__hasData-boolean__:
@@ -149,74 +206,24 @@ components:
           - hasData
           type: object
         error:
-          type: number
+          type:
+          - number
+          - 'null'
           enum:
           - null
-          nullable: true
       required:
       - data
       - error
       type: object
       additionalProperties: false
-    MostExpensiveRequest:
-      properties:
-        requestId:
-          type: string
-        cost:
-          type: number
-          format: double
-        model:
-          type: string
-        provider:
-          type: string
-        createdAt:
-          type: string
-        promptTokens:
-          type: number
-          format: double
-        completionTokens:
-          type: number
-          format: double
-        conversation:
-          properties:
-            totalWords:
-              type: number
-              format: double
-            turnCount:
-              type: number
-              format: double
-            messages:
-              items:
-                $ref: '#/components/schemas/ConversationMessage'
-              type: array
-          required:
-          - totalWords
-          - turnCount
-          - messages
-          type: object
-          nullable: true
-      required:
-      - requestId
-      - cost
-      - model
-      - provider
-      - createdAt
-      - promptTokens
-      - completionTokens
-      - conversation
-      type: object
-      additionalProperties: false
-    Result_WrappedStats.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_WrappedStats_'
-      - $ref: '#/components/schemas/ResultError_string_'
     ResultError_string_:
       properties:
         data:
-          type: number
+          type:
+          - number
+          - 'null'
           enum:
           - null
-          nullable: true
         error:
           type: string
       required:

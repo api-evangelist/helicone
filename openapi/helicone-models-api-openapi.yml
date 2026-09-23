@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: helicone-api Agent Models API
+  title: helicone-api Models API
   version: 1.0.0
   license:
     name: MIT
@@ -25,6 +25,8 @@ paths:
       - Models
       security: []
       parameters: []
+      summary: Get models
+      x-summary-source: derived
   /v1/models/multimodal:
     get:
       operationId: GetMultimodalModels
@@ -39,6 +41,8 @@ paths:
       - Models
       security: []
       parameters: []
+      summary: Get multimodal models
+      x-summary-source: derived
 components:
   schemas:
     OAIModelsResponse:
@@ -47,7 +51,6 @@ components:
           type: string
           enum:
           - list
-          nullable: false
         data:
           items:
             $ref: '#/components/schemas/OAIModel'
@@ -65,7 +68,6 @@ components:
           type: string
           enum:
           - model
-          nullable: false
         created:
           type: number
           format: double

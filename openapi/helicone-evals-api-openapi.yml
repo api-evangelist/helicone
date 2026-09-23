@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: helicone-api Agent Evals API
+  title: helicone-api Evals API
   version: 1.0.0
   license:
     name: MIT
@@ -32,6 +32,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EvalQueryParams'
+      summary: Query evals
+      x-summary-source: derived
   /v1/evals/scores:
     get:
       operationId: GetEvalScores
@@ -47,6 +49,8 @@ paths:
       security:
       - api_key: []
       parameters: []
+      summary: Get eval scores
+      x-summary-source: derived
   /v1/evals/{requestId}:
     post:
       operationId: AddEval
@@ -82,6 +86,8 @@ paths:
               - score
               - name
               type: object
+      summary: Add eval
+      x-summary-source: derived
   /v1/evals/score-distributions/query:
     post:
       operationId: QueryScoreDistributions
@@ -103,8 +109,81 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EvalQueryParams'
+      summary: Query score distributions
+      x-summary-source: derived
 components:
   schemas:
+    EvalQueryParams:
+      properties:
+        filter:
+          $ref: '#/components/schemas/EvalFilterNode'
+        timeFilter:
+          properties:
+            end:
+              type: string
+            start:
+              type: string
+          required:
+          - end
+          - start
+          type: object
+        offset:
+          type: number
+          format: double
+        limit:
+          type: number
+          format: double
+        timeZoneDifference:
+          type: number
+          format: double
+      required:
+      - filter
+      - timeFilter
+      type: object
+      additionalProperties: false
+    EvalFilterBranch:
+      properties:
+        right:
+          $ref: '#/components/schemas/EvalFilterNode'
+        operator:
+          type: string
+          enum:
+          - or
+          - and
+        left:
+          $ref: '#/components/schemas/EvalFilterNode'
+      required:
+      - right
+      - operator
+      - left
+      type: object
+    ScoreDistribution:
+      properties:
+        name:
+          type: string
+        distribution:
+          items:
+            properties:
+              value:
+                type: number
+                format: double
+              upper:
+                type: number
+                format: double
+              lower:
+                type: number
+                format: double
+            required:
+            - value
+            - upper
+            - lower
+            type: object
+          type: array
+      required:
+      - name
+      - distribution
+      type: object
+      additionalProperties: false
     Eval:
       properties:
         name:
@@ -157,6 +236,181 @@ components:
       - averageOverTime
       type: object
       additionalProperties: false
+    ResultSuccess_ScoreDistribution-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/ScoreDistribution'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultError_string_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type: string
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_string-Array_:
+      properties:
+        data:
+          items:
+            type: string
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Partial_TimestampOperatorsTyped_:
+      properties:
+        equals:
+          type: string
+          format: date-time
+        gte:
+          type: string
+          format: date-time
+        lte:
+          type: string
+          format: date-time
+        lt:
+          type: string
+          format: date-time
+        gt:
+          type: string
+          format: date-time
+      type: object
+      description: Make all properties in T optional
+    Result_null.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_null_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    EvalFilterNode:
+      anyOf:
+      - $ref: '#/components/schemas/FilterLeafSubset_request_response_rmt_'
+      - $ref: '#/components/schemas/EvalFilterBranch'
+      - type: string
+        enum:
+        - all
+    FilterLeafSubset_request_response_rmt_:
+      $ref: '#/components/schemas/Pick_FilterLeaf.request_response_rmt_'
+    Partial_BooleanOperators_:
+      properties:
+        equals:
+          type: boolean
+      type: object
+      description: Make all properties in T optional
+    ResultSuccess_Eval-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/Eval'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Partial_NumberOperators_:
+      properties:
+        not-equals:
+          type: number
+          format: double
+        equals:
+          type: number
+          format: double
+        gte:
+          type: number
+          format: double
+        lte:
+          type: number
+          format: double
+        lt:
+          type: number
+          format: double
+        gt:
+          type: number
+          format: double
+      type: object
+      description: Make all properties in T optional
+    Partial_TextOperators_:
+      properties:
+        not-equals:
+          type: string
+        equals:
+          type: string
+        like:
+          type: string
+        ilike:
+          type: string
+        contains:
+          type: string
+        not-contains:
+          type: string
+      type: object
+      description: Make all properties in T optional
+    Result_string-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_string-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Pick_FilterLeaf.request_response_rmt_:
+      properties:
+        request_response_rmt:
+          $ref: '#/components/schemas/Partial_RequestResponseRMTToOperators_'
+      type: object
+      description: From T, pick a set of properties whose keys are in the union K
+    ResultSuccess_null_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result_Eval-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_Eval-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
     Partial_RequestResponseRMTToOperators_:
       properties:
         country_code:
@@ -249,250 +503,10 @@ components:
           $ref: '#/components/schemas/Partial_BooleanOperators_'
       type: object
       description: Make all properties in T optional
-    Result_string-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_string-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    EvalFilterBranch:
-      properties:
-        right:
-          $ref: '#/components/schemas/EvalFilterNode'
-        operator:
-          type: string
-          enum:
-          - or
-          - and
-        left:
-          $ref: '#/components/schemas/EvalFilterNode'
-      required:
-      - right
-      - operator
-      - left
-      type: object
-    ResultSuccess_Eval-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/Eval'
-          type: array
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Partial_TextOperators_:
-      properties:
-        not-equals:
-          type: string
-        equals:
-          type: string
-        like:
-          type: string
-        ilike:
-          type: string
-        contains:
-          type: string
-        not-contains:
-          type: string
-      type: object
-      description: Make all properties in T optional
-    Result_Eval-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_Eval-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Partial_BooleanOperators_:
-      properties:
-        equals:
-          type: boolean
-      type: object
-      description: Make all properties in T optional
-    Partial_NumberOperators_:
-      properties:
-        not-equals:
-          type: number
-          format: double
-        equals:
-          type: number
-          format: double
-        gte:
-          type: number
-          format: double
-        lte:
-          type: number
-          format: double
-        lt:
-          type: number
-          format: double
-        gt:
-          type: number
-          format: double
-      type: object
-      description: Make all properties in T optional
-    Result_null.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_null_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    EvalQueryParams:
-      properties:
-        filter:
-          $ref: '#/components/schemas/EvalFilterNode'
-        timeFilter:
-          properties:
-            end:
-              type: string
-            start:
-              type: string
-          required:
-          - end
-          - start
-          type: object
-        offset:
-          type: number
-          format: double
-        limit:
-          type: number
-          format: double
-        timeZoneDifference:
-          type: number
-          format: double
-      required:
-      - filter
-      - timeFilter
-      type: object
-      additionalProperties: false
-    ScoreDistribution:
-      properties:
-        name:
-          type: string
-        distribution:
-          items:
-            properties:
-              value:
-                type: number
-                format: double
-              upper:
-                type: number
-                format: double
-              lower:
-                type: number
-                format: double
-            required:
-            - value
-            - upper
-            - lower
-            type: object
-          type: array
-      required:
-      - name
-      - distribution
-      type: object
-      additionalProperties: false
-    ResultSuccess_null_:
-      properties:
-        data:
-          type: number
-          enum:
-          - null
-          nullable: true
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_ScoreDistribution-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/ScoreDistribution'
-          type: array
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_string-Array_:
-      properties:
-        data:
-          items:
-            type: string
-          type: array
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    EvalFilterNode:
-      anyOf:
-      - $ref: '#/components/schemas/FilterLeafSubset_request_response_rmt_'
-      - $ref: '#/components/schemas/EvalFilterBranch'
-      - type: string
-        enum:
-        - all
-    Partial_TimestampOperatorsTyped_:
-      properties:
-        equals:
-          type: string
-          format: date-time
-        gte:
-          type: string
-          format: date-time
-        lte:
-          type: string
-          format: date-time
-        lt:
-          type: string
-          format: date-time
-        gt:
-          type: string
-          format: date-time
-      type: object
-      description: Make all properties in T optional
     Result_ScoreDistribution-Array.string_:
       anyOf:
       - $ref: '#/components/schemas/ResultSuccess_ScoreDistribution-Array_'
       - $ref: '#/components/schemas/ResultError_string_'
-    FilterLeafSubset_request_response_rmt_:
-      $ref: '#/components/schemas/Pick_FilterLeaf.request_response_rmt_'
-    Pick_FilterLeaf.request_response_rmt_:
-      properties:
-        request_response_rmt:
-          $ref: '#/components/schemas/Partial_RequestResponseRMTToOperators_'
-      type: object
-      description: From T, pick a set of properties whose keys are in the union K
-    ResultError_string_:
-      properties:
-        data:
-          type: number
-          enum:
-          - null
-          nullable: true
-        error:
-          type: string
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
   securitySchemes:
     api_key:
       type: apiKey

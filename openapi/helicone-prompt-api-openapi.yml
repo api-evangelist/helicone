@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: helicone-api Agent Prompt API
+  title: helicone-api Prompt API
   version: 1.0.0
   license:
     name: MIT
@@ -26,6 +26,8 @@ paths:
       security:
       - api_key: []
       parameters: []
+      summary: Has prompts
+      x-summary-source: derived
   /v1/prompt/query:
     post:
       operationId: GetPrompts
@@ -47,6 +49,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/PromptsQueryParams'
+      summary: Get prompts
+      x-summary-source: derived
   /v1/prompt/{promptId}/query:
     post:
       operationId: GetPrompt
@@ -73,6 +77,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/PromptQueryParams'
+      summary: Get prompt
+      x-summary-source: derived
   /v1/prompt/{promptId}:
     delete:
       operationId: DeletePrompt
@@ -89,6 +95,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Delete prompt
+      x-summary-source: derived
   /v1/prompt/create:
     post:
       operationId: CreatePrompt
@@ -120,6 +128,8 @@ paths:
               - prompt
               - userDefinedId
               type: object
+      summary: Create prompt
+      x-summary-source: derived
   /v1/prompt/{promptId}/user-defined-id:
     patch:
       operationId: UpdatePromptUserDefinedId
@@ -151,6 +161,8 @@ paths:
               required:
               - userDefinedId
               type: object
+      summary: Update prompt user defined id
+      x-summary-source: derived
   /v1/prompt/version/{promptVersionId}/edit-label:
     post:
       operationId: EditPromptVersionLabel
@@ -177,6 +189,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/PromptEditSubversionLabelParams'
+      summary: Edit prompt version label
+      x-summary-source: derived
   /v1/prompt/version/{promptVersionId}/edit-template:
     post:
       operationId: EditPromptVersionTemplate
@@ -203,6 +217,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/PromptEditSubversionTemplateParams'
+      summary: Edit prompt version template
+      x-summary-source: derived
   /v1/prompt/version/{promptVersionId}/subversion-from-ui:
     post:
       operationId: CreateSubversionFromUi
@@ -229,6 +245,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/PromptCreateSubversionParams'
+      summary: Create subversion from ui
+      x-summary-source: derived
   /v1/prompt/version/{promptVersionId}/subversion:
     post:
       operationId: CreateSubversion
@@ -255,6 +273,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/PromptCreateSubversionParams'
+      summary: Create subversion
+      x-summary-source: derived
   /v1/prompt/version/{promptVersionId}/promote:
     post:
       operationId: PromotePromptVersionToProduction
@@ -286,6 +306,8 @@ paths:
               required:
               - previousProductionVersionId
               type: object
+      summary: Promote prompt version to production
+      x-summary-source: derived
   /v1/prompt/version/{promptVersionId}/inputs/query:
     post:
       operationId: GetInputs
@@ -320,6 +342,8 @@ paths:
               required:
               - limit
               type: object
+      summary: Get inputs
+      x-summary-source: derived
   /v1/prompt/{promptId}/experiments:
     get:
       operationId: GetPromptExperiments
@@ -340,6 +364,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Get prompt experiments
+      x-summary-source: derived
   /v1/prompt/{promptId}/versions/query:
     post:
       operationId: GetPromptVersions
@@ -366,6 +392,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/PromptVersionsQueryParams'
+      summary: Get prompt versions
+      x-summary-source: derived
   /v1/prompt/version/{promptVersionId}:
     get:
       operationId: GetPromptVersion
@@ -386,6 +414,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Get prompt version
+      x-summary-source: derived
     delete:
       operationId: DeletePromptVersion
       responses:
@@ -405,6 +435,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Delete prompt version
+      x-summary-source: derived
   /v1/prompt/{user_defined_id}/compile:
     post:
       operationId: GetPromptVersionsCompiled
@@ -431,6 +463,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/PromptVersiosQueryParamsCompiled'
+      summary: Get prompt versions compiled
+      x-summary-source: derived
   /v1/prompt/{user_defined_id}/template:
     post:
       operationId: GetPromptVersionTemplates
@@ -457,12 +491,360 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/PromptVersiosQueryParamsCompiled'
+      summary: Get prompt version templates
+      x-summary-source: derived
 components:
   schemas:
+    PromptsFilterNode:
+      anyOf:
+      - $ref: '#/components/schemas/FilterLeafSubset_prompt_v2_'
+      - $ref: '#/components/schemas/PromptsFilterBranch'
+      - type: string
+        enum:
+        - all
+    Result_PromptVersionResultFilled.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_PromptVersionResultFilled_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess__metadata-Record_string.any___:
+      properties:
+        data:
+          properties:
+            metadata:
+              $ref: '#/components/schemas/Record_string.any_'
+          required:
+          - metadata
+          type: object
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    PromptVersionResult:
+      properties:
+        id:
+          type: string
+        minor_version:
+          type: number
+          format: double
+        major_version:
+          type: number
+          format: double
+        prompt_v2:
+          type: string
+        model:
+          type: string
+        helicone_template:
+          type: string
+        created_at:
+          type: string
+        metadata:
+          $ref: '#/components/schemas/Record_string.any_'
+        parent_prompt_version:
+          type:
+          - string
+          - 'null'
+        experiment_id:
+          type:
+          - string
+          - 'null'
+        updated_at:
+          type: string
+      required:
+      - id
+      - minor_version
+      - major_version
+      - prompt_v2
+      - model
+      - helicone_template
+      - created_at
+      - metadata
+      type: object
+      additionalProperties: false
+    PromptVersionsFilterNode:
+      anyOf:
+      - $ref: '#/components/schemas/FilterLeafSubset_prompts_versions_'
+      - $ref: '#/components/schemas/PromptVersionsFilterBranch'
+      - type: string
+        enum:
+        - all
+    ResultSuccess_PromptVersionResultCompiled_:
+      properties:
+        data:
+          $ref: '#/components/schemas/PromptVersionResultCompiled'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    FilterLeafSubset_prompt_v2_:
+      $ref: '#/components/schemas/Pick_FilterLeaf.prompt_v2_'
+    Record_string.any_:
+      properties: {}
+      additionalProperties: {}
+      type: object
+      description: Construct a type with a set of properties K of type T
+    Result_PromptVersionResultCompiled.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_PromptVersionResultCompiled_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Result__metadata-Record_string.any__.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__metadata-Record_string.any___'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Pick_FilterLeaf.prompts_versions_:
+      properties:
+        prompts_versions:
+          $ref: '#/components/schemas/Partial_PromptVersionsToOperators_'
+      type: object
+      description: From T, pick a set of properties whose keys are in the union K
+    ResultSuccess_PromptVersionResult_:
+      properties:
+        data:
+          $ref: '#/components/schemas/PromptVersionResult'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultError_string_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type: string
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_PromptsResult-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/PromptsResult'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result_PromptVersionResult-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_PromptVersionResult-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    PromptVersionResultCompiled:
+      properties:
+        id:
+          type: string
+        minor_version:
+          type: number
+          format: double
+        major_version:
+          type: number
+          format: double
+        prompt_v2:
+          type: string
+        model:
+          type: string
+        prompt_compiled: {}
+      required:
+      - id
+      - minor_version
+      - major_version
+      - prompt_v2
+      - model
+      - prompt_compiled
+      type: object
+      additionalProperties: false
+    ResultSuccess__id-string--created_at-string--num_hypotheses-number--dataset-string--meta-Record_string.any__-Array_:
+      properties:
+        data:
+          items:
+            properties:
+              meta:
+                $ref: '#/components/schemas/Record_string.any_'
+              dataset:
+                type: string
+              num_hypotheses:
+                type: number
+                format: double
+              created_at:
+                type: string
+              id:
+                type: string
+            required:
+            - meta
+            - dataset
+            - num_hypotheses
+            - created_at
+            - id
+            type: object
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_PromptInputRecord-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/PromptInputRecord'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    PromptsResult:
+      properties:
+        id:
+          type: string
+        user_defined_id:
+          type: string
+        description:
+          type: string
+        pretty_name:
+          type: string
+        created_at:
+          type: string
+        major_version:
+          type: number
+          format: double
+        metadata:
+          $ref: '#/components/schemas/Record_string.any_'
+      required:
+      - id
+      - user_defined_id
+      - description
+      - pretty_name
+      - created_at
+      - major_version
+      type: object
+      additionalProperties: false
+    Result_null.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_null_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    PromptVersionsFilterBranch:
+      properties:
+        right:
+          $ref: '#/components/schemas/PromptVersionsFilterNode'
+        operator:
+          type: string
+          enum:
+          - or
+          - and
+        left:
+          $ref: '#/components/schemas/PromptVersionsFilterNode'
+      required:
+      - right
+      - operator
+      - left
+      type: object
+    FilterLeafSubset_prompts_versions_:
+      $ref: '#/components/schemas/Pick_FilterLeaf.prompts_versions_'
+    Result__id-string--created_at-string--num_hypotheses-number--dataset-string--meta-Record_string.any__-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__id-string--created_at-string--num_hypotheses-number--dataset-string--meta-Record_string.any__-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
     Result_PromptResult.string_:
       anyOf:
       - $ref: '#/components/schemas/ResultSuccess_PromptResult_'
       - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_PromptVersionResultFilled_:
+      properties:
+        data:
+          $ref: '#/components/schemas/PromptVersionResultFilled'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Partial_PromptToOperators_:
+      properties:
+        id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        user_defined_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+      type: object
+      description: Make all properties in T optional
+    ResultSuccess_CreatePromptResponse_:
+      properties:
+        data:
+          $ref: '#/components/schemas/CreatePromptResponse'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    PromptVersionsQueryParams:
+      properties:
+        filter:
+          $ref: '#/components/schemas/PromptVersionsFilterNode'
+        includeExperimentVersions:
+          type: boolean
+      type: object
+      additionalProperties: false
+    Record_string.string_:
+      properties: {}
+      additionalProperties:
+        type: string
+      type: object
+      description: Construct a type with a set of properties K of type T
     PromptEditSubversionLabelParams:
       properties:
         label:
@@ -471,10 +853,294 @@ components:
       - label
       type: object
       additionalProperties: false
-    FilterLeafSubset_prompt_v2_:
-      $ref: '#/components/schemas/Pick_FilterLeaf.prompt_v2_'
-    FilterLeafSubset_prompts_versions_:
-      $ref: '#/components/schemas/Pick_FilterLeaf.prompts_versions_'
+    Result_PromptInputRecord-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_PromptInputRecord-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    PromptCreateSubversionParams:
+      properties:
+        newHeliconeTemplate: {}
+        isMajorVersion:
+          type: boolean
+        metadata:
+          $ref: '#/components/schemas/Record_string.any_'
+        experimentId:
+          type: string
+        bumpForMajorPromptVersionId:
+          type: string
+      required:
+      - newHeliconeTemplate
+      type: object
+      additionalProperties: false
+    CreatePromptResponse:
+      properties:
+        id:
+          type: string
+        prompt_version_id:
+          type: string
+      required:
+      - id
+      - prompt_version_id
+      type: object
+      additionalProperties: false
+    Result_PromptsResult-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_PromptsResult-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_PromptResult_:
+      properties:
+        data:
+          $ref: '#/components/schemas/PromptResult'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result__hasPrompts-boolean_.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__hasPrompts-boolean__'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Partial_NumberOperators_:
+      properties:
+        not-equals:
+          type: number
+          format: double
+        equals:
+          type: number
+          format: double
+        gte:
+          type: number
+          format: double
+        lte:
+          type: number
+          format: double
+        lt:
+          type: number
+          format: double
+        gt:
+          type: number
+          format: double
+      type: object
+      description: Make all properties in T optional
+    Partial_TextOperators_:
+      properties:
+        not-equals:
+          type: string
+        equals:
+          type: string
+        like:
+          type: string
+        ilike:
+          type: string
+        contains:
+          type: string
+        not-contains:
+          type: string
+      type: object
+      description: Make all properties in T optional
+    PromptInputRecord:
+      properties:
+        id:
+          type: string
+        inputs:
+          $ref: '#/components/schemas/Record_string.string_'
+        dataset_row_id:
+          type: string
+        source_request:
+          type: string
+        prompt_version:
+          type: string
+        created_at:
+          type: string
+        response_body:
+          type: string
+        request_body:
+          type: string
+        auto_prompt_inputs:
+          items: {}
+          type: array
+      required:
+      - id
+      - inputs
+      - source_request
+      - prompt_version
+      - created_at
+      - auto_prompt_inputs
+      type: object
+      additionalProperties: false
+    Partial_PromptVersionsToOperators_:
+      properties:
+        minor_version:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        major_version:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        prompt_v2:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+      type: object
+      description: Make all properties in T optional
+    Pick_FilterLeaf.prompt_v2_:
+      properties:
+        prompt_v2:
+          $ref: '#/components/schemas/Partial_PromptToOperators_'
+      type: object
+      description: From T, pick a set of properties whose keys are in the union K
+    ResultSuccess__hasPrompts-boolean__:
+      properties:
+        data:
+          properties:
+            hasPrompts:
+              type: boolean
+          required:
+          - hasPrompts
+          type: object
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    PromptVersionResultFilled:
+      properties:
+        id:
+          type: string
+        minor_version:
+          type: number
+          format: double
+        major_version:
+          type: number
+          format: double
+        prompt_v2:
+          type: string
+        model:
+          type: string
+        filled_helicone_template: {}
+      required:
+      - id
+      - minor_version
+      - major_version
+      - prompt_v2
+      - model
+      - filled_helicone_template
+      type: object
+      additionalProperties: false
+    ResultSuccess_PromptVersionResult-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/PromptVersionResult'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    PromptQueryParams:
+      properties:
+        timeFilter:
+          properties:
+            end:
+              type: string
+            start:
+              type: string
+          required:
+          - end
+          - start
+          type: object
+      required:
+      - timeFilter
+      type: object
+      additionalProperties: false
+    Result_CreatePromptResponse.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_CreatePromptResponse_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_null_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    PromptVersiosQueryParamsCompiled:
+      properties:
+        filter:
+          $ref: '#/components/schemas/PromptVersionsFilterNode'
+        includeExperimentVersions:
+          type: boolean
+        inputs:
+          $ref: '#/components/schemas/Record_string.string_'
+      required:
+      - inputs
+      type: object
+      additionalProperties: false
+    PromptsQueryParams:
+      properties:
+        filter:
+          $ref: '#/components/schemas/PromptsFilterNode'
+      required:
+      - filter
+      type: object
+      additionalProperties: false
+    Result_PromptVersionResult.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_PromptVersionResult_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    PromptsFilterBranch:
+      properties:
+        right:
+          $ref: '#/components/schemas/PromptsFilterNode'
+        operator:
+          type: string
+          enum:
+          - or
+          - and
+        left:
+          $ref: '#/components/schemas/PromptsFilterNode'
+      required:
+      - right
+      - operator
+      - left
+      type: object
+    PromptEditSubversionTemplateParams:
+      properties:
+        heliconeTemplate: {}
+        experimentId:
+          type: string
+      required:
+      - heliconeTemplate
+      type: object
+      additionalProperties: false
     PromptResult:
       properties:
         id:
@@ -513,620 +1179,6 @@ components:
       - created_at
       - last_used
       - versions
-      type: object
-      additionalProperties: false
-    ResultSuccess_CreatePromptResponse_:
-      properties:
-        data:
-          $ref: '#/components/schemas/CreatePromptResponse'
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result_PromptInputRecord-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_PromptInputRecord-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result__id-string--created_at-string--num_hypotheses-number--dataset-string--meta-Record_string.any__-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__id-string--created_at-string--num_hypotheses-number--dataset-string--meta-Record_string.any__-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Pick_FilterLeaf.prompt_v2_:
-      properties:
-        prompt_v2:
-          $ref: '#/components/schemas/Partial_PromptToOperators_'
-      type: object
-      description: From T, pick a set of properties whose keys are in the union K
-    Partial_TextOperators_:
-      properties:
-        not-equals:
-          type: string
-        equals:
-          type: string
-        like:
-          type: string
-        ilike:
-          type: string
-        contains:
-          type: string
-        not-contains:
-          type: string
-      type: object
-      description: Make all properties in T optional
-    PromptQueryParams:
-      properties:
-        timeFilter:
-          properties:
-            end:
-              type: string
-            start:
-              type: string
-          required:
-          - end
-          - start
-          type: object
-      required:
-      - timeFilter
-      type: object
-      additionalProperties: false
-    ResultSuccess_PromptVersionResultFilled_:
-      properties:
-        data:
-          $ref: '#/components/schemas/PromptVersionResultFilled'
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result__metadata-Record_string.any__.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__metadata-Record_string.any___'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result_PromptVersionResultCompiled.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_PromptVersionResultCompiled_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess__id-string--created_at-string--num_hypotheses-number--dataset-string--meta-Record_string.any__-Array_:
-      properties:
-        data:
-          items:
-            properties:
-              meta:
-                $ref: '#/components/schemas/Record_string.any_'
-              dataset:
-                type: string
-              num_hypotheses:
-                type: number
-                format: double
-              created_at:
-                type: string
-              id:
-                type: string
-            required:
-            - meta
-            - dataset
-            - num_hypotheses
-            - created_at
-            - id
-            type: object
-          type: array
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Record_string.any_:
-      properties: {}
-      additionalProperties: {}
-      type: object
-      description: Construct a type with a set of properties K of type T
-    Result_PromptVersionResult-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_PromptVersionResult-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    PromptsFilterBranch:
-      properties:
-        right:
-          $ref: '#/components/schemas/PromptsFilterNode'
-        operator:
-          type: string
-          enum:
-          - or
-          - and
-        left:
-          $ref: '#/components/schemas/PromptsFilterNode'
-      required:
-      - right
-      - operator
-      - left
-      type: object
-    Result_CreatePromptResponse.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_CreatePromptResponse_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    PromptVersionsFilterNode:
-      anyOf:
-      - $ref: '#/components/schemas/FilterLeafSubset_prompts_versions_'
-      - $ref: '#/components/schemas/PromptVersionsFilterBranch'
-      - type: string
-        enum:
-        - all
-    Partial_NumberOperators_:
-      properties:
-        not-equals:
-          type: number
-          format: double
-        equals:
-          type: number
-          format: double
-        gte:
-          type: number
-          format: double
-        lte:
-          type: number
-          format: double
-        lt:
-          type: number
-          format: double
-        gt:
-          type: number
-          format: double
-      type: object
-      description: Make all properties in T optional
-    PromptVersionsQueryParams:
-      properties:
-        filter:
-          $ref: '#/components/schemas/PromptVersionsFilterNode'
-        includeExperimentVersions:
-          type: boolean
-      type: object
-      additionalProperties: false
-    ResultSuccess_PromptVersionResult-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/PromptVersionResult'
-          type: array
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_PromptInputRecord-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/PromptInputRecord'
-          type: array
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    PromptVersionsFilterBranch:
-      properties:
-        right:
-          $ref: '#/components/schemas/PromptVersionsFilterNode'
-        operator:
-          type: string
-          enum:
-          - or
-          - and
-        left:
-          $ref: '#/components/schemas/PromptVersionsFilterNode'
-      required:
-      - right
-      - operator
-      - left
-      type: object
-    Result_null.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_null_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Pick_FilterLeaf.prompts_versions_:
-      properties:
-        prompts_versions:
-          $ref: '#/components/schemas/Partial_PromptVersionsToOperators_'
-      type: object
-      description: From T, pick a set of properties whose keys are in the union K
-    Partial_PromptVersionsToOperators_:
-      properties:
-        minor_version:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        major_version:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        prompt_v2:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-      type: object
-      description: Make all properties in T optional
-    PromptsResult:
-      properties:
-        id:
-          type: string
-        user_defined_id:
-          type: string
-        description:
-          type: string
-        pretty_name:
-          type: string
-        created_at:
-          type: string
-        major_version:
-          type: number
-          format: double
-        metadata:
-          $ref: '#/components/schemas/Record_string.any_'
-      required:
-      - id
-      - user_defined_id
-      - description
-      - pretty_name
-      - created_at
-      - major_version
-      type: object
-      additionalProperties: false
-    PromptsQueryParams:
-      properties:
-        filter:
-          $ref: '#/components/schemas/PromptsFilterNode'
-      required:
-      - filter
-      type: object
-      additionalProperties: false
-    ResultSuccess_PromptVersionResult_:
-      properties:
-        data:
-          $ref: '#/components/schemas/PromptVersionResult'
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    PromptCreateSubversionParams:
-      properties:
-        newHeliconeTemplate: {}
-        isMajorVersion:
-          type: boolean
-        metadata:
-          $ref: '#/components/schemas/Record_string.any_'
-        experimentId:
-          type: string
-        bumpForMajorPromptVersionId:
-          type: string
-      required:
-      - newHeliconeTemplate
-      type: object
-      additionalProperties: false
-    Result_PromptVersionResult.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_PromptVersionResult_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_null_:
-      properties:
-        data:
-          type: number
-          enum:
-          - null
-          nullable: true
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    PromptEditSubversionTemplateParams:
-      properties:
-        heliconeTemplate: {}
-        experimentId:
-          type: string
-      required:
-      - heliconeTemplate
-      type: object
-      additionalProperties: false
-    PromptVersionResultFilled:
-      properties:
-        id:
-          type: string
-        minor_version:
-          type: number
-          format: double
-        major_version:
-          type: number
-          format: double
-        prompt_v2:
-          type: string
-        model:
-          type: string
-        filled_helicone_template: {}
-      required:
-      - id
-      - minor_version
-      - major_version
-      - prompt_v2
-      - model
-      - filled_helicone_template
-      type: object
-      additionalProperties: false
-    Result_PromptsResult-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_PromptsResult-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Partial_PromptToOperators_:
-      properties:
-        id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        user_defined_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-      type: object
-      description: Make all properties in T optional
-    CreatePromptResponse:
-      properties:
-        id:
-          type: string
-        prompt_version_id:
-          type: string
-      required:
-      - id
-      - prompt_version_id
-      type: object
-      additionalProperties: false
-    Record_string.string_:
-      properties: {}
-      additionalProperties:
-        type: string
-      type: object
-      description: Construct a type with a set of properties K of type T
-    Result_PromptVersionResultFilled.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_PromptVersionResultFilled_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    PromptVersionResult:
-      properties:
-        id:
-          type: string
-        minor_version:
-          type: number
-          format: double
-        major_version:
-          type: number
-          format: double
-        prompt_v2:
-          type: string
-        model:
-          type: string
-        helicone_template:
-          type: string
-        created_at:
-          type: string
-        metadata:
-          $ref: '#/components/schemas/Record_string.any_'
-        parent_prompt_version:
-          type: string
-          nullable: true
-        experiment_id:
-          type: string
-          nullable: true
-        updated_at:
-          type: string
-      required:
-      - id
-      - minor_version
-      - major_version
-      - prompt_v2
-      - model
-      - helicone_template
-      - created_at
-      - metadata
-      type: object
-      additionalProperties: false
-    PromptVersiosQueryParamsCompiled:
-      properties:
-        filter:
-          $ref: '#/components/schemas/PromptVersionsFilterNode'
-        includeExperimentVersions:
-          type: boolean
-        inputs:
-          $ref: '#/components/schemas/Record_string.string_'
-      required:
-      - inputs
-      type: object
-      additionalProperties: false
-    Result__hasPrompts-boolean_.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__hasPrompts-boolean__'
-      - $ref: '#/components/schemas/ResultError_string_'
-    PromptsFilterNode:
-      anyOf:
-      - $ref: '#/components/schemas/FilterLeafSubset_prompt_v2_'
-      - $ref: '#/components/schemas/PromptsFilterBranch'
-      - type: string
-        enum:
-        - all
-    ResultSuccess__metadata-Record_string.any___:
-      properties:
-        data:
-          properties:
-            metadata:
-              $ref: '#/components/schemas/Record_string.any_'
-          required:
-          - metadata
-          type: object
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    PromptInputRecord:
-      properties:
-        id:
-          type: string
-        inputs:
-          $ref: '#/components/schemas/Record_string.string_'
-        dataset_row_id:
-          type: string
-        source_request:
-          type: string
-        prompt_version:
-          type: string
-        created_at:
-          type: string
-        response_body:
-          type: string
-        request_body:
-          type: string
-        auto_prompt_inputs:
-          items: {}
-          type: array
-      required:
-      - id
-      - inputs
-      - source_request
-      - prompt_version
-      - created_at
-      - auto_prompt_inputs
-      type: object
-      additionalProperties: false
-    ResultSuccess_PromptVersionResultCompiled_:
-      properties:
-        data:
-          $ref: '#/components/schemas/PromptVersionResultCompiled'
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    PromptVersionResultCompiled:
-      properties:
-        id:
-          type: string
-        minor_version:
-          type: number
-          format: double
-        major_version:
-          type: number
-          format: double
-        prompt_v2:
-          type: string
-        model:
-          type: string
-        prompt_compiled: {}
-      required:
-      - id
-      - minor_version
-      - major_version
-      - prompt_v2
-      - model
-      - prompt_compiled
-      type: object
-      additionalProperties: false
-    ResultSuccess__hasPrompts-boolean__:
-      properties:
-        data:
-          properties:
-            hasPrompts:
-              type: boolean
-          required:
-          - hasPrompts
-          type: object
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_PromptsResult-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/PromptsResult'
-          type: array
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_PromptResult_:
-      properties:
-        data:
-          $ref: '#/components/schemas/PromptResult'
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultError_string_:
-      properties:
-        data:
-          type: number
-          enum:
-          - null
-          nullable: true
-        error:
-          type: string
-      required:
-      - data
-      - error
       type: object
       additionalProperties: false
   securitySchemes:

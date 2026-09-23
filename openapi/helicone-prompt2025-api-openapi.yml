@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: helicone-api Agent Prompt2025 API
+  title: helicone-api Prompt2025 API
   version: 1.0.0
   license:
     name: MIT
@@ -31,6 +31,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Get prompt2025
+      x-summary-source: derived
   /v1/prompt-2025/id/{promptId}/rename:
     post:
       operationId: RenamePrompt2025
@@ -62,6 +64,8 @@ paths:
               required:
               - name
               type: object
+      summary: Rename prompt2025
+      x-summary-source: derived
   /v1/prompt-2025/id/{promptId}/tags:
     patch:
       operationId: UpdatePrompt2025Tags
@@ -95,6 +99,8 @@ paths:
               required:
               - tags
               type: object
+      summary: Update prompt2025 tags
+      x-summary-source: derived
   /v1/prompt-2025/{promptId}:
     delete:
       operationId: DeletePrompt2025
@@ -115,6 +121,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Delete prompt2025
+      x-summary-source: derived
   /v1/prompt-2025/{promptId}/{versionId}:
     delete:
       operationId: DeletePrompt2025Version
@@ -140,6 +148,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Delete prompt2025 version
+      x-summary-source: derived
   /v1/prompt-2025/id/{promptId}/{versionId}/inputs:
     get:
       operationId: GetPrompt2025Inputs
@@ -170,6 +180,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Get prompt2025 inputs
+      x-summary-source: derived
   /v1/prompt-2025/tags:
     get:
       operationId: GetPrompt2025Tags
@@ -185,6 +197,8 @@ paths:
       security:
       - api_key: []
       parameters: []
+      summary: Get prompt2025 tags
+      x-summary-source: derived
   /v1/prompt-2025/environments:
     get:
       operationId: GetPrompt2025Environments
@@ -200,6 +214,8 @@ paths:
       security:
       - api_key: []
       parameters: []
+      summary: Get prompt2025 environments
+      x-summary-source: derived
   /v1/prompt-2025:
     post:
       operationId: CreatePrompt2025
@@ -234,6 +250,8 @@ paths:
               - tags
               - name
               type: object
+      summary: Create prompt2025
+      x-summary-source: derived
   /v1/prompt-2025/update:
     post:
       operationId: UpdatePrompt2025
@@ -274,6 +292,8 @@ paths:
               - promptVersionId
               - promptId
               type: object
+      summary: Update prompt2025
+      x-summary-source: derived
   /v1/prompt-2025/update/environment:
     post:
       operationId: SetPromptVersionEnvironment
@@ -306,6 +326,8 @@ paths:
               - promptVersionId
               - promptId
               type: object
+      summary: Set prompt version environment
+      x-summary-source: derived
   /v1/prompt-2025/remove/environment:
     post:
       operationId: RemoveEnvironmentFromVersion
@@ -338,6 +360,8 @@ paths:
               - promptVersionId
               - promptId
               type: object
+      summary: Remove environment from version
+      x-summary-source: derived
   /v1/prompt-2025/count:
     get:
       operationId: GetPrompt2025Count
@@ -353,6 +377,8 @@ paths:
       security:
       - api_key: []
       parameters: []
+      summary: Get prompt2025 count
+      x-summary-source: derived
   /v1/prompt-2025/query:
     post:
       operationId: GetPrompts2025
@@ -392,6 +418,8 @@ paths:
               - tagsFilter
               - search
               type: object
+      summary: Get prompts2025
+      x-summary-source: derived
   /v1/prompt-2025/query/version:
     post:
       operationId: GetPrompt2025Version
@@ -418,6 +446,8 @@ paths:
               required:
               - promptVersionId
               type: object
+      summary: Get prompt2025 version
+      x-summary-source: derived
   /v1/prompt-2025/query/environment-version:
     post:
       operationId: GetPrompt2025EnvironmentVersion
@@ -447,6 +477,8 @@ paths:
               - environment
               - promptId
               type: object
+      summary: Get prompt2025 environment version
+      x-summary-source: derived
   /v1/prompt-2025/query/versions:
     post:
       operationId: GetPrompt2025Versions
@@ -476,6 +508,8 @@ paths:
               required:
               - promptId
               type: object
+      summary: Get prompt2025 versions
+      x-summary-source: derived
   /v1/prompt-2025/query/production-version:
     post:
       operationId: GetPrompt2025ProductionVersion
@@ -502,6 +536,8 @@ paths:
               required:
               - promptId
               type: object
+      summary: Get prompt2025 production version
+      x-summary-source: derived
   /v1/prompt-2025/query/total-versions:
     post:
       operationId: GetPrompt2025TotalVersions
@@ -528,6 +564,8 @@ paths:
               required:
               - promptId
               type: object
+      summary: Get prompt2025 total versions
+      x-summary-source: derived
   /v1/prompt-2025/{promptVersionId}/prompt-body:
     get:
       operationId: GetPrompt2025VersionBody
@@ -549,14 +587,11 @@ paths:
         required: true
         schema:
           type: string
+      summary: Get prompt2025 version body
+      x-summary-source: derived
 components:
   schemas:
-    Result__id-string_.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__id-string__'
-      - $ref: '#/components/schemas/ResultError_string_'
-    OpenAIChatRequest:
-      description: Simplified interface for the OpenAI Chat request format
+    Prompt2025VersionPromptBody:
       properties:
         model:
           type: string
@@ -570,7 +605,6 @@ components:
                       type: string
                       enum:
                       - function
-                      nullable: false
                     function:
                       properties:
                         arguments:
@@ -613,7 +647,488 @@ components:
                     - type
                     type: object
                   type: array
-                nullable: true
+              role:
+                type: string
+            required:
+            - content
+            - role
+            type: object
+          type: array
+        temperature:
+          type: number
+          format: double
+        top_p:
+          type: number
+          format: double
+        max_tokens:
+          type: number
+          format: double
+        tools:
+          items:
+            properties:
+              function:
+                properties:
+                  parameters:
+                    $ref: '#/components/schemas/Record_string.unknown_'
+                  description:
+                    type: string
+                  name:
+                    type: string
+                required:
+                - parameters
+                - description
+                - name
+                type: object
+              type:
+                type: string
+                enum:
+                - function
+            required:
+            - function
+            - type
+            type: object
+          type: array
+        tool_choice:
+          anyOf:
+          - type: string
+          - properties:
+              function:
+                properties:
+                  name:
+                    type: string
+                  type:
+                    type: string
+                    enum:
+                    - function
+                required:
+                - name
+                - type
+                type: object
+              type:
+                type: string
+            required:
+            - type
+            type: object
+      type: object
+      additionalProperties: {}
+    Record_string.number_:
+      properties: {}
+      additionalProperties:
+        type: number
+        format: double
+      type: object
+      description: Construct a type with a set of properties K of type T
+    Result_PromptVersionCounts.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_PromptVersionCounts_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Result_Prompt2025Input.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_Prompt2025Input_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_Prompt2025Version-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/Prompt2025Version'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Record_string.any_:
+      properties: {}
+      additionalProperties: {}
+      type: object
+      description: Construct a type with a set of properties K of type T
+    PromptVersionCounts:
+      properties:
+        totalVersions:
+          type: number
+          format: double
+        majorVersions:
+          type: number
+          format: double
+      required:
+      - totalVersions
+      - majorVersions
+      type: object
+      additionalProperties: false
+    ResultSuccess_Prompt2025Version_:
+      properties:
+        data:
+          $ref: '#/components/schemas/Prompt2025Version'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_Prompt2025Input_:
+      properties:
+        data:
+          $ref: '#/components/schemas/Prompt2025Input'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Prompt2025Input:
+      properties:
+        request_id:
+          type: string
+        version_id:
+          type: string
+        inputs:
+          $ref: '#/components/schemas/Record_string.any_'
+      required:
+      - request_id
+      - version_id
+      - inputs
+      type: object
+      additionalProperties: false
+    ResultSuccess_PromptCreateResponse_:
+      properties:
+        data:
+          $ref: '#/components/schemas/PromptCreateResponse'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultError_string_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type: string
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_string-Array_:
+      properties:
+        data:
+          items:
+            type: string
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result_Prompt2025Version.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_Prompt2025Version_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Record_string.unknown_:
+      properties: {}
+      additionalProperties: {}
+      type: object
+      description: Construct a type with a set of properties K of type T
+    ResultSuccess_number_:
+      properties:
+        data:
+          type: number
+          format: double
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result__id-string_.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__id-string__'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Result_null.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_null_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Result_number.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_number_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Result_Prompt2025.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_Prompt2025_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_Prompt2025Version_91_prompt_body_93__:
+      properties:
+        data:
+          $ref: '#/components/schemas/Prompt2025VersionPromptBody'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Record_string.string_:
+      properties: {}
+      additionalProperties:
+        type: string
+      type: object
+      description: Construct a type with a set of properties K of type T
+    Result_Prompt2025Version_91_prompt_body_93_.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_Prompt2025Version_91_prompt_body_93__'
+      - $ref: '#/components/schemas/ResultError_string_'
+    PromptCreateResponse:
+      properties:
+        id:
+          type: string
+        versionId:
+          type: string
+      required:
+      - id
+      - versionId
+      type: object
+      additionalProperties: false
+    Result_Prompt2025Version-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_Prompt2025Version-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Result_Prompt2025-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_Prompt2025-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_Prompt2025_:
+      properties:
+        data:
+          $ref: '#/components/schemas/Prompt2025'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_PromptVersionCounts_:
+      properties:
+        data:
+          $ref: '#/components/schemas/PromptVersionCounts'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Prompt2025:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        tags:
+          items:
+            type: string
+          type: array
+        created_at:
+          type: string
+      required:
+      - id
+      - name
+      - tags
+      - created_at
+      type: object
+      additionalProperties: false
+    Result_string-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_string-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Result_PromptCreateResponse.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_PromptCreateResponse_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess__id-string__:
+      properties:
+        data:
+          properties:
+            id:
+              type: string
+          required:
+          - id
+          type: object
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_null_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Prompt2025Version:
+      properties:
+        id:
+          type: string
+        model:
+          type: string
+        prompt_id:
+          type: string
+        major_version:
+          type: number
+          format: double
+        minor_version:
+          type: number
+          format: double
+        commit_message:
+          type: string
+        environments:
+          items:
+            type: string
+          type: array
+        created_at:
+          type: string
+        s3_url:
+          type: string
+        prompt_body:
+          $ref: '#/components/schemas/Prompt2025VersionPromptBody'
+          description: 'The full prompt body including messages. Only included when explicitly requested
+
+            via the `includePromptBody` parameter to avoid unnecessary data transfer.'
+      required:
+      - id
+      - model
+      - prompt_id
+      - major_version
+      - minor_version
+      - commit_message
+      - created_at
+      type: object
+      additionalProperties: false
+    OpenAIChatRequest:
+      description: Simplified interface for the OpenAI Chat request format
+      properties:
+        model:
+          type: string
+        messages:
+          items:
+            properties:
+              tool_calls:
+                items:
+                  properties:
+                    type:
+                      type: string
+                      enum:
+                      - function
+                    function:
+                      properties:
+                        arguments:
+                          type: string
+                        name:
+                          type: string
+                      required:
+                      - arguments
+                      - name
+                      type: object
+                    id:
+                      type: string
+                  required:
+                  - type
+                  - function
+                  - id
+                  type: object
+                type: array
+              tool_call_id:
+                type: string
+              name:
+                type: string
+              content:
+                anyOf:
+                - type: string
+                - items:
+                    properties:
+                      image_url:
+                        properties:
+                          url:
+                            type: string
+                        required:
+                        - url
+                        type: object
+                      text:
+                        type: string
+                      type:
+                        type: string
+                    required:
+                    - type
+                    type: object
+                  type: array
               role:
                 type: string
             required:
@@ -661,7 +1176,6 @@ components:
                 type: string
                 enum:
                 - function
-                nullable: false
             required:
             - function
             - type
@@ -678,7 +1192,6 @@ components:
                     type: string
                     enum:
                     - function
-                    nullable: false
                 required:
                 - name
                 - type
@@ -764,373 +1277,6 @@ components:
           type: array
       type: object
       additionalProperties: false
-    Result_string-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_string-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Record_string.unknown_:
-      properties: {}
-      additionalProperties: {}
-      type: object
-      description: Construct a type with a set of properties K of type T
-    ResultSuccess_Prompt2025Version_:
-      properties:
-        data:
-          $ref: '#/components/schemas/Prompt2025Version'
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    PromptCreateResponse:
-      properties:
-        id:
-          type: string
-        versionId:
-          type: string
-      required:
-      - id
-      - versionId
-      type: object
-      additionalProperties: false
-    Result_PromptCreateResponse.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_PromptCreateResponse_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Prompt2025:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        tags:
-          items:
-            type: string
-          type: array
-        created_at:
-          type: string
-      required:
-      - id
-      - name
-      - tags
-      - created_at
-      type: object
-      additionalProperties: false
-    Result_PromptVersionCounts.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_PromptVersionCounts_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_Prompt2025_:
-      properties:
-        data:
-          $ref: '#/components/schemas/Prompt2025'
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Record_string.any_:
-      properties: {}
-      additionalProperties: {}
-      type: object
-      description: Construct a type with a set of properties K of type T
-    Result_Prompt2025Version_91_prompt_body_93_.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_Prompt2025Version_91_prompt_body_93__'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result_Prompt2025Input.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_Prompt2025Input_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result_Prompt2025Version.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_Prompt2025Version_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result_null.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_null_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess__id-string__:
-      properties:
-        data:
-          properties:
-            id:
-              type: string
-          required:
-          - id
-          type: object
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_Prompt2025Version_91_prompt_body_93__:
-      properties:
-        data:
-          $ref: '#/components/schemas/Prompt2025VersionPromptBody'
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Prompt2025Version:
-      properties:
-        id:
-          type: string
-        model:
-          type: string
-        prompt_id:
-          type: string
-        major_version:
-          type: number
-          format: double
-        minor_version:
-          type: number
-          format: double
-        commit_message:
-          type: string
-        environments:
-          items:
-            type: string
-          type: array
-        created_at:
-          type: string
-        s3_url:
-          type: string
-        prompt_body:
-          $ref: '#/components/schemas/Prompt2025VersionPromptBody'
-          description: 'The full prompt body including messages. Only included when explicitly requested
-
-            via the `includePromptBody` parameter to avoid unnecessary data transfer.'
-      required:
-      - id
-      - model
-      - prompt_id
-      - major_version
-      - minor_version
-      - commit_message
-      - created_at
-      type: object
-      additionalProperties: false
-    Result_Prompt2025Version-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_Prompt2025Version-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Prompt2025VersionPromptBody:
-      properties:
-        model:
-          type: string
-        messages:
-          items:
-            properties:
-              tool_calls:
-                items:
-                  properties:
-                    type:
-                      type: string
-                      enum:
-                      - function
-                      nullable: false
-                    function:
-                      properties:
-                        arguments:
-                          type: string
-                        name:
-                          type: string
-                      required:
-                      - arguments
-                      - name
-                      type: object
-                    id:
-                      type: string
-                  required:
-                  - type
-                  - function
-                  - id
-                  type: object
-                type: array
-              tool_call_id:
-                type: string
-              name:
-                type: string
-              content:
-                anyOf:
-                - type: string
-                - items:
-                    properties:
-                      image_url:
-                        properties:
-                          url:
-                            type: string
-                        required:
-                        - url
-                        type: object
-                      text:
-                        type: string
-                      type:
-                        type: string
-                    required:
-                    - type
-                    type: object
-                  type: array
-                nullable: true
-              role:
-                type: string
-            required:
-            - content
-            - role
-            type: object
-          type: array
-        temperature:
-          type: number
-          format: double
-        top_p:
-          type: number
-          format: double
-        max_tokens:
-          type: number
-          format: double
-        tools:
-          items:
-            properties:
-              function:
-                properties:
-                  parameters:
-                    $ref: '#/components/schemas/Record_string.unknown_'
-                  description:
-                    type: string
-                  name:
-                    type: string
-                required:
-                - parameters
-                - description
-                - name
-                type: object
-              type:
-                type: string
-                enum:
-                - function
-                nullable: false
-            required:
-            - function
-            - type
-            type: object
-          type: array
-        tool_choice:
-          anyOf:
-          - type: string
-          - properties:
-              function:
-                properties:
-                  name:
-                    type: string
-                  type:
-                    type: string
-                    enum:
-                    - function
-                    nullable: false
-                required:
-                - name
-                - type
-                type: object
-              type:
-                type: string
-            required:
-            - type
-            type: object
-      type: object
-      additionalProperties: {}
-    PromptVersionCounts:
-      properties:
-        totalVersions:
-          type: number
-          format: double
-        majorVersions:
-          type: number
-          format: double
-      required:
-      - totalVersions
-      - majorVersions
-      type: object
-      additionalProperties: false
-    ResultSuccess_null_:
-      properties:
-        data:
-          type: number
-          enum:
-          - null
-          nullable: true
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_Prompt2025Input_:
-      properties:
-        data:
-          $ref: '#/components/schemas/Prompt2025Input'
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Record_string.number_:
-      properties: {}
-      additionalProperties:
-        type: number
-        format: double
-      type: object
-      description: Construct a type with a set of properties K of type T
-    Prompt2025Input:
-      properties:
-        request_id:
-          type: string
-        version_id:
-          type: string
-        inputs:
-          $ref: '#/components/schemas/Record_string.any_'
-      required:
-      - request_id
-      - version_id
-      - inputs
-      type: object
-      additionalProperties: false
-    Record_string.string_:
-      properties: {}
-      additionalProperties:
-        type: string
-      type: object
-      description: Construct a type with a set of properties K of type T
     ResultSuccess_Prompt2025-Array_:
       properties:
         data:
@@ -1138,111 +1284,11 @@ components:
             $ref: '#/components/schemas/Prompt2025'
           type: array
         error:
-          type: number
+          type:
+          - number
+          - 'null'
           enum:
           - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_string-Array_:
-      properties:
-        data:
-          items:
-            type: string
-          type: array
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_PromptCreateResponse_:
-      properties:
-        data:
-          $ref: '#/components/schemas/PromptCreateResponse'
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_PromptVersionCounts_:
-      properties:
-        data:
-          $ref: '#/components/schemas/PromptVersionCounts'
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result_number.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_number_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_Prompt2025Version-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/Prompt2025Version'
-          type: array
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_number_:
-      properties:
-        data:
-          type: number
-          format: double
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result_Prompt2025-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_Prompt2025-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result_Prompt2025.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_Prompt2025_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultError_string_:
-      properties:
-        data:
-          type: number
-          enum:
-          - null
-          nullable: true
-        error:
-          type: string
       required:
       - data
       - error

@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: helicone-api Agent Session API
+  title: helicone-api Session API
   version: 1.0.0
   license:
     name: MIT
@@ -32,6 +32,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/SessionQueryParams'
+      summary: Get sessions
+      x-summary-source: derived
   /v1/session/count:
     post:
       operationId: GetSessionsCount
@@ -53,6 +55,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/SessionQueryParams'
+      summary: Get sessions count
+      x-summary-source: derived
   /v1/session/name/query:
     post:
       operationId: GetNames
@@ -74,6 +78,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/SessionNameQueryParams'
+      summary: Get names
+      x-summary-source: derived
   /v1/session/metrics/query:
     post:
       operationId: GetMetrics
@@ -95,6 +101,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/SessionMetricsQueryParams'
+      summary: Get metrics
+      x-summary-source: derived
   /v1/session/{sessionId}/feedback:
     post:
       operationId: UpdateSessionFeedback
@@ -126,6 +134,8 @@ paths:
               required:
               - rating
               type: object
+      summary: Update session feedback
+      x-summary-source: derived
   /v1/session/{sessionId}/tag:
     get:
       operationId: GetSessionTag
@@ -146,6 +156,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Get session tag
+      x-summary-source: derived
     post:
       operationId: UpdateSessionTag
       responses:
@@ -176,8 +188,464 @@ paths:
               required:
               - tag
               type: object
+      summary: Update session tag
+      x-summary-source: derived
 components:
   schemas:
+    Result_SessionNameResult-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_SessionNameResult-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    SessionMetricsQueryParams:
+      properties:
+        nameContains:
+          type: string
+        timezoneDifference:
+          type: number
+          format: double
+        pSize:
+          type: string
+          enum:
+          - p50
+          - p75
+          - p95
+          - p99
+          - p99.9
+        useInterquartile:
+          type: boolean
+        timeFilter:
+          $ref: '#/components/schemas/TimeFilterMs'
+        filter:
+          $ref: '#/components/schemas/SessionFilterNode'
+      required:
+      - nameContains
+      - timezoneDifference
+      type: object
+      additionalProperties: false
+    Result_SessionMetrics.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_SessionMetrics_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    HistogramRow:
+      properties:
+        range_start:
+          type: string
+        range_end:
+          type: string
+        value:
+          type: number
+          format: double
+      required:
+      - range_start
+      - range_end
+      - value
+      type: object
+      additionalProperties: false
+    ResultError_string_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type: string
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Partial_TimestampOperatorsTyped_:
+      properties:
+        equals:
+          type: string
+          format: date-time
+        gte:
+          type: string
+          format: date-time
+        lte:
+          type: string
+          format: date-time
+        lt:
+          type: string
+          format: date-time
+        gt:
+          type: string
+          format: date-time
+      type: object
+      description: Make all properties in T optional
+    SessionQueryParams:
+      properties:
+        search:
+          type: string
+        timeFilter:
+          properties:
+            endTimeUnixMs:
+              type: number
+              format: double
+            startTimeUnixMs:
+              type: number
+              format: double
+          required:
+          - endTimeUnixMs
+          - startTimeUnixMs
+          type: object
+        nameEquals:
+          type: string
+        timezoneDifference:
+          type: number
+          format: double
+        filter:
+          $ref: '#/components/schemas/SessionFilterNode'
+        offset:
+          type: number
+          format: double
+        limit:
+          type: number
+          format: double
+      required:
+      - search
+      - timeFilter
+      - timezoneDifference
+      - filter
+      type: object
+      additionalProperties: false
+    SessionFilterBranch:
+      properties:
+        right:
+          $ref: '#/components/schemas/SessionFilterNode'
+        operator:
+          type: string
+          enum:
+          - or
+          - and
+        left:
+          $ref: '#/components/schemas/SessionFilterNode'
+      required:
+      - right
+      - operator
+      - left
+      type: object
+    SessionsAggregateMetrics:
+      properties:
+        count:
+          type: number
+          format: double
+        total_cost:
+          type: number
+          format: double
+        avg_cost:
+          type: number
+          format: double
+        avg_latency:
+          type: number
+          format: double
+        avg_requests:
+          type: number
+          format: double
+      required:
+      - count
+      - total_cost
+      - avg_cost
+      - avg_latency
+      - avg_requests
+      type: object
+      additionalProperties: false
+    Result_SessionsAggregateMetrics.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_SessionsAggregateMetrics_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Result_null.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_null_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_SessionNameResult-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/SessionNameResult'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    SessionNameResult:
+      properties:
+        name:
+          type: string
+        created_at:
+          type: string
+        last_used:
+          type: string
+        first_used:
+          type: string
+        session_count:
+          type: number
+          format: double
+        avg_latency:
+          type: number
+          format: double
+      required:
+      - name
+      - created_at
+      - last_used
+      - first_used
+      - session_count
+      - avg_latency
+      type: object
+      additionalProperties: false
+    Result_SessionResult-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_SessionResult-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Partial_BooleanOperators_:
+      properties:
+        equals:
+          type: boolean
+      type: object
+      description: Make all properties in T optional
+    ResultSuccess_SessionResult-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/SessionResult'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_SessionMetrics_:
+      properties:
+        data:
+          $ref: '#/components/schemas/SessionMetrics'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Partial_NumberOperators_:
+      properties:
+        not-equals:
+          type: number
+          format: double
+        equals:
+          type: number
+          format: double
+        gte:
+          type: number
+          format: double
+        lte:
+          type: number
+          format: double
+        lt:
+          type: number
+          format: double
+        gt:
+          type: number
+          format: double
+      type: object
+      description: Make all properties in T optional
+    Partial_TextOperators_:
+      properties:
+        not-equals:
+          type: string
+        equals:
+          type: string
+        like:
+          type: string
+        ilike:
+          type: string
+        contains:
+          type: string
+        not-contains:
+          type: string
+      type: object
+      description: Make all properties in T optional
+    SessionNameQueryParams:
+      properties:
+        nameContains:
+          type: string
+        timezoneDifference:
+          type: number
+          format: double
+        pSize:
+          type: string
+          enum:
+          - p50
+          - p75
+          - p95
+          - p99
+          - p99.9
+        useInterquartile:
+          type: boolean
+        timeFilter:
+          $ref: '#/components/schemas/TimeFilterMs'
+        filter:
+          $ref: '#/components/schemas/SessionFilterNode'
+      required:
+      - nameContains
+      - timezoneDifference
+      type: object
+      additionalProperties: false
+    SessionResult:
+      properties:
+        created_at:
+          type: string
+        latest_request_created_at:
+          type: string
+        session_id:
+          type: string
+        session_name:
+          type: string
+        total_cost:
+          type: number
+          format: double
+        total_requests:
+          type: number
+          format: double
+        prompt_tokens:
+          type: number
+          format: double
+        completion_tokens:
+          type: number
+          format: double
+        total_tokens:
+          type: number
+          format: double
+        avg_latency:
+          type: number
+          format: double
+        user_ids:
+          items:
+            type: string
+          type: array
+      required:
+      - created_at
+      - latest_request_created_at
+      - session_id
+      - session_name
+      - total_cost
+      - total_requests
+      - prompt_tokens
+      - completion_tokens
+      - total_tokens
+      - avg_latency
+      - user_ids
+      type: object
+      additionalProperties: false
+    ResultSuccess_string-or-null_:
+      properties:
+        data:
+          type:
+          - string
+          - 'null'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Pick_FilterLeaf.request_response_rmt-or-sessions_request_response_rmt_:
+      properties:
+        request_response_rmt:
+          $ref: '#/components/schemas/Partial_RequestResponseRMTToOperators_'
+        sessions_request_response_rmt:
+          $ref: '#/components/schemas/Partial_SessionsRequestResponseRMTToOperators_'
+      type: object
+      description: From T, pick a set of properties whose keys are in the union K
+    SessionFilterNode:
+      anyOf:
+      - $ref: '#/components/schemas/FilterLeafSubset_request_response_rmt-or-sessions_request_response_rmt_'
+      - $ref: '#/components/schemas/SessionFilterBranch'
+      - type: string
+        enum:
+        - all
+    FilterLeafSubset_request_response_rmt-or-sessions_request_response_rmt_:
+      $ref: '#/components/schemas/Pick_FilterLeaf.request_response_rmt-or-sessions_request_response_rmt_'
+    ResultSuccess_SessionsAggregateMetrics_:
+      properties:
+        data:
+          $ref: '#/components/schemas/SessionsAggregateMetrics'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Partial_SessionsRequestResponseRMTToOperators_:
+      properties:
+        session_session_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        session_session_name:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        session_total_cost:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        session_total_tokens:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        session_prompt_tokens:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        session_completion_tokens:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        session_total_requests:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        session_created_at:
+          $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
+        session_latest_request_created_at:
+          $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
+        session_tag:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+      type: object
+      description: Make all properties in T optional
+    ResultSuccess_null_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
     Partial_RequestResponseRMTToOperators_:
       properties:
         country_code:
@@ -270,386 +738,6 @@ components:
           $ref: '#/components/schemas/Partial_BooleanOperators_'
       type: object
       description: Make all properties in T optional
-    Partial_SessionsRequestResponseRMTToOperators_:
-      properties:
-        session_session_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        session_session_name:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        session_total_cost:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        session_total_tokens:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        session_prompt_tokens:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        session_completion_tokens:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        session_total_requests:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        session_created_at:
-          $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
-        session_latest_request_created_at:
-          $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
-        session_tag:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-      type: object
-      description: Make all properties in T optional
-    ResultSuccess_SessionResult-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/SessionResult'
-          type: array
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_SessionsAggregateMetrics_:
-      properties:
-        data:
-          $ref: '#/components/schemas/SessionsAggregateMetrics'
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result_SessionsAggregateMetrics.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_SessionsAggregateMetrics_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    SessionNameQueryParams:
-      properties:
-        nameContains:
-          type: string
-        timezoneDifference:
-          type: number
-          format: double
-        pSize:
-          type: string
-          enum:
-          - p50
-          - p75
-          - p95
-          - p99
-          - p99.9
-        useInterquartile:
-          type: boolean
-        timeFilter:
-          $ref: '#/components/schemas/TimeFilterMs'
-        filter:
-          $ref: '#/components/schemas/SessionFilterNode'
-      required:
-      - nameContains
-      - timezoneDifference
-      type: object
-      additionalProperties: false
-    FilterLeafSubset_request_response_rmt-or-sessions_request_response_rmt_:
-      $ref: '#/components/schemas/Pick_FilterLeaf.request_response_rmt-or-sessions_request_response_rmt_'
-    SessionQueryParams:
-      properties:
-        search:
-          type: string
-        timeFilter:
-          properties:
-            endTimeUnixMs:
-              type: number
-              format: double
-            startTimeUnixMs:
-              type: number
-              format: double
-          required:
-          - endTimeUnixMs
-          - startTimeUnixMs
-          type: object
-        nameEquals:
-          type: string
-        timezoneDifference:
-          type: number
-          format: double
-        filter:
-          $ref: '#/components/schemas/SessionFilterNode'
-        offset:
-          type: number
-          format: double
-        limit:
-          type: number
-          format: double
-      required:
-      - search
-      - timeFilter
-      - timezoneDifference
-      - filter
-      type: object
-      additionalProperties: false
-    ResultSuccess_SessionMetrics_:
-      properties:
-        data:
-          $ref: '#/components/schemas/SessionMetrics'
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Partial_TextOperators_:
-      properties:
-        not-equals:
-          type: string
-        equals:
-          type: string
-        like:
-          type: string
-        ilike:
-          type: string
-        contains:
-          type: string
-        not-contains:
-          type: string
-      type: object
-      description: Make all properties in T optional
-    SessionMetricsQueryParams:
-      properties:
-        nameContains:
-          type: string
-        timezoneDifference:
-          type: number
-          format: double
-        pSize:
-          type: string
-          enum:
-          - p50
-          - p75
-          - p95
-          - p99
-          - p99.9
-        useInterquartile:
-          type: boolean
-        timeFilter:
-          $ref: '#/components/schemas/TimeFilterMs'
-        filter:
-          $ref: '#/components/schemas/SessionFilterNode'
-      required:
-      - nameContains
-      - timezoneDifference
-      type: object
-      additionalProperties: false
-    Result_SessionMetrics.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_SessionMetrics_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    HistogramRow:
-      properties:
-        range_start:
-          type: string
-        range_end:
-          type: string
-        value:
-          type: number
-          format: double
-      required:
-      - range_start
-      - range_end
-      - value
-      type: object
-      additionalProperties: false
-    SessionsAggregateMetrics:
-      properties:
-        count:
-          type: number
-          format: double
-        total_cost:
-          type: number
-          format: double
-        avg_cost:
-          type: number
-          format: double
-        avg_latency:
-          type: number
-          format: double
-        avg_requests:
-          type: number
-          format: double
-      required:
-      - count
-      - total_cost
-      - avg_cost
-      - avg_latency
-      - avg_requests
-      type: object
-      additionalProperties: false
-    Result_SessionResult-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_SessionResult-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Partial_NumberOperators_:
-      properties:
-        not-equals:
-          type: number
-          format: double
-        equals:
-          type: number
-          format: double
-        gte:
-          type: number
-          format: double
-        lte:
-          type: number
-          format: double
-        lt:
-          type: number
-          format: double
-        gt:
-          type: number
-          format: double
-      type: object
-      description: Make all properties in T optional
-    Partial_BooleanOperators_:
-      properties:
-        equals:
-          type: boolean
-      type: object
-      description: Make all properties in T optional
-    Result_null.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_null_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_string-or-null_:
-      properties:
-        data:
-          type: string
-          nullable: true
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    SessionResult:
-      properties:
-        created_at:
-          type: string
-        latest_request_created_at:
-          type: string
-        session_id:
-          type: string
-        session_name:
-          type: string
-        total_cost:
-          type: number
-          format: double
-        total_requests:
-          type: number
-          format: double
-        prompt_tokens:
-          type: number
-          format: double
-        completion_tokens:
-          type: number
-          format: double
-        total_tokens:
-          type: number
-          format: double
-        avg_latency:
-          type: number
-          format: double
-        user_ids:
-          items:
-            type: string
-          type: array
-      required:
-      - created_at
-      - latest_request_created_at
-      - session_id
-      - session_name
-      - total_cost
-      - total_requests
-      - prompt_tokens
-      - completion_tokens
-      - total_tokens
-      - avg_latency
-      - user_ids
-      type: object
-      additionalProperties: false
-    ResultSuccess_SessionNameResult-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/SessionNameResult'
-          type: array
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_null_:
-      properties:
-        data:
-          type: number
-          enum:
-          - null
-          nullable: true
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    SessionFilterBranch:
-      properties:
-        right:
-          $ref: '#/components/schemas/SessionFilterNode'
-        operator:
-          type: string
-          enum:
-          - or
-          - and
-        left:
-          $ref: '#/components/schemas/SessionFilterNode'
-      required:
-      - right
-      - operator
-      - left
-      type: object
-    Pick_FilterLeaf.request_response_rmt-or-sessions_request_response_rmt_:
-      properties:
-        request_response_rmt:
-          $ref: '#/components/schemas/Partial_RequestResponseRMTToOperators_'
-        sessions_request_response_rmt:
-          $ref: '#/components/schemas/Partial_SessionsRequestResponseRMTToOperators_'
-      type: object
-      description: From T, pick a set of properties whose keys are in the union K
-    Result_string-or-null.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_string-or-null_'
-      - $ref: '#/components/schemas/ResultError_string_'
     TimeFilterMs:
       properties:
         startTimeUnixMs:
@@ -661,6 +749,15 @@ components:
       required:
       - startTimeUnixMs
       - endTimeUnixMs
+      type: object
+      additionalProperties: false
+    AverageRow:
+      properties:
+        average:
+          type: number
+          format: double
+      required:
+      - average
       type: object
       additionalProperties: false
     SessionMetrics:
@@ -703,84 +800,10 @@ components:
       - average
       type: object
       additionalProperties: false
-    AverageRow:
-      properties:
-        average:
-          type: number
-          format: double
-      required:
-      - average
-      type: object
-      additionalProperties: false
-    Partial_TimestampOperatorsTyped_:
-      properties:
-        equals:
-          type: string
-          format: date-time
-        gte:
-          type: string
-          format: date-time
-        lte:
-          type: string
-          format: date-time
-        lt:
-          type: string
-          format: date-time
-        gt:
-          type: string
-          format: date-time
-      type: object
-      description: Make all properties in T optional
-    SessionFilterNode:
+    Result_string-or-null.string_:
       anyOf:
-      - $ref: '#/components/schemas/FilterLeafSubset_request_response_rmt-or-sessions_request_response_rmt_'
-      - $ref: '#/components/schemas/SessionFilterBranch'
-      - type: string
-        enum:
-        - all
-    Result_SessionNameResult-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_SessionNameResult-Array_'
+      - $ref: '#/components/schemas/ResultSuccess_string-or-null_'
       - $ref: '#/components/schemas/ResultError_string_'
-    ResultError_string_:
-      properties:
-        data:
-          type: number
-          enum:
-          - null
-          nullable: true
-        error:
-          type: string
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    SessionNameResult:
-      properties:
-        name:
-          type: string
-        created_at:
-          type: string
-        last_used:
-          type: string
-        first_used:
-          type: string
-        session_count:
-          type: number
-          format: double
-        avg_latency:
-          type: number
-          format: double
-      required:
-      - name
-      - created_at
-      - last_used
-      - first_used
-      - session_count
-      - avg_latency
-      type: object
-      additionalProperties: false
   securitySchemes:
     api_key:
       type: apiKey

@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: helicone-api Agent Webhooks API
+  title: helicone-api Webhooks API
   version: 1.0.0
   license:
     name: MIT
@@ -34,6 +34,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/WebhookData'
+      summary: New webhook
+      x-summary-source: derived
     get:
       operationId: GetWebhooks
       responses:
@@ -48,6 +50,8 @@ paths:
       security:
       - api_key: []
       parameters: []
+      summary: Get webhooks
+      x-summary-source: derived
   /v1/webhooks/{webhookId}:
     delete:
       operationId: DeleteWebhook
@@ -68,6 +72,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Delete webhook
+      x-summary-source: derived
   /v1/webhooks/{webhookId}/test:
     post:
       operationId: TestWebhook
@@ -88,12 +94,70 @@ paths:
         required: true
         schema:
           type: string
+      summary: Test webhook
+      x-summary-source: derived
 components:
   schemas:
     Result__id-string--created_at-string--destination-string--version-string--config-string--hmac_key-string_-Array.string_:
       anyOf:
       - $ref: '#/components/schemas/ResultSuccess__id-string--created_at-string--destination-string--version-string--config-string--hmac_key-string_-Array_'
       - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_null_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess__success-boolean--message-string__:
+      properties:
+        data:
+          properties:
+            message:
+              type: string
+            success:
+              type: boolean
+          required:
+          - message
+          - success
+          type: object
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_unknown_:
+      properties:
+        data: {}
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
     ResultSuccess__id-string--created_at-string--destination-string--version-string--config-string--hmac_key-string_-Array_:
       properties:
         data:
@@ -121,41 +185,39 @@ components:
             type: object
           type: array
         error:
-          type: number
+          type:
+          - number
+          - 'null'
           enum:
           - null
-          nullable: true
       required:
       - data
       - error
       type: object
       additionalProperties: false
-    ResultSuccess_unknown_:
-      properties:
-        data: {}
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
+    Result_null.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_null_'
+      - $ref: '#/components/schemas/ResultError_string_'
     ResultError_unknown_:
       properties:
         data:
-          type: number
+          type:
+          - number
+          - 'null'
           enum:
           - null
-          nullable: true
         error: {}
       required:
       - data
       - error
       type: object
       additionalProperties: false
+    Record_string.any_:
+      properties: {}
+      additionalProperties: {}
+      type: object
+      description: Construct a type with a set of properties K of type T
     WebhookData:
       properties:
         destination:
@@ -169,65 +231,18 @@ components:
       - config
       type: object
       additionalProperties: false
-    Record_string.any_:
-      properties: {}
-      additionalProperties: {}
-      type: object
-      description: Construct a type with a set of properties K of type T
     Result__success-boolean--message-string_.string_:
       anyOf:
       - $ref: '#/components/schemas/ResultSuccess__success-boolean--message-string__'
       - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_null_:
-      properties:
-        data:
-          type: number
-          enum:
-          - null
-          nullable: true
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess__success-boolean--message-string__:
-      properties:
-        data:
-          properties:
-            message:
-              type: string
-            success:
-              type: boolean
-          required:
-          - message
-          - success
-          type: object
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result_null.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_null_'
-      - $ref: '#/components/schemas/ResultError_string_'
     ResultError_string_:
       properties:
         data:
-          type: number
+          type:
+          - number
+          - 'null'
           enum:
           - null
-          nullable: true
         error:
           type: string
       required:

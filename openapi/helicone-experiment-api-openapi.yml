@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: helicone-api Agent Experiment API
+  title: helicone-api Experiment API
   version: 1.0.0
   license:
     name: MIT
@@ -26,6 +26,8 @@ paths:
       security:
       - api_key: []
       parameters: []
+      summary: Create empty experiment
+      x-summary-source: derived
   /v2/experiment/create/from-request/{requestId}:
     post:
       operationId: CreateExperimentFromRequest
@@ -46,6 +48,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Create experiment from request
+      x-summary-source: derived
   /v2/experiment/new:
     post:
       operationId: CreateNewExperiment
@@ -75,6 +79,8 @@ paths:
               - originalPromptVersion
               - name
               type: object
+      summary: Create new experiment
+      x-summary-source: derived
   /v2/experiment:
     get:
       operationId: GetExperiments
@@ -90,6 +96,8 @@ paths:
       security:
       - api_key: []
       parameters: []
+      summary: Get experiments
+      x-summary-source: derived
   /v2/experiment/{experimentId}:
     delete:
       operationId: DeleteExperiment
@@ -110,6 +118,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Delete experiment
+      x-summary-source: derived
     get:
       operationId: GetExperimentById
       responses:
@@ -129,6 +139,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Get experiment by id
+      x-summary-source: derived
   /v2/experiment/{experimentId}/prompt-version:
     post:
       operationId: CreateNewPromptVersionForExperiment
@@ -155,6 +167,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/CreateNewPromptVersionForExperimentParams'
+      summary: Create new prompt version for experiment
+      x-summary-source: derived
   /v2/experiment/{experimentId}/prompt-version/{promptVersionId}:
     delete:
       operationId: DeletePromptVersion
@@ -180,6 +194,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Delete prompt version
+      x-summary-source: derived
   /v2/experiment/{experimentId}/prompt-versions:
     get:
       operationId: GetPromptVersionsForExperiment
@@ -200,6 +216,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Get prompt versions for experiment
+      x-summary-source: derived
   /v2/experiment/{experimentId}/input-keys:
     get:
       operationId: GetInputKeysForExperiment
@@ -220,6 +238,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Get input keys for experiment
+      x-summary-source: derived
   /v2/experiment/{experimentId}/add-manual-row:
     post:
       operationId: AddManualRowToExperiment
@@ -251,6 +271,8 @@ paths:
               required:
               - inputs
               type: object
+      summary: Add manual row to experiment
+      x-summary-source: derived
   /v2/experiment/{experimentId}/add-manual-rows-batch:
     post:
       operationId: AddManualRowsToExperimentBatch
@@ -284,6 +306,8 @@ paths:
               required:
               - inputs
               type: object
+      summary: Add manual rows to experiment batch
+      x-summary-source: derived
   /v2/experiment/{experimentId}/rows:
     delete:
       operationId: DeleteExperimentTableRows
@@ -317,6 +341,8 @@ paths:
               required:
               - inputRecordIds
               type: object
+      summary: Delete experiment table rows
+      x-summary-source: derived
   /v2/experiment/{experimentId}/row/insert/batch:
     post:
       operationId: CreateExperimentTableRowBatch
@@ -362,6 +388,8 @@ paths:
               required:
               - rows
               type: object
+      summary: Create experiment table row batch
+      x-summary-source: derived
   /v2/experiment/{experimentId}/row/insert/dataset/{datasetId}:
     post:
       operationId: CreateExperimentTableRowFromDataset
@@ -387,6 +415,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Create experiment table row from dataset
+      x-summary-source: derived
   /v2/experiment/{experimentId}/row/update:
     post:
       operationId: UpdateExperimentTableRow
@@ -421,6 +451,8 @@ paths:
               - inputs
               - inputRecordId
               type: object
+      summary: Update experiment table row
+      x-summary-source: derived
   /v2/experiment/{experimentId}/run-hypothesis:
     post:
       operationId: RunHypothesis
@@ -455,6 +487,8 @@ paths:
               - inputRecordId
               - promptVersionId
               type: object
+      summary: Run hypothesis
+      x-summary-source: derived
   /v2/experiment/{experimentId}/evaluators:
     get:
       operationId: GetExperimentEvaluators
@@ -475,6 +509,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Get experiment evaluators
+      x-summary-source: derived
     post:
       operationId: CreateExperimentEvaluator
       responses:
@@ -505,6 +541,8 @@ paths:
               required:
               - evaluatorId
               type: object
+      summary: Create experiment evaluator
+      x-summary-source: derived
   /v2/experiment/{experimentId}/evaluators/{evaluatorId}:
     delete:
       operationId: DeleteExperimentEvaluator
@@ -530,6 +568,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Delete experiment evaluator
+      x-summary-source: derived
   /v2/experiment/{experimentId}/evaluators/run:
     post:
       operationId: RunExperimentEvaluators
@@ -550,6 +590,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Run experiment evaluators
+      x-summary-source: derived
   /v2/experiment/{experimentId}/should-run-evaluators:
     get:
       operationId: ShouldRunEvaluators
@@ -570,6 +612,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Should run evaluators
+      x-summary-source: derived
   /v2/experiment/{experimentId}/{promptVersionId}/scores:
     get:
       operationId: GetExperimentPromptVersionScores
@@ -595,6 +639,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Get experiment prompt version scores
+      x-summary-source: derived
   /v2/experiment/{experimentId}/{requestId}/{scoreKey}:
     get:
       operationId: GetExperimentScore
@@ -625,6 +671,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Get experiment score
+      x-summary-source: derived
   /v1/experiment/new-empty:
     post:
       operationId: CreateNewEmptyExperiment
@@ -654,6 +702,8 @@ paths:
               - datasetId
               - metadata
               type: object
+      summary: Create new empty experiment
+      x-summary-source: derived
   /v1/experiment/table/new:
     post:
       operationId: CreateNewExperimentTable
@@ -675,6 +725,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/CreateExperimentTableParams'
+      summary: Create new experiment table
+      x-summary-source: derived
   /v1/experiment/table/{experimentTableId}/query:
     post:
       operationId: GetExperimentTableById
@@ -695,6 +747,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Get experiment table by id
+      x-summary-source: derived
   /v1/experiment/table/{experimentTableId}/metadata/query:
     post:
       operationId: GetExperimentTableMetadata
@@ -715,6 +769,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Get experiment table metadata
+      x-summary-source: derived
   /v1/experiment/tables/query:
     post:
       operationId: GetExperimentTables
@@ -730,6 +786,8 @@ paths:
       security:
       - api_key: []
       parameters: []
+      summary: Get experiment tables
+      x-summary-source: derived
   /v1/experiment/table/{experimentTableId}/cell:
     post:
       operationId: CreateExperimentCell
@@ -757,8 +815,9 @@ paths:
             schema:
               properties:
                 value:
-                  type: string
-                  nullable: true
+                  type:
+                  - string
+                  - 'null'
                 rowIndex:
                   type: number
                   format: double
@@ -769,6 +828,8 @@ paths:
               - rowIndex
               - columnId
               type: object
+      summary: Create experiment cell
+      x-summary-source: derived
     patch:
       operationId: UpdateExperimentCell
       responses:
@@ -807,6 +868,8 @@ paths:
               required:
               - cellId
               type: object
+      summary: Update experiment cell
+      x-summary-source: derived
   /v1/experiment/table/{experimentTableId}/column:
     post:
       operationId: CreateExperimentColumn
@@ -849,6 +912,8 @@ paths:
               - columnType
               - columnName
               type: object
+      summary: Create experiment column
+      x-summary-source: derived
   /v1/experiment/table/{experimentTableId}/row/new:
     post:
       operationId: CreateExperimentTableRow
@@ -884,6 +949,8 @@ paths:
               required:
               - promptVersionId
               type: object
+      summary: Create experiment table row
+      x-summary-source: derived
   /v1/experiment/table/{experimentTableId}/row/{rowIndex}:
     delete:
       operationId: DeleteExperimentTableRow
@@ -910,6 +977,8 @@ paths:
         schema:
           format: double
           type: number
+      summary: Delete experiment table row
+      x-summary-source: derived
   /v1/experiment/table/{experimentTableId}/row/insert/batch:
     post:
       operationId: CreateExperimentTableRowWithCellsBatch
@@ -946,8 +1015,9 @@ paths:
                           properties:
                             metadata: {}
                             value:
-                              type: string
-                              nullable: true
+                              type:
+                              - string
+                              - 'null'
                             columnId:
                               type: string
                           required:
@@ -971,6 +1041,8 @@ paths:
               required:
               - rows
               type: object
+      summary: Create experiment table row with cells batch
+      x-summary-source: derived
   /v1/experiment/update-meta:
     post:
       operationId: UpdateExperimentMeta
@@ -1002,6 +1074,8 @@ paths:
               - meta
               - experimentId
               type: object
+      summary: Update experiment meta
+      x-summary-source: derived
   /v1/experiment:
     post:
       operationId: CreateNewExperimentOld
@@ -1023,6 +1097,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/NewExperimentParams'
+      summary: Create new experiment old
+      x-summary-source: derived
   /v1/experiment/hypothesis:
     post:
       operationId: CreateNewExperimentHypothesis
@@ -1066,6 +1142,8 @@ paths:
               - model
               - experimentId
               type: object
+      summary: Create new experiment hypothesis
+      x-summary-source: derived
   /v1/experiment/hypothesis/{hypothesisId}/scores/query:
     post:
       operationId: GetExperimentHypothesisScores
@@ -1086,6 +1164,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Get experiment hypothesis scores
+      x-summary-source: derived
   /v1/experiment/{experimentId}/evaluators:
     get:
       operationId: GetExperimentEvaluators
@@ -1106,6 +1186,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Get experiment evaluators
+      x-summary-source: derived
     post:
       operationId: CreateExperimentEvaluatorOld
       responses:
@@ -1136,6 +1218,8 @@ paths:
               required:
               - evaluatorId
               type: object
+      summary: Create experiment evaluator old
+      x-summary-source: derived
   /v1/experiment/{experimentId}/evaluators/run:
     post:
       operationId: RunExperimentEvaluatorsOld
@@ -1156,6 +1240,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Run experiment evaluators old
+      x-summary-source: derived
   /v1/experiment/{experimentId}/evaluators/{evaluatorId}:
     delete:
       operationId: DeleteExperimentEvaluatorOld
@@ -1181,6 +1267,8 @@ paths:
         required: true
         schema:
           type: string
+      summary: Delete experiment evaluator old
+      x-summary-source: derived
   /v1/experiment/query:
     post:
       operationId: GetExperimentsOld
@@ -1209,145 +1297,392 @@ paths:
               required:
               - filter
               type: object
+      summary: Get experiments old
+      x-summary-source: derived
 components:
   schemas:
-    ResultSuccess_ExperimentTable_:
+    EvaluatorResult:
       properties:
-        data:
-          $ref: '#/components/schemas/ExperimentTable'
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result__tableId-string--experimentId-string_.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__tableId-string--experimentId-string__'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_unknown_:
-      properties:
-        data: {}
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ExperimentFilterNode:
-      anyOf:
-      - $ref: '#/components/schemas/FilterLeafSubset_experiment_'
-      - $ref: '#/components/schemas/ExperimentFilterBranch'
-      - type: string
-        enum:
-        - all
-    ExperimentV2PromptVersion:
-      properties:
-        created_at:
-          type: string
-          nullable: true
-        experiment_id:
-          type: string
-          nullable: true
-        helicone_template:
-          allOf:
-          - $ref: '#/components/schemas/Json'
-          nullable: true
         id:
           type: string
-        major_version:
-          type: number
-          format: double
-        metadata:
-          allOf:
-          - $ref: '#/components/schemas/Json'
-          nullable: true
-        minor_version:
-          type: number
-          format: double
-        model:
+        created_at:
           type: string
-          nullable: true
-        organization:
+        scoring_type:
           type: string
-        prompt_v2:
+        llm_template: {}
+        organization_id:
           type: string
-        soft_delete:
-          type: boolean
-          nullable: true
+        updated_at:
+          type: string
+        name:
+          type: string
+        code_template: {}
+        last_mile_config: {}
       required:
-      - created_at
-      - experiment_id
-      - helicone_template
       - id
-      - major_version
-      - metadata
-      - minor_version
-      - model
-      - organization
-      - prompt_v2
-      - soft_delete
+      - created_at
+      - scoring_type
+      - llm_template
+      - organization_id
+      - updated_at
+      - name
+      - code_template
+      - last_mile_config
       type: object
       additionalProperties: false
-    Result_Record_string.ScoreV2_.string_:
+    Json:
       anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_Record_string.ScoreV2__'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result_string-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_string-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    NewExperimentParams:
+      - type: string
+      - type: number
+        format: double
+      - type: boolean
+      - properties: {}
+        additionalProperties:
+          $ref: '#/components/schemas/Json'
+        type: object
+      - items:
+          $ref: '#/components/schemas/Json'
+        type: array
+    ExperimentScores:
       properties:
-        datasetId:
-          type: string
-        promptVersion:
-          type: string
-        model:
-          type: string
-        providerKeyId:
-          type: string
-        meta: {}
+        dataset:
+          properties:
+            scores:
+              $ref: '#/components/schemas/Record_string.Score_'
+          required:
+          - scores
+          type: object
+        hypothesis:
+          properties:
+            scores:
+              $ref: '#/components/schemas/Record_string.Score_'
+            runsCount:
+              type: number
+              format: double
+          required:
+          - scores
+          - runsCount
+          type: object
       required:
-      - datasetId
-      - promptVersion
-      - model
-      - providerKeyId
+      - dataset
+      - hypothesis
       type: object
       additionalProperties: false
-    Result_ScoreV2-or-null.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_ScoreV2-or-null_'
-      - $ref: '#/components/schemas/ResultError_string_'
     ResultSuccess_boolean_:
       properties:
         data:
           type: boolean
         error:
-          type: number
+          type:
+          - number
+          - 'null'
           enum:
           - null
-          nullable: true
       required:
       - data
       - error
       type: object
       additionalProperties: false
-    Record_string.ScoreV2_:
+    ResultSuccess_ScoreV2-or-null_:
+      properties:
+        data:
+          allOf:
+          - $ref: '#/components/schemas/ScoreV2'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result__hypothesisId-string_.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__hypothesisId-string__'
+      - $ref: '#/components/schemas/ResultError_string_'
+    PromptVersionResult:
+      properties:
+        id:
+          type: string
+        minor_version:
+          type: number
+          format: double
+        major_version:
+          type: number
+          format: double
+        prompt_v2:
+          type: string
+        model:
+          type: string
+        helicone_template:
+          type: string
+        created_at:
+          type: string
+        metadata:
+          $ref: '#/components/schemas/Record_string.any_'
+        parent_prompt_version:
+          type:
+          - string
+          - 'null'
+        experiment_id:
+          type:
+          - string
+          - 'null'
+        updated_at:
+          type: string
+      required:
+      - id
+      - minor_version
+      - major_version
+      - prompt_v2
+      - model
+      - helicone_template
+      - created_at
+      - metadata
+      type: object
+      additionalProperties: false
+    ScoreV2:
+      properties:
+        valueType:
+          type: string
+        value:
+          anyOf:
+          - type: number
+            format: double
+          - type: string
+            format: date-time
+          - type: string
+        max:
+          type: number
+          format: double
+        min:
+          type: number
+          format: double
+      required:
+      - valueType
+      - value
+      - max
+      - min
+      type: object
+      additionalProperties: false
+    ExperimentV2Row:
+      properties:
+        id:
+          type: string
+        inputs:
+          $ref: '#/components/schemas/Record_string.string_'
+        prompt_version:
+          type: string
+        requests:
+          items:
+            $ref: '#/components/schemas/ExperimentV2Output'
+          type: array
+        auto_prompt_inputs:
+          items: {}
+          type: array
+      required:
+      - id
+      - inputs
+      - prompt_version
+      - requests
+      - auto_prompt_inputs
+      type: object
+      additionalProperties: false
+    Record_string.any_:
       properties: {}
-      additionalProperties:
-        $ref: '#/components/schemas/ScoreV2'
+      additionalProperties: {}
       type: object
       description: Construct a type with a set of properties K of type T
-    ExperimentV2:
+    CreateNewPromptVersionForExperimentParams:
+      properties:
+        newHeliconeTemplate: {}
+        isMajorVersion:
+          type: boolean
+        metadata:
+          $ref: '#/components/schemas/Record_string.any_'
+        experimentId:
+          type: string
+        bumpForMajorPromptVersionId:
+          type: string
+        parentPromptVersionId:
+          type: string
+      required:
+      - newHeliconeTemplate
+      - parentPromptVersionId
+      type: object
+      additionalProperties: false
+    ResultSuccess_PromptVersionResult_:
+      properties:
+        data:
+          $ref: '#/components/schemas/PromptVersionResult'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ExperimentTableSimplified:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        experimentId:
+          type: string
+        createdAt:
+          type: string
+        metadata: {}
+        columns:
+          items:
+            properties:
+              columnType:
+                type: string
+              columnName:
+                type: string
+              id:
+                type: string
+            required:
+            - columnType
+            - columnName
+            - id
+            type: object
+          type: array
+      required:
+      - id
+      - name
+      - experimentId
+      - createdAt
+      - columns
+      type: object
+      additionalProperties: false
+    FilterLeafSubset_experiment_:
+      $ref: '#/components/schemas/Pick_FilterLeaf.experiment_'
+    ExperimentTableColumn:
+      properties:
+        id:
+          type: string
+        columnName:
+          type: string
+        columnType:
+          type: string
+        hypothesisId:
+          type: string
+        cells:
+          items:
+            properties:
+              metadata:
+                $ref: '#/components/schemas/Record_string.any_'
+              value:
+                type:
+                - string
+                - 'null'
+              requestId:
+                type: string
+              rowIndex:
+                type: number
+                format: double
+              id:
+                type: string
+            required:
+            - value
+            - rowIndex
+            - id
+            type: object
+          type: array
+        metadata:
+          $ref: '#/components/schemas/Record_string.any_'
+      required:
+      - id
+      - columnName
+      - columnType
+      - cells
+      type: object
+      additionalProperties: false
+    ResultError_string_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type: string
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result_ExperimentTableSimplified.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_ExperimentTableSimplified_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Result__experimentId-string_.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__experimentId-string__'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Result_Record_string.ScoreV2_.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_Record_string.ScoreV2__'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_string-Array_:
+      properties:
+        data:
+          items:
+            type: string
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result_ExperimentTable.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_ExperimentTable_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Result__runsCount-number--scores-Record_string.Score__.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__runsCount-number--scores-Record_string.Score___'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess__runsCount-number--scores-Record_string.Score___:
+      properties:
+        data:
+          properties:
+            scores:
+              $ref: '#/components/schemas/Record_string.Score_'
+            runsCount:
+              type: number
+              format: double
+          required:
+          - scores
+          - runsCount
+          type: object
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ExtendedExperimentData:
       properties:
         id:
           type: string
@@ -1356,15 +1691,21 @@ components:
         original_prompt_version:
           type: string
         copied_original_prompt_version:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         input_keys:
           items:
             type: string
-          type: array
-          nullable: true
+          type:
+          - array
+          - 'null'
         created_at:
           type: string
+        rows:
+          items:
+            $ref: '#/components/schemas/ExperimentV2Row'
+          type: array
       required:
       - id
       - name
@@ -1372,32 +1713,126 @@ components:
       - copied_original_prompt_version
       - input_keys
       - created_at
+      - rows
       type: object
       additionalProperties: false
-    Result_ExperimentTable.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_ExperimentTable_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_ExtendedExperimentData_:
+    ResultSuccess_ExperimentV2-Array_:
       properties:
         data:
-          $ref: '#/components/schemas/ExtendedExperimentData'
+          items:
+            $ref: '#/components/schemas/ExperimentV2'
+          type: array
         error:
-          type: number
+          type:
+          - number
+          - 'null'
           enum:
           - null
-          nullable: true
       required:
       - data
       - error
       type: object
       additionalProperties: false
-    Pick_FilterLeaf.experiment_:
+    Result_null.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_null_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_string_:
       properties:
-        experiment:
-          $ref: '#/components/schemas/Partial_ExperimentToOperators_'
+        data:
+          type: string
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
       type: object
-      description: From T, pick a set of properties whose keys are in the union K
+      additionalProperties: false
+    ResultSuccess_ExtendedExperimentData_:
+      properties:
+        data:
+          $ref: '#/components/schemas/ExtendedExperimentData'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    CreateExperimentTableParams:
+      properties:
+        datasetId:
+          type: string
+        experimentMetadata:
+          $ref: '#/components/schemas/Record_string.any_'
+        promptVersionId:
+          type: string
+        newHeliconeTemplate:
+          type: string
+        isMajorVersion:
+          type: boolean
+        promptSubversionMetadata:
+          $ref: '#/components/schemas/Record_string.any_'
+        experimentTableMetadata:
+          $ref: '#/components/schemas/Record_string.any_'
+      required:
+      - datasetId
+      - experimentMetadata
+      - promptVersionId
+      - newHeliconeTemplate
+      - isMajorVersion
+      - promptSubversionMetadata
+      type: object
+      additionalProperties: false
+    ExperimentFilterBranch:
+      properties:
+        right:
+          $ref: '#/components/schemas/ExperimentFilterNode'
+        operator:
+          type: string
+          enum:
+          - or
+          - and
+        left:
+          $ref: '#/components/schemas/ExperimentFilterNode'
+      required:
+      - right
+      - operator
+      - left
+      type: object
+    Result_ExperimentV2-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_ExperimentV2-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_EvaluatorResult-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/EvaluatorResult'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result_Experiment-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_Experiment-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
     Experiment:
       properties:
         id:
@@ -1481,10 +1916,10 @@ components:
         scores:
           allOf:
           - $ref: '#/components/schemas/ExperimentScores'
-          nullable: true
         tableId:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
       required:
       - id
       - organization
@@ -1496,504 +1931,22 @@ components:
       - tableId
       type: object
       additionalProperties: false
-    ResultSuccess_ScoreV2-or-null_:
+    Pick_FilterLeaf.experiment_:
       properties:
-        data:
-          allOf:
-          - $ref: '#/components/schemas/ScoreV2'
-          nullable: true
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
+        experiment:
+          $ref: '#/components/schemas/Partial_ExperimentToOperators_'
       type: object
-      additionalProperties: false
-    Partial_TextOperators_:
-      properties:
-        not-equals:
-          type: string
-        equals:
-          type: string
-        like:
-          type: string
-        ilike:
-          type: string
-        contains:
-          type: string
-        not-contains:
-          type: string
-      type: object
-      description: Make all properties in T optional
-    ExperimentV2Row:
-      properties:
-        id:
-          type: string
-        inputs:
-          $ref: '#/components/schemas/Record_string.string_'
-        prompt_version:
-          type: string
-        requests:
-          items:
-            $ref: '#/components/schemas/ExperimentV2Output'
-          type: array
-        auto_prompt_inputs:
-          items: {}
-          type: array
-      required:
-      - id
-      - inputs
-      - prompt_version
-      - requests
-      - auto_prompt_inputs
-      type: object
-      additionalProperties: false
-    ResultSuccess__runsCount-number--scores-Record_string.Score___:
-      properties:
-        data:
-          properties:
-            scores:
-              $ref: '#/components/schemas/Record_string.Score_'
-            runsCount:
-              type: number
-              format: double
-          required:
-          - scores
-          - runsCount
-          type: object
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess__tableId-string--experimentId-string__:
-      properties:
-        data:
-          properties:
-            experimentId:
-              type: string
-            tableId:
-              type: string
-          required:
-          - experimentId
-          - tableId
-          type: object
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    IncludeExperimentKeys:
-      properties:
-        inputs:
-          type: boolean
-          enum:
-          - true
-          nullable: false
-        promptVersion:
-          type: boolean
-          enum:
-          - true
-          nullable: false
-        responseBodies:
-          type: boolean
-          enum:
-          - true
-          nullable: false
-        score:
-          type: boolean
-          enum:
-          - true
-          nullable: false
-      type: object
-      additionalProperties: false
-    ExtendedExperimentData:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        original_prompt_version:
-          type: string
-        copied_original_prompt_version:
-          type: string
-          nullable: true
-        input_keys:
-          items:
-            type: string
-          type: array
-          nullable: true
-        created_at:
-          type: string
-        rows:
-          items:
-            $ref: '#/components/schemas/ExperimentV2Row'
-          type: array
-      required:
-      - id
-      - name
-      - original_prompt_version
-      - copied_original_prompt_version
-      - input_keys
-      - created_at
-      - rows
-      type: object
-      additionalProperties: false
-    CreateNewPromptVersionForExperimentParams:
-      properties:
-        newHeliconeTemplate: {}
-        isMajorVersion:
-          type: boolean
-        metadata:
-          $ref: '#/components/schemas/Record_string.any_'
-        experimentId:
-          type: string
-        bumpForMajorPromptVersionId:
-          type: string
-        parentPromptVersionId:
-          type: string
-      required:
-      - newHeliconeTemplate
-      - parentPromptVersionId
-      type: object
-      additionalProperties: false
-    Result_ExperimentV2-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_ExperimentV2-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Record_string.any_:
-      properties: {}
-      additionalProperties: {}
-      type: object
-      description: Construct a type with a set of properties K of type T
-    ResultSuccess__experimentId-string__:
-      properties:
-        data:
-          properties:
-            experimentId:
-              type: string
-          required:
-          - experimentId
-          type: object
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ExperimentTableSimplified:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        experimentId:
-          type: string
-        createdAt:
-          type: string
-        metadata: {}
-        columns:
-          items:
-            properties:
-              columnType:
-                type: string
-              columnName:
-                type: string
-              id:
-                type: string
-            required:
-            - columnType
-            - columnName
-            - id
-            type: object
-          type: array
-      required:
-      - id
-      - name
-      - experimentId
-      - createdAt
-      - columns
-      type: object
-      additionalProperties: false
-    ResultSuccess_Experiment-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/Experiment'
-          type: array
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result_boolean.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_boolean_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Json:
-      anyOf:
-      - type: string
-      - type: number
-        format: double
-      - type: boolean
-      - properties: {}
-        additionalProperties:
-          $ref: '#/components/schemas/Json'
-        type: object
-      - items:
-          $ref: '#/components/schemas/Json'
-        type: array
-      nullable: true
-    Result_string.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_string_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result_null.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_null_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result_Experiment-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_Experiment-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_ExperimentV2-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/ExperimentV2'
-          type: array
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Partial_ExperimentToOperators_:
-      properties:
-        id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        prompt_v2:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-      type: object
-      description: Make all properties in T optional
-    ResultSuccess_ExperimentTableSimplified_:
-      properties:
-        data:
-          $ref: '#/components/schemas/ExperimentTableSimplified'
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_PromptVersionResult_:
-      properties:
-        data:
-          $ref: '#/components/schemas/PromptVersionResult'
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result__hypothesisId-string_.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__hypothesisId-string__'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ExperimentScores:
-      properties:
-        dataset:
-          properties:
-            scores:
-              $ref: '#/components/schemas/Record_string.Score_'
-          required:
-          - scores
-          type: object
-        hypothesis:
-          properties:
-            scores:
-              $ref: '#/components/schemas/Record_string.Score_'
-            runsCount:
-              type: number
-              format: double
-          required:
-          - scores
-          - runsCount
-          type: object
-      required:
-      - dataset
-      - hypothesis
-      type: object
-      additionalProperties: false
-    ExperimentV2Output:
-      properties:
-        id:
-          type: string
-        request_id:
-          type: string
-        is_original:
-          type: boolean
-        prompt_version_id:
-          type: string
-        created_at:
-          type: string
-        input_record_id:
-          type: string
-      required:
-      - id
-      - request_id
-      - is_original
-      - prompt_version_id
-      - created_at
-      - input_record_id
-      type: object
-      additionalProperties: false
-    Result_PromptVersionResult.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_PromptVersionResult_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ScoreV2:
-      properties:
-        valueType:
-          type: string
-        value:
-          anyOf:
-          - type: number
-            format: double
-          - type: string
-            format: date-time
-          - type: string
-        max:
-          type: number
-          format: double
-        min:
-          type: number
-          format: double
-      required:
-      - valueType
-      - value
-      - max
-      - min
-      type: object
-      additionalProperties: false
-    ExperimentFilterBranch:
-      properties:
-        right:
-          $ref: '#/components/schemas/ExperimentFilterNode'
-        operator:
-          type: string
-          enum:
-          - or
-          - and
-        left:
-          $ref: '#/components/schemas/ExperimentFilterNode'
-      required:
-      - right
-      - operator
-      - left
-      type: object
-    Record_string.Score_:
+      description: From T, pick a set of properties whose keys are in the union K
+    Record_string.string_:
       properties: {}
       additionalProperties:
-        $ref: '#/components/schemas/Score'
+        type: string
       type: object
       description: Construct a type with a set of properties K of type T
-    ResultSuccess_ExperimentV2PromptVersion-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/ExperimentV2PromptVersion'
-          type: array
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result_ExperimentV2PromptVersion-Array.string_:
+    Result_ExperimentTableSimplified-Array.string_:
       anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_ExperimentV2PromptVersion-Array_'
+      - $ref: '#/components/schemas/ResultSuccess_ExperimentTableSimplified-Array_'
       - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_null_:
-      properties:
-        data:
-          type: number
-          enum:
-          - null
-          nullable: true
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    CreateExperimentTableParams:
-      properties:
-        datasetId:
-          type: string
-        experimentMetadata:
-          $ref: '#/components/schemas/Record_string.any_'
-        promptVersionId:
-          type: string
-        newHeliconeTemplate:
-          type: string
-        isMajorVersion:
-          type: boolean
-        promptSubversionMetadata:
-          $ref: '#/components/schemas/Record_string.any_'
-        experimentTableMetadata:
-          $ref: '#/components/schemas/Record_string.any_'
-      required:
-      - datasetId
-      - experimentMetadata
-      - promptVersionId
-      - newHeliconeTemplate
-      - isMajorVersion
-      - promptSubversionMetadata
-      type: object
-      additionalProperties: false
     ExperimentDatasetRow:
       properties:
         rowId:
@@ -2040,10 +1993,253 @@ components:
       - scores
       type: object
       additionalProperties: false
-    Result__runsCount-number--scores-Record_string.Score__.string_:
+    Score:
+      properties:
+        valueType:
+          type: string
+        value:
+          anyOf:
+          - type: number
+            format: double
+          - type: string
+            format: date-time
+          - type: string
+      required:
+      - valueType
+      - value
+      type: object
+      additionalProperties: false
+    Partial_TextOperators_:
+      properties:
+        not-equals:
+          type: string
+        equals:
+          type: string
+        like:
+          type: string
+        ilike:
+          type: string
+        contains:
+          type: string
+        not-contains:
+          type: string
+      type: object
+      description: Make all properties in T optional
+    ExperimentV2:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        original_prompt_version:
+          type: string
+        copied_original_prompt_version:
+          type:
+          - string
+          - 'null'
+        input_keys:
+          items:
+            type: string
+          type:
+          - array
+          - 'null'
+        created_at:
+          type: string
+      required:
+      - id
+      - name
+      - original_prompt_version
+      - copied_original_prompt_version
+      - input_keys
+      - created_at
+      type: object
+      additionalProperties: false
+    IncludeExperimentKeys:
+      properties:
+        inputs:
+          type: boolean
+          enum:
+          - true
+        promptVersion:
+          type: boolean
+          enum:
+          - true
+        responseBodies:
+          type: boolean
+          enum:
+          - true
+        score:
+          type: boolean
+          enum:
+          - true
+      type: object
+      additionalProperties: false
+    ResultSuccess_Record_string.ScoreV2__:
+      properties:
+        data:
+          $ref: '#/components/schemas/Record_string.ScoreV2_'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess__hypothesisId-string__:
+      properties:
+        data:
+          properties:
+            hypothesisId:
+              type: string
+          required:
+          - hypothesisId
+          type: object
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_ExperimentTableSimplified-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/ExperimentTableSimplified'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_ExperimentTableSimplified_:
+      properties:
+        data:
+          $ref: '#/components/schemas/ExperimentTableSimplified'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result_string-Array.string_:
       anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__runsCount-number--scores-Record_string.Score___'
+      - $ref: '#/components/schemas/ResultSuccess_string-Array_'
       - $ref: '#/components/schemas/ResultError_string_'
+    Result_ExtendedExperimentData.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_ExtendedExperimentData_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Result__tableId-string--experimentId-string_.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__tableId-string--experimentId-string__'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Record_string.ScoreV2_:
+      properties: {}
+      additionalProperties:
+        $ref: '#/components/schemas/ScoreV2'
+      type: object
+      description: Construct a type with a set of properties K of type T
+    ExperimentV2PromptVersion:
+      properties:
+        created_at:
+          type:
+          - string
+          - 'null'
+        experiment_id:
+          type:
+          - string
+          - 'null'
+        helicone_template:
+          allOf:
+          - $ref: '#/components/schemas/Json'
+        id:
+          type: string
+        major_version:
+          type: number
+          format: double
+        metadata:
+          allOf:
+          - $ref: '#/components/schemas/Json'
+        minor_version:
+          type: number
+          format: double
+        model:
+          type:
+          - string
+          - 'null'
+        organization:
+          type: string
+        prompt_v2:
+          type: string
+        soft_delete:
+          type:
+          - boolean
+          - 'null'
+      required:
+      - created_at
+      - experiment_id
+      - helicone_template
+      - id
+      - major_version
+      - metadata
+      - minor_version
+      - model
+      - organization
+      - prompt_v2
+      - soft_delete
+      type: object
+      additionalProperties: false
+    Result_EvaluatorResult-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_EvaluatorResult-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Result_ScoreV2-or-null.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_ScoreV2-or-null_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ExperimentV2Output:
+      properties:
+        id:
+          type: string
+        request_id:
+          type: string
+        is_original:
+          type: boolean
+        prompt_version_id:
+          type: string
+        created_at:
+          type: string
+        input_record_id:
+          type: string
+      required:
+      - id
+      - request_id
+      - is_original
+      - prompt_version_id
+      - created_at
+      - input_record_id
+      type: object
+      additionalProperties: false
     ExperimentTable:
       properties:
         id:
@@ -2065,149 +2261,85 @@ components:
       - columns
       type: object
       additionalProperties: false
-    Record_string.string_:
-      properties: {}
-      additionalProperties:
-        type: string
-      type: object
-      description: Construct a type with a set of properties K of type T
-    Result_ExtendedExperimentData.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_ExtendedExperimentData_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    PromptVersionResult:
+    ResultSuccess__experimentId-string__:
       properties:
-        id:
+        data:
+          properties:
+            experimentId:
+              type: string
+          required:
+          - experimentId
+          type: object
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_null_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    NewExperimentParams:
+      properties:
+        datasetId:
           type: string
-        minor_version:
-          type: number
-          format: double
-        major_version:
-          type: number
-          format: double
-        prompt_v2:
+        promptVersion:
           type: string
         model:
           type: string
-        helicone_template:
+        providerKeyId:
           type: string
-        created_at:
-          type: string
-        metadata:
-          $ref: '#/components/schemas/Record_string.any_'
-        parent_prompt_version:
-          type: string
-          nullable: true
-        experiment_id:
-          type: string
-          nullable: true
-        updated_at:
-          type: string
+        meta: {}
       required:
-      - id
-      - minor_version
-      - major_version
-      - prompt_v2
+      - datasetId
+      - promptVersion
       - model
-      - helicone_template
-      - created_at
-      - metadata
+      - providerKeyId
       type: object
       additionalProperties: false
-    ResultSuccess_string-Array_:
+    ResultSuccess_unknown_:
       properties:
-        data:
-          items:
-            type: string
-          type: array
+        data: {}
         error:
-          type: number
+          type:
+          - number
+          - 'null'
           enum:
           - null
-          nullable: true
       required:
       - data
       - error
       type: object
       additionalProperties: false
-    FilterLeafSubset_experiment_:
-      $ref: '#/components/schemas/Pick_FilterLeaf.experiment_'
-    ResultSuccess_Record_string.ScoreV2__:
-      properties:
-        data:
-          $ref: '#/components/schemas/Record_string.ScoreV2_'
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_string_:
-      properties:
-        data:
-          type: string
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    RequestObj:
+    Partial_ExperimentToOperators_:
       properties:
         id:
-          type: string
-        provider:
-          type: string
-      required:
-      - id
-      - provider
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        prompt_v2:
+          $ref: '#/components/schemas/Partial_TextOperators_'
       type: object
-      additionalProperties: false
-    Result_ExperimentTableSimplified-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_ExperimentTableSimplified-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result_EvaluatorResult-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_EvaluatorResult-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    EvaluatorResult:
-      properties:
-        id:
-          type: string
-        created_at:
-          type: string
-        scoring_type:
-          type: string
-        llm_template: {}
-        organization_id:
-          type: string
-        updated_at:
-          type: string
-        name:
-          type: string
-        code_template: {}
-        last_mile_config: {}
-      required:
-      - id
-      - created_at
-      - scoring_type
-      - llm_template
-      - organization_id
-      - updated_at
-      - name
-      - code_template
-      - last_mile_config
-      type: object
-      additionalProperties: false
+      description: Make all properties in T optional
     ResponseObj:
       properties:
         body: {}
@@ -2241,130 +2373,113 @@ components:
       - model
       type: object
       additionalProperties: false
-    Result__experimentId-string_.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__experimentId-string__'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_ExperimentTableSimplified-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/ExperimentTableSimplified'
-          type: array
-        error:
-          type: number
-          enum:
-          - null
-          nullable: true
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Score:
-      properties:
-        valueType:
-          type: string
-        value:
-          anyOf:
-          - type: number
-            format: double
-          - type: string
-            format: date-time
-          - type: string
-      required:
-      - valueType
-      - value
-      type: object
-      additionalProperties: false
-    Result_ExperimentTableSimplified.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_ExperimentTableSimplified_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess__hypothesisId-string__:
+    ResultSuccess__tableId-string--experimentId-string__:
       properties:
         data:
           properties:
-            hypothesisId:
+            experimentId:
+              type: string
+            tableId:
               type: string
           required:
-          - hypothesisId
+          - experimentId
+          - tableId
           type: object
         error:
-          type: number
+          type:
+          - number
+          - 'null'
           enum:
           - null
-          nullable: true
       required:
       - data
       - error
       type: object
       additionalProperties: false
-    ExperimentTableColumn:
+    Result_ExperimentV2PromptVersion-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_ExperimentV2PromptVersion-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Result_PromptVersionResult.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_PromptVersionResult_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Record_string.Score_:
+      properties: {}
+      additionalProperties:
+        $ref: '#/components/schemas/Score'
+      type: object
+      description: Construct a type with a set of properties K of type T
+    RequestObj:
       properties:
         id:
           type: string
-        columnName:
+        provider:
           type: string
-        columnType:
-          type: string
-        hypothesisId:
-          type: string
-        cells:
-          items:
-            properties:
-              metadata:
-                $ref: '#/components/schemas/Record_string.any_'
-              value:
-                type: string
-                nullable: true
-              requestId:
-                type: string
-              rowIndex:
-                type: number
-                format: double
-              id:
-                type: string
-            required:
-            - value
-            - rowIndex
-            - id
-            type: object
-          type: array
-        metadata:
-          $ref: '#/components/schemas/Record_string.any_'
       required:
       - id
-      - columnName
-      - columnType
-      - cells
+      - provider
       type: object
       additionalProperties: false
-    ResultError_string_:
+    ResultSuccess_ExperimentTable_:
       properties:
         data:
-          type: number
+          $ref: '#/components/schemas/ExperimentTable'
+        error:
+          type:
+          - number
+          - 'null'
           enum:
           - null
-          nullable: true
-        error:
-          type: string
       required:
       - data
       - error
       type: object
       additionalProperties: false
-    ResultSuccess_EvaluatorResult-Array_:
+    ResultSuccess_Experiment-Array_:
       properties:
         data:
           items:
-            $ref: '#/components/schemas/EvaluatorResult'
+            $ref: '#/components/schemas/Experiment'
           type: array
         error:
-          type: number
+          type:
+          - number
+          - 'null'
           enum:
           - null
-          nullable: true
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result_boolean.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_boolean_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ExperimentFilterNode:
+      anyOf:
+      - $ref: '#/components/schemas/FilterLeafSubset_experiment_'
+      - $ref: '#/components/schemas/ExperimentFilterBranch'
+      - type: string
+        enum:
+        - all
+    Result_string.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_string_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_ExperimentV2PromptVersion-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/ExperimentV2PromptVersion'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
       required:
       - data
       - error
