@@ -147,231 +147,14 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    PTBInvoice:
-      properties:
-        id:
-          type: string
-        organizationId:
-          type: string
-        stripeInvoiceId:
-          type:
-          - string
-          - 'null'
-        hostedInvoiceUrl:
-          type:
-          - string
-          - 'null'
-        startDate:
-          type: string
-        endDate:
-          type: string
-        amountCents:
-          type: number
-          format: double
-        subtotalCents:
-          type:
-          - number
-          - 'null'
-          format: double
-        notes:
-          type:
-          - string
-          - 'null'
-        createdAt:
-          type: string
-      required:
-      - id
-      - organizationId
-      - stripeInvoiceId
-      - hostedInvoiceUrl
-      - startDate
-      - endDate
-      - amountCents
-      - subtotalCents
-      - notes
-      - createdAt
-      type: object
-      additionalProperties: false
-    Result_SpendBreakdownResponse.string_:
+    Result_CreditBalanceResponse.string_:
       anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_SpendBreakdownResponse_'
+      - $ref: '#/components/schemas/ResultSuccess_CreditBalanceResponse_'
       - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_CreditBalanceResponse_:
-      properties:
-        data:
-          $ref: '#/components/schemas/CreditBalanceResponse'
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result_OrgDiscount-Array.string_:
+    Result__totalSpend-number_.string_:
       anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_OrgDiscount-Array_'
+      - $ref: '#/components/schemas/ResultSuccess__totalSpend-number__'
       - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_SpendBreakdownResponse_:
-      properties:
-        data:
-          $ref: '#/components/schemas/SpendBreakdownResponse'
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result_PaginatedPurchasedCredits.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_PaginatedPurchasedCredits_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result_PTBInvoice-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_PTBInvoice-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_PTBInvoice-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/PTBInvoice'
-          type: array
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    PurchasedCredits:
-      properties:
-        id:
-          type: string
-        createdAt:
-          type: number
-          format: double
-        credits:
-          type: number
-          format: double
-        referenceId:
-          type: string
-      required:
-      - id
-      - createdAt
-      - credits
-      - referenceId
-      type: object
-      additionalProperties: false
-    ResultError_string_:
-      properties:
-        data:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-        error:
-          type: string
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_OrgDiscount-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/OrgDiscount'
-          type: array
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    OrgDiscount:
-      properties:
-        provider:
-          type:
-          - string
-          - 'null'
-        model:
-          type:
-          - string
-          - 'null'
-        percent:
-          type: number
-          format: double
-      required:
-      - provider
-      - model
-      - percent
-      type: object
-      additionalProperties: false
-    SpendBreakdownResponse:
-      properties:
-        models:
-          items:
-            $ref: '#/components/schemas/ModelSpend'
-          type: array
-        totalCost:
-          type: number
-          format: double
-        timeRange:
-          properties:
-            end:
-              type: string
-            start:
-              type: string
-          required:
-          - end
-          - start
-          type: object
-      required:
-      - models
-      - totalCost
-      - timeRange
-      type: object
-      additionalProperties: false
-    PaginatedPurchasedCredits:
-      properties:
-        purchases:
-          items:
-            $ref: '#/components/schemas/PurchasedCredits'
-          type: array
-        total:
-          type: number
-          format: double
-        page:
-          type: number
-          format: double
-        pageSize:
-          type: number
-          format: double
-      required:
-      - purchases
-      - total
-      - page
-      - pageSize
-      type: object
-      additionalProperties: false
     CreditBalanceResponse:
       properties:
         totalCreditsPurchased:
@@ -383,42 +166,6 @@ components:
       required:
       - totalCreditsPurchased
       - balance
-      type: object
-      additionalProperties: false
-    ResultSuccess_PaginatedPurchasedCredits_:
-      properties:
-        data:
-          $ref: '#/components/schemas/PaginatedPurchasedCredits'
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess__totalSpend-number__:
-      properties:
-        data:
-          properties:
-            totalSpend:
-              type: number
-              format: double
-          required:
-          - totalSpend
-          type: object
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
       type: object
       additionalProperties: false
     ModelSpend:
@@ -484,14 +231,267 @@ components:
       - total
       type: object
       additionalProperties: false
-    Result_CreditBalanceResponse.string_:
+    Result_PaginatedPurchasedCredits.string_:
       anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_CreditBalanceResponse_'
+      - $ref: '#/components/schemas/ResultSuccess_PaginatedPurchasedCredits_'
       - $ref: '#/components/schemas/ResultError_string_'
-    Result__totalSpend-number_.string_:
+    ResultError_string_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type: string
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_CreditBalanceResponse_:
+      properties:
+        data:
+          $ref: '#/components/schemas/CreditBalanceResponse'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_OrgDiscount-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/OrgDiscount'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    SpendBreakdownResponse:
+      properties:
+        models:
+          items:
+            $ref: '#/components/schemas/ModelSpend'
+          type: array
+        totalCost:
+          type: number
+          format: double
+        timeRange:
+          properties:
+            end:
+              type: string
+            start:
+              type: string
+          required:
+          - end
+          - start
+          type: object
+      required:
+      - models
+      - totalCost
+      - timeRange
+      type: object
+      additionalProperties: false
+    ResultSuccess_PTBInvoice-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/PTBInvoice'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    OrgDiscount:
+      properties:
+        provider:
+          type:
+          - string
+          - 'null'
+        model:
+          type:
+          - string
+          - 'null'
+        percent:
+          type: number
+          format: double
+      required:
+      - provider
+      - model
+      - percent
+      type: object
+      additionalProperties: false
+    ResultSuccess_SpendBreakdownResponse_:
+      properties:
+        data:
+          $ref: '#/components/schemas/SpendBreakdownResponse'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result_PTBInvoice-Array.string_:
       anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__totalSpend-number__'
+      - $ref: '#/components/schemas/ResultSuccess_PTBInvoice-Array_'
       - $ref: '#/components/schemas/ResultError_string_'
+    PurchasedCredits:
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: number
+          format: double
+        credits:
+          type: number
+          format: double
+        referenceId:
+          type: string
+      required:
+      - id
+      - createdAt
+      - credits
+      - referenceId
+      type: object
+      additionalProperties: false
+    PaginatedPurchasedCredits:
+      properties:
+        purchases:
+          items:
+            $ref: '#/components/schemas/PurchasedCredits'
+          type: array
+        total:
+          type: number
+          format: double
+        page:
+          type: number
+          format: double
+        pageSize:
+          type: number
+          format: double
+      required:
+      - purchases
+      - total
+      - page
+      - pageSize
+      type: object
+      additionalProperties: false
+    ResultSuccess__totalSpend-number__:
+      properties:
+        data:
+          properties:
+            totalSpend:
+              type: number
+              format: double
+          required:
+          - totalSpend
+          type: object
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result_OrgDiscount-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_OrgDiscount-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Result_SpendBreakdownResponse.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_SpendBreakdownResponse_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    PTBInvoice:
+      properties:
+        id:
+          type: string
+        organizationId:
+          type: string
+        stripeInvoiceId:
+          type:
+          - string
+          - 'null'
+        hostedInvoiceUrl:
+          type:
+          - string
+          - 'null'
+        startDate:
+          type: string
+        endDate:
+          type: string
+        amountCents:
+          type: number
+          format: double
+        subtotalCents:
+          type:
+          - number
+          - 'null'
+          format: double
+        notes:
+          type:
+          - string
+          - 'null'
+        createdAt:
+          type: string
+      required:
+      - id
+      - organizationId
+      - stripeInvoiceId
+      - hostedInvoiceUrl
+      - startDate
+      - endDate
+      - amountCents
+      - subtotalCents
+      - notes
+      - createdAt
+      type: object
+      additionalProperties: false
+    ResultSuccess_PaginatedPurchasedCredits_:
+      properties:
+        data:
+          $ref: '#/components/schemas/PaginatedPurchasedCredits'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
   securitySchemes:
     api_key:
       type: apiKey

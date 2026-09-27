@@ -98,18 +98,18 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    Record_string.any_:
+      properties: {}
+      additionalProperties: {}
+      type: object
+      description: Construct a type with a set of properties K of type T
     Result__id-string--created_at-string--destination-string--version-string--config-string--hmac_key-string_-Array.string_:
       anyOf:
       - $ref: '#/components/schemas/ResultSuccess__id-string--created_at-string--destination-string--version-string--config-string--hmac_key-string_-Array_'
       - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_null_:
+    ResultSuccess_unknown_:
       properties:
-        data:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
+        data: {}
         error:
           type:
           - number
@@ -144,18 +144,54 @@ components:
       - error
       type: object
       additionalProperties: false
-    ResultSuccess_unknown_:
+    ResultError_string_:
       properties:
-        data: {}
-        error:
+        data:
           type:
           - number
           - 'null'
           enum:
           - null
+        error:
+          type: string
       required:
       - data
       - error
+      type: object
+      additionalProperties: false
+    Result_null.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_null_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultError_unknown_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error: {}
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result__success-boolean--message-string_.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__success-boolean--message-string__'
+      - $ref: '#/components/schemas/ResultError_string_'
+    WebhookData:
+      properties:
+        destination:
+          type: string
+        config:
+          $ref: '#/components/schemas/Record_string.any_'
+        includeData:
+          type: boolean
+      required:
+      - destination
+      - config
       type: object
       additionalProperties: false
     ResultSuccess__id-string--created_at-string--destination-string--version-string--config-string--hmac_key-string_-Array_:
@@ -195,47 +231,7 @@ components:
       - error
       type: object
       additionalProperties: false
-    Result_null.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_null_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultError_unknown_:
-      properties:
-        data:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-        error: {}
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Record_string.any_:
-      properties: {}
-      additionalProperties: {}
-      type: object
-      description: Construct a type with a set of properties K of type T
-    WebhookData:
-      properties:
-        destination:
-          type: string
-        config:
-          $ref: '#/components/schemas/Record_string.any_'
-        includeData:
-          type: boolean
-      required:
-      - destination
-      - config
-      type: object
-      additionalProperties: false
-    Result__success-boolean--message-string_.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__success-boolean--message-string__'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultError_string_:
+    ResultSuccess_null_:
       properties:
         data:
           type:
@@ -244,7 +240,11 @@ components:
           enum:
           - null
         error:
-          type: string
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
       required:
       - data
       - error

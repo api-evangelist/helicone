@@ -308,6 +308,45 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    ? Pick_FilterLeaf.feedback-or-request-or-response-or-properties-or-values-or-request_response_rmt-or-sessions_request_response_rmt_
+    : properties:
+        values:
+          properties: {}
+          additionalProperties:
+            $ref: '#/components/schemas/Partial_TextOperators_'
+          type: object
+        response:
+          $ref: '#/components/schemas/Partial_ResponseTableToOperators_'
+        request:
+          $ref: '#/components/schemas/Partial_RequestTableToOperators_'
+        feedback:
+          $ref: '#/components/schemas/Partial_FeedbackTableToOperators_'
+        request_response_rmt:
+          $ref: '#/components/schemas/Partial_RequestResponseRMTToOperators_'
+        sessions_request_response_rmt:
+          $ref: '#/components/schemas/Partial_SessionsRequestResponseRMTToOperators_'
+        properties:
+          properties: {}
+          additionalProperties:
+            $ref: '#/components/schemas/Partial_TextOperators_'
+          type: object
+      type: object
+      description: From T, pick a set of properties whose keys are in the union K
+    HeliconeRequestAsset:
+      properties:
+        assetUrl:
+          type: string
+      required:
+      - assetUrl
+      type: object
+      additionalProperties: false
+    Record_string.number_:
+      properties: {}
+      additionalProperties:
+        type: number
+        format: double
+      type: object
+      description: Construct a type with a set of properties K of type T
     LlmSchema:
       properties:
         request:
@@ -319,29 +358,6 @@ components:
       - request
       type: object
       additionalProperties: false
-    RequestFilterBranch:
-      properties:
-        right:
-          $ref: '#/components/schemas/RequestFilterNode'
-        operator:
-          type: string
-          enum:
-          - or
-          - and
-        left:
-          $ref: '#/components/schemas/RequestFilterNode'
-      required:
-      - right
-      - operator
-      - left
-      type: object
-    Record_string.number_:
-      properties: {}
-      additionalProperties:
-        type: number
-        format: double
-      type: object
-      description: Construct a type with a set of properties K of type T
     ModelProviderName:
       type: string
       enum:
@@ -366,48 +382,127 @@ components:
       - perplexity
       - vertex
       - xai
-    HeliconeEventTool:
+    Partial_TextOperators_:
       properties:
-        _type:
+        not-equals:
+          type: string
+        equals:
+          type: string
+        like:
+          type: string
+        ilike:
+          type: string
+        contains:
+          type: string
+        not-contains:
+          type: string
+      type: object
+      description: Make all properties in T optional
+    RequestFilterBranch:
+      properties:
+        right:
+          $ref: '#/components/schemas/RequestFilterNode'
+        operator:
           type: string
           enum:
-          - tool
-        toolName:
-          type: string
-        input: {}
+          - or
+          - and
+        left:
+          $ref: '#/components/schemas/RequestFilterNode'
       required:
-      - _type
-      - toolName
-      - input
+      - right
+      - operator
+      - left
       type: object
-      additionalProperties: {}
-    Record_string.any_:
+    RequestFilterNode:
+      anyOf:
+      - $ref: '#/components/schemas/FilterLeafSubset_feedback-or-request-or-response-or-properties-or-values-or-request_response_rmt-or-sessions_request_response_rmt_'
+      - $ref: '#/components/schemas/RequestFilterBranch'
+      - type: string
+        enum:
+        - all
+    Result_HeliconeRequest-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_HeliconeRequest-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Tool:
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        parameters:
+          $ref: '#/components/schemas/Record_string.any_'
+        strict:
+          type: boolean
+      required:
+      - name
+      type: object
+      additionalProperties: false
+    ResultSuccess_null_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Record_string.number-or-boolean-or-undefined_:
       properties: {}
-      additionalProperties: {}
+      additionalProperties:
+        anyOf:
+        - type: number
+          format: double
+        - type: boolean
       type: object
       description: Construct a type with a set of properties K of type T
-    RequestQueryParams:
+    Partial_TimestampOperatorsTyped_:
       properties:
-        filter:
-          $ref: '#/components/schemas/RequestFilterNode'
-        offset:
-          type: number
-          format: double
-        limit:
-          type: number
-          format: double
-        sort:
-          $ref: '#/components/schemas/SortLeafRequest'
-        isCached:
-          type: boolean
-        includeInputs:
-          type: boolean
-        isPartOfExperiment:
-          type: boolean
-        isScored:
-          type: boolean
+        equals:
+          type: string
+          format: date-time
+        gte:
+          type: string
+          format: date-time
+        lte:
+          type: string
+          format: date-time
+        lt:
+          type: string
+          format: date-time
+        gt:
+          type: string
+          format: date-time
+      type: object
+      description: Make all properties in T optional
+    Result__inputs-Record_string.any_--prompt_id-string--version_id-string--environment-string-or-null_-or-null.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__inputs-Record_string.any_--prompt_id-string--version_id-string--environment-string-or-null_-or-null_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultError_string_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type: string
       required:
-      - filter
+      - data
+      - error
       type: object
       additionalProperties: false
     Message:
@@ -507,221 +602,34 @@ components:
       required:
       - _type
       type: object
-    Provider:
-      anyOf:
-      - $ref: '#/components/schemas/ProviderName'
-      - $ref: '#/components/schemas/ModelProviderName'
-      - type: string
-        enum:
-        - CUSTOM
-    Result_HeliconeRequest-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_HeliconeRequest-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultError_string_:
+    HeliconeEventTool:
       properties:
-        data:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-        error:
+        _type:
           type: string
+          enum:
+          - tool
+        toolName:
+          type: string
+        input: {}
       required:
-      - data
-      - error
+      - _type
+      - toolName
+      - input
+      type: object
+      additionalProperties: {}
+    FunctionCall:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        arguments:
+          $ref: '#/components/schemas/Record_string.any_'
+      required:
+      - name
+      - arguments
       type: object
       additionalProperties: false
-    Partial_TimestampOperatorsTyped_:
-      properties:
-        equals:
-          type: string
-          format: date-time
-        gte:
-          type: string
-          format: date-time
-        lte:
-          type: string
-          format: date-time
-        lt:
-          type: string
-          format: date-time
-        gt:
-          type: string
-          format: date-time
-      type: object
-      description: Make all properties in T optional
-    ? FilterLeafSubset_feedback-or-request-or-response-or-properties-or-values-or-request_response_rmt-or-sessions_request_response_rmt_
-    : $ref: '#/components/schemas/Pick_FilterLeaf.feedback-or-request-or-response-or-properties-or-values-or-request_response_rmt-or-sessions_request_response_rmt_'
-    Record_string.number-or-boolean-or-undefined_:
-      properties: {}
-      additionalProperties:
-        anyOf:
-        - type: number
-          format: double
-        - type: boolean
-      type: object
-      description: Construct a type with a set of properties K of type T
-    ResultSuccess_HeliconeRequest_:
-      properties:
-        data:
-          $ref: '#/components/schemas/HeliconeRequest'
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_number_:
-      properties:
-        data:
-          type: number
-          format: double
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    LLMResponseBody:
-      properties:
-        dataDetailsResponse:
-          properties:
-            name:
-              type: string
-            _type:
-              type: string
-              enum:
-              - data
-            metadata:
-              properties:
-                timestamp:
-                  type: string
-              additionalProperties: {}
-              required:
-              - timestamp
-              type: object
-            message:
-              type: string
-            status:
-              type: string
-          additionalProperties: {}
-          required:
-          - name
-          - _type
-          - metadata
-          - message
-          - status
-          type: object
-        vectorDBDetailsResponse:
-          properties:
-            _type:
-              type: string
-              enum:
-              - vector_db
-            metadata:
-              properties:
-                timestamp:
-                  type: string
-                destination_parsed:
-                  type: boolean
-                destination:
-                  type: string
-              required:
-              - timestamp
-              type: object
-            actualSimilarity:
-              type: number
-              format: double
-            similarityThreshold:
-              type: number
-              format: double
-            message:
-              type: string
-            status:
-              type: string
-          required:
-          - _type
-          - metadata
-          - message
-          - status
-          type: object
-        toolDetailsResponse:
-          properties:
-            toolName:
-              type: string
-            _type:
-              type: string
-              enum:
-              - tool
-            metadata:
-              properties:
-                timestamp:
-                  type: string
-              required:
-              - timestamp
-              type: object
-            tips:
-              items:
-                type: string
-              type: array
-            message:
-              type: string
-            status:
-              type: string
-          required:
-          - toolName
-          - _type
-          - metadata
-          - tips
-          - message
-          - status
-          type: object
-        error:
-          properties:
-            heliconeMessage: {}
-          required:
-          - heliconeMessage
-          type: object
-        model:
-          type:
-          - string
-          - 'null'
-        instructions:
-          type:
-          - string
-          - 'null'
-        responses:
-          items:
-            $ref: '#/components/schemas/Response'
-          type:
-          - array
-          - 'null'
-        messages:
-          items:
-            $ref: '#/components/schemas/Message'
-          type:
-          - array
-          - 'null'
-      type: object
-    RequestFilterNode:
-      anyOf:
-      - $ref: '#/components/schemas/FilterLeafSubset_feedback-or-request-or-response-or-properties-or-values-or-request_response_rmt-or-sessions_request_response_rmt_'
-      - $ref: '#/components/schemas/RequestFilterBranch'
-      - type: string
-        enum:
-        - all
     Partial_TimestampOperators_:
       properties:
         equals:
@@ -736,55 +644,42 @@ components:
           type: string
       type: object
       description: Make all properties in T optional
-    Result_number.string_:
+    Result_HeliconeRequestAsset.string_:
       anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_number_'
+      - $ref: '#/components/schemas/ResultSuccess_HeliconeRequestAsset_'
       - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess__inputs-Record_string.any_--prompt_id-string--version_id-string--environment-string-or-null_-or-null_:
+    LlmType:
+      type: string
+      enum:
+      - chat
+      - completion
+    HeliconeEventData:
       properties:
-        data:
-          properties:
-            environment:
-              type:
-              - string
-              - 'null'
-            version_id:
-              type: string
-            prompt_id:
-              type: string
-            inputs:
-              $ref: '#/components/schemas/Record_string.any_'
-          required:
-          - environment
-          - version_id
-          - prompt_id
-          - inputs
-          type:
-          - object
-          - 'null'
-        error:
-          type:
-          - number
-          - 'null'
+        _type:
+          type: string
           enum:
-          - null
+          - data
+        name:
+          type: string
+        meta:
+          $ref: '#/components/schemas/Record_string.any_'
       required:
-      - data
-      - error
+      - _type
+      - name
       type: object
-      additionalProperties: false
-    Result_HeliconeRequest.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_HeliconeRequest_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result_null.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_null_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Partial_BooleanOperators_:
+      additionalProperties: {}
+    Partial_ResponseTableToOperators_:
       properties:
-        equals:
-          type: boolean
+        body_tokens:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        body_model:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        body_completion:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        status:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        model:
+          $ref: '#/components/schemas/Partial_TextOperators_'
       type: object
       description: Make all properties in T optional
     Record_string.string_:
@@ -793,19 +688,147 @@ components:
         type: string
       type: object
       description: Construct a type with a set of properties K of type T
-    FunctionCall:
+    Partial_RequestTableToOperators_:
       properties:
+        prompt:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        created_at:
+          $ref: '#/components/schemas/Partial_TimestampOperators_'
+        user_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        auth_hash:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        org_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
         id:
-          type: string
-        name:
-          type: string
-        arguments:
-          $ref: '#/components/schemas/Record_string.any_'
-      required:
-      - name
-      - arguments
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        node_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        model:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        modelOverride:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        path:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        country_code:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        prompt_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+      type: object
+      description: Make all properties in T optional
+    Record_string.any_:
+      properties: {}
+      additionalProperties: {}
+      type: object
+      description: Construct a type with a set of properties K of type T
+    Partial_NumberOperators_:
+      properties:
+        not-equals:
+          type: number
+          format: double
+        equals:
+          type: number
+          format: double
+        gte:
+          type: number
+          format: double
+        lte:
+          type: number
+          format: double
+        lt:
+          type: number
+          format: double
+        gt:
+          type: number
+          format: double
+      type: object
+      description: Make all properties in T optional
+    SortLeafRequest:
+      properties:
+        random:
+          type: boolean
+          enum:
+          - true
+        created_at:
+          $ref: '#/components/schemas/SortDirection'
+        cache_created_at:
+          $ref: '#/components/schemas/SortDirection'
+        latency:
+          $ref: '#/components/schemas/SortDirection'
+        last_active:
+          $ref: '#/components/schemas/SortDirection'
+        total_tokens:
+          $ref: '#/components/schemas/SortDirection'
+        completion_tokens:
+          $ref: '#/components/schemas/SortDirection'
+        prompt_tokens:
+          $ref: '#/components/schemas/SortDirection'
+        user_id:
+          $ref: '#/components/schemas/SortDirection'
+        body_model:
+          $ref: '#/components/schemas/SortDirection'
+        is_cached:
+          $ref: '#/components/schemas/SortDirection'
+        request_prompt:
+          $ref: '#/components/schemas/SortDirection'
+        response_text:
+          $ref: '#/components/schemas/SortDirection'
+        properties:
+          properties: {}
+          additionalProperties:
+            $ref: '#/components/schemas/SortDirection'
+          type: object
+        values:
+          properties: {}
+          additionalProperties:
+            $ref: '#/components/schemas/SortDirection'
+          type: object
+        cost:
+          $ref: '#/components/schemas/SortDirection'
+        time_to_first_token:
+          $ref: '#/components/schemas/SortDirection'
       type: object
       additionalProperties: false
+    ProviderName:
+      type: string
+      enum:
+      - OPENAI
+      - ANTHROPIC
+      - AZURE
+      - LOCAL
+      - HELICONE
+      - AMDBARTEK
+      - ANYSCALE
+      - CLOUDFLARE
+      - 2YFV
+      - TOGETHER
+      - LEMONFOX
+      - FIREWORKS
+      - PERPLEXITY
+      - GOOGLE
+      - OPENROUTER
+      - WISDOMINANUTSHELL
+      - GROQ
+      - COHERE
+      - MISTRAL
+      - DEEPINFRA
+      - QSTASH
+      - FIRECRAWL
+      - AWS
+      - BEDROCK
+      - DEEPSEEK
+      - X
+      - AVIAN
+      - NEBIUS
+      - NOVITA
+      - OPENPIPE
+      - CHUTES
+      - LLAMA
+      - NVIDIA
+      - VERCEL
+      - CEREBRAS
+      - BASETEN
+      - CANOPYWAVE
     LLMRequestBody:
       properties:
         llm_type:
@@ -940,30 +963,58 @@ components:
           type: string
       type: object
       additionalProperties: false
-    ? Pick_FilterLeaf.feedback-or-request-or-response-or-properties-or-values-or-request_response_rmt-or-sessions_request_response_rmt_
-    : properties:
-        values:
-          properties: {}
-          additionalProperties:
-            $ref: '#/components/schemas/Partial_TextOperators_'
-          type: object
-        response:
-          $ref: '#/components/schemas/Partial_ResponseTableToOperators_'
-        request:
-          $ref: '#/components/schemas/Partial_RequestTableToOperators_'
-        feedback:
-          $ref: '#/components/schemas/Partial_FeedbackTableToOperators_'
-        request_response_rmt:
-          $ref: '#/components/schemas/Partial_RequestResponseRMTToOperators_'
-        sessions_request_response_rmt:
-          $ref: '#/components/schemas/Partial_SessionsRequestResponseRMTToOperators_'
-        properties:
-          properties: {}
-          additionalProperties:
-            $ref: '#/components/schemas/Partial_TextOperators_'
-          type: object
+    ScoreRequest:
+      properties:
+        scores:
+          $ref: '#/components/schemas/Scores'
+      required:
+      - scores
       type: object
-      description: From T, pick a set of properties whose keys are in the union K
+      additionalProperties: false
+    Result_null.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_null_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_number_:
+      properties:
+        data:
+          type: number
+          format: double
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Partial_SessionsRequestResponseRMTToOperators_:
+      properties:
+        session_session_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        session_session_name:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        session_total_cost:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        session_total_tokens:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        session_prompt_tokens:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        session_completion_tokens:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        session_total_requests:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        session_created_at:
+          $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
+        session_latest_request_created_at:
+          $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
+        session_tag:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+      type: object
+      description: Make all properties in T optional
     ResultSuccess_HeliconeRequest-Array_:
       properties:
         data:
@@ -981,18 +1032,34 @@ components:
       - error
       type: object
       additionalProperties: false
-    Partial_FeedbackTableToOperators_:
+    RequestQueryParams:
       properties:
-        id:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        created_at:
-          $ref: '#/components/schemas/Partial_TimestampOperators_'
-        rating:
-          $ref: '#/components/schemas/Partial_BooleanOperators_'
-        response_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
+        filter:
+          $ref: '#/components/schemas/RequestFilterNode'
+        offset:
+          type: number
+          format: double
+        limit:
+          type: number
+          format: double
+        sort:
+          $ref: '#/components/schemas/SortLeafRequest'
+        isCached:
+          type: boolean
+        includeInputs:
+          type: boolean
+        isPartOfExperiment:
+          type: boolean
+        isScored:
+          type: boolean
+      required:
+      - filter
       type: object
-      description: Make all properties in T optional
+      additionalProperties: false
+    Scores:
+      $ref: '#/components/schemas/Record_string.number-or-boolean-or-undefined_'
+    ? FilterLeafSubset_feedback-or-request-or-response-or-properties-or-values-or-request_response_rmt-or-sessions_request_response_rmt_
+    : $ref: '#/components/schemas/Pick_FilterLeaf.feedback-or-request-or-response-or-properties-or-values-or-request_response_rmt-or-sessions_request_response_rmt_'
     HeliconeRequest:
       properties:
         response_id:
@@ -1212,247 +1279,127 @@ components:
       - ai_gateway_body_mapping
       type: object
       additionalProperties: false
-    Partial_TextOperators_:
+    LLMResponseBody:
       properties:
-        not-equals:
-          type: string
-        equals:
-          type: string
-        like:
-          type: string
-        ilike:
-          type: string
-        contains:
-          type: string
-        not-contains:
-          type: string
-      type: object
-      description: Make all properties in T optional
-    Partial_NumberOperators_:
-      properties:
-        not-equals:
-          type: number
-          format: double
-        equals:
-          type: number
-          format: double
-        gte:
-          type: number
-          format: double
-        lte:
-          type: number
-          format: double
-        lt:
-          type: number
-          format: double
-        gt:
-          type: number
-          format: double
-      type: object
-      description: Make all properties in T optional
-    Result_HeliconeRequestAsset.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_HeliconeRequestAsset_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Scores:
-      $ref: '#/components/schemas/Record_string.number-or-boolean-or-undefined_'
-    Partial_RequestTableToOperators_:
-      properties:
-        prompt:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        created_at:
-          $ref: '#/components/schemas/Partial_TimestampOperators_'
-        user_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        auth_hash:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        org_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        node_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        model:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        modelOverride:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        path:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        country_code:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        prompt_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-      type: object
-      description: Make all properties in T optional
-    LlmType:
-      type: string
-      enum:
-      - chat
-      - completion
-    ResultSuccess_HeliconeRequestAsset_:
-      properties:
-        data:
-          $ref: '#/components/schemas/HeliconeRequestAsset'
+        dataDetailsResponse:
+          properties:
+            name:
+              type: string
+            _type:
+              type: string
+              enum:
+              - data
+            metadata:
+              properties:
+                timestamp:
+                  type: string
+              additionalProperties: {}
+              required:
+              - timestamp
+              type: object
+            message:
+              type: string
+            status:
+              type: string
+          additionalProperties: {}
+          required:
+          - name
+          - _type
+          - metadata
+          - message
+          - status
+          type: object
+        vectorDBDetailsResponse:
+          properties:
+            _type:
+              type: string
+              enum:
+              - vector_db
+            metadata:
+              properties:
+                timestamp:
+                  type: string
+                destination_parsed:
+                  type: boolean
+                destination:
+                  type: string
+              required:
+              - timestamp
+              type: object
+            actualSimilarity:
+              type: number
+              format: double
+            similarityThreshold:
+              type: number
+              format: double
+            message:
+              type: string
+            status:
+              type: string
+          required:
+          - _type
+          - metadata
+          - message
+          - status
+          type: object
+        toolDetailsResponse:
+          properties:
+            toolName:
+              type: string
+            _type:
+              type: string
+              enum:
+              - tool
+            metadata:
+              properties:
+                timestamp:
+                  type: string
+              required:
+              - timestamp
+              type: object
+            tips:
+              items:
+                type: string
+              type: array
+            message:
+              type: string
+            status:
+              type: string
+          required:
+          - toolName
+          - _type
+          - metadata
+          - tips
+          - message
+          - status
+          type: object
         error:
+          properties:
+            heliconeMessage: {}
+          required:
+          - heliconeMessage
+          type: object
+        model:
           type:
-          - number
+          - string
           - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result__inputs-Record_string.any_--prompt_id-string--version_id-string--environment-string-or-null_-or-null.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__inputs-Record_string.any_--prompt_id-string--version_id-string--environment-string-or-null_-or-null_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    HeliconeEventData:
-      properties:
-        _type:
-          type: string
-          enum:
-          - data
-        name:
-          type: string
-        meta:
-          $ref: '#/components/schemas/Record_string.any_'
-      required:
-      - _type
-      - name
-      type: object
-      additionalProperties: {}
-    Tool:
-      properties:
-        name:
-          type: string
-        description:
-          type: string
-        parameters:
-          $ref: '#/components/schemas/Record_string.any_'
-        strict:
-          type: boolean
-      required:
-      - name
-      type: object
-      additionalProperties: false
-    Partial_SessionsRequestResponseRMTToOperators_:
-      properties:
-        session_session_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        session_session_name:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        session_total_cost:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        session_total_tokens:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        session_prompt_tokens:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        session_completion_tokens:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        session_total_requests:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        session_created_at:
-          $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
-        session_latest_request_created_at:
-          $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
-        session_tag:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-      type: object
-      description: Make all properties in T optional
-    ScoreRequest:
-      properties:
-        scores:
-          $ref: '#/components/schemas/Scores'
-      required:
-      - scores
-      type: object
-      additionalProperties: false
-    SortLeafRequest:
-      properties:
-        random:
-          type: boolean
-          enum:
-          - true
-        created_at:
-          $ref: '#/components/schemas/SortDirection'
-        cache_created_at:
-          $ref: '#/components/schemas/SortDirection'
-        latency:
-          $ref: '#/components/schemas/SortDirection'
-        last_active:
-          $ref: '#/components/schemas/SortDirection'
-        total_tokens:
-          $ref: '#/components/schemas/SortDirection'
-        completion_tokens:
-          $ref: '#/components/schemas/SortDirection'
-        prompt_tokens:
-          $ref: '#/components/schemas/SortDirection'
-        user_id:
-          $ref: '#/components/schemas/SortDirection'
-        body_model:
-          $ref: '#/components/schemas/SortDirection'
-        is_cached:
-          $ref: '#/components/schemas/SortDirection'
-        request_prompt:
-          $ref: '#/components/schemas/SortDirection'
-        response_text:
-          $ref: '#/components/schemas/SortDirection'
-        properties:
-          properties: {}
-          additionalProperties:
-            $ref: '#/components/schemas/SortDirection'
-          type: object
-        values:
-          properties: {}
-          additionalProperties:
-            $ref: '#/components/schemas/SortDirection'
-          type: object
-        cost:
-          $ref: '#/components/schemas/SortDirection'
-        time_to_first_token:
-          $ref: '#/components/schemas/SortDirection'
-      type: object
-      additionalProperties: false
-    SortDirection:
-      type: string
-      enum:
-      - asc
-      - desc
-    HeliconeEventVectorDB:
-      properties:
-        _type:
-          type: string
-          enum:
-          - vector_db
-        operation:
-          type: string
-          enum:
-          - search
-          - insert
-          - delete
-          - update
-        text:
-          type: string
-        vector:
+        instructions:
+          type:
+          - string
+          - 'null'
+        responses:
           items:
-            type: number
-            format: double
-          type: array
-        topK:
-          type: number
-          format: double
-        filter:
-          additionalProperties: false
-          type: object
-        databaseName:
-          type: string
-      required:
-      - _type
-      - operation
+            $ref: '#/components/schemas/Response'
+          type:
+          - array
+          - 'null'
+        messages:
+          items:
+            $ref: '#/components/schemas/Message'
+          type:
+          - array
+          - 'null'
       type: object
-      additionalProperties: {}
     Response:
       properties:
         contentArray:
@@ -1515,6 +1462,11 @@ components:
       - role
       - _type
       type: object
+    SortDirection:
+      type: string
+      enum:
+      - asc
+      - desc
     Partial_RequestResponseRMTToOperators_:
       properties:
         country_code:
@@ -1607,14 +1559,10 @@ components:
           $ref: '#/components/schemas/Partial_BooleanOperators_'
       type: object
       description: Make all properties in T optional
-    ResultSuccess_null_:
+    ResultSuccess_HeliconeRequest_:
       properties:
         data:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
+          $ref: '#/components/schemas/HeliconeRequest'
         error:
           type:
           - number
@@ -1626,68 +1574,120 @@ components:
       - error
       type: object
       additionalProperties: false
-    ProviderName:
-      type: string
-      enum:
-      - OPENAI
-      - ANTHROPIC
-      - AZURE
-      - LOCAL
-      - HELICONE
-      - AMDBARTEK
-      - ANYSCALE
-      - CLOUDFLARE
-      - 2YFV
-      - TOGETHER
-      - LEMONFOX
-      - FIREWORKS
-      - PERPLEXITY
-      - GOOGLE
-      - OPENROUTER
-      - WISDOMINANUTSHELL
-      - GROQ
-      - COHERE
-      - MISTRAL
-      - DEEPINFRA
-      - QSTASH
-      - FIRECRAWL
-      - AWS
-      - BEDROCK
-      - DEEPSEEK
-      - X
-      - AVIAN
-      - NEBIUS
-      - NOVITA
-      - OPENPIPE
-      - CHUTES
-      - LLAMA
-      - NVIDIA
-      - VERCEL
-      - CEREBRAS
-      - BASETEN
-      - CANOPYWAVE
-    HeliconeRequestAsset:
+    Result_HeliconeRequest.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_HeliconeRequest_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Partial_FeedbackTableToOperators_:
       properties:
-        assetUrl:
-          type: string
-      required:
-      - assetUrl
-      type: object
-      additionalProperties: false
-    Partial_ResponseTableToOperators_:
-      properties:
-        body_tokens:
+        id:
           $ref: '#/components/schemas/Partial_NumberOperators_'
-        body_model:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        body_completion:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        status:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        model:
+        created_at:
+          $ref: '#/components/schemas/Partial_TimestampOperators_'
+        rating:
+          $ref: '#/components/schemas/Partial_BooleanOperators_'
+        response_id:
           $ref: '#/components/schemas/Partial_TextOperators_'
       type: object
       description: Make all properties in T optional
+    Result_number.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_number_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess__inputs-Record_string.any_--prompt_id-string--version_id-string--environment-string-or-null_-or-null_:
+      properties:
+        data:
+          properties:
+            environment:
+              type:
+              - string
+              - 'null'
+            version_id:
+              type: string
+            prompt_id:
+              type: string
+            inputs:
+              $ref: '#/components/schemas/Record_string.any_'
+          required:
+          - environment
+          - version_id
+          - prompt_id
+          - inputs
+          type:
+          - object
+          - 'null'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Provider:
+      anyOf:
+      - $ref: '#/components/schemas/ProviderName'
+      - $ref: '#/components/schemas/ModelProviderName'
+      - type: string
+        enum:
+        - CUSTOM
+    Partial_BooleanOperators_:
+      properties:
+        equals:
+          type: boolean
+      type: object
+      description: Make all properties in T optional
+    ResultSuccess_HeliconeRequestAsset_:
+      properties:
+        data:
+          $ref: '#/components/schemas/HeliconeRequestAsset'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    HeliconeEventVectorDB:
+      properties:
+        _type:
+          type: string
+          enum:
+          - vector_db
+        operation:
+          type: string
+          enum:
+          - search
+          - insert
+          - delete
+          - update
+        text:
+          type: string
+        vector:
+          items:
+            type: number
+            format: double
+          type: array
+        topK:
+          type: number
+          format: double
+        filter:
+          additionalProperties: false
+          type: object
+        databaseName:
+          type: string
+      required:
+      - _type
+      - operation
+      type: object
+      additionalProperties: {}
   securitySchemes:
     api_key:
       type: apiKey

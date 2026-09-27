@@ -4,7 +4,7 @@ apis:
 - aid: helicone:helicone-agent-api
   name: Helicone Agent API
   description: The Agent API from Helicone — 8 operation(s) for agent.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Agents
@@ -106,7 +106,7 @@ apis:
 - aid: helicone:helicone-api-key-api
   name: Helicone API Key API
   description: The API Key API from Helicone — 6 operation(s) for api key.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - APIKeys
@@ -208,7 +208,7 @@ apis:
 - aid: helicone:helicone-comparison-api
   name: Helicone Comparison API
   description: The Comparison API from Helicone — 1 operation(s) for comparison.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Comparison
@@ -308,7 +308,7 @@ apis:
 - aid: helicone:helicone-credits-api
   name: Helicone Credits API
   description: The Credits API from Helicone — 6 operation(s) for credits.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Credit
@@ -410,7 +410,7 @@ apis:
 - aid: helicone:helicone-customer-api
   name: Helicone Customer API
   description: The Customer API from Helicone — 2 operation(s) for customer.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Customers
@@ -512,7 +512,7 @@ apis:
 - aid: helicone:helicone-dashboard-api
   name: Helicone Dashboard API
   description: The Dashboard API from Helicone — 1 operation(s) for dashboard.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Dashboards
@@ -614,7 +614,7 @@ apis:
 - aid: helicone:helicone-dataset-api
   name: Helicone Dataset API
   description: The Dataset API from Helicone — 14 operation(s) for dataset.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Datasets
@@ -716,7 +716,7 @@ apis:
 - aid: helicone:helicone-evals-api
   name: Helicone Evals API
   description: The Evals API from Helicone — 4 operation(s) for evals.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Evals
@@ -816,7 +816,7 @@ apis:
 - aid: helicone:helicone-evaluator-api
   name: Helicone Evaluator API
   description: The Evaluator API from Helicone — 10 operation(s) for evaluator.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Evaluator
@@ -916,7 +916,7 @@ apis:
 - aid: helicone:helicone-experiment-api
   name: Helicone Experiment API
   description: The Experiment API from Helicone — 40 operation(s) for experiment.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Experiment
@@ -1016,7 +1016,7 @@ apis:
 - aid: helicone:helicone-heliconesql-api
   name: Helicone HeliconeSql API
   description: The HeliconeSql API from Helicone — 7 operation(s) for heliconesql.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - HeliconeSql
@@ -1116,7 +1116,7 @@ apis:
 - aid: helicone:helicone-integration-api
   name: Helicone Integration API
   description: The Integration API from Helicone — 6 operation(s) for integration.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Integration
@@ -1216,7 +1216,7 @@ apis:
 - aid: helicone:helicone-metrics-api
   name: Helicone Metrics API
   description: The Metrics API from Helicone — 20 operation(s) for metrics.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Metrics
@@ -1316,7 +1316,7 @@ apis:
 - aid: helicone:helicone-model-registry-api
   name: Helicone Model Registry API
   description: The Model Registry API from Helicone — 1 operation(s) for model registry.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Model Registry
@@ -1416,7 +1416,7 @@ apis:
 - aid: helicone:helicone-models-api
   name: Helicone Models API
   description: The Models API from Helicone — 2 operation(s) for models.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Models
@@ -1516,7 +1516,7 @@ apis:
 - aid: helicone:helicone-pi-api
   name: Helicone PI API
   description: The PI API from Helicone — 6 operation(s) for pi.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - PI
@@ -1616,7 +1616,7 @@ apis:
 - aid: helicone:helicone-playground-api
   name: Helicone Playground API
   description: The Playground API from Helicone — 2 operation(s) for playground.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Playground
@@ -1716,7 +1716,7 @@ apis:
 - aid: helicone:helicone-prompt-api
   name: Helicone Prompt API
   description: The Prompt API from Helicone — 17 operation(s) for prompt.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Prompt
@@ -1816,7 +1816,7 @@ apis:
 - aid: helicone:helicone-prompt2025-api
   name: Helicone Prompt2025 API
   description: The Prompt2025 API from Helicone — 20 operation(s) for prompt2025.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Prompt2025
@@ -1916,7 +1916,7 @@ apis:
 - aid: helicone:helicone-prompt2025v2-api
   name: Helicone Prompt2025V2 API
   description: The Prompt2025V2 API from Helicone — 3 operation(s) for prompt2025v2.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Prompt2025V2
@@ -2016,7 +2016,7 @@ apis:
 - aid: helicone:helicone-property-api
   name: Helicone Property API
   description: The Property API from Helicone — 8 operation(s) for property.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Property
@@ -2116,7 +2116,7 @@ apis:
 - aid: helicone:helicone-providers-api
   name: Helicone Providers API
   description: The Providers API from Helicone — 1 operation(s) for providers.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Providers
@@ -2216,7 +2216,7 @@ apis:
 - aid: helicone:helicone-request-api
   name: Helicone Request API
   description: The Request API from Helicone — 10 operation(s) for request.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Request
@@ -2316,7 +2316,7 @@ apis:
 - aid: helicone:helicone-security-api
   name: Helicone Security API
   description: The Security API from Helicone — 1 operation(s) for security.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Security
@@ -2416,7 +2416,7 @@ apis:
 - aid: helicone:helicone-session-api
   name: Helicone Session API
   description: The Session API from Helicone — 6 operation(s) for session.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Sessions
@@ -2518,7 +2518,7 @@ apis:
 - aid: helicone:helicone-status-api
   name: Helicone Status API
   description: The Status API from Helicone — 2 operation(s) for status.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Status
@@ -2618,7 +2618,7 @@ apis:
 - aid: helicone:helicone-stripe-api
   name: Helicone Stripe API
   description: The Stripe API from Helicone — 22 operation(s) for stripe.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Stripe
@@ -2718,7 +2718,7 @@ apis:
 - aid: helicone:helicone-test-api
   name: Helicone Test API
   description: The Test API from Helicone — 1 operation(s) for test.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags: []
   tags_raw:
@@ -2819,7 +2819,7 @@ apis:
 - aid: helicone:helicone-trace-api
   name: Helicone Trace API
   description: The Trace API from Helicone — 5 operation(s) for trace.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Trace
@@ -2919,7 +2919,7 @@ apis:
 - aid: helicone:helicone-user-api
   name: Helicone User API
   description: The User API from Helicone — 3 operation(s) for user.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - User
@@ -3019,7 +3019,7 @@ apis:
 - aid: helicone:helicone-vault-api
   name: Helicone Vault API
   description: The Vault API from Helicone — 4 operation(s) for vault.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Vault
@@ -3119,7 +3119,7 @@ apis:
 - aid: helicone:helicone-webhooks-api
   name: Helicone Webhooks API
   description: The Webhooks API from Helicone — 3 operation(s) for webhooks.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Webhook
@@ -3221,7 +3221,7 @@ apis:
 - aid: helicone:helicone-wrapped-api
   name: Helicone Wrapped API
   description: The Wrapped API from Helicone — 2 operation(s) for wrapped.
-  humanURL: ' https://www.helicone.ai/'
+  humanURL: https://www.helicone.ai/
   baseURL: https://ai-gateway.helicone.ai
   tags:
   - Wrapped

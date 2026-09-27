@@ -148,9 +148,49 @@ components:
       - org_id
       - id
       type: object
+    ResultError_string_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type: string
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result_null.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_null_'
+      - $ref: '#/components/schemas/ResultError_string_'
     Result_DecryptedProviderKey-Array.string_:
       anyOf:
       - $ref: '#/components/schemas/ResultSuccess_DecryptedProviderKey-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_DecryptedProviderKey-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/DecryptedProviderKey'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result_DecryptedProviderKey.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_DecryptedProviderKey_'
       - $ref: '#/components/schemas/ResultError_string_'
     ResultSuccess__id-string__:
       properties:
@@ -161,6 +201,25 @@ components:
           required:
           - id
           type: object
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result__id-string_.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__id-string__'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_DecryptedProviderKey_:
+      properties:
+        data:
+          $ref: '#/components/schemas/DecryptedProviderKey'
         error:
           type:
           - number
@@ -191,14 +250,6 @@ components:
       - error
       type: object
       additionalProperties: false
-    Result_null.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_null_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result__id-string_.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__id-string__'
-      - $ref: '#/components/schemas/ResultError_string_'
     AddVaultKeyParams:
       properties:
         key:
@@ -210,57 +261,6 @@ components:
       required:
       - key
       - provider
-      type: object
-      additionalProperties: false
-    ResultSuccess_DecryptedProviderKey_:
-      properties:
-        data:
-          $ref: '#/components/schemas/DecryptedProviderKey'
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result_DecryptedProviderKey.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_DecryptedProviderKey_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_DecryptedProviderKey-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/DecryptedProviderKey'
-          type: array
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultError_string_:
-      properties:
-        data:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-        error:
-          type: string
-      required:
-      - data
-      - error
       type: object
       additionalProperties: false
   securitySchemes:

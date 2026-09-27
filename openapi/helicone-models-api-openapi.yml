@@ -45,21 +45,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    OAIModelsResponse:
-      properties:
-        object:
-          type: string
-          enum:
-          - list
-        data:
-          items:
-            $ref: '#/components/schemas/OAIModel'
-          type: array
-      required:
-      - object
-      - data
-      type: object
-      additionalProperties: false
     OAIModel:
       properties:
         id:
@@ -78,6 +63,21 @@ components:
       - object
       - created
       - owned_by
+      type: object
+      additionalProperties: false
+    OAIModelsResponse:
+      properties:
+        object:
+          type: string
+          enum:
+          - list
+        data:
+          items:
+            $ref: '#/components/schemas/OAIModel'
+          type: array
+      required:
+      - object
+      - data
       type: object
       additionalProperties: false
   securitySchemes:

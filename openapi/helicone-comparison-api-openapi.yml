@@ -38,84 +38,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    ResultError_string_:
-      properties:
-        data:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-        error:
-          type: string
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result_Model-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_Model-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_Model-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/Model'
-          type: array
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    TokenMetricStats:
-      allOf:
-      - $ref: '#/components/schemas/MetricStats'
-      - properties:
-          medianPer1000Tokens:
-            type: number
-            format: double
-        required:
-        - medianPer1000Tokens
-        type: object
-    MetricStats:
-      properties:
-        p99:
-          type: number
-          format: double
-        p95:
-          type: number
-          format: double
-        p90:
-          type: number
-          format: double
-        max:
-          type: number
-          format: double
-        min:
-          type: number
-          format: double
-        median:
-          type: number
-          format: double
-        average:
-          type: number
-          format: double
-      required:
-      - p99
-      - p95
-      - p90
-      - max
-      - min
-      - median
-      - average
-      type: object
     Model:
       properties:
         timeSeriesData:
@@ -224,17 +146,67 @@ components:
       - provider
       - model
       type: object
-    TimeSeriesMetric:
+    TokenMetricStats:
+      allOf:
+      - $ref: '#/components/schemas/MetricStats'
+      - properties:
+          medianPer1000Tokens:
+            type: number
+            format: double
+        required:
+        - medianPer1000Tokens
+        type: object
+    ResultError_string_:
       properties:
-        value:
-          type: number
-          format: double
-        timestamp:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
           type: string
       required:
-      - value
-      - timestamp
+      - data
+      - error
       type: object
+      additionalProperties: false
+    MetricStats:
+      properties:
+        p99:
+          type: number
+          format: double
+        p95:
+          type: number
+          format: double
+        p90:
+          type: number
+          format: double
+        max:
+          type: number
+          format: double
+        min:
+          type: number
+          format: double
+        median:
+          type: number
+          format: double
+        average:
+          type: number
+          format: double
+      required:
+      - p99
+      - p95
+      - p90
+      - max
+      - min
+      - median
+      - average
+      type: object
+    Result_Model-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_Model-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
     ModelsToCompare:
       properties:
         provider:
@@ -249,6 +221,34 @@ components:
       - provider
       - names
       - parent
+      type: object
+    ResultSuccess_Model-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/Model'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    TimeSeriesMetric:
+      properties:
+        value:
+          type: number
+          format: double
+        timestamp:
+          type: string
+      required:
+      - value
+      - timestamp
       type: object
   securitySchemes:
     api_key:

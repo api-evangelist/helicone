@@ -713,6 +713,92 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    CreateSetupSessionRequest:
+      properties:
+        returnUrl:
+          type: string
+      type: object
+      additionalProperties: false
+    UpgradeToProRequest:
+      properties:
+        addons:
+          properties:
+            evals:
+              type: boolean
+            experiments:
+              type: boolean
+            prompts:
+              type: boolean
+            alerts:
+              type: boolean
+          type: object
+        seats:
+          type: number
+          format: double
+        ui_mode:
+          type: string
+          enum:
+          - embedded
+          - hosted
+      type: object
+      additionalProperties: false
+    DailyUsageDataPoint:
+      properties:
+        date:
+          type: string
+        requests:
+          type: number
+          format: double
+        bytes:
+          type: number
+          format: double
+      required:
+      - date
+      - requests
+      - bytes
+      type: object
+      additionalProperties: false
+    StripePaymentIntentsResponse:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/PaymentIntentRecord'
+          type: array
+        has_more:
+          type: boolean
+        next_page:
+          type:
+          - string
+          - 'null'
+        count:
+          type: number
+          format: double
+      required:
+      - data
+      - has_more
+      - next_page
+      - count
+      type: object
+      additionalProperties: false
+    UpdateAutoTopoffSettingsRequest:
+      properties:
+        enabled:
+          type: boolean
+        thresholdCents:
+          type: number
+          format: double
+        topoffAmountCents:
+          type: number
+          format: double
+        stripePaymentMethodId:
+          type: string
+      required:
+      - enabled
+      - thresholdCents
+      - topoffAmountCents
+      - stripePaymentMethodId
+      type: object
+      additionalProperties: false
     AutoTopoffSettings:
       properties:
         enabled:
@@ -754,124 +840,6 @@ components:
       - amount
       type: object
       additionalProperties: false
-    UpgradeToTeamBundleRequest:
-      properties:
-        ui_mode:
-          type: string
-          enum:
-          - embedded
-          - hosted
-      type: object
-      additionalProperties: false
-    CreateSetupSessionRequest:
-      properties:
-        returnUrl:
-          type: string
-      type: object
-      additionalProperties: false
-    DailyUsageDataPoint:
-      properties:
-        date:
-          type: string
-        requests:
-          type: number
-          format: double
-        bytes:
-          type: number
-          format: double
-      required:
-      - date
-      - requests
-      - bytes
-      type: object
-      additionalProperties: false
-    StripePaymentIntentsResponse:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/PaymentIntentRecord'
-          type: array
-        has_more:
-          type: boolean
-        next_page:
-          type:
-          - string
-          - 'null'
-        count:
-          type: number
-          format: double
-      required:
-      - data
-      - has_more
-      - next_page
-      - count
-      type: object
-      additionalProperties: false
-    LLMUsage:
-      properties:
-        model:
-          type: string
-        provider:
-          type: string
-        prompt_tokens:
-          type: number
-          format: double
-        completion_tokens:
-          type: number
-          format: double
-        total_count:
-          type: number
-          format: double
-        amount:
-          type: number
-          format: double
-        description:
-          type: string
-        totalCost:
-          properties:
-            prompt_token:
-              type: number
-              format: double
-            completion_token:
-              type: number
-              format: double
-          required:
-          - prompt_token
-          - completion_token
-          type: object
-      required:
-      - model
-      - provider
-      - prompt_tokens
-      - completion_tokens
-      - total_count
-      - amount
-      - description
-      - totalCost
-      type: object
-      additionalProperties: false
-    PaymentMethod:
-      properties:
-        id:
-          type: string
-        brand:
-          type: string
-        last4:
-          type: string
-        exp_month:
-          type: number
-          format: double
-        exp_year:
-          type: number
-          format: double
-      required:
-      - id
-      - brand
-      - last4
-      - exp_month
-      - exp_year
-      type: object
-      additionalProperties: false
     PaymentIntentRecord:
       properties:
         id:
@@ -898,6 +866,28 @@ components:
       - amount
       - created
       - status
+      type: object
+      additionalProperties: false
+    PaymentMethod:
+      properties:
+        id:
+          type: string
+        brand:
+          type: string
+        last4:
+          type: string
+        exp_month:
+          type: number
+          format: double
+        exp_year:
+          type: number
+          format: double
+      required:
+      - id
+      - brand
+      - last4
+      - exp_month
+      - exp_year
       type: object
       additionalProperties: false
     UsageStatsResponse:
@@ -975,46 +965,56 @@ components:
       - estimatedCost
       type: object
       additionalProperties: false
-    UpdateAutoTopoffSettingsRequest:
+    UpgradeToTeamBundleRequest:
       properties:
-        enabled:
-          type: boolean
-        thresholdCents:
-          type: number
-          format: double
-        topoffAmountCents:
-          type: number
-          format: double
-        stripePaymentMethodId:
-          type: string
-      required:
-      - enabled
-      - thresholdCents
-      - topoffAmountCents
-      - stripePaymentMethodId
-      type: object
-      additionalProperties: false
-    UpgradeToProRequest:
-      properties:
-        addons:
-          properties:
-            evals:
-              type: boolean
-            experiments:
-              type: boolean
-            prompts:
-              type: boolean
-            alerts:
-              type: boolean
-          type: object
-        seats:
-          type: number
-          format: double
         ui_mode:
           type: string
           enum:
           - embedded
           - hosted
+      type: object
+      additionalProperties: false
+    LLMUsage:
+      properties:
+        model:
+          type: string
+        provider:
+          type: string
+        prompt_tokens:
+          type: number
+          format: double
+        completion_tokens:
+          type: number
+          format: double
+        total_count:
+          type: number
+          format: double
+        amount:
+          type: number
+          format: double
+        description:
+          type: string
+        totalCost:
+          properties:
+            prompt_token:
+              type: number
+              format: double
+            completion_token:
+              type: number
+              format: double
+          required:
+          - prompt_token
+          - completion_token
+          type: object
+      required:
+      - model
+      - provider
+      - prompt_tokens
+      - completion_tokens
+      - total_count
+      - amount
+      - description
+      - totalCost
       type: object
       additionalProperties: false
   securitySchemes:

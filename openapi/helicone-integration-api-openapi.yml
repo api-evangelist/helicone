@@ -185,6 +185,131 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    Integration:
+      properties:
+        integration_name:
+          type: string
+        settings:
+          $ref: '#/components/schemas/Json'
+        active:
+          type: boolean
+        id:
+          type: string
+      required:
+      - id
+      type: object
+      additionalProperties: false
+    IntegrationCreateParams:
+      properties:
+        integration_name:
+          type: string
+        settings:
+          $ref: '#/components/schemas/Json'
+        active:
+          type: boolean
+      required:
+      - integration_name
+      type: object
+      additionalProperties: false
+    ResultSuccess_Array__id-string--name-string___:
+      properties:
+        data:
+          items:
+            properties:
+              name:
+                type: string
+              id:
+                type: string
+            required:
+            - name
+            - id
+            type: object
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result_string.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_string_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_Integration_:
+      properties:
+        data:
+          $ref: '#/components/schemas/Integration'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result_Integration.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_Integration_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Result_Array_Integration_.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_Array_Integration__'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultError_string_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type: string
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Json:
+      anyOf:
+      - type: string
+      - type: number
+        format: double
+      - type: boolean
+      - properties: {}
+        additionalProperties:
+          $ref: '#/components/schemas/Json'
+        type: object
+      - items:
+          $ref: '#/components/schemas/Json'
+        type: array
+    Result_null.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_null_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_string_:
+      properties:
+        data:
+          type: string
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
     ResultSuccess__id-string__:
       properties:
         data:
@@ -205,23 +330,18 @@ components:
       - error
       type: object
       additionalProperties: false
-    Json:
+    Result__id-string_.string_:
       anyOf:
-      - type: string
-      - type: number
-        format: double
-      - type: boolean
-      - properties: {}
-        additionalProperties:
-          $ref: '#/components/schemas/Json'
-        type: object
-      - items:
-          $ref: '#/components/schemas/Json'
-        type: array
-    ResultSuccess_Integration_:
+      - $ref: '#/components/schemas/ResultSuccess__id-string__'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_null_:
       properties:
         data:
-          $ref: '#/components/schemas/Integration'
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
         error:
           type:
           - number
@@ -250,54 +370,9 @@ components:
       - error
       type: object
       additionalProperties: false
-    Result_string.string_:
+    Result_Array__id-string--name-string__.string_:
       anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_string_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_null_:
-      properties:
-        data:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result_Array_Integration_.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_Array_Integration__'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Integration:
-      properties:
-        integration_name:
-          type: string
-        settings:
-          $ref: '#/components/schemas/Json'
-        active:
-          type: boolean
-        id:
-          type: string
-      required:
-      - id
-      type: object
-      additionalProperties: false
-    Result_null.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_null_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result__id-string_.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__id-string__'
+      - $ref: '#/components/schemas/ResultSuccess_Array__id-string--name-string___'
       - $ref: '#/components/schemas/ResultError_string_'
     IntegrationUpdateParams:
       properties:
@@ -309,37 +384,6 @@ components:
           type: boolean
       type: object
       additionalProperties: false
-    ResultSuccess_string_:
-      properties:
-        data:
-          type: string
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result_Integration.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_Integration_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    IntegrationCreateParams:
-      properties:
-        integration_name:
-          type: string
-        settings:
-          $ref: '#/components/schemas/Json'
-        active:
-          type: boolean
-      required:
-      - integration_name
-      type: object
-      additionalProperties: false
     TestStripeMeterEventRequest:
       properties:
         event_name:
@@ -349,50 +393,6 @@ components:
       required:
       - event_name
       - customer_id
-      type: object
-      additionalProperties: false
-    Result_Array__id-string--name-string__.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_Array__id-string--name-string___'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_Array__id-string--name-string___:
-      properties:
-        data:
-          items:
-            properties:
-              name:
-                type: string
-              id:
-                type: string
-            required:
-            - name
-            - id
-            type: object
-          type: array
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultError_string_:
-      properties:
-        data:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-        error:
-          type: string
-      required:
-      - data
-      - error
       type: object
       additionalProperties: false
   securitySchemes:

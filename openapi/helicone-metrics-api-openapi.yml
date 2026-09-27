@@ -473,216 +473,24 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    Result_TimeToFirstTokenOverTime-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_TimeToFirstTokenOverTime-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_CostOverTime-Array_:
+    Partial_PropertyWithResponseV1ToOperators_:
       properties:
-        data:
-          items:
-            $ref: '#/components/schemas/CostOverTime'
-          type: array
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    TokensPerRequest:
-      properties:
-        average_prompt_tokens_per_response:
-          type: number
-          format: double
-        average_completion_tokens_per_response:
-          type: number
-          format: double
-        average_total_tokens_per_response:
-          type: number
-          format: double
-      required:
-      - average_prompt_tokens_per_response
-      - average_completion_tokens_per_response
-      - average_total_tokens_per_response
-      type: object
-      additionalProperties: false
-    Partial_RequestResponseLogToOperators_:
-      properties:
-        latency:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        status:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
+        property_key:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        property_value:
+          $ref: '#/components/schemas/Partial_TextOperators_'
         request_created_at:
           $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
-        response_created_at:
-          $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
-        auth_hash:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        model:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        user_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
         organization_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        node_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        job_id:
           $ref: '#/components/schemas/Partial_TextOperators_'
         threat:
           $ref: '#/components/schemas/Partial_BooleanOperators_'
       type: object
       description: Make all properties in T optional
-    LatencyOverTime:
-      properties:
-        time:
-          type: string
-          format: date-time
-        duration:
-          type: number
-          format: double
-      required:
-      - time
-      - duration
-      type: object
-      additionalProperties: false
-    QuantilesBody:
-      properties:
-        filter:
-          $ref: '#/components/schemas/FilterNode'
-        timeFilter:
-          properties:
-            end:
-              type: string
-            start:
-              type: string
-          required:
-          - end
-          - start
-          type: object
-        dbIncrement:
-          $ref: '#/components/schemas/TimeIncrement'
-        timeZoneDifference:
-          type: number
-          format: double
-        metric:
-          type: string
-      required:
-      - filter
-      - timeFilter
-      - timeZoneDifference
-      - metric
-      type: object
-      additionalProperties: false
-    Partial_NodesToOperators_:
-      properties:
-        id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        name:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        description:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        job_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        status:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        created_at:
-          $ref: '#/components/schemas/Partial_TimestampOperators_'
-        updated_at:
-          $ref: '#/components/schemas/Partial_TimestampOperators_'
-        timeout_seconds:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        custom_properties:
-          properties: {}
-          additionalProperties:
-            $ref: '#/components/schemas/Partial_TextOperators_'
-          type: object
-        org_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-      type: object
-      description: Make all properties in T optional
-    CostOverTime:
-      properties:
-        time:
-          type: string
-          format: date-time
-        cost:
-          type: number
-          format: double
-      required:
-      - time
-      - cost
-      type: object
-      additionalProperties: false
-    FilterNode:
+    Result_ErrorOverTime-Array.string_:
       anyOf:
-      - $ref: '#/components/schemas/FilterLeaf'
-      - $ref: '#/components/schemas/FilterBranch'
-      - properties: {}
-        type: object
-      - type: string
-        enum:
-        - all
-    Partial_BooleanOperators_:
-      properties:
-        equals:
-          type: boolean
-      type: object
-      description: Make all properties in T optional
-    Partial_ExperimentHypothesisRunToOperator_:
-      properties:
-        result_request_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-      type: object
-      description: Make all properties in T optional
-    Partial_TextOperators_:
-      properties:
-        not-equals:
-          type: string
-        equals:
-          type: string
-        like:
-          type: string
-        ilike:
-          type: string
-        contains:
-          type: string
-        not-contains:
-          type: string
-      type: object
-      description: Make all properties in T optional
-    Partial_RequestTableToOperators_:
-      properties:
-        prompt:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        created_at:
-          $ref: '#/components/schemas/Partial_TimestampOperators_'
-        user_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        auth_hash:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        org_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        node_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        model:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        modelOverride:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        path:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        country_code:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        prompt_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-      type: object
-      description: Make all properties in T optional
+      - $ref: '#/components/schemas/ResultSuccess_ErrorOverTime-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
     MetricsOverTimeBody:
       properties:
         timeFilter:
@@ -708,18 +516,45 @@ components:
       - timeZoneDifference
       type: object
       additionalProperties: false
-    CountryData:
+    TokensOverTime:
       properties:
-        country:
+        time:
           type: string
-        total_requests:
+          format: date-time
+        prompt_tokens:
+          type: number
+          format: double
+        completion_tokens:
           type: number
           format: double
       required:
-      - country
-      - total_requests
+      - time
+      - prompt_tokens
+      - completion_tokens
       type: object
       additionalProperties: false
+    Result_CountryData-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_CountryData-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Partial_OrganizationPropertiesToOperators_:
+      properties:
+        organization_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        property_key:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+      type: object
+      description: Make all properties in T optional
+    Partial_PropertiesTableToOperators_:
+      properties:
+        auth_hash:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        key:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        value:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+      type: object
+      description: Make all properties in T optional
     TimeIncrement:
       type: string
       enum:
@@ -729,6 +564,30 @@ components:
       - week
       - month
       - year
+    Partial_UserViewToOperators_:
+      properties:
+        user_user_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        user_active_for:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        user_first_active:
+          $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
+        user_last_active:
+          $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
+        user_total_requests:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        user_average_requests_per_day_active:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        user_average_tokens_per_request:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        user_total_completion_tokens:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        user_total_prompt_tokens:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        user_cost:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+      type: object
+      description: Make all properties in T optional
     ResultSuccess_ModelMetric-Array_:
       properties:
         data:
@@ -746,53 +605,72 @@ components:
       - error
       type: object
       additionalProperties: false
-    Partial_ExperimentToOperators_:
+    Partial_NumberOperators_:
       properties:
-        id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        prompt_v2:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-      type: object
-      description: Make all properties in T optional
-    Partial_ResponseTableToOperators_:
-      properties:
-        body_tokens:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        body_model:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        body_completion:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        status:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        model:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-      type: object
-      description: Make all properties in T optional
-    ModelMetricsBody:
-      properties:
-        filter:
-          $ref: '#/components/schemas/FilterNode'
-        offset:
+        not-equals:
           type: number
           format: double
-        limit:
+        equals:
           type: number
           format: double
-        timeFilter:
-          properties:
-            end:
-              type: string
-            start:
-              type: string
-          required:
-          - end
-          - start
-          type: object
+        gte:
+          type: number
+          format: double
+        lte:
+          type: number
+          format: double
+        lt:
+          type: number
+          format: double
+        gt:
+          type: number
+          format: double
+      type: object
+      description: Make all properties in T optional
+    ResultSuccess_TimeToFirstTokenOverTime-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/TimeToFirstTokenOverTime'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
       required:
-      - filter
-      - offset
-      - limit
-      - timeFilter
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result_Quantiles-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_Quantiles-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Partial_UserApiKeysTableToOperators_:
+      properties:
+        api_key_hash:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        api_key_name:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+      type: object
+      description: Make all properties in T optional
+    ResultSuccess_ThreatsOverTime-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/ThreatsOverTime'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
       type: object
       additionalProperties: false
     Partial_CacheMetricsTableToOperators_:
@@ -833,6 +711,32 @@ components:
           $ref: '#/components/schemas/Partial_TextOperators_'
       type: object
       description: Make all properties in T optional
+    Result_ModelMetric-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_ModelMetric-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Partial_UserMetricsToOperators_:
+      properties:
+        user_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        last_active:
+          $ref: '#/components/schemas/Partial_TimestampOperators_'
+        total_requests:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        active_for:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        average_requests_per_day_active:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        average_tokens_per_request:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        total_completion_tokens:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        total_prompt_tokens:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        cost:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+      type: object
+      description: Make all properties in T optional
     ResultSuccess_ErrorOverTime-Array_:
       properties:
         data:
@@ -850,26 +754,80 @@ components:
       - error
       type: object
       additionalProperties: false
-    ResultError_string_:
+    Partial_BooleanOperators_:
       properties:
-        data:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-        error:
-          type: string
+        equals:
+          type: boolean
+      type: object
+      description: Make all properties in T optional
+    CountryMetricsBody:
+      properties:
+        filter:
+          $ref: '#/components/schemas/FilterNode'
+        offset:
+          type: number
+          format: double
+        limit:
+          type: number
+          format: double
+        timeFilter:
+          properties:
+            end:
+              type: string
+            start:
+              type: string
+          required:
+          - end
+          - start
+          type: object
       required:
-      - data
-      - error
+      - filter
+      - offset
+      - limit
+      - timeFilter
       type: object
       additionalProperties: false
-    ResultSuccess_UsersOverTime-Array_:
+    CountryData:
+      properties:
+        country:
+          type: string
+        total_requests:
+          type: number
+          format: double
+      required:
+      - country
+      - total_requests
+      type: object
+      additionalProperties: false
+    Result_CostOverTime-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_CostOverTime-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Partial_ExperimentHypothesisRunToOperator_:
+      properties:
+        result_request_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+      type: object
+      description: Make all properties in T optional
+    Partial_TimestampOperators_:
+      properties:
+        equals:
+          type: string
+        gte:
+          type: string
+        lte:
+          type: string
+        lt:
+          type: string
+        gt:
+          type: string
+      type: object
+      description: Make all properties in T optional
+    ResultSuccess_LatencyOverTime-Array_:
       properties:
         data:
           items:
-            $ref: '#/components/schemas/UsersOverTime'
+            $ref: '#/components/schemas/LatencyOverTime'
           type: array
         error:
           type:
@@ -882,49 +840,10 @@ components:
       - error
       type: object
       additionalProperties: false
-    Partial_TimestampOperatorsTyped_:
-      properties:
-        equals:
-          type: string
-          format: date-time
-        gte:
-          type: string
-          format: date-time
-        lte:
-          type: string
-          format: date-time
-        lt:
-          type: string
-          format: date-time
-        gt:
-          type: string
-          format: date-time
-      type: object
-      description: Make all properties in T optional
-    Partial_UserViewToOperators_:
-      properties:
-        user_user_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        user_active_for:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        user_first_active:
-          $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
-        user_last_active:
-          $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
-        user_total_requests:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        user_average_requests_per_day_active:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        user_average_tokens_per_request:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        user_total_completion_tokens:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        user_total_prompt_tokens:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        user_cost:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-      type: object
-      description: Make all properties in T optional
+    Result_TokensPerRequest.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_TokensPerRequest_'
+      - $ref: '#/components/schemas/ResultError_string_'
     FilterBranch:
       properties:
         left:
@@ -942,6 +861,177 @@ components:
       - right
       type: object
       additionalProperties: false
+    CostOverTime:
+      properties:
+        time:
+          type: string
+          format: date-time
+        cost:
+          type: number
+          format: double
+      required:
+      - time
+      - cost
+      type: object
+      additionalProperties: false
+    LatencyOverTime:
+      properties:
+        time:
+          type: string
+          format: date-time
+        duration:
+          type: number
+          format: double
+      required:
+      - time
+      - duration
+      type: object
+      additionalProperties: false
+    Quantiles:
+      properties:
+        time:
+          type: string
+          format: date-time
+        p75:
+          type: number
+          format: double
+        p90:
+          type: number
+          format: double
+        p95:
+          type: number
+          format: double
+        p99:
+          type: number
+          format: double
+      required:
+      - time
+      - p75
+      - p90
+      - p95
+      - p99
+      type: object
+      additionalProperties: false
+    ResultSuccess_Quantiles-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/Quantiles'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result_TimeToFirstTokenOverTime-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_TimeToFirstTokenOverTime-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Result_ThreatsOverTime-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_ThreatsOverTime-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ErrorOverTime:
+      properties:
+        time:
+          type: string
+          format: date-time
+        count:
+          type: number
+          format: double
+      required:
+      - time
+      - count
+      type: object
+      additionalProperties: false
+    Partial_FeedbackTableToOperators_:
+      properties:
+        id:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        created_at:
+          $ref: '#/components/schemas/Partial_TimestampOperators_'
+        rating:
+          $ref: '#/components/schemas/Partial_BooleanOperators_'
+        response_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+      type: object
+      description: Make all properties in T optional
+    Result_number.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_number_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    RequestsOverTime:
+      properties:
+        time:
+          type: string
+          format: date-time
+        count:
+          type: number
+          format: double
+        status:
+          type: number
+          format: double
+      required:
+      - time
+      - count
+      type: object
+      additionalProperties: false
+    ResultSuccess_TokensOverTime-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/TokensOverTime'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    UsersOverTime:
+      properties:
+        time:
+          type: string
+          format: date-time
+        count:
+          type: number
+          format: double
+      required:
+      - time
+      - count
+      type: object
+      additionalProperties: false
+    Partial_PromptVersionsToOperators_:
+      properties:
+        minor_version:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        major_version:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        prompt_v2:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+      type: object
+      description: Make all properties in T optional
+    Partial_PromptToOperators_:
+      properties:
+        id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        user_defined_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+      type: object
+      description: Make all properties in T optional
     Partial_RateLimitTableToOperators_:
       properties:
         organization_id:
@@ -950,10 +1040,70 @@ components:
           $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
       type: object
       description: Make all properties in T optional
-    Result_TokensOverTime-Array.string_:
+    TokensPerRequest:
+      properties:
+        average_prompt_tokens_per_response:
+          type: number
+          format: double
+        average_completion_tokens_per_response:
+          type: number
+          format: double
+        average_total_tokens_per_response:
+          type: number
+          format: double
+      required:
+      - average_prompt_tokens_per_response
+      - average_completion_tokens_per_response
+      - average_total_tokens_per_response
+      type: object
+      additionalProperties: false
+    Result_LatencyOverTime-Array.string_:
       anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_TokensOverTime-Array_'
+      - $ref: '#/components/schemas/ResultSuccess_LatencyOverTime-Array_'
       - $ref: '#/components/schemas/ResultError_string_'
+    Partial_TextOperators_:
+      properties:
+        not-equals:
+          type: string
+        equals:
+          type: string
+        like:
+          type: string
+        ilike:
+          type: string
+        contains:
+          type: string
+        not-contains:
+          type: string
+      type: object
+      description: Make all properties in T optional
+    ModelMetricsBody:
+      properties:
+        filter:
+          $ref: '#/components/schemas/FilterNode'
+        offset:
+          type: number
+          format: double
+        limit:
+          type: number
+          format: double
+        timeFilter:
+          properties:
+            end:
+              type: string
+            start:
+              type: string
+          required:
+          - end
+          - start
+          type: object
+      required:
+      - filter
+      - offset
+      - limit
+      - timeFilter
+      type: object
+      additionalProperties: false
     RequestCountBody:
       properties:
         filter:
@@ -964,51 +1114,40 @@ components:
       - filter
       type: object
       additionalProperties: false
-    Partial_PromptToOperators_:
+    Partial_ScoreValueToOperator_:
       properties:
-        id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        user_defined_id:
+        request_id:
           $ref: '#/components/schemas/Partial_TextOperators_'
       type: object
       description: Make all properties in T optional
-    Result_ThreatsOverTime-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_ThreatsOverTime-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result_RequestsOverTime-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_RequestsOverTime-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Partial_JobToOperators_:
+    QuantilesBody:
       properties:
-        id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        name:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        description:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        status:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        created_at:
-          $ref: '#/components/schemas/Partial_TimestampOperators_'
-        updated_at:
-          $ref: '#/components/schemas/Partial_TimestampOperators_'
-        timeout_seconds:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        custom_properties:
-          properties: {}
-          additionalProperties:
-            $ref: '#/components/schemas/Partial_TextOperators_'
+        filter:
+          $ref: '#/components/schemas/FilterNode'
+        timeFilter:
+          properties:
+            end:
+              type: string
+            start:
+              type: string
+          required:
+          - end
+          - start
           type: object
-        org_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
+        dbIncrement:
+          $ref: '#/components/schemas/TimeIncrement'
+        timeZoneDifference:
+          type: number
+          format: double
+        metric:
+          type: string
+      required:
+      - filter
+      - timeFilter
+      - timeZoneDifference
+      - metric
       type: object
-      description: Make all properties in T optional
-    Result_Quantiles-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_Quantiles-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
+      additionalProperties: false
     Partial_TablesAndViews_:
       properties:
         user_metrics:
@@ -1067,27 +1206,6 @@ components:
           type: object
       type: object
       description: Make all properties in T optional
-    FilterLeaf:
-      $ref: '#/components/schemas/SingleKey_TablesAndViews_'
-    ResultSuccess_LatencyOverTime-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/LatencyOverTime'
-          type: array
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    SingleKey_TablesAndViews_:
-      $ref: '#/components/schemas/Partial_TablesAndViews_'
     ModelMetric:
       properties:
         model:
@@ -1116,232 +1234,26 @@ components:
       - cost
       type: object
       additionalProperties: false
-    ResultSuccess_TokensOverTime-Array_:
+    Partial_ResponseTableToOperators_:
       properties:
-        data:
-          items:
-            $ref: '#/components/schemas/TokensOverTime'
-          type: array
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result_TokensPerRequest.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_TokensPerRequest_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result_LatencyOverTime-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_LatencyOverTime-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    MetricsFilterBody:
-      properties:
-        filter:
-          $ref: '#/components/schemas/FilterNode'
-        timeFilter:
-          properties:
-            end:
-              type: string
-            start:
-              type: string
-          required:
-          - end
-          - start
-          type: object
-      required:
-      - filter
-      - timeFilter
-      type: object
-      additionalProperties: false
-    ResultSuccess_number_:
-      properties:
-        data:
-          type: number
-          format: double
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Partial_PropertiesTableToOperators_:
-      properties:
-        auth_hash:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        key:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        value:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-      type: object
-      description: Make all properties in T optional
-    Result_number.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_number_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result_ErrorOverTime-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_ErrorOverTime-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Partial_OrganizationPropertiesToOperators_:
-      properties:
-        organization_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        property_key:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-      type: object
-      description: Make all properties in T optional
-    Partial_FeedbackTableToOperators_:
-      properties:
-        id:
+        body_tokens:
           $ref: '#/components/schemas/Partial_NumberOperators_'
-        created_at:
-          $ref: '#/components/schemas/Partial_TimestampOperators_'
-        rating:
-          $ref: '#/components/schemas/Partial_BooleanOperators_'
-        response_id:
+        body_model:
           $ref: '#/components/schemas/Partial_TextOperators_'
-      type: object
-      description: Make all properties in T optional
-    TokensOverTime:
-      properties:
-        time:
-          type: string
-          format: date-time
-        prompt_tokens:
-          type: number
-          format: double
-        completion_tokens:
-          type: number
-          format: double
-      required:
-      - time
-      - prompt_tokens
-      - completion_tokens
-      type: object
-      additionalProperties: false
-    Partial_NumberOperators_:
-      properties:
-        not-equals:
-          type: number
-          format: double
-        equals:
-          type: number
-          format: double
-        gte:
-          type: number
-          format: double
-        lte:
-          type: number
-          format: double
-        lt:
-          type: number
-          format: double
-        gt:
-          type: number
-          format: double
-      type: object
-      description: Make all properties in T optional
-    Partial_PromptVersionsToOperators_:
-      properties:
-        minor_version:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        major_version:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        id:
+        body_completion:
           $ref: '#/components/schemas/Partial_TextOperators_'
-        prompt_v2:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-      type: object
-      description: Make all properties in T optional
-    Quantiles:
-      properties:
-        time:
-          type: string
-          format: date-time
-        p75:
-          type: number
-          format: double
-        p90:
-          type: number
-          format: double
-        p95:
-          type: number
-          format: double
-        p99:
-          type: number
-          format: double
-      required:
-      - time
-      - p75
-      - p90
-      - p95
-      - p99
-      type: object
-      additionalProperties: false
-    ErrorOverTime:
-      properties:
-        time:
-          type: string
-          format: date-time
-        count:
-          type: number
-          format: double
-      required:
-      - time
-      - count
-      type: object
-      additionalProperties: false
-    UsersOverTime:
-      properties:
-        time:
-          type: string
-          format: date-time
-        count:
-          type: number
-          format: double
-      required:
-      - time
-      - count
-      type: object
-      additionalProperties: false
-    ResultSuccess_RequestsOverTime-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/RequestsOverTime'
-          type: array
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    RequestsOverTime:
-      properties:
-        time:
-          type: string
-          format: date-time
-        count:
-          type: number
-          format: double
         status:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        model:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+      type: object
+      description: Make all properties in T optional
+    ThreatsOverTime:
+      properties:
+        time:
+          type: string
+          format: date-time
+        count:
           type: number
           format: double
       required:
@@ -1349,172 +1261,19 @@ components:
       - count
       type: object
       additionalProperties: false
-    Result_CountryData-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_CountryData-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_TokensPerRequest_:
+    SingleKey_TablesAndViews_:
+      $ref: '#/components/schemas/Partial_TablesAndViews_'
+    TimeToFirstTokenOverTime:
       properties:
-        data:
-          $ref: '#/components/schemas/TokensPerRequest'
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_TimeToFirstTokenOverTime-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/TimeToFirstTokenOverTime'
-          type: array
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_ThreatsOverTime-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/ThreatsOverTime'
-          type: array
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result_CostOverTime-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_CostOverTime-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result_ModelMetric-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_ModelMetric-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result_UsersOverTime-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_UsersOverTime-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Partial_TimestampOperators_:
-      properties:
-        equals:
+        time:
           type: string
-        gte:
-          type: string
-        lte:
-          type: string
-        lt:
-          type: string
-        gt:
-          type: string
-      type: object
-      description: Make all properties in T optional
-    Partial_ScoreValueToOperator_:
-      properties:
-        request_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-      type: object
-      description: Make all properties in T optional
-    ResultSuccess_Quantiles-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/Quantiles'
-          type: array
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_CountryData-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/CountryData'
-          type: array
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Partial_UserMetricsToOperators_:
-      properties:
-        user_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        last_active:
-          $ref: '#/components/schemas/Partial_TimestampOperators_'
-        total_requests:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        active_for:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        average_requests_per_day_active:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        average_tokens_per_request:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        total_completion_tokens:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        total_prompt_tokens:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        cost:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-      type: object
-      description: Make all properties in T optional
-    CountryMetricsBody:
-      properties:
-        filter:
-          $ref: '#/components/schemas/FilterNode'
-        offset:
+          format: date-time
+        ttft:
           type: number
           format: double
-        limit:
-          type: number
-          format: double
-        timeFilter:
-          properties:
-            end:
-              type: string
-            start:
-              type: string
-          required:
-          - end
-          - start
-          type: object
       required:
-      - filter
-      - offset
-      - limit
-      - timeFilter
+      - time
+      - ttft
       type: object
       additionalProperties: false
     Partial_PropertiesV3ToOperators_:
@@ -1527,55 +1286,21 @@ components:
           $ref: '#/components/schemas/Partial_TextOperators_'
       type: object
       description: Make all properties in T optional
-    Partial_PropertyWithResponseV1ToOperators_:
+    ResultSuccess_CostOverTime-Array_:
       properties:
-        property_key:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        property_value:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        request_created_at:
-          $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
-        organization_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        threat:
-          $ref: '#/components/schemas/Partial_BooleanOperators_'
-      type: object
-      description: Make all properties in T optional
-    Partial_SessionsRequestResponseRMTToOperators_:
-      properties:
-        session_session_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        session_session_name:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        session_total_cost:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        session_total_tokens:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        session_prompt_tokens:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        session_completion_tokens:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        session_total_requests:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        session_created_at:
-          $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
-        session_latest_request_created_at:
-          $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
-        session_tag:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-      type: object
-      description: Make all properties in T optional
-    TimeToFirstTokenOverTime:
-      properties:
-        time:
-          type: string
-          format: date-time
-        ttft:
-          type: number
-          format: double
+        data:
+          items:
+            $ref: '#/components/schemas/CostOverTime'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
       required:
-      - time
-      - ttft
+      - data
+      - error
       type: object
       additionalProperties: false
     Partial_RequestResponseRMTToOperators_:
@@ -1670,27 +1395,302 @@ components:
           $ref: '#/components/schemas/Partial_BooleanOperators_'
       type: object
       description: Make all properties in T optional
-    ThreatsOverTime:
+    ResultSuccess_RequestsOverTime-Array_:
       properties:
-        time:
-          type: string
-          format: date-time
-        count:
-          type: number
-          format: double
+        data:
+          items:
+            $ref: '#/components/schemas/RequestsOverTime'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
       required:
-      - time
-      - count
+      - data
+      - error
       type: object
       additionalProperties: false
-    Partial_UserApiKeysTableToOperators_:
+    ResultSuccess_UsersOverTime-Array_:
       properties:
-        api_key_hash:
+        data:
+          items:
+            $ref: '#/components/schemas/UsersOverTime'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result_UsersOverTime-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_UsersOverTime-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Partial_ExperimentToOperators_:
+      properties:
+        id:
           $ref: '#/components/schemas/Partial_TextOperators_'
-        api_key_name:
+        prompt_v2:
           $ref: '#/components/schemas/Partial_TextOperators_'
       type: object
       description: Make all properties in T optional
+    Partial_JobToOperators_:
+      properties:
+        id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        name:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        description:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        status:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        created_at:
+          $ref: '#/components/schemas/Partial_TimestampOperators_'
+        updated_at:
+          $ref: '#/components/schemas/Partial_TimestampOperators_'
+        timeout_seconds:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        custom_properties:
+          properties: {}
+          additionalProperties:
+            $ref: '#/components/schemas/Partial_TextOperators_'
+          type: object
+        org_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+      type: object
+      description: Make all properties in T optional
+    FilterNode:
+      anyOf:
+      - $ref: '#/components/schemas/FilterLeaf'
+      - $ref: '#/components/schemas/FilterBranch'
+      - properties: {}
+        type: object
+      - type: string
+        enum:
+        - all
+    ResultSuccess_TokensPerRequest_:
+      properties:
+        data:
+          $ref: '#/components/schemas/TokensPerRequest'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Partial_TimestampOperatorsTyped_:
+      properties:
+        equals:
+          type: string
+          format: date-time
+        gte:
+          type: string
+          format: date-time
+        lte:
+          type: string
+          format: date-time
+        lt:
+          type: string
+          format: date-time
+        gt:
+          type: string
+          format: date-time
+      type: object
+      description: Make all properties in T optional
+    ResultError_string_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type: string
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result_RequestsOverTime-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_RequestsOverTime-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Partial_RequestResponseLogToOperators_:
+      properties:
+        latency:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        status:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        request_created_at:
+          $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
+        response_created_at:
+          $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
+        auth_hash:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        model:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        user_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        organization_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        node_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        job_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        threat:
+          $ref: '#/components/schemas/Partial_BooleanOperators_'
+      type: object
+      description: Make all properties in T optional
+    Partial_RequestTableToOperators_:
+      properties:
+        prompt:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        created_at:
+          $ref: '#/components/schemas/Partial_TimestampOperators_'
+        user_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        auth_hash:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        org_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        node_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        model:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        modelOverride:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        path:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        country_code:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        prompt_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+      type: object
+      description: Make all properties in T optional
+    FilterLeaf:
+      $ref: '#/components/schemas/SingleKey_TablesAndViews_'
+    ResultSuccess_number_:
+      properties:
+        data:
+          type: number
+          format: double
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Partial_SessionsRequestResponseRMTToOperators_:
+      properties:
+        session_session_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        session_session_name:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        session_total_cost:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        session_total_tokens:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        session_prompt_tokens:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        session_completion_tokens:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        session_total_requests:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        session_created_at:
+          $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
+        session_latest_request_created_at:
+          $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
+        session_tag:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+      type: object
+      description: Make all properties in T optional
+    MetricsFilterBody:
+      properties:
+        filter:
+          $ref: '#/components/schemas/FilterNode'
+        timeFilter:
+          properties:
+            end:
+              type: string
+            start:
+              type: string
+          required:
+          - end
+          - start
+          type: object
+      required:
+      - filter
+      - timeFilter
+      type: object
+      additionalProperties: false
+    Result_TokensOverTime-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_TokensOverTime-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Partial_NodesToOperators_:
+      properties:
+        id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        name:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        description:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        job_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        status:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        created_at:
+          $ref: '#/components/schemas/Partial_TimestampOperators_'
+        updated_at:
+          $ref: '#/components/schemas/Partial_TimestampOperators_'
+        timeout_seconds:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        custom_properties:
+          properties: {}
+          additionalProperties:
+            $ref: '#/components/schemas/Partial_TextOperators_'
+          type: object
+        org_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+      type: object
+      description: Make all properties in T optional
+    ResultSuccess_CountryData-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/CountryData'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
   securitySchemes:
     api_key:
       type: apiKey
