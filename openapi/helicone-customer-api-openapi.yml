@@ -69,17 +69,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    Customer:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-      required:
-      - id
-      - name
-      type: object
-      additionalProperties: false
     CustomerUsage:
       properties:
         id:
@@ -105,6 +94,17 @@ components:
       - count
       - prompt_tokens
       - completion_tokens
+      type: object
+      additionalProperties: false
+    Customer:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+      required:
+      - id
+      - name
       type: object
       additionalProperties: false
   securitySchemes:

@@ -424,53 +424,29 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    Partial_PromptVersionsToOperators_:
+    DatasetMetadata:
       properties:
-        minor_version:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        major_version:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        prompt_v2:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-      type: object
-      description: Make all properties in T optional
-    Result_string.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_string_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    MutateParams:
-      properties:
-        addRequests:
+        promptVersionId:
+          type: string
+        inputRecordsIds:
           items:
             type: string
           type: array
-        removeRequests:
-          items:
-            type: string
-          type: array
-      required:
-      - addRequests
-      - removeRequests
       type: object
       additionalProperties: false
-    ResultSuccess___-Array_:
+    NewHeliconeDatasetParams:
       properties:
-        data:
+        datasetName:
+          type: string
+        requestIds:
           items:
-            properties: {}
-            type: object
+            type: string
           type: array
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
+        meta:
+          $ref: '#/components/schemas/HeliconeDatasetMetadata'
       required:
-      - data
-      - error
+      - datasetName
+      - requestIds
       type: object
       additionalProperties: false
     ResultSuccess_PromptInputRecord-Array_:
@@ -490,71 +466,103 @@ components:
       - error
       type: object
       additionalProperties: false
-    ResultError_unknown_:
+    Partial_RequestTableToOperators_:
       properties:
-        data:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-        error: {}
-      required:
-      - data
-      - error
+        prompt:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        created_at:
+          $ref: '#/components/schemas/Partial_TimestampOperators_'
+        user_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        auth_hash:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        org_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        node_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        model:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        modelOverride:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        path:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        country_code:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        prompt_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
       type: object
-      additionalProperties: false
-    ResultSuccess_string_:
-      properties:
-        data:
-          type: string
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    RandomDatasetParams:
-      properties:
-        datasetName:
-          type: string
-        filter:
-          $ref: '#/components/schemas/DatasetFilterNode'
-        offset:
-          type: number
-          format: double
-        limit:
-          type: number
-          format: double
-      required:
-      - datasetName
-      - filter
-      type: object
-      additionalProperties: false
-    NewHeliconeDatasetParams:
-      properties:
-        datasetName:
-          type: string
-        requestIds:
-          items:
-            type: string
-          type: array
-        meta:
-          $ref: '#/components/schemas/HeliconeDatasetMetadata'
-      required:
-      - datasetName
-      - requestIds
-      type: object
-      additionalProperties: false
+      description: Make all properties in T optional
+    Result_HeliconeDatasetRow-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_HeliconeDatasetRow-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
     Result_DatasetResult-Array.string_:
       anyOf:
       - $ref: '#/components/schemas/ResultSuccess_DatasetResult-Array_'
       - $ref: '#/components/schemas/ResultError_string_'
+    Result_string.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_string_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    MutateParams:
+      properties:
+        addRequests:
+          items:
+            type: string
+          type: array
+        removeRequests:
+          items:
+            type: string
+          type: array
+      required:
+      - addRequests
+      - removeRequests
+      type: object
+      additionalProperties: false
+    HeliconeDatasetRow:
+      properties:
+        id:
+          type: string
+        origin_request_id:
+          type: string
+        dataset_id:
+          type: string
+        created_at:
+          type: string
+        signed_url:
+          $ref: '#/components/schemas/Result_string.string_'
+      required:
+      - id
+      - origin_request_id
+      - dataset_id
+      - created_at
+      - signed_url
+      type: object
+      additionalProperties: false
+    Record_string.string_:
+      properties: {}
+      additionalProperties:
+        type: string
+      type: object
+      description: Construct a type with a set of properties K of type T
+    DatasetResult:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        created_at:
+          type: string
+        meta:
+          $ref: '#/components/schemas/DatasetMetadata'
+      required:
+      - id
+      - name
+      - created_at
+      type: object
+      additionalProperties: false
     Partial_TextOperators_:
       properties:
         not-equals:
@@ -571,39 +579,11 @@ components:
           type: string
       type: object
       description: Make all properties in T optional
-    ResultSuccess_HeliconeDatasetRow-Array_:
+    ResultSuccess_number_:
       properties:
         data:
-          items:
-            $ref: '#/components/schemas/HeliconeDatasetRow'
-          type: array
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    HeliconeDatasetMetadata:
-      properties:
-        promptVersionId:
-          type: string
-        inputRecordsIds:
-          items:
-            type: string
-          type: array
-      type: object
-      additionalProperties: false
-    ResultSuccess_DatasetResult-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/DatasetResult'
-          type: array
+          type: number
+          format: double
         error:
           type:
           - number
@@ -634,8 +614,23 @@ components:
       - error
       type: object
       additionalProperties: false
-    FilterLeafSubset_request-or-prompts_versions_:
-      $ref: '#/components/schemas/Pick_FilterLeaf.request-or-prompts_versions_'
+    ResultSuccess_HeliconeDatasetRow-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/HeliconeDatasetRow'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
     ResultError_string_:
       properties:
         data:
@@ -651,6 +646,13 @@ components:
       - error
       type: object
       additionalProperties: false
+    DatasetFilterNode:
+      anyOf:
+      - $ref: '#/components/schemas/FilterLeafSubset_request-or-prompts_versions_'
+      - $ref: '#/components/schemas/DatasetFilterBranch'
+      - type: string
+        enum:
+        - all
     Partial_TimestampOperators_:
       properties:
         equals:
@@ -665,52 +667,84 @@ components:
           type: string
       type: object
       description: Make all properties in T optional
+    NewDatasetParams:
+      properties:
+        datasetName:
+          type: string
+        requestIds:
+          items:
+            type: string
+          type: array
+        datasetType:
+          type: string
+          enum:
+          - experiment
+          - helicone
+        meta:
+          $ref: '#/components/schemas/DatasetMetadata'
+      required:
+      - datasetName
+      - requestIds
+      - datasetType
+      type: object
+      additionalProperties: false
+    RandomDatasetParams:
+      properties:
+        datasetName:
+          type: string
+        filter:
+          $ref: '#/components/schemas/DatasetFilterNode'
+        offset:
+          type: number
+          format: double
+        limit:
+          type: number
+          format: double
+      required:
+      - datasetName
+      - filter
+      type: object
+      additionalProperties: false
+    ResultSuccess_any_:
+      properties:
+        data: {}
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
     Result___-Array.string_:
       anyOf:
       - $ref: '#/components/schemas/ResultSuccess___-Array_'
       - $ref: '#/components/schemas/ResultError_string_'
-    Record_string.string_:
-      properties: {}
-      additionalProperties:
-        type: string
-      type: object
-      description: Construct a type with a set of properties K of type T
-    Pick_FilterLeaf.request-or-prompts_versions_:
+    Result_HeliconeDataset-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_HeliconeDataset-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess___-Array_:
       properties:
-        request:
-          $ref: '#/components/schemas/Partial_RequestTableToOperators_'
-        prompts_versions:
-          $ref: '#/components/schemas/Partial_PromptVersionsToOperators_'
+        data:
+          items:
+            properties: {}
+            type: object
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
       type: object
-      description: From T, pick a set of properties whose keys are in the union K
-    Partial_RequestTableToOperators_:
-      properties:
-        prompt:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        created_at:
-          $ref: '#/components/schemas/Partial_TimestampOperators_'
-        user_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        auth_hash:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        org_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        node_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        model:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        modelOverride:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        path:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        country_code:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        prompt_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-      type: object
-      description: Make all properties in T optional
+      additionalProperties: false
     Partial_NumberOperators_:
       properties:
         not-equals:
@@ -733,6 +767,42 @@ components:
           format: double
       type: object
       description: Make all properties in T optional
+    Result_PromptInputRecord-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_PromptInputRecord-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_DatasetResult-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/DatasetResult'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_string_:
+      properties:
+        data:
+          type: string
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
     PromptInputRecord:
       properties:
         id:
@@ -763,108 +833,26 @@ components:
       - auto_prompt_inputs
       type: object
       additionalProperties: false
-    ResultSuccess_any_:
+    Pick_FilterLeaf.request-or-prompts_versions_:
       properties:
-        data: {}
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
+        request:
+          $ref: '#/components/schemas/Partial_RequestTableToOperators_'
+        prompts_versions:
+          $ref: '#/components/schemas/Partial_PromptVersionsToOperators_'
       type: object
-      additionalProperties: false
-    Json:
-      anyOf:
-      - type: string
-      - type: number
-        format: double
-      - type: boolean
-      - properties: {}
-        additionalProperties:
-          $ref: '#/components/schemas/Json'
-        type: object
-      - items:
-          $ref: '#/components/schemas/Json'
-        type: array
-    Result_null.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_null_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_number_:
+      description: From T, pick a set of properties whose keys are in the union K
+    ResultError_unknown_:
       properties:
         data:
-          type: number
-          format: double
-        error:
           type:
           - number
           - 'null'
           enum:
           - null
+        error: {}
       required:
       - data
       - error
-      type: object
-      additionalProperties: false
-    Result__datasetId-string_.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__datasetId-string__'
-      - $ref: '#/components/schemas/ResultError_string_'
-    DatasetResult:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        created_at:
-          type: string
-        meta:
-          $ref: '#/components/schemas/DatasetMetadata'
-      required:
-      - id
-      - name
-      - created_at
-      type: object
-      additionalProperties: false
-    ResultSuccess_HeliconeDataset-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/HeliconeDataset'
-          type: array
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    HeliconeDatasetRow:
-      properties:
-        id:
-          type: string
-        origin_request_id:
-          type: string
-        dataset_id:
-          type: string
-        created_at:
-          type: string
-        signed_url:
-          $ref: '#/components/schemas/Result_string.string_'
-      required:
-      - id
-      - origin_request_id
-      - dataset_id
-      - created_at
-      - signed_url
       type: object
       additionalProperties: false
     ResultSuccess__datasetId-string__:
@@ -887,21 +875,57 @@ components:
       - error
       type: object
       additionalProperties: false
-    Result_HeliconeDataset-Array.string_:
+    FilterLeafSubset_request-or-prompts_versions_:
+      $ref: '#/components/schemas/Pick_FilterLeaf.request-or-prompts_versions_'
+    DatasetFilterBranch:
+      properties:
+        right:
+          $ref: '#/components/schemas/DatasetFilterNode'
+        operator:
+          type: string
+          enum:
+          - or
+          - and
+        left:
+          $ref: '#/components/schemas/DatasetFilterNode'
+      required:
+      - right
+      - operator
+      - left
+      type: object
+    ResultSuccess_HeliconeDataset-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/HeliconeDataset'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result__datasetId-string_.string_:
       anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_HeliconeDataset-Array_'
+      - $ref: '#/components/schemas/ResultSuccess__datasetId-string__'
       - $ref: '#/components/schemas/ResultError_string_'
-    DatasetFilterNode:
-      anyOf:
-      - $ref: '#/components/schemas/FilterLeafSubset_request-or-prompts_versions_'
-      - $ref: '#/components/schemas/DatasetFilterBranch'
-      - type: string
-        enum:
-        - all
-    Result_PromptInputRecord-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_PromptInputRecord-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
+    Partial_PromptVersionsToOperators_:
+      properties:
+        minor_version:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        major_version:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        prompt_v2:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+      type: object
+      description: Make all properties in T optional
     HeliconeDataset:
       properties:
         created_at:
@@ -934,52 +958,24 @@ components:
       - requests_count
       type: object
       additionalProperties: false
-    DatasetFilterBranch:
-      properties:
-        right:
-          $ref: '#/components/schemas/DatasetFilterNode'
-        operator:
-          type: string
-          enum:
-          - or
-          - and
-        left:
-          $ref: '#/components/schemas/DatasetFilterNode'
-      required:
-      - right
-      - operator
-      - left
-      type: object
-    Result_number.string_:
+    Result_null.string_:
       anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_number_'
+      - $ref: '#/components/schemas/ResultSuccess_null_'
       - $ref: '#/components/schemas/ResultError_string_'
-    NewDatasetParams:
-      properties:
-        datasetName:
-          type: string
-        requestIds:
-          items:
-            type: string
-          type: array
-        datasetType:
-          type: string
-          enum:
-          - experiment
-          - helicone
-        meta:
-          $ref: '#/components/schemas/DatasetMetadata'
-      required:
-      - datasetName
-      - requestIds
-      - datasetType
-      type: object
-      additionalProperties: false
-    Result_HeliconeDatasetRow-Array.string_:
+    Json:
       anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_HeliconeDatasetRow-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    DatasetMetadata:
+      - type: string
+      - type: number
+        format: double
+      - type: boolean
+      - properties: {}
+        additionalProperties:
+          $ref: '#/components/schemas/Json'
+        type: object
+      - items:
+          $ref: '#/components/schemas/Json'
+        type: array
+    HeliconeDatasetMetadata:
       properties:
         promptVersionId:
           type: string
@@ -989,6 +985,10 @@ components:
           type: array
       type: object
       additionalProperties: false
+    Result_number.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_number_'
+      - $ref: '#/components/schemas/ResultError_string_'
   securitySchemes:
     api_key:
       type: apiKey

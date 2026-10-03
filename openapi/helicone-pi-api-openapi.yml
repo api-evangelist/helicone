@@ -152,14 +152,47 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    Result_string.string_:
+    RequestClickhouseFilterNode:
       anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_string_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_string_:
+      - $ref: '#/components/schemas/FilterLeafSubset_request_response_rmt_'
+      - $ref: '#/components/schemas/RequestClickhouseFilterBranch'
+      - type: string
+        enum:
+        - all
+    Partial_TimestampOperatorsTyped_:
+      properties:
+        equals:
+          type: string
+          format: date-time
+        gte:
+          type: string
+          format: date-time
+        lte:
+          type: string
+          format: date-time
+        lt:
+          type: string
+          format: date-time
+        gt:
+          type: string
+          format: date-time
+      type: object
+      description: Make all properties in T optional
+    ResultSuccess__cost-number--created_at_trunc-string_-Array_:
       properties:
         data:
-          type: string
+          items:
+            properties:
+              created_at_trunc:
+                type: string
+              cost:
+                type: number
+                format: double
+            required:
+            - created_at_trunc
+            - cost
+            type: object
+          type: array
         error:
           type:
           - number
@@ -171,6 +204,10 @@ components:
       - error
       type: object
       additionalProperties: false
+    Result_string.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_string_'
+      - $ref: '#/components/schemas/ResultError_string_'
     Partial_TextOperators_:
       properties:
         not-equals:
@@ -193,53 +230,6 @@ components:
           $ref: '#/components/schemas/Partial_RequestResponseRMTToOperators_'
       type: object
       description: From T, pick a set of properties whose keys are in the union K
-    Partial_TimestampOperatorsTyped_:
-      properties:
-        equals:
-          type: string
-          format: date-time
-        gte:
-          type: string
-          format: date-time
-        lte:
-          type: string
-          format: date-time
-        lt:
-          type: string
-          format: date-time
-        gt:
-          type: string
-          format: date-time
-      type: object
-      description: Make all properties in T optional
-    ResultError_string_:
-      properties:
-        data:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-        error:
-          type: string
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    TimeIncrement:
-      type: string
-      enum:
-      - min
-      - hour
-      - day
-      - week
-      - month
-      - year
-    Result__cost-number--created_at_trunc-string_-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__cost-number--created_at_trunc-string_-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
     RequestClickhouseFilterBranch:
       properties:
         right:
@@ -256,28 +246,6 @@ components:
       - operator
       - left
       type: object
-    Partial_NumberOperators_:
-      properties:
-        not-equals:
-          type: number
-          format: double
-        equals:
-          type: number
-          format: double
-        gte:
-          type: number
-          format: double
-        lte:
-          type: number
-          format: double
-        lt:
-          type: number
-          format: double
-        gt:
-          type: number
-          format: double
-      type: object
-      description: Make all properties in T optional
     ResultSuccess_number_:
       properties:
         data:
@@ -294,52 +262,10 @@ components:
       - error
       type: object
       additionalProperties: false
-    DataOverTimeRequest:
-      properties:
-        timeFilter:
-          properties:
-            end:
-              type: string
-            start:
-              type: string
-          required:
-          - end
-          - start
-          type: object
-        userFilter:
-          $ref: '#/components/schemas/RequestClickhouseFilterNode'
-        dbIncrement:
-          $ref: '#/components/schemas/TimeIncrement'
-        timeZoneDifference:
-          type: number
-          format: double
-      required:
-      - timeFilter
-      - userFilter
-      - dbIncrement
-      - timeZoneDifference
-      type: object
-      additionalProperties: false
-    ResultSuccess__apiKey-string__:
-      properties:
-        data:
-          properties:
-            apiKey:
-              type: string
-          required:
-          - apiKey
-          type: object
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
+    Result__apiKey-string_.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__apiKey-string__'
+      - $ref: '#/components/schemas/ResultError_string_'
     Partial_RequestResponseRMTToOperators_:
       properties:
         country_code:
@@ -432,25 +358,56 @@ components:
           $ref: '#/components/schemas/Partial_BooleanOperators_'
       type: object
       description: Make all properties in T optional
-    Result__apiKey-string_.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__apiKey-string__'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess__cost-number--created_at_trunc-string_-Array_:
+    ResultError_string_:
       properties:
         data:
-          items:
-            properties:
-              created_at_trunc:
-                type: string
-              cost:
-                type: number
-                format: double
-            required:
-            - created_at_trunc
-            - cost
-            type: object
-          type: array
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type: string
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    TimeIncrement:
+      type: string
+      enum:
+      - min
+      - hour
+      - day
+      - week
+      - month
+      - year
+    Partial_NumberOperators_:
+      properties:
+        not-equals:
+          type: number
+          format: double
+        equals:
+          type: number
+          format: double
+        gte:
+          type: number
+          format: double
+        lte:
+          type: number
+          format: double
+        lt:
+          type: number
+          format: double
+        gt:
+          type: number
+          format: double
+      type: object
+      description: Make all properties in T optional
+    ResultSuccess_string_:
+      properties:
+        data:
+          type: string
         error:
           type:
           - number
@@ -462,19 +419,62 @@ components:
       - error
       type: object
       additionalProperties: false
+    FilterLeafSubset_request_response_rmt_:
+      $ref: '#/components/schemas/Pick_FilterLeaf.request_response_rmt_'
+    Result__cost-number--created_at_trunc-string_-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__cost-number--created_at_trunc-string_-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess__apiKey-string__:
+      properties:
+        data:
+          properties:
+            apiKey:
+              type: string
+          required:
+          - apiKey
+          type: object
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    DataOverTimeRequest:
+      properties:
+        timeFilter:
+          properties:
+            end:
+              type: string
+            start:
+              type: string
+          required:
+          - end
+          - start
+          type: object
+        userFilter:
+          $ref: '#/components/schemas/RequestClickhouseFilterNode'
+        dbIncrement:
+          $ref: '#/components/schemas/TimeIncrement'
+        timeZoneDifference:
+          type: number
+          format: double
+      required:
+      - timeFilter
+      - userFilter
+      - dbIncrement
+      - timeZoneDifference
+      type: object
+      additionalProperties: false
     Result_number.string_:
       anyOf:
       - $ref: '#/components/schemas/ResultSuccess_number_'
       - $ref: '#/components/schemas/ResultError_string_'
-    FilterLeafSubset_request_response_rmt_:
-      $ref: '#/components/schemas/Pick_FilterLeaf.request_response_rmt_'
-    RequestClickhouseFilterNode:
-      anyOf:
-      - $ref: '#/components/schemas/FilterLeafSubset_request_response_rmt_'
-      - $ref: '#/components/schemas/RequestClickhouseFilterBranch'
-      - type: string
-        enum:
-        - all
     Partial_BooleanOperators_:
       properties:
         equals:

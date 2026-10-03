@@ -116,6 +116,25 @@ components:
       additionalProperties: {}
       type: object
       description: Construct a type with a set of properties K of type T
+    ValidationResult:
+      properties:
+        isValid:
+          type: boolean
+        errors:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+      required:
+      - isValid
+      - errors
+      type: object
+      additionalProperties: false
+    Record_string.string_:
+      properties: {}
+      additionalProperties:
+        type: string
+      type: object
+      description: Construct a type with a set of properties K of type T
     TypedProviderResponse:
       properties:
         json:
@@ -132,6 +151,13 @@ components:
       - headers
       type: object
       additionalProperties: false
+    Provider:
+      anyOf:
+      - $ref: '#/components/schemas/ProviderName'
+      - $ref: '#/components/schemas/ModelProviderName'
+      - type: string
+        enum:
+        - CUSTOM
     ProviderName:
       type: string
       enum:
@@ -172,110 +198,6 @@ components:
       - CEREBRAS
       - BASETEN
       - CANOPYWAVE
-    TypedTiming:
-      properties:
-        timeToFirstToken:
-          type: number
-          format: double
-        startTime:
-          type: string
-        endTime:
-          type: string
-      required:
-      - startTime
-      - endTime
-      type: object
-      additionalProperties: false
-    TypedAsyncLogModel:
-      properties:
-        providerRequest:
-          $ref: '#/components/schemas/TypedProviderRequest'
-        providerResponse:
-          $ref: '#/components/schemas/TypedProviderResponse'
-        timing:
-          $ref: '#/components/schemas/TypedTiming'
-        provider:
-          $ref: '#/components/schemas/Provider'
-      required:
-      - providerRequest
-      - providerResponse
-      type: object
-      additionalProperties: false
-    Provider:
-      anyOf:
-      - $ref: '#/components/schemas/ProviderName'
-      - $ref: '#/components/schemas/ModelProviderName'
-      - type: string
-        enum:
-        - CUSTOM
-    ModelProviderName:
-      type: string
-      enum:
-      - baseten
-      - anthropic
-      - azure
-      - bedrock
-      - canopywave
-      - cerebras
-      - chutes
-      - deepinfra
-      - deepseek
-      - fireworks
-      - google-ai-studio
-      - groq
-      - helicone
-      - mistral
-      - nebius
-      - novita
-      - openai
-      - openrouter
-      - perplexity
-      - vertex
-      - xai
-    TypedProviderRequest:
-      properties:
-        url:
-          type: string
-        json:
-          $ref: '#/components/schemas/Record_string.unknown_'
-        meta:
-          $ref: '#/components/schemas/Record_string.string_'
-      required:
-      - url
-      - json
-      - meta
-      type: object
-      additionalProperties: false
-    ValidationError:
-      properties:
-        field:
-          type: string
-        message:
-          type: string
-      required:
-      - field
-      - message
-      type: object
-      additionalProperties: false
-    ValidationResult:
-      properties:
-        isValid:
-          type: boolean
-        errors:
-          items:
-            $ref: '#/components/schemas/ValidationError'
-          type: array
-      required:
-      - isValid
-      - errors
-      type: object
-      additionalProperties: false
-    Record_string.string_:
-      properties: {}
-      additionalProperties:
-        type: string
-      type: object
-      description: Construct a type with a set of properties K of type T
     OTELTrace:
       properties:
         resourceSpans:
@@ -421,6 +343,84 @@ components:
       required:
       - resourceSpans
       type: object
+    ModelProviderName:
+      type: string
+      enum:
+      - baseten
+      - anthropic
+      - azure
+      - bedrock
+      - canopywave
+      - cerebras
+      - chutes
+      - deepinfra
+      - deepseek
+      - fireworks
+      - google-ai-studio
+      - groq
+      - helicone
+      - mistral
+      - nebius
+      - novita
+      - openai
+      - openrouter
+      - perplexity
+      - vertex
+      - xai
+    TypedProviderRequest:
+      properties:
+        url:
+          type: string
+        json:
+          $ref: '#/components/schemas/Record_string.unknown_'
+        meta:
+          $ref: '#/components/schemas/Record_string.string_'
+      required:
+      - url
+      - json
+      - meta
+      type: object
+      additionalProperties: false
+    TypedTiming:
+      properties:
+        timeToFirstToken:
+          type: number
+          format: double
+        startTime:
+          type: string
+        endTime:
+          type: string
+      required:
+      - startTime
+      - endTime
+      type: object
+      additionalProperties: false
+    ValidationError:
+      properties:
+        field:
+          type: string
+        message:
+          type: string
+      required:
+      - field
+      - message
+      type: object
+      additionalProperties: false
+    TypedAsyncLogModel:
+      properties:
+        providerRequest:
+          $ref: '#/components/schemas/TypedProviderRequest'
+        providerResponse:
+          $ref: '#/components/schemas/TypedProviderResponse'
+        timing:
+          $ref: '#/components/schemas/TypedTiming'
+        provider:
+          $ref: '#/components/schemas/Provider'
+      required:
+      - providerRequest
+      - providerResponse
+      type: object
+      additionalProperties: false
   securitySchemes:
     api_key:
       type: apiKey
