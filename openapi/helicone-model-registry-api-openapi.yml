@@ -81,48 +81,10 @@ paths:
       parameters: []
 components:
   schemas:
-    ModelRegistryResponse:
-      properties:
-        models:
-          items:
-            $ref: '#/components/schemas/ModelRegistryItem'
-          type: array
-        total:
-          type: number
-          format: double
-        filters:
-          properties:
-            capabilities:
-              items:
-                $ref: '#/components/schemas/ModelCapability'
-              type: array
-            authors:
-              items:
-                type: string
-              type: array
-            providers:
-              items:
-                properties:
-                  displayName:
-                    type: string
-                  name:
-                    type: string
-                required:
-                - displayName
-                - name
-                type: object
-              type: array
-          required:
-          - capabilities
-          - authors
-          - providers
-          type: object
-      required:
-      - models
-      - total
-      - filters
-      type: object
-      additionalProperties: false
+    PluginId:
+      type: string
+      enum:
+      - web
     ModelProviderName:
       type: string
       enum:
@@ -147,105 +109,130 @@ components:
       - perplexity
       - vertex
       - xai
-    ResultSuccess_ModelRegistryResponse_:
+    SimplifiedPricing:
       properties:
-        data:
-          $ref: '#/components/schemas/ModelRegistryResponse'
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ModelPricing:
-      properties:
-        threshold:
+        prompt:
           type: number
           format: double
-        input:
+        completion:
           type: number
           format: double
-        output:
-          type: number
-          format: double
-        cacheMultipliers:
-          properties:
-            write1h:
-              type: number
-              format: double
-            write5m:
-              type: number
-              format: double
-            cachedInput:
-              type: number
-              format: double
-          required:
-          - cachedInput
-          type: object
-        cacheStoragePerHour:
-          type: number
-          format: double
+        audio:
+          $ref: '#/components/schemas/SimplifiedModalityPricing'
         thinking:
           type: number
           format: double
-        request:
-          type: number
-          format: double
-        image:
-          $ref: '#/components/schemas/ModalityPricing'
-        audio:
-          $ref: '#/components/schemas/ModalityPricing'
-        video:
-          $ref: '#/components/schemas/ModalityPricing'
-        file:
-          $ref: '#/components/schemas/ModalityPricing'
         web_search:
           type: number
           format: double
+        image:
+          $ref: '#/components/schemas/SimplifiedModalityPricing'
+        video:
+          $ref: '#/components/schemas/SimplifiedModalityPricing'
+        file:
+          $ref: '#/components/schemas/SimplifiedModalityPricing'
+        cacheRead:
+          type: number
+          format: double
+        cacheWrite:
+          type: number
+          format: double
+        threshold:
+          type: number
+          format: double
       required:
-      - threshold
-      - input
-      - output
+      - prompt
+      - completion
       type: object
       additionalProperties: false
-    InputModality:
-      type: string
-      enum:
-      - text
-      - image
-      - audio
-      - video
-    Record_string.EndpointConfig_:
-      properties: {}
-      additionalProperties:
-        $ref: '#/components/schemas/EndpointConfig'
+    ModelEndpoint:
+      properties:
+        provider:
+          type: string
+        providerSlug:
+          type: string
+        endpoint:
+          $ref: '#/components/schemas/Endpoint'
+        supportsPtb:
+          type: boolean
+        pricing:
+          $ref: '#/components/schemas/SimplifiedPricing'
+        pricingTiers:
+          items:
+            $ref: '#/components/schemas/SimplifiedPricing'
+          type: array
+      required:
+      - provider
+      - providerSlug
+      - pricing
       type: object
-      description: Construct a type with a set of properties K of type T
-    AuthorName:
+      additionalProperties: false
+    ResponseFormat:
       type: string
       enum:
-      - anthropic
-      - deepseek
-      - mistral
-      - openai
-      - perplexity
-      - xai
-      - google
-      - meta-llama
-      - amazon
-      - microsoft
-      - nvidia
-      - qwen
-      - moonshotai
-      - alibaba
-      - zai
-      - baidu
-      - passthrough
+      - ANTHROPIC
+      - OPENAI
+      - GOOGLE
+    EndpointConfig:
+      properties:
+        region:
+          type: string
+        location:
+          type: string
+        projectId:
+          type: string
+        baseUri:
+          type: string
+        deploymentName:
+          type: string
+        resourceName:
+          type: string
+        apiVersion:
+          type: string
+        crossRegion:
+          type: boolean
+        gatewayMapping:
+          $ref: '#/components/schemas/BodyMappingType'
+        modelName:
+          type: string
+        heliconeModelId:
+          type: string
+        providerModelId:
+          type: string
+        pricing:
+          items:
+            $ref: '#/components/schemas/ModelPricing'
+          type: array
+        contextLength:
+          type: number
+          format: double
+        maxCompletionTokens:
+          type: number
+          format: double
+        ptbEnabled:
+          type: boolean
+        version:
+          type: string
+        rateLimits:
+          $ref: '#/components/schemas/RateLimits'
+        priority:
+          type: number
+          format: double
+      type: object
+      additionalProperties: false
+    RateLimits:
+      properties:
+        rpm:
+          type: number
+          format: double
+        tpm:
+          type: number
+          format: double
+        tpd:
+          type: number
+          format: double
+      type: object
+      additionalProperties: false
     ResultError_string_:
       properties:
         data:
@@ -261,88 +248,6 @@ components:
       - error
       type: object
       additionalProperties: false
-    Endpoint:
-      properties:
-        pricing:
-          items:
-            $ref: '#/components/schemas/ModelPricing'
-          type: array
-        contextLength:
-          type: number
-          format: double
-        maxCompletionTokens:
-          type: number
-          format: double
-        ptbEnabled:
-          type: boolean
-        version:
-          type: string
-        unsupportedParameters:
-          items:
-            $ref: '#/components/schemas/StandardParameter'
-          type: array
-        modelConfig:
-          $ref: '#/components/schemas/ModelProviderConfig'
-        userConfig:
-          $ref: '#/components/schemas/UserEndpointConfig'
-        provider:
-          $ref: '#/components/schemas/ModelProviderName'
-        author:
-          $ref: '#/components/schemas/AuthorName'
-        providerModelId:
-          type: string
-        supportedParameters:
-          items:
-            $ref: '#/components/schemas/StandardParameter'
-          type: array
-        priority:
-          type: number
-          format: double
-      required:
-      - pricing
-      - contextLength
-      - maxCompletionTokens
-      - ptbEnabled
-      - modelConfig
-      - userConfig
-      - provider
-      - author
-      - providerModelId
-      - supportedParameters
-      type: object
-      additionalProperties: false
-    ModalityPricing:
-      description: 'Per-modality pricing configuration.
-
-        Supports input, cached input (as multiplier), and output rates.'
-      properties:
-        input:
-          type: number
-          format: double
-        cachedInputMultiplier:
-          type: number
-          format: double
-        output:
-          type: number
-          format: double
-      type: object
-      additionalProperties: false
-    ModelCapability:
-      type: string
-      enum:
-      - audio
-      - video
-      - image
-      - thinking
-      - web_search
-      - caching
-      - reasoning
-    BodyMappingType:
-      type: string
-      enum:
-      - OPENAI
-      - NO_MAPPING
-      - RESPONSES
     Result_ModelRegistryResponse.string_:
       anyOf:
       - $ref: '#/components/schemas/ResultSuccess_ModelRegistryResponse_'
@@ -418,19 +323,6 @@ components:
       - endpointConfigs
       type: object
       additionalProperties: false
-    RateLimits:
-      properties:
-        rpm:
-          type: number
-          format: double
-        tpm:
-          type: number
-          format: double
-        tpd:
-          type: number
-          format: double
-      type: object
-      additionalProperties: false
     ModelRegistryItem:
       properties:
         id:
@@ -478,32 +370,203 @@ components:
       - supportedParameters
       type: object
       additionalProperties: false
-    ResponseFormat:
+    UserEndpointConfig:
+      properties:
+        region:
+          type: string
+        location:
+          type: string
+        projectId:
+          type: string
+        baseUri:
+          type: string
+        deploymentName:
+          type: string
+        resourceName:
+          type: string
+        apiVersion:
+          type: string
+        crossRegion:
+          type: boolean
+        gatewayMapping:
+          $ref: '#/components/schemas/BodyMappingType'
+        modelName:
+          type: string
+        heliconeModelId:
+          type: string
+      type: object
+      additionalProperties: false
+    Record_string.EndpointConfig_:
+      properties: {}
+      additionalProperties:
+        $ref: '#/components/schemas/EndpointConfig'
+      type: object
+      description: Construct a type with a set of properties K of type T
+    ModalityPricing:
+      description: 'Per-modality pricing configuration.
+
+        Supports input, cached input (as multiplier), and output rates.'
+      properties:
+        input:
+          type: number
+          format: double
+        cachedInputMultiplier:
+          type: number
+          format: double
+        output:
+          type: number
+          format: double
+      type: object
+      additionalProperties: false
+    ModelPricing:
+      properties:
+        threshold:
+          type: number
+          format: double
+        input:
+          type: number
+          format: double
+        output:
+          type: number
+          format: double
+        cacheMultipliers:
+          properties:
+            write1h:
+              type: number
+              format: double
+            write5m:
+              type: number
+              format: double
+            cachedInput:
+              type: number
+              format: double
+          required:
+          - cachedInput
+          type: object
+        cacheStoragePerHour:
+          type: number
+          format: double
+        thinking:
+          type: number
+          format: double
+        request:
+          type: number
+          format: double
+        image:
+          $ref: '#/components/schemas/ModalityPricing'
+        audio:
+          $ref: '#/components/schemas/ModalityPricing'
+        video:
+          $ref: '#/components/schemas/ModalityPricing'
+        file:
+          $ref: '#/components/schemas/ModalityPricing'
+        web_search:
+          type: number
+          format: double
+      required:
+      - threshold
+      - input
+      - output
+      type: object
+      additionalProperties: false
+    InputModality:
       type: string
       enum:
-      - ANTHROPIC
+      - text
+      - image
+      - audio
+      - video
+    AuthorName:
+      type: string
+      enum:
+      - anthropic
+      - deepseek
+      - mistral
+      - openai
+      - perplexity
+      - xai
+      - google
+      - meta-llama
+      - amazon
+      - microsoft
+      - nvidia
+      - qwen
+      - moonshotai
+      - alibaba
+      - zai
+      - baidu
+      - passthrough
+    ModelCapability:
+      type: string
+      enum:
+      - audio
+      - video
+      - image
+      - thinking
+      - web_search
+      - caching
+      - reasoning
+    BodyMappingType:
+      type: string
+      enum:
       - OPENAI
-      - GOOGLE
-    ModelEndpoint:
+      - NO_MAPPING
+      - RESPONSES
+    ModelRegistryResponse:
       properties:
-        provider:
-          type: string
-        providerSlug:
-          type: string
-        endpoint:
-          $ref: '#/components/schemas/Endpoint'
-        supportsPtb:
-          type: boolean
-        pricing:
-          $ref: '#/components/schemas/SimplifiedPricing'
-        pricingTiers:
+        models:
           items:
-            $ref: '#/components/schemas/SimplifiedPricing'
+            $ref: '#/components/schemas/ModelRegistryItem'
           type: array
+        total:
+          type: number
+          format: double
+        filters:
+          properties:
+            capabilities:
+              items:
+                $ref: '#/components/schemas/ModelCapability'
+              type: array
+            authors:
+              items:
+                type: string
+              type: array
+            providers:
+              items:
+                properties:
+                  displayName:
+                    type: string
+                  name:
+                    type: string
+                required:
+                - displayName
+                - name
+                type: object
+              type: array
+          required:
+          - capabilities
+          - authors
+          - providers
+          type: object
       required:
-      - provider
-      - providerSlug
-      - pricing
+      - models
+      - total
+      - filters
+      type: object
+      additionalProperties: false
+    ResultSuccess_ModelRegistryResponse_:
+      properties:
+        data:
+          $ref: '#/components/schemas/ModelRegistryResponse'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
       type: object
       additionalProperties: false
     StandardParameter:
@@ -550,32 +613,15 @@ components:
           format: double
       type: object
       additionalProperties: false
-    EndpointConfig:
+    OutputModality:
+      type: string
+      enum:
+      - text
+      - image
+      - audio
+      - video
+    Endpoint:
       properties:
-        region:
-          type: string
-        location:
-          type: string
-        projectId:
-          type: string
-        baseUri:
-          type: string
-        deploymentName:
-          type: string
-        resourceName:
-          type: string
-        apiVersion:
-          type: string
-        crossRegion:
-          type: boolean
-        gatewayMapping:
-          $ref: '#/components/schemas/BodyMappingType'
-        modelName:
-          type: string
-        heliconeModelId:
-          type: string
-        providerModelId:
-          type: string
         pricing:
           items:
             $ref: '#/components/schemas/ModelPricing'
@@ -590,86 +636,40 @@ components:
           type: boolean
         version:
           type: string
-        rateLimits:
-          $ref: '#/components/schemas/RateLimits'
+        unsupportedParameters:
+          items:
+            $ref: '#/components/schemas/StandardParameter'
+          type: array
+        modelConfig:
+          $ref: '#/components/schemas/ModelProviderConfig'
+        userConfig:
+          $ref: '#/components/schemas/UserEndpointConfig'
+        provider:
+          $ref: '#/components/schemas/ModelProviderName'
+        author:
+          $ref: '#/components/schemas/AuthorName'
+        providerModelId:
+          type: string
+        supportedParameters:
+          items:
+            $ref: '#/components/schemas/StandardParameter'
+          type: array
         priority:
           type: number
           format: double
-      type: object
-      additionalProperties: false
-    UserEndpointConfig:
-      properties:
-        region:
-          type: string
-        location:
-          type: string
-        projectId:
-          type: string
-        baseUri:
-          type: string
-        deploymentName:
-          type: string
-        resourceName:
-          type: string
-        apiVersion:
-          type: string
-        crossRegion:
-          type: boolean
-        gatewayMapping:
-          $ref: '#/components/schemas/BodyMappingType'
-        modelName:
-          type: string
-        heliconeModelId:
-          type: string
-      type: object
-      additionalProperties: false
-    SimplifiedPricing:
-      properties:
-        prompt:
-          type: number
-          format: double
-        completion:
-          type: number
-          format: double
-        audio:
-          $ref: '#/components/schemas/SimplifiedModalityPricing'
-        thinking:
-          type: number
-          format: double
-        web_search:
-          type: number
-          format: double
-        image:
-          $ref: '#/components/schemas/SimplifiedModalityPricing'
-        video:
-          $ref: '#/components/schemas/SimplifiedModalityPricing'
-        file:
-          $ref: '#/components/schemas/SimplifiedModalityPricing'
-        cacheRead:
-          type: number
-          format: double
-        cacheWrite:
-          type: number
-          format: double
-        threshold:
-          type: number
-          format: double
       required:
-      - prompt
-      - completion
+      - pricing
+      - contextLength
+      - maxCompletionTokens
+      - ptbEnabled
+      - modelConfig
+      - userConfig
+      - provider
+      - author
+      - providerModelId
+      - supportedParameters
       type: object
       additionalProperties: false
-    OutputModality:
-      type: string
-      enum:
-      - text
-      - image
-      - audio
-      - video
-    PluginId:
-      type: string
-      enum:
-      - web
   securitySchemes:
     api_key:
       type: apiKey

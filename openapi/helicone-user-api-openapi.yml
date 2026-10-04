@@ -93,92 +93,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    UserMetricsResult:
-      properties:
-        id:
-          type: string
-        user_id:
-          type: string
-        active_for:
-          type: number
-          format: double
-        first_active:
-          type: string
-        last_active:
-          type: string
-        total_requests:
-          type: number
-          format: double
-        average_requests_per_day_active:
-          type: number
-          format: double
-        average_tokens_per_request:
-          type: number
-          format: double
-        total_completion_tokens:
-          type: number
-          format: double
-        total_prompt_tokens:
-          type: number
-          format: double
-        cost:
-          type: number
-          format: double
-      required:
-      - id
-      - user_id
-      - active_for
-      - first_active
-      - last_active
-      - total_requests
-      - average_requests_per_day_active
-      - average_tokens_per_request
-      - total_completion_tokens
-      - total_prompt_tokens
-      - cost
-      type: object
-      additionalProperties: false
-    Partial_TimestampOperatorsTyped_:
-      properties:
-        equals:
-          type: string
-          format: date-time
-        gte:
-          type: string
-          format: date-time
-        lte:
-          type: string
-          format: date-time
-        lt:
-          type: string
-          format: date-time
-        gt:
-          type: string
-          format: date-time
-      type: object
-      description: Make all properties in T optional
-    HistogramRow:
-      properties:
-        range_start:
-          type: string
-        range_end:
-          type: string
-        value:
-          type: number
-          format: double
-      required:
-      - range_start
-      - range_end
-      - value
-      type: object
-      additionalProperties: false
-    UserFilterNode:
-      anyOf:
-      - $ref: '#/components/schemas/FilterLeafSubset_users_view-or-request_response_rmt_'
-      - $ref: '#/components/schemas/UserFilterBranch'
-      - type: string
-        enum:
-        - all
     Partial_TextOperators_:
       properties:
         not-equals:
@@ -195,21 +109,90 @@ components:
           type: string
       type: object
       description: Make all properties in T optional
-    ResultSuccess__request_count-HistogramRow-Array--user_cost-HistogramRow-Array__:
+    UserFilterBranch:
+      properties:
+        right:
+          $ref: '#/components/schemas/UserFilterNode'
+        operator:
+          type: string
+          enum:
+          - or
+          - and
+        left:
+          $ref: '#/components/schemas/UserFilterNode'
+      required:
+      - right
+      - operator
+      - left
+      type: object
+    SortLeafUsers:
+      properties:
+        id:
+          $ref: '#/components/schemas/SortDirection'
+        user_id:
+          $ref: '#/components/schemas/SortDirection'
+        active_for:
+          $ref: '#/components/schemas/SortDirection'
+        first_active:
+          $ref: '#/components/schemas/SortDirection'
+        last_active:
+          $ref: '#/components/schemas/SortDirection'
+        total_requests:
+          $ref: '#/components/schemas/SortDirection'
+        average_requests_per_day_active:
+          $ref: '#/components/schemas/SortDirection'
+        average_tokens_per_request:
+          $ref: '#/components/schemas/SortDirection'
+        total_prompt_tokens:
+          $ref: '#/components/schemas/SortDirection'
+        total_completion_tokens:
+          $ref: '#/components/schemas/SortDirection'
+        cost:
+          $ref: '#/components/schemas/SortDirection'
+        rate_limited_count:
+          $ref: '#/components/schemas/SortDirection'
+      type: object
+    Partial_UserViewToOperators_:
+      properties:
+        user_user_id:
+          $ref: '#/components/schemas/Partial_TextOperators_'
+        user_active_for:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        user_first_active:
+          $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
+        user_last_active:
+          $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
+        user_total_requests:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        user_average_requests_per_day_active:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        user_average_tokens_per_request:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        user_total_completion_tokens:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        user_total_prompt_tokens:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+        user_cost:
+          $ref: '#/components/schemas/Partial_NumberOperators_'
+      type: object
+      description: Make all properties in T optional
+    ResultSuccess__users-UserMetricsResult-Array--count-number--hasUsers-boolean__:
       properties:
         data:
           properties:
-            user_cost:
+            hasUsers:
+              type: boolean
+            count:
+              type: number
+              format: double
+            users:
               items:
-                $ref: '#/components/schemas/HistogramRow'
-              type: array
-            request_count:
-              items:
-                $ref: '#/components/schemas/HistogramRow'
+                $ref: '#/components/schemas/UserMetricsResult'
               type: array
           required:
-          - user_cost
-          - request_count
+          - hasUsers
+          - count
+          - users
           type: object
         error:
           type:
@@ -260,26 +243,216 @@ components:
       - error
       type: object
       additionalProperties: false
-    UserFilterBranch:
-      properties:
-        right:
-          $ref: '#/components/schemas/UserFilterNode'
-        operator:
-          type: string
-          enum:
-          - or
-          - and
-        left:
-          $ref: '#/components/schemas/UserFilterNode'
-      required:
-      - right
-      - operator
-      - left
-      type: object
     Result__count-number--prompt_tokens-number--completion_tokens-number--user_id-string--cost-number_-Array.string_:
       anyOf:
       - $ref: '#/components/schemas/ResultSuccess__count-number--prompt_tokens-number--completion_tokens-number--user_id-string--cost-number_-Array_'
       - $ref: '#/components/schemas/ResultError_string_'
+    UserMetricsResult:
+      properties:
+        id:
+          type: string
+        user_id:
+          type: string
+        active_for:
+          type: number
+          format: double
+        first_active:
+          type: string
+        last_active:
+          type: string
+        total_requests:
+          type: number
+          format: double
+        average_requests_per_day_active:
+          type: number
+          format: double
+        average_tokens_per_request:
+          type: number
+          format: double
+        total_completion_tokens:
+          type: number
+          format: double
+        total_prompt_tokens:
+          type: number
+          format: double
+        cost:
+          type: number
+          format: double
+      required:
+      - id
+      - user_id
+      - active_for
+      - first_active
+      - last_active
+      - total_requests
+      - average_requests_per_day_active
+      - average_tokens_per_request
+      - total_completion_tokens
+      - total_prompt_tokens
+      - cost
+      type: object
+      additionalProperties: false
+    HistogramRow:
+      properties:
+        range_start:
+          type: string
+        range_end:
+          type: string
+        value:
+          type: number
+          format: double
+      required:
+      - range_start
+      - range_end
+      - value
+      type: object
+      additionalProperties: false
+    Partial_TimestampOperatorsTyped_:
+      properties:
+        equals:
+          type: string
+          format: date-time
+        gte:
+          type: string
+          format: date-time
+        lte:
+          type: string
+          format: date-time
+        lt:
+          type: string
+          format: date-time
+        gt:
+          type: string
+          format: date-time
+      type: object
+      description: Make all properties in T optional
+    FilterLeafSubset_users_view-or-request_response_rmt_:
+      $ref: '#/components/schemas/Pick_FilterLeaf.users_view-or-request_response_rmt_'
+    Result__request_count-HistogramRow-Array--user_cost-HistogramRow-Array_.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__request_count-HistogramRow-Array--user_cost-HistogramRow-Array__'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultError_string_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type: string
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess__request_count-HistogramRow-Array--user_cost-HistogramRow-Array__:
+      properties:
+        data:
+          properties:
+            user_cost:
+              items:
+                $ref: '#/components/schemas/HistogramRow'
+              type: array
+            request_count:
+              items:
+                $ref: '#/components/schemas/HistogramRow'
+              type: array
+          required:
+          - user_cost
+          - request_count
+          type: object
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    PSize:
+      type: string
+      enum:
+      - p50
+      - p75
+      - p95
+      - p99
+      - p99.9
+    Partial_BooleanOperators_:
+      properties:
+        equals:
+          type: boolean
+      type: object
+      description: Make all properties in T optional
+    UserMetricsQueryParams:
+      properties:
+        filter:
+          $ref: '#/components/schemas/UserFilterNode'
+        offset:
+          type: number
+          format: double
+        limit:
+          type: number
+          format: double
+        timeFilter:
+          properties:
+            endTimeUnixSeconds:
+              type: number
+              format: double
+            startTimeUnixSeconds:
+              type: number
+              format: double
+          required:
+          - endTimeUnixSeconds
+          - startTimeUnixSeconds
+          type: object
+        timeZoneDifferenceMinutes:
+          type: number
+          format: double
+        sort:
+          $ref: '#/components/schemas/SortLeafUsers'
+      required:
+      - filter
+      - offset
+      - limit
+      type: object
+      additionalProperties: false
+    SortDirection:
+      type: string
+      enum:
+      - asc
+      - desc
+    UserFilterNode:
+      anyOf:
+      - $ref: '#/components/schemas/FilterLeafSubset_users_view-or-request_response_rmt_'
+      - $ref: '#/components/schemas/UserFilterBranch'
+      - type: string
+        enum:
+        - all
+    UserQueryParams:
+      properties:
+        userIds:
+          items:
+            type: string
+          type: array
+        timeFilter:
+          properties:
+            endTimeUnixSeconds:
+              type: number
+              format: double
+            startTimeUnixSeconds:
+              type: number
+              format: double
+          required:
+          - endTimeUnixSeconds
+          - startTimeUnixSeconds
+          type: object
+      type: object
+      additionalProperties: false
     Partial_RequestResponseRMTToOperators_:
       properties:
         country_code:
@@ -372,114 +545,10 @@ components:
           $ref: '#/components/schemas/Partial_BooleanOperators_'
       type: object
       description: Make all properties in T optional
-    Result__request_count-HistogramRow-Array--user_cost-HistogramRow-Array_.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__request_count-HistogramRow-Array--user_cost-HistogramRow-Array__'
-      - $ref: '#/components/schemas/ResultError_string_'
-    UserQueryParams:
-      properties:
-        userIds:
-          items:
-            type: string
-          type: array
-        timeFilter:
-          properties:
-            endTimeUnixSeconds:
-              type: number
-              format: double
-            startTimeUnixSeconds:
-              type: number
-              format: double
-          required:
-          - endTimeUnixSeconds
-          - startTimeUnixSeconds
-          type: object
-      type: object
-      additionalProperties: false
-    SortLeafUsers:
-      properties:
-        id:
-          $ref: '#/components/schemas/SortDirection'
-        user_id:
-          $ref: '#/components/schemas/SortDirection'
-        active_for:
-          $ref: '#/components/schemas/SortDirection'
-        first_active:
-          $ref: '#/components/schemas/SortDirection'
-        last_active:
-          $ref: '#/components/schemas/SortDirection'
-        total_requests:
-          $ref: '#/components/schemas/SortDirection'
-        average_requests_per_day_active:
-          $ref: '#/components/schemas/SortDirection'
-        average_tokens_per_request:
-          $ref: '#/components/schemas/SortDirection'
-        total_prompt_tokens:
-          $ref: '#/components/schemas/SortDirection'
-        total_completion_tokens:
-          $ref: '#/components/schemas/SortDirection'
-        cost:
-          $ref: '#/components/schemas/SortDirection'
-        rate_limited_count:
-          $ref: '#/components/schemas/SortDirection'
-      type: object
-    ResultError_string_:
-      properties:
-        data:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-        error:
-          type: string
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    SortDirection:
-      type: string
-      enum:
-      - asc
-      - desc
     Result__users-UserMetricsResult-Array--count-number--hasUsers-boolean_.string_:
       anyOf:
       - $ref: '#/components/schemas/ResultSuccess__users-UserMetricsResult-Array--count-number--hasUsers-boolean__'
       - $ref: '#/components/schemas/ResultError_string_'
-    UserMetricsQueryParams:
-      properties:
-        filter:
-          $ref: '#/components/schemas/UserFilterNode'
-        offset:
-          type: number
-          format: double
-        limit:
-          type: number
-          format: double
-        timeFilter:
-          properties:
-            endTimeUnixSeconds:
-              type: number
-              format: double
-            startTimeUnixSeconds:
-              type: number
-              format: double
-          required:
-          - endTimeUnixSeconds
-          - startTimeUnixSeconds
-          type: object
-        timeZoneDifferenceMinutes:
-          type: number
-          format: double
-        sort:
-          $ref: '#/components/schemas/SortLeafUsers'
-      required:
-      - filter
-      - offset
-      - limit
-      type: object
-      additionalProperties: false
     Partial_NumberOperators_:
       properties:
         not-equals:
@@ -502,40 +571,6 @@ components:
           format: double
       type: object
       description: Make all properties in T optional
-    FilterLeafSubset_users_view-or-request_response_rmt_:
-      $ref: '#/components/schemas/Pick_FilterLeaf.users_view-or-request_response_rmt_'
-    PSize:
-      type: string
-      enum:
-      - p50
-      - p75
-      - p95
-      - p99
-      - p99.9
-    Partial_UserViewToOperators_:
-      properties:
-        user_user_id:
-          $ref: '#/components/schemas/Partial_TextOperators_'
-        user_active_for:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        user_first_active:
-          $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
-        user_last_active:
-          $ref: '#/components/schemas/Partial_TimestampOperatorsTyped_'
-        user_total_requests:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        user_average_requests_per_day_active:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        user_average_tokens_per_request:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        user_total_completion_tokens:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        user_total_prompt_tokens:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-        user_cost:
-          $ref: '#/components/schemas/Partial_NumberOperators_'
-      type: object
-      description: Make all properties in T optional
     Pick_FilterLeaf.users_view-or-request_response_rmt_:
       properties:
         request_response_rmt:
@@ -544,41 +579,6 @@ components:
           $ref: '#/components/schemas/Partial_UserViewToOperators_'
       type: object
       description: From T, pick a set of properties whose keys are in the union K
-    Partial_BooleanOperators_:
-      properties:
-        equals:
-          type: boolean
-      type: object
-      description: Make all properties in T optional
-    ResultSuccess__users-UserMetricsResult-Array--count-number--hasUsers-boolean__:
-      properties:
-        data:
-          properties:
-            hasUsers:
-              type: boolean
-            count:
-              type: number
-              format: double
-            users:
-              items:
-                $ref: '#/components/schemas/UserMetricsResult'
-              type: array
-          required:
-          - hasUsers
-          - count
-          - users
-          type: object
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
   securitySchemes:
     api_key:
       type: apiKey

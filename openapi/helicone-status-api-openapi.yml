@@ -57,112 +57,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    TimeSeriesDataPoint:
-      properties:
-        timestamp:
-          type: string
-          format: date-time
-        errorCount:
-          type: number
-          format: double
-        requestCount:
-          type: number
-          format: double
-        averageLatency:
-          type: number
-          format: double
-        averageLatencyPerCompletionToken:
-          type: number
-          format: double
-      required:
-      - timestamp
-      - errorCount
-      - requestCount
-      - averageLatency
-      - averageLatencyPerCompletionToken
-      type: object
-      additionalProperties: false
-    Result_ProviderMetrics.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_ProviderMetrics_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    TimeFrame:
-      type: string
-      enum:
-      - 24h
-      - 7d
-      - 30d
-    ResultSuccess_ProviderMetrics_:
-      properties:
-        data:
-          $ref: '#/components/schemas/ProviderMetrics'
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_ProviderMetrics-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/ProviderMetrics'
-          type: array
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ProviderMetrics:
-      properties:
-        providerName:
-          type: string
-        metrics:
-          allOf:
-          - $ref: '#/components/schemas/MetricsData'
-          - properties:
-              timeSeriesData:
-                items:
-                  $ref: '#/components/schemas/TimeSeriesDataPoint'
-                type: array
-            required:
-            - timeSeriesData
-            type: object
-      required:
-      - providerName
-      - metrics
-      type: object
-      additionalProperties: false
-    ResultError_string_:
-      properties:
-        data:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-        error:
-          type: string
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result_ProviderMetrics-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_ProviderMetrics-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
     MetricsData:
       properties:
         totalRequests:
@@ -214,6 +108,112 @@ components:
       - latencyPerTokenChange
       - recentRequestCount
       - recentErrorCount
+      type: object
+      additionalProperties: false
+    Result_ProviderMetrics.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_ProviderMetrics_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_ProviderMetrics-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/ProviderMetrics'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    TimeFrame:
+      type: string
+      enum:
+      - 24h
+      - 7d
+      - 30d
+    ProviderMetrics:
+      properties:
+        providerName:
+          type: string
+        metrics:
+          allOf:
+          - $ref: '#/components/schemas/MetricsData'
+          - properties:
+              timeSeriesData:
+                items:
+                  $ref: '#/components/schemas/TimeSeriesDataPoint'
+                type: array
+            required:
+            - timeSeriesData
+            type: object
+      required:
+      - providerName
+      - metrics
+      type: object
+      additionalProperties: false
+    Result_ProviderMetrics-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_ProviderMetrics-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultError_string_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type: string
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_ProviderMetrics_:
+      properties:
+        data:
+          $ref: '#/components/schemas/ProviderMetrics'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    TimeSeriesDataPoint:
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        errorCount:
+          type: number
+          format: double
+        requestCount:
+          type: number
+          format: double
+        averageLatency:
+          type: number
+          format: double
+        averageLatencyPerCompletionToken:
+          type: number
+          format: double
+      required:
+      - timestamp
+      - errorCount
+      - requestCount
+      - averageLatency
+      - averageLatencyPerCompletionToken
       type: object
       additionalProperties: false
   securitySchemes:

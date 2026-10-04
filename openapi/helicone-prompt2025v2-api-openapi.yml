@@ -105,79 +105,6 @@ components:
       additionalProperties: {}
       type: object
       description: Construct a type with a set of properties K of type T
-    ResultSuccess_Prompt2025Version_:
-      properties:
-        data:
-          $ref: '#/components/schemas/Prompt2025Version'
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result_Prompt2025Version.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_Prompt2025Version_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Prompt2025Version:
-      properties:
-        id:
-          type: string
-        model:
-          type: string
-        prompt_id:
-          type: string
-        major_version:
-          type: number
-          format: double
-        minor_version:
-          type: number
-          format: double
-        commit_message:
-          type: string
-        environments:
-          items:
-            type: string
-          type: array
-        created_at:
-          type: string
-        s3_url:
-          type: string
-        prompt_body:
-          $ref: '#/components/schemas/Prompt2025VersionPromptBody'
-          description: 'The full prompt body including messages. Only included when explicitly requested
-
-            via the `includePromptBody` parameter to avoid unnecessary data transfer.'
-      required:
-      - id
-      - model
-      - prompt_id
-      - major_version
-      - minor_version
-      - commit_message
-      - created_at
-      type: object
-      additionalProperties: false
-    ResultError_string_:
-      properties:
-        data:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-        error:
-          type: string
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
     Prompt2025VersionPromptBody:
       properties:
         model:
@@ -298,6 +225,79 @@ components:
             type: object
       type: object
       additionalProperties: {}
+    ResultSuccess_Prompt2025Version_:
+      properties:
+        data:
+          $ref: '#/components/schemas/Prompt2025Version'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultError_string_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type: string
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Prompt2025Version:
+      properties:
+        id:
+          type: string
+        model:
+          type: string
+        prompt_id:
+          type: string
+        major_version:
+          type: number
+          format: double
+        minor_version:
+          type: number
+          format: double
+        commit_message:
+          type: string
+        environments:
+          items:
+            type: string
+          type: array
+        created_at:
+          type: string
+        s3_url:
+          type: string
+        prompt_body:
+          $ref: '#/components/schemas/Prompt2025VersionPromptBody'
+          description: 'The full prompt body including messages. Only included when explicitly requested
+
+            via the `includePromptBody` parameter to avoid unnecessary data transfer.'
+      required:
+      - id
+      - model
+      - prompt_id
+      - major_version
+      - minor_version
+      - commit_message
+      - created_at
+      type: object
+      additionalProperties: false
+    Result_Prompt2025Version.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_Prompt2025Version_'
+      - $ref: '#/components/schemas/ResultError_string_'
   securitySchemes:
     api_key:
       type: apiKey

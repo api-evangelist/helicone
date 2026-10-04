@@ -45,6 +45,12 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    FilterLeafSubset_request_response_rmt_:
+      $ref: '#/components/schemas/Pick_FilterLeaf.request_response_rmt_'
+    Result__score_key-string--score_sum-number--created_at_trunc-string_-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__score_key-string--score_sum-number--created_at_trunc-string_-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
     Partial_TextOperators_:
       properties:
         not-equals:
@@ -59,6 +65,38 @@ components:
           type: string
         not-contains:
           type: string
+      type: object
+      description: Make all properties in T optional
+    Partial_BooleanOperators_:
+      properties:
+        equals:
+          type: boolean
+      type: object
+      description: Make all properties in T optional
+    RequestClickhouseFilterNode:
+      anyOf:
+      - $ref: '#/components/schemas/FilterLeafSubset_request_response_rmt_'
+      - $ref: '#/components/schemas/RequestClickhouseFilterBranch'
+      - type: string
+        enum:
+        - all
+    Partial_TimestampOperatorsTyped_:
+      properties:
+        equals:
+          type: string
+          format: date-time
+        gte:
+          type: string
+          format: date-time
+        lte:
+          type: string
+          format: date-time
+        lt:
+          type: string
+          format: date-time
+        gt:
+          type: string
+          format: date-time
       type: object
       description: Make all properties in T optional
     Pick_FilterLeaf.request_response_rmt_:
@@ -83,39 +121,6 @@ components:
       - operator
       - left
       type: object
-    RequestClickhouseFilterNode:
-      anyOf:
-      - $ref: '#/components/schemas/FilterLeafSubset_request_response_rmt_'
-      - $ref: '#/components/schemas/RequestClickhouseFilterBranch'
-      - type: string
-        enum:
-        - all
-    Result__score_key-string--score_sum-number--created_at_trunc-string_-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__score_key-string--score_sum-number--created_at_trunc-string_-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Partial_NumberOperators_:
-      properties:
-        not-equals:
-          type: number
-          format: double
-        equals:
-          type: number
-          format: double
-        gte:
-          type: number
-          format: double
-        lte:
-          type: number
-          format: double
-        lt:
-          type: number
-          format: double
-        gt:
-          type: number
-          format: double
-      type: object
-      description: Make all properties in T optional
     Partial_RequestResponseRMTToOperators_:
       properties:
         country_code:
@@ -208,6 +213,69 @@ components:
           $ref: '#/components/schemas/Partial_BooleanOperators_'
       type: object
       description: Make all properties in T optional
+    ResultError_string_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type: string
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Partial_NumberOperators_:
+      properties:
+        not-equals:
+          type: number
+          format: double
+        equals:
+          type: number
+          format: double
+        gte:
+          type: number
+          format: double
+        lte:
+          type: number
+          format: double
+        lt:
+          type: number
+          format: double
+        gt:
+          type: number
+          format: double
+      type: object
+      description: Make all properties in T optional
+    DataOverTimeRequest:
+      properties:
+        timeFilter:
+          properties:
+            end:
+              type: string
+            start:
+              type: string
+          required:
+          - end
+          - start
+          type: object
+        userFilter:
+          $ref: '#/components/schemas/RequestClickhouseFilterNode'
+        dbIncrement:
+          $ref: '#/components/schemas/TimeIncrement'
+        timeZoneDifference:
+          type: number
+          format: double
+      required:
+      - timeFilter
+      - userFilter
+      - dbIncrement
+      - timeZoneDifference
+      type: object
+      additionalProperties: false
     ResultSuccess__score_key-string--score_sum-number--created_at_trunc-string_-Array_:
       properties:
         data:
@@ -237,74 +305,6 @@ components:
       - error
       type: object
       additionalProperties: false
-    Partial_TimestampOperatorsTyped_:
-      properties:
-        equals:
-          type: string
-          format: date-time
-        gte:
-          type: string
-          format: date-time
-        lte:
-          type: string
-          format: date-time
-        lt:
-          type: string
-          format: date-time
-        gt:
-          type: string
-          format: date-time
-      type: object
-      description: Make all properties in T optional
-    ResultError_string_:
-      properties:
-        data:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-        error:
-          type: string
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    FilterLeafSubset_request_response_rmt_:
-      $ref: '#/components/schemas/Pick_FilterLeaf.request_response_rmt_'
-    DataOverTimeRequest:
-      properties:
-        timeFilter:
-          properties:
-            end:
-              type: string
-            start:
-              type: string
-          required:
-          - end
-          - start
-          type: object
-        userFilter:
-          $ref: '#/components/schemas/RequestClickhouseFilterNode'
-        dbIncrement:
-          $ref: '#/components/schemas/TimeIncrement'
-        timeZoneDifference:
-          type: number
-          format: double
-      required:
-      - timeFilter
-      - userFilter
-      - dbIncrement
-      - timeZoneDifference
-      type: object
-      additionalProperties: false
-    Partial_BooleanOperators_:
-      properties:
-        equals:
-          type: boolean
-      type: object
-      description: Make all properties in T optional
     TimeIncrement:
       type: string
       enum:

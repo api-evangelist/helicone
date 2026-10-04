@@ -43,10 +43,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    Result__unsafe-boolean_.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__unsafe-boolean__'
-      - $ref: '#/components/schemas/ResultError_string_'
     ResultError_string_:
       properties:
         data:
@@ -62,6 +58,10 @@ components:
       - error
       type: object
       additionalProperties: false
+    Result__unsafe-boolean_.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__unsafe-boolean__'
+      - $ref: '#/components/schemas/ResultError_string_'
     ResultSuccess__unsafe-boolean__:
       properties:
         data:
