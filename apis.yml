@@ -3375,6 +3375,8 @@ description: >-
   experiment with their AI applications. The worlds fastest-growing AI companies rely on Helicone to route, debug, and
   analyze their applications.
 common:
+  - type: FinOps
+    url: finops/helicone-finops.yml
   - type: RateLimits
     url: rate-limits/helicone-rate-limits.yml
   - type: Plans
