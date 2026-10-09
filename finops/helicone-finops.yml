@@ -257,13 +257,10 @@ apis:
 unitEconomics:
   - name: Cost per 1K Logged Requests
     metric: billed_cost / (logged_requests / 1000)
-    target: TBD
   - name: Cost per Active Organization
     metric: billed_cost / organizations
-    target: TBD
   - name: Subscription Effective Cost per Logged Request
     metric: subscription_fee / logged_requests
-    target: trends down as throughput increases
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
