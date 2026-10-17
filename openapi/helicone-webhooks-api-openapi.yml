@@ -98,10 +98,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    Result__id-string--created_at-string--destination-string--version-string--config-string--hmac_key-string_-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__id-string--created_at-string--destination-string--version-string--config-string--hmac_key-string_-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
     Result__success-boolean--message-string_.string_:
       anyOf:
       - $ref: '#/components/schemas/ResultSuccess__success-boolean--message-string__'
@@ -166,25 +162,6 @@ components:
       - error
       type: object
       additionalProperties: false
-    ResultError_string_:
-      properties:
-        data:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-        error:
-          type: string
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result_null.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_null_'
-      - $ref: '#/components/schemas/ResultError_string_'
     Record_string.any_:
       properties: {}
       additionalProperties: {}
@@ -198,6 +175,20 @@ components:
           - 'null'
           enum:
           - null
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_unknown_:
+      properties:
+        data: {}
         error:
           type:
           - number
@@ -223,20 +214,10 @@ components:
       - error
       type: object
       additionalProperties: false
-    ResultSuccess_unknown_:
-      properties:
-        data: {}
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
+    Result_null.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_null_'
+      - $ref: '#/components/schemas/ResultError_string_'
     WebhookData:
       properties:
         destination:
@@ -250,6 +231,25 @@ components:
       - config
       type: object
       additionalProperties: false
+    ResultError_string_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type: string
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result__id-string--created_at-string--destination-string--version-string--config-string--hmac_key-string_-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__id-string--created_at-string--destination-string--version-string--config-string--hmac_key-string_-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
   securitySchemes:
     api_key:
       type: apiKey

@@ -81,10 +81,45 @@ paths:
       parameters: []
 components:
   schemas:
+    StandardParameter:
+      type: string
+      enum:
+      - max_tokens
+      - max_completion_tokens
+      - temperature
+      - top_p
+      - top_k
+      - stop
+      - stream
+      - frequency_penalty
+      - presence_penalty
+      - repetition_penalty
+      - seed
+      - tools
+      - tool_choice
+      - functions
+      - function_call
+      - reasoning
+      - include_reasoning
+      - thinking
+      - response_format
+      - json_mode
+      - truncate
+      - min_p
+      - logit_bias
+      - logprobs
+      - top_logprobs
+      - structured_outputs
+      - verbosity
+      - n
     PluginId:
       type: string
       enum:
       - web
+    Result_ModelRegistryResponse.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_ModelRegistryResponse_'
+      - $ref: '#/components/schemas/ResultError_string_'
     ModelProviderName:
       type: string
       enum:
@@ -109,6 +144,122 @@ components:
       - perplexity
       - vertex
       - xai
+    Endpoint:
+      properties:
+        pricing:
+          items:
+            $ref: '#/components/schemas/ModelPricing'
+          type: array
+        contextLength:
+          type: number
+          format: double
+        maxCompletionTokens:
+          type: number
+          format: double
+        ptbEnabled:
+          type: boolean
+        version:
+          type: string
+        unsupportedParameters:
+          items:
+            $ref: '#/components/schemas/StandardParameter'
+          type: array
+        modelConfig:
+          $ref: '#/components/schemas/ModelProviderConfig'
+        userConfig:
+          $ref: '#/components/schemas/UserEndpointConfig'
+        provider:
+          $ref: '#/components/schemas/ModelProviderName'
+        author:
+          $ref: '#/components/schemas/AuthorName'
+        providerModelId:
+          type: string
+        supportedParameters:
+          items:
+            $ref: '#/components/schemas/StandardParameter'
+          type: array
+        priority:
+          type: number
+          format: double
+      required:
+      - pricing
+      - contextLength
+      - maxCompletionTokens
+      - ptbEnabled
+      - modelConfig
+      - userConfig
+      - provider
+      - author
+      - providerModelId
+      - supportedParameters
+      type: object
+      additionalProperties: false
+    BodyMappingType:
+      type: string
+      enum:
+      - OPENAI
+      - NO_MAPPING
+      - RESPONSES
+    SimplifiedModalityPricing:
+      properties:
+        input:
+          type: number
+          format: double
+        cachedInput:
+          type: number
+          format: double
+        output:
+          type: number
+          format: double
+      type: object
+      additionalProperties: false
+    ModalityPricing:
+      description: 'Per-modality pricing configuration.
+
+        Supports input, cached input (as multiplier), and output rates.'
+      properties:
+        input:
+          type: number
+          format: double
+        cachedInputMultiplier:
+          type: number
+          format: double
+        output:
+          type: number
+          format: double
+      type: object
+      additionalProperties: false
+    Record_string.EndpointConfig_:
+      properties: {}
+      additionalProperties:
+        $ref: '#/components/schemas/EndpointConfig'
+      type: object
+      description: Construct a type with a set of properties K of type T
+    ModelCapability:
+      type: string
+      enum:
+      - audio
+      - video
+      - image
+      - thinking
+      - web_search
+      - caching
+      - reasoning
+    ResultSuccess_ModelRegistryResponse_:
+      properties:
+        data:
+          $ref: '#/components/schemas/ModelRegistryResponse'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
     SimplifiedPricing:
       properties:
         prompt:
@@ -145,26 +296,46 @@ components:
       - completion
       type: object
       additionalProperties: false
-    ModelEndpoint:
+    ModelRegistryResponse:
       properties:
-        provider:
-          type: string
-        providerSlug:
-          type: string
-        endpoint:
-          $ref: '#/components/schemas/Endpoint'
-        supportsPtb:
-          type: boolean
-        pricing:
-          $ref: '#/components/schemas/SimplifiedPricing'
-        pricingTiers:
+        models:
           items:
-            $ref: '#/components/schemas/SimplifiedPricing'
+            $ref: '#/components/schemas/ModelRegistryItem'
           type: array
+        total:
+          type: number
+          format: double
+        filters:
+          properties:
+            capabilities:
+              items:
+                $ref: '#/components/schemas/ModelCapability'
+              type: array
+            authors:
+              items:
+                type: string
+              type: array
+            providers:
+              items:
+                properties:
+                  displayName:
+                    type: string
+                  name:
+                    type: string
+                required:
+                - displayName
+                - name
+                type: object
+              type: array
+          required:
+          - capabilities
+          - authors
+          - providers
+          type: object
       required:
-      - provider
-      - providerSlug
-      - pricing
+      - models
+      - total
+      - filters
       type: object
       additionalProperties: false
     ResponseFormat:
@@ -173,7 +344,65 @@ components:
       - ANTHROPIC
       - OPENAI
       - GOOGLE
-    EndpointConfig:
+    ModelPricing:
+      properties:
+        threshold:
+          type: number
+          format: double
+        input:
+          type: number
+          format: double
+        output:
+          type: number
+          format: double
+        cacheMultipliers:
+          properties:
+            write1h:
+              type: number
+              format: double
+            write5m:
+              type: number
+              format: double
+            cachedInput:
+              type: number
+              format: double
+          required:
+          - cachedInput
+          type: object
+        cacheStoragePerHour:
+          type: number
+          format: double
+        thinking:
+          type: number
+          format: double
+        request:
+          type: number
+          format: double
+        image:
+          $ref: '#/components/schemas/ModalityPricing'
+        audio:
+          $ref: '#/components/schemas/ModalityPricing'
+        video:
+          $ref: '#/components/schemas/ModalityPricing'
+        file:
+          $ref: '#/components/schemas/ModalityPricing'
+        web_search:
+          type: number
+          format: double
+      required:
+      - threshold
+      - input
+      - output
+      type: object
+      additionalProperties: false
+    OutputModality:
+      type: string
+      enum:
+      - text
+      - image
+      - audio
+      - video
+    UserEndpointConfig:
       properties:
         region:
           type: string
@@ -197,61 +426,8 @@ components:
           type: string
         heliconeModelId:
           type: string
-        providerModelId:
-          type: string
-        pricing:
-          items:
-            $ref: '#/components/schemas/ModelPricing'
-          type: array
-        contextLength:
-          type: number
-          format: double
-        maxCompletionTokens:
-          type: number
-          format: double
-        ptbEnabled:
-          type: boolean
-        version:
-          type: string
-        rateLimits:
-          $ref: '#/components/schemas/RateLimits'
-        priority:
-          type: number
-          format: double
       type: object
       additionalProperties: false
-    RateLimits:
-      properties:
-        rpm:
-          type: number
-          format: double
-        tpm:
-          type: number
-          format: double
-        tpd:
-          type: number
-          format: double
-      type: object
-      additionalProperties: false
-    ResultError_string_:
-      properties:
-        data:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-        error:
-          type: string
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result_ModelRegistryResponse.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_ModelRegistryResponse_'
-      - $ref: '#/components/schemas/ResultError_string_'
     ModelProviderConfig:
       properties:
         pricing:
@@ -323,6 +499,53 @@ components:
       - endpointConfigs
       type: object
       additionalProperties: false
+    EndpointConfig:
+      properties:
+        region:
+          type: string
+        location:
+          type: string
+        projectId:
+          type: string
+        baseUri:
+          type: string
+        deploymentName:
+          type: string
+        resourceName:
+          type: string
+        apiVersion:
+          type: string
+        crossRegion:
+          type: boolean
+        gatewayMapping:
+          $ref: '#/components/schemas/BodyMappingType'
+        modelName:
+          type: string
+        heliconeModelId:
+          type: string
+        providerModelId:
+          type: string
+        pricing:
+          items:
+            $ref: '#/components/schemas/ModelPricing'
+          type: array
+        contextLength:
+          type: number
+          format: double
+        maxCompletionTokens:
+          type: number
+          format: double
+        ptbEnabled:
+          type: boolean
+        version:
+          type: string
+        rateLimits:
+          $ref: '#/components/schemas/RateLimits'
+        priority:
+          type: number
+          format: double
+      type: object
+      additionalProperties: false
     ModelRegistryItem:
       properties:
         id:
@@ -370,112 +593,19 @@ components:
       - supportedParameters
       type: object
       additionalProperties: false
-    UserEndpointConfig:
+    RateLimits:
       properties:
-        region:
-          type: string
-        location:
-          type: string
-        projectId:
-          type: string
-        baseUri:
-          type: string
-        deploymentName:
-          type: string
-        resourceName:
-          type: string
-        apiVersion:
-          type: string
-        crossRegion:
-          type: boolean
-        gatewayMapping:
-          $ref: '#/components/schemas/BodyMappingType'
-        modelName:
-          type: string
-        heliconeModelId:
-          type: string
-      type: object
-      additionalProperties: false
-    Record_string.EndpointConfig_:
-      properties: {}
-      additionalProperties:
-        $ref: '#/components/schemas/EndpointConfig'
-      type: object
-      description: Construct a type with a set of properties K of type T
-    ModalityPricing:
-      description: 'Per-modality pricing configuration.
-
-        Supports input, cached input (as multiplier), and output rates.'
-      properties:
-        input:
+        rpm:
           type: number
           format: double
-        cachedInputMultiplier:
+        tpm:
           type: number
           format: double
-        output:
+        tpd:
           type: number
           format: double
       type: object
       additionalProperties: false
-    ModelPricing:
-      properties:
-        threshold:
-          type: number
-          format: double
-        input:
-          type: number
-          format: double
-        output:
-          type: number
-          format: double
-        cacheMultipliers:
-          properties:
-            write1h:
-              type: number
-              format: double
-            write5m:
-              type: number
-              format: double
-            cachedInput:
-              type: number
-              format: double
-          required:
-          - cachedInput
-          type: object
-        cacheStoragePerHour:
-          type: number
-          format: double
-        thinking:
-          type: number
-          format: double
-        request:
-          type: number
-          format: double
-        image:
-          $ref: '#/components/schemas/ModalityPricing'
-        audio:
-          $ref: '#/components/schemas/ModalityPricing'
-        video:
-          $ref: '#/components/schemas/ModalityPricing'
-        file:
-          $ref: '#/components/schemas/ModalityPricing'
-        web_search:
-          type: number
-          format: double
-      required:
-      - threshold
-      - input
-      - output
-      type: object
-      additionalProperties: false
-    InputModality:
-      type: string
-      enum:
-      - text
-      - image
-      - audio
-      - video
     AuthorName:
       type: string
       enum:
@@ -496,178 +626,48 @@ components:
       - zai
       - baidu
       - passthrough
-    ModelCapability:
-      type: string
-      enum:
-      - audio
-      - video
-      - image
-      - thinking
-      - web_search
-      - caching
-      - reasoning
-    BodyMappingType:
-      type: string
-      enum:
-      - OPENAI
-      - NO_MAPPING
-      - RESPONSES
-    ModelRegistryResponse:
+    ModelEndpoint:
       properties:
-        models:
+        provider:
+          type: string
+        providerSlug:
+          type: string
+        endpoint:
+          $ref: '#/components/schemas/Endpoint'
+        supportsPtb:
+          type: boolean
+        pricing:
+          $ref: '#/components/schemas/SimplifiedPricing'
+        pricingTiers:
           items:
-            $ref: '#/components/schemas/ModelRegistryItem'
+            $ref: '#/components/schemas/SimplifiedPricing'
           type: array
-        total:
-          type: number
-          format: double
-        filters:
-          properties:
-            capabilities:
-              items:
-                $ref: '#/components/schemas/ModelCapability'
-              type: array
-            authors:
-              items:
-                type: string
-              type: array
-            providers:
-              items:
-                properties:
-                  displayName:
-                    type: string
-                  name:
-                    type: string
-                required:
-                - displayName
-                - name
-                type: object
-              type: array
-          required:
-          - capabilities
-          - authors
-          - providers
-          type: object
       required:
-      - models
-      - total
-      - filters
+      - provider
+      - providerSlug
+      - pricing
       type: object
       additionalProperties: false
-    ResultSuccess_ModelRegistryResponse_:
-      properties:
-        data:
-          $ref: '#/components/schemas/ModelRegistryResponse'
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    StandardParameter:
-      type: string
-      enum:
-      - max_tokens
-      - max_completion_tokens
-      - temperature
-      - top_p
-      - top_k
-      - stop
-      - stream
-      - frequency_penalty
-      - presence_penalty
-      - repetition_penalty
-      - seed
-      - tools
-      - tool_choice
-      - functions
-      - function_call
-      - reasoning
-      - include_reasoning
-      - thinking
-      - response_format
-      - json_mode
-      - truncate
-      - min_p
-      - logit_bias
-      - logprobs
-      - top_logprobs
-      - structured_outputs
-      - verbosity
-      - n
-    SimplifiedModalityPricing:
-      properties:
-        input:
-          type: number
-          format: double
-        cachedInput:
-          type: number
-          format: double
-        output:
-          type: number
-          format: double
-      type: object
-      additionalProperties: false
-    OutputModality:
+    InputModality:
       type: string
       enum:
       - text
       - image
       - audio
       - video
-    Endpoint:
+    ResultError_string_:
       properties:
-        pricing:
-          items:
-            $ref: '#/components/schemas/ModelPricing'
-          type: array
-        contextLength:
-          type: number
-          format: double
-        maxCompletionTokens:
-          type: number
-          format: double
-        ptbEnabled:
-          type: boolean
-        version:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
           type: string
-        unsupportedParameters:
-          items:
-            $ref: '#/components/schemas/StandardParameter'
-          type: array
-        modelConfig:
-          $ref: '#/components/schemas/ModelProviderConfig'
-        userConfig:
-          $ref: '#/components/schemas/UserEndpointConfig'
-        provider:
-          $ref: '#/components/schemas/ModelProviderName'
-        author:
-          $ref: '#/components/schemas/AuthorName'
-        providerModelId:
-          type: string
-        supportedParameters:
-          items:
-            $ref: '#/components/schemas/StandardParameter'
-          type: array
-        priority:
-          type: number
-          format: double
       required:
-      - pricing
-      - contextLength
-      - maxCompletionTokens
-      - ptbEnabled
-      - modelConfig
-      - userConfig
-      - provider
-      - author
-      - providerModelId
-      - supportedParameters
+      - data
+      - error
       type: object
       additionalProperties: false
   securitySchemes:

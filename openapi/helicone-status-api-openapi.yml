@@ -110,27 +110,6 @@ components:
       - recentErrorCount
       type: object
       additionalProperties: false
-    Result_ProviderMetrics.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_ProviderMetrics_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_ProviderMetrics-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/ProviderMetrics'
-          type: array
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
     TimeFrame:
       type: string
       enum:
@@ -155,25 +134,6 @@ components:
       required:
       - providerName
       - metrics
-      type: object
-      additionalProperties: false
-    Result_ProviderMetrics-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_ProviderMetrics-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultError_string_:
-      properties:
-        data:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-        error:
-          type: string
-      required:
-      - data
-      - error
       type: object
       additionalProperties: false
     ResultSuccess_ProviderMetrics_:
@@ -214,6 +174,46 @@ components:
       - requestCount
       - averageLatency
       - averageLatencyPerCompletionToken
+      type: object
+      additionalProperties: false
+    ResultSuccess_ProviderMetrics-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/ProviderMetrics'
+          type: array
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result_ProviderMetrics.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_ProviderMetrics_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Result_ProviderMetrics-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_ProviderMetrics-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultError_string_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type: string
+      required:
+      - data
+      - error
       type: object
       additionalProperties: false
   securitySchemes:

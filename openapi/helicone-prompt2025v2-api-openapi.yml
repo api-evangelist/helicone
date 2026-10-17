@@ -100,11 +100,21 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    Record_string.unknown_:
-      properties: {}
-      additionalProperties: {}
+    ResultSuccess_Prompt2025Version_:
+      properties:
+        data:
+          $ref: '#/components/schemas/Prompt2025Version'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
       type: object
-      description: Construct a type with a set of properties K of type T
+      additionalProperties: false
     Prompt2025VersionPromptBody:
       properties:
         model:
@@ -225,36 +235,11 @@ components:
             type: object
       type: object
       additionalProperties: {}
-    ResultSuccess_Prompt2025Version_:
-      properties:
-        data:
-          $ref: '#/components/schemas/Prompt2025Version'
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
+    Record_string.unknown_:
+      properties: {}
+      additionalProperties: {}
       type: object
-      additionalProperties: false
-    ResultError_string_:
-      properties:
-        data:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-        error:
-          type: string
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
+      description: Construct a type with a set of properties K of type T
     Prompt2025Version:
       properties:
         id:
@@ -298,6 +283,21 @@ components:
       anyOf:
       - $ref: '#/components/schemas/ResultSuccess_Prompt2025Version_'
       - $ref: '#/components/schemas/ResultError_string_'
+    ResultError_string_:
+      properties:
+        data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
+          type: string
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
   securitySchemes:
     api_key:
       type: apiKey

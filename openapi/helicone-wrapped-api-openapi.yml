@@ -47,17 +47,10 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    ConversationMessage:
-      properties:
-        role:
-          type: string
-        content:
-          type: string
-      required:
-      - role
-      - content
-      type: object
-      additionalProperties: false
+    Result_WrappedStats.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_WrappedStats_'
+      - $ref: '#/components/schemas/ResultError_string_'
     WrappedStats:
       properties:
         totalRequests:
@@ -124,6 +117,25 @@ components:
       - mostExpensiveRequest
       type: object
       additionalProperties: false
+    ResultSuccess_WrappedStats_:
+      properties:
+        data:
+          $ref: '#/components/schemas/WrappedStats'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result__hasData-boolean_.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__hasData-boolean__'
+      - $ref: '#/components/schemas/ResultError_string_'
     MostExpensiveRequest:
       properties:
         requestId:
@@ -173,19 +185,15 @@ components:
       - conversation
       type: object
       additionalProperties: false
-    ResultError_string_:
+    ConversationMessage:
       properties:
-        data:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-        error:
+        role:
+          type: string
+        content:
           type: string
       required:
-      - data
-      - error
+      - role
+      - content
       type: object
       additionalProperties: false
     ResultSuccess__hasData-boolean__:
@@ -208,24 +216,16 @@ components:
       - error
       type: object
       additionalProperties: false
-    Result_WrappedStats.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_WrappedStats_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result__hasData-boolean_.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__hasData-boolean__'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_WrappedStats_:
+    ResultError_string_:
       properties:
         data:
-          $ref: '#/components/schemas/WrappedStats'
-        error:
           type:
           - number
           - 'null'
           enum:
           - null
+        error:
+          type: string
       required:
       - data
       - error
