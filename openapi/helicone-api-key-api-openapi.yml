@@ -76,13 +76,18 @@ paths:
             application/json:
               schema:
                 anyOf:
-                - $ref: '#/components/schemas/DecryptedProviderKey'
+                - $ref: '#/components/schemas/MaskedProviderKey'
                 - properties:
                     error:
                       type: string
                   required:
                   - error
                   type: object
+      description: 'Returns provider key metadata with the secret values MASKED. Plaintext
+
+        provider keys are never returned over HTTP. Requires a signed-in
+
+        organization owner or admin; Helicone API keys are rejected.'
       tags:
       - API Key
       security:
@@ -176,6 +181,7 @@ paths:
                   required:
                   - error
                   type: object
+      description: Lists provider key metadata only (no key material, encrypted or not).
       tags:
       - API Key
       security:
@@ -379,92 +385,39 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    ? Result__api_key_hash-string--api_key_name-string--created_at-string--governance-boolean--id-number--key_permissions-string--organization_id-string--soft_delete-boolean--temp_key-boolean--updated_at-string--user_id-string_-Array.string_
-    : anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__api_key_hash-string--api_key_name-string--created_at-string--governance-boolean--id-number--key_permissions-string--organization_id-string--soft_delete-boolean--temp_key-boolean--updated_at-string--user_id-string_-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    CreateProviderKeyRequest:
-      properties:
-        config:
-          $ref: '#/components/schemas/Record_string.string_'
-        byokEnabled:
-          type: boolean
-        providerKeyName:
-          type: string
-        providerSecretKey:
-          type: string
-        providerKey:
-          type: string
-        providerName:
-          type: string
-      required:
-      - config
-      - byokEnabled
-      - providerKeyName
-      - providerKey
-      - providerName
-      type: object
-    Record_string.any_:
-      properties: {}
-      additionalProperties: {}
-      type: object
-      description: Construct a type with a set of properties K of type T
-    ProviderKeyRow:
+    MaskedProviderKey:
+      description: 'Provider key as returned to API callers. The secret values are masked and
+
+        can never be used to call the provider.'
       properties:
         id:
+          type: string
+        org_id:
           type: string
         provider_name:
           type: string
         provider_key_name:
           type: string
-        created_at:
-          type: string
-        soft_delete:
-          type: boolean
-        config:
-          $ref: '#/components/schemas/Record_string.any_'
-        byok_enabled:
-          type: boolean
         cuid:
-          type: string
+          type:
+          - string
+          - 'null'
+        provider_key_masked:
+          type:
+          - string
+          - 'null'
+        provider_secret_key_masked:
+          type:
+          - string
+          - 'null'
       required:
       - id
+      - org_id
       - provider_name
       - provider_key_name
-      - soft_delete
-      type: object
-      additionalProperties: false
-    Record_string.string_:
-      properties: {}
-      additionalProperties:
-        type: string
-      type: object
-      description: Construct a type with a set of properties K of type T
-    Result__id-string--providerName-string_.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess__id-string--providerName-string__'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess__id-string--providerName-string__:
-      properties:
-        data:
-          properties:
-            providerName:
-              type: string
-            id:
-              type: string
-          required:
-          - providerName
-          - id
-          type: object
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
+      - cuid
+      - provider_key_masked
+      - provider_secret_key_masked
       type: object
       additionalProperties: false
     ? ResultSuccess__api_key_hash-string--api_key_name-string--created_at-string--governance-boolean--id-number--key_permissions-string--organization_id-string--soft_delete-boolean--temp_key-boolean--updated_at-string--user_id-string_-Array_
@@ -520,43 +473,62 @@ components:
       - error
       type: object
       additionalProperties: false
-    DecryptedProviderKey:
+    CreateProviderKeyRequest:
       properties:
-        cuid:
-          type:
-          - string
-          - 'null'
-        provider_secret_key:
-          type:
-          - string
-          - 'null'
-        provider_key_name:
-          type:
-          - string
-          - 'null'
-        provider_name:
-          type:
-          - string
-          - 'null'
-        provider_key:
-          type:
-          - string
-          - 'null'
-        org_id:
-          type:
-          - string
-          - 'null'
-        id:
-          type:
-          - string
-          - 'null'
+        config:
+          $ref: '#/components/schemas/Record_string.string_'
+        byokEnabled:
+          type: boolean
+        providerKeyName:
+          type: string
+        providerSecretKey:
+          type: string
+        providerKey:
+          type: string
+        providerName:
+          type: string
       required:
-      - provider_secret_key
-      - provider_key_name
-      - provider_name
-      - provider_key
-      - org_id
+      - config
+      - byokEnabled
+      - providerKeyName
+      - providerKey
+      - providerName
+      type: object
+    ProviderKeyRow:
+      properties:
+        id:
+          type: string
+        provider_name:
+          type: string
+        provider_key_name:
+          type: string
+        created_at:
+          type: string
+        soft_delete:
+          type: boolean
+        config:
+          $ref: '#/components/schemas/Record_string.any_'
+        byok_enabled:
+          type: boolean
+        cuid:
+          type: string
+      required:
       - id
+      - provider_name
+      - provider_key_name
+      - soft_delete
+      type: object
+      additionalProperties: false
+    UpdateProviderKeyRequest:
+      properties:
+        byokEnabled:
+          type: boolean
+        config:
+          $ref: '#/components/schemas/Record_string.string_'
+        providerSecretKey:
+          type: string
+        providerKey:
+          type: string
       type: object
     ResultError_string_:
       properties:
@@ -573,17 +545,48 @@ components:
       - error
       type: object
       additionalProperties: false
-    UpdateProviderKeyRequest:
-      properties:
-        byokEnabled:
-          type: boolean
-        config:
-          $ref: '#/components/schemas/Record_string.string_'
-        providerSecretKey:
-          type: string
-        providerKey:
-          type: string
+    Result__id-string--providerName-string_.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__id-string--providerName-string__'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ? Result__api_key_hash-string--api_key_name-string--created_at-string--governance-boolean--id-number--key_permissions-string--organization_id-string--soft_delete-boolean--temp_key-boolean--updated_at-string--user_id-string_-Array.string_
+    : anyOf:
+      - $ref: '#/components/schemas/ResultSuccess__api_key_hash-string--api_key_name-string--created_at-string--governance-boolean--id-number--key_permissions-string--organization_id-string--soft_delete-boolean--temp_key-boolean--updated_at-string--user_id-string_-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Record_string.string_:
+      properties: {}
+      additionalProperties:
+        type: string
       type: object
+      description: Construct a type with a set of properties K of type T
+    Record_string.any_:
+      properties: {}
+      additionalProperties: {}
+      type: object
+      description: Construct a type with a set of properties K of type T
+    ResultSuccess__id-string--providerName-string__:
+      properties:
+        data:
+          properties:
+            providerName:
+              type: string
+            id:
+              type: string
+          required:
+          - providerName
+          - id
+          type: object
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
   securitySchemes:
     api_key:
       type: apiKey

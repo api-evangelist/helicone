@@ -36,6 +36,14 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    SendTestRequestRequest:
+      properties:
+        apiKey:
+          type: string
+      required:
+      - apiKey
+      type: object
+      additionalProperties: false
     SendTestRequestResponse:
       properties:
         success:
@@ -48,14 +56,6 @@ components:
           type: string
       required:
       - success
-      type: object
-      additionalProperties: false
-    SendTestRequestRequest:
-      properties:
-        apiKey:
-          type: string
-      required:
-      - apiKey
       type: object
       additionalProperties: false
   securitySchemes:

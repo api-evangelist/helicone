@@ -1,0 +1,88 @@
+openapi: 3.2.0
+info:
+  title: helicone-api Models API
+  version: 1.0.0
+  license:
+    name: MIT
+  contact: {}
+servers:
+- url: https://api.helicone.ai/
+- url: http://localhost:8585/
+tags:
+- name: Models
+paths:
+  /v1/models:
+    get:
+      operationId: GetModels
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OAIModelsResponse'
+      tags:
+      - Models
+      security: []
+      parameters: []
+      summary: Get models
+      x-summary-source: derived
+  /v1/models/multimodal:
+    get:
+      operationId: GetMultimodalModels
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OAIModelsResponse'
+      tags:
+      - Models
+      security: []
+      parameters: []
+      summary: Get multimodal models
+      x-summary-source: derived
+components:
+  schemas:
+    OAIModelsResponse:
+      properties:
+        object:
+          type: string
+          enum:
+          - list
+        data:
+          items:
+            $ref: '#/components/schemas/OAIModel'
+          type: array
+      required:
+      - object
+      - data
+      type: object
+      additionalProperties: false
+    OAIModel:
+      properties:
+        id:
+          type: string
+        object:
+          type: string
+          enum:
+          - model
+        created:
+          type: number
+          format: double
+        owned_by:
+          type: string
+      required:
+      - id
+      - object
+      - created
+      - owned_by
+      type: object
+      additionalProperties: false
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: 'Bearer token authentication. Format: ''Bearer YOUR_API_KEY'''

@@ -222,9 +222,10 @@ paths:
               description: The saved query details
 components:
   schemas:
-    ResultSuccess_void_:
+    ResultSuccess_string_:
       properties:
-        data: {}
+        data:
+          type: string
         error:
           type:
           - number
@@ -236,10 +237,6 @@ components:
       - error
       type: object
       additionalProperties: false
-    Result_void.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_void_'
-      - $ref: '#/components/schemas/ResultError_string_'
     ClickHouseTableColumn:
       properties:
         name:
@@ -261,10 +258,134 @@ components:
       - type
       type: object
       additionalProperties: false
+    Result_string.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_string_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    BulkDeleteSavedQueriesRequest:
+      properties:
+        ids:
+          items:
+            type: string
+          type: array
+      required:
+      - ids
+      type: object
+      additionalProperties: false
+    Result_HqlSavedQuery-or-null.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_HqlSavedQuery-or-null_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Result_ClickHouseTableSchema-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_ClickHouseTableSchema-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    Result_HqlSavedQuery-Array.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_HqlSavedQuery-Array_'
+      - $ref: '#/components/schemas/ResultError_string_'
     ResultSuccess_ExecuteSqlResponse_:
       properties:
         data:
           $ref: '#/components/schemas/ExecuteSqlResponse'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_HqlSavedQuery-or-null_:
+      properties:
+        data:
+          allOf:
+          - $ref: '#/components/schemas/HqlSavedQuery'
+        error:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    Result_Array_HqlSavedQuery_.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_Array_HqlSavedQuery__'
+      - $ref: '#/components/schemas/ResultError_string_'
+    HqlSavedQuery:
+      properties:
+        id:
+          type: string
+        organization_id:
+          type: string
+        name:
+          type: string
+        sql:
+          type: string
+        created_at:
+          type: string
+        updated_at:
+          type: string
+      required:
+      - id
+      - organization_id
+      - name
+      - sql
+      - created_at
+      - updated_at
+      type: object
+      additionalProperties: false
+    ExecuteSqlResponse:
+      properties:
+        rowCount:
+          type: number
+          format: double
+        size:
+          type: number
+          format: double
+        elapsedMilliseconds:
+          type: number
+          format: double
+        rows:
+          items:
+            $ref: '#/components/schemas/Record_string.any_'
+          type: array
+      required:
+      - rowCount
+      - size
+      - elapsedMilliseconds
+      - rows
+      type: object
+    ExecuteSqlRequest:
+      properties:
+        sql:
+          type: string
+      required:
+      - sql
+      type: object
+      additionalProperties: false
+    Record_string.any_:
+      properties: {}
+      additionalProperties: {}
+      type: object
+      description: Construct a type with a set of properties K of type T
+    Result_ExecuteSqlResponse.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_ExecuteSqlResponse_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ResultSuccess_ClickHouseTableSchema-Array_:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/ClickHouseTableSchema'
+          type: array
         error:
           type:
           - number
@@ -293,10 +414,24 @@ components:
       - error
       type: object
       additionalProperties: false
-    ResultSuccess_string_:
+    ResultError_string_:
       properties:
         data:
+          type:
+          - number
+          - 'null'
+          enum:
+          - null
+        error:
           type: string
+      required:
+      - data
+      - error
+      type: object
+      additionalProperties: false
+    ResultSuccess_void_:
+      properties:
+        data: {}
         error:
           type:
           - number
@@ -306,148 +441,6 @@ components:
       required:
       - data
       - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_ClickHouseTableSchema-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/ClickHouseTableSchema'
-          type: array
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ResultSuccess_HqlSavedQuery-or-null_:
-      properties:
-        data:
-          allOf:
-          - $ref: '#/components/schemas/HqlSavedQuery'
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    Result_HqlSavedQuery-or-null.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_HqlSavedQuery-or-null_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ResultSuccess_HqlSavedQuery-Array_:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/HqlSavedQuery'
-          type: array
-        error:
-          type:
-          - number
-          - 'null'
-          enum:
-          - null
-      required:
-      - data
-      - error
-      type: object
-      additionalProperties: false
-    ClickHouseTableSchema:
-      properties:
-        table_name:
-          type: string
-        columns:
-          items:
-            $ref: '#/components/schemas/ClickHouseTableColumn'
-          type: array
-      required:
-      - table_name
-      - columns
-      type: object
-      additionalProperties: false
-    BulkDeleteSavedQueriesRequest:
-      properties:
-        ids:
-          items:
-            type: string
-          type: array
-      required:
-      - ids
-      type: object
-      additionalProperties: false
-    Result_Array_HqlSavedQuery_.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_Array_HqlSavedQuery__'
-      - $ref: '#/components/schemas/ResultError_string_'
-    ExecuteSqlResponse:
-      properties:
-        rowCount:
-          type: number
-          format: double
-        size:
-          type: number
-          format: double
-        elapsedMilliseconds:
-          type: number
-          format: double
-        rows:
-          items:
-            $ref: '#/components/schemas/Record_string.any_'
-          type: array
-      required:
-      - rowCount
-      - size
-      - elapsedMilliseconds
-      - rows
-      type: object
-    Result_ClickHouseTableSchema-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_ClickHouseTableSchema-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result_HqlSavedQuery-Array.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_HqlSavedQuery-Array_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result_string.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_string_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Result_ExecuteSqlResponse.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_ExecuteSqlResponse_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    Record_string.any_:
-      properties: {}
-      additionalProperties: {}
-      type: object
-      description: Construct a type with a set of properties K of type T
-    ExecuteSqlRequest:
-      properties:
-        sql:
-          type: string
-      required:
-      - sql
-      type: object
-      additionalProperties: false
-    CreateSavedQueryRequest:
-      properties:
-        name:
-          type: string
-        sql:
-          type: string
-      required:
-      - name
-      - sql
       type: object
       additionalProperties: false
     ResultSuccess_HqlSavedQuery_:
@@ -465,46 +458,53 @@ components:
       - error
       type: object
       additionalProperties: false
-    Result_HqlSavedQuery.string_:
-      anyOf:
-      - $ref: '#/components/schemas/ResultSuccess_HqlSavedQuery_'
-      - $ref: '#/components/schemas/ResultError_string_'
-    HqlSavedQuery:
-      properties:
-        id:
-          type: string
-        organization_id:
-          type: string
-        name:
-          type: string
-        sql:
-          type: string
-        created_at:
-          type: string
-        updated_at:
-          type: string
-      required:
-      - id
-      - organization_id
-      - name
-      - sql
-      - created_at
-      - updated_at
-      type: object
-      additionalProperties: false
-    ResultError_string_:
+    ResultSuccess_HqlSavedQuery-Array_:
       properties:
         data:
+          items:
+            $ref: '#/components/schemas/HqlSavedQuery'
+          type: array
+        error:
           type:
           - number
           - 'null'
           enum:
           - null
-        error:
-          type: string
       required:
       - data
       - error
+      type: object
+      additionalProperties: false
+    Result_HqlSavedQuery.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_HqlSavedQuery_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    ClickHouseTableSchema:
+      properties:
+        table_name:
+          type: string
+        columns:
+          items:
+            $ref: '#/components/schemas/ClickHouseTableColumn'
+          type: array
+      required:
+      - table_name
+      - columns
+      type: object
+      additionalProperties: false
+    Result_void.string_:
+      anyOf:
+      - $ref: '#/components/schemas/ResultSuccess_void_'
+      - $ref: '#/components/schemas/ResultError_string_'
+    CreateSavedQueryRequest:
+      properties:
+        name:
+          type: string
+        sql:
+          type: string
+      required:
+      - name
+      - sql
       type: object
       additionalProperties: false
   securitySchemes:
